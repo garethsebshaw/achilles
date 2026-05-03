@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Fortify;
 
 use App\Nova\SystemLocation;
 use App\Nova\SystemLocationAccess;
@@ -32,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Fortify::loginView(function () {
+            return view('auth.login');
+        });
     }
 }
