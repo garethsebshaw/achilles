@@ -95,7 +95,7 @@ class SystemLocation extends Model
      */
     public function events(): HasMany
     {
-        return $this->hasMany(SystemEvent::class, 'location_id');
+        return $this->hasMany(Event::class, 'location_id');
     }
 
     /**

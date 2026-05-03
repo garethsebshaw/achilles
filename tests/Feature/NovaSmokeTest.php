@@ -124,6 +124,59 @@ class NovaSmokeTest extends TestCase
         $this->assertSame([], $failures, json_encode($failures, JSON_PRETTY_PRINT));
     }
 
+    public function test_authenticated_bridge_pages_resolve_to_working_nova_pages(): void
+    {
+        $admin = User::query()->where('email', 'thisisg@gmail.com')->firstOrFail();
+        $this->actingAs($admin);
+
+        $pages = [
+            '/workouts',
+            '/workouts/create',
+            '/workout-sessions',
+            '/workout-sessions/create',
+            '/workout-signups',
+            '/workout-signups/create',
+            '/meeting-points',
+            '/meeting-points/create',
+            '/home',
+        ];
+
+        if ($workoutId = Workout::query()->value('id')) {
+            $pages[] = '/workouts/'.$workoutId;
+            $pages[] = '/workouts/'.$workoutId.'/edit';
+        }
+
+        if ($sessionId = WorkoutSession::query()->value('id')) {
+            $pages[] = '/workout-sessions/'.$sessionId;
+            $pages[] = '/workout-sessions/'.$sessionId.'/edit';
+        }
+
+        if ($signupId = WorkoutSignup::query()->value('id')) {
+            $pages[] = '/workout-signups/'.$signupId;
+            $pages[] = '/workout-signups/'.$signupId.'/edit';
+        }
+
+        if ($meetingPointId = MeetingPoint::query()->value('id')) {
+            $pages[] = '/meeting-points/'.$meetingPointId;
+            $pages[] = '/meeting-points/'.$meetingPointId.'/edit';
+        }
+
+        $failures = [];
+
+        foreach ($pages as $uri) {
+            $response = $this->followingRedirects()->get($uri);
+
+            if ($response->status() >= 400) {
+                $failures[] = [
+                    'uri' => $uri,
+                    'status' => $response->status(),
+                ];
+            }
+        }
+
+        $this->assertSame([], $failures, json_encode($failures, JSON_PRETTY_PRINT));
+    }
+
     public function test_nova_api_endpoints_load_for_seeded_sys_admin(): void
     {
         $admin = User::query()->where('email', 'thisisg@gmail.com')->firstOrFail();
@@ -135,9 +188,9 @@ class NovaSmokeTest extends TestCase
             $uriKey = $resourceClass::uriKey();
 
             foreach ([
-                '/achillesworkouts.com/nova-api/'.$uriKey,
-                '/achillesworkouts.com/nova-api/'.$uriKey.'/creation-fields',
-                '/achillesworkouts.com/nova-api/'.$uriKey.'/filters',
+                $this->novaBasePath().'/nova-api/'.$uriKey,
+                $this->novaBasePath().'/nova-api/'.$uriKey.'/creation-fields',
+                $this->novaBasePath().'/nova-api/'.$uriKey.'/filters',
             ] as $uri) {
                 $response = $this->getJson($uri);
 
@@ -163,8 +216,8 @@ class NovaSmokeTest extends TestCase
             }
 
             foreach ([
-                '/achillesworkouts.com/nova-api/'.$uriKey.'/'.$key,
-                '/achillesworkouts.com/nova-api/'.$uriKey.'/'.$key.'/update-fields',
+                $this->novaBasePath().'/nova-api/'.$uriKey.'/'.$key,
+                $this->novaBasePath().'/nova-api/'.$uriKey.'/'.$key.'/update-fields',
             ] as $uri) {
                 $response = $this->getJson($uri);
 
@@ -186,14 +239,14 @@ class NovaSmokeTest extends TestCase
     private function novaUris(): array
     {
         $uris = [
-            '/achillesworkouts.com',
-            '/achillesworkouts.com/dashboard',
+            '/',
+            $this->novaBasePath().'/dashboards/main',
         ];
 
         foreach (Nova::resourceCollection()->all() as $resourceClass) {
             $uriKey = $resourceClass::uriKey();
-            $uris[] = '/achillesworkouts.com/resources/'.$uriKey;
-            $uris[] = '/achillesworkouts.com/resources/'.$uriKey.'/new';
+            $uris[] = $this->novaBasePath().'/resources/'.$uriKey;
+            $uris[] = $this->novaBasePath().'/resources/'.$uriKey.'/new';
 
             $modelClass = $resourceClass::$model ?? null;
 
@@ -208,10 +261,17 @@ class NovaSmokeTest extends TestCase
                 continue;
             }
 
-            $uris[] = '/achillesworkouts.com/resources/'.$uriKey.'/'.$key;
-            $uris[] = '/achillesworkouts.com/resources/'.$uriKey.'/'.$key.'/edit';
+            $uris[] = $this->novaBasePath().'/resources/'.$uriKey.'/'.$key;
+            $uris[] = $this->novaBasePath().'/resources/'.$uriKey.'/'.$key.'/edit';
         }
 
         return array_values(array_unique($uris));
+    }
+
+    private function novaBasePath(): string
+    {
+        $novaBasePath = trim(Nova::path(), '/');
+
+        return $novaBasePath === '' ? '' : '/'.$novaBasePath;
     }
 }

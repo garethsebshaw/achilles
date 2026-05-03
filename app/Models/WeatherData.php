@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Nova\SystemStatus;
-use App\Nova\SystemLocation;
+use App\Models\SystemLocation;
+use App\Models\SystemStatus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -55,7 +55,5 @@ class WeatherData extends Model
             ->whereRaw('BINARY system_statuses.code = weather_data.weather_code')
             ->withTrashed();
     }
-
-
 
 }

@@ -61,7 +61,7 @@ class EquipmentCheckout extends Resource
             BelongsTo::make('User')
                 ->rules('required'),
 
-            BelongsTo::make('Event', 'event', SystemEvent::class)
+            BelongsTo::make('Event', 'event', Event::class)
                 ->nullable(),
 
             DateTime::make('Checked Out At')

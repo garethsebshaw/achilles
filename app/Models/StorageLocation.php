@@ -20,7 +20,7 @@ class StorageLocation extends Model //implements HasMedia
 
     public function location()
     {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(SystemLocation::class, 'location_id');
     }
 
     public function equipment()

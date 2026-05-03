@@ -7,12 +7,16 @@ use App\Models\SystemModule;
 use App\Models\SystemCategory;
 use App\Models\SystemChapter;
 use Illuminate\Http\Request;
+use Laravel\Nova\Nova;
 
 class MeetingPointController extends Controller
 {
     private function novaPath(string $suffix = ''): string
     {
-        return '/achillesworkouts.com/resources/meeting-points'.$suffix;
+        $novaBasePath = trim(Nova::path(), '/');
+        $prefix = $novaBasePath === '' ? '' : '/'.$novaBasePath;
+
+        return $prefix.'/resources/meeting-points'.$suffix;
     }
 
     public function index(Request $request)
@@ -66,22 +70,22 @@ class MeetingPointController extends Controller
         return redirect($this->novaPath('/'.$meeting_point->getKey().'/edit'));
     }
 
-    public function update(Request $request, MeetingPoint $meetingPoint)
+    public function update(Request $request, MeetingPoint $meeting_point)
     {
         // Similar validation to store method
         $validated = $request->validate([
             // Same validation as store method
         ]);
 
-        $meetingPoint->update($validated);
+        $meeting_point->update($validated);
 
-        return redirect()->route('meeting-points.show', $meetingPoint)
+        return redirect()->route('meeting-points.show', $meeting_point)
             ->with('success', 'Meeting Point updated successfully');
     }
 
-    public function destroy(MeetingPoint $meetingPoint)
+    public function destroy(MeetingPoint $meeting_point)
     {
-        $meetingPoint->delete();
+        $meeting_point->delete();
 
         return redirect()->route('meeting-points.index')
             ->with('success', 'Meeting Point deleted successfully');

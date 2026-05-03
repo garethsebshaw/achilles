@@ -73,7 +73,7 @@ class EquipmentComponent extends Resource
             BelongsTo::make('Status', 'status', SystemStatus::class)
                 ->rules('required'),
 
-            BelongsTo::make('Condition', 'equipmentCondition', EquipmentCondition::class)
+            BelongsTo::make('Condition', 'condition', EquipmentCondition::class)
                 ->rules('required'),
 
             Date::make('Installation Date')

@@ -8,12 +8,16 @@ use App\Models\SystemStatus;
 use App\Models\SystemLocation;
 use App\Models\Workout;
 use Illuminate\Http\Request;
+use Laravel\Nova\Nova;
 
 class WorkoutSessionController extends Controller
 {
     private function novaPath(string $suffix = ''): string
     {
-        return '/achillesworkouts.com/resources/workout-sessions'.$suffix;
+        $novaBasePath = trim(Nova::path(), '/');
+        $prefix = $novaBasePath === '' ? '' : '/'.$novaBasePath;
+
+        return $prefix.'/resources/workout-sessions'.$suffix;
     }
 
     public function index(Request $request)

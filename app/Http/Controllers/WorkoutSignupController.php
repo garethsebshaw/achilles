@@ -9,12 +9,16 @@ use App\Models\SystemStatus;
 use App\Models\SystemCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Laravel\Nova\Nova;
 
 class WorkoutSignupController extends Controller
 {
     private function novaPath(string $suffix = ''): string
     {
-        return '/achillesworkouts.com/resources/workout-signups'.$suffix;
+        $novaBasePath = trim(Nova::path(), '/');
+        $prefix = $novaBasePath === '' ? '' : '/'.$novaBasePath;
+
+        return $prefix.'/resources/workout-signups'.$suffix;
     }
 
     public function index(Request $request)
@@ -71,17 +75,17 @@ class WorkoutSignupController extends Controller
         return redirect($this->novaPath('/'.$workout_signup->getKey().'/edit'));
     }
 
-    public function update(Request $request, WorkoutSignup $signup)
+    public function update(Request $request, WorkoutSignup $workout_signup)
     {
         DB::beginTransaction();
         try {
             // Update signup status or preferences
-            $signup->update($request->only(['preferences', 'status_id']));
+            $workout_signup->update($request->only(['preferences', 'status_id']));
 
             // Update specific details if provided
             if ($request->has('specific_details')) {
-                $signup->specificDetails()->updateOrCreate(
-                    ['workout_signup_id' => $signup->id],
+                $workout_signup->specificDetails()->updateOrCreate(
+                    ['workout_signup_id' => $workout_signup->id],
                     $request->input('specific_details')
                 );
             }
@@ -89,15 +93,15 @@ class WorkoutSignupController extends Controller
             // Update equipment assignments
             if ($request->has('equipment')) {
                 // Remove existing assignments
-                $signup->equipmentAssignments()->delete();
+                $workout_signup->equipmentAssignments()->delete();
 
                 // Create new assignments
-                $signup->assignEquipment($request->input('equipment'));
+                $workout_signup->assignEquipment($request->input('equipment'));
             }
 
             DB::commit();
 
-            return redirect()->route('workout-signups.show', $signup)
+            return redirect()->route('workout-signups.show', $workout_signup)
                 ->with('success', 'Signup updated successfully');
         } catch (\Exception $e) {
             DB::rollBack();
@@ -105,9 +109,9 @@ class WorkoutSignupController extends Controller
         }
     }
 
-    public function destroy(WorkoutSignup $signup)
+    public function destroy(WorkoutSignup $workout_signup)
     {
-        $signup->delete();
+        $workout_signup->delete();
 
         return redirect()->route('workout-signups.index')
             ->with('success', 'Signup cancelled successfully');

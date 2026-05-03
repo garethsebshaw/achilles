@@ -15,7 +15,7 @@ class WeatherPreference extends Resource
 {
     public static $model = \App\Models\WeatherPreference::class;
     public static $title = 'id';
-    public static $search = ['user', 'Temperature Unit', 'Wind Speed Unit', 'Precipitation Unit'];
+    public static $search = ['temperature_unit', 'wind_speed_unit', 'precipitation_unit', 'timezone'];
     public static $group = 'Weather';
 
     public function fields(NovaRequest $request)
@@ -23,7 +23,7 @@ class WeatherPreference extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('User', 'user', \App\Models\User::class),
+            BelongsTo::make('User', 'user', User::class),
 
             Select::make('Temperature Unit')
                 ->options([

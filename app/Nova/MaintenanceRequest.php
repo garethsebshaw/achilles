@@ -68,7 +68,7 @@ class MaintenanceRequest extends Resource
             BelongsTo::make('Status', 'status', SystemStatus::class)
                 ->rules('required'),
 
-            BelongsTo::make('Priority')
+            BelongsTo::make('Priority', 'priority', EquipmentMaintenancePriority::class)
                 ->rules('required'),
 
             Textarea::make('Description')
