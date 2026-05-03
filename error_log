@@ -1,0 +1,4 @@
+[04-Feb-2025 23:35:46 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/achillesworkouts/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 414
+[04-Feb-2025 23:35:46 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/achillesworkouts/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[04-Feb-2025 23:38:26 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/achillesworkouts/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 414
+[04-Feb-2025 23:38:26 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /home/achillesworkouts/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php on line 190

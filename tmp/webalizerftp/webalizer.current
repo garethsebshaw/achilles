@@ -1,0 +1,1268 @@
+# Webalizer V2.23-08 Incremental Data - 02/10/2025 09:58:44
+2025 2 10 9 58 44
+3242 3242 4 567 0 0 69281272 23 5 1
+2 1 203 1 10
+431 431 19811649 2 0 0
+179 179 1226792 1 0 0
+252 252 3227514 2 0 0
+607 607 5983372 2 7 1
+364 364 1150822 2 0 0
+113 113 16082271 2 2 1
+847 847 18791749 3 7 2
+17 17 143036 1 0 0
+401 401 2724958 1 0 0
+31 31 139109 2 7 1
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+441 441 1527745 5
+334 334 2080118 7
+201 201 698514 0
+71 71 4316504 0
+36 36 7164481 0
+102 102 188606 0
+21 21 177787 0
+0 0 0 0
+46 46 7204689 0
+5 5 57627 0
+44 44 129783 0
+93 93 406004 0
+141 141 1954058 2
+54 54 973570 5
+337 337 17155619 2
+141 141 1081901 0
+331 331 17821281 2
+242 242 1434842 0
+107 107 441659 0
+14 14 52025 0
+57 57 346472 0
+63 63 412518 0
+188 188 1119587 0
+173 173 2535882 0
+0
+0
+0
+3242
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+# -urls- 
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5tu1ecvzl.woff2
+0 2 94094451946736 22768 0 0
+/home/achillesworkouts/app/Nova/Actions/ViewSessionUsers.php
+0 13 0 12594 0 0
+/home/achillesworkouts/app/Http/Controllers/WeatherDataController.php
+0 3 0 2428 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/phpoption/phpoption/src/PhpOption/None.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/tools/WorkoutManagement/ToolServiceProvider.php
+0 2 0 1727 0 0
+/home/achillesworkouts/routes/console.php
+0 7 0 3172 0 0
+/home/achillesworkouts/config/queue.php
+0 1 0 3824 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/CRNoLF.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Filters/TimeWindowFilter.php
+0 5 0 4833 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/ExpectingDomainLiteralClose.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/ralouphie/getallheaders/README.md
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/EquipmentCheckouts.php
+0 2 0 2204 0 0
+/home/achillesworkouts/nova-components/WorkoutManagement/resources/js/tool.js
+0 3 0 205 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_061342_create_maintenance_requests_table.php
+0 1 0 557 0 0
+/home/achillesworkouts/app/Models/SystemTaggable.php
+0 2 0 1098 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty1ciurt9w6fk2a.woff2
+0 2 0 12760 0 0
+/home/achillesworkouts/app/Models/EquipmentCheckout.php
+0 4 0 4800 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/UnusualElements.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/ValidEmail.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_061342_create_equipment_table.php
+0 1 0 535 0 0
+/home/achillesworkouts/app/Nova/Fields/WeatherDashboard.php
+0 3 0 3054 0 0
+/home/achillesworkouts/database/seeders/WorkoutSessionAndSignupSeeder.php
+0 33 0 317056 0 0
+/home/achillesworkouts/app/Http/Controllers/WorkoutController.php
+0 3 0 8157 0 0
+/home/achillesworkouts/app/Nova/Filters/WorkoutFilter.php
+0 7 0 12460 0 0
+/home/achillesworkouts/app/Models/Equipment.php
+0 14 0 51994 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5ju1ecvzl-86y.woff2
+0 2 0 21792 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/ConsecutiveAt.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Console/FetchWeatherData.php
+0 3 0 1364 0 0
+/home/achillesworkouts/app/Nova/Metrics/UserGrowth.php
+0 2 0 2588 0 0
+/home/achillesworkouts/app/Nova/Actions/ManageWorkoutAttendance.php
+0 3 0 4785 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy10iurt9w6fk2a.woff2
+0 2 0 23232 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/ralouphie/getallheaders/composer.json
+0 1 0 0 0 0
+/home/achillesworkouts/resources/js/components/Cards/QuickLinksCard.vue
+0 2 0 1543 0 0
+/home/achillesworkouts/database/migrations/2025_02_04_00002_CreateWorkoutSignupTables.php
+0 3 0 8329 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/EmptyReason.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Http/Resources/WorkoutSession.php
+0 1 0 374 0 0
+/home/achillesworkouts/app/Nova/Actions/CheckOutAction.php
+0 10 0 8362 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5pu1ecvzl-86y.woff2
+0 2 0 11968 0 0
+/home/achillesworkouts/app/Models/CertificationType.php
+0 2 0 892 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/IPV6Deprecated.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Result.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/FastExcelTest.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/vendor.js.LICENSE.txt
+0 2 0 25350 0 0
+/home/achillesworkouts/.env
+0 8 0 13268 0 0
+/home/achillesworkouts/database/seeders/EquipmentSystemSeeder.php
+0 2 0 552 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy1miurt9w6c.woff2
+0 2 0 24232 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5gu1ecvzl-86y.woff2
+0 2 0 16400 0 0
+/home/achillesworkouts/app/Policies/SystemLocationPolicy.php
+0 4 0 5736 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy1miurt9w6c.woff2
+0 2 0 23744 0 0
+/home/achillesworkouts/app/Nova/Metrics/GuideGrowth.php
+0 31 0 52907 0 0
+/home/achillesworkouts/app/Console/Commands/FetchWeatherData.php
+0 3 0 2047 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85gu1ecvzl-86y.woff2
+0 2 0 16456 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty14iurt9w6fk2a.woff2
+0 2 0 17520 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy14iurt9w6fk2a.woff2
+0 2 0 17624 0 0
+/home/achillesworkouts/app/Nova/Manufacturer.php
+0 6 0 15504 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/DeprecatedComment.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/ObsoleteDTEXT.php
+0 1 0 0 0 0
+/home/achillesworkouts/resources/js/components/Cards/QuickLinks.vue
+0 1 0 771 0 0
+/home/achillesworkouts/database/seeders/EquipmentMaintenancePrioritiesSeeder.php
+0 4 0 5256 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/src/Exportable.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8cce9i9tacvwo.woff2
+0 2 0 22760 0 0
+/home/achillesworkouts/app/Nova/Lenses/SysAdminUsers.php
+0 3 0 6745 0 0
+/home/achillesworkouts/storage/logs/laravel.log
+0 9 0 1179335 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/AtextAfterCFWS.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Fields/SystemCategoryField.php
+0 6 0 6654 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e9zkdn4qx5fhyg.woff2
+0 2 0 8136 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/EmailTooLong.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/NoDNSRecord.php
+0 1 0 0 0 0
+/home/achillesworkouts/resources/js/Components/WeatherDashboard.vue
+0 2 0 9117 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/DoubleQuote.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/CRLFX2.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5iu1ecvzl-86y.woff2
+0 2 0 7800 0 0
+/home/achillesworkouts/app/Nova/Metrics/WorkoutAttendanceTrend.php
+0 5 0 2465 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/IPV6MaxGroups.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/DotAtStart.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/2025_02_04_00001_CreateWorkoutMeetingPointTables.php
+0 3 0 5935 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy1ciurt9w6fk2a.woff2
+0 2 0 12608 0 0
+/home/achillesworkouts/app/Nova/Metrics/TotalAthletes.php
+0 5 0 7007 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/CFWSNearAt.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8ccewi9tacvwob5a.woff2
+0 2 0 16256 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/IPV6GroupCount.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/WeatherData.php
+0 19 0 24189 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/resources/js/components/.gitkeep
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Filters/LocationFilter.php
+0 3 0 1648 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/EnumMap.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/src/functions/fastexcel.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/phpunit.xml
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/src/FastExcel.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/mix-manifest.json
+0 2 0 27154 0 0
+/home/achillesworkouts/resources/js/social-login.js
+0 2 0 2360 0 0
+/home/achillesworkouts/package.json
+0 6 0 5195 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/.github/workflows/dependabot-auto-merge.yml
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/AbstractEnum.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/resources/css/tool.css
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/WorkoutSignup.php
+0 26 0 56286 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/Exception/SerializeNotSupportedException.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/CreateWorkoutMeetingPointTables.php
+0 3 0 3984 0 0
+/home/achillesworkouts/app/Nova/Lenses/AdminUsers.php
+0 3 0 6724 0 0
+/home/achillesworkouts/app/Nova/Traits/DynamicPollingInterval.php
+0 4 0 1421 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/Comment.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/FoldingWhiteSpace.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/autoload.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/links.php
+0 3 0 2168 0 0
+/home/achillesworkouts/public/vendor/nova/manifest.js
+0 2 0 3538 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85iu1ecvzl-86y.woff2
+0 2 0 7680 0 0
+/home/achillesworkouts/app/Policies/SystemCategoryPolicy.php
+0 3 0 4150 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbw3ubdlel2qol.woff2
+0 2 0 67664 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/UnOpenedComment.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/LICENSE
+0 1 0 0 0 0
+/home/achillesworkouts/app/Traits/HasCheckouts.php
+0 4 0 3535 0 0
+/home/achillesworkouts/app/Http/Resources/WorkoutSignup.php
+0 1 0 373 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_081342_create_equipment_tables.php
+0 9 0 86071 0 0
+/home/achillesworkouts/app/Models/MaintenanceLog.php
+0 5 0 4529 0 0
+/home/achillesworkouts/app/Nova/Lenses/UpcomingMaintenanceSchedule.php
+0 2 0 3692 0 0
+/home/achillesworkouts/database/seeders/SystemStatusSeeder.php
+0 11 0 561218 0 0
+/home/achillesworkouts/app/Nova/Lenses/SessionWithin6Hours.php
+0 20 0 69880 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy10iurt9w6fk2a.woff2
+0 1 0 11704 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/QuotedString.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/UserTypeDistribution.php
+0 23 0 34474 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/ralouphie/getallheaders/LICENSE
+0 1 0 0 0 0
+/home/achillesworkouts/app/Http/Resources/Workout.php
+0 1 0 367 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/LabelTooLong.php
+0 1 0 0 0 0
+/home/achillesworkouts/resources/js/weather-dashboard.js
+0 4 0 1064 0 0
+/home/achillesworkouts/app/Models/SystemSetting.php
+0 2 0 1472 0 0
+/home/achillesworkouts/app/Nova/Actions/CheckInAction.php
+0 7 0 6796 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kj3xzhggvfm.woff2
+0 2 0 99752 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/IPV6ColonEnd.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/composer.json
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/0001_01_01_000000_create_users_table.php
+0 8 0 12074 0 0
+/home/achillesworkouts/app/Models/MaintenanceRequest.php
+0 5 0 7517 0 0
+/home/achillesworkouts/app/Policies/EquipmentPolicy.php
+0 4 0 5298 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/.gitignore
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/PartParser.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/RFCWarnings.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/seeders/SystemChapterSeeder.php
+0 2 0 107926 0 0
+/home/achillesworkouts/config/auth.php
+0 1 0 4029 0 0
+/home/achillesworkouts/app/Providers/AppServiceProvider.php
+0 8 0 5704 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Validation/EmailValidation.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/seeders/SystemCategorySeeder.php
+0 51 0 859438 0 0
+/home/achillesworkouts/resources/js/components/WeatherDashboard.vue
+0 9 0 57118 0 0
+/home/achillesworkouts/nova-components/SocialLogin/vendor/laravel/nova/public/app.js
+0 2 0 1546350 0 0
+/home/achillesworkouts/resources/views/welcome.blade.php
+0 2 0 82848 0 0
+/home/achillesworkouts/app/Traits/HasStatusBadges.php
+0 4 0 4048 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5ju1ecvzl-86y.woff2
+0 2 0 22112 0 0
+/home/achillesworkouts/resources/nova.js
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_065227_create_events_tables.php
+0 3 0 3462 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/CommentsInIDRight.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/composer.lock
+0 1 0 279082 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbynubdlel2qol.woff2
+0 2 0 50080 0 0
+/home/achillesworkouts/app/Nova/Fields/NovaWeatherDashboard.php
+0 9 0 6449 0 0
+/home/achillesworkouts/app/Models/WorkoutSessionMeetingPoint.php
+0 3 0 1151 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kjlxzhggvfmv2w.woff2
+0 2 0 31744 0 0
+/home/achillesworkouts/app/Nova/Lenses/SessionTimeLens.php
+0 20 0 53748 0 0
+/home/achillesworkouts/app/Policies/MaintenanceRequestPolicy.php
+0 4 0 5730 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8cceyi9tacvwob5a.woff2
+0 2 0 7632 0 0
+/home/achillesworkouts/public/vendor/nova/app.js
+0 4 0 3092700 0 0
+/home/achillesworkouts/public/vendor/nova/custom-search.js
+0 26 0 30296 0 0
+/home/achillesworkouts/app/Models/SystemModule.php
+0 21 0 21831 0 0
+/home/achillesworkouts/app/Nova/WeatherDailyData.php
+0 6 0 9662 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5pu1ecvzl-86y.woff2
+0 2 0 11696 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy14iurt9w6fk2a.woff2
+0 2 0 17776 0 0
+/home/achillesworkouts/config/filesystems.php
+0 1 0 2500 0 0
+/home/achillesworkouts/database/seeders/EquipmentConditionsSeeder.php
+0 4 0 5003 0 0
+/home/achillesworkouts/app/Models/WorkoutSpecificDetails.php
+0 3 0 2819 0 0
+/home/achillesworkouts/app/Models/WeatherDailyData.php
+0 5 0 4357 0 0
+/home/achillesworkouts/app/Models/SystemAuditLog.php
+0 3 0 988 0 0
+/home/achillesworkouts/app/Nova/Filters/WorkoutSessionFilter.php
+0 15 0 22977 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy1ciurt9w6fk2a.woff2
+0 2 0 12696 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/MultipleErrors.php
+0 1 0 0 0 0
+/home/achillesworkouts/composer.lock
+0 5 0 1757163 0 0
+/home/achillesworkouts/app/Models/UserCertification.php
+0 5 0 8160 0 0
+/home/achillesworkouts/app/Listeners/HandleCheckOut.php
+0 11 0 8314 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/DomainAcceptsNoMail.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_061342_create_equipment_tables.php
+0 5 0 47669 0 0
+/home/achillesworkouts/app/Models/EquipmentMaintenancePriority.php
+0 4 0 1908 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/DomainLiteral.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/LocalOrReservedDomain.php
+0 1 0 0 0 0
+/home/achillesworkouts/composer.json
+0 9 0 25113 0 0
+/home/achillesworkouts/config/session.php
+0 1 0 7852 0 0
+/home/achillesworkouts/resources/views/weather/show.blade.php
+0 1 0 889 0 0
+/home/achillesworkouts/app/Nova/WeatherData.php
+0 17 0 60293 0 0
+/home/achillesworkouts/app/Http/Controllers/WorkoutSignupController.php
+0 7 0 28931 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/routes/api.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Lenses/SessionWithin3Hours.php
+0 13 0 48172 0 0
+/home/achillesworkouts/app/Nova/WeatherLocation.php
+0 17 0 37243 0 0
+/home/achillesworkouts/app/Nova/Metrics/AthleteGrowth.php
+0 10 0 15478 0 0
+/home/achillesworkouts/public/vendor/nova/manifest.js.map
+0 2 0 18950 0 0
+/home/achillesworkouts/resources/js/nova/app.js
+0 2 0 3716 0 0
+/home/achillesworkouts/app/Nova/Lenses/EquipmentRequiringMaintenance.php
+0 2 0 3700 0 0
+/home/achillesworkouts/database/seeders/CertificationSeeder.php
+0 2 0 12652 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/DetailedReason.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/tools/WorkoutManagement/routes/api.php
+0 3 0 3285 0 0
+/home/achillesworkouts/app/Models/User.php
+0 8 0 24788 0 0
+/home/achillesworkouts/app/Nova/Filters/EquipmentLocationFilter.php
+0 2 0 1408 0 0
+/home/achillesworkouts/database/seeders/UserSeederFull.php
+0 7 0 9488927 0 0
+/home/achillesworkouts/app/Nova/Language.php
+0 7 0 19216 0 0
+/home/achillesworkouts/app/Nova/Filters/SessionTimeRangeFilter.php
+0 3 0 1560 0 0
+/home/achillesworkouts/database/seeders/SystemRegionSeeder.php
+0 2 0 8448 0 0
+/home/achillesworkouts/resources/js/nova-polling-checkin.js
+0 3 0 3280 0 0
+/home/achillesworkouts/app/Nova/Filters/ChapterFilter.php
+0 4 0 3328 0 0
+/home/achillesworkouts/app/Nova/SystemLocationAccess.php
+0 8 0 19956 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy14iurt9w6fk2a.woff2
+0 2 0 17272 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5gu1ecvzl-86y.woff2
+0 2 0 16544 0 0
+/home/achillesworkouts/public/vendor/nova/app.css
+0 3 0 790896 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/EmailParser.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry1miurt9w6c.woff2
+0 2 0 23160 0 0
+/home/achillesworkouts/nova-components/WorkoutManagement/resources/js/components/.gitkeep
+0 3 0 0 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_061343_create_equipment_maintenance_priorities_table.php
+0 1 0 581 0 0
+/home/achillesworkouts/app/Nova/WorkoutSignup.php
+0 386 0 3514668 0 0
+/home/achillesworkouts/app/Http/Resources/WorkoutEquipmentAssignment.php
+0 1 0 386 0 0
+/home/achillesworkouts/database/seeders/LanguageSeeder.php
+0 84 0 1297456 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/phpoption/phpoption/src/PhpOption/Option.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/ExceptionFound.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/WorkoutManagement/resources/css/tool.css
+0 3 0 60 0 0
+/home/achillesworkouts/nova-components/WorkoutManagement/src/ToolServiceProvider.php
+0 2 0 2280 0 0
+/home/achillesworkouts/app/Providers/NovaServiceProvider.php
+0 129 0 927213 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/.scrutinizer.yml
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy1wiurt9w6fk2a.woff2
+0 2 0 8320 0 0
+/home/achillesworkouts/resources/views/tooltip.blade.php
+0 2 0 314 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/.gitignore
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/2025_02_05_051315_create_weather_system_tables.php
+0 10 0 44732 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/test1.csv
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/UnclosedComment.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/SystemLocation.php
+0 4 0 20044 0 0
+/home/achillesworkouts/bootstrap/cache/packages.php
+0 4 0 8172 0 0
+/home/achillesworkouts/app/Nova/Metrics/EquipmentStatusDistribution.php
+0 5 0 1909 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php
+0 1 0 0 0 0
+/home/achillesworkouts/resources/views/Weather/show.blade.php
+0 4 0 2802 0 0
+/home/achillesworkouts/app/Nova/Metrics/ForecastsPerDay.php
+0 5 0 3619 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/ExpectingATEXT.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/TotalForecastEntries.php
+0 5 0 1632 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/UnclosedQuotedString.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Filters/EquipmentStatusFilter.php
+0 2 0 1404 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/IPV6ColonStart.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Lenses/TeamLeadUsers.php
+0 3 0 7091 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/MessageIDParser.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/TotalGuides.php
+0 5 0 6982 0 0
+/home/achillesworkouts/app/Models/StorageLocation.php
+0 4 0 2204 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/.github/FUNDING.yml
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Validation/Extra/SpoofCheckValidation.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/QuickLinks.php
+0 8 0 8800 0 0
+/home/achillesworkouts/app/Nova/MaintenanceLog.php
+0 3 0 9150 0 0
+/home/achillesworkouts/public/random.php
+0 2 0 9030 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/Exception/MismatchException.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Filters/ActiveLanguage.php
+0 1 0 785 0 0
+/home/achillesworkouts/app/Nova/Event.php
+0 2 0 6214 0 0
+/home/achillesworkouts/app/Nova/WorkoutSessionMeetingPoint.php
+0 6 0 8936 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/DomainLiteral.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/WorkoutManagement/src/WorkoutManagement.php
+0 1 0 843 0 0
+/home/achillesworkouts/app/Nova/ComponentType.php
+0 25 0 80611 0 0
+/home/achillesworkouts/app/Nova/Metrics/EquipmentByStatus.php
+0 2 0 1676 0 0
+/home/achillesworkouts/database/migrations/2025_02_04_00003_CreateWorkoutTables.php
+0 2 0 5148 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/IPV6BadChar.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/2025_01_25_00001_add_rosterfy_fields_to_users_table.php
+0 2 0 3950 0 0
+/home/achillesworkouts/app/Http/Controllers/Controller.php
+0 4 0 901 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/SystemLocation.php
+0 2 0 9614 0 0
+/home/achillesworkouts/app/Nova/EquipmentCondition.php
+0 4 0 10417 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/Comment.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/WorkoutSession.php
+0 6 0 10781 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/phpoption/phpoption/LICENSE
+0 1 0 0 1 0
+/home/achillesworkouts/app/Models/TandemBikePairing.php
+0 2 0 240 0 0
+/home/achillesworkouts/app/Nova/MaintenanceRequest.php
+0 7 0 22244 0 0
+/home/achillesworkouts/database/seeders/UserRandomSeeder.php
+0 23 0 100032 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/Exception/ExpectationException.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/EmailLexer.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/0001_01_01_000001_create_cache_table.php
+0 1 0 849 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/Warning.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/SignupTrend.php
+0 1 0 525 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/IDLeftPart.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Lenses/SessionWithin12Hours.php
+0 85 0 309011 0 0
+/home/achillesworkouts/app/Traits/HasMaintenance.php
+0 4 0 3880 0 0
+/home/achillesworkouts/config/logging.php
+0 1 0 4310 0 0
+/home/achillesworkouts/config/services.php
+0 1 0 1408 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85tu1ecvzl.woff2
+0 2 0 22736 0 0
+/home/achillesworkouts/app/Models/SystemEvent.php
+0 1 0 114 0 0
+/home/achillesworkouts/.editorconfig
+0 2 0 516 0 0
+/home/achillesworkouts/app/Nova/EquipmentComponent.php
+0 7 0 22244 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/src/SheetCollection.php
+0 1 0 0 0 0
+/home/achillesworkouts/routes/web.php
+0 14 0 17039 0 0
+/home/achillesworkouts/app/Nova/Metrics/ImportantLinks.php
+0 4 0 3980 0 0
+/home/achillesworkouts/app/Services/Weather.php
+0 3 0 15308 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/NullValue.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/MeetingPoint.php
+0 3 0 4181 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/AddressLiteral.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Filters/EquipmentOwnershipFilter.php
+0 3 0 2115 0 0
+/home/achillesworkouts/resources/views/nova/cards/quicklinks.blade.php
+0 2 0 670 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry1wiurt9w6fk2a.woff2
+0 2 0 7616 0 0
+/home/achillesworkouts/resources/js/field.js
+0 12 0 1743 0 0
+/home/achillesworkouts/app/Providers/EventServiceProvider.php
+0 9 0 2959 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/phpcs.xml
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/webpack.mix.js
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbwhubdlel2qol.woff2
+0 2 0 83760 0 0
+/home/achillesworkouts/app/Nova/SystemCategory.php
+0 42 0 146388 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/EmailValidator.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/SystemStatus.php
+0 11 0 13858 0 0
+/home/achillesworkouts/app/Nova/Lenses/GuideUsers.php
+0 3 0 6724 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_00001_create_events_tables.php
+0 4 0 4686 0 0
+/home/achillesworkouts/app/Models/SystemLocationAccess.php
+0 2 0 9976 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5tu1ecvzl.woff2
+0 2 0 22680 0 0
+/home/achillesworkouts/app/Nova/Filters/WorkoutSignupUserFilter.php
+0 5 0 8168 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/Exception/UnserializeNotSupportedException.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/seeders/SystemModuleSeederOld.php
+0 6 0 133758 0 0
+/home/achillesworkouts/database/migrations/CreateWorkoutSignupTables.php
+0 6 0 12753 0 0
+/home/achillesworkouts/public/vendor/nova/app.css.map
+0 2 0 576896 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5iu1ecvzl-86y.woff2
+0 2 0 7232 0 0
+/home/achillesworkouts/resources/js/components/WeatherDashboard.js
+0 3 0 12137 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/DomainTooLong.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/WeatherPreference.php
+0 6 0 5770 0 0
+/home/achillesworkouts/app/Models/TandemBikePairingCheck.php
+0 2 0 250 0 0
+/home/achillesworkouts/app/Nova/SystemRegion.php
+0 1 0 2954 0 0
+/home/achillesworkouts/app/Nova/WeatherPreference.php
+0 10 0 23208 0 0
+/home/achillesworkouts/app/Events/CheckInUser.php
+0 8 0 2094 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/src/Providers/FastExcelServiceProvider.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5pu1ecvzl-86y.woff2
+0 2 0 11904 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/DomainHyphened.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/CONTRIBUTING.md
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/app.js.map
+0 4 0 8324280 0 0
+/home/achillesworkouts/app/Services/Weather/WeatherService.php
+0 2 0 15308 0 0
+/home/achillesworkouts/app/Models/Workout.php
+0 6 0 12007 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/test2.csv
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Workout.php
+0 19 0 57018 0 0
+/home/achillesworkouts/app/Nova/Dashboards/Main.php
+0 43 0 51902 0 0
+/home/achillesworkouts/database/seeders/DatabaseSeeder.php
+0 30 0 34608 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/ralouphie/getallheaders/src/getallheaders.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/2025_01_29_00001_create_languages_table.php
+0 3 0 5193 0 0
+/home/achillesworkouts/nova-components/SocialLogin/vendor/laravel/nova/public/app.js.map
+0 2 0 4162140 0 0
+/home/achillesworkouts/app/Nova/StorageLocation.php
+0 4 0 10139 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/CommentStrategy/CommentStrategy.php
+0 1 0 0 0 0
+/home/achillesworkouts/resources/js/custom-search.js
+0 4 0 620 0 0
+/home/achillesworkouts/app/Nova/WorkoutSpecificDetails.php
+0 10 0 23367 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/IDRightPart.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/routes/inertia.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/LocationsWithWeatherData.php
+0 3 0 904 0 0
+/home/achillesworkouts/app/Nova/Lenses/Sessionwithin12Hours.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Traits/HasEquipmentTracking.php
+0 4 0 3619 0 0
+/home/achillesworkouts/app/Nova/LanguageProficiency.php
+0 18 0 54079 0 0
+/home/achillesworkouts/app/Nova/Lenses/WorkoutSessionUsers.php
+0 5 0 15610 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5tu1ecvzl.woff2
+0 2 0 22176 0 0
+/home/achillesworkouts/nova-components/WorkoutManagement/webpack.mix.js
+0 3 0 235 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_061342_create_component_compatibility_table.php
+0 1 0 563 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5ju1ecvzl-86y.woff2
+0 2 0 22024 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Validation/RFCValidation.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kjpxzhggvfmv2w.woff2
+0 2 0 85688 0 0
+/home/achillesworkouts/app/Models/ComponentType.php
+0 8 0 7962 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e9dkdn4qx5fhyg.woff2
+0 2 0 23144 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_061343_create_equipment_conditions_table.php
+0 1 0 557 0 0
+/home/achillesworkouts/nova-components/SocialLogin/vendor/laravel/nova/resources/js/components/Cards/HelpCard.vue
+0 3 0 24133 0 0
+/home/achillesworkouts/app/Http/Controllers/WorkoutSessionController.php
+0 3 0 6350 0 0
+/home/achillesworkouts/app/Nova/User.php
+0 24 0 153525 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy1wiurt9w6fk2a.woff2
+0 2 0 8048 0 0
+/home/achillesworkouts/app/Http/Controllers/WeatherViewController.php
+0 3 0 1226 0 0
+/home/achillesworkouts/app/Nova/Metrics/SessionAttendanceMetric.php
+0 7 0 22518 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbznubdlel2g.woff2
+0 2 0 95592 0 0
+/home/achillesworkouts/resources/js/achilles-filters.js
+0 1 0 357 0 0
+/home/achillesworkouts/app/Nova/Events.php
+0 1 0 2225 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/CRLFAtTheEnd.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/SystemRegion.php
+0 2 0 866 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/test-dates.xlsx
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Filters/WorkoutSignupDateRangeFilter.php
+0 3 0 1420 0 0
+/home/achillesworkouts/app/Models/SystemChapter.php
+0 2 0 1932 0 0
+/home/achillesworkouts/app/Nova/Metrics/AthleteGuideDistribution.php
+0 5 0 4315 0 0
+/home/achillesworkouts/app/Nova/Certification.php
+0 3 0 11284 0 0
+/home/achillesworkouts/app/Nova/Filters/MaintenancePriorityFilter.php
+0 3 0 2118 0 0
+/home/achillesworkouts/app/Nova/NovaWeatherDashboard.php
+0 1 0 631 0 0
+/home/achillesworkouts/database/migrations/2025_01_25_141848_create_system_tables.php
+0 10 0 106482 0 0
+/home/achillesworkouts/app/Nova/Lenses/CheckedOutEquipment.php
+0 2 0 3660 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e91kdn4qx5fhyg.woff2
+0 2 0 12688 0 0
+/home/achillesworkouts/app/Nova/Lenses/MonitoredComponents.php
+0 2 0 3658 0 0
+/home/achillesworkouts/resources/js/Components/WeatherDashboard.js
+0 1 0 4558 0 0
+/home/achillesworkouts/app/Events/CheckOutUser.php
+0 7 0 2100 0 0
+/home/achillesworkouts/nova-components/WorkoutManagement/.gitignore
+0 2 0 278 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/README.md
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/IPV6DoubleColon.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/EquipmentMaintenancePriority.php
+0 11 0 37175 0 0
+/home/achillesworkouts/app/Nova/Metrics/EquipmentTotal.php
+0 2 0 2290 0 0
+/home/achillesworkouts/app/Nova/Filters/ComponentTypeFilter.php
+0 2 0 1400 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_061342_create_component_types_table.php
+0 1 0 547 0 0
+/home/achillesworkouts/public/build/.vite/manifest.json
+0 2 0 1178 0 0
+/home/achillesworkouts/app/Http/Controllers/MeetingPointController.php
+0 3 0 7632 0 0
+/home/achillesworkouts/resources/js/Components/Nova/WeatherDashboard.vue
+0 3 0 17108 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5gu1ecvzl-86y.woff2
+0 2 0 16352 0 0
+/home/achillesworkouts/app/Nova/SystemStatus.php
+0 4 0 13376 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbwxubdlel2qol.woff2
+0 2 0 32408 0 0
+/home/achillesworkouts/app/Nova/Metrics/TotalLanguages.php
+0 2 0 1144 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/test104.xlsx
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/src/Importable.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5iu1ecvzl-86y.woff2
+0 2 0 7640 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty10iurt9w6fk2a.woff2
+0 2 0 23536 0 0
+/home/achillesworkouts/resources/js/nova-checkin-polling.js
+0 6 0 11880 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/postcss.config.js
+0 1 0 0 0 0
+/home/achillesworkouts/database/migrations/2025_01_24_00001_add_two_factor_columns_to_users_table.php
+0 2 0 2114 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_061343_create_equipment_checkouts_table.php
+0 1 0 555 0 0
+/home/achillesworkouts/resources/js/components/ui/
+0 7 0 959 1 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/composer.json
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/TLD.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/EquipmentCheckout.php
+0 4 0 10485 0 0
+/home/achillesworkouts/resources/js/nova/pages/Login.vue
+0 2 0 2394 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/CFWSWithFWS.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Traits/HasQrCode.php
+0 4 0 2917 0 0
+/home/achillesworkouts/app/Nova/Lenses/AthleteUsers.php
+0 3 0 6742 0 0
+/home/achillesworkouts/config/cache.php
+0 1 0 3476 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/Exception/ExceptionInterface.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/LocalTooLong.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85pu1ecvzl-86y.woff2
+0 2 0 11936 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5ju1ecvzl-86y.woff2
+0 2 0 21024 0 0
+/home/achillesworkouts/public/vendor/nova/ova-filters.js
+0 1 0 0 0 0
+/home/achillesworkouts/app/Http/Controllers/Api/WorkoutSessionAttendanceController.php
+0 3 0 12468 0 0
+/home/achillesworkouts/app/Nova/WorkoutEquipmentAssignment.php
+0 7 0 10781 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/package.json
+0 1 0 0 0 0
+/home/achillesworkouts/bootstrap/app.php
+0 4 0 2702 0 0
+/home/achillesworkouts/app/Nova/WorkoutSession.php
+0 150 0 719495 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85ju1ecvzl-86y.woff2
+0 2 0 21912 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8cce5i9tacvwob5a.woff2
+0 2 0 11976 0 0
+/home/achillesworkouts/app/Http/Resources/MeetingPoint.php
+0 1 0 372 0 0
+/home/achillesworkouts/app/Models/LanguageProficiency.php
+0 4 0 3368 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/ExpectingCTEXT.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/WeatherLocationCount.php
+0 3 0 992 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/CHANGELOG.md
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/LICENSE
+0 1 0 0 0 1
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kjdxzhggvfmv2w.woff2
+0 2 0 71872 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/SpoofEmail.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/SystemMediaFile.php
+0 4 0 2090 0 0
+/home/achillesworkouts/database/seeders/delete
+0 7 0 55540 1 1
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy1wiurt9w6fk2a.woff2
+0 2 0 8232 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/NoDomainPart.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Fields/HierarchicalCategoryField.php
+0 33 0 96586 0 0
+/home/achillesworkouts/app/Traits/HasEquipmentAuthorization.php
+0 3 0 2607 0 0
+/home/achillesworkouts/app/Traits/RegisterModule.php
+0 1 0 490 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy1ciurt9w6fk2a.woff2
+0 2 0 12760 0 0
+/home/achillesworkouts/resources/js/Components/Metrics/SessionAttendanceMetric.vue
+0 1 0 1435 0 0
+/home/achillesworkouts/app/Nova/Metrics/TotalTeamLeaders.php
+0 7 0 9868 0 0
+/home/achillesworkouts/database/seeders/EquipmentComponentTypesSeeder.php
+0 69 0 1329976 0 0
+/home/achillesworkouts/app/Nova/Actions/CheckInActin.php
+0 5 0 3826 0 0
+/home/achillesworkouts/app/Nova/Metrics/TotalSignups.php
+0 3 0 1218 0 0
+/home/achillesworkouts/app/Console/Kernel.php
+0 3 0 1394 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kjnxzhggvfmv2w.woff2
+0 2 0 52896 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/ChunkTest.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/test72.xlsx
+0 1 0 0 0 0
+/home/achillesworkouts/bootstrap/cache/services.php
+0 8 0 138306 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/DomainPart.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/Reason.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/SignupDistribution.php
+0 3 0 1396 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/NoLocalPart.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/LICENSE
+0 1 0 0 0 0
+/home/achillesworkouts/database/seeders/SystemCountrySeeder.php
+0 2 0 193944 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e9lkdn4qx5e.woff2
+0 2 0 24040 0 0
+/home/achillesworkouts/nova-components/WorkoutManagement/routes/api.php
+0 2 0 1625 0 0
+/home/achillesworkouts/database/migrations/2025_02_01_00002_create_equipment_tables.php
+0 4 0 38254 0 0
+/home/achillesworkouts/app/Models/SystemChapterContact.php
+0 2 0 1230 0 0
+/home/achillesworkouts/resources/css/app.css
+0 2 0 118 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/test1.xlsx
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/SystemModule.php
+0 30 0 113556 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/composer.json
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/SystemCategory.php
+0 14 0 20537 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/phpoption/phpoption/src/PhpOption/Some.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/SystemTag.php
+0 2 0 1076 0 0
+/home/achillesworkouts/resources/js/components/Nova/Cards/QuickLinks.vue
+0 2 0 817 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/Dumb.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry14iurt9w6fk2a.woff2
+0 2 0 16672 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/src/Facades/FastExcel.php
+0 1 0 0 0 0
+/home/achillesworkouts/config/mail.php
+0 1 0 3539 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/QuotedPart.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Policies/SystemLocationAccessPolicy.php
+0 4 0 5315 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/SpoofEmail.php
+0 1 0 0 0 0
+/home/achillesworkouts/routes/api.php
+0 6 0 2951 0 0
+/home/achillesworkouts/app/Nova/UserCertification.php
+0 11 0 49700 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/ExpectingDTEXT.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy1miurt9w6c.woff2
+0 2 0 24160 0 0
+/home/achillesworkouts/config/app.php
+0 6 0 25961 0 0
+/home/achillesworkouts/app/Nova/Metrics/SessionAttendanceMetricComponent.php
+0 2 0 411 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Validation/DNSGetRecordWrapper.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Metrics/SignupGrowth.php
+0 2 0 525 0 0
+/home/achillesworkouts/resources/js/app.js
+0 14 0 2456 0 0
+/home/achillesworkouts/app/Nova/Metrics/NextWeatherForecast.php
+0 9 0 4231 0 0
+/home/achillesworkouts/app/Models/Event.php
+0 4 0 3990 0 0
+/home/achillesworkouts/app/Traits/HandlesFileTypeIcons.php
+0 1 0 1052 0 0
+/home/achillesworkouts/resources/js/bootstrap.js
+0 2 0 254 0 0
+/home/achillesworkouts/database/seeders/EquipmentManufacturersSeeder.php
+0 3 0 12287 0 0
+/home/achillesworkouts/app/Services/WeatherService.php
+0 1 0 7661 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5tu1ecvzl.woff2
+0 2 0 22352 0 0
+/home/achillesworkouts/app/Nova/Metrics/LastWeatherUpdate.php
+0 16 0 9378 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php
+0 1 0 0 0 0
+/home/achillesworkouts/resources/views/vendor/nova/auth/login.blade.php
+0 2 0 4298 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5gu1ecvzl-86y.woff2
+0 2 0 15984 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5pu1ecvzl-86y.woff2
+0 2 0 11944 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy10iurt9w6fk2a.woff2
+0 2 0 22984 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/.travis.yml
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8ccezi9tacvwob5a.woff2
+0 2 0 21872 0 0
+/home/achillesworkouts/app/Models/EquipmentComponent.php
+0 5 0 10754 0 0
+/home/achillesworkouts/app/Nova/Cards/QuickLinks.php
+0 2 0 2013 0 0
+/home/achillesworkouts/resources/js/nova.js
+0 11 0 5898 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/CommaInDomain.php
+0 1 0 0 0 0
+/home/achillesworkouts/database/seeders/SystemModuleSeeder.php
+0 28 0 616904 0 0
+/home/achillesworkouts/database/migrations/2025_01_29_042215_create_languages_table.php
+0 6 0 13284 0 0
+/home/achillesworkouts/public/random_safe_save_003442.php
+0 1 0 4702 0 0
+/home/achillesworkouts/vite.config.js
+0 20 0 16178 0 0
+/home/achillesworkouts/database/migrations/0001_01_01_000002_create_jobs_table.php
+0 1 0 1812 0 0
+/home/achillesworkouts/app/Nova/Metrics/ExpiringCertifications.php
+0 8 0 6235 0 0
+/home/achillesworkouts/app/Nova/SystemMediaFile.php
+0 1 0 3222 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry10iurt9w6fk2a.woff2
+0 2 0 22176 0 0
+/home/achillesworkouts/app/Nova/Filters/SessionDateRangeFilter.php
+0 3 0 1168 0 0
+/home/achillesworkouts/app/Models/CertificationDocument.php
+0 2 0 1596 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty1wiurt9w6fk2a.woff2
+0 2 0 8336 0 0
+/home/achillesworkouts/app/Nova/Equipment.php
+0 61 0 335324 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/TestCase.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/WorkoutEquipmentAssignment.php
+0 3 0 1971 0 0
+/home/achillesworkouts/public/vendor/nova/app.js.LICENSE.txt
+0 2 0 2892 2 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Warning/NoDNSMXRecord.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/resources/js/tool.js
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/IssuesTest.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Actions/ViewWeatherData.php
+0 4 0 4662 0 0
+/home/achillesworkouts/database/migrations/2025_02_04_00001_create_workout_tables.php
+0 22 0 176621 0 0
+/home/achillesworkouts/app/Models/Manufacturer.php
+0 5 0 2139 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/tests/test18.csv
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/phpoption/phpoption/src/PhpOption/LazyOption.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Parser/LocalPart.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Policies/EquipmentCheckoutPolicy.php
+0 4 0 5682 0 0
+/home/achillesworkouts/database/seeders/UserSeeder.php
+0 10 0 101651 0 0
+/home/achillesworkouts/db_refresh.php
+0 12 0 9604 0 0
+/home/achillesworkouts/database/seeders/UserCertificateSeeder.php
+0 16 0 65664 0 0
+/home/achillesworkouts/app/Models/Language.php
+0 3 0 1240 0 0
+/home/achillesworkouts/app/Nova/ViewWeatherData.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5iu1ecvzl-86y.woff2
+0 2 0 7688 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/Exception/IllegalArgumentException.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/Certification.php
+0 2 0 1568 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/ConsecutiveDot.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/UnableToGetDNSRecord.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Models/SystemCountry.php
+0 2 0 1340 0 0
+/home/achillesworkouts/app/Policies/ManufacturerPolicy.php
+0 4 0 5442 0 0
+/home/achillesworkouts/database/migrations/CreateWorkoutTables.php
+0 6 0 13036 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/InvalidEmail.php
+0 1 0 0 0 0
+/home/achillesworkouts/resources/js/components/Metrics/SessionAttendanceMetric.vue
+0 2 0 3268 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/.github/workflows/tests.yml
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry1ciurt9w6fk2a.woff2
+0 2 0 12200 0 0
+/home/achillesworkouts/resources/js/Components/SessionAttendanceMetric.vue
+0 2 0 387 0 0
+/home/achillesworkouts/config/database.php
+0 1 0 6198 0 0
+/home/achillesworkouts/database/migrations/2025_01_25_00003_create_certification_tables.php
+0 3 0 12819 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty1miurt9w6c.woff2
+0 2 0 24128 0 0
+/home/achillesworkouts/database/migrations/2025_01_30_00001_add_socialite_columns_to_users_table.php
+0 2 0 2084 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/phpoption/phpoption/composer.json
+0 1 0 0 0 0
+/home/achillesworkouts/app/Listeners/HandleCheckIn.php
+0 14 0 9984 0 0
+/home/achillesworkouts/app/Models/EquipmentCondition.php
+0 5 0 4684 0 0
+/home/achillesworkouts/app/Nova/tools/WorkoutManagement/src/WorkoutManagement.php
+0 1 0 843 0 0
+/home/achillesworkouts/database/seeders/CertificationTypeSeeder.php
+0 2 0 4978 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/resources/js/social-login.js
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e9rkdn4qx5fhyg.woff2
+0 2 0 17536 0 0
+/home/achillesworkouts/app/Nova/Metrics/ActiveMaintenanceRequests.php
+0 2 0 2312 0 0
+/home/achillesworkouts/config/nova.php
+0 6 0 45569 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/dasprid/enum/src/Exception/CloneNotSupportedException.php
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/Resource.php
+0 10 0 15505 0 0
+/home/achillesworkouts/app/Nova/MeetingPoint.php
+0 45 0 121213 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/CharNotAllowed.php
+0 1 0 0 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/src/Result/Reason/DotAtEnd.php
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/ui.js
+0 2 0 36078 0 0
+/home/achillesworkouts/public/vendor/nova/vendor.js.map
+0 2 0 15870686 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/rap2hpoutre/fast-excel/README.md
+0 1 0 0 0 0
+/home/achillesworkouts/app/Nova/tools/WorkoutManagement/WorkoutManagement.php
+0 1 0 847 0 0
+/home/achillesworkouts/nova-components/WorkoutManagement/src/Http/Middleware/Authorize.php
+0 1 0 843 0 0
+/home/achillesworkouts/database/migrations/2025_02_04_00003_create_workout_tables.php
+0 5 0 14354 0 0
+/home/achillesworkouts/database/migrations/2025_01_25_00002_create_system_tables.php
+0 11 0 91957 0 0
+/home/achillesworkouts/nova-components/SocialLogin_2/vendor/egulias/email-validator/composer.json
+0 1 0 0 0 0
+/home/achillesworkouts/public/vendor/nova/vendor.js
+0 2 0 4935052 0 0
+/home/achillesworkouts/public/vendor/nova/achilles-filters.js
+0 1 0 357 0 0
+# End Of Table - urls
+# -sites- (monthly)
+pool-74-101-209-101.nycmny.ftas.verizon.net
+0 2242 2242 32265431 2 1739150712
+/home/achillesworkouts/resources/js/components/ui/
+syn-024-090-211-164.res.spectrum.com
+0 715 715 20713663 2 1738858429
+/home/achillesworkouts/public/vendor/nova/vendor.js.LICENSE.txt
+207-38-131-182.s943.c3-0.avec-cbr2.nyr-avec.ny.cable.rcncustomer.com
+0 271 271 16213972 1 1738936873
+/home/achillesworkouts/public/vendor/nova/vendor.js.LICENSE.txt
+syn-098-015-067-243.res.spectrum.com
+0 14 14 88206 0 0
+-
+# End Of Table - sites (monthly)
+# -sites- (daily)
+pool-74-101-209-101.nycmny.ftas.verizon.net
+0 30 30 122604 1 1739150712
+/home/achillesworkouts/resources/js/components/ui/
+207-38-131-182.s943.c3-0.avec-cbr2.nyr-avec.ny.cable.rcncustomer.com
+0 1 1 16505 0 0
+-
+# End Of Table - sites (daily)
+# -referrers- 
+# End Of Table - referrers
+# -agents- 
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+achillesworkouts
+0 3242 3242 69281272 6 1739150712
+# End Of Table - usernames

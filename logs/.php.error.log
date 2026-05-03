@@ -1,0 +1,2 @@
+[04-Feb-2025 05:21:48 UTC] PHP Warning:  touch(): Unable to create file /home/achillesworkouts/etc/achillesworkouts.rcube.db because No such file or directory in /usr/local/cpanel/base/3rdparty/roundcube/program/lib/Roundcube/db/sqlite.php on line 39
+[04-Feb-2025 05:21:51 UTC] PHP Warning:  touch(): Unable to create file /home/achillesworkouts/etc/achillesworkouts.rcube.db because No such file or directory in /usr/local/cpanel/base/3rdparty/roundcube/program/lib/Roundcube/db/sqlite.php on line 39

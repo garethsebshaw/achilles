@@ -1,0 +1,24 @@
+{
+  "__plugin-vue_export-helper-DfdhBGvI.js": {
+    "file": "assets/_plugin-vue_export-helper-DfdhBGvI.js",
+    "name": "_plugin-vue_export-helper"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CUIGTNp9.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper-DfdhBGvI.js"
+    ]
+  },
+  "resources/js/field.js": {
+    "file": "assets/field-CK21HJrZ.js",
+    "name": "field",
+    "src": "resources/js/field.js",
+    "isEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper-DfdhBGvI.js"
+    ]
+  }
+}

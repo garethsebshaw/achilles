@@ -1,0 +1,122 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Workout;
+use App\Models\SystemModule;
+use App\Models\SystemCategory;
+use Illuminate\Http\Request;
+
+class WorkoutController extends Controller
+{
+    public function index(Request $request)
+    {
+        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
+
+        $workouts = Workout::with(['location', 'activityType', 'createdBy'])
+            ->where('is_template', false)
+            ->where('is_current_version', true)
+            ->paginate(15);
+
+        return view('workouts.index', compact('workouts'));
+    }
+
+    public function create()
+    {
+        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
+
+        $activityTypes = SystemCategory::where('system_module_id', $workoutsModuleId)->get();
+        $locations = SystemLocation::all();
+
+        return view('workouts.create', compact('activityTypes', 'locations'));
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'location_id' => 'required|exists:system_locations,id',
+            'activity_type_id' => 'required|exists:system_categories,id',
+            'default_start_time' => 'required|date_format:H:i',
+            'default_end_time' => 'required|date_format:H:i|after:default_start_time',
+            'is_recurring' => 'boolean',
+            'recurrence_pattern' => 'nullable|string',
+            'advance_create_weeks' => 'integer|min:1|max:52',
+            'default_max_athletes' => 'nullable|integer|min:0',
+            'default_max_guides' => 'nullable|integer|min:0',
+        ]);
+
+        $validated['created_by'] = auth()->id();
+        $validated['is_template'] = false;
+
+        $workout = Workout::create($validated);
+
+        return redirect()->route('workouts.show', $workout)
+            ->with('success', 'Workout created successfully');
+    }
+
+    public function show(Workout $workout)
+    {
+        $workout->load(['location', 'activityType', 'sessions']);
+        return view('workouts.show', compact('workout'));
+    }
+
+    public function edit(Workout $workout)
+    {
+        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
+
+        $activityTypes = SystemCategory::where('system_module_id', $workoutsModuleId)->get();
+        $locations = SystemLocation::all();
+
+        return view('workouts.edit', compact('workout', 'activityTypes', 'locations'));
+    }
+
+    public function update(Request $request, Workout $workout)
+    {
+        $validated = $request->validate([
+            // Same validation as store method
+        ]);
+
+        // Create a new version if significant changes
+        if ($this->workoutNeedsNewVersion($workout, $validated)) {
+            $workout->update(['is_current_version' => false]);
+            $validated['version'] = $workout->version + 1;
+            $validated['is_current_version'] = true;
+            $workout = Workout::create($validated);
+        } else {
+            $workout->update($validated);
+        }
+
+        return redirect()->route('workouts.show', $workout)
+            ->with('success', 'Workout updated successfully');
+    }
+
+    protected function workoutNeedsNewVersion(Workout $oldWorkout, array $newData)
+    {
+        // Define logic for determining if a new version is needed
+        $criticalFields = [
+            'activity_type_id',
+            'default_start_time',
+            'default_end_time',
+            'is_recurring',
+            'recurrence_pattern'
+        ];
+
+        foreach ($criticalFields as $field) {
+            if (isset($newData[$field]) && $oldWorkout->{$field} != $newData[$field]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function destroy(Workout $workout)
+    {
+        // Soft delete or mark as inactive
+        $workout->delete();
+
+        return redirect()->route('workouts.index')
+            ->with('success', 'Workout archived successfully');
+    }
+}

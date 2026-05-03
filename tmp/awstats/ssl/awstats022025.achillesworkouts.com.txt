@@ -1,0 +1,1150 @@
+AWSTATS DATA FILE 7.9 (build 20230108)
+# If you remove this file, all statistics for date 202502 will be lost/reset.
+# Last config file used to build this data file was /home/achillesworkouts/tmp/awstats/ssl/awstats.achillesworkouts.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2063                
+POS_TIME 2747                
+POS_VISITOR 15800               
+POS_DAY 16945               
+POS_DOMAIN 3703                
+POS_LOGIN 4027                
+POS_ROBOT 4182                
+POS_WORMS 4657                
+POS_EMAILSENDER 4788                
+POS_EMAILRECEIVER 4931                
+POS_SESSION 17296               
+POS_FILESIZE 46953               
+POS_SIDER 17503               
+POS_FILETYPES 5066                
+POS_DOWNLOADS 5252                
+POS_OS 5300                
+POS_BROWSER 5464                
+POS_SCREENSIZE 5815                
+POS_UNKNOWNREFERER 5889                
+POS_UNKNOWNREFERERBROWSER 6050                
+POS_ORIGIN 6166                
+POS_SEREFERRALS 6308                
+POS_PAGEREFS 6452                
+POS_SEARCHWORDS 6600                
+POS_KEYWORDS 6752                
+POS_MISC 2410                
+POS_ERRORS 6811                
+POS_CLUSTER 3883                
+POS_SIDER_404 7027                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20250211071219 625 112469 12586018180243
+FirstTime 20250201005616
+LastTime 20250210224802
+LastUpdate 20250211071838 625 0 625 0 0
+TotalVisits 53                  
+TotalUnique 24                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 24                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+JavaEnabled 0 0 0
+TotalMisc 0 0 0
+AddToFavourites 0 54 0
+QuickTimeSupport 0 0 0
+JavascriptDisabled 0 0 0
+FlashSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+RealPlayerSupport 0 0 0
+DirectorSupport 0 0 0
+PDFSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 1146 1161 102956643 209 287 4236365
+1 1244 1249 78413895 176 182 4310849
+2 889 894 105543516 179 183 2195188
+3 604 604 38157426 179 184 800053
+4 230 230 9339960 123 127 1033693
+5 0 0 0 153 166 5859540
+6 0 0 0 175 191 9883721
+7 2 2 1458483 106 113 3477427
+8 21 26 2196028 111 118 3794089
+9 48 53 4777303 140 149 1983447
+10 104 114 12769481 117 124 784192
+11 508 518 29026597 103 110 337686
+12 554 554 30681920 107 115 4971213
+13 214 219 6653719 104 107 674934
+14 848 873 95887985 219 227 3331548
+15 1015 1025 59728501 136 144 3354377
+16 1119 1134 72441708 131 138 1490806
+17 1574 1579 98253589 194 198 1485323
+18 1408 1413 81212268 148 156 4323497
+19 202 202 7001208 112 122 574045
+20 335 350 31312985 121 130 550592
+21 1203 1213 34644671 99 108 4528548
+22 1140 1170 93326875 220 237 9145496
+23 521 551 48357922 140 155 1713345
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 7
+us 14913 15113 1033835284
+ip 7 12 3743215
+ru 5 5 3646775
+gr 1 1 729497
+ca 1 1 729471
+cn 1 1 728988
+se 1 1 729453
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 9
+UptimeRobot/ 882 0 20250211071219 0
+Googlebot/ 60 31929796 20250210193040 24
+bot[\s_+:,\.\;\/\\-] 40 9130788 20250211043505 8
+unknown 35 288 20250209055619 35
+AhrefsBot/ 9 23439 20250209175757 6
+no_user_agent 4 729695 20250210034519 0
+facebookexternalhit/ 1 728988 20250201150225 0
+DotBot/ 1 24 20250205083718 1
+bingbot/ 1 24 20250209155205 1
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 6
+php 1 524585 0 0
+css 41 4481744 0 0
+html 1 12532 0 0
+Unknown 14847 980449742 0 0
+woff2 80 2472208 0 0
+js 164 56201872 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 7
+macosx15 15022 14822
+android10 1 1
+linuxubuntu 1 1
+linux 2 2
+android12 1 1
+win10 99 94
+Unknown 8 8
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 15
+chrome105.0.0.0 1 1
+firefox24.0 1 1
+chrome110.0.0.0 1 1
+firefox133.0 676 656
+chrome120.0.0.0 4 4
+chrome131.0.0.0 100 90
+chrome100.0.4896.75 1 1
+chrome78.0.3904.62 1 1
+firefox134.0 10508 10368
+firefox135.0 3830 3795
+mozilla 5 5
+firefox120.0 1 1
+chrome58.0.3029.110 1 1
+Unknown 3 3
+chrome102.0.0.0 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 2
+WhatsApp/2.23.20.0 20250203102200
+Mozilla/5.0_(compatible) 20250210224802
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+WhatsApp/2.23.20.0 20250203102200
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 361 361
+From1 0 0
+From2 0 0
+From3 0 0
+From4 14568 14773
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 11
+405 2 112162
+504 11 0
+302 1170 65275
+404 457 10910442
+403 12 731461
+419 3 3018
+422 5 485
+500 968 20463404
+401 15 1050
+409 2 40
+301 39 9595
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 259
+/wp-content/themes/clockstone/style.css 1 -
+/w.rar 1 -
+/M1.php 1 www.google.com
+/home 7 -
+/.vscode/sftp.json 1 -
+/login/cms/wp-includes/wlwmanifest.xml 3 -
+/baxa1.php 1 www.google.com
+/wp-admin/css/colors/index.php 1 -
+/mylegacybuild.com.rar 1 -
+/config.rar 1 -
+/nova/weather/27 1 https://achillesworkouts.com/resources/weather-locations
+/q.rar 1 -
+/about/function.php 1 -
+/logon/LogonPoint/custom.html 1 -
+/sjk.rar 1 -
+/.svn 1 -
+/class.api.php 1 www.google.com
+/wp-content/wp-ver.php 1 https://www.google.com
+/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%20(3).rar 1 -
+/rdweb/webclient 1 -
+/wp-content/themes/konzept/includes/uploadify/uploadify.css 1 -
+/d.rar 1 -
+/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%20(2).rar 1 -
+/resources/maintenance-calendar 1 https://achillesworkouts.com/resources/users
+/admin/login 1 -
+/wp-content/languages/index.php 1 -
+/resources/workouts 4 https://achillesworkouts.com/login
+/wp-admin/css/colors/ectoplasm/zmFM.php 1 -
+/wp-content/plugins/yyobang/mar.php 1 www.google.com
+/build/assets/SessionAttendanceMetric-eCJYPbVk.js 1 https://achillesworkouts.com/resources/workout-signups
+/web.rar 1 -
+/wp-json 1 -
+/wp-admin/includes/nav.php 1 -
+/wp-content/wp-term.php 2 https://www.google.com
+/RDWeb/Pages 4 -
+/geju.php 2 -
+/%E6%95%B4%E7%AB%99.rar 1 -
+/.env.backup 1 -
+/login/2019/wp-includes/wlwmanifest.xml 3 -
+/wp-includes/PHPMailer//zmFM.php 1 -
+/wp-content/IXR/index.php 1 -
+/wp-content/plugins/erinyani/baxa1.php 1 www.google.com
+/.env_backup 1 -
+/file/function.php 1 -
+/wp-content/plugins/index.php 1 -
+/RDWeb/webclient/index.html 1 -
+/dashboard/main 3 -
+/%E6%9C%8D%E5%8A%A1%E5%99%A8.rar 1 -
+/%E5%85%AD%E5%90%88.rar 1 -
+/mylegacybuildcom.rar 1 -
+/files 4 binance.com
+/resources/storage-locations/new 6 -
+/.env 8 -
+/v.rar 1 -
+/env 1 -
+/old.rar 1 -
+/wp-includes 1 -
+//shop/wp-includes/wlwmanifest.xml 2 -
+/apple-touch-icon.png 1 -
+/api/sonicos/auth 1 -
+/wp-includes/SimplePie/Content/Type/index.php 1 -
+/nova-vendor/sietse85/nova-button/workout-sessions/1060/check-in/-out 1 https://achillesworkouts.com/resources/workout-sessions
+/wp-admin/js/index.php 1 -
+//.env 1 http://mylegacybuild.com//.env
+/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9.rar 1 -
+/login/wp1/wp-includes/wlwmanifest.xml 3 -
+/wp-includes/js/jquery/jquery.js 5 http://mylegacybuild.com/wp-includes/js/jquery/jquery.js
+/bin.rar 1 -
+//site/wp-includes/wlwmanifest.xml 2 -
+/123.rar 1 -
+/wp-includes/certificates/zmFM.php 1 -
+/xxl.php 1 www.google.com
+/api/sonicos/tfa 1 -
+/rdweb 1 https://173.231.215.220/rdweb/
+/doc/function.php 1 -
+/.env.bak 1 -
+/wp-content/plugins/wp-ver.php 3 https://www.google.com
+/u.rar 1 -
+//wp1/wp-includes/wlwmanifest.xml 2 -
+/wp-includes/js/jcrop/Jcrop.php 1 -
+/resources/qr-codes 1 https://achillesworkouts.com/resources/users
+/RDWeb 1 -
+/ab2g 5 -
+/build/assets/_plugin-vue_export-helper-DllWBUSj.js 1 https://achillesworkouts.com/resources/workout-signups
+/n.rar 1 -
+/nova-vendor/sietse85/nova-button/workout-sessions/1059/check-in/-out 1 https://achillesworkouts.com/resources/workout-sessions
+/.env.old 1 -
+/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/Core32.php 1 -
+//2019/wp-includes/wlwmanifest.xml 2 -
+/ftp.rar 1 -
+/cdn-cgi/trace/cdn-cgi/trace 2 -
+/sslvpnLogin.html 1 -
+/weather/27 1 -
+/as/function 1 -
+/wp-content/plugins/wp-term.php 2 https://www.google.com
+/xmlrpc.php 6 https://mylegacybuild.com/xmlrpc.php
+/login/2020/wp-includes/wlwmanifest.xml 1 -
+/login/news/wp-includes/wlwmanifest.xml 3 -
+/website.rar 1 -
+/wp-content/plugins/erinyani/baxa1.php7 1 www.google.com
+/wp-head.php 1 www.google.com
+/login/shop/wp-includes/wlwmanifest.xml 3 -
+/c.rar 1 -
+/10.rar 1 -
+/vpn/index.html 2 -
+/login/site/wp-includes/wlwmanifest.xml 3 -
+/teorema505 5 -
+/l.rar 1 -
+/login/test/wp-includes/wlwmanifest.xml 3 -
+/404 11 https://achillesworkouts.com/dashboards/main
+/wp-content/plugins/seoxx/randkeyword.php 1 www.google.com
+/media/system/js/core.js 5 http://mylegacybuild.com/media/system/js/core.js
+/520.rar 1 -
+//wp/wp-includes/wlwmanifest.xml 2 -
+/shujuku.rar 1 -
+/password/reset 5 -
+/t4 4 -
+/z.rar 1 -
+/wp-includes/customize/zmFM.php 1 -
+/wangzhan.rar 1 -
+/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application 4 -
+/wp-term.php 2 https://www.google.com
+/x.rar 1 -
+/apple-touch-icon-precomposed.png 1 -
+/backup/.env 1 -
+/%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD.rar 1 -
+/_profiler/phpinfo 1 -
+/.env.save 1 -
+/wp-admin/network/index.php 2 -
+/s.rar 1 -
+/i.rar 1 -
+/Public/home/js/check.js 4 -
+/login/xmlrpc.php 3 -
+/111.rar 1 -
+//wp-includes/ID3/license.txt 2 -
+//xmlrpc.php 2 -
+/k.rar 1 -
+/wp-admin/css 4 binance.com
+/.well-known/ 4 binance.com
+/login/blog/wp-includes/wlwmanifest.xml 3 -
+/wp-content/plugins/WordPressCore/include.php 4 -
+/p.rar 1 -
+/%E5%A4%87%E4%BB%BD.rar 1 -
+/login/wp-includes/wlwmanifest.xml 3 -
+/g.rar 1 -
+/%E5%95%86%E5%9F%8E.rar 1 -
+/wp-content/plugins/press/wp-class.php 1 www.google.com
+/wp-includes/Requests/Auth/index.php 1 -
+/y.rar 1 -
+/wp-ver.php 1 https://www.google.com
+//blog/wp-includes/wlwmanifest.xml 2 -
+/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E4%BB%BD.rar 1 -
+/info.php 2 -
+/wp-includes/pomo/zmFM.php 1 -
+/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3.rar 1 -
+/alive.php 4 -
+/actuator/health 1 -
+/wz.rar 1 -
+/%E7%AB%99%E7%82%B9.rar 1 -
+/%E6%A8%A1%E6%9D%BF.rar 1 -
+/index.rar 1 -
+/wp-content/themes/finley/min.php 1 www.google.com
+/uploads 4 binance.com
+/wp-includes/sitemaps/providers/zmFM.php 1 -
+/wp-includes/theme-compat/zmFM.php 1 -
+/wp-admin 1 -
+/nova/dashboard/main 1 https://achillesworkouts.com/resources/component-types
+//mylegacybuild.com/login' 2 -
+/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6.rar 1 -
+/login/wp2/wp-includes/wlwmanifest.xml 3 -
+/%E6%95%B0%E6%8D%AE%E5%BA%93.rar 1 -
+//wordpress/wp-includes/wlwmanifest.xml 2 -
+/sql.rar 1 -
+//web/wp-includes/wlwmanifest.xml 2 -
+/%E7%BD%91%E7%AB%99.rar 1 -
+/login/sito/wp-includes/wlwmanifest.xml 3 -
+/f.rar 1 -
+/plugins/function.php 1 -
+/owa/auth/logon.aspx 3 -
+/ab2h 5 -
+/mah/function.php 1 -
+//2020/wp-includes/wlwmanifest.xml 2 -
+/%E7%BD%91%E7%AB%99%E5%A4%87%E4%BB%BD.rar 1 -
+/+CSCOE+/logon.html 3 -
+/login/2018/wp-includes/wlwmanifest.xml 2 -
+/wp-content/themes/digital-download/up.php 1 -
+/r.rar 1 -
+/sitemap.xml 7 -
+//cms/wp-includes/wlwmanifest.xml 2 -
+/b.rar 1 -
+/sonicui/7/login 1 -
+/wp-admin/images/index.php 2 -
+/o.rar 1 -
+/admin/function.php 1 -
+/login/wp/wp-includes/wlwmanifest.xml 3 -
+/1234.rar 1 -
+/backup.rar 1 -
+/remote/login 4 -
+/h.rar 1 -
+/nova-vendor/sietse85/nova-button/workout-sessions/1056/check-in/-out 1 https://achillesworkouts.com/resources/workout-sessions
+/auth1.html 2 -
+/.env.bkup 1 -
+/%E6%BA%90%E7%A0%81.rar 1 -
+/simple.php 1 www.google.com
+/wp.php 2 -
+/index/function.php 2 -
+/login/web/wp-includes/wlwmanifest.xml 3 -
+/j.rar 1 -
+/wp-admin/css/index.php 1 -
+/heh.php 1 www.google.com
+/baxa1.php7 1 www.google.com
+/static/admin/javascript/hetong.js 4 -
+/NewFile.php 1 www.google.com
+/wp-includes/fonts/about.php 1 -
+/fm1.php 1 www.google.com
+/images 4 binance.com
+/wp-content/upgrade/index.php 1 -
+/package.rar 1 -
+/.env1 1 -
+/sites/default/files 4 binance.com
+/resources/equipment-dashboard 1 https://achillesworkouts.com/resources/users
+/wp-admin/css/colors/blue/blue.php 1 www.google.com
+/nova-api/scripts/SessionAttendanceMetric-eCJYPbVk.js 1 https://achillesworkouts.com/nova-api/scripts/session-attendance
+/dana-na/auth/url_default/welcome.cgi 1 -
+/RDWeb/Pages/en-US/default.aspx 1 -
+/m.rar 1 -
+/nova-vendor/sietse85/nova-button/workout-sessions/1077/check-in/-out 2 https://achillesworkouts.com/resources/workout-sessions
+/ads.txt 7 -
+/global-protect/login.esp 3 -
+/e.rar 1 -
+/%E7%A8%8B%E5%BA%8F.rar 1 -
+/shell20211028.php 1 www.google.com
+/config/.env 1 -
+/auth.html 1 -
+/wp-content/plugins/view-more/ioxi.php 1 www.google.com
+/admin/controller/extension/extension 4 binance.com
+/%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6.rar 1 -
+/upload.rar 1 -
+/%E6%95%B0%E6%8D%AE.rar 1 -
+/openai 2 -
+/test.rar 1 -
+/wwwroot.rar 1 -
+/login/media/wp-includes/wlwmanifest.xml 2 -
+/register 6 -
+/login/website/wp-includes/wlwmanifest.xml 3 -
+//test/wp-includes/wlwmanifest.xml 2 -
+/sslvpn_logon.shtml 1 -
+/robots.txt 1 -
+/t.rar 1 -
+/wp-login.php 2 http://mylegacybuild.com/wp-login.php
+/resources/system-modules/23 1 https://achillesworkouts.com/login
+/.env~ 1 -
+//2021/wp-includes/wlwmanifest.xml 2 -
+/wp-links-opml.php 1 -
+/login/wordpress/wp-includes/wlwmanifest.xml 3 -
+/wp-content/plugins/about.php 2 -
+/logon/LogonPoint/index.html 2 -
+/feed 1 -
+/helper/notification 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 24
+74.101.209.101 8664 8794 661545904 20250210204945
+24.90.211.164 4133 4178 235009706 20250207222304
+207.38.131.182 1597 1607 111731929 20250210095846
+98.15.67.243 425 435 13553787 20250201154207
+71.46.253.99 87 92 7605833 20250204103431
+2600:4041:79f8:bd00:a52b:68d0:5ac2:5d1f 3 8 827367 20250205143543
+2600:1017:b8b1:e978:309a:e97:879e:781f 3 3 2186884 20250203102200
+159.89.119.211 1 1 729471 20250210224802
+44.202.76.121 1 1 728980 20250201042522
+91.201.115.174 1 1 728986 20250202125050
+167.99.14.39 1 1 729471 20250210092154
+64.227.122.16 1 1 728986 20250202095125
+93.159.230.28 1 1 729695 20250206020528
+54.84.151.124 1 1 729696 20250206161335
+80.85.246.140 1 1 729695 20250205143116
+178.128.47.244 1 1 729497 20250208074816
+212.118.43.65 1 1 729413 20250204164322
+167.71.66.240 1 1 728964 20250204103026
+71.6.134.234 1 1 12532 20250204015726
+2600:1f18:66cd:1a50:5fb5:c9b0:18ff:bdda 1 1 728964 20250203164548
+124.222.8.47 1 1 728988 20250201194619
+91.201.115.242 1 1 728986 20250201170521
+104.166.80.1 1 1 729496 20250208234054
+93.158.91.29 1 1 729453 20250204214129
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 10
+20250201 1279 1294 70635450 7
+20250202 1129 1149 76252466 5
+20250203 792 807 55450834 5
+20250204 2964 2994 215515323 10
+20250205 1638 1658 103108326 5
+20250206 211 221 12483672 4
+20250207 3541 3566 264448017 5
+20250208 85 85 7228447 3
+20250209 3158 3223 221882533 4
+20250210 132 137 17137615 5
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+30s-2mn 4
+5mn-15mn 3
+2mn-5mn 1
+0s-30s 21
+30mn-1h 4
+15mn-30mn 3
+1h+ 17
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 563
+/nova-api/nova-notifications 4271 217821 7 22
+/nova-api/workout-signups 1034 4720305 0 1
+/nova-api/workout-signups/cards 402 15376 0 0
+/nova-api/workout-signups/lenses 390 8580 0 0
+/nova-api/workout-signups/filters 374 89431465 0 0
+/nova-api/workout-signups/actions 367 86982 0 0
+/resources/workout-signups 358 248646258 3 0
+/nova-api/workout-sessions 200 1010232 0 0
+/nova-api/users 152 541030 0 0
+/nova-api/dashboards/cards/main/metrics/guides-growth 145 25902 0 0
+/nova-api/workout-sessions/actions 141 14915 0 0
+/nova-api/workout-sessions/cards 135 2970 0 0
+/nova-api/workout-sessions/filters 134 26020 0 0
+/nova-api/users/metrics/total-user-guides 132 19637 0 0
+/nova-api/workout-sessions/lenses 129 10484 0 0
+/nova-api/users/metrics/total-user-athlete 122 18133 0 0
+/nova-api/users/metrics/total-user-team-leader 122 17918 0 0
+/dashboards/main 115 82267536 1 0
+/nova-api/dashboards/main 114 51593 0 0
+/resources/workout-sessions 110 70282286 0 0
+/nova-api/dashboards/cards/main/metrics/athlete-growth 109 17750 0 0
+/nova-api/dashboards/cards/main/metrics/total-user-team-leader 99 14580 0 0
+/nova-api/scripts/nova-button 95 689605 0 0
+/nova-api/styles/nova-button 95 1995 0 0
+/resources/equipment/new 93 64394536 0 0
+/nova-api/weather-preferences 4 700 0 0
+/resources/equipment-conditions 1 364594 0 0
+/nova-api/equipment-conditions/cards 1 22 0 0
+/nova-api/users/5137 1 1588 0 0
+/nova-api/maintenance-logs/actions 1 98 0 0
+/nova-api/maintenance-requests/soft-deletes 1 40 0 0
+/nova-api/maintenance-requests/lenses 2 44 0 0
+/resources/weather-locations/12 3 1095375 0 0
+/nova-api/equipment/soft-deletes 2 80 0 0
+/nova-api/workout-sessions/lens/workout-session-users/filters 2 44 0 0
+/nova-api/workout-meeting-points/lenses 8 176 0 0
+/nova-api/workout-sessions/lens/session-within-3-hours/actions 2 196 0 0
+/nova-api/workout-sessions/associatable/workout 2 848 0 0
+/nova-api/languages 6 12590 0 0
+/nova-api/workout-signups/54192 1 1545 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/49219/check-in-users 1 22 0 0
+/resources/weather-locations/8 8 5493493 0 0
+/nova-api/workout-sessions/lens/guide-users/actions 42 4116 0 0
+/nova-api/workout-signups/metrics/total-signups 9 1353 0 0
+/resources/user-certifications 25 13521850 0 0
+/nova-api/weather-daily-datas 7 70024 0 0
+/nova-api/system-locations 4 12978 0 0
+/nova-api/equipment/associatable/status 19 5750 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/543/check-in-users 1 22 0 0
+/nova-api/manufacturers/filters 8 176 0 0
+/nova-api/system-categories/cards 15 330 0 0
+/nova-api/users/2 3 4857 0 0
+/resources/workout-sessions/lens/session-within-3-hours 1 365122 0 0
+/nova-api/equipment/cards 16 352 0 0
+/resources/system-locations/1 2 730178 0 0
+/nova-api/workout-signups/creation-fields 7 8167 0 0
+/nova-api/workout-sessions/action 10 1134 0 0
+/nova-api/weather-locations/12 3 4590 0 0
+/nova-api/weather-locations/8 8 12224 0 0
+/nova-api/users/lens/guide-users/count 11 354 0 0
+/resources/workout-sessions/lens/session-within-12-hours 16 10986446 0 0
+/resources/component-types 26 16078973 0 0
+/nova-api/weather-datas/282624 1 2733 0 0
+/nova-api/equipment-components/actions 18 1764 0 0
+/resources/workout-sessions/lens/workout-session-users 2 730230 0 0
+/nova-api/workout-sessions/lens/session-time-lens/actions 15 1470 0 0
+/nova-api/languages/cards 10 2008 0 0
+/nova-api/meeting-points/filters 23 506 0 0
+/nova-api/system-statuses/soft-deletes 65 2665 0 0
+/nova-api/events/actions 3 294 0 0
+/nova-api/users/25003 1 1624 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/899/check-in-users 1 22 0 0
+/nova-api/equipment/creation-fields 19 42307 0 0
+/nova-api/workout-sessions/lens/session-within-12-hours/action 2 182 0 0
+/resources/workout-signups/new 12 7684595 0 0
+/resources/system-modules/17 3 1093524 0 0
+/nova-api/weather-locations/metrics/active-weather-locations 30 4408 0 0
+/resources/component-types/41/edit 3 1460353 0 0
+/weather/1 4 1654996 0 0
+/nova-api/users/lens/guide-users/cards 11 242 0 0
+/nova-api/workout-sessions/lens/session-time-lens/count 9 279 0 0
+/resources/workout-sessions/541 1 365033 0 0
+/nova-api/workout-sessions/lens/session-time-lens 9 3437 0 0
+/resources/system-categories/139 2 1095922 0 0
+/nova-api/equipment/lenses 16 352 0 0
+/nova-api/languages/actions 10 980 0 0
+/nova-api/system-modules/soft-deletes 3 120 0 0
+/nova-api/workout-sessions/associatable/location 3 855 0 0
+/nova-api/equipment-components/cards 12 264 0 0
+/resources/system-statuses/new 3 1463070 0 0
+/nova-api/certification-types/lenses 1 22 0 0
+/resources/users/11 1 364518 0 0
+/nova-api/users/filters 70 17150 0 0
+/nova-api/users/lens/team-lead-users/count 1 33 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91468/cancel-check-in 1 22 0 0
+/nova-api/dashboards/cards/main/metrics/user-distribution 8 960 0 0
+/nova-api/maintenance-logs/associatable/maintenanceRequest 1 73 0 0
+/nova-api/scripts/checkin-polling 9 1262 0 0
+/nova-api/user-certifications/associatable/user 1 11287 0 0
+/nova-api/system-categories/139 3 3672 0 0
+/nova-api/certifications/lenses 3 66 0 0
+/resources/workout-signups/79184 1 732722 0 0
+/nova-api/user-certifications/filters 44 2557 0 0
+/resources/language-proficiencies/21 1 364510 0 0
+/nova-api/maintenance-logs/associatable/performedBy 1 683 0 0
+/nova-api/users/cards 88 25096 0 0
+/nova-api/workout-sessions/lens/guide-users/cards 21 462 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/1072/check-in 1 22 0 0
+/nova-api/language-proficiencies/cards 24 2068 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/902/check-in-users 1 22 0 0
+/resources/system-modules/23 7 4760839 0 0
+/nova-api/workout-equipment-assignments/filters 14 308 0 0
+/nova-api/workout-specific-details/63810 1 1586 0 0
+/resources/workout-meeting-points 8 2918773 0 0
+/nova-api/equipment-conditions/filters 1 22 0 0
+/nova-api/component-types/actions 47 4606 0 0
+/nova-api/weather-locations/cards 88 26200 0 0
+/nova-api/workout-equipment-assignments/cards 5 110 0 0
+/resources/workout-signups/79675 1 365093 0 0
+/nova-api/workout-specific-details/associatable/distanceUnit 2 4559 0 0
+/resources/system-modules/17/edit 1 364538 0 0
+/nova-api/workout-specific-details/97134 2 2906 0 0
+/nova-api/workout-sessions/creation-fields 1 1448 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91462/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91454/check-in 1 22 0 0
+/nova-api/equipment/associatable/assignedUser 1 683 0 0
+/nova-api/workout-equipment-assignments/actions 14 1372 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91469/check-out 2 44 0 0
+/resources/certifications 3 1092822 0 0
+/nova-api/weather-preferences/creation-fields 2 1922 0 0
+/nova-api/scripts/achilles-filter 1 214 0 0
+/nova-api/equipment-maintenance-priorities/lenses 2 44 0 0
+/nova-api/maintenance-logs/cards 1 22 0 0
+/nova-api/workout-sessions/lens/session-with-6-hours/count 1 31 0 0
+/nova-api/scripts/custom-metrics 8 1503 0 0
+/nova-api/languages/filters 6 1780 0 0
+/nova-api/workouts/actions 26 2548 0 0
+/nova-api/user-certifications/creation-fields 8 11640 0 0
+/nova-api/certification-types/actions 1 98 0 1
+/nova-api/weather-locations/action 4 398 0 0
+/nova-api/equipment-components/relate-authorization 7 273 0 0
+/nova-api/system-modules/17 4 3465 0 0
+/nova-api/workout-signups/95709 1 2374 0 0
+/nova-api/weather-datas 15 154195 0 0
+/nova-api/languages/21/update-fields 11 9415 0 0
+/resources/weather-daily-datas 7 2922815 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91456/check-in 1 22 0 0
+/resources/storage-locations/new 10 6212238 1 0
+/resources/maintenance-logs 1 364594 0 0
+/nova-api/certifications/soft-deletes 8 328 0 0
+/nova-api/language-proficiencies/associatable/language 14 17474 0 0
+/nova-api/workout-signups/associatable/status 42 10666 0 0
+/nova-api/system-categories/1 1 1209 0 0
+/resources/equipment-maintenance-priorities 2 729435 0 0
+/nova-api/workout-specific-details/79675 1 1451 0 0
+/resources/component-types/91/edit 2 729082 0 0
+/nova-api/equipment/associatable/manufacturer 19 5662 0 0
+/nova-api/system-statuses/associatable/parent 3 2608 0 0
+/nova-api/user-certifications/cards 26 572 0 0
+/nova-api/languages/metrics/total-languages 12 1764 0 0
+/resources/weather-locations/3 1 365009 0 0
+/nova-api/system-statuses/associatable/systemModule 7 681 0 0
+/nova-api/system-statuses/actions 24 2352 0 0
+/nova-api/system-categories/associatable/systemModule 4 4149 0 0
+/nova-api/language-proficiencies/associatable/user 2 420 0 0
+/resources/workout-sessions/1077 3 1462518 0 0
+/nova-api/dashboards/cards/main/metrics/user-growth 38 5434 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/1077/signed-up-users 4 88 0 0
+/nova-api/weather-daily-datas/96 1 2386 0 0
+/nova-api/workout-specific-details/associatable/workoutSignup 2 175 0 0
+/ 1 12532 1 1
+/nova-api/user-certifications 62 132733 0 0
+/nova-api/workout-signups/metrics/signup-trend 7 1389 0 0
+/nova-api/workout-specific-details/97134/update-fields 1 1468 0 0
+/resources/workout-sessions/lens/session-with-6-hours 1 365120 0 0
+/nova-api/component-types/41/update-fields 3 3202 0 0
+/nova-api/events/lenses 1 22 0 0
+/nova-api/workout-specific-details/79184 1 1454 0 0
+/nova-api/weather-preferences/lenses 4 88 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91463/check-in 2 44 0 0
+/nova-api/component-types 47 76981 0 0
+/nova-api/weather-locations/metrics/total-weather-forecasts-stored 33 5003 0 1
+/nova-api/storage-locations/relate-authorization 2 78 0 0
+/nova-api/storage-locations/lenses 5 110 0 0
+/nova-api/workout-sessions/lens/session-with-6-hours 1 177 0 0
+/nova-api/weather-locations/1 1 1534 0 0
+/nova-api/maintenance-logs/associatable/equipment 3 213 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91457/check-out 1 22 0 0
+/resources/system-categories/97 1 364882 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91457/check-in 1 22 0 0
+/nova-api/system-locations/lenses 3 66 0 0
+/resources/users/5137 1 364524 0 0
+/nova-api/maintenance-logs/filters 1 22 0 0
+/nova-api/system-categories/97 1 1355 0 0
+/nova-api/certifications 3 8991 0 0
+/resources/workout-specific-details/63810 1 364869 0 0
+/nova-api/workout-sessions/lens/session-within-3-hours/count 1 31 0 0
+/nova-api/language-proficiencies/lenses 20 440 0 0
+/resources/language-proficiencies 18 8764120 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91458/cancel-check-in 1 22 0 0
+/nova-api/maintenance-logs/creation-fields 1 1534 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91468/check-in 2 44 0 0
+/resources/component-types/41 3 1460253 0 0
+/nova-api/equipment-maintenance-priorities 2 2184 0 0
+/nova-api/equipment-conditions 1 1010 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91468/check-out 1 22 0 0
+/nova-api/workout-meeting-points/cards 8 176 0 0
+/nova-api/weather-locations/metrics/locations-with-weather-data 34 4964 0 0
+/nova-api/events/associatable/createdBy 2 1366 0 0
+/resources/system-categories 7 4019051 0 0
+/nova-api/workout-specific-details/95709 1 1467 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91464/check-in 1 22 0 0
+/nova-api/languages/soft-deletes 13 533 0 0
+/resources/users 58 32883835 1 0
+/resources/weather-datas/2304 1 365113 0 0
+/nova-api/workout-specific-details/lenses 16 352 0 0
+/nova-api/weather-datas/filters 32 704 0 0
+/resources/events 1 364591 0 0
+/nova-api/system-locations/1 2 5202 0 0
+/nova-api/workout-meeting-points 8 1447 0 0
+/nova-api/users/1 5 8225 0 0
+/nova-api/equipment/actions 16 1568 0 0
+/nova-api/workout-sessions/soft-deletes 15 600 0 0
+/nova-api/users/23597 1 1619 0 0
+/nova-api/system-categories/relate-authorization 18 702 0 0
+/resources/weather-preferences/new 7 4393270 0 0
+/resources/users/52055 2 1096147 0 0
+/resources/user-certifications/new 8 4383024 0 0
+/resources/workouts 21 11328373 0 0
+/nova-api/system-locations/actions 5 490 0 0
+/nova-api/certification-types/filters 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/3/check-in-users 1 22 0 0
+/nova-api/workout-signups/97159 2 5228 0 0
+/nova-api/workout-specific-details/97159 2 2918 0 0
+/nova-api/component-types/cards 40 880 0 0
+/resources/meeting-points 14 6942594 0 0
+/resources/system-categories/100 1 364516 0 0
+/nova-api/workouts/associatable/location 2 146 0 0
+/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kjpxzhggvfmv2w.woff2 1 42844 0 0
+/nova-api/user-certifications/relate-authorization 18 702 0 0
+/nova-api/storage-locations/actions 7 686 0 0
+/nova-api/languages/associatable/category 10 4857 0 0
+/nova-api/language-proficiencies/3/update-fields 2 1630 0 0
+/resources/system-modules/97 4 2562982 0 0
+/random.php 1 524585 0 0
+/nova-api/workout-sessions/lens/session-with-6-hours/actions 2 196 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/544/check-in-users2 1 22 0 0
+/nova-api/manufacturers 8 11160 0 0
+/nova-api/workout-signups/97134/update-fields 1 1457 0 0
+/nova-api/weather-daily-datas/cards 8 176 0 0
+/nova-api/dashboards/cards/main/metrics/guide-vs-athlete-distribution 83 9993 0 0
+/resources/meeting-points/new 41 28165532 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/79675/check-in-users 2 44 0 0
+/nova-api/workout-sessions/lens/session-within-12-hours 15 31855 0 0
+/nova-api/meeting-points/cards 15 330 0 0
+/nova-api/languages/21 4 4530 0 0
+/nova-api/workout-specific-details/3540 1 1440 0 0
+/nova-api/workout-specific-details/associatable/sportCategory 2 994 0 0
+/nova-api/scripts/social-login 14 531280 0 0
+/nova-api/storage-locations 7 1239 0 0
+/nova-api/dashboards/cards/main/metrics/important-links 2 591 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91452/check-in 1 22 0 0
+/nova-api/users/field/languageProficiency 2 822 0 0
+/nova-api/workout-sessions/lens/session-time-lens/cards 8 176 0 0
+/nova-api/maintenance-logs/lenses 1 22 0 0
+/nova-api/users/62 1 1645 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/1056/check-in-users 1 22 0 0
+/nova-api/workout-sessions/relate-authorization 13 507 0 0
+/resources/users/lens/team-lead-users 1 364624 0 0
+/nova-api/workout-specific-details/filters 16 352 0 0
+/nova-api/dashboards/cards/main/metrics/total-user-guides 90 13352 0 0
+/nova-api/equipment-maintenance-priorities/cards 2 44 0 0
+/nova-api/certifications/cards 3 66 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91456/cancel-check-in 1 22 0 0
+/resources/workout-signups/91303 1 732482 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91466/check-in 1 22 0 0
+/resources/equipment 16 6203097 0 0
+/nova-api/storage-locations/filters 7 154 0 0
+/nova-api/workout-sessions/lens/session-within-12-hours/actions 33 3234 0 0
+/resources/workout-signups/91469 1 365020 0 0
+/nova-api/weather-preferences/actions 4 392 0 0
+/nova-api/workout-specific-details/54192 1 1450 0 0
+/resources/workout-sessions/3 1 365036 0 0
+/resources/users/62 1 364633 0 0
+/nova-api/equipment/filters 16 853 0 0
+/nova-api/meeting-points/soft-deletes 7 280 0 0
+/nova-api/workout-specific-details/creation-fields 8 11092 0 0
+/nova-api/system-statuses/lenses 8 176 0 0
+/nova-api/meeting-points/creation-fields 7 7079 0 0
+/weather/27 1 401059 0 0
+/nova-api/system-statuses/cards 9 198 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95709/check-in 2 44 0 0
+/nova-api/users/61 1 1584 0 0
+/resources/system-statuses 1 731196 0 0
+/nova-api/dashboards/cards/main/metrics/expiring-certifications 7 1185 0 0
+/resources/users/lens/guide-users 7 2552836 0 0
+/nova-api/events/associatable/location 2 146 0 0
+/resources/equipment-components 12 5109251 0 0
+/resources/system-categories/1 1 364508 0 0
+/nova-api/system-modules 5 8561 0 0
+/nova-api/workout-signups/soft-deletes 3 120 0 0
+/nova-api/system-modules/23 7 10094 0 0
+/nova-api/users/soft-deletes 53 2173 0 0
+/nova-api/workout-sessions/lens/workout-session-users/actions 4 392 0 0
+/resources/languages/21 3 1093563 0 0
+/resources/users/4093 1 364632 0 0
+/nova-api/workout-sessions/lens/session-within-12-hours/count 15 465 0 0
+/nova-api/system-modules/filters 6 132 0 0
+/nova-api/certifications/associatable/certificationType 3 918 0 0
+/nova-api/language-proficiencies/associatable/proficiencyStatus 12 4016 0 0
+/nova-api/language-proficiencies/actions 47 4606 0 0
+/nova-api/system-categories/filters 27 2894 0 0
+/nova-api/weather-locations/3 1 1550 0 0
+/nova-api/system-modules/actions 22 2156 0 0
+/nova-api/equipment/associatable/category 21 20391 0 0
+/nova-api/language-proficiencies/filters 42 15804 0 0
+/nova-api/workout-meeting-points/creation-fields 7 5528 0 0
+/nova-api/workout-sessions/986 1 2362 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91460/check-in 1 22 0 0
+/nova-api/workout-sessions/lens/workout-session-users/cards 2 44 0 0
+/resources/equipment-components/new 8 4385042 0 0
+/nova-api/workout-sessions/lens/session-within-12-hours/filters 15 330 0 0
+/nova-api/workout-meeting-points/actions 8 784 0 0
+/resources/languages/21/edit 11 6943778 0 0
+/resources/language-proficiencies/3 3 1460252 0 0
+/nova-api/dashboards/cards/main/metrics/user-type-distribution 79 15932 0 0
+/nova-api/manufacturers/actions 8 784 0 0
+/nova-api/system-chapters/soft-deletes 7 287 0 0
+/nova-api/system-modules/97 6 8006 0 0
+/nova-api/events/creation-fields 2 2296 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/1077/check-in-out 1 22 0 0
+/nova-api/certifications/actions 3 294 0 0
+/nova-api/weather-locations 54 251753 0 0
+/nova-api/workout-sessions/associatable/status 1 145 0 0
+/nova-api/users/lens/team-lead-users/actions 2 196 0 0
+/resources/weather-locations/new 1 365120 0 0
+/nova-api/meeting-points 13 2302 0 0
+/nova-api/component-types/lenses 32 704 0 0
+/nova-api/component-types/associatable/category 14 6450 0 0
+/resources/workout-specific-details/new 1 364871 0 0
+/nova-api/meeting-points/associatable/type 7 3749 0 0
+/resources/workouts/105 2 1097120 0 0
+/resources/certifications/new 3 1826959 0 0
+/resources/languages 5 2555834 0 0
+/nova-api/system-modules/lenses 7 154 0 0
+/nova-api/weather-preferences/cards 4 88 0 0
+/resources/users/25003 1 364631 0 0
+/resources/users/3486 1 364632 0 0
+/resources/workout-signups/54192 1 364867 0 0
+/resources/users/2 3 1460873 0 0
+/nova-api/workouts/105 2 4456 0 0
+/nova-api/system-categories 24 35701 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91450/check-in 1 22 0 0
+/nova-api/meeting-points/relate-authorization 8 312 0 0
+/nova-api/storage-locations/cards 5 110 0 0
+/nova-api/workout-meeting-points/filters 8 176 0 0
+/nova-api/system-statuses/creation-fields 3 3367 0 0
+/resources/users/1 4 1824864 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/899/check-in-users2 1 22 0 0
+/nova-api/system-location-accesses/actions 2 196 0 0
+/nova-api/component-types/filters 39 6304 0 0
+/nova-api/manufacturers/lenses 8 176 0 0
+/login 88 43170624 38 19
+/nova-vendor/sietse85/nova-button/workout-signups/91465/check-in 2 44 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91459/check-in 1 22 0 0
+/nova-api/storage-locations/soft-deletes 19 760 0 0
+/nova-api/system-categories/actions 33 3234 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91458/check-in 1 22 0 0
+/nova-api/system-statuses/30 1 1506 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/898/check-in-users 1 22 0 0
+/nova-api/workout-specific-details/91303 1 1468 0 0
+/nova-api/workout-sessions/lens/session-time-lens/filters 7 2047 0 0
+/nova-api/users/actions 88 8624 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91467/check-out 2 44 0 0
+/resources/storage-locations 3 1093562 0 0
+/nova-api/language-proficiencies/21 1 941 0 0
+/resources/workout-sessions/986 1 732506 0 0
+/resources/weather-locations/1 1 365005 0 0
+/nova-api/workout-specific-details/actions 27 2646 0 0
+/nova-api/component-types/relate-authorization 7 273 0 0
+/resources/workout-signups/97134/edit 1 365048 0 0
+/nova-api/workouts/creation-fields 2 2905 0 0
+/nova-api/language-proficiencies/associatable/communicationMode 10 4229 0 0
+/nova-api/certifications/associatable/systemStatus 3 304 0 0
+/nova-api/workout-sessions/associatable/cancelledBy 1 75996 0 0
+/nova-api/weather-daily-datas/lenses 7 154 0 0
+/nova-api/system-locations/filters 3 66 0 0
+/nova-api/workout-signups/97134 2 5064 0 0
+/nova-api/user-certifications/actions 44 4312 0 0
+/resources/users/23597 1 364630 0 0
+/resources/language-proficiencies/3/edit 2 1095872 0 0
+/nova-api/equipment-conditions/lenses 1 22 0 0
+/nova-api/system-modules/cards 23 506 0 0
+/nova-api/system-modules/17/update-fields 1 838 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91469/cancel-check-in 3 66 0 0
+/nova-api/equipment-components 18 3240 0 0
+/nova-api/workout-specific-details/associatable/paceUnit 2 4559 0 0
+/nova-api/component-types/91 4 6372 0 0
+/nova-api/equipment-maintenance-priorities/actions 2 196 0 0
+/resources/events/new 2 1096283 0 0
+/nova-api/users/52055 2 3241 0 0
+/nova-api/system-location-accesses/relate-authorization 2 78 0 0
+/nova-api/dashboards/cards/main/metrics/total-language-proficiencies 6 907 0 0
+/resources/weather-locations/26 1 365012 0 0
+/resources/workout-equipment-assignments/new 2 1096926 0 0
+/nova-api/weather-locations/actions 74 24076 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91465/cancel-check-in 1 22 0 0
+/nova-api/meeting-points/associatable/chapter 7 5138 0 0
+/nova-api/weather-locations/metrics/next-available-forecast 30 4975 0 0
+/nova-api/workouts/filters 24 528 0 0
+/resources/weather-datas/282624 1 364998 0 0
+/nova-api/events/relate-authorization 2 78 0 0
+/nova-api/workout-specific-details/cards 27 594 0 0
+/nova-api/system-modules/field/systemStatuses 3 1200 0 0
+/nova-api/equipment-components/soft-deletes 1 40 0 0
+/nova-api/maintenance-logs 1 177 0 0
+/nova-api/weather-locations/26 1 1544 0 0
+/nova-api/workout-signups/associatable/workoutSession 31 155238 0 1
+/nova-api/events/cards 1 22 0 0
+/nova-api/user-certifications/associatable/systemStatus 9 912 0 0
+/nova-api/workout-signups/associatable/user 7 531972 0 0
+/nova-api/weather-locations/27 3 4599 0 0
+/nova-api/users/lenses 70 7700 0 0
+/nova-api/language-proficiencies 49 57593 0 2
+/resources/workout-meeting-points/new 7 3655830 0 0
+/nova-api/equipment/associatable/equipmentCondition 19 2641 0 0
+/nova-api/weather-locations/creation-fields 1 1145 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91463/cancel-check-in 1 22 0 0
+/nova-api/weather-preferences/filters 4 806 0 0
+/nova-api/workout-equipment-assignments 6 1091 0 0
+/nova-api/users/lens/team-lead-users/filters 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91461/check-in 1 22 0 0
+/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbznubdlel2g.woff2 10 334572 0 1
+/resources/weather-locations 64 43035309 0 0
+/nova-api/equipment-maintenance-priorities/filters 2 44 0 0
+/resources/workout-signups/95709 1 365020 0 0
+/resources/workout-signups/97159 1 365020 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91466/check-out 1 22 0 0
+/nova-api/manufacturers/cards 8 176 0 0
+/nova-api/certifications/creation-fields 3 3249 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91469/check-in 3 66 0 0
+/nova-api/system-categories/lenses 9 198 0 0
+/nova-api/workout-signups/79675 1 2553 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/12/check-in-users 1 22 0 0
+/nova-api/weather-locations/lenses 73 1606 0 0
+/nova-api/workouts 11 45080 0 0
+/nova-api/weather-locations/filters 53 1166 0 0
+/nova-api/workout-signups/91303 1 2533 0 0
+/resources/certification-types 1 363847 0 0
+/nova-api/weather-datas/2304 1 2724 0 0
+/nova-api/dashboards/cards/main/metrics/total-user-athlete 86 12608 0 1
+/nova-api/workout-sessions/lens/session-within-3-hours 1 176 0 0
+/nova-api/system-statuses/relate-authorization 15 585 0 0
+/resources/component-types/91 4 2191484 0 0
+/nova-api/system-statuses/filters 23 6432 0 0
+/nova-api/weather-locations/metrics/forecasts-per-day 61 8592 0 0
+/nova-api/system-categories/100 1 1314 0 0
+/nova-api/workout-meeting-points/associatable/meetingPoint 6 438 0 0
+/nova-api/system-location-accesses/filters 2 44 0 0
+/nova-api/workout-signups/relate-authorization 9 351 0 0
+/nova-api/workout-equipment-assignments/associatable/equipment 1 73 0 0
+/nova-api/workout-sessions/541 1 1983 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91448/check-in 1 22 0 0
+/nova-api/certification-types/soft-deletes 3 123 0 0
+/nova-api/workout-equipment-assignments/relate-authorization 10 390 0 0
+/nova-api/workouts/soft-deletes 1 40 0 0
+/nova-api/events/filters 3 66 0 0
+/nova-api/users/3486 1 1650 0 0
+/nova-api/system-categories/soft-deletes 57 2337 0 0
+/nova-api/equipment/relate-authorization 2 78 0 0
+/nova-api/users/lens/team-lead-users 1 1840 0 0
+/nova-api/certifications/filters 3 1071 0 0
+/resources/manufacturers 8 2916214 0 0
+/nova-api/weather-datas/cards 41 902 0 0
+/resources/workout-specific-details 15 7308632 0 0
+/nova-api/workout-sessions/lens/guide-users 14 27225 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/1077/check-in 1 22 0 0
+/nova-api/manufacturers/soft-deletes 19 760 0 0
+/nova-api/user-certifications/lenses 26 572 0 0
+/resources/system-locations 1 365055 0 0
+/nova-api/meeting-points/lenses 15 330 0 0
+/resources/workouts/new 4 2193693 0 0
+/nova-api/workout-sessions/1077 3 6746 0 0
+/nova-api/weather-daily-datas/filters 7 154 0 0
+/nova-api/workout-signups/79184 1 2486 0 0
+/nova-api/weather-datas/lenses 39 858 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91464/check-out 1 22 0 0
+/nova-api/workout-equipment-assignments/associatable/assignmentType 1 175 0 0
+/nova-api/workouts/associatable/activityType 2 994 0 0
+/nova-api/workout-sessions/lens/session-within-3-hours/filters 1 22 0 0
+/nova-api/equipment-components/filters 18 396 0 0
+/nova-api/users/11 1 1620 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91467/check-in 2 44 0 0
+/nova-api/workout-meeting-points/associatable/workoutSession 6 23968 0 0
+/nova-api/users/lens/team-lead-users/cards 1 22 0 0
+/nova-api/users/lens/guide-users/filters 11 242 0 0
+/resources/users/61 1 731559 0 0
+/nova-api/component-types/41 3 4751 0 0
+/nova-api/language-proficiencies/relate-authorization 22 858 0 0
+/nova-api/certification-types/cards 1 22 0 0
+/resources/weather-daily-datas/96 1 365108 0 0
+/resources/workout-signups/91468 1 365020 0 0
+/nova-api/equipment/associatable/location 19 7111 0 0
+/nova-api/system-locations/cards 5 110 0 0
+/nova-api/equipment/associatable/storageLocation 19 1387 0 0
+/nova-api/workout-equipment-assignments/associatable/workoutSignup 1 73 0 0
+/nova-api/equipment 16 2736 0 0
+/nova-api/workout-signups/3542 1 1416 0 0
+/nova-api/workout-sessions/lens/guide-users/count 14 446 0 0
+/nova-api/certification-types 1 1369 0 0
+/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kj3xzhggvfm.woff2 69 2094792 0 1
+/resources/workout-sessions/new 5 2925502 0 0
+/nova-api/workout-specific-details 16 66860 0 0
+/nova-api/system-locations/soft-deletes 24 960 0 1
+/nova-api/users/4093 1 1649 0 0
+/resources/weather-preferences 4 1460204 0 0
+/nova-api/weather-datas/actions 41 4018 0 1
+/nova-api/scripts/custom-search 50 19370 0 0
+/nova-api/users/lens/guide-users 11 20036 0 0
+/nova-api/weather-daily-datas/actions 8 784 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/91467/cancel-check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95709/check-out 3 66 0 0
+/nova-api/workout-sessions/lens/session-with-6-hours/cards 1 22 0 0
+/resources/workout-equipment-assignments 5 2191312 0 0
+/resources/weather-locations/27 3 1095378 0 0
+/nova-api/language-proficiencies/creation-fields 11 9434 0 0
+/resources/workout-signups/3542 1 364865 0 0
+/nova-api/languages/lenses 6 132 0 0
+/nova-api/scripts/session-attendance 1 14788 0 0
+/resources/maintenance-requests 2 729086 0 0
+/nova-api/workout-sessions/lens/session-within-3-hours/cards 1 22 0 0
+/nova-api/workout-sessions/lens/session-within-12-hours/cards 18 396 0 0
+/nova-api/equipment-components/lenses 12 264 0 0
+/nova-api/maintenance-requests/cards 2 44 0 0
+/nova-api/workout-sessions/lens/guide-users/filters 21 462 0 0
+/nova-api/equipment-conditions/soft-deletes 19 760 0 0
+/nova-api/maintenance-logs/associatable/component 1 73 0 0
+/nova-api/users/lens/guide-users/actions 22 2156 0 0
+/nova-api/workout-specific-details/associatable/speedUnit 2 4559 0 0
+/nova-api/workout-sessions/3 1 2369 0 0
+/resources/weather-datas 38 23791796 1 0
+/nova-api/workouts/cards 23 506 0 0
+/resources/workout-signups/97134 1 365020 0 0
+/nova-api/equipment-conditions/actions 1 98 0 0
+/nova-api/meeting-points/actions 23 2254 0 0
+/resources/system-statuses/30 1 365022 0 0
+/resources/workout-sessions/lens/session-time-lens 6 3660622 0 0
+/nova-api/events 1 169 0 0
+/nova-api/events/associatable/status 2 4368 0 0
+/resources/system-modules 6 4028051 0 0
+/resources/maintenance-logs/new 1 364625 0 0
+/nova-api/workout-equipment-assignments/lenses 5 110 0 0
+/nova-api/weather-locations/metrics/last-weather-update 29 4796 0 0
+/nova-api/user-certifications/associatable/certification 12 8088 0 0
+/nova-api/workout-sessions/lens/session-with-6-hours/filters 1 418 0 0
+/resources/workout-sessions/lens/guide-users 21 13179732 0 0
+/nova-api/system-statuses 16 18620 0 0
+/nova-api/language-proficiencies/3 4 2953 0 0
+/nova-api/component-types/91/update-fields 2 2170 0 0
+/nova-api/workouts/relate-authorization 11 429 0 0
+/nova-api/workouts/lenses 21 462 0 0
+/resources/language-proficiencies/new 11 6943538 0 0
+/nova-api/workout-equipment-assignments/creation-fields 1 921 0 0
+END_SIDER
+
+# Payload Range - Payload Frequency
+BEGIN_FILESIZE 7
+100-500 3268
+500-1K 163
+1K-2K 877
+5K+ 2898
+2K-5K 1261
+0-44 5066
+44-100 5372
+END_FILESIZE

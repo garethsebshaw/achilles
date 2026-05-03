@@ -1,0 +1,977 @@
+AWSTATS DATA FILE 7.9 (build 20230108)
+# If you remove this file, all statistics for date 202502 will be lost/reset.
+# Last config file used to build this data file was /home/achillesworkouts/tmp/awstats/awstats.achillesworkouts.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2059                
+POS_TIME 2737                
+POS_VISITOR 18154               
+POS_DAY 20707               
+POS_DOMAIN 3524                
+POS_LOGIN 3906                
+POS_ROBOT 4061                
+POS_WORMS 4383                
+POS_EMAILSENDER 4514                
+POS_EMAILRECEIVER 4657                
+POS_SESSION 21027               
+POS_FILESIZE 31796               
+POS_SIDER 21233               
+POS_FILETYPES 4792                
+POS_DOWNLOADS 4955                
+POS_OS 5003                
+POS_BROWSER 5178                
+POS_SCREENSIZE 5692                
+POS_UNKNOWNREFERER 5766                
+POS_UNKNOWNREFERERBROWSER 5930                
+POS_ORIGIN 6012                
+POS_SEREFERRALS 6150                
+POS_PAGEREFS 6294                
+POS_SEARCHWORDS 6468                
+POS_KEYWORDS 6620                
+POS_MISC 2400                
+POS_ERRORS 6679                
+POS_CLUSTER 3762                
+POS_SIDER_404 6877                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20250210224801 21 3801 6503286069142
+FirstTime 20250201001224
+LastTime 20250210224800
+LastUpdate 20250211071837 21 0 21 0 0
+TotalVisits 68                  
+TotalUnique 52                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 52                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+AddToFavourites 0 11 0
+TotalMisc 0 0 0
+RealPlayerSupport 0 0 0
+DirectorSupport 0 0 0
+JavaEnabled 0 0 0
+PDFSupport 0 0 0
+FlashSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+JavascriptDisabled 0 0 0
+QuickTimeSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 19 24 7646499 13 17 9692
+1 20 20 745587 5 5 122441
+2 35 36 6909399 41 46 145591
+3 27 28 2565899 20 20 77699
+4 46 51 4444092 5 5 1029
+5 0 0 0 5 8 67479
+6 0 0 0 25 26 213631
+7 1 1 729493 2 4 2284
+8 224 232 18281399 22 29 6458333
+9 49 54 8645947 258 262 576662
+10 4 5 2190531 25 26 158858
+11 91 91 5510118 12 18 128135
+12 5 6 3646285 36 37 1143987
+13 6 11 2550298 7 7 123672
+14 1 1 729202 31 40 4353419
+15 86 94 14598556 16 60 1548285
+16 70 75 11176836 45 89 1007603
+17 202 207 9278330 7 8 744257
+18 2 2 1458961 3 7 6648
+19 61 63 5136759 12 14 1526683
+20 298 299 17004409 8 13 13266
+21 83 88 8056286 6 8 65857
+22 2 2 1458428 4 9 8932
+23 1 1 729493 27 28 100443
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 11
+us 682 706 65767829
+ip 628 657 47426258
+cn 8 8 5833140
+gb 6 6 4376690
+cl 2 7 4983133
+se 2 2 1459184
+gr 1 1 729493
+ru 1 1 729694
+eu 1 1 728960
+jp 1 1 728958
+ca 1 1 729468
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 5
+Googlebot/ 36 11423820 20250210192529 18
+unknown 6 96 20250209004649 6
+no_user_agent 2 1459388 20250205123849 0
+facebookexternalhit/ 2 1459184 20250208164527 0
+DotBot/ 1 24 20250204203854 1
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 5
+Unknown 1308 109732374 0 0
+woff2 22 392768 0 0
+js 39 22048652 0 0
+css 19 1318160 0 0
+php 3 853 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 8
+ios_iphone 1352 1303
+macosx15 1 1
+macosx13 1 1
+winxp 1 1
+Unknown 6 6
+androidnougat 1 1
+win10 16 16
+linux 13 4
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 23
+firefox123 1 1
+w3m 1 1
+safari13.0.3 9 9
+chrome87.0.4280.141 1 1
+safari17.3.1 1 1
+chrome133.0.6943.16 7 2
+chrome129.0.0.0 1 1
+chrome78.0.3904.108 4 4
+chrome114.0.0.0 1 1
+chrome106.0.0.0 1 1
+chrome58.0.3029.110 1 1
+chrome130.0.0.0 1 1
+chrome69.0.3497.100 1 1
+chrome100.0.4896.75 1 1
+chrome125.0.0.0 1 1
+safari18.1.1 1342 1293
+msie6.0 1 1
+chrome60.0.3112.107 1 1
+chrome94.0.4606.81 6 2
+chrome119.0.0.0 1 1
+chrome80.0.3987.149 2 2
+chrome91.0.4472.114 1 1
+mozilla 5 5
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 2
+w3m/0.5.3_git20230121 20250208184736
+Mozilla/5.0_(compatible) 20250210224800
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 55 55
+From1 1 1
+From2 0 0
+From3 1 1
+From4 1276 1334
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 1
+https://www.quora.com 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 10
+405 3 168494
+302 83 16998
+401 24 1680
+404 544 1854335
+500 37 1475200
+504 1 0
+301 28 7099
+403 2 733538
+419 5 5030
+204 1 0
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 422
+/wp-admin/network/admin.php 1 -
+/plugins.php 1 -
+/class.api.php 1 -
+/server/php 1 -
+/plugin.php 1 -
+/login/2019/wp-includes/wlwmanifest.xml 5 -
+/old/.env 1 -
+/scripts/app.js 1 -
+/wp-admin/classwithtostring.php 1 -
+/wp-includes/assets/index.php 1 -
+/assets/main.js 1 -
+/config/config.js 1 -
+/wp-content/classwithtostring.php 1 -
+/js/script.js 1 -
+/xt/index.php 1 -
+/admin/kcfinder/upload.php 1 -
+/js/env.js 1 -
+/info.php 1 -
+/scripts/index.js 1 -
+/back.php 1 -
+/wp-admin/images/index.php 1 -
+/wp-content/.env 1 -
+/wp-content/plugins/ubh/up.php 1 -
+/randkeyword.PhP7 1 -
+/sck.php 1 -
+/public/server/php 1 -
+/wp-links.php 1 -
+/phpcms/modules/formguide/install/templates/show_js.html 1 http://achillesworkouts.com/phpcms/modules/formguide/install/templates/show_js.html
+/api.js 1 -
+/wp-content/json.php 1 -
+/ckeditor/kcfinder/upload.php 1 -
+/home.php 1 -
+/bundle.js 1 -
+/baxa1.phP8 1 -
+/test.php 2 -
+/src/config/auth.js 1 -
+/wp-includes/ID3/about.php 1 -
+/CHANGELOG.txt 1 -
+/_profiler/phpinfo 2 -
+/bypass.php 1 -
+/wp-includes/css/index.php 1 -
+/assets/kcfinder/upload.php 1 -
+/m.php 1 -
+/content.php 1 -
+/wp-admin/css 3 binance.com
+/templates/beez3/jsstrings.php 1 -
+/fm.php 1 -
+/moon.php 1 -
+/wp-content/plugins/dummyyummy/wp-signup.php 1 -
+/login/wordpress/wp-includes/wlwmanifest.xml 5 -
+/404.php 1 -
+/config/auth.js 1 -
+/wp-admin/user/index.php 1 -
+/makeasmtp.php 1 -
+/wp-admin/network/about.php 1 -
+/wp-content/plugins/helloapx/wp-apxupx.php 1 -
+/writeable.php 1 -
+/x/index.php 1 -
+/config/credentials.js 1 -
+/.tmb/about.php 1 -
+/goods.php 1 -
+/wp-includes/SimplePie/index.php 1 -
+/index4.php 1 -
+/rbh/log.ph 1 -
+/phpinfo.php 1 -
+/about.php 1 -
+/wp-includes/Text/wp-login.php 1 -
+/wp-content/plugins/wp-ver.php 1 https://www.google.com
+/uploader.php 1 -
+/www/.env 1 -
+/templates/beez/jsstrings.php 1 -
+/wp-content/plugins/revslider/includes/external/page/index.php 1 -
+/ova.php 1 -
+/vendor/.env 1 -
+/wp-includes/fonts/wp-login.php 1 -
+/config/secrets.js 1 -
+/login/shop/wp-includes/wlwmanifest.xml 5 -
+/wp-includes/product.php 1 -
+/ads.txt 3 -
+/site.js 1 -
+/mah/function.php 1 -
+/function.php 1 -
+/app/config/.env 1 -
+/inc.php 1 -
+/shell.php 1 -
+/wp-includes/wp-login.php 1 -
+/Nexus.php 1 -
+/login/test/wp-includes/wlwmanifest.xml 5 -
+/lock.php 1 -
+/admin/assets/global/plugins/jquery-file-upload/server/php 1 -
+/85022df0ed31.php 1 -
+/wp-content/plugins/index.php 1 -
+/wp-content/themes/twentyfive/include.php 1 -
+/s.php 1 -
+/lib/config/auth.js 1 -
+/login/xmlrpc.php 5 -
+/defaults.php 1 -
+/ini.php 1 -
+/file.php 1 -
+/wp-includes/wp-includes_function.php 1 -
+/x.php 1 -
+/wp-content/themes/seotheme/db.php 1 -
+/about/function.php 1 -
+/login/website/wp-includes/wlwmanifest.xml 4 -
+/global.js 1 -
+/wp-admin/dropdown.php 1 -
+/wp-l0gin.php 1 -
+/scripts/secrets.js 1 -
+/wp-includes/images/wp-login.php 1 -
+/wander.php 1 -
+/wp-login.php 3 -
+/js/keys.js 1 -
+/wp-admin/js/about.php 1 -
+/protected/.env 1 -
+/wp-includes/room.php 1 -
+/lib/config/mail.js 1 -
+/wp-content/themes/about.php 1 -
+/login/2018/wp-includes/wlwmanifest.xml 3 -
+/backend.js 1 -
+/assets/app.js 1 -
+/.vscode/sftp.json 3 -
+/user.php 1 -
+/library/.env 1 -
+/atomlib.php 1 -
+/blog/.env 1 -
+/backend/.env 1 -
+/utils.js 1 -
+/Njima.php 1 -
+/api/.env 1 -
+/xx.php 1 -
+/dropdown.php 1 -
+/wp-admin/css/network.php 1 -
+/js/kcfinder/upload.php 1 -
+/apple-touch-icon-precomposed.png 4 -
+/templates/beez/index.php 1 -
+/login.php 1 -
+/wp-content/themes/digital-download/new.php 1 -
+/403.php 1 -
+/wp-ver.php 1 https://www.google.com
+/kcfinder/upload.php 1 -
+/js/filemanager/dialog.php 1 -
+/edit.php 1 -
+/wp-content/plugins/Core-EconX/up.php 1 -
+/assets/secrets.js 1 -
+/ticket/vendor/htmlawed/htmlawed/gel4y.php 1 -
+/local/.env 1 -
+/sites/default/files 3 binance.com
+/assets/filemanager/dialog.php 1 -
+/deployment-config.json 1 -
+/elp.php 1 -
+/editor.php 1 -
+/cgi-bin/wp-login.php 1 -
+/js/app.js 1 -
+/wp-signup.php 1 -
+/script.js 1 -
+/fileupload/server/php 1 -
+/fck.php 1 -
+/plugins/kcfinder/upload.php 1 -
+/simple.php 1 -
+/wp-admin/css/index.php 1 -
+/src/config/mail.js 1 -
+/wp-content/cong.php 1 -
+/achillesworkouts.com/.env 1 -
+/wp-admin/.env 1 -
+/wp-includes/ID3/index.php 1 -
+/include/taglib/help/adminname.txt 2 http://achillesworkouts.com/include/taglib/help/adminname.txt
+/wp-content/index.php 1 -
+/class.php 1 -
+/.well-known/about.php 1 -
+/src/.env 1 -
+/.well-known/acme-challenge/index.php 1 -
+/scripts/keys.js 1 -
+/wp-content/plugins/WordPressCore/include.php 1 -
+/wp-content/themes/deeto/login.php 1 -
+/themes.php 1 -
+/wp-includes/mah.php 1 -
+/crm/.env 1 -
+/up.php 1 -
+/wp-content/plugins/ioxi/alfa-ioxi.php 1 -
+/wp-admin/css/dnIzIDf.php 1 -
+/termps.php 1 -
+/admin/settings 2 -
+/wp-content/admin.php 1 -
+/js/secrets.js 1 -
+/admin/filemanager/dialog.php 1 -
+/uploads 3 binance.com
+/config/smtp.js 1 -
+/hehehehe.php 1 -
+/admin/pages 1 -
+/jp.php 1 -
+/env.js 1 -
+/assets/config.js 1 -
+/.tmb/wp-login.php 1 -
+/randkeyword.php 1 -
+/wp-content/plugins/pwnd/pwnd.php 1 -
+/login/news/wp-includes/wlwmanifest.xml 4 -
+/1.php 1 -
+/login/site/wp-includes/wlwmanifest.xml 5 -
+/w.php 1 -
+/public/config.js 1 -
+/scripts/env.js 1 -
+/web.php 1 -
+/alfa-rex.php 1 -
+/tiny.php 1 -
+/wp-includes/fonts/about.php 1 -
+/admin.php 1 -
+/secrets.js 1 -
+/src/config/email.js 1 -
+/frontend.js 1 -
+/apple-touch-icon-120x120-precomposed.png 2 -
+/wp-admin/class-db.php 1 -
+/wp-content/plugins/core-plugin/include.php 1 -
+/doc.php 1 -
+/sftp-config.json 2 -
+/sites/all/libraries/mailchimp/.env 1 -
+/.well-known/acme-challenge/about.php 1 -
+/wp-content/plugins/hello.php 1 -
+/wp-content/about.php 1 -
+/wp-admin/images/admin.php 1 -
+/wp-content/themes/konzept/includes/uploadify/uploadify.css 1 -
+/shell20211028.php 1 -
+/apps/.env 1 -
+/wp-content/wp-ver.php 1 https://www.google.com
+/xl2023.php 1 -
+/admin/function.php 1 -
+/mah.php 1 -
+/wp-includes/css/about.php 1 -
+/ans.php 2 -
+/database/.env 1 -
+/wp-admin/css/colors/index.php 1 -
+/index.js 1 -
+/static/main.js 1 -
+/login/wp-includes/ID3/license.txt 1 -
+/vendor/laravel/.env 1 -
+/xmlrpc.php 2 -
+/click.php 1 -
+/config.js 1 -
+/conf/.env 1 -
+/index/function.php 1 -
+/wp-admin/css/colors/coffee/index.php 1 -
+/1337.php 1 -
+/classwithtostring.php 1 -
+/files 3 binance.com
+/wp-admin/maint/index.php 1 -
+/scripts/config.js 1 -
+/jindex.php 1 -
+/apple-touch-icon-120x120.png 2 -
+/wp-admin/maint/upfile.php 1 -
+/login/wp-includes/wlwmanifest.xml 4 -
+/wp-conflg.php 1 -
+/src/config/credentials.js 1 -
+/register 3 -
+/administrator 1 -
+/login/wp/wp-includes/wlwmanifest.xml 5 -
+/plus/img/df_dedetitle.gif 1 http://achillesworkouts.com/plus/img/df_dedetitle.gif
+/c.php 1 -
+/wp-admin/wp-login.php 1 -
+/login/blog/wp-includes/wlwmanifest.xml 5 -
+/wp-admin/network/index.php 1 -
+/wp-content/uploads/index.php 1 -
+/wp-content/themes/newsfeed-theme/bbh.php 1 -
+/login/sito/wp-includes/wlwmanifest.xml 4 -
+/js/tinymce/plugins/filemanager/dialog.php 1 -
+/bk/index.php 1 -
+/text.php 1 -
+/.env 3 -
+/login/web/wp-includes/wlwmanifest.xml 5 -
+/login/wp1/wp-includes/wlwmanifest.xml 5 -
+/new/.env 1 -
+/config/mail.js 1 -
+/lib/config/email.js 1 -
+/admin/assets/jquery-file-upload/server/php 1 -
+/media/system/js/core.js 7 -
+/js/index.js 1 -
+/aws.js 1 -
+/public/.env 1 -
+/core/.env 1 -
+/wp-admin.php 1 -
+/ws.php 1 -
+/wp-includes/item.php 1 -
+/wp.php 1 -
+/upgrade.php 1 -
+/credentials.js 1 -
+/wp-admin/about.php 1 -
+/css/index.php 1 -
+/cgi-bin/.env 1 -
+/login/2020/wp-includes/wlwmanifest.xml 2 -
+/repeater.php 1 -
+/wp-content/upgrade/about.php 1 -
+/wp-content/themes/digital-download/up.php 1 -
+/autoload_classmap.php 1 -
+/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 2 -
+/settings.js 1 -
+/wp-includes/link.php 1 -
+/lib/config/credentials.js 1 -
+/wp-content/termps.php 1 -
+/css.php 1 -
+/xml.php 1 -
+/vendor/bin/loader.php 1 -
+/app/.env 1 -
+/install.php 1 -
+/wp-content/plugins/WordPressCore/index.php 1 -
+/public/app.js 1 -
+/js/main.js 1 -
+/3m/wp-admin/css/colors/blue 1 http://achillesworkouts.com/3m/wp-admin/css/colors/blue/
+/defaul.php 1 -
+/ioxi002.PhP7 1 -
+/h.php 1 -
+/wp-mail.php 1 -
+/wp-config-sample.php 1 -
+/common.js 1 -
+/wp-includes/rest-api/about.php 1 -
+/b.php 1 -
+/wp-content/languages/index.php 1 -
+/worksec.php 1 -
+/phpinfo 1 -
+/log.php 1 -
+/audio/.env 1 -
+/radio.php 1 -
+/login/2021/wp-includes/wlwmanifest.xml 1 -
+/data.php 1 -
+/link.php 1 -
+/wp-content/themes/sketch/404.php 1 -
+/wso.php 1 -
+/wp-admin/css/colors/blue 1 http://achillesworkouts.com/wp-admin/css/colors/blue/
+/src/config/smtp.js 1 -
+/static/secrets.js 1 -
+/login/media/wp-includes/wlwmanifest.xml 3 -
+/wp-includes/customize/index.php 1 -
+/images 3 binance.com
+/assets/library.php 1 -
+/wp-includes/SimplePie/about.php 1 -
+/config/email.js 1 -
+/sad/about.php 1 -
+/wp-admin/css/colors/HsFPDcD.php 1 -
+/apple-touch-icon.png 4 -
+/admin/server/php 1 -
+/login/cms/wp-includes/wlwmanifest.xml 5 -
+/password/reset 1 -
+/filemanager/dialog.php 1 -
+/blog/index.php 1 -
+/wp-admin/css/colors/about.php 1 -
+/lib/config/secrets.js 1 -
+/home 6 -
+/admin/controller/extension/extension 3 binance.com
+/src/config/config.js 1 -
+/chosen.php 1 -
+/static/app.js 1 -
+/wp-content/themes/pridmag/db.php 1 -
+/wp-includes/sitemaps/about.php 1 -
+/wp-admin/js/index.php 1 -
+/wp-content/themes/famous/megaframe/megapanel/inc/functions.php 1 -
+/buy.php 1 -
+/wp-content/tmpls.php 1 -
+/wp-content/themes/hideo/network.php 1 -
+/wp-admin/admin.php 1 -
+/wp-content/mah.php 1 -
+/wp-admin/images/about.php 1 -
+/scripts/main.js 1 -
+/lufix.php 1 -
+/en/index.php 1 -
+/as.php 1 -
+/wp-includes/js/index.php 1 -
+/small.php 1 -
+/newsite/.env 1 -
+/Telerik.Web.UI.WebResource.axd%3Ftype=rau 1 -
+/mini.php 1 -
+/wp-admin/network/wp-login.php 1 -
+/js/utils.js 1 -
+/wp-includes/wp-class.php 1 -
+/static/config.js 1 -
+/new.php 1 -
+/upload.php 1 -
+/wp-includes/customize/about.php 1 -
+/wp-add.php 1 -
+/.well-known/pki-validation/about.php 1 -
+/wp-admin/css/about.php 1 -
+/.well-known/pki-validation/moon.php 1 -
+/504.php 1 -
+/wp-content/item.php 1 -
+/init.js 1 -
+/login/wp2/wp-includes/wlwmanifest.xml 4 -
+/wp-includes/pomo/wp-login.php 1 -
+/pwp-admin/network/login.php 1 -
+/cong.php 1 -
+/version.php 1 -
+/wp-content/languages/wp-login.php 1 -
+/base/.env 1 -
+/wp-admin/css/colors/sHQwacY.php 1 -
+/alfa.php 1 -
+/wp-content/themes/include.php 1 -
+/lib/config/smtp.js 1 -
+/app.js 1 -
+/js/config.js 1 -
+/nova-api/scripts/social-login 1 http://achillesworkouts.com/dashboards/main
+/wp-info.php 1 -
+/admin/.env 1 -
+/customize.php 1 -
+/laravel/.env 1 -
+/wp-content/themes.php 1 -
+/.well-known/pki-validation/index.php 1 -
+/wp-includes/Text/about.php 1 -
+/wp-includes/images/about.php 1 -
+/.well-known/ 4 binance.com
+/wp-content/uploads/about.php 1 -
+/public/main.js 1 -
+/a.php 1 -
+/wp-includes/admin.php 1 -
+/wp-includes/fonts/index.php 1 -
+/wp-header.php 1 -
+/main.js 1 -
+/wp-content/themes/seotheme/mar.php 1 -
+/wp-content/content.php 1 -
+/wp-includes/js/jquery/jquery.js 7 -
+/byp.php 1 -
+/misc/ajax.js 1 -
+/lib/config/config.js 1 -
+/.well-known/acme-challenge/upfile.php 1 -
+/ova-tools.php 1 -
+/src/config/secrets.js 1 -
+/wp-includes/IXR/wp-login.php 1 -
+/wp-includes/widgets/include.php 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 52
+74.101.209.101 289 300 27031773 20250208164530
+207.38.131.182 228 233 14414307 20250205215137
+2600:1017:b8c9:14b:1552:daba:5c3e:6292 220 221 9579379 20250208112928
+2600:1017:b4b5:907a:acb4:a56a:b41a:bfae 164 165 10270734 20250207174240
+24.90.211.164 147 150 9857887 20250207205710
+2600:1017:b4be:874a:85e6:be68:fc3a:6b0e 82 83 5934586 20250205152830
+2600:1017:b4b1:2ae:4dce:a136:b100:2618 60 65 2268937 20250203172149
+2600:1017:b8cd:c995:ed50:f5d5:613e:db2a 44 49 2986158 20250201043221
+2600:1017:b8c9:2fd1:4837:8d9b:9f60:93cb 23 26 4733126 20250204165521
+2600:1017:b8b1:e978:28a6:2d58:dfec:561a 22 23 2191571 20250201192458
+2600:1017:b8b1:e978:8090:3d39:34b4:b94a 5 10 1821338 20250201133604
+128.199.251.40 4 4 2918774 20250205125045
+174.229.78.25 3 4 264570 20250204165457
+2600:1017:b4be:874a:8d46:1d9d:a79c:ec70 2 3 729691 20250205191816
+159.223.173.64 2 2 1459388 20250205021951
+2600:1017:b8c8:cfa3:74fc:ea:6912:441a 2 7 3990002 20250208001429
+44.201.45.212 1 1 729493 20250206235619
+113.141.91.58 1 1 728958 20250204044929
+45.77.36.115 1 1 728958 20250203161416
+221.229.106.25 1 1 729496 20250209152146
+182.44.10.67 1 1 728986 20250201161844
+181.215.196.176 1 4 1784342 20250208093730
+91.84.96.44 1 1 728958 20250203083143
+179.61.242.87 1 3 3198791 20250208093730
+125.75.66.97 1 1 729695 20250205005527
+44.222.114.0 1 1 728973 20250202204520
+203.33.203.148 1 1 729202 20250204145623
+2600:1017:b8b1:e978:309a:e97:879e:781f 1 2 728958 20250203123110
+192.36.226.103 1 1 729493 20250209004649
+167.99.14.39 1 1 729469 20250210092153
+2a02:c206:3015:2326::1 1 1 729694 20250207114044
+205.169.39.26 1 1 728958 20250204090437
+80.248.225.154 1 1 729691 20250206113255
+2600:1017:b8b5:f1e2:8867:a903:d1b2:69f0 1 1 732588 20250207100702
+167.71.66.240 1 1 728960 20250204103024
+49.51.233.95 1 1 728152 20250201001224
+135.148.195.10 1 1 729468 20250210184147
+44.220.56.219 1 5 3989722 20250204150925
+159.89.119.211 1 1 729468 20250210224800 20250210224800 /login
+43.135.138.128 1 1 728958 20250204121847
+15.237.46.104 1 1 728983 20250202123933
+217.15.164.190 1 1 728960 20250204130958
+178.128.47.244 1 1 729493 20250208074813
+222.79.104.23 1 1 729691 20250205110736
+3.237.86.101 1 1 728976 20250201042524
+64.227.122.16 1 1 728983 20250202095123
+2001:41d0:1:f049::1 1 1 729496 20250207154221
+117.33.163.216 1 1 728960 20250202221345
+92.255.85.164 1 1 729694 20250205033225
+3.92.85.189 1 1 729493 20250208184736
+52.194.80.190 1 1 729468 20250210084032
+91.199.160.95 1 1 728958 20250204091605
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 10
+20250201 132 143 13947371 7
+20250202 6 7 3644882 5
+20250203 105 117 10960437 6
+20250204 197 206 22693336 12
+20250205 269 277 24951140 11
+20250206 3 6 4674440 3
+20250207 366 369 26028264 8
+20250208 249 260 22216075 10
+20250209 2 2 1458989 2
+20250210 4 4 2917873 4
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+30s-2mn 9
+2mn-5mn 3
+0s-30s 47
+5mn-15mn 3
+15mn-30mn 2
+30mn-1h 2
+1h+ 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 192
+/nova-api/nova-notifications 358 18258 1 15
+/login 93 53253521 58 41
+/nova-api/workout-signups/actions 36 9405 0 0
+/nova-api/workout-signups 36 130765 0 2
+/nova-api/workout-signups/cards 29 638 0 0
+/nova-api/workout-signups/lenses 24 528 0 0
+/nova-api/workout-signups/filters 24 2941806 0 0
+/nova-api/users 23 73653 0 1
+/resources/workout-signups 21 14279170 2 0
+/dashboards/main 19 13543925 0 0
+/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kj3xzhggvfm.woff2 19 249380 3 3
+/nova-api/dashboards/main 19 9582 1 0
+/nova-api/dashboards/cards/main/metrics/total-user-team-leader 16 2364 0 1
+/nova-api/dashboards/cards/main/metrics/total-user-guides 16 2384 0 0
+/nova-api/dashboards/cards/main/metrics/total-user-athlete 16 2383 0 0
+/nova-api/dashboards/cards/main/metrics/guide-vs-athlete-distribution 15 1833 0 0
+/nova-api/dashboards/cards/main/metrics/athlete-growth 15 2122 0 0
+/nova-api/users/cards 15 1874 0 0
+/nova-api/dashboards/cards/main/metrics/guides-growth 15 2129 0 0
+/nova-api/users/actions 15 1470 0 0
+/nova-api/dashboards/cards/main/metrics/user-type-distribution 15 3066 0 0
+/nova-api/weather-locations/cards 10 4333 0 0
+/nova-api/language-proficiencies 10 12581 0 0
+/nova-api/language-proficiencies/actions 10 980 0 0
+/nova-api/weather-locations/actions 10 3258 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97145/check-out 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97142/cancel-check-in 1 22 0 0
+/random.php 3 853 1 0
+/nova-api/system-chapter-contacts/filters 1 292 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97142/check-in 1 22 0 0
+/nova-api/scripts/social-login 2 0 0 0
+/nova-api/weather-locations/metrics/forecasts-per-day 9 1239 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97146/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95563/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95552/check-in 1 22 0 0
+/nova-api/workout-sessions 9 51379 0 0
+/nova-api/component-types/actions 8 784 0 0
+/nova-api/weather-locations/metrics/last-weather-update 9 1491 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95550/check-in 1 22 0 0
+/nova-api/weather-locations/metrics/locations-with-weather-data 9 1314 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/1077/check-in-users 2 44 0 0
+/nova-api/workout-specific-details/actions 3 294 0 0
+/nova-api/language-proficiencies/relate-authorization 7 273 0 0
+/nova-api/workout-sessions/lenses 6 608 0 0
+/nova-api/equipment/lenses 2 44 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95558/cancel-check-in 1 22 0 0
+/nova-api/users/metrics/total-user-team-leader 4 588 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95551/check-in 1 22 0 0
+/nova-api/weather-locations 9 48159 0 0
+/nova-api/users/12 1 1623 0 0
+/nova-api/user-certifications 7 9353 0 0
+/resources/language-proficiencies/306151 1 364927 0 0
+/nova-api/users/filters 8 1960 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97137/check-in 1 22 0 0
+/nova-api/user-certifications/343625 1 1823 0 0
+/nova-api/scripts/nova-button 1 7259 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97151/check-in 1 22 0 0
+/resources/equipment-components/new 1 364934 0 0
+/nova-api/weather-locations/27 1 1533 0 0
+/nova-api/workout-signups/97139 2 4662 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95553/check-in 1 22 0 0
+/nova-api/workout-equipment-assignments/relate-authorization 3 117 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97147/check-in 1 22 0 0
+/nova-api/users/3 1 1587 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95558/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97156/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97148/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95562/check-out 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97140/check-in 2 44 0 0
+/nova-api/manufacturers/actions 3 294 0 0
+/nova-api/users/lenses 8 880 0 0
+/nova-api/equipment-components/lenses 4 88 0 0
+/nova-api/weather-datas/cards 3 66 0 0
+/nova-api/manufacturers/filters 3 66 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97140/cancel-check-in 1 22 0 0
+/nova-api/equipment/cards 2 44 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97153/check-in 1 22 0 0
+/resources/workout-signups/97139 2 730036 0 0
+/resources/users/12 1 364516 0 0
+/nova-api/language-proficiencies/cards 3 220 0 0
+/nova-api/workout-signups/action 2 119 0 0
+/password/email 1 75 0 0
+/resources/equipment/new 1 364932 0 0
+/nova-api/user-certifications/relate-authorization 7 273 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97157/check-in 1 22 0 0
+/nova-api/weather-datas/actions 3 294 0 0
+/nova-api/workout-signups/95567 1 2349 0 0
+/nova-api/component-types/cards 8 176 0 0
+/nova-api/user-certifications/actions 8 784 0 0
+/nova-api/workout-sessions/cards 6 132 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97150/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97143/check-out 1 22 0 0
+/resources/workout-signups/95567 3 1462515 0 0
+/nova-api/workout-equipment-assignments/filters 3 66 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/1076/check-in-users 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97144/check-out 1 22 0 0
+/nova-api/users/152025 3 4803 0 0
+/nova-api/user-certifications/filters 7 1250 0 0
+/resources/equipment-components 4 1825528 0 0
+/nova-api/workout-specific-details/95567 1 1456 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97141/check-out 1 22 0 0
+/password/reset 1 363293 0 0
+/nova-api/equipment-components/actions 4 392 0 0
+/resources/weather-locations 7 3658104 0 0
+/nova-api/system-chapter-contacts/cards 1 22 0 0
+/resources/users 5 2191655 0 0
+/nova-api/equipment-components/cards 4 88 0 0
+/resources/manufacturers 3 1462008 0 0
+/nova-api/system-chapters/filters 1 365 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97152/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97144/check-in 1 22 0 0
+/nova-api/system-chapters/cards 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97159/check-in 1 22 0 0
+/nova-api/users/metrics/total-user-guides 4 594 0 0
+/nova-api/workout-sessions/actions 6 588 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95565/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-sessions/1071/check-in-users 1 22 0 0
+/resources/users/2 1 364626 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97141/check-in 2 44 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97149/check-in 1 22 0 0
+/nova-api/weather-datas 3 30862 0 0
+/nova-api/users/4 1 1609 0 0
+/resources/users/152025 1 364930 0 0
+/nova-api/users/2 1 1635 0 0
+/nova-api/equipment/actions 2 196 0 0
+/nova-api/workout-sessions/filters 6 132 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97143/check-in 1 22 0 0
+/nova-api/workout-specific-details/cards 3 66 0 0
+/nova-api/component-types/lenses 8 176 0 0
+/nova-api/weather-locations/lenses 9 198 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95549/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97155/check-in 1 22 0 0
+/nova-api/system-chapters/lenses 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97140/check-out 1 22 0 0
+/resources/user-certifications/343625 1 364950 0 0
+/nova-api/system-chapters/actions 1 98 0 0
+/nova-api/system-chapter-contacts 1 3917 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95562/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97146/check-out 1 22 0 0
+/resources/weather-datas 3 1095176 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95561/check-out 1 22 0 0
+/nova-api/weather-datas/lenses 3 66 0 0
+/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbznubdlel2g.woff2 3 143388 0 0
+/nova-api/component-types/filters 8 541 0 0
+/nova-api/styles/nova-button 1 21 0 0
+/nova-api/system-chapter-contacts/lenses 1 22 0 0
+/resources/users/4 1 364517 0 0
+/nova-api/equipment/filters 2 44 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95563/check-out 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97139/check-in 1 22 0 0
+/nova-api/equipment 2 342 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97141/cancel-check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97136/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97154/check-in 1 22 0 0
+/nova-api/manufacturers/cards 3 66 0 0
+/nova-api/user-certifications/cards 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97138/check-in 1 22 0 0
+/nova-api/weather-locations/metrics/total-weather-forecasts-stored 9 1347 0 0
+/resources/component-types 7 4387099 1 0
+/nova-vendor/sietse85/nova-button/workout-signups/97135/check-in 1 22 0 0
+/nova-api/workout-equipment-assignments/actions 3 294 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97145/check-in 1 22 0 0
+/nova-api/workout-sessions/action 1 92 0 0
+/nova-api/weather-locations/filters 9 198 0 0
+/resources/weather-locations/27 1 365124 0 0
+/resources/workout-sessions 7 2922586 1 1
+/nova-api/manufacturers/lenses 3 66 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95555/check-in 1 22 0 0
+/resources/system-chapter-contacts 1 364996 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97148/check-out 1 22 0 0
+/nova-api/language-proficiencies/lenses 2 44 0 0
+/nova-api/language-proficiencies/filters 9 3858 0 0
+/resources/language-proficiencies 1 364485 0 0
+/nova-api/weather-datas/filters 3 66 0 0
+/nova-api/component-types 8 9030 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95561/check-in 1 22 0 0
+/nova-api/manufacturers 3 5403 0 1
+/nova-api/weather-locations/metrics/next-available-forecast 9 1494 0 0
+/nova-api/language-proficiencies/306151 1 949 0 0
+/resources/system-chapters 1 364995 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95567/check-in 1 22 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97147/check-out 1 22 0 0
+/nova-api/users/metrics/total-user-athlete 4 594 0 1
+/resources/equipment 1 364901 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/95548/check-in 1 22 0 0
+/nova-api/equipment-components 4 720 0 1
+/nova-api/equipment-components/filters 4 88 0 0
+/nova-api/system-chapters 1 3920 0 0
+/resources/users/3 1 365111 0 0
+/nova-api/system-chapter-contacts/actions 1 98 0 0
+/nova-api/workout-specific-details/97139 2 2920 0 0
+/nova-vendor/sietse85/nova-button/workout-signups/97158/check-in 1 22 0 0
+END_SIDER
+
+# Payload Range - Payload Frequency
+BEGIN_FILESIZE 7
+5K+ 277
+44-100 482
+1K-2K 57
+0-44 341
+2K-5K 584
+500-1K 27
+100-500 409
+END_FILESIZE
