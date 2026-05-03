@@ -8,165 +8,181 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('workouts', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('location_id')->constrained('system_locations');
-            $table->foreignId('activity_type_id')->constrained('system_categories');
-            $table->unsignedInteger('version')->default(1);
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->time('default_start_time');
-            $table->time('default_end_time');
-            $table->boolean('is_recurring')->default(true);
-            $table->string('recurrence_pattern')->nullable(); // weekly, monthly, etc.
-            $table->integer('advance_create_weeks')->default(52);
-            $table->integer('default_max_athletes')->nullable();
-            $table->integer('default_max_guides')->nullable();
-            $table->boolean('is_template')->default(false);
-            $table->boolean('is_current_version')->default(true);
-            $table->json('metadata')->nullable();
-            $table->foreignId('created_by')->constrained('users');
-            $table->timestamps();
+        if (! Schema::hasTable('workouts')) {
+            Schema::create('workouts', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('location_id')->constrained('system_locations');
+                $table->foreignId('activity_type_id')->constrained('system_categories');
+                $table->unsignedInteger('version')->default(1);
+                $table->string('name');
+                $table->text('description')->nullable();
+                $table->time('default_start_time');
+                $table->time('default_end_time');
+                $table->boolean('is_recurring')->default(true);
+                $table->string('recurrence_pattern')->nullable(); // weekly, monthly, etc.
+                $table->integer('advance_create_weeks')->default(52);
+                $table->integer('default_max_athletes')->nullable();
+                $table->integer('default_max_guides')->nullable();
+                $table->boolean('is_template')->default(false);
+                $table->boolean('is_current_version')->default(true);
+                $table->json('metadata')->nullable();
+                $table->foreignId('created_by')->constrained('users');
+                $table->timestamps();
 
-            $table->softDeletes();
-        });
+                $table->softDeletes();
+            });
+        }
 
-        Schema::create('workout_sessions', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('workout_id')->nullable()->constrained('workouts');
-            $table->unsignedInteger('workout_version')->default(1);
-            $table->foreignId('location_id')->constrained('system_locations');
-            $table->date('session_date');
-            $table->time('start_time');
-            $table->time('end_time');
-            $table->integer('max_athletes')->nullable();
-            $table->integer('max_guides')->nullable();
-            $table->foreignId('status_id')->constrained('system_statuses');
-            $table->json('weather_conditions')->nullable();
-            $table->text('cancellation_reason')->nullable();
-            $table->foreignId('cancelled_by')->nullable()->constrained('users');
-            $table->timestamp('cancelled_at')->nullable();
-            $table->text('notes')->nullable();
-            $table->json('metadata')->nullable();
-            $table->timestamps();
+        if (! Schema::hasTable('workout_sessions')) {
+            Schema::create('workout_sessions', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('workout_id')->nullable()->constrained('workouts');
+                $table->unsignedInteger('workout_version')->default(1);
+                $table->foreignId('location_id')->constrained('system_locations');
+                $table->date('session_date');
+                $table->time('start_time');
+                $table->time('end_time');
+                $table->integer('max_athletes')->nullable();
+                $table->integer('max_guides')->nullable();
+                $table->foreignId('status_id')->constrained('system_statuses');
+                $table->json('weather_conditions')->nullable();
+                $table->text('cancellation_reason')->nullable();
+                $table->foreignId('cancelled_by')->nullable()->constrained('users');
+                $table->timestamp('cancelled_at')->nullable();
+                $table->text('notes')->nullable();
+                $table->json('metadata')->nullable();
+                $table->timestamps();
 
-            $table->softDeletes();
-        });
-        // Workout Signup Table
-        Schema::create('workout_signups', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('workout_session_id')->constrained('workout_sessions');
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('athlete_id')->nullable()->constrained('users');
-            $table->foreignId('status_id')->nullable()->constrained('system_statuses');
-            $table->timestamp('checked_in_at')->nullable();
-            $table->timestamp('checked_out_at')->nullable();
-            $table->json('preferences')->nullable();
-            $table->json('equipment_requirements')->nullable();
-            $table->timestamps();
+                $table->softDeletes();
+            });
+        }
 
-            $table->softDeletes();
-        });
+        if (! Schema::hasTable('workout_signups')) {
+            Schema::create('workout_signups', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('workout_session_id')->constrained('workout_sessions');
+                $table->foreignId('user_id')->constrained('users');
+                $table->foreignId('athlete_id')->nullable()->constrained('users');
+                $table->foreignId('status_id')->nullable()->constrained('system_statuses');
+                $table->timestamp('checked_in_at')->nullable();
+                $table->timestamp('checked_out_at')->nullable();
+                $table->json('preferences')->nullable();
+                $table->json('equipment_requirements')->nullable();
+                $table->timestamps();
 
-        // Equipment Assignment Tracking
-        Schema::create('workout_equipment_assignments', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('workout_signup_id')->constrained('workout_signups');
-            $table->foreignId('equipment_id')->constrained('equipment');
-            $table->foreignId('assignment_type_id')->constrained('system_categories');
-            $table->json('fitting_details')->nullable(); // Height, weight, etc.
-            $table->timestamps();
+                $table->softDeletes();
+            });
+        }
 
-            $table->softDeletes();
-        });
+        if (! Schema::hasTable('workout_equipment_assignments')) {
+            Schema::create('workout_equipment_assignments', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('workout_signup_id')->constrained('workout_signups');
+                $table->foreignId('equipment_id')->constrained('equipment');
+                $table->foreignId('assignment_type_id')->constrained('system_categories');
+                $table->json('fitting_details')->nullable(); // Height, weight, etc.
+                $table->timestamps();
 
-        Schema::create('tandem_bike_pairings', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('bike_id')->constrained('equipment');
-            $table->foreignId('pilot_user_id')->constrained('users');
-            $table->foreignId('stoker_user_id')->constrained('users');
-            $table->foreignId('compatibility_status_id')->constrained('system_statuses');
-            $table->decimal('weight_compatibility_score', 5, 2)->nullable();
-            $table->json('compatibility_details')->nullable(); // Store specific measurement comparisons
-            $table->timestamp('last_checked_at')->nullable();
-            $table->timestamps();
+                $table->softDeletes();
+            });
+        }
 
-            // Ensure unique combination of bike, pilot, and stoker
-            $table->unique(['bike_id', 'pilot_user_id', 'stoker_user_id']);
-        });
+        if (! Schema::hasTable('tandem_bike_pairings')) {
+            Schema::create('tandem_bike_pairings', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('bike_id')->constrained('equipment');
+                $table->foreignId('pilot_user_id')->constrained('users');
+                $table->foreignId('stoker_user_id')->constrained('users');
+                $table->foreignId('compatibility_status_id')->constrained('system_statuses');
+                $table->decimal('weight_compatibility_score', 5, 2)->nullable();
+                $table->json('compatibility_details')->nullable(); // Store specific measurement comparisons
+                $table->timestamp('last_checked_at')->nullable();
+                $table->timestamps();
 
-        Schema::create('tandem_bike_pairing_checks', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('bike_id')->constrained('equipment');
-            $table->timestamp('checked_at');
-            $table->json('check_results')->nullable(); // Store full check details
-            $table->timestamps();
+                // Ensure unique combination of bike, pilot, and stoker
+                $table->unique(['bike_id', 'pilot_user_id', 'stoker_user_id']);
+            });
+        }
 
-            $table->softDeletes();
-        });
+        if (! Schema::hasTable('tandem_bike_pairing_checks')) {
+            Schema::create('tandem_bike_pairing_checks', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('bike_id')->constrained('equipment');
+                $table->timestamp('checked_at');
+                $table->json('check_results')->nullable(); // Store full check details
+                $table->timestamps();
 
-        Schema::create('workout_specific_details', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('workout_signup_id')->constrained('workout_signups');
-            $table->foreignId('sport_category_id')->constrained('system_categories');
+                $table->softDeletes();
+            });
+        }
 
-            // Units for distance and pace
-            $table->foreignId('distance_unit_id')->constrained('system_statuses'); // e.g., Miles, Kilometers, Meters
-            $table->foreignId('pace_unit_id')->constrained('system_statuses'); // e.g., Min/Mile, Min/KM
-            $table->foreignId('speed_unit_id')->constrained('system_statuses'); // e.g., MPH, KMH, M/S
+        if (! Schema::hasTable('workout_specific_details')) {
+            Schema::create('workout_specific_details', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('workout_signup_id')->constrained('workout_signups');
+                $table->foreignId('sport_category_id')->constrained('system_categories');
 
-            $table->decimal('distance', 10, 2)->nullable();
-            $table->decimal('time', 10, 2)->nullable();
-            $table->decimal('pace_min', 10, 2)->nullable();
-            $table->decimal('pace_max', 10, 2)->nullable();
-            $table->decimal('speed_min', 10, 2)->nullable();
-            $table->decimal('speed_max', 10, 2)->nullable();
+                // Units for distance and pace
+                $table->foreignId('distance_unit_id')->constrained('system_statuses'); // e.g., Miles, Kilometers, Meters
+                $table->foreignId('pace_unit_id')->constrained('system_statuses'); // e.g., Min/Mile, Min/KM
+                $table->foreignId('speed_unit_id')->constrained('system_statuses'); // e.g., MPH, KMH, M/S
 
-            // JSON for sport-specific additional data
-            $table->json('additional_details')->nullable();
+                $table->decimal('distance', 10, 2)->nullable();
+                $table->decimal('time', 10, 2)->nullable();
+                $table->decimal('pace_min', 10, 2)->nullable();
+                $table->decimal('pace_max', 10, 2)->nullable();
+                $table->decimal('speed_min', 10, 2)->nullable();
+                $table->decimal('speed_max', 10, 2)->nullable();
 
-            $table->timestamps();
+                // JSON for sport-specific additional data
+                $table->json('additional_details')->nullable();
 
-            $table->softDeletes();
-        });
+                $table->timestamps();
 
-        // Standalone meeting points table
-        Schema::create('meeting_points', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('address');
-            $table->decimal('latitude', 10, 8)->nullable();
-            $table->decimal('longitude', 11, 8)->nullable();
-            $table->foreignId('type_id')->constrained('system_categories');
-            $table->foreignId('created_by')->nullable()->constrained('users');
-            $table->foreignId('chapter_id')->nullable()->constrained('system_chapters');
-            $table->json('metadata')->nullable();
-            $table->timestamps();
+                $table->softDeletes();
+            });
+        }
 
-            $table->softDeletes();
-        });
+        if (! Schema::hasTable('meeting_points')) {
+            Schema::create('meeting_points', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('address');
+                $table->decimal('latitude', 10, 8)->nullable();
+                $table->decimal('longitude', 11, 8)->nullable();
+                $table->foreignId('type_id')->constrained('system_categories');
+                $table->foreignId('created_by')->nullable()->constrained('users');
+                $table->foreignId('chapter_id')->nullable()->constrained('system_chapters');
+                $table->json('metadata')->nullable();
+                $table->timestamps();
 
-        // Join table for workout templates to meeting points
-        Schema::create('workout_template_meeting_points', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('workout_id')->constrained('workouts');
-            $table->foreignId('meeting_point_id')->constrained('meeting_points');
-            $table->boolean('is_primary')->default(false);
-            $table->timestamps();
+                $table->softDeletes();
+            });
+        }
 
-            $table->softDeletes();
-        });
+        if (! Schema::hasTable('workout_template_meeting_points')) {
+            Schema::create('workout_template_meeting_points', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('workout_id')->constrained('workouts');
+                $table->foreignId('meeting_point_id')->constrained('meeting_points');
+                $table->boolean('is_primary')->default(false);
+                $table->timestamps();
 
-        // Join table for workout sessions to meeting points
-        Schema::create('workout_session_meeting_points', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('workout_session_id')->constrained('workout_sessions');
-            $table->foreignId('meeting_point_id')->constrained('meeting_points');
-            $table->boolean('is_primary')->default(false);
-            $table->timestamps();
+                $table->softDeletes();
+            });
+        }
 
-            $table->softDeletes();
-        });
+        if (! Schema::hasTable('workout_session_meeting_points')) {
+            Schema::create('workout_session_meeting_points', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('workout_session_id')->constrained('workout_sessions');
+                $table->foreignId('meeting_point_id')->constrained('meeting_points');
+                $table->boolean('is_primary')->default(false);
+                $table->timestamps();
+
+                $table->softDeletes();
+            });
+        }
 
     }
 
