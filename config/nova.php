@@ -49,7 +49,8 @@ return [
     |
     */
 
-    'domain' => env('NOVA_DOMAIN_NAME', 'https://achillesworkouts.com'),
+    // Keep Nova accessible on local and Cloud preview hosts during development.
+    'domain' => null,
 
     /*
     |--------------------------------------------------------------------------

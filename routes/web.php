@@ -40,9 +40,9 @@ Route::get('/', function () {
     ]);
 
     if (auth()->check()) {
-        return redirect('/dashboard');
+        return redirect('/dashboards/main');
     }
     return redirect('/login');
 });
 
-Route::redirect('/home', '/dashboard');
+Route::redirect('/home', '/dashboards/main');

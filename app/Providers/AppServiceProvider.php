@@ -31,8 +31,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $novaDashboardPath = '/'.trim(Nova::path(), '/');
-        $novaDashboardPath = rtrim($novaDashboardPath === '/' ? '/dashboard' : $novaDashboardPath.'/dashboard', '/');
+        $novaBasePath = '/'.trim(Nova::path(), '/');
+        $novaDashboardPath = $novaBasePath === '/'
+            ? '/dashboards/main'
+            : $novaBasePath.'/dashboards/main';
 
         config([
             'fortify.home' => $novaDashboardPath,
