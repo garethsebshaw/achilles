@@ -163,7 +163,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
-            return true; // Modify this based on your authentication needs
+            return $user instanceof \App\Models\User
+                && $user->canAccessNova();
         });
     }
 

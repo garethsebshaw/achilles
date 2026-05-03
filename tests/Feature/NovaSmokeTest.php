@@ -9,6 +9,7 @@ use App\Models\Workout;
 use App\Models\WorkoutSession;
 use App\Models\WorkoutSignup;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Nova\Nova;
 use Tests\TestCase;
 
@@ -93,7 +94,7 @@ class NovaSmokeTest extends TestCase
     public function test_seeded_sys_admin_can_log_in_via_web_guard(): void
     {
         $response = $this->post('/login', [
-            'email' => 'thisisg@gmail.com',
+            'email' => 'THISISG@GMAIL.COM',
             'password' => 'rcp@UHE-nmq_kmw0qzk',
         ]);
 
@@ -101,6 +102,80 @@ class NovaSmokeTest extends TestCase
         $this->assertAuthenticatedAs(
             User::query()->where('email', 'thisisg@gmail.com')->firstOrFail()
         );
+    }
+
+    public function test_non_privileged_user_cannot_log_in_via_web_guard(): void
+    {
+        $response = $this->from('/login')->post('/login', [
+            'email' => 'sgibbs8885@gmail.com',
+            'password' => 'default_pa55word!',
+        ]);
+
+        $response->assertRedirect('/login');
+        $response->assertSessionHasErrors('email');
+        $this->assertGuest();
+    }
+
+    public function test_soft_deleted_privileged_user_cannot_log_in_via_web_guard(): void
+    {
+        $email = 'deleted-admin-'.uniqid().'@example.com';
+
+        $user = User::query()->create([
+            'name' => 'Soft Deleted Admin',
+            'email' => $email,
+            'first_name' => 'Soft',
+            'last_name' => 'Deleted',
+            'password' => Hash::make('TempPass123!'),
+            'email_verified_at' => now(),
+        ]);
+
+        $user->forceFill(['is_sys_admin' => true])->save();
+        $user->delete();
+
+        $response = $this->from('/login')->post('/login', [
+            'email' => $email,
+            'password' => 'TempPass123!',
+        ]);
+
+        $response->assertRedirect('/login');
+        $response->assertSessionHasErrors('email');
+        $this->assertGuest();
+    }
+
+    public function test_successful_login_rehashes_legacy_password_hashes(): void
+    {
+        config()->set('hashing.bcrypt.rounds', 12);
+
+        $email = 'legacy-admin-'.uniqid().'@example.com';
+        $legacyPassword = 'LegacyPass123!';
+        $legacyHash = password_hash($legacyPassword, PASSWORD_BCRYPT, ['cost' => 4]);
+
+        $userId = DB::table('users')->insertGetId([
+            'name' => 'Legacy Hash Admin',
+            'email' => $email,
+            'first_name' => 'Legacy',
+            'last_name' => 'Admin',
+            'password' => $legacyHash,
+            'is_admin' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $user = User::query()->findOrFail($userId);
+
+        $response = $this->post('/login', [
+            'email' => $email,
+            'password' => $legacyPassword,
+        ]);
+
+        $response->assertRedirect();
+        $this->assertAuthenticatedAs($user);
+
+        $freshUser = $user->fresh();
+
+        $this->assertNotSame($legacyHash, $freshUser->password);
+        $this->assertTrue(Hash::check($legacyPassword, $freshUser->password));
+        $this->assertFalse(Hash::needsRehash($freshUser->password));
     }
 
     public function test_nova_pages_load_for_seeded_sys_admin(): void
@@ -175,6 +250,14 @@ class NovaSmokeTest extends TestCase
         }
 
         $this->assertSame([], $failures, json_encode($failures, JSON_PRETTY_PRINT));
+    }
+
+    public function test_non_privileged_authenticated_user_cannot_access_nova_dashboard(): void
+    {
+        $user = User::query()->where('email', 'sgibbs8885@gmail.com')->firstOrFail();
+        $this->actingAs($user);
+
+        $this->get('/dashboards/main')->assertForbidden();
     }
 
     public function test_nova_api_endpoints_load_for_seeded_sys_admin(): void

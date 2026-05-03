@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -56,6 +56,12 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_subscribed' => 'boolean',
+            'is_sys_admin' => 'boolean',
+            'is_admin' => 'boolean',
+            'is_team_leader' => 'boolean',
+            'is_athlete' => 'boolean',
+            'is_guide' => 'boolean',
         ];
     }
 
@@ -71,41 +77,27 @@ class User extends Authenticatable
 
     public function isSysAdmin(): bool
     {
-        // Implement your admin check logic
-        // This could be based on a role, a specific column, or any other condition
-        return $this->is_sys_admin === 1; // Example
-
-        // Or if you have an is_admin column
-        // return (bool) $this->is_admin;
-
-        // Or check against a list of admin emails
-        // return in_array($this->email, config('admin.emails', []));
+        return (bool) $this->is_sys_admin;
     }
 
     public function isAdmin(): bool
     {
-        // Implement your admin check logic
-        // This could be based on a role, a specific column, or any other condition
-        return $this->is_admin === 1; // Example
-
-        // Or if you have an is_admin column
-        // return (bool) $this->is_admin;
-
-        // Or check against a list of admin emails
-        // return in_array($this->email, config('admin.emails', []));
+        return (bool) $this->is_admin;
     }
 
     public function isTeamLeader(): bool
     {
-        // Implement your admin check logic
-        // This could be based on a role, a specific column, or any other condition
-        return $this->is_team_leader === 1; // Example
+        return (bool) $this->is_team_leader;
+    }
 
-        // Or if you have an is_admin column
-        // return (bool) $this->is_admin;
+    public function hasPrivilegedRole(): bool
+    {
+        return $this->isSysAdmin() || $this->isAdmin() || $this->isTeamLeader();
+    }
 
-        // Or check against a list of admin emails
-        // return in_array($this->email, config('admin.emails', []));
+    public function canAccessNova(): bool
+    {
+        return $this->hasPrivilegedRole();
     }
 
     /**

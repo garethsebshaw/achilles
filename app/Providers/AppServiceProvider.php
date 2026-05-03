@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Laravel\Fortify\Fortify;
 use Laravel\Nova\Nova;
 
 //use App\Policies\SystemLocationAccessPolicy;
@@ -41,9 +40,5 @@ class AppServiceProvider extends ServiceProvider
             'fortify.redirects.login' => $novaDashboardPath,
             'fortify.redirects.logout' => '/login',
         ]);
-
-        Fortify::loginView(function () {
-            return view('auth.login');
-        });
     }
 }
