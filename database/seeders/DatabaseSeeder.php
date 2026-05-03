@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
 
             // randoms
             UserRandomSeeder::class, // random user seeder
+            NormalizeSeededUserPasswordsSeeder::class,
 
             LanguageSeeder::class, // random language seeder
             UserCertificateSeeder::class, // random user certificate seeder

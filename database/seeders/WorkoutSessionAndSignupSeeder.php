@@ -22,6 +22,7 @@ use App\Models\SystemRegion;
 class WorkoutSessionAndSignupSeeder extends Seeder
 {
     private $faker;
+    private array $chapters = [];
 
     public function __construct()
     {
@@ -33,19 +34,21 @@ class WorkoutSessionAndSignupSeeder extends Seeder
         // Get required data from existing tables
         $workoutsModuleId = SystemModule::where('name', 'Workouts')->value('id');
 
-        $nyChapter = $manhattanChapter = SystemChapter::where('name', 'Manhattan Achilles')->first();
-        $brooklynChapter = SystemChapter::where('name', 'Brooklyn Achilles')->first();
-        $longIslandChapter = SystemChapter::where('name', 'Long Island Achilles')->first();
-        $bronxChapter = SystemChapter::where('name', 'Bronx Achilles')->first();
-        $queensChapter = SystemChapter::where('name', 'Queens Achilles')->first();
-        $statenIslandChapter = SystemChapter::where('name', 'Staten Island Achilles')->first();
+        $this->chapters = [
+            'manhattan' => SystemChapter::where('name', 'Manhattan Achilles')->firstOrFail(),
+            'brooklyn' => SystemChapter::where('name', 'Brooklyn Achilles')->firstOrFail(),
+            'long_island' => SystemChapter::where('name', 'Long Island Achilles')->firstOrFail(),
+            'bronx' => SystemChapter::where('name', 'Bronx Achilles')->firstOrFail(),
+            'queens' => SystemChapter::where('name', 'Queens Achilles')->firstOrFail(),
+            'staten_island' => SystemChapter::where('name', 'Staten Island Achilles')->firstOrFail(),
+        ];
 
         $sportCategories = SystemCategory::where('system_module_id', $workoutsModuleId)->get();
         $workoutStatuses = SystemStatus::where('system_module_id', $workoutsModuleId)->get();
         $signupStatuses = SystemStatus::where('system_module_id', $workoutsModuleId)->get();
 
         // Create workout locations primarily in New York
-        $locations = $this->createWorkoutLocations($nyChapter);
+        $locations = $this->createWorkoutLocations();
 
         // Create workout templates
         $workoutTemplates = $this->createWorkoutTemplates($locations, $sportCategories);
@@ -73,8 +76,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
         );
     }
 
-    private function createWorkoutLocations($nyChapter)
-
+    private function createWorkoutLocations()
     {
         // Fetch the US country and Northeast region
         $usCountry = SystemCountry::where('name', 'United States')->first();
@@ -90,7 +92,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '11225',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $brooklynChapter->id,
+                'chapter_id' => $this->chapters['brooklyn']->id,
                 'latitude' => 40.6602,
                 'longitude' => -73.9690,
                 'is_active' => true,
@@ -110,7 +112,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '11554',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $longIslandChapter->id,
+                'chapter_id' => $this->chapters['long_island']->id,
                 'latitude' => 40.7229,
                 'longitude' => -73.5715,
                 'is_active' => true,
@@ -130,7 +132,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '10471',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $bronxChapter->id,
+                'chapter_id' => $this->chapters['bronx']->id,
                 'latitude' => 40.8970,
                 'longitude' => -73.8860,
                 'is_active' => true,
@@ -150,7 +152,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '10023',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $manhattanChapter->id,
+                'chapter_id' => $this->chapters['manhattan']->id,
                 'latitude' => 40.7851,
                 'longitude' => -73.9683,
                 'is_active' => true,
@@ -170,7 +172,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '11368',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $queensChapter->id,
+                'chapter_id' => $this->chapters['queens']->id,
                 'latitude' => 40.7498,
                 'longitude' => -73.8408,
                 'is_active' => true,
@@ -190,7 +192,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '10301',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $statenIslandChapter->id,
+                'chapter_id' => $this->chapters['staten_island']->id,
                 'latitude' => 40.6140,
                 'longitude' => -74.1050,
                 'is_active' => true,
@@ -209,7 +211,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '11213',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $brooklynChapter->id,
+                'chapter_id' => $this->chapters['brooklyn']->id,
                 'latitude' => 40.6714,
                 'longitude' => -73.9336,
                 'is_active' => true,
@@ -229,7 +231,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '10314',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $statenIslandChapter->id,
+                'chapter_id' => $this->chapters['staten_island']->id,
                 'latitude' => 40.5903,
                 'longitude' => -74.1343,
                 'is_active' => true,
@@ -249,7 +251,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '11217',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $brooklynChapter->id,
+                'chapter_id' => $this->chapters['brooklyn']->id,
                 'latitude' => 40.6795,
                 'longitude' => -73.9833,
                 'is_active' => true,
@@ -269,7 +271,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '11554',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $longIslandChapter->id,
+                'chapter_id' => $this->chapters['long_island']->id,
                 'latitude' => 40.7262,
                 'longitude' => -73.5894,
                 'is_active' => true,
@@ -289,7 +291,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '11355',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $queensChapter->id,
+                'chapter_id' => $this->chapters['queens']->id,
                 'latitude' => 40.7515,
                 'longitude' => -73.8322,
                 'is_active' => true,
@@ -309,7 +311,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '10455',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $bronxChapter->id,
+                'chapter_id' => $this->chapters['bronx']->id,
                 'latitude' => 40.8100,
                 'longitude' => -73.9170,
                 'is_active' => true,
@@ -329,7 +331,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '11803',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $longIslandChapter->id,
+                'chapter_id' => $this->chapters['long_island']->id,
                 'latitude' => 40.7806,
                 'longitude' => -73.4745,
                 'is_active' => true,
@@ -349,7 +351,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '11368',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $queensChapter->id,
+                'chapter_id' => $this->chapters['queens']->id,
                 'latitude' => 40.7494,
                 'longitude' => -73.8445,
                 'is_active' => true,
@@ -369,7 +371,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 'postal_code' => '10010',
                 'country_id' => $usCountry->id,
                 'region_id' => $northeastRegion->id,
-                'chapter_id' => $manhattanChapter->id,
+                'chapter_id' => $this->chapters['manhattan']->id,
                 'latitude' => 40.7380,
                 'longitude' => -73.9746,
                 'is_active' => true,

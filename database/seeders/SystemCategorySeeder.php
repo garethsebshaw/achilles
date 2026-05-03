@@ -599,45 +599,5 @@ class SystemCategorySeeder extends Seeder
 
         DB::table('system_categories')->insert($assignmentTypes);
 
-        // Retrieve the system module ID for WeatherLocations
-        $weatherModuleId = DB::table('system_modules')
-            ->where('model_type', 'App\Models\WeatherLocations')
-            ->value('id');
-
-        // Weather conditions mapping
-        $weatherStatuses = [
-            ['code' => 0, 'description' => 'Clear Sky', 'system_module_id' => $weatherModuleId],
-            ['code' => 1, 'description' => 'Mainly Clear', 'system_module_id' => $weatherModuleId],
-            ['code' => 2, 'description' => 'Partly Cloudy', 'system_module_id' => $weatherModuleId],
-            ['code' => 3, 'description' => 'Overcast', 'system_module_id' => $weatherModuleId],
-            ['code' => 45, 'description' => 'Fog', 'system_module_id' => $weatherModuleId],
-            ['code' => 48, 'description' => 'Depositing Rime Fog', 'system_module_id' => $weatherModuleId],
-            ['code' => 51, 'description' => 'Light Drizzle', 'system_module_id' => $weatherModuleId],
-            ['code' => 53, 'description' => 'Moderate Drizzle', 'system_module_id' => $weatherModuleId],
-            ['code' => 55, 'description' => 'Dense Drizzle', 'system_module_id' => $weatherModuleId],
-            ['code' => 56, 'description' => 'Light Freezing Drizzle', 'system_module_id' => $weatherModuleId],
-            ['code' => 57, 'description' => 'Dense Freezing Drizzle', 'system_module_id' => $weatherModuleId],
-            ['code' => 61, 'description' => 'Slight Rain', 'system_module_id' => $weatherModuleId],
-            ['code' => 63, 'description' => 'Moderate Rain', 'system_module_id' => $weatherModuleId],
-            ['code' => 65, 'description' => 'Heavy Rain', 'system_module_id' => $weatherModuleId],
-            ['code' => 66, 'description' => 'Light Freezing Rain', 'system_module_id' => $weatherModuleId],
-            ['code' => 67, 'description' => 'Heavy Freezing Rain', 'system_module_id' => $weatherModuleId],
-            ['code' => 71, 'description' => 'Slight Snow Fall', 'system_module_id' => $weatherModuleId],
-            ['code' => 73, 'description' => 'Moderate Snow Fall', 'system_module_id' => $weatherModuleId],
-            ['code' => 75, 'description' => 'Heavy Snow Fall', 'system_module_id' => $weatherModuleId],
-            ['code' => 77, 'description' => 'Snow Grains', 'system_module_id' => $weatherModuleId],
-            ['code' => 80, 'description' => 'Slight Rain Showers', 'system_module_id' => $weatherModuleId],
-            ['code' => 81, 'description' => 'Moderate Rain Showers', 'system_module_id' => $weatherModuleId],
-            ['code' => 82, 'description' => 'Violent Rain Showers', 'system_module_id' => $weatherModuleId],
-            ['code' => 85, 'description' => 'Slight Snow Showers', 'system_module_id' => $weatherModuleId],
-            ['code' => 86, 'description' => 'Heavy Snow Showers', 'system_module_id' => $weatherModuleId],
-            ['code' => 95, 'description' => 'Thunderstorm Slight Or Moderate', 'system_module_id' => $weatherModuleId],
-            ['code' => 96, 'description' => 'Thunderstorm With Slight Hail', 'system_module_id' => $weatherModuleId],
-            ['code' => 99, 'description' => 'Thunderstorm With Heavy Hail', 'system_module_id' => $weatherModuleId],
-        ];
-
-        // Insert data into system_statuses table
-        DB::table('system_statuses')->insert($weatherStatuses);
-
     }
 }

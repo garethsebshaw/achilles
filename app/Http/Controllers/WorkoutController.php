@@ -10,26 +10,19 @@ use Illuminate\Http\Request;
 
 class WorkoutController extends Controller
 {
+    private function novaPath(string $suffix = ''): string
+    {
+        return '/achillesworkouts.com/resources/workouts'.$suffix;
+    }
+
     public function index(Request $request)
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $workouts = Workout::with(['location', 'activityType', 'createdBy'])
-            ->where('is_template', false)
-            ->where('is_current_version', true)
-            ->paginate(15);
-
-        return view('workouts.index', compact('workouts'));
+        return redirect($this->novaPath());
     }
 
     public function create()
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $activityTypes = SystemCategory::where('system_module_id', $workoutsModuleId)->get();
-        $locations = SystemLocation::all();
-
-        return view('workouts.create', compact('activityTypes', 'locations'));
+        return redirect($this->novaPath('/new'));
     }
 
     public function store(Request $request)
@@ -58,18 +51,12 @@ class WorkoutController extends Controller
 
     public function show(Workout $workout)
     {
-        $workout->load(['location', 'activityType', 'sessions']);
-        return view('workouts.show', compact('workout'));
+        return redirect($this->novaPath('/'.$workout->getKey()));
     }
 
     public function edit(Workout $workout)
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $activityTypes = SystemCategory::where('system_module_id', $workoutsModuleId)->get();
-        $locations = SystemLocation::all();
-
-        return view('workouts.edit', compact('workout', 'activityTypes', 'locations'));
+        return redirect($this->novaPath('/'.$workout->getKey().'/edit'));
     }
 
     public function update(Request $request, Workout $workout)

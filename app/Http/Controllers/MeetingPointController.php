@@ -10,38 +10,19 @@ use Illuminate\Http\Request;
 
 class MeetingPointController extends Controller
 {
+    private function novaPath(string $suffix = ''): string
+    {
+        return '/achillesworkouts.com/resources/meeting-points'.$suffix;
+    }
+
     public function index(Request $request)
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $query = MeetingPoint::with(['type', 'chapter', 'createdBy']);
-
-        // Filter by type
-        if ($request->has('type')) {
-            $query->byType($request->type);
-        }
-
-        // Filter by chapter
-        if ($request->has('chapter')) {
-            $query->byChapter($request->chapter);
-        }
-
-        $meetingPoints = $query->paginate(15);
-
-        $types = SystemCategory::where('system_module_id', $workoutsModuleId)->get();
-        $chapters = SystemChapter::all();
-
-        return view('meeting-points.index', compact('meetingPoints', 'types', 'chapters'));
+        return redirect($this->novaPath());
     }
 
     public function create()
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $types = SystemCategory::where('system_module_id', $workoutsModuleId)->get();
-        $chapters = SystemChapter::all();
-
-        return view('meeting-points.create', compact('types', 'chapters'));
+        return redirect($this->novaPath('/new'));
     }
 
     public function store(Request $request)
@@ -75,20 +56,14 @@ class MeetingPointController extends Controller
             ->with('success', 'Meeting Point created successfully');
     }
 
-    public function show(MeetingPoint $meetingPoint)
+    public function show(MeetingPoint $meeting_point)
     {
-        $meetingPoint->load(['type', 'chapter', 'createdBy', 'workoutTemplates', 'workoutSessions']);
-        return view('meeting-points.show', compact('meetingPoint'));
+        return redirect($this->novaPath('/'.$meeting_point->getKey()));
     }
 
-    public function edit(MeetingPoint $meetingPoint)
+    public function edit(MeetingPoint $meeting_point)
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $types = SystemCategory::where('system_module_id', $workoutsModuleId)->get();
-        $chapters = SystemChapter::all();
-
-        return view('meeting-points.edit', compact('meetingPoint', 'types', 'chapters'));
+        return redirect($this->novaPath('/'.$meeting_point->getKey().'/edit'));
     }
 
     public function update(Request $request, MeetingPoint $meetingPoint)

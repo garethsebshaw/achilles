@@ -12,49 +12,19 @@ use Illuminate\Support\Facades\DB;
 
 class WorkoutSignupController extends Controller
 {
-    public function index(Request $request)
+    private function novaPath(string $suffix = ''): string
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $query = WorkoutSignup::with([
-            'workoutSession',
-            'user',
-            'status',
-            'specificDetails',
-            'equipmentAssignments'
-        ]);
-
-        // Filter by session
-        if ($request->has('workout_session_id')) {
-            $query->where('workout_session_id', $request->workout_session_id);
-        }
-
-        // Filter by user
-        if ($request->has('user_id')) {
-            $query->forUser($request->user_id);
-        }
-
-        // Filter by status
-        if ($request->has('status_id')) {
-            $query->byStatus($request->status_id);
-        }
-
-        $signups = $query->paginate(15);
-
-        $statuses = SystemStatus::where('system_module_id', $workoutsModuleId)->get();
-        $sessions = WorkoutSession::all();
-
-        return view('workout-signups.index', compact('signups', 'statuses', 'sessions'));
+        return '/achillesworkouts.com/resources/workout-signups'.$suffix;
     }
 
-    public function create(WorkoutSession $workoutSession)
+    public function index(Request $request)
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
+        return redirect($this->novaPath());
+    }
 
-        $sportCategories = SystemCategory::where('system_module_id', $workoutsModuleId)->get();
-        $statuses = SystemStatus::where('system_module_id', $workoutsModuleId)->get();
-
-        return view('workout-signups.create', compact('workoutSession', 'sportCategories', 'statuses'));
+    public function create()
+    {
+        return redirect($this->novaPath('/new'));
     }
 
     public function store(Request $request, WorkoutSession $workoutSession)
@@ -91,17 +61,14 @@ class WorkoutSignupController extends Controller
         }
     }
 
-    public function show(WorkoutSignup $signup)
+    public function show(WorkoutSignup $workout_signup)
     {
-        $signup->load([
-            'workoutSession',
-            'user',
-            'status',
-            'specificDetails',
-            'equipmentAssignments'
-        ]);
+        return redirect($this->novaPath('/'.$workout_signup->getKey()));
+    }
 
-        return view('workout-signups.show', compact('signup'));
+    public function edit(WorkoutSignup $workout_signup)
+    {
+        return redirect($this->novaPath('/'.$workout_signup->getKey().'/edit'));
     }
 
     public function update(Request $request, WorkoutSignup $signup)

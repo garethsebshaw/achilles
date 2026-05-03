@@ -11,48 +11,19 @@ use Illuminate\Http\Request;
 
 class WorkoutSessionController extends Controller
 {
+    private function novaPath(string $suffix = ''): string
+    {
+        return '/achillesworkouts.com/resources/workout-sessions'.$suffix;
+    }
+
     public function index(Request $request)
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $query = WorkoutSession::with(['workout', 'location', 'status'])
-            ->whereHas('status', function($q) use ($workoutsModuleId) {
-                $q->where('system_module_id', $workoutsModuleId);
-            });
-
-        // Filter options
-        if ($request->has('status')) {
-            $query->whereHas('status', function($q) use ($request) {
-                $q->where('id', $request->status);
-            });
-        }
-
-        if ($request->has('date_range')) {
-            // Handle date range filtering
-            switch($request->date_range) {
-                case 'upcoming':
-                    $query->upcoming();
-                    break;
-                case 'past':
-                    $query->past();
-                    break;
-            }
-        }
-
-        $sessions = $query->paginate(15);
-
-        return view('workout-sessions.index', compact('sessions'));
+        return redirect($this->novaPath());
     }
 
     public function create()
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $statuses = SystemStatus::where('system_module_id', $workoutsModuleId)->get();
-        $workouts = Workout::all();
-        $locations = SystemLocation::all();
-
-        return view('workout-sessions.create', compact('statuses', 'workouts', 'locations'));
+        return redirect($this->novaPath('/new'));
     }
 
     public function store(Request $request)
@@ -75,23 +46,53 @@ class WorkoutSessionController extends Controller
             ->with('success', 'Workout Session created successfully');
     }
 
-    public function show(WorkoutSession $session)
+    public function show(WorkoutSession $workout_session)
     {
-        $session->load(['workout', 'location', 'status', 'signups', 'meetingPoints']);
-        return view('workout-sessions.show', compact('session'));
+        return redirect($this->novaPath('/'.$workout_session->getKey()));
     }
 
-    public function cancel(WorkoutSession $session)
+    public function edit(WorkoutSession $workout_session)
     {
-        $this->authorize('cancel', $session);
+        return redirect($this->novaPath('/'.$workout_session->getKey().'/edit'));
+    }
 
-        $session->update([
+    public function update(Request $request, WorkoutSession $workout_session)
+    {
+        $workout_session->update($request->validate([
+            'workout_id' => 'nullable|exists:workouts,id',
+            'location_id' => 'required|exists:system_locations,id',
+            'session_date' => 'required|date',
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i|after:start_time',
+            'max_athletes' => 'nullable|integer|min:0',
+            'max_guides' => 'nullable|integer|min:0',
+            'status_id' => 'required|exists:system_statuses,id',
+            'notes' => 'nullable|string',
+        ]));
+
+        return redirect()->route('workout-sessions.show', $workout_session)
+            ->with('success', 'Workout Session updated successfully');
+    }
+
+    public function destroy(WorkoutSession $workout_session)
+    {
+        $workout_session->delete();
+
+        return redirect()->route('workout-sessions.index')
+            ->with('success', 'Workout Session deleted successfully');
+    }
+
+    public function cancel(WorkoutSession $workout_session)
+    {
+        $this->authorize('cancel', $workout_session);
+
+        $workout_session->update([
             'cancelled_at' => now(),
             'cancelled_by' => auth()->id(),
             'status_id' => SystemStatus::where('code', 'cancelled')->first()->id
         ]);
 
-        return redirect()->route('workout-sessions.show', $session)
+        return redirect()->route('workout-sessions.show', $workout_session)
             ->with('success', 'Workout Session cancelled');
     }
 }

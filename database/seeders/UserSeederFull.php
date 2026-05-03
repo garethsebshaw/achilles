@@ -8,14 +8,14 @@ use App\Models\User;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class UserSeederFull extends Seeder
 {
     public function run()
     {
 
-        // Re-enable foreign key checks
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        Schema::disableForeignKeyConstraints();
 
         DB::table('users')->insert([
             'email' => 'sophia.chelli@gmail.com',
@@ -35055,10 +35055,8 @@ class UserSeederFull extends Seeder
             'updated_at' => '2023-08-26 11:12:56',
         ]);
 
-        // Re-enable foreign key checks
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        Schema::enableForeignKeyConstraints();
 
 //        $this->command->info(class_basename(static::class) . ' seeded successfully!');
     }
 }
-

@@ -122,8 +122,11 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->morphs('taggable');
 
-            $table->primary(['id', 'tag_id', 'system_module_id', 'taggable_id', 'taggable_type']);
             $table->timestamps();
+            $table->unique(
+                ['tag_id', 'system_module_id', 'taggable_id', 'taggable_type'],
+                'system_taggables_unique'
+            );
         });
 
         Schema::create('system_statuses', function (Blueprint $table) {
