@@ -11,6 +11,24 @@ use Laravel\Nova\Nova;
 
 class WorkoutController extends Controller
 {
+    private function rules(): array
+    {
+        return [
+            'name' => 'required|string|max:255',
+            'location_id' => 'required|exists:system_locations,id',
+            'activity_type_id' => 'required|exists:system_categories,id',
+            'default_start_time' => 'required|date_format:H:i',
+            'default_end_time' => 'required|date_format:H:i|after:default_start_time',
+            'is_recurring' => 'boolean',
+            'recurrence_pattern' => 'nullable|string',
+            'advance_create_weeks' => 'integer|min:1|max:52',
+            'default_max_athletes' => 'nullable|integer|min:0',
+            'default_max_guides' => 'nullable|integer|min:0',
+            'description' => 'nullable|string',
+            'metadata' => 'nullable|array',
+        ];
+    }
+
     private function novaPath(string $suffix = ''): string
     {
         $novaBasePath = trim(Nova::path(), '/');
@@ -31,18 +49,7 @@ class WorkoutController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'location_id' => 'required|exists:system_locations,id',
-            'activity_type_id' => 'required|exists:system_categories,id',
-            'default_start_time' => 'required|date_format:H:i',
-            'default_end_time' => 'required|date_format:H:i|after:default_start_time',
-            'is_recurring' => 'boolean',
-            'recurrence_pattern' => 'nullable|string',
-            'advance_create_weeks' => 'integer|min:1|max:52',
-            'default_max_athletes' => 'nullable|integer|min:0',
-            'default_max_guides' => 'nullable|integer|min:0',
-        ]);
+        $validated = $request->validate($this->rules());
 
         $validated['created_by'] = auth()->id();
         $validated['is_template'] = false;
@@ -65,13 +72,13 @@ class WorkoutController extends Controller
 
     public function update(Request $request, Workout $workout)
     {
-        $validated = $request->validate([
-            // Same validation as store method
-        ]);
+        $validated = $request->validate($this->rules());
 
         // Create a new version if significant changes
         if ($this->workoutNeedsNewVersion($workout, $validated)) {
             $workout->update(['is_current_version' => false]);
+            $validated['created_by'] = $workout->created_by ?? auth()->id();
+            $validated['is_template'] = $workout->is_template;
             $validated['version'] = $workout->version + 1;
             $validated['is_current_version'] = true;
             $workout = Workout::create($validated);

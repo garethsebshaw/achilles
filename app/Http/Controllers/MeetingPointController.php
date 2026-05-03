@@ -11,6 +11,30 @@ use Laravel\Nova\Nova;
 
 class MeetingPointController extends Controller
 {
+    private function rules(): array
+    {
+        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
+
+        return [
+            'name' => 'required|string|max:255',
+            'address' => 'required|string',
+            'latitude' => 'nullable|numeric|between:-90,90',
+            'longitude' => 'nullable|numeric|between:-180,180',
+            'type_id' => [
+                'required',
+                'exists:system_categories,id',
+                function ($attribute, $value, $fail) use ($workoutsModuleId) {
+                    $type = SystemCategory::find($value);
+                    if (! $type || $type->system_module_id !== $workoutsModuleId) {
+                        $fail('Invalid meeting point type.');
+                    }
+                },
+            ],
+            'chapter_id' => 'nullable|exists:system_chapters,id',
+            'metadata' => 'nullable|array',
+        ];
+    }
+
     private function novaPath(string $suffix = ''): string
     {
         $novaBasePath = trim(Nova::path(), '/');
@@ -31,26 +55,7 @@ class MeetingPointController extends Controller
 
     public function store(Request $request)
     {
-        $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'address' => 'required|string',
-            'latitude' => 'nullable|numeric|between:-90,90',
-            'longitude' => 'nullable|numeric|between:-180,180',
-            'type_id' => [
-                'required',
-                'exists:system_categories,id',
-                function ($attribute, $value, $fail) use ($workoutsModuleId) {
-                    $type = SystemCategory::find($value);
-                    if (!$type || $type->system_module_id !== $workoutsModuleId) {
-                        $fail('Invalid meeting point type.');
-                    }
-                }
-            ],
-            'chapter_id' => 'nullable|exists:system_chapters,id',
-            'metadata' => 'nullable|array'
-        ]);
+        $validated = $request->validate($this->rules());
 
         $validated['created_by'] = auth()->id();
 
@@ -72,10 +77,7 @@ class MeetingPointController extends Controller
 
     public function update(Request $request, MeetingPoint $meeting_point)
     {
-        // Similar validation to store method
-        $validated = $request->validate([
-            // Same validation as store method
-        ]);
+        $validated = $request->validate($this->rules());
 
         $meeting_point->update($validated);
 
