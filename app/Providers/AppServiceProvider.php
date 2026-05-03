@@ -4,9 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
-
-use App\Nova\SystemLocation;
-use App\Nova\SystemLocationAccess;
+use Laravel\Nova\Nova;
 
 //use App\Policies\SystemLocationAccessPolicy;
 //use App\Policies\SystemLocationPolicy;
@@ -33,6 +31,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $novaDashboardPath = '/'.trim(Nova::path(), '/');
+        $novaDashboardPath = rtrim($novaDashboardPath === '/' ? '/dashboard' : $novaDashboardPath.'/dashboard', '/');
+
+        config([
+            'fortify.home' => $novaDashboardPath,
+            'fortify.redirects.login' => $novaDashboardPath,
+            'fortify.redirects.logout' => '/login',
+        ]);
+
         Fortify::loginView(function () {
             return view('auth.login');
         });

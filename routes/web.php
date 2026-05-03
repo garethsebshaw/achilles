@@ -40,9 +40,9 @@ Route::get('/', function () {
     ]);
 
     if (auth()->check()) {
-        return redirect(Nova::path() . '/dashboard/main');
+        return redirect('/dashboard');
     }
     return redirect('/login');
-
-
 });
+
+Route::redirect('/home', '/dashboard');
