@@ -57,10 +57,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('workout_session_id')->constrained('workout_sessions');
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('athlete_id')->nullable()->constrained('users')->after('user_id');
-            $table->timestamp('checked_in_at')->nullable()->after('status_id');
-            $table->timestamp('checked_out_at')->nullable()->after('checked_in_at');
+            $table->foreignId('athlete_id')->nullable()->constrained('users');
             $table->foreignId('status_id')->nullable()->constrained('system_statuses');
+            $table->timestamp('checked_in_at')->nullable();
+            $table->timestamp('checked_out_at')->nullable();
             $table->json('preferences')->nullable();
             $table->json('equipment_requirements')->nullable();
             $table->timestamps();
