@@ -12,7 +12,7 @@
         "php": "^8.2",
         "achilles/social-login": "@dev",
         "laravel/framework": "^11.31",
-        "laravel/nova": "^5.1",
+        "laravel/nova": "^5.8",
         "laravel/socialite": "^5.17",
         "laravel/tinker": "^2.9",
         "owen-it/laravel-auditing": "^13.6",

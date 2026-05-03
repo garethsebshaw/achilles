@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Auth\SocialiteController;
+use App\Http\Controllers\MeetingPointController;
 use App\Http\Controllers\WorkoutController;
+use App\Http\Controllers\WorkoutSessionController;
+use App\Http\Controllers\WorkoutSignupController;
 use App\Http\Controllers\WeatherViewController;
 
 Route::get('auth/{provider}/redirect', [SocialiteController::class, 'redirect'])

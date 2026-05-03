@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Workout;
 use App\Models\SystemModule;
 use App\Models\SystemCategory;
+use App\Models\SystemLocation;
 use Illuminate\Http\Request;
 
 class WorkoutController extends Controller

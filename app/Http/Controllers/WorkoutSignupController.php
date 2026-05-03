@@ -10,8 +10,6 @@ use App\Models\SystemCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use test\Http\Controllers\Controller;
-
 class WorkoutSignupController extends Controller
 {
     public function index(Request $request)
