@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\SystemLocation;
-use App\Models\SystemStatus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -39,7 +38,7 @@ class WeatherData extends Model
     ];
 
     protected $casts = [
-        'weather_code' => 'string',
+        'weather_code' => 'integer',
         'forecast_time' => 'datetime',
         'generated_at' => 'datetime',
     ];
@@ -48,15 +47,4 @@ class WeatherData extends Model
     {
         return $this->belongsTo(SystemLocation::class, 'location_id');
     }
-
-    public function weathercode(): BelongsTo
-    {
-        return $this->belongsTo(SystemStatus::class, 'weather_code', 'code')
-            ->whereRaw('BINARY system_statuses.code = weather_data.weather_code')
-            ->whereHas('module', function ($query) {
-                $query->where('model_type', self::class);
-            })
-            ->withTrashed();
-    }
-
 }

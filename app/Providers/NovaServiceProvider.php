@@ -34,6 +34,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return [
                 MenuSection::dashboard(\App\Nova\Dashboards\Main::class)->icon('chart-bar'),
 
+                MenuSection::make(__('Account'), [
+                    MenuItem::link(__('Account Security'), '/account/security'),
+                ])->icon('shield-check')->collapsable(),
+
                 MenuSection::make(__('Sessions'), [
                     MenuItem::resource(\App\Nova\WorkoutSession::class),
                     MenuItem::resource(\App\Nova\WorkoutSignup::class),

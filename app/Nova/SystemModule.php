@@ -2,15 +2,16 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
+use App\Models\SystemModule as SystemModuleModel;
+use App\Nova\Filters\ModuleImplementationStateFilter;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Fields\BelongsTo;
 
 class SystemModule extends Resource
 {
@@ -37,8 +38,7 @@ class SystemModule extends Resource
         'name',
         'model_type',
         'description',
-        'active',
-        'metadata'
+        'active'
     ];
 
     /**
@@ -69,14 +69,6 @@ class SystemModule extends Resource
      */
     public function fields(NovaRequest $request)
     {
-
-        // Try to find the module, if it doesn't exist create it
-        $workoutsModule = SystemModule::where('model_type', 'App\Models\Workout')->first();
-
-        if (!$workoutsModule) {
-            $workoutsModule = SystemModule::createWorkoutsModule();
-        }
-
         return [
             ID::make()->sortable(),
 
@@ -95,6 +87,33 @@ class SystemModule extends Resource
             Boolean::make(__('Active'))
                 ->default(true)
                 ->sortable(),
+
+            Badge::make(__('Implementation Status'), fn () => $this->implementation_state)
+                ->map([
+                    SystemModuleModel::STATE_IMPLEMENTED => 'success',
+                    SystemModuleModel::STATE_PARTIAL_SHELL => 'warning',
+                    SystemModuleModel::STATE_MAPPED_ALIAS => 'info',
+                    SystemModuleModel::STATE_MISSING_SPEC_ONLY => 'danger',
+                ])
+                ->labels([
+                    SystemModuleModel::STATE_IMPLEMENTED => __('Implemented'),
+                    SystemModuleModel::STATE_PARTIAL_SHELL => __('Partial Shell'),
+                    SystemModuleModel::STATE_MAPPED_ALIAS => __('Mapped Alias'),
+                    SystemModuleModel::STATE_MISSING_SPEC_ONLY => __('Spec Only'),
+                ])
+                ->sortable()
+                ->exceptOnForms(),
+
+            Text::make(__('Canonical Model'), fn () => $this->canonical_model_type)
+                ->readonly()
+                ->hideFromIndex()
+                ->nullable(),
+
+            Textarea::make(__('Implementation Notes'), fn () => $this->implementation_notes)
+                ->readonly()
+                ->hideFromIndex()
+                ->alwaysShow()
+                ->nullable(),
 
             Code::make(__('Metadata'))
                 ->json()
@@ -125,7 +144,9 @@ class SystemModule extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new ModuleImplementationStateFilter(),
+        ];
     }
 
     /**

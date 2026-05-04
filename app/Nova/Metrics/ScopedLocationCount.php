@@ -18,8 +18,7 @@ class ScopedLocationCount extends Value
         $query = SystemLocation::query()->where('is_active', true);
         $this->applyScopedLocationFilter($query, 'system_locations.id', $this->dashboardUser($request));
 
-        return $this->result($query->count())
-            ->help(__('Active locations in :scope.', ['scope' => $this->scopeLabel($this->dashboardUser($request))]));
+        return $this->result($query->count());
     }
 
     public function name()

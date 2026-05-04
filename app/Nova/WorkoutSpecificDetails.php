@@ -28,6 +28,7 @@ class WorkoutSpecificDetails extends Resource
             ID::make()->sortable(),
 
             BelongsTo::make(__('Workout Signup'), 'workoutSignup', WorkoutSignup::class)
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('Sport Category'), 'sportCategory', SystemCategory::class)

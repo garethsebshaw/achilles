@@ -21,7 +21,7 @@ class SignupsNextWeek extends Value
                     $query->whereBetween('session_date', [$start, $end]);
                 })
                 ->count()
-        )->help(__('Signups tied to sessions happening next week.'));
+        );
     }
 
     public function name()

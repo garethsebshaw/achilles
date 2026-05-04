@@ -35,7 +35,7 @@ class MyMissedSessions extends Value
             ->distinct('workout_signups.workout_session_id')
             ->count('workout_signups.workout_session_id');
 
-        return $this->result($count)->help(__('Past sessions you missed or abandoned late.'));
+        return $this->result($count);
     }
 
     public function name()

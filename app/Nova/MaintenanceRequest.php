@@ -54,24 +54,30 @@ class MaintenanceRequest extends Resource
             ID::make()->sortable(),
 
             BelongsTo::make(__('Equipment'))
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('Component'), 'component', EquipmentComponent::class)
+                ->searchable()
                 ->nullable(),
 
             BelongsTo::make(__('Reported By'), 'reportedBy', User::class)
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('Assigned To'), 'assignedTo', User::class)
+                ->searchable()
                 ->nullable(),
 
             BelongsTo::make(__('Status'), 'status', SystemStatus::class)
+                ->searchable()
                 ->relatableQueryUsing(function (NovaRequest $request, $query) {
                     return $query->forModelType(\App\Models\MaintenanceRequest::class);
                 })
                 ->rules('required'),
 
             BelongsTo::make(__('Priority'), 'priority', EquipmentMaintenancePriority::class)
+                ->searchable()
                 ->rules('required'),
 
             Textarea::make(__('Description'))
@@ -101,6 +107,7 @@ class MaintenanceRequest extends Resource
                 ->nullable(),
 
             BelongsTo::make(__('Parent Request'), 'parentRequest', MaintenanceRequest::class)
+                ->searchable()
                 ->nullable(),
 
             Textarea::make(__('Notes'))

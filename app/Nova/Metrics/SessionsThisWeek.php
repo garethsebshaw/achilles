@@ -16,7 +16,7 @@ class SessionsThisWeek extends Value
             WorkoutSession::query()
                 ->whereBetween('session_date', [now()->startOfWeek()->toDateString(), now()->endOfWeek()->toDateString()])
                 ->count()
-        )->help(__('Sessions scheduled this week.'));
+        );
     }
 
     public function name()

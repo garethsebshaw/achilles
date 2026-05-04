@@ -18,7 +18,7 @@ class ScopedUpcomingEvents extends Value
             ->where('start_date', '>=', now())
             ->count();
 
-        return $this->result($count)->help(__('Upcoming events visible to your operating scope.'));
+        return $this->result($count);
     }
 
     public function name()

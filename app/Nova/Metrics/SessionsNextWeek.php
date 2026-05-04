@@ -19,7 +19,7 @@ class SessionsNextWeek extends Value
             WorkoutSession::query()
                 ->whereBetween('session_date', [$start, $end])
                 ->count()
-        )->help(__('Sessions scheduled next week.'));
+        );
     }
 
     public function name()

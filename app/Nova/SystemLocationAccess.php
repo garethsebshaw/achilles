@@ -54,9 +54,11 @@ class SystemLocationAccess extends Resource
             ID::make()->sortable(),
 
             BelongsTo::make(__('Location'), 'location', SystemLocation::class)
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('User'))
+                ->searchable()
                 ->rules('required'),
 
             Select::make(__('Access Type'))
@@ -81,6 +83,7 @@ class SystemLocationAccess extends Resource
                 ->nullable(),
 
             BelongsTo::make(__('Granted By'), 'grantedBy', User::class)
+                ->searchable()
                 ->rules('required'),
 
             Boolean::make(__('Active'), 'is_active')

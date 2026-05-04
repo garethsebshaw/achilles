@@ -8,6 +8,15 @@ use Illuminate\Database\Seeder;
 
 class SystemLocationSeeder extends Seeder
 {
+    private const CITY_COORDINATE_OVERRIDES = [
+        'Bronx' => [40.8448, -73.8648],
+        'Brooklyn' => [40.6782, -73.9442],
+        'Long Island' => [40.7891, -73.1350],
+        'Manhattan' => [40.7831, -73.9712],
+        'Queens' => [40.7282, -73.7949],
+        'Staten Island' => [40.5795, -74.1502],
+    ];
+
     private const COUNTRY_COORDINATES = [
         'AU' => [-25.2744, 133.7751],
         'BR' => [-14.2350, -51.9253],
@@ -83,7 +92,7 @@ class SystemLocationSeeder extends Seeder
         foreach ($chapters as $index => $chapter) {
             $country = $chapter->country;
             $region = $chapter->region;
-            [$latitude, $longitude] = $this->coordinatesFor($country?->iso2, $index);
+            [$latitude, $longitude] = $this->coordinatesFor($chapter->city, $country?->iso2, $index);
 
             $city = $chapter->city ?: $chapter->name;
             $state = $chapter->state ?: ($country?->iso2 === 'US' ? $region?->code : $region?->name);
@@ -116,8 +125,12 @@ class SystemLocationSeeder extends Seeder
         }
     }
 
-    private function coordinatesFor(?string $countryCode, int $index): array
+    private function coordinatesFor(?string $city, ?string $countryCode, int $index): array
     {
+        if ($city && isset(self::CITY_COORDINATE_OVERRIDES[$city])) {
+            return self::CITY_COORDINATE_OVERRIDES[$city];
+        }
+
         [$baseLatitude, $baseLongitude] = self::COUNTRY_COORDINATES[$countryCode] ?? [0.0, 0.0];
 
         $latitude = round($baseLatitude + ((($index % 7) - 3) * 0.18), 6);

@@ -56,9 +56,11 @@ class EquipmentCheckout extends Resource
             ID::make()->sortable(),
 
             BelongsTo::make(__('Equipment'))
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('User'))
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('Event'), 'event', Event::class)

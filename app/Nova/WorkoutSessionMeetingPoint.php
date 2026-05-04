@@ -26,9 +26,11 @@ class WorkoutSessionMeetingPoint extends Resource
             ID::make()->sortable(),
 
             BelongsTo::make(__('Workout Session'), 'workoutSession', WorkoutSession::class)
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('Meeting Point'), 'meetingPoint', MeetingPoint::class)
+                ->searchable()
                 ->rules('required'),
 
             Boolean::make(__('Is Primary'))

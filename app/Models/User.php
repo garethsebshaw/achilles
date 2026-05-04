@@ -12,11 +12,12 @@ use Illuminate\Notifications\Notifiable;
 use App\Models\UserCertification;
 use App\Models\LanguageProficiency;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Fortify\TwoFactorAuthenticatable;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, SoftDeletes;
+    use HasFactory, Notifiable, SoftDeletes, TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -47,6 +48,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_secret',
+        'two_factor_recovery_codes',
     ];
 
     /**
@@ -65,6 +68,7 @@ class User extends Authenticatable
             'is_team_leader' => 'boolean',
             'is_athlete' => 'boolean',
             'is_guide' => 'boolean',
+            'two_factor_confirmed_at' => 'datetime',
         ];
     }
 

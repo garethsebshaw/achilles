@@ -320,6 +320,26 @@ class NovaSmokeTest extends TestCase
         $this->assertSame($session->signups()->count(), $query->count());
     }
 
+    public function test_workout_signup_attendance_actions_require_selected_session_context(): void
+    {
+        $signup = WorkoutSignup::query()->with('workoutSession')->firstOrFail();
+        $resource = new WorkoutSignupResource($signup);
+
+        $signup->workoutSession->forceFill([
+            'session_date' => now()->toDateString(),
+            'start_time' => now()->subHour()->format('H:i:s'),
+            'end_time' => now()->addHour()->format('H:i:s'),
+        ])->save();
+
+        $unscopedRequest = NovaRequest::create('/resources/workout-signups', 'GET');
+        $scopedRequest = NovaRequest::create('/resources/workout-signups', 'GET', [
+            'resourceId' => $signup->workout_session_id,
+        ]);
+
+        $this->assertCount(0, $resource->actions($unscopedRequest));
+        $this->assertCount(2, $resource->actions($scopedRequest));
+    }
+
     public function test_nova_api_endpoints_load_for_seeded_sys_admin(): void
     {
         $admin = User::query()->where('email', 'thisisg@gmail.com')->firstOrFail();

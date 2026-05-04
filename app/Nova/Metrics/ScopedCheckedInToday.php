@@ -19,7 +19,7 @@ class ScopedCheckedInToday extends Value
             ->distinct('workout_signups.id')
             ->count('workout_signups.id');
 
-        return $this->result($count)->help(__('Users checked in today within your scope.'));
+        return $this->result($count);
     }
 
     public function name()

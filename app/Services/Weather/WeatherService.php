@@ -127,7 +127,10 @@ class WeatherService
         $generatedAt = now();
 
         foreach ($hourly['time'] as $index => $time) {
-            WeatherData::create([
+            WeatherData::updateOrCreate([
+                'location_id' => $location->id,
+                'forecast_time' => $time,
+            ], [
                 'location_id' => $location->id,
                 'forecast_time' => $time,
                 'generated_at' => $generatedAt,
@@ -167,7 +170,10 @@ class WeatherService
         $generatedAt = now();
 
         foreach ($daily['time'] as $index => $date) {
-            WeatherDailyData::create([
+            WeatherDailyData::updateOrCreate([
+                'location_id' => $location->id,
+                'date' => $date,
+            ], [
                 'location_id' => $location->id,
                 'date' => $date,
                 'generated_at' => $generatedAt,

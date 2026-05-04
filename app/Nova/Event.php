@@ -64,6 +64,7 @@ class Event extends Resource
                 ->rows(3),
 
             BelongsTo::make(__('Location'), 'location', SystemLocation::class)
+                ->searchable()
                 ->nullable(),
 
             DateTime::make(__('Start Date'))
@@ -79,6 +80,7 @@ class Event extends Resource
                 ->rules('required'),
 
             BelongsTo::make(__('Created By'), 'createdBy', User::class)
+                ->searchable()
                 ->rules('required'),
 
             Boolean::make(__('Is Active'))

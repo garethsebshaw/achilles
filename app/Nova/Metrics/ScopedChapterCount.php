@@ -18,8 +18,7 @@ class ScopedChapterCount extends Value
         $query = SystemLocation::query()->whereNotNull('chapter_id');
         $this->applyScopedLocationFilter($query, 'system_locations.id', $this->dashboardUser($request));
 
-        return $this->result($query->distinct('chapter_id')->count('chapter_id'))
-            ->help(__('Operational chapter coverage for :scope.', ['scope' => $this->scopeLabel($this->dashboardUser($request))]));
+        return $this->result($query->distinct('chapter_id')->count('chapter_id'));
     }
 
     public function name()

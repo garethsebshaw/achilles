@@ -44,8 +44,7 @@ class MyPartnerCount extends Value
             );
         }
 
-        return $this->result($partnerIds->filter()->unique()->count())
-            ->help(__('Distinct training partners you have worked with.'));
+        return $this->result($partnerIds->filter()->unique()->count());
     }
 
     public function name()

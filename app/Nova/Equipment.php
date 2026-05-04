@@ -73,6 +73,7 @@ class Equipment extends Resource
                 ->rules('required'),
 
             BelongsTo::make(__('Manufacturer'))
+                ->searchable()
                 ->rules('required'),
 
             Text::make(__('Name'))
@@ -91,9 +92,11 @@ class Equipment extends Resource
                 ->updateRules('unique:equipment,qr_code,{{resourceId}}'),
 
             BelongsTo::make(__('Location'), 'location', SystemLocation::class)
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('Storage Location'), 'storageLocation', StorageLocation::class)
+                ->searchable()
                 ->nullable(),
 
             BelongsTo::make(__('Status'), 'status', SystemStatus::class)
@@ -118,6 +121,7 @@ class Equipment extends Resource
                 ->hideFromIndex(),
 
             BelongsTo::make(__('Assigned To'), 'assignedUser', User::class)
+                ->searchable()
                 ->nullable(),
 
             Date::make(__('Purchase Date'))

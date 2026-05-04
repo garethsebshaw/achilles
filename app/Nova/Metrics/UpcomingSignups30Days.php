@@ -18,7 +18,7 @@ class UpcomingSignups30Days extends Value
                     $query->whereBetween('session_date', [now()->toDateString(), now()->addDays(30)->toDateString()]);
                 })
                 ->count()
-        )->help(__('Signups tied to sessions over the next 30 days.'));
+        );
     }
 
     public function name()

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Actions\Fortify\ResetUserPassword;
+use App\Actions\Fortify\UpdateUserPassword;
 use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
@@ -26,8 +28,26 @@ class FortifyServiceProvider extends ServiceProvider
             'fortify.lowercase_usernames' => true,
         ]);
 
+        Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
+        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+
         Fortify::loginView(function () {
             return view('auth.login');
+        });
+
+        Fortify::requestPasswordResetLinkView(function () {
+            return view('auth.forgot-password');
+        });
+
+        Fortify::resetPasswordView(function (Request $request) {
+            return view('auth.reset-password', [
+                'request' => $request,
+                'email' => $request->email,
+            ]);
+        });
+
+        Fortify::twoFactorChallengeView(function () {
+            return view('auth.two-factor-challenge');
         });
 
         Fortify::authenticateUsing(function (Request $request) {

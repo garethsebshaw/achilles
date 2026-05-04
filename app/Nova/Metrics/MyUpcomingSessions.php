@@ -26,7 +26,7 @@ class MyUpcomingSessions extends Value
             ->distinct('workout_signups.workout_session_id')
             ->count('workout_signups.workout_session_id');
 
-        return $this->result($count)->help(__('Sessions you are currently signed up for.'));
+        return $this->result($count);
     }
 
     public function name()

@@ -4,11 +4,13 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
+        "test:browser": "playwright test",
         "build-social-login": "cd nova-components/SocialLogin && npm run dev",
         "build-social-login-prod": "cd nova-components/SocialLogin && npm run prod"
     },
     "devDependencies": {
         "@inertiajs/vue3": "^2.0.3",
+        "@playwright/test": "^1.59.1",
         "@vitejs/plugin-vue": "^5.2.1",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.4",

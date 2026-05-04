@@ -18,7 +18,7 @@ class ScopedTodaySessions extends Value
             ->whereDate('workout_sessions.session_date', now()->toDateString())
             ->count();
 
-        return $this->result($count)->help(__('Sessions happening today in your operational scope.'));
+        return $this->result($count);
     }
 
     public function name()

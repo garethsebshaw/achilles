@@ -18,7 +18,7 @@ class SignupsThisWeek extends Value
                     $query->whereBetween('session_date', [now()->startOfWeek()->toDateString(), now()->endOfWeek()->toDateString()]);
                 })
                 ->count()
-        )->help(__('Signups tied to sessions happening this week.'));
+        );
     }
 
     public function name()

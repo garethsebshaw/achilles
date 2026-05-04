@@ -1,0 +1,160 @@
+import { expect, test } from '@playwright/test';
+import { execFileSync } from 'node:child_process';
+
+type ResourceManifestEntry = {
+    label: string;
+    slug: string;
+    sampleId: number | null;
+};
+
+const adminEmail = process.env.AW_ADMIN_EMAIL ?? 'thisisg@gmail.com';
+const adminPassword = process.env.AW_ADMIN_PASSWORD ?? 'rcp@UHE-nmq_kmw0qzk';
+const expectNovaRegistered = process.env.EXPECT_NOVA_REGISTERED === 'true';
+
+const publicPages = [
+    '/login',
+    '/forgot-password',
+];
+
+const authenticatedPages = [
+    '/dashboards/main',
+    '/account/security',
+    '/workouts',
+    '/workout-sessions',
+    '/workout-signups',
+    '/meeting-points',
+    '/weather/33',
+];
+
+const resourceManifest = getResourceManifest();
+
+test.describe('browser validation', () => {
+    test('public auth pages render and seeded admin login succeeds', async ({ page }) => {
+        for (const path of publicPages) {
+            await page.goto(path, { waitUntil: 'domcontentloaded' });
+            await expect(page).toHaveURL(new RegExp(`${escapeForRegex(path)}$`));
+            await assertNoPageError(page, path);
+        }
+
+        await login(page);
+        await expect(page).toHaveURL(/\/dashboards\/main$/);
+        await expect(page.getByText('Dashboards', { exact: false })).toBeVisible();
+        await assertNovaRegistrationState(page);
+        await assertNoPageError(page, '/dashboards/main');
+    });
+
+    test('authenticated bridge pages and dashboard render cleanly', async ({ page }) => {
+        await login(page);
+
+        for (const path of authenticatedPages) {
+            await page.goto(path, { waitUntil: 'domcontentloaded' });
+            await assertNovaRegistrationState(page);
+            await assertNoPageError(page, path);
+        }
+
+        await expect(page.getByRole('table').first()).toBeVisible();
+        await expect(page.getByText('Current Conditions', { exact: false })).toBeVisible();
+    });
+
+    test('nova resource pages load cleanly across the full manifest', async ({ page }) => {
+        test.setTimeout(15 * 60 * 1000);
+        await login(page);
+
+        for (const resource of resourceManifest) {
+            const indexPath = `/resources/${resource.slug}`;
+            await page.goto(indexPath, { waitUntil: 'domcontentloaded' });
+            await assertNovaRegistrationState(page);
+            await assertNoPageError(page, `${resource.label} index`);
+
+            const createPath = `${indexPath}/new`;
+            await page.goto(createPath, { waitUntil: 'domcontentloaded' });
+            await assertNovaRegistrationState(page);
+            await assertNoPageError(page, `${resource.label} create`);
+
+            if (resource.sampleId !== null) {
+                const detailPath = `${indexPath}/${resource.sampleId}`;
+                await page.goto(detailPath, { waitUntil: 'domcontentloaded' });
+                await assertNovaRegistrationState(page);
+                await assertNoPageError(page, `${resource.label} detail`);
+
+                const editPath = `${detailPath}/edit`;
+                await page.goto(editPath, { waitUntil: 'domcontentloaded' });
+                await assertNovaRegistrationState(page);
+                await assertNoPageError(page, `${resource.label} edit`);
+            }
+        }
+    });
+
+    test('workout-session check-in navigation resolves into a scoped signup page', async ({ page }) => {
+        const sessionResource = resourceManifest.find((resource) => resource.slug === 'workout-sessions');
+
+        test.skip(!sessionResource?.sampleId, 'No seeded workout session was available for browser validation.');
+
+        await login(page);
+        await page.goto(`/resources/workout-sessions/${sessionResource!.sampleId}`, { waitUntil: 'domcontentloaded' });
+        await assertNovaRegistrationState(page);
+        await assertNoPageError(page, 'workout session detail');
+
+        const checkInLink = page.locator('a[href*="/workout-signups"]').first();
+        await expect(checkInLink).toBeVisible();
+        await checkInLink.click();
+        await page.waitForLoadState('domcontentloaded');
+
+        await expect(page).toHaveURL(/workout-signups/);
+        await assertNovaRegistrationState(page);
+        await assertNoPageError(page, 'session-scoped workout signups');
+    });
+});
+
+async function login(page: import('@playwright/test').Page): Promise<void> {
+    await page.goto('/login', { waitUntil: 'domcontentloaded' });
+
+    await page.getByLabel('Email').fill(adminEmail);
+    await page.getByLabel('Password').fill(adminPassword);
+    await page.getByRole('button', { name: 'Log in' }).click();
+
+    await page.waitForURL(/\/dashboards\/main$/, { timeout: 30000 });
+}
+
+async function assertNoPageError(page: import('@playwright/test').Page, context: string): Promise<void> {
+    await page.waitForLoadState('domcontentloaded');
+
+    const body = (await page.locator('body').innerText()) ?? '';
+    const errorSnippets = [
+        'Server Error',
+        'Not Found',
+        'Whoops',
+        'Undefined variable',
+        'SQLSTATE[',
+        'Route [',
+        'We\'re lost in space.',
+    ];
+
+    for (const snippet of errorSnippets) {
+        expect.soft(body, `${context} unexpectedly contained "${snippet}"`).not.toContain(snippet);
+    }
+
+    await expect(page.locator('body')).not.toContainText('Server Error');
+}
+
+async function assertNovaRegistrationState(page: import('@playwright/test').Page): Promise<void> {
+    if (! expectNovaRegistered) {
+        return;
+    }
+
+    await expect(page.locator('body')).not.toContainText('UNREGISTERED');
+    await expect(page.locator('body')).not.toContainText('This copy of Nova is unlicensed.');
+}
+
+function getResourceManifest(): ResourceManifestEntry[] {
+    const output = execFileSync('php', ['tests/browser/resource-manifest.php'], {
+        cwd: process.cwd(),
+        encoding: 'utf8',
+    });
+
+    return JSON.parse(output) as ResourceManifestEntry[];
+}
+
+function escapeForRegex(value: string): string {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}

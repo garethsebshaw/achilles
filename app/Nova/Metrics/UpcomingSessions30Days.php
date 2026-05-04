@@ -16,7 +16,7 @@ class UpcomingSessions30Days extends Value
             WorkoutSession::query()
                 ->whereBetween('session_date', [now()->toDateString(), now()->addDays(30)->toDateString()])
                 ->count()
-        )->help(__('Sessions scheduled over the next 30 days.'));
+        );
     }
 
     public function name()

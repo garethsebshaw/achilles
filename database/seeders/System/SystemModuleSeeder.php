@@ -299,6 +299,12 @@ class SystemModuleSeeder extends Seeder
             'active' => 1
         ],
         [
+            'name' => 'Meeting Points',
+            'model_type' => 'App\Models\MeetingPoint',
+            'description' => 'Specific meeting points for workouts and sessions',
+            'active' => 1
+        ],
+        [
             'name' => 'Workout Feedback',
             'model_type' => 'App\Models\WorkoutFeedback',
             'description' => 'Collect and manage workout feedback',
@@ -310,9 +316,21 @@ class SystemModuleSeeder extends Seeder
             'description' => 'Workout Equipment Assignments',
         ],
         [
+            'name' => 'Workout Session Meeting Points',
+            'model_type' => 'App\Models\WorkoutSessionMeetingPoint',
+            'description' => 'Session-specific meeting point assignments and timing details',
+            'active' => 1
+        ],
+        [
             'name' => 'Tandem Bike Pairing Compatability',
             'model_type' => 'App\Models\TandemBikePairing',
             'description' => 'Guide + Athlete + Bike Compatability Pairings',
+        ],
+        [
+            'name' => 'Tandem Bike Pairing Checks',
+            'model_type' => 'App\Models\TandemBikePairingCheck',
+            'description' => 'Compatibility validation results for tandem bike pairings',
+            'active' => 1
         ],
         [
             'name' => 'Weather Records',
@@ -324,6 +342,24 @@ class SystemModuleSeeder extends Seeder
             'name' => 'Weather Records',
             'model_type' => 'App\Models\WeatherLocation',
             'description' => 'Track weather conditions for Locations',
+            'active' => 1
+        ],
+        [
+            'name' => 'Weather Preferences',
+            'model_type' => 'App\Models\WeatherPreference',
+            'description' => 'User-level weather preferences and alert thresholds',
+            'active' => 1
+        ],
+        [
+            'name' => 'Weather Forecast Data',
+            'model_type' => 'App\Models\WeatherData',
+            'description' => 'Hourly forecast and observed weather data for system locations',
+            'active' => 1
+        ],
+        [
+            'name' => 'Weather Daily Data',
+            'model_type' => 'App\Models\WeatherDailyData',
+            'description' => 'Daily weather summaries for system locations',
             'active' => 1
         ],
         [
@@ -643,17 +679,72 @@ class SystemModuleSeeder extends Seeder
     public function run()
     {
         foreach ($this->modules as $moduleData) {
-            SystemModule::firstOrCreate(
+            SystemModule::updateOrCreate(
                 ['model_type' => $moduleData['model_type']],
                 [
                     'name' => $moduleData['name'],
                     'description' => $moduleData['description'],
                     'active' => $moduleData['active'] ?? true,
-                    'metadata' => null
+                    'metadata' => $this->metadataFor($moduleData['model_type'])
                 ]
             );
         }
 
 //        $this->command->info(class_basename(static::class) . ' seeded successfully!');
+    }
+
+    protected function metadataFor(string $modelType): array
+    {
+        $aliasMap = [
+            'App\Models\EquipmentMaintenance' => [
+                'canonical_model_type' => 'App\Models\MaintenanceRequest',
+                'implementation_notes' => 'Use Maintenance Requests and Maintenance Logs as the real maintenance workflow modules.',
+            ],
+            'App\Models\WorkoutLocation' => [
+                'canonical_model_type' => 'App\Models\SystemLocation',
+                'implementation_notes' => 'Use System Locations plus meeting point relationships instead of a separate WorkoutLocation model.',
+            ],
+            'App\Models\WorkoutMeetingPoint' => [
+                'canonical_model_type' => 'App\Models\MeetingPoint',
+                'implementation_notes' => 'Legacy alias only. The implemented module is App\\Models\\MeetingPoint.',
+            ],
+            'App\Models\WorkoutWeather' => [
+                'canonical_model_type' => 'App\Models\WeatherData',
+                'implementation_notes' => 'Use WeatherData, WeatherDailyData, and WeatherPreference for the live weather domain.',
+            ],
+            'App\Models\WeatherLocation' => [
+                'canonical_model_type' => 'App\Models\SystemLocation',
+                'implementation_notes' => 'Weather location scope is already handled through SystemLocation.',
+            ],
+        ];
+
+        $partialShells = [
+            'App\Models\Event' => 'Loads as a Nova resource shell, but the broader event platform modules are still missing.',
+            'App\Models\TandemBikePairing' => 'Model row exists, but the pairing workflow is still skeletal and not fully surfaced in Nova.',
+            'App\Models\TandemBikePairingCheck' => 'Validation-result model exists, but there is no complete admin workflow around pairing checks yet.',
+        ];
+
+        if (isset($aliasMap[$modelType])) {
+            return [
+                'implementation_state' => SystemModule::STATE_MAPPED_ALIAS,
+                'canonical_model_type' => $aliasMap[$modelType]['canonical_model_type'],
+                'implementation_notes' => $aliasMap[$modelType]['implementation_notes'],
+            ];
+        }
+
+        if (isset($partialShells[$modelType])) {
+            return [
+                'implementation_state' => SystemModule::STATE_PARTIAL_SHELL,
+                'implementation_notes' => $partialShells[$modelType],
+            ];
+        }
+
+        $modelPath = app_path('Models/' . class_basename($modelType) . '.php');
+
+        return [
+            'implementation_state' => file_exists($modelPath)
+                ? SystemModule::STATE_IMPLEMENTED
+                : SystemModule::STATE_MISSING_SPEC_ONLY,
+        ];
     }
 }

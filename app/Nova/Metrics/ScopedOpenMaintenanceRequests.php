@@ -19,7 +19,7 @@ class ScopedOpenMaintenanceRequests extends Value
             ->distinct('maintenance_requests.id')
             ->count('maintenance_requests.id');
 
-        return $this->result($count)->help(__('Maintenance requests still requiring action.'));
+        return $this->result($count);
     }
 
     public function name()

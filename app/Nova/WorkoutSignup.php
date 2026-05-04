@@ -2,8 +2,10 @@
 
 namespace App\Nova;
 
+use App\Models\WorkoutSession as WorkoutSessionModel;
 use App\Nova\Metrics\SignupDistribution;
 use App\Nova\Metrics\SignupTrend;
+use App\Nova\Metrics\SessionContextMetric;
 use App\Nova\Metrics\TotalSignups;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\DateTime;
@@ -318,20 +320,17 @@ class WorkoutSignup extends Resource
 
     public function cards(NovaRequest $request)
     {
-        // Add some debugging
-        $resourceId = static::getResourceId($request);
-        \Log::info('WorkoutSignup Cards', [
-            'resourceId' => $resourceId,
-            'request' => $request->all()
-        ]);
+        $session = static::resolveScopedSession($request);
 
-        if (!$resourceId) {
+        if (! $session) {
             return [];
         }
 
         return [
+            (new SessionContextMetric())
+                ->withMeta(['workout_session_id' => $session->id]),
             (new Metrics\SessionAttendanceMetric())
-                ->withMeta(['workout_session_id' => $resourceId])
+                ->withMeta(['workout_session_id' => $session->id])
                 ->refreshWhenActionsRun(),
         ];
     }
@@ -352,6 +351,12 @@ class WorkoutSignup extends Resource
 
     public function actions(NovaRequest $request)
     {
+        $session = static::resolveScopedSession($request);
+
+        if (! $session || ! static::isSessionWithinCheckInWindow($session)) {
+            return [];
+        }
+
         return [
             (new CheckInAction())
                 ->onlyOnIndex()
@@ -412,6 +417,31 @@ class WorkoutSignup extends Resource
         return false;
     }
 
+    protected static function resolveScopedSession(NovaRequest $request): ?WorkoutSessionModel
+    {
+        $resourceId = static::getResourceId($request);
+
+        if (! $resourceId || ! ctype_digit((string) $resourceId)) {
+            return null;
+        }
+
+        return WorkoutSessionModel::query()
+            ->with(['workout.activityType', 'location'])
+            ->find((int) $resourceId);
+    }
+
+    protected static function isSessionWithinCheckInWindow(WorkoutSessionModel $session): bool
+    {
+        if (! $session->session_date || ! $session->start_time) {
+            return false;
+        }
+
+        $sessionDateTime = $session->session_date->copy()->setTimeFrom($session->start_time);
+        $hoursUntilSession = now()->diffInHours($sessionDateTime, false);
+
+        return abs($hoursUntilSession) <= 12;
+    }
+
     protected static function getSessionDetails(int $sessionId): string
     {
         $session = \App\Models\WorkoutSession::with(['workout', 'location'])
@@ -434,10 +464,10 @@ class WorkoutSignup extends Resource
     {
         try {
             $request = app(NovaRequest::class);
-            $resourceId = static::getResourceId($request);
+            $session = static::resolveScopedSession($request);
 
-            if ($resourceId) {
-                $sessionDetails = static::getSessionDetails((int)$resourceId);
+            if ($session) {
+                $sessionDetails = static::getSessionDetails($session->id);
                 return __('Check-in/out for :session', ['session' => $sessionDetails]);
             }
         } catch (\Exception $e) {
@@ -447,7 +477,7 @@ class WorkoutSignup extends Resource
             ]);
         }
 
-        return __('Session Signups');
+        return __('Session Signups (select a session to manage attendance)');
     }
 
 // Helper method to check if session is within check-in window

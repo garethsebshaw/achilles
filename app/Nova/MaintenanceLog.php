@@ -63,6 +63,7 @@ class MaintenanceLog extends Resource
                 ->nullable(),
 
             BelongsTo::make(__('Performed By'), 'performedBy', User::class)
+                ->searchable()
                 ->rules('required'),
 
             Select::make(__('Work Type'))

@@ -19,7 +19,7 @@ class ScopedUpcomingSignups extends Value
             ->whereIn('system_statuses.code', $this->activeSignupCodes())
             ->count();
 
-        return $this->result($count)->help(__('Upcoming athlete and guide signups in your scope.'));
+        return $this->result($count);
     }
 
     public function name()

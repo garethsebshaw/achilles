@@ -27,9 +27,11 @@ class WorkoutEquipmentAssignment extends Resource
             ID::make()->sortable(),
 
             BelongsTo::make(__('Workout Signup'), 'workoutSignup', WorkoutSignup::class)
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('Equipment'))
+                ->searchable()
                 ->rules('required'),
 
             BelongsTo::make(__('Assignment Type'), 'assignmentType', SystemCategory::class)
