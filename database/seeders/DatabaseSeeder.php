@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
 
             SystemModuleSeeder::class,
             SystemStatusSeeder::class,
+            ModuleSurfaceAlignmentSeeder::class,
             SystemCountrySeeder::class,
             SystemRegionSeeder::class,
             SystemChapterSeeder::class,
@@ -41,7 +42,12 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class, // random language seeder
             UserCertificateSeeder::class, // random user certificate seeder
 
-            WorkoutSessionAndSignupSeeder::class
+            SystemLocationSeeder::class,
+            EventSystemSeeder::class,
+            EquipmentSystemSeeder::class,
+            WeatherSystemSeeder::class,
+            WorkoutSessionAndSignupSeeder::class,
+            SystemOperationsSeeder::class,
         ]);
 //        $this->command->info(class_basename(static::class) . ' seeded everything successfully!');
     }

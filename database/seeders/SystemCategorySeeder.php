@@ -19,7 +19,7 @@ class SystemCategorySeeder extends Seeder
         // Equipment Categories
         $equipmentModule = SystemModule::firstOrCreate([
             'name' => 'Equipment Management',
-            'model_type' => App\Models\Equipment::class
+            'model_type' => \App\Models\Equipment::class
         ]);
 
         $equipmentCategories = [
