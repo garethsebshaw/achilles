@@ -16,7 +16,7 @@ class UserCertificateSeeder extends Seeder
 
     public function run(): void
     {
-        $this->command->info('User Certificate Seeder Started');
+        $this->command?->getOutput()->setVerbosity(\Symfony\Component\Console\Output\OutputInterface::VERBOSITY_QUIET);
 
         $this->certificationStatuses = DB::table('system_statuses')
             ->where('system_module_id', function($query) {
@@ -50,13 +50,7 @@ class UserCertificateSeeder extends Seeder
                 foreach (array_chunk($rows, self::INSERT_CHUNK_SIZE) as $chunk) {
                     DB::table('user_certifications')->insert($chunk);
                 }
-
-                if ($processedUsers % 10000 === 0) {
-                    $this->command->info(sprintf('Processed %d users for certification seeding...', $processedUsers));
-                }
             }, 'id');
-
-        $this->command->info('User Certificate Seeder Completed');
     }
 
     protected function certificatePayload(int $userId, object $certification): array

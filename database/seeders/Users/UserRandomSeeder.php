@@ -30,7 +30,7 @@ class UserRandomSeeder extends Seeder
 
     public function run()
     {
-        $this->command->info(class_basename(static::class) . ' seed started: ' . date('Y-m-d H:i:s'));
+        $this->command?->getOutput()->setVerbosity(\Symfony\Component\Console\Output\OutputInterface::VERBOSITY_QUIET);
 
         $startDate = Carbon::create(2010, 1, 1);
         $today = Carbon::now();
@@ -42,11 +42,8 @@ class UserRandomSeeder extends Seeder
         $usersToCreate = max(0, $targetTotalUsers - $existingUsers);
 
         if ($usersToCreate === 0) {
-            $this->command->info('User target already satisfied; skipping random user generation.');
             return;
         }
-
-        $this->command?->getOutput()->setVerbosity(\Symfony\Component\Console\Output\OutputInterface::VERBOSITY_QUIET);
 
         $rows = [];
 

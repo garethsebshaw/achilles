@@ -20,6 +20,8 @@ class LanguageSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->command?->getOutput()->setVerbosity(\Symfony\Component\Console\Output\OutputInterface::VERBOSITY_QUIET);
+
         $languages = [
             'Spoken Languages' => [
                 'English', 'Mandarin Chinese', 'Hindi', 'Spanish', 'Arabic', 'Bengali', 'Portuguese', 'Russian',
@@ -381,9 +383,6 @@ class LanguageSeeder extends Seeder
                     DB::table('language_proficiencies')->insert($chunk);
                 }
 
-                if ($processedUsers % 10000 === 0) {
-                    $this->command?->info(sprintf('Processed %d users for language proficiency seeding...', $processedUsers));
-                }
             }, 'id');
     }
 }
