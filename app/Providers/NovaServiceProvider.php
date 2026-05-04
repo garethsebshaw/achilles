@@ -25,7 +25,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         parent::boot();
 
         Nova::serving(function () {
-            Nova::script('session-attendance', ('resources/js/app.js'));
+            $distPath = $this->getDistPath('resources/js/app.js');
+
+            if ($distPath !== null) {
+                Nova::script('session-attendance', public_path(ltrim($distPath, '/')));
+            }
         });
 
         Nova::withBreadcrumbs();
@@ -199,7 +203,18 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     }
     protected function getDistPath($filename)
     {
-        $manifest = json_decode(file_get_contents(public_path('build/.vite/manifest.json')), true);
+        $manifestPath = public_path('build/.vite/manifest.json');
+
+        if (! is_file($manifestPath)) {
+            return null;
+        }
+
+        $manifest = json_decode(file_get_contents($manifestPath), true);
+
+        if (! isset($manifest[$filename]['file'])) {
+            return null;
+        }
+
         return '/build/' . $manifest[$filename]['file'];
     }
 }

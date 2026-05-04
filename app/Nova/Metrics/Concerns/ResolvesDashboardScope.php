@@ -2,8 +2,11 @@
 
 namespace App\Nova\Metrics\Concerns;
 
+use App\Models\Event;
+use App\Models\MaintenanceRequest;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
+use App\Models\WorkoutSession;
+use App\Models\WorkoutSignup;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 trait ResolvesDashboardScope
@@ -111,14 +114,14 @@ trait ResolvesDashboardScope
 
     protected function scopedSessionQuery(?User $user = null)
     {
-        $query = DB::table('workout_sessions');
+        $query = WorkoutSession::query();
 
         return $this->applyScopedLocationFilter($query, 'workout_sessions.location_id', $user);
     }
 
     protected function scopedSignupQuery(?User $user = null)
     {
-        $query = DB::table('workout_signups')
+        $query = WorkoutSignup::query()
             ->join('workout_sessions', 'workout_signups.workout_session_id', '=', 'workout_sessions.id')
             ->leftJoin('system_statuses', 'workout_signups.status_id', '=', 'system_statuses.id');
 
@@ -127,14 +130,14 @@ trait ResolvesDashboardScope
 
     protected function scopedEventQuery(?User $user = null)
     {
-        $query = DB::table('events');
+        $query = Event::query();
 
         return $this->applyScopedLocationFilter($query, 'events.location_id', $user);
     }
 
     protected function scopedMaintenanceQuery(?User $user = null)
     {
-        $query = DB::table('maintenance_requests')
+        $query = MaintenanceRequest::query()
             ->join('equipment', 'maintenance_requests.equipment_id', '=', 'equipment.id')
             ->leftJoin('system_statuses', 'maintenance_requests.status_id', '=', 'system_statuses.id');
 
@@ -143,7 +146,7 @@ trait ResolvesDashboardScope
 
     protected function personalSignupQuery(User $user)
     {
-        return DB::table('workout_signups')
+        return WorkoutSignup::query()
             ->join('workout_sessions', 'workout_signups.workout_session_id', '=', 'workout_sessions.id')
             ->leftJoin('workouts', 'workout_sessions.workout_id', '=', 'workouts.id')
             ->leftJoin('system_categories as sports', 'workouts.activity_type_id', '=', 'sports.id')
