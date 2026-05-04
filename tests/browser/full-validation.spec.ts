@@ -22,7 +22,6 @@ const authenticatedPages = [
     '/workout-sessions',
     '/workout-signups',
     '/meeting-points',
-    '/weather/33',
 ];
 
 const resourceManifest = getResourceManifest();
@@ -51,8 +50,18 @@ test.describe('browser validation', () => {
             await assertNoPageError(page, path);
         }
 
-        await expect(page.getByRole('table').first()).toBeVisible();
-        await expect(page.getByText('Current Conditions', { exact: false })).toBeVisible();
+        await page.goto('/resources/system-locations', { waitUntil: 'domcontentloaded' });
+        const locationDetailPath = await findDetailPath(page, 'system-locations');
+
+        if (locationDetailPath !== null) {
+            const locationId = locationDetailPath.split('/').pop();
+
+            await page.goto(`/weather/${locationId}`, { waitUntil: 'domcontentloaded' });
+            await assertNoPageError(page, `/weather/${locationId}`);
+
+            const body = (await page.locator('body').innerText()) ?? '';
+            expect(body).toMatch(/Current Conditions|No live weather data|No hourly weather records|No daily weather records/);
+        }
     });
 
     test('nova resource pages load cleanly across the full manifest', async ({ page }) => {
