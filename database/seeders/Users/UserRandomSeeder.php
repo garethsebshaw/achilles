@@ -35,8 +35,12 @@ class UserRandomSeeder extends Seeder
         $startDate = Carbon::create(2010, 1, 1);
         $today = Carbon::now();
         $existingUsers = (int) DB::table('users')->count();
+        // Never let Cloud or local demo rebuilds silently shrink below the supported
+        // large-dataset baseline just because an environment variable is stale.
+        $configuredTargetUsers = (int) env('SEED_TOTAL_USERS', self::DEFAULT_TOTAL_USERS);
         $targetTotalUsers = max(
-            (int) env('SEED_TOTAL_USERS', self::DEFAULT_TOTAL_USERS),
+            $configuredTargetUsers,
+            self::DEFAULT_TOTAL_USERS,
             $existingUsers
         );
         $usersToCreate = max(0, $targetTotalUsers - $existingUsers);
