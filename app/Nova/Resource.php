@@ -11,6 +11,30 @@ use Laravel\Scout\Builder as ScoutBuilder;
 abstract class Resource extends NovaResource
 {
     /**
+     * Get the logical group associated with the resource.
+     */
+    public static function group()
+    {
+        return __(parent::group());
+    }
+
+    /**
+     * Get the displayable label of the resource.
+     */
+    public static function label()
+    {
+        return __(parent::label());
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     */
+    public static function singularLabel()
+    {
+        return __(parent::singularLabel());
+    }
+
+    /**
      * Build an "index" query for the given resource.
      */
     public static function indexQuery(NovaRequest $request, Builder $query): Builder

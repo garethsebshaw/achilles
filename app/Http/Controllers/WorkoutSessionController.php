@@ -12,6 +12,15 @@ use Laravel\Nova\Nova;
 
 class WorkoutSessionController extends Controller
 {
+    private function sessionStatusId(string $code, array $fallbackCodes = []): int
+    {
+        $statusId = SystemStatus::idForModel(WorkoutSession::class, $code, $fallbackCodes);
+
+        abort_if($statusId === null, 500, __('Workout session status is not configured.'));
+
+        return $statusId;
+    }
+
     private function novaPath(string $suffix = ''): string
     {
         $novaBasePath = trim(Nova::path(), '/');
@@ -47,7 +56,7 @@ class WorkoutSessionController extends Controller
         $session = WorkoutSession::create($validated);
 
         return redirect()->route('workout-sessions.show', $session)
-            ->with('success', 'Workout Session created successfully');
+            ->with('success', __('Workout Session created successfully'));
     }
 
     public function show(WorkoutSession $workout_session)
@@ -75,7 +84,7 @@ class WorkoutSessionController extends Controller
         ]));
 
         return redirect()->route('workout-sessions.show', $workout_session)
-            ->with('success', 'Workout Session updated successfully');
+            ->with('success', __('Workout Session updated successfully'));
     }
 
     public function destroy(WorkoutSession $workout_session)
@@ -83,7 +92,7 @@ class WorkoutSessionController extends Controller
         $workout_session->delete();
 
         return redirect()->route('workout-sessions.index')
-            ->with('success', 'Workout Session deleted successfully');
+            ->with('success', __('Workout Session deleted successfully'));
     }
 
     public function cancel(WorkoutSession $workout_session)
@@ -93,10 +102,10 @@ class WorkoutSessionController extends Controller
         $workout_session->update([
             'cancelled_at' => now(),
             'cancelled_by' => auth()->id(),
-            'status_id' => SystemStatus::where('code', 'cancelled')->first()->id
+            'status_id' => $this->sessionStatusId('session_cancelled'),
         ]);
 
         return redirect()->route('workout-sessions.show', $workout_session)
-            ->with('success', 'Workout Session cancelled');
+            ->with('success', __('Workout Session cancelled'));
     }
 }

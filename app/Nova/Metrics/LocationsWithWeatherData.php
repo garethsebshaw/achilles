@@ -17,6 +17,6 @@ class LocationsWithWeatherData extends Value
 
     public function name()
     {
-        return 'Locations With Weather Data';
+        return __('Locations With Weather Data');
     }
 }

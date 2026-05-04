@@ -11,12 +11,12 @@ class EquipmentStatusDistribution extends Partition
     {
         return $this->count(Equipment::class, 'system_status_id')
             ->label(function($value) {
-                return \App\Models\SystemStatus::find($value)->name ?? 'Unknown';
+                return \App\Models\SystemStatus::find($value)->name ?? __('Unknown');
             });
     }
 
     public function name()
     {
-        return 'Equipment Status';
+        return __('Equipment Status');
     }
 }

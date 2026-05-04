@@ -49,15 +49,15 @@ class Language extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->rules('required', 'unique:languages,name')
                 ->sortable(),
 
-            Text::make('ISO Code')
+            Text::make(__('ISO Code'))
                 ->nullable()
                 ->sortable(),
 
-            BelongsTo::make('Category', 'category', \App\Nova\SystemCategory::class)
+            BelongsTo::make(__('Category'), 'category', \App\Nova\SystemCategory::class)
                 ->relatableQueryUsing(function (NovaRequest $request, Builder $query) {
                     $query->whereHas('systemModule', function($q) {
                         $q->where('model_type', \App\Models\Language::class);
@@ -65,11 +65,11 @@ class Language extends Resource
                 })
                 ->required(),
 
-            Boolean::make('Active')
+            Boolean::make(__('Active'))
                 ->filterable()
                 ->default(true),
 
-            HasMany::make('Proficiencies', 'proficiencies', LanguageProficiency::class)
+            HasMany::make(__('Proficiencies'), 'proficiencies', LanguageProficiency::class)
         ];
     }
 

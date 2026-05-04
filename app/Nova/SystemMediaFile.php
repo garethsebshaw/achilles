@@ -49,34 +49,34 @@ class SystemMediaFile extends Resource
         return [
             ID::make()->sortable(),
 
-            MorphTo::make('Model'),
+            MorphTo::make(__('Model')),
 
-            Text::make('Collection Name')
+            Text::make(__('Collection Name'))
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('File Name')
+            Text::make(__('File Name'))
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('MIME Type')
+            Text::make(__('MIME Type'))
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Disk')
+            Text::make(__('Disk'))
                 ->sortable()
                 ->rules('required'),
 
-            Number::make('Size')
+            Number::make(__('Size'))
                 ->sortable()
                 ->displayUsing(fn ($value) => format_bytes($value)),
 
-            Code::make('Metadata')
+            Code::make(__('Metadata'))
                 ->json()
                 ->nullable(),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

@@ -35,6 +35,9 @@ class LanguageProficiency extends Model
 
     public function proficiencyStatus()
     {
-        return $this->belongsTo(SystemStatus::class, 'proficiency_status_id');
+        return $this->belongsTo(SystemStatus::class, 'proficiency_status_id')
+            ->whereHas('module', function ($query) {
+                $query->where('model_type', self::class);
+            });
     }
 }

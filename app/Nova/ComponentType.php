@@ -56,7 +56,7 @@ class ComponentType extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Category', 'category', SystemCategory::class)
+            BelongsTo::make(__('Category'), 'category', SystemCategory::class)
                 ->relatableQueryUsing(function (NovaRequest $request, Builder $query) {
                     $query->whereHas('systemModule', function($q) {
                         $q->where('model_type', \App\Models\ComponentType::class);
@@ -66,35 +66,35 @@ class ComponentType extends Resource
                 ->sortable()
                 ->required(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->rules('required', 'max:255')
                 ->sortable(),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->nullable()
                 ->rows(3),
 
-            Number::make('Maintenance (Miles)', 'default_maintenance_interval_miles')
+            Number::make(__('Maintenance (Miles)'), 'default_maintenance_interval_miles')
                 ->nullable()
                 ->filterable()
                 ->min(0),
 
-            Number::make(' Maintenance (Months)', 'default_maintenance_interval_months')
+            Number::make(__('Maintenance (Months)'), 'default_maintenance_interval_months')
                 ->nullable()
                 ->filterable()
                 ->min(0),
 
-            Code::make('Attributes')
+            Code::make(__('Attributes'))
                 ->json()
                 ->nullable(),
 
-            Panel::make('Relationships', [
-                HasMany::make('Components', 'components', EquipmentComponent::class),
-                HasMany::make('Compatible With', 'compatibleWith', ComponentType::class),
+            Panel::make(__('Relationships'), [
+                HasMany::make(__('Components'), 'components', EquipmentComponent::class),
+                HasMany::make(__('Compatible With'), 'compatibleWith', ComponentType::class),
             ]),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

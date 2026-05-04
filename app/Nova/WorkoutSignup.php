@@ -82,20 +82,21 @@ class WorkoutSignup extends Resource
     public static function indexQuery(NovaRequest $request, $query): Builder
     {
         $query = parent::indexQuery($request, $query);
+        $query->with([
+            'user',
+            'status',
+            'workoutSession.workout.activityType',
+            'workoutSession.location',
+        ]);
 
-        // Parse the request URL to get parameters
-        $parts = parse_url($request->server('HTTP_REFERER'));
-        if ($parts && isset($parts['query'])) {
-            parse_str($parts['query'], $params);
+        $resourceId = static::getResourceId($request);
 
-            \Log::info('Parsed URL params', [
-                'params' => $params,
-                'has_session_id' => isset($params['resourceId'])
-            ]);
+        if ($resourceId !== null) {
+            return $query->where('workout_session_id', (int) $resourceId);
+        }
 
-            if (isset($params['resourceId'])) {
-                $query->where('workout_session_id', $params['resourceId']);
-            }
+        if (! static::hasExplicitIndexScope($request)) {
+            return $query->whereRaw('1 = 0');
         }
 
         return $query;
@@ -109,12 +110,12 @@ class WorkoutSignup extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('User', 'user', 'App\Nova\User')
+            BelongsTo::make(__('User'), 'user', 'App\Nova\User')
                 ->rules('required'),
 
 // 🏆 Sport Name (Sortable & Filterable)
-            Text::make('Sport', function () {
-                return optional($this->workoutSession->workout->activityType)->name ?? 'Unknown Sport';
+            Text::make(__('Sport'), function () {
+                return optional($this->workoutSession->workout->activityType)->name ?? __('Unknown Sport');
             })
                 ->sortable()
                 ->filterable()
@@ -122,7 +123,7 @@ class WorkoutSignup extends Resource
 
 
             // Check-in status message (only shown outside check-in window)
-            Text::make('Check-in Status', function() {
+            Text::make(__('Check-in Status'), function() {
                 return $this->getCheckInStatusMessage();
             })
                 ->asHtml()
@@ -130,34 +131,34 @@ class WorkoutSignup extends Resource
                 ->showOnIndex(!is_null($resourceId) && !$this->isWithinCheckInWindow()),
 
             // Check In button
-            Button::make($this->checked_in_at ? 'Cancel Check In' : 'Check In')
+            Button::make($this->checked_in_at ? __('Cancel Check In') : __('Check In'))
                 ->event(CheckInUser::class)
                 ->style($this->checked_in_at ? 'warning' : 'success')
-                ->loadingText($this->checked_in_at ? 'Cancelling...' : 'Checking In...')
-                ->successText($this->checked_in_at ? 'Check In Cancelled' : 'Checked In')
-                ->errorText('Error updating check-in status')
+                ->loadingText($this->checked_in_at ? __('Cancelling...') : __('Checking In...'))
+                ->successText($this->checked_in_at ? __('Check In Cancelled') : __('Checked In'))
+                ->errorText(__('Error updating check-in status'))
                 ->showOnIndex(!is_null($resourceId) && $this->isWithinCheckInWindow()),
 
             // Check Out button
-            Button::make('Check Out')
+            Button::make(__('Check Out'))
                 ->event(CheckOutUser::class)
                 ->style('danger')
-                ->loadingText('Checking Out...')
-                ->successText('Checked Out')
-                ->errorText('Error updating check-out status')
+                ->loadingText(__('Checking Out...'))
+                ->successText(__('Checked Out'))
+                ->errorText(__('Error updating check-out status'))
                 ->visible(!is_null($this->checked_in_at) && is_null($this->checked_out_at))
                 ->showOnIndex(!is_null($resourceId) && $this->isWithinCheckInWindow()),
 
 // 📍 Location Name (Sortable & Filterable)
-            Text::make('Location', function () {
-                return optional($this->workoutSession->location)->name ?? 'Unknown Location';
+            Text::make(__('Location'), function () {
+                return optional($this->workoutSession->location)->name ?? __('Unknown Location');
             })
                 ->sortable()
                 ->filterable()
                 ->showOnIndex(is_null($resourceId)),
 
 // 🗓️ Session Date (Sortable & Filterable)
-            DateTime::make('Session Date', function () {
+            DateTime::make(__('Session Date'), function () {
                 return optional($this->workoutSession)->session_date;
             })
                 ->displayUsing(function ($value) {
@@ -168,26 +169,26 @@ class WorkoutSignup extends Resource
                 ->showOnIndex(is_null($resourceId)),
 
 // ⏰ Start Time (Sortable & Filterable)
-            Text::make('Start Time', function () {
+            Text::make(__('Start Time'), function () {
                 return optional($this->workoutSession)->start_time
                     ? $this->workoutSession->start_time->format('H:i')
-                    : 'No Start Time';
+                    : __('No Start Time');
             })
                 ->sortable()
                 ->filterable()
                 ->showOnIndex(is_null($resourceId)),
 
 // ⏳ End Time (Sortable & Filterable)
-            Text::make('End Time', function () {
+            Text::make(__('End Time'), function () {
                 return optional($this->workoutSession)->end_time
                     ? $this->workoutSession->end_time->format('H:i')
-                    : 'No End Time';
+                    : __('No End Time');
             })
                 ->sortable()
                 ->filterable()
                 ->showOnIndex(is_null($resourceId)),
 
-            Text::make('Athlete', function () {
+            Text::make(__('Athlete'), function () {
                 if ($this->user->is_athlete) {
                     return sprintf(
                         '<a href="#" onclick="return updateSearchBox(\'%s\')"><i>%s</i></a>',
@@ -207,13 +208,13 @@ class WorkoutSignup extends Resource
                             e($athlete->name),
                             e($athlete->name)
                         )
-                        : "Unassigned Guide";
+                        : __('Unassigned Guide');
                 }
 
-                return "Unassigned";
-            })->asHtml()->sortable(),
+                return __('Unassigned');
+            })->asHtml()->sortable()->showOnIndex(!is_null($resourceId)),
 
-            Text::make('Guides', function () {
+            Text::make(__('Guides'), function () {
                 if ($this->user->is_athlete) {
                     // For athletes - show all guides for this signup
                     $guides = DB::table('workout_signups')
@@ -225,7 +226,7 @@ class WorkoutSignup extends Resource
                         ->get();
 
                     if ($guides->isEmpty()) {
-                        return '<i class="danger">No Guides</i>';
+                        return '<i class="danger">'.__('No Guides').'</i>';
                     }
 
                     return $guides->map(function ($guide) {
@@ -245,7 +246,7 @@ class WorkoutSignup extends Resource
                         ->value('athlete_id');
 
                     if (!$athleteId) {
-                        return '<i class="danger">No Athlete Assigned</i>';
+                        return '<i class="danger">'.__('No Athlete Assigned').'</i>';
                     }
 
                     // Get all guides for this athlete except the current user
@@ -259,7 +260,7 @@ class WorkoutSignup extends Resource
                         ->get();
 
                     if ($guides->isEmpty()) {
-                        return '<i class="danger">No Additional Guides</i>';
+                        return '<i class="danger">'.__('No Additional Guides').'</i>';
                     }
 
                     return $guides->map(function ($guide) {
@@ -272,36 +273,34 @@ class WorkoutSignup extends Resource
                         );
                     })->implode('');
                 }
-            })->asHtml(),
+            })->asHtml()->showOnIndex(!is_null($resourceId)),
 
-            Button::make('Check In Users')
+            Button::make(__('Check In Users'))
                 ->link('/resources/workout-signups?resourceId=' . $this->workout_session_id, '_self')
                 ->style('primary')
                 ->visible($this->isWithinCheckInWindow())
                 ->showOnIndex(is_null($resourceId)),
 
-            BelongsTo::make('Status', 'status', SystemStatus::class)
+            BelongsTo::make(__('Status'), 'status', SystemStatus::class)
                 ->relatableQueryUsing(function (NovaRequest $request, $query) {
-                    return $query->whereHas('module', function ($q) {
-                        $q->where('model_type', 'App\Models\WorkoutSignup');
-                    });
+                    return $query->forModelType(\App\Models\WorkoutSignup::class);
                 })
                 ->filterable(),
 
-            Code::make('Preferences')
+            Code::make(__('Preferences'))
                 ->json()
                 ->nullable(),
 
-            HasOne::make('Specific Details', 'specificDetails', WorkoutSpecificDetails::class),
+            HasOne::make(__('Specific Details'), 'specificDetails', WorkoutSpecificDetails::class),
 
-            HasMany::make('Equipment Assignments', 'equipmentAssignments', WorkoutEquipmentAssignment::class),
+            HasMany::make(__('Equipment Assignments'), 'equipmentAssignments', WorkoutEquipmentAssignment::class),
 
-            /*Panel::make('Check-in Details', [
-                DateTime::make('Check-in Date', 'checkin_date')
+            /*Panel::make(__('Check-in Details'), [
+                DateTime::make(__('Check-in Date'), 'checkin_date')
                     ->onlyOnDetail()
                     ->sortable(),
 
-                DateTime::make('Check-out Date', 'checkout_date')
+                DateTime::make(__('Check-out Date'), 'checkout_date')
                     ->onlyOnDetail()
                     ->sortable(),
             ]),*/
@@ -370,6 +369,12 @@ class WorkoutSignup extends Resource
     }
     public static function getResourceId(NovaRequest $request): ?string
     {
+        $resourceId = $request->query('resourceId') ?? $request->input('resourceId');
+
+        if ($resourceId !== null && $resourceId !== '') {
+            return (string) $resourceId;
+        }
+
         $parts = parse_url($request->server('HTTP_REFERER'));
         if ($parts && isset($parts['query'])) {
             parse_str($parts['query'], $params);
@@ -378,20 +383,49 @@ class WorkoutSignup extends Resource
         return null;
     }
 
+    protected static function hasExplicitIndexScope(NovaRequest $request): bool
+    {
+        $search = trim((string) ($request->query('search') ?? $request->input('search') ?? ''));
+        if ($search !== '') {
+            return true;
+        }
+
+        $filters = $request->query('filters') ?? $request->input('filters') ?? [];
+
+        if (is_string($filters) && $filters !== '') {
+            $decoded = json_decode($filters, true);
+            $filters = is_array($decoded) ? $decoded : [];
+        }
+
+        if (is_array($filters)) {
+            foreach ($filters as $value) {
+                if (is_string($value) && trim($value) !== '' && $value !== 'null') {
+                    return true;
+                }
+
+                if (is_array($value) && $value !== []) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     protected static function getSessionDetails(int $sessionId): string
     {
         $session = \App\Models\WorkoutSession::with(['workout', 'location'])
             ->find($sessionId);
 
         if (!$session || !$session->workout || !$session->location) {
-            return 'Unknown Session';
+            return __('Unknown Session');
         }
 
-        $activityLocation = $session->location->name ?? 'Unknown Location';
+        $activityLocation = $session->location->name ?? __('Unknown Location');
         $formattedDate = optional($session->session_date)->format('D, M jS Y');
         $startTime = optional($session->start_time)->format('H:i');
         $endTime = optional($session->end_time)->format('H:i');
-        $sportName = $session->workout->activityType->name ?? 'Unknown Sport';
+        $sportName = $session->workout->activityType->name ?? __('Unknown Sport');
 
         return "<b>{$sportName}</b> in {$activityLocation} - <b>{$formattedDate}</b> {$startTime}-{$endTime}";
     }
@@ -404,7 +438,7 @@ class WorkoutSignup extends Resource
 
             if ($resourceId) {
                 $sessionDetails = static::getSessionDetails((int)$resourceId);
-                return "Check-in/out for {$sessionDetails}";
+                return __('Check-in/out for :session', ['session' => $sessionDetails]);
             }
         } catch (\Exception $e) {
             \Log::error('Error getting WorkoutSignup label:', [
@@ -413,7 +447,7 @@ class WorkoutSignup extends Resource
             ]);
         }
 
-        return 'Session Signups';
+        return __('Session Signups');
     }
 
 // Helper method to check if session is within check-in window
@@ -435,7 +469,7 @@ class WorkoutSignup extends Resource
 // Helper to get check-in status message
     protected function getCheckInStatusMessage(): string {
         if (!$this->workoutSession) {
-            return 'No session data available';
+            return __('No session data available');
         }
 
         $sessionDateTime = $this->workoutSession->session_date->setTimeFrom($this->workoutSession->start_time);
@@ -454,4 +488,3 @@ class WorkoutSignup extends Resource
     }
 
 }
-

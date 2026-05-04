@@ -10,7 +10,10 @@ use App\Models\WorkoutSession;
 
 class WorkoutSignupUserFilter extends Filter
 {
-    public $name = 'User';
+    public function name()
+    {
+        return __('User');
+    }
 
     public function apply(NovaRequest $request, $query, $value)
     {
@@ -25,7 +28,10 @@ class WorkoutSignupUserFilter extends Filter
 
 class WorkoutSignupStatusFilter extends Filter
 {
-    public $name = 'Status';
+    public function name()
+    {
+        return __('Status');
+    }
 
     public function apply(NovaRequest $request, $query, $value)
     {
@@ -63,7 +69,10 @@ class WorkoutSignupStatusFilter extends Filter
 
 class WorkoutSignupDateFilter extends Filter
 {
-    public $name = 'Session Date';
+    public function name()
+    {
+        return __('Session Date');
+    }
 
     public function apply(NovaRequest $request, $query, $value)
     {

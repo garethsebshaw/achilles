@@ -13,7 +13,7 @@ class WorkoutSessionFilter extends Filter
 
     public function name()
     {
-        return 'Session';
+        return __('Session');
     }
 
     public function apply(NovaRequest $request, $query, $value)
@@ -38,11 +38,11 @@ class WorkoutSessionFilter extends Filter
             ->get()
             ->mapWithKeys(function ($session) use ($signupCounts) {
                 if (!$session->workout || !$session->location) {
-                    return ['Unknown Session' => $session->id];
+                    return [__('Unknown Session') => $session->id];
                 }
 
-                $activityLocation = $session->location->name ?? 'Unknown Location';
-                $sportName = $session->workout->activityType->name ?? 'Unknown Sport';
+                $activityLocation = $session->location->name ?? __('Unknown Location');
+                $sportName = $session->workout->activityType->name ?? __('Unknown Sport');
                 $formattedDate = optional($session->session_date)->format('Y-m-d');
                 $startTime = optional($session->start_time)->format('H:i');
                 $endTime = optional($session->end_time)->format('H:i');
@@ -51,7 +51,7 @@ class WorkoutSessionFilter extends Filter
                 $signupCount = $signupCounts[$session->id] ?? 0;
 
                 $formattedLabel = sprintf(
-                    "%s - %s %s-%s - %s (%d signups)",
+                    __('%s - %s %s-%s - %s (%d signups)'),
                     $activityLocation,
                     $formattedDate,
                     $startTime,

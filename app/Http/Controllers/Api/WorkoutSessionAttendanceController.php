@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\SystemStatus;
 use App\Models\WorkoutSession;
 use App\Models\WorkoutSignup;
 use App\Models\User;
@@ -12,6 +13,15 @@ use Illuminate\Validation\ValidationException;
 
 class WorkoutSessionAttendanceController extends Controller
 {
+    private function signupStatusId(string $code, array $fallbackCodes = []): int
+    {
+        $statusId = SystemStatus::idForModel(WorkoutSignup::class, $code, $fallbackCodes);
+
+        abort_if($statusId === null, 500, __('Workout signup status is not configured.'));
+
+        return $statusId;
+    }
+
     public function getSessionUsers(WorkoutSession $session)
     {
         $users = $session->signups()
@@ -51,15 +61,15 @@ class WorkoutSessionAttendanceController extends Controller
         $signup = $session->signups()->where('user_id', $request->userId)->firstOrFail();
 
         if ($signup->checked_in_at) {
-            throw ValidationException::withMessages(['user' => 'User is already checked in']);
+            throw ValidationException::withMessages(['user' => __('User is already checked in')]);
         }
 
         $signup->update([
             'checked_in_at' => now(),
-            'status_id' => \App\Models\SystemStatus::where('code', 'checked_in')->first()->id
+            'status_id' => $this->signupStatusId('signup_checked_in', ['signup_confirmed', 'signup_pending']),
         ]);
 
-        return response()->json(['message' => 'User checked in successfully']);
+        return response()->json(['message' => __('User checked in successfully')]);
     }
 
     public function checkOut(Request $request, WorkoutSession $session)
@@ -67,15 +77,15 @@ class WorkoutSessionAttendanceController extends Controller
         $signup = $session->signups()->where('user_id', $request->userId)->firstOrFail();
 
         if (!$signup->checked_in_at) {
-            throw ValidationException::withMessages(['user' => 'User must be checked in first']);
+            throw ValidationException::withMessages(['user' => __('User must be checked in first')]);
         }
 
         $signup->update([
             'checked_out_at' => now(),
-            'status_id' => \App\Models\SystemStatus::where('code', 'attended')->first()->id
+            'status_id' => $this->signupStatusId('signup_checked_out', ['signup_attended', 'signup_checked_in']),
         ]);
 
-        return response()->json(['message' => 'User checked out successfully']);
+        return response()->json(['message' => __('User checked out successfully')]);
     }
 
     public function cancelCheckIn(Request $request, WorkoutSession $session)
@@ -85,10 +95,10 @@ class WorkoutSessionAttendanceController extends Controller
         $signup->update([
             'checked_in_at' => null,
             'checked_out_at' => null,
-            'status_id' => \App\Models\SystemStatus::where('code', 'signed_up')->first()->id
+            'status_id' => $this->signupStatusId('signup_confirmed', ['signup_pending']),
         ]);
 
-        return response()->json(['message' => 'Check-in cancelled successfully']);
+        return response()->json(['message' => __('Check-in cancelled successfully')]);
     }
 
     public function assignGuide(Request $request, WorkoutSession $session)
@@ -108,11 +118,11 @@ class WorkoutSessionAttendanceController extends Controller
 
         // Verify roles
         if (!$guideSignup->user->is_guide) {
-            throw ValidationException::withMessages(['guide' => 'Selected user is not a guide']);
+            throw ValidationException::withMessages(['guide' => __('Selected user is not a guide')]);
         }
 
         if (!$athleteSignup->user->is_athlete) {
-            throw ValidationException::withMessages(['athlete' => 'Selected user is not an athlete']);
+            throw ValidationException::withMessages(['athlete' => __('Selected user is not an athlete')]);
         }
 
         DB::transaction(function () use ($guideSignup, $request) {
@@ -125,7 +135,7 @@ class WorkoutSessionAttendanceController extends Controller
             $guideSignup->update(['athlete_id' => $request->athlete_id]);
         });
 
-        return response()->json(['message' => 'Guide assigned successfully']);
+        return response()->json(['message' => __('Guide assigned successfully')]);
     }
 
     public function searchUsers(Request $request, WorkoutSession $session)
@@ -155,16 +165,16 @@ class WorkoutSessionAttendanceController extends Controller
 
         // Check if user is already signed up
         if ($session->signups()->where('user_id', $request->user_id)->exists()) {
-            throw ValidationException::withMessages(['user' => 'User is already signed up for this session']);
+            throw ValidationException::withMessages(['user' => __('User is already signed up for this session')]);
         }
 
         $signup = $session->signups()->create([
             'user_id' => $request->user_id,
-            'status_id' => \App\Models\SystemStatus::where('code', 'signed_up')->first()->id,
+            'status_id' => $this->signupStatusId('signup_confirmed', ['signup_pending']),
         ]);
 
         return response()->json([
-            'message' => 'User added successfully',
+            'message' => __('User added successfully'),
             'signup' => $signup->load('user', 'status')
         ]);
     }

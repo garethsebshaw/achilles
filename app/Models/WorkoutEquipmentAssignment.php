@@ -30,9 +30,8 @@ class WorkoutEquipmentAssignment extends Model
     public function assignmentType()
     {
         return $this->belongsTo(SystemCategory::class, 'assignment_type_id')
-            ->where('system_module_id', function($query) {
-                $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-                $query->select('id')->from('system_modules')->where('id', $workoutsModuleId);
+            ->whereHas('systemModule', function ($query) {
+                $query->where('model_type', self::class);
             });
     }
 }

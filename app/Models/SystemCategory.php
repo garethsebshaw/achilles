@@ -75,6 +75,6 @@ class SystemCategory extends Model
     }
     public static function label() :string
     {
-        return 'Categories';
+        return __('Categories');
     }
 }

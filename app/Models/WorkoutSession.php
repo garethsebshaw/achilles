@@ -51,9 +51,8 @@ class WorkoutSession extends Model
     public function status()
     {
         return $this->belongsTo(SystemStatus::class)
-            ->where('system_module_id', function($query) {
-                $workoutsModuleId = SystemModule::where('name', 'Workouts')->first()->id;
-                $query->select('id')->from('system_modules')->where('id', $workoutsModuleId);
+            ->whereHas('module', function ($query) {
+                $query->where('model_type', self::class);
             });
     }
 

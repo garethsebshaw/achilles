@@ -45,60 +45,60 @@ class SystemCountry extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Short Name')
+            Text::make(__('Short Name'))
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Capital')
+            Text::make(__('Capital'))
                 ->nullable()
                 ->sortable(),
 
-            Text::make('ISO2', 'iso2')
+            Text::make(__('ISO2'), 'iso2')
                 ->sortable()
                 ->rules('required', 'size:2')
                 ->hideFromIndex()
                 ->displayUsing(fn ($value) => strtoupper($value)),
 
-            Text::make('ISO3', 'iso3')
+            Text::make(__('ISO3'), 'iso3')
                 ->sortable()
                 ->rules('required', 'size:3')
                 ->hideFromIndex()
                 ->displayUsing(fn ($value) => strtoupper($value)),
 
-            Text::make('Numeric Code')
+            Text::make(__('Numeric Code'))
                 ->sortable()
                 ->filterable()
                 ->hideFromIndex()
                 ->rules('required', 'size:3'),
 
-            Text::make('Calling Code')
+            Text::make(__('Calling Code'))
                 ->sortable()
                 ->filterable()
                 ->rules('required'),
 
-            Text::make('Currency')
+            Text::make(__('Currency'))
                 ->nullable()
                 ->sortable()
                 ->filterable(),
 
-            Text::make('Currency Symbol')
+            Text::make(__('Currency Symbol'))
                 ->nullable()
                 ->filterable(),
 
-            Boolean::make('Active')
+            Boolean::make(__('Active'))
                 ->sortable()
                 ->filterable()
                 ->default(false),
 
-            Code::make('Metadata')
+            Code::make(__('Metadata'))
                 ->json()
                 ->nullable(),
 
-            BelongsToMany::make('Certifications'),
+            BelongsToMany::make(__('Certifications')),
         ];
     }
 

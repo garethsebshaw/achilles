@@ -91,7 +91,7 @@ class SessionAttendanceMetric extends Value
 
     public function name()
     {
-        return 'Session Attendance';
+        return __('Session Attendance');
     }
 
     public function component()

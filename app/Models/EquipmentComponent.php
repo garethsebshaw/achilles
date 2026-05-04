@@ -55,7 +55,10 @@ class EquipmentComponent extends Model
 
     public function status(): BelongsTo
     {
-        return $this->belongsTo(SystemStatus::class, 'status_id');
+        return $this->belongsTo(SystemStatus::class, 'status_id')
+            ->whereHas('module', function ($query) {
+                $query->where('model_type', self::class);
+            });
     }
 
     public function condition(): BelongsTo

@@ -15,7 +15,7 @@ class ForecastsPerDay extends Trend
 
     public function name()
     {
-        return 'Forecasts Per Day';
+        return __('Forecasts Per Day');
     }
     /**
      * Get the ranges available for the metric.
@@ -25,13 +25,13 @@ class ForecastsPerDay extends Trend
     public function ranges()
     {
         return [
-            7 => '7 Days',
-            30 => '30 Days',
-            60 => '60 Days',
-            90 => '90 Days',
-            180 => '6 Months',
-            365 => '1 Year',
-            720 => '2 Years',
+            7 => __('7 Days'),
+            30 => __('30 Days'),
+            60 => __('60 Days'),
+            90 => __('90 Days'),
+            180 => __('6 Months'),
+            365 => __('1 Year'),
+            720 => __('2 Years'),
         ];
     }
 

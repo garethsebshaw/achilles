@@ -56,32 +56,32 @@ class EquipmentMaintenancePriority extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->rules('required', 'max:255')
                 ->sortable(),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->nullable()
                 ->rows(3),
 
-            Number::make('Level')
+            Number::make(__('Level'))
                 ->rules('required', 'integer', 'min:1', 'max:5')
                 ->min(1)
                 ->max(5)
                 ->sortable(),
 
-            Number::make('Response Time (Hours)', 'response_time_hours')
+            Number::make(__('Response Time (Hours)'), 'response_time_hours')
                 ->nullable()
                 ->min(0)
                 ->step(0.5)
-                ->help('Target response time in hours'),
+                ->help(__('Target response time in hours')),
 
-            Panel::make('Relationships', [
-                HasMany::make('Maintenance Requests', 'maintenanceRequests', MaintenanceRequest::class),
+            Panel::make(__('Relationships'), [
+                HasMany::make(__('Maintenance Requests'), 'maintenanceRequests', MaintenanceRequest::class),
             ]),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

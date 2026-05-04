@@ -55,39 +55,37 @@ class UserCertification extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('User')
+            BelongsTo::make(__('User'))
                 ->searchable()
                 ->filterable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable(),
 
-            BelongsTo::make('Certification')
+            BelongsTo::make(__('Certification'))
                 ->showCreateRelationButton()
                 ->filterable(),
 
-            Date::make('Certified At')->required(),
-            Date::make('Expires At')->nullable(),
+            Date::make(__('Certified At'))->required(),
+            Date::make(__('Expires At'))->nullable(),
 
-            Number::make('Validity Period')
+            Number::make(__('Validity Period'))
                 ->min(1)
                 ->max(255)
                 ->required(),
 
-            Textarea::make('Description')->alwaysShow(),
+            Textarea::make(__('Description'))->alwaysShow(),
 
-            BelongsTo::make('Status', 'systemStatus', SystemStatus::class)
+            BelongsTo::make(__('Status'), 'systemStatus', SystemStatus::class)
                 ->relatableQueryUsing(function (NovaRequest $request, Builder $query) {
-                    $query->whereHas('systemModule', function($q) {
-                        $q->where('model_type', \App\Models\UserCertification::class);
-                    });
+                    return $query->forModelType(\App\Models\UserCertification::class);
                 })
                 ->required()
                 ->filterable(),
 
-            Textarea::make('Notes')->nullable()->alwaysShow(),
+            Textarea::make(__('Notes'))->nullable()->alwaysShow(),
 
-            File::make('Document', 'file_path')
+            File::make(__('Document'), 'file_path')
                 ->store(function (Request $request, $model) {
                     // Log all files in the request
                     Log::info('Uploaded files:', [
@@ -115,11 +113,11 @@ class UserCertification extends Resource
                 ->prunable()
                 ->deletable(),
 
-            Text::make('File Type', function () {
+            Text::make(__('File Type'), function () {
                 return $this->renderFileTypeIcon($this->file_type, $this);
             })->asHtml(),
 
-            DateTime::make('Uploaded At')
+            DateTime::make(__('Uploaded At'))
                 ->readonly(),
         ];
     }

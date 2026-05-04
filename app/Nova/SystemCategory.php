@@ -46,7 +46,7 @@ class SystemCategory extends Resource
      */
     public static function label()
     {
-        return 'System Categories';
+        return __('System Categories');
     }
 
     /**
@@ -56,7 +56,7 @@ class SystemCategory extends Resource
      */
     public static function singularLabel()
     {
-        return 'System Category';
+        return __('System Category');
     }
 
     /**
@@ -70,29 +70,29 @@ class SystemCategory extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Module', 'systemModule', SystemModule::class)
+            BelongsTo::make(__('Module'), 'systemModule', SystemModule::class)
                 ->sortable()
                 ->filterable()
                 ->rules('required'),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->nullable()
                 ->hideFromIndex(),
 
-            BelongsTo::make('Parent Category', 'parent', SystemCategory::class)
+            BelongsTo::make(__('Parent Category'), 'parent', SystemCategory::class)
                 ->sortable()
                 ->nullable()
                 ->searchable(),
 
-            Boolean::make('Active')
+            Boolean::make(__('Active'))
                 ->default(true)
                 ->sortable(),
 
-            Code::make('Metadata')
+            Code::make(__('Metadata'))
                 ->json()
                 ->nullable()
                 ->hideFromIndex(),

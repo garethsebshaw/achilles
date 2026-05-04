@@ -2,6 +2,8 @@
 
 namespace App\Nova\Actions;
 
+use App\Models\SystemStatus;
+use App\Models\WorkoutSignup;
 use Carbon\Carbon;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Actions\Action;
@@ -12,7 +14,7 @@ class CheckInAction extends Action
 {
     public function name()
     {
-        return 'Check In';
+        return __('Check In');
     }
 
     /**
@@ -22,14 +24,15 @@ class CheckInAction extends Action
     {
         foreach ($models as $model) {
             if ($model->checked_in_at) {
-                return Action::danger('User Already Checked In.');
+                return Action::danger(__('User Already Checked In.'));
             }
 
             $model->checked_in_at = Carbon::now();
+            $model->status_id = SystemStatus::idForModel(WorkoutSignup::class, 'signup_checked_in', ['signup_confirmed', 'signup_pending']);
             $model->save();
         }
 
-        return Action::message('User Checked In Successfully!');
+        return Action::message(__('User Checked In Successfully!'));
     }
 
     /**

@@ -21,9 +21,9 @@ class TotalTeamLeaders extends Card
         ]);
 
         return $this->withTotal($teamLeaderCount)
-            ->title('Total Team Leaders')
-            ->content("{$teamLeaderCount} Team Leaders")
-            ->labels(['Team Leaders', 'Non-Team Leaders'])
+            ->title(__('Total Team Leaders'))
+            ->content(__(':count Team Leaders', ['count' => $teamLeaderCount]))
+            ->labels([__('Team Leaders'), __('Non-Team Leaders')])
             ->values([$teamLeaderCount, $nonTeamLeaderCount]);
     }
 

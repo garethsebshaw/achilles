@@ -40,21 +40,21 @@ class UserTypeDistribution extends Partition
 
         return $this->result($results)
             ->colors([
-                'sys_admin' => '#F56565',    // Red
-                'admin' => '#ED8936',        // Orange
-                'team_leader' => '#ECC94B',  // Yellow
-                'guide' => '#68D391',        // Green
-                'athlete' => '#4299E1',      // Blue
-                'other' => '#A0AEC0'         // Gray
+                'sys_admin' => __('#F56565'),    // Red
+                'admin' => __('#ED8936'),        // Orange
+                'team_leader' => __('#ECC94B'),  // Yellow
+                'guide' => __('#68D391'),        // Green
+                'athlete' => __('#4299E1'),      // Blue
+                'other' => __('#A0AEC0')         // Gray
             ])
             ->label(function($value) {
                 $labels = [
-                    'sys_admin' => 'System Admins',
-                    'admin' => 'Admins',
-                    'team_leader' => 'Team Leaders',
-                    'guide' => 'Guides',
-                    'athlete' => 'Athletes',
-                    'other' => 'Other'
+                    'sys_admin' => __('System Admins'),
+                    'admin' => __('Admins'),
+                    'team_leader' => __('Team Leaders'),
+                    'guide' => __('Guides'),
+                    'athlete' => __('Athletes'),
+                    'other' => __('Other')
                 ];
                 return $labels[$value] ?? $value;
             });
@@ -62,7 +62,7 @@ class UserTypeDistribution extends Partition
 
     public function name()
     {
-        return 'User Distribution';
+        return __('User Distribution');
     }
 
     public function uriKey()

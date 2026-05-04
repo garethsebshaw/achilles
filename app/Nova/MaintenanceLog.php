@@ -53,49 +53,49 @@ class MaintenanceLog extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Maintenance Request', 'maintenanceRequest', MaintenanceRequest::class)
+            BelongsTo::make(__('Maintenance Request'), 'maintenanceRequest', MaintenanceRequest::class)
                 ->nullable(),
 
-            BelongsTo::make('Equipment')
+            BelongsTo::make(__('Equipment'))
                 ->rules('required'),
 
-            BelongsTo::make('Component', 'component', EquipmentComponent::class)
+            BelongsTo::make(__('Component'), 'component', EquipmentComponent::class)
                 ->nullable(),
 
-            BelongsTo::make('Performed By', 'performedBy', User::class)
+            BelongsTo::make(__('Performed By'), 'performedBy', User::class)
                 ->rules('required'),
 
-            Select::make('Work Type')
+            Select::make(__('Work Type'))
                 ->options([
-                    'service' => 'Service',
-                    'repair' => 'Repair',
-                    'inspection' => 'Inspection',
+                    'service' => __('Service'),
+                    'repair' => __('Repair'),
+                    'inspection' => __('Inspection'),
                 ])
                 ->rules('required'),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->rules('required'),
 
-            DateTime::make('Performed At')
+            DateTime::make(__('Performed At'))
                 ->rules('required'),
 
-            Number::make('Time Spent (Minutes)')
+            Number::make(__('Time Spent (Minutes)'))
                 ->nullable()
                 ->min(0),
 
-            Currency::make('Cost')
+            Currency::make(__('Cost'))
                 ->nullable(),
 
-            Code::make('Parts Used')
+            Code::make(__('Parts Used'))
                 ->json()
                 ->nullable(),
 
-            Textarea::make('Notes')
+            Textarea::make(__('Notes'))
                 ->nullable()
                 ->rows(3),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

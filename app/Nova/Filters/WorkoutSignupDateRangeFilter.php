@@ -7,7 +7,10 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class WorkoutSignupDateRangeFilter extends DateFilter
 {
-    public $name = 'Session Date Range';
+    public function name()
+    {
+        return __('Session Date Range');
+    }
 
     /**
      * Apply the filter to the given query.

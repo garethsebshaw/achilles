@@ -55,35 +55,35 @@ class StorageLocation extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Location', 'location', SystemLocation::class)
+            BelongsTo::make(__('Location'), 'location', SystemLocation::class)
                 ->rules('required'),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->rules('required', 'max:255')
                 ->sortable(),
 
-            Select::make('Type')
+            Select::make(__('Type'))
                 ->options([
-                    'unit' => 'Storage Unit',
-                    'van' => 'Van',
-                    'static_van' => 'Static Van',
+                    'unit' => __('Storage Unit'),
+                    'van' => __('Van'),
+                    'static_van' => __('Static Van'),
                 ])
                 ->rules('required'),
 
-            Number::make('Capacity')
+            Number::make(__('Capacity'))
                 ->nullable()
                 ->min(0),
 
-            Textarea::make('Notes')
+            Textarea::make(__('Notes'))
                 ->nullable()
                 ->rows(3),
 
-            Panel::make('Relationships', [
-                HasMany::make('Equipment'),
+            Panel::make(__('Relationships'), [
+                HasMany::make(__('Equipment')),
             ]),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

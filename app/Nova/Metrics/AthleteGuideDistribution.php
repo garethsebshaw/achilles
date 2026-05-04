@@ -14,8 +14,8 @@ class AthleteGuideDistribution extends Partition
     {
         return $this->count($request, User::class, 'is_guide')
             ->colors([
-                1 => '#68D391', // Green for guides
-                0 => '#4299E1'  // Blue for athletes
+                1 => __('#68D391'), // Green for guides
+                0 => __('#4299E1')  // Blue for athletes
             ])
             ->label(function($value) {
                 return $value ? 'Guides' : 'Athletes';
@@ -24,7 +24,7 @@ class AthleteGuideDistribution extends Partition
 
     public function name()
     {
-        return 'Guide vs Athlete Distribution';
+        return __('Guide vs Athlete Distribution');
     }
 
     /**

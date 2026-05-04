@@ -48,7 +48,7 @@ class SystemModule extends Resource
      */
     public static function label()
     {
-        return 'System Modules';
+        return __('System Modules');
     }
 
     /**
@@ -58,7 +58,7 @@ class SystemModule extends Resource
      */
     public static function singularLabel()
     {
-        return 'System Module';
+        return __('System Module');
     }
 
     /**
@@ -80,29 +80,29 @@ class SystemModule extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Model Type')
+            Text::make(__('Model Type'))
                 ->sortable()
                 ->rules('required'),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->nullable()
                 ->hideFromIndex(),
 
-            Boolean::make('Active')
+            Boolean::make(__('Active'))
                 ->default(true)
                 ->sortable(),
 
-            Code::make('Metadata')
+            Code::make(__('Metadata'))
                 ->json()
                 ->nullable()
                 ->hideFromIndex(),
 
-            HasMany::make('Categories', 'systemCategories', SystemCategory::class),
-            HasMany::make('Statuses', 'systemStatuses', SystemStatus::class),
+            HasMany::make(__('Categories'), 'systemCategories', SystemCategory::class),
+            HasMany::make(__('Statuses'), 'systemStatuses', SystemStatus::class),
         ];
     }
 

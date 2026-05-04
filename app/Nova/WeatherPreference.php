@@ -23,17 +23,17 @@ class WeatherPreference extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('User', 'user', User::class),
+            BelongsTo::make(__('User'), 'user', User::class),
 
-            Select::make('Temperature Unit')
+            Select::make(__('Temperature Unit'))
                 ->options([
-                    'celsius' => 'Celsius',
-                    'fahrenheit' => 'Fahrenheit',
+                    'celsius' => __('Celsius'),
+                    'fahrenheit' => __('Fahrenheit'),
                 ])
                 ->required()
             ->filterable(),
 
-            Select::make('Wind Speed Unit')
+            Select::make(__('Wind Speed Unit'))
                 ->options([
                     'kmh' => 'km/h',
                     'ms' => 'm/s',
@@ -43,7 +43,7 @@ class WeatherPreference extends Resource
                 ->required()
                 ->filterable(),
 
-            Select::make('Precipitation Unit')
+            Select::make(__('Precipitation Unit'))
                 ->options([
                     'mm' => 'mm',
                     'inch' => 'inches',
@@ -51,14 +51,14 @@ class WeatherPreference extends Resource
                 ->required()
                 ->filterable(),
 
-            Text::make('Timezone')
+            Text::make(__('Timezone'))
                 ->nullable()
                 ->filterable(),
 
-            DateTime::make('Created At')
+            DateTime::make(__('Created At'))
                 ->onlyOnDetail(),
 
-            DateTime::make('Updated At')
+            DateTime::make(__('Updated At'))
                 ->onlyOnDetail(),
         ];
     }

@@ -46,7 +46,7 @@ class WorkoutSignup extends Model
     {
         return $this->belongsTo(SystemStatus::class)
             ->whereHas('module', function ($query) {
-                $query->where('model_type', 'App\Models\WorkoutSignup');
+                $query->where('model_type', self::class);
             });
     }
 

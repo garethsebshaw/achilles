@@ -57,7 +57,7 @@ class WorkoutController extends Controller
         $workout = Workout::create($validated);
 
         return redirect()->route('workouts.show', $workout)
-            ->with('success', 'Workout created successfully');
+            ->with('success', __('Workout created successfully'));
     }
 
     public function show(Workout $workout)
@@ -87,7 +87,7 @@ class WorkoutController extends Controller
         }
 
         return redirect()->route('workouts.show', $workout)
-            ->with('success', 'Workout updated successfully');
+            ->with('success', __('Workout updated successfully'));
     }
 
     protected function workoutNeedsNewVersion(Workout $oldWorkout, array $newData)
@@ -116,6 +116,6 @@ class WorkoutController extends Controller
         $workout->delete();
 
         return redirect()->route('workouts.index')
-            ->with('success', 'Workout archived successfully');
+            ->with('success', __('Workout archived successfully'));
     }
 }

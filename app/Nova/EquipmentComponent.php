@@ -55,61 +55,64 @@ class EquipmentComponent extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Equipment')
+            BelongsTo::make(__('Equipment'))
                 ->rules('required'),
 
-            BelongsTo::make('Component Type', 'componentType')
+            BelongsTo::make(__('Component Type'), 'componentType')
                 ->rules('required'),
 
-            BelongsTo::make('Manufacturer')
+            BelongsTo::make(__('Manufacturer'))
                 ->rules('required'),
 
-            Text::make('Model')
+            Text::make(__('Model'))
                 ->nullable(),
 
-            Text::make('Serial Number')
+            Text::make(__('Serial Number'))
                 ->nullable(),
 
-            BelongsTo::make('Status', 'status', SystemStatus::class)
+            BelongsTo::make(__('Status'), 'status', SystemStatus::class)
+                ->relatableQueryUsing(function (NovaRequest $request, $query) {
+                    return $query->forModelType(\App\Models\EquipmentComponent::class);
+                })
                 ->rules('required'),
 
-            BelongsTo::make('Condition', 'condition', EquipmentCondition::class)
+            BelongsTo::make(__('Condition'), 'condition', EquipmentCondition::class)
                 ->rules('required'),
 
-            Date::make('Installation Date')
+            Date::make(__('Installation Date'))
                 ->nullable(),
 
-            Date::make('Warranty Expiry')
+            Date::make(__('Warranty Expiry'))
                 ->nullable(),
 
-            Boolean::make('Is Monitored')
+            Boolean::make(__('Is Monitored'))
                 ->default(false),
 
-            Number::make('Maintenance Interval (Miles)', 'maintenance_interval_miles')
+            Number::make(__('Maintenance Interval (Miles)'), 'maintenance_interval_miles')
                 ->nullable()
                 ->min(0),
 
-            Number::make('Maintenance Interval (Months)', 'maintenance_interval_months')
+            Number::make(__('Maintenance Interval (Months)'), 'maintenance_interval_months')
                 ->nullable()
                 ->min(0),
 
-            DateTime::make('Last Maintenance Date')
+            DateTime::make(__('Last Maintenance Date'))
                 ->nullable(),
 
-            DateTime::make('Next Maintenance Date')
+            DateTime::make(__('Next Maintenance Date'))
                 ->nullable(),
 
-            Textarea::make('Notes')
+            Textarea::make(__('Notes'))
                 ->nullable()
                 ->rows(3),
 
-            Panel::make('Relationships', [
-                HasMany::make('Maintenance Requests', 'maintenanceRequests', MaintenanceRequest::class),
-                HasMany::make('Maintenance Logs', 'maintenanceLogs', MaintenanceLog::class),
+            Panel::make(__('Relationships'), [
+                HasMany::make(__('Maintenance Requests'), 'maintenanceRequests', MaintenanceRequest::class),
+                HasMany::make(__('Maintenance Logs'), 'maintenanceLogs', MaintenanceLog::class),
             ]),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

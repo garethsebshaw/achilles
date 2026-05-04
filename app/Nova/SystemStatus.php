@@ -53,43 +53,43 @@ class SystemStatus extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('System Module', 'systemModule', SystemModule::class)
+            BelongsTo::make(__('System Module'), 'systemModule', SystemModule::class)
                 ->filterable()
                 ->sortable()
                 ->showCreateRelationButton(),
 
-            BelongsTo::make('Parent Status', 'parent', SystemStatus::class)
+            BelongsTo::make(__('Parent Status'), 'parent', SystemStatus::class)
                 ->sortable()
                 ->nullable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->filterable()
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Code')
+            Text::make(__('Code'))
                 ->sortable()
                 ->rules('required', 'unique:system_statuses,code,{{resourceId}}'),
 
-            Color::make('Color')->nullable(),
+            Color::make(__('Color'))->nullable(),
 
-            Number::make('Sort Order')
+            Number::make(__('Sort Order'))
                 ->sortable()
                 ->default(0),
 
-            Boolean::make('Is Default')
+            Boolean::make(__('Is Default'))
                 ->filterable()
                 ->rules('unique_default_per_type'),
 
-            Boolean::make('Is System')
+            Boolean::make(__('Is System'))
                 ->canSee(fn($request) => $request->user()->isAdmin()),
 
-            Code::make('Metadata')
+            Code::make(__('Metadata'))
                 ->json()
                 ->nullable(),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail()
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail()
         ];
     }
 

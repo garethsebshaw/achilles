@@ -49,18 +49,18 @@ class SystemTaggable extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Tag', 'tag', SystemTag::class)
+            BelongsTo::make(__('Tag'), 'tag', SystemTag::class)
                 ->searchable()
                 ->showCreateRelationButton(),
-            BelongsTo::make('System Type', 'systemType', SystemModule::class)
+            BelongsTo::make(__('System Type'), 'systemType', SystemModule::class)
                 ->searchable()
                 ->showCreateRelationButton(),
-            MorphTo::make('Taggable')->types([
+            MorphTo::make(__('Taggable'))->types([
                 // Add your taggable resource types here
             ]),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail()
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail()
         ];
     }
 

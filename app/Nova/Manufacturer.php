@@ -55,32 +55,32 @@ class Manufacturer extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->rules('required', 'max:255')
                 ->sortable(),
 
-            Textarea::make('Contact Info')
+            Textarea::make(__('Contact Info'))
                 ->nullable()
                 ->rows(3),
 
-            Text::make('Website')
+            Text::make(__('Website'))
                 ->nullable()
                 ->rules('nullable', 'url')
                 ->displayUsing(function ($value) {
                     return $value ? "<a href='{$value}' target='_blank'>{$value}</a>" : null;
                 })->asHtml(),
 
-            Textarea::make('Notes')
+            Textarea::make(__('Notes'))
                 ->nullable()
                 ->rows(3),
 
-            Panel::make('Relationships', [
-                HasMany::make('Equipment'),
-                HasMany::make('Components', 'components', EquipmentComponent::class),
+            Panel::make(__('Relationships'), [
+                HasMany::make(__('Equipment')),
+                HasMany::make(__('Components'), 'components', EquipmentComponent::class),
             ]),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

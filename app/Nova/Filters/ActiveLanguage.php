@@ -8,7 +8,10 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ActiveLanguage extends Filter
 {
-    public $name = 'Active Languages';
+    public function name()
+    {
+        return __('Active Languages');
+    }
 
     public function apply(NovaRequest $request, $query, $value)
     {
@@ -18,8 +21,8 @@ class ActiveLanguage extends Filter
     public function options(NovaRequest $request)
     {
         return [
-            'Active' => 1,
-            'Inactive' => 0
+            __('Active') => 1,
+            __('Inactive') => 0,
         ];
     }
 

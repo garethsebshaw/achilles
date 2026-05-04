@@ -110,17 +110,6 @@ class SystemStatusSeeder extends Seeder
                 ]
             ],
             [
-                'model_type' => 'App\Models\WorkoutSignup',
-                'statuses' => [
-                    ['name' => 'Pending', 'code' => 'signup_pending', 'color' => '#ffc107', 'is_default' => true, 'is_system' => true],
-                    ['name' => 'Confirmed', 'code' => 'signup_confirmed', 'color' => '#28a745', 'is_system' => true],
-                    ['name' => 'Waitlisted', 'code' => 'signup_waitlist', 'color' => '#fd7e14', 'is_system' => true],
-                    ['name' => 'Cancelled', 'code' => 'signup_cancelled', 'color' => '#dc3545', 'is_system' => true],
-                    ['name' => 'No Show', 'code' => 'signup_noshow', 'color' => '#6c757d', 'is_system' => true],
-                    ['name' => 'Attended', 'code' => 'signup_attended', 'color' => '#20c997', 'is_system' => true]
-                ]
-            ],
-            [
                 'model_type' => 'App\Models\GuideTraining',
                 'statuses' => [
                     ['name' => 'Not Started', 'code' => 'guide_not_started', 'color' => '#6c757d', 'is_default' => true, 'is_system' => true],

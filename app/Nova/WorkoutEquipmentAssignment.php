@@ -23,24 +23,23 @@ class WorkoutEquipmentAssignment extends Resource
 
     public function fields(NovaRequest $request)
     {
-        $workoutsModuleId = \App\Models\SystemModule::where('name', 'Workouts')->first()->id;
-
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Workout Signup', 'workoutSignup', WorkoutSignup::class)
+            BelongsTo::make(__('Workout Signup'), 'workoutSignup', WorkoutSignup::class)
                 ->rules('required'),
 
-            BelongsTo::make('Equipment')
+            BelongsTo::make(__('Equipment'))
                 ->rules('required'),
 
-            BelongsTo::make('Assignment Type', 'assignmentType', SystemCategory::class)
+            BelongsTo::make(__('Assignment Type'), 'assignmentType', SystemCategory::class)
                 ->relatableQueryUsing(function (NovaRequest $request, $query) {
-                    $workoutsModuleId = \App\Models\SystemModule::where('model_type', 'App\Models\WorkoutEquipmentAssignment')->first()->id;
-                    return $query->where('system_module_id', $workoutsModuleId);
+                    $workoutAssignmentModuleId = \App\Models\SystemModule::where('model_type', \App\Models\WorkoutEquipmentAssignment::class)->value('id');
+
+                    return $query->where('system_module_id', $workoutAssignmentModuleId);
                 }),
 
-            Code::make('Fitting Details')
+            Code::make(__('Fitting Details'))
                 ->json()
                 ->nullable(),
         ];
@@ -68,6 +67,6 @@ class WorkoutEquipmentAssignment extends Resource
 
     public static function label() {
 
-        return 'W/O Equip. Assign.';
+        return __('W/O Equip. Assign.');
     }
 }

@@ -12,6 +12,13 @@ use Illuminate\Support\Carbon;
 
 class WorkoutFilter extends Filter
 {
+    public $component = 'select-filter';
+
+    public function name()
+    {
+        return __('Workout');
+    }
+
     public function apply(NovaRequest $request, $query, $value)
     {
         return $query->where('workout_id', $value);
@@ -61,8 +68,7 @@ class LocationFilter extends Filter
      */
     public function name()
     {
-//        return 'Location (Filtered by Chapter)';
-        return 'Location';
+        return __('Location');
     }
 }
 
@@ -70,6 +76,13 @@ class LocationFilter extends Filter
 
 class SessionDateFilter extends Filter
 {
+    public $component = 'date-filter';
+
+    public function name()
+    {
+        return __('Session Date');
+    }
+
     public function apply(NovaRequest $request, $query, $value)
     {
         return $query->whereDate('session_date', $value);
@@ -83,6 +96,13 @@ class SessionDateFilter extends Filter
 
 class StatusFilter extends Filter
 {
+    public $component = 'select-filter';
+
+    public function name()
+    {
+        return __('Status');
+    }
+
     public function apply(NovaRequest $request, $query, $value)
     {
         return $query->where('status_id', $value);

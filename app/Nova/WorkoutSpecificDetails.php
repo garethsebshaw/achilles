@@ -24,43 +24,50 @@ class WorkoutSpecificDetails extends Resource
 
     public function fields(NovaRequest $request)
     {
-        $workoutsModuleId = \App\Models\SystemModule::where('name', 'Workouts')->first()->id;
-
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Workout Signup', 'workoutSignup', WorkoutSignup::class)
+            BelongsTo::make(__('Workout Signup'), 'workoutSignup', WorkoutSignup::class)
                 ->rules('required'),
 
-            BelongsTo::make('Sport Category', 'sportCategory', SystemCategory::class)
+            BelongsTo::make(__('Sport Category'), 'sportCategory', SystemCategory::class)
                 ->relatableQueryUsing(function (NovaRequest $request, $query) {
                     $workoutsModuleId = \App\Models\SystemModule::where('name', 'Workouts')->first()->id;
                     return $query->where('system_module_id', $workoutsModuleId);
                 }),
 
-            BelongsTo::make('Distance Unit', 'distanceUnit', SystemStatus::class),
-            BelongsTo::make('Pace Unit', 'paceUnit', SystemStatus::class),
-            BelongsTo::make('Speed Unit', 'speedUnit', SystemStatus::class),
+            BelongsTo::make(__('Distance Unit'), 'distanceUnit', SystemStatus::class)
+                ->relatableQueryUsing(function (NovaRequest $request, $query) {
+                    return $query->forModelType(\App\Models\WorkoutSpecificDetails::class);
+                }),
+            BelongsTo::make(__('Pace Unit'), 'paceUnit', SystemStatus::class)
+                ->relatableQueryUsing(function (NovaRequest $request, $query) {
+                    return $query->forModelType(\App\Models\WorkoutSpecificDetails::class);
+                }),
+            BelongsTo::make(__('Speed Unit'), 'speedUnit', SystemStatus::class)
+                ->relatableQueryUsing(function (NovaRequest $request, $query) {
+                    return $query->forModelType(\App\Models\WorkoutSpecificDetails::class);
+                }),
 
-            Number::make('Distance')
+            Number::make(__('Distance'))
                 ->nullable(),
 
-            Number::make('Time')
+            Number::make(__('Time'))
                 ->nullable(),
 
-            Number::make('Pace Min')
+            Number::make(__('Pace Min'))
                 ->nullable(),
 
-            Number::make('Pace Max')
+            Number::make(__('Pace Max'))
                 ->nullable(),
 
-            Number::make('Speed Min')
+            Number::make(__('Speed Min'))
                 ->nullable(),
 
-            Number::make('Speed Max')
+            Number::make(__('Speed Max'))
                 ->nullable(),
 
-            Code::make('Additional Details')
+            Code::make(__('Additional Details'))
                 ->json()
                 ->nullable(),
         ];
@@ -98,6 +105,6 @@ class WorkoutSpecificDetails extends Resource
 
     public static function label() {
 
-        return 'Signup Details';
+        return __('Signup Details');
     }
 }

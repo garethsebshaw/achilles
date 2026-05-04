@@ -34,20 +34,20 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return [
                 MenuSection::dashboard(\App\Nova\Dashboards\Main::class)->icon('chart-bar'),
 
-                MenuSection::make('Sessions', [
+                MenuSection::make(__('Sessions'), [
                     MenuItem::resource(\App\Nova\WorkoutSession::class),
                     MenuItem::resource(\App\Nova\WorkoutSignup::class),
                     MenuItem::resource(\App\Nova\WorkoutSpecificDetails::class),
                     MenuItem::resource(\App\Nova\WorkoutSessionMeetingPoint::class),
                 ])->icon('clipboard-document-check')->collapsable(),
 
-                MenuSection::make('Workout Templates', [
+                MenuSection::make(__('Workout Templates'), [
                     MenuItem::resource(\App\Nova\Workout::class),
                     MenuItem::resource(\App\Nova\WorkoutEquipmentAssignment::class),
                     MenuItem::resource(\App\Nova\MeetingPoint::class),
                 ])->icon('document-duplicate')->collapsable(),
 
-                MenuSection::make('Weather', [
+                MenuSection::make(__('Weather'), [
                     MenuItem::resource(WeatherLocation::class),
                     MenuItem::resource(\App\Nova\WeatherData::class),
                     MenuItem::resource(\App\Nova\WeatherDailyData::class),
@@ -55,14 +55,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])->icon('cloud')->collapsable(),
 
                 // User Management
-                MenuSection::make('Users', [
+                MenuSection::make(__('Users'), [
                     MenuItem::resource(\App\Nova\User::class),
                     MenuItem::resource(\App\Nova\UserCertification::class),
                     MenuItem::resource(\App\Nova\LanguageProficiency::class),
                 ])->icon('users')->collapsable(),
 
                 // Equipment Management
-                MenuSection::make('Equipment', [
+                MenuSection::make(__('Equipment'), [
                     MenuItem::resource(\App\Nova\Equipment::class),
                     MenuItem::resource(\App\Nova\EquipmentComponent::class),
                     MenuItem::resource(\App\Nova\ComponentType::class),
@@ -72,7 +72,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])->icon('rocket-launch')->collapsable(),
 
                 // Maintenance Management
-                MenuSection::make('Maintenance', [
+                MenuSection::make(__('Maintenance'), [
                     MenuItem::resource(\App\Nova\MaintenanceRequest::class),
                     MenuItem::resource(\App\Nova\MaintenanceLog::class),
                     MenuItem::resource(\App\Nova\EquipmentMaintenancePriority::class),
@@ -80,14 +80,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])->icon('wrench')->collapsable(),
 
                 // Certifications
-                MenuSection::make('Certifications', [
+                MenuSection::make(__('Certifications'), [
                     MenuItem::resource(\App\Nova\Certification::class),
                     MenuItem::resource(\App\Nova\CertificationType::class),
                     MenuItem::resource(\App\Nova\CertificationDocument::class),
                 ])->icon('academic-cap')->collapsable(),
 
                 // Organization Management
-                MenuSection::make('Organization', [
+                MenuSection::make(__('Organization'), [
                     MenuItem::resource(\App\Nova\SystemCountry::class),
                     MenuItem::resource(\App\Nova\SystemRegion::class),
                     MenuItem::resource(\App\Nova\SystemChapter::class),
@@ -96,12 +96,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])->icon('office-building')->collapsable(),
 
                 // System Configuration
-                MenuSection::make('System', [
+                MenuSection::make(__('System'), [
                     MenuItem::resource(\App\Nova\Language::class),
                     MenuItem::resource(\App\Nova\SystemModule::class),
                     MenuItem::resource(\App\Nova\SystemCategory::class),
-                    MenuItem::resource(\App\Nova\SystemNotification::class),
                     MenuItem::resource(\App\Nova\SystemStatus::class),
+                    MenuItem::resource(\App\Nova\SystemNotification::class),
                     MenuItem::resource(\App\Nova\SystemTag::class),
                     MenuItem::resource(\App\Nova\SystemSetting::class),
                     MenuItem::resource(\App\Nova\SystemAuditLog::class),

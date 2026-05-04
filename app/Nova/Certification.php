@@ -52,43 +52,41 @@ class Certification extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable()
                 ->filterable()
                 ->rules('required', 'max:255')
                 ->creationRules('unique:certifications,name,NULL,id,certification_type_id,{{certification_type_id}}')
                 ->updateRules('unique:certifications,name,{{resourceId}},id,certification_type_id,{{certification_type_id}}'),
 
-            BelongsTo::make('Certification Type', 'certificationType', CertificationType::class)
+            BelongsTo::make(__('Certification Type'), 'certificationType', CertificationType::class)
                 ->rules('required')
                 ->filterable()
                 ->showCreateRelationButton(),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->nullable()
                 ->alwaysShow(),
 
-            Number::make('Validity Period (Months)', 'validity_period')
+            Number::make(__('Validity Period (Months)'), 'validity_period')
                 ->nullable()
                 ->min(1)
                 ->max(120)
                 ->step(1),
 
-            Boolean::make('Requires Document')
+            Boolean::make(__('Requires Document'))
                 ->sortable()
                 ->default(false),
 
-            BelongsTo::make('Status', 'systemStatus', SystemStatus::class)
+            BelongsTo::make(__('Status'), 'systemStatus', SystemStatus::class)
                 ->relatableQueryUsing(function (NovaRequest $request, Builder $query) {
-                    $query->whereHas('systemModule', function($q) {
-                        $q->where('model_type', \App\Models\Certification::class);
-                    });
+                    return $query->forModelType(\App\Models\Certification::class);
                 })
                 ->required()
                 ->filterable()
                 ->showCreateRelationButton(),
 
-            HasMany::make('User Certifications', 'userCertifications', UserCertification::class),
+            HasMany::make(__('User Certifications'), 'userCertifications', UserCertification::class),
 
         ];
     }

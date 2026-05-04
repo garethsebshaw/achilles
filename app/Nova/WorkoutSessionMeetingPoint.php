@@ -25,13 +25,13 @@ class WorkoutSessionMeetingPoint extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Workout Session', 'workoutSession', WorkoutSession::class)
+            BelongsTo::make(__('Workout Session'), 'workoutSession', WorkoutSession::class)
                 ->rules('required'),
 
-            BelongsTo::make('Meeting Point', 'meetingPoint', MeetingPoint::class)
+            BelongsTo::make(__('Meeting Point'), 'meetingPoint', MeetingPoint::class)
                 ->rules('required'),
 
-            Boolean::make('Is Primary')
+            Boolean::make(__('Is Primary'))
                 ->default(false)
         ];
     }
@@ -68,6 +68,6 @@ class WorkoutSessionMeetingPoint extends Resource
 
     public static function label() {
 
-        return 'Session Meet. Points';
+        return __('Session Meet. Points');
     }
 }

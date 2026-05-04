@@ -66,34 +66,33 @@ class SessionWithin6Hours extends Lens
         return [
             ID::make()->sortable(),
 
-            Text::make('Session Date')
+            Text::make(__('Session Date'))
                 ->rules('required')
                 ->displayUsing(fn ($value) => $value ? $value->format('D d/m/Y') : '')
                 ->showOnIndex()
                 ->sortable()
                 ->filterable(),
 
-            Text::make('Start Time')
+            Text::make(__('Start Time'))
                 ->rules('required')
                 ->displayUsing(fn ($value) => $value ? $value->format('g:ia') : '')
                 ->sortable()
                 ->filterable(),
 
-            BelongsTo::make('Workout')
+            BelongsTo::make(__('Workout'))
                 ->nullable()
                 ->sortable()
                 ->filterable(),
 
-            BelongsTo::make('Location', 'location', SystemLocation::class)
+            BelongsTo::make(__('Location'), 'location', SystemLocation::class)
                 ->rules('required')
                 ->sortable()
                 ->filterable(),
 
 
-            BelongsTo::make('Status', 'status', SystemStatus::class)
+            BelongsTo::make(__('Status'), 'status', SystemStatus::class)
                 ->relatableQueryUsing(function (NovaRequest $request, $query) {
-                    $workoutsModuleId = \App\Models\SystemModule::where('model_type', 'App\Models\Workout')->first()->id;
-                    return $query->where('system_module_id', $workoutsModuleId);
+                    return $query->forModelType(\App\Models\WorkoutSession::class);
                 }),
         ];
     }

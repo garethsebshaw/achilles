@@ -55,33 +55,33 @@ class EquipmentCondition extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->rules('required', 'max:255')
                 ->sortable(),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->nullable()
                 ->rows(3),
 
-            Number::make('Rating')
+            Number::make(__('Rating'))
                 ->rules('required', 'integer', 'min:1', 'max:5')
                 ->min(1)
                 ->max(5)
                 ->sortable(),
 
-            Boolean::make('Serviceable')
+            Boolean::make(__('Serviceable'))
                 ->rules('required')
                 ->sortable(),
 
-            Panel::make('Relationships', [
-                HasMany::make('Equipment'),
-                HasMany::make('Components', 'components', EquipmentComponent::class),
-                HasMany::make('Checkouts (Out)', 'checkoutsOut', EquipmentCheckout::class),
-                HasMany::make('Checkouts (In)', 'checkoutsIn', EquipmentCheckout::class),
+            Panel::make(__('Relationships'), [
+                HasMany::make(__('Equipment')),
+                HasMany::make(__('Components'), 'components', EquipmentComponent::class),
+                HasMany::make(__('Checkouts (Out)'), 'checkoutsOut', EquipmentCheckout::class),
+                HasMany::make(__('Checkouts (In)'), 'checkoutsIn', EquipmentCheckout::class),
             ]),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

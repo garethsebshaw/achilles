@@ -49,22 +49,22 @@ class SystemTag extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Parent Tag', 'parent', SystemTag::class)
+            BelongsTo::make(__('Parent Tag'), 'parent', SystemTag::class)
                 ->nullable()
                 ->searchable()
                 ->showCreateRelationButton(),
 
-            Text::make('Name')->sortable()->rules('required'),
+            Text::make(__('Name'))->sortable()->rules('required'),
 
-            Text::make('Type')->nullable(),
+            Text::make(__('Type'))->nullable(),
 
-            Color::make('Color')->nullable(),
+            Color::make(__('Color'))->nullable(),
 
-            HasMany::make('Children', 'children', SystemTag::class),
-            HasMany::make('System_Taggables'),
+            HasMany::make(__('Children'), 'children', SystemTag::class),
+            HasMany::make(__('System Taggables')),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail()
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail()
         ];
     }
 

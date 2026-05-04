@@ -53,40 +53,40 @@ class SystemLocationAccess extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Location', 'location', SystemLocation::class)
+            BelongsTo::make(__('Location'), 'location', SystemLocation::class)
                 ->rules('required'),
 
-            BelongsTo::make('User')
+            BelongsTo::make(__('User'))
                 ->rules('required'),
 
-            Select::make('Access Type')
+            Select::make(__('Access Type'))
                 ->options([
-                    'key' => 'Key',
-                    'code' => 'Access Code',
-                    'card' => 'Access Card',
-                    'fob' => 'Key Fob',
-                    'other' => 'Other'
+                    'key' => __('Key'),
+                    'code' => __('Access Code'),
+                    'card' => __('Access Card'),
+                    'fob' => __('Key Fob'),
+                    'other' => __('Other')
                 ])
                 ->rules('required'),
 
-            Text::make('Access Identifier')
-                ->help('Key number, card number, etc.')
+            Text::make(__('Access Identifier'))
+                ->help(__('Key number, card number, etc.'))
                 ->nullable(),
 
-            Date::make('Access Granted Date')
+            Date::make(__('Access Granted Date'))
                 ->rules('required')
                 ->default(now()),
 
-            Date::make('Access Expiry Date')
+            Date::make(__('Access Expiry Date'))
                 ->nullable(),
 
-            BelongsTo::make('Granted By', 'grantedBy', User::class)
+            BelongsTo::make(__('Granted By'), 'grantedBy', User::class)
                 ->rules('required'),
 
-            Boolean::make('Active', 'is_active')
+            Boolean::make(__('Active'), 'is_active')
                 ->default(true),
 
-            Textarea::make('Notes')
+            Textarea::make(__('Notes'))
                 ->rows(3)
                 ->nullable(),
         ];

@@ -61,7 +61,7 @@ class Equipment extends Resource
         return [
             ID::make()->sortable(),
 /*
-            BelongsTo::make('Category', 'category', SystemCategory::class)
+            BelongsTo::make(__('Category'), 'category', SystemCategory::class)
                 ->relatableQueryUsing(function (NovaRequest $request, $query) {
                     $workoutsModuleId = \App\Models\SystemModule::where('model_type', \App\Models\Equipment::class)->first()->id;
                     return $query->where('system_module_id', $workoutsModuleId);
@@ -69,93 +69,92 @@ class Equipment extends Resource
                 ->rules('required')
                 ->filterable(),*/
 
-            HierarchicalCategoryField::make('Category', 'category')
+            HierarchicalCategoryField::make(__('Category'), 'category')
                 ->rules('required'),
 
-            BelongsTo::make('Manufacturer')
+            BelongsTo::make(__('Manufacturer'))
                 ->rules('required'),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->rules('required', 'max:255')
                 ->sortable(),
 
-            Text::make('Model')
+            Text::make(__('Model'))
                 ->nullable(),
 
-            Text::make('Serial Number')
+            Text::make(__('Serial Number'))
                 ->nullable(),
 
-            Text::make('QR Code')
+            Text::make(__('QR Code'))
                 ->rules('required', 'unique:equipment,qr_code,{{resourceId}}')
                 ->creationRules('unique:equipment,qr_code')
                 ->updateRules('unique:equipment,qr_code,{{resourceId}}'),
 
-            BelongsTo::make('Location', 'location', SystemLocation::class)
+            BelongsTo::make(__('Location'), 'location', SystemLocation::class)
                 ->rules('required'),
 
-            BelongsTo::make('Storage Location', 'storageLocation', StorageLocation::class)
+            BelongsTo::make(__('Storage Location'), 'storageLocation', StorageLocation::class)
                 ->nullable(),
 
-            BelongsTo::make('Status', 'status', SystemStatus::class)
+            BelongsTo::make(__('Status'), 'status', SystemStatus::class)
                 ->relatableQueryUsing(function (NovaRequest $request, $query) {
-                    $workoutsModuleId = \App\Models\SystemModule::where('model_type', \App\Models\Equipment::class)->first()->id;
-                    return $query->where('system_module_id', $workoutsModuleId);
+                    return $query->forModelType(\App\Models\Equipment::class);
                 })
                 ->rules('required')
                 ->filterable(),
 
-            BelongsTo::make('Condition', 'equipmentCondition', EquipmentCondition::class)
+            BelongsTo::make(__('Condition'), 'equipmentCondition', EquipmentCondition::class)
                 ->rules('required'),
 
-            Select::make('Owner Type')
+            Select::make(__('Owner Type'))
                 ->options([
-                    'athlete' => 'Athlete',
-                    'partner' => 'Partner',
+                    'athlete' => __('Athlete'),
+                    'partner' => __('Partner'),
                 ])
                 ->nullable(),
 
-            Number::make('Owner ID')
+            Number::make(__('Owner ID'))
                 ->nullable()
                 ->hideFromIndex(),
 
-            BelongsTo::make('Assigned To', 'assignedUser', User::class)
+            BelongsTo::make(__('Assigned To'), 'assignedUser', User::class)
                 ->nullable(),
 
-            Date::make('Purchase Date')
+            Date::make(__('Purchase Date'))
                 ->nullable(),
 
-            Currency::make('Purchase Price')
+            Currency::make(__('Purchase Price'))
                 ->nullable(),
 
-            Date::make('Warranty Expiry')
+            Date::make(__('Warranty Expiry'))
                 ->nullable(),
 
-            DateTime::make('Last Maintenance Date')
+            DateTime::make(__('Last Maintenance Date'))
                 ->nullable(),
 
-            DateTime::make('Next Maintenance Date')
+            DateTime::make(__('Next Maintenance Date'))
                 ->nullable(),
 
-            Textarea::make('Notes')
+            Textarea::make(__('Notes'))
                 ->nullable()
                 ->rows(3),
 
-            Code::make('Attributes')
+            Code::make(__('Attributes'))
                 ->json()
                 ->nullable(),
 
-            Boolean::make('Is Active')
+            Boolean::make(__('Is Active'))
                 ->default(true),
 
-            Panel::make('Relationships', [
-                HasMany::make('Components', 'components', EquipmentComponent::class),
-                HasMany::make('Maintenance Requests', 'maintenanceRequests', MaintenanceRequest::class),
-                HasMany::make('Maintenance Logs', 'maintenanceLogs', MaintenanceLog::class),
-                HasMany::make('Checkouts', 'checkouts', EquipmentCheckout::class),
+            Panel::make(__('Relationships'), [
+                HasMany::make(__('Components'), 'components', EquipmentComponent::class),
+                HasMany::make(__('Maintenance Requests'), 'maintenanceRequests', MaintenanceRequest::class),
+                HasMany::make(__('Maintenance Logs'), 'maintenanceLogs', MaintenanceLog::class),
+                HasMany::make(__('Checkouts'), 'checkouts', EquipmentCheckout::class),
             ]),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

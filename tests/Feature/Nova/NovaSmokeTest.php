@@ -5,12 +5,17 @@ namespace Tests\Feature\Nova;
 use App\Models\MeetingPoint;
 use App\Models\SystemLocation;
 use App\Models\User;
+use App\Nova\WorkoutSignup as WorkoutSignupResource;
+use App\Nova\Dashboards\Main;
+use App\Nova\Metrics\MyUpcomingSessions;
+use App\Nova\Metrics\ScopedUpcomingSessions;
 use App\Models\Workout;
 use App\Models\WorkoutSession;
 use App\Models\WorkoutSignup;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Nova\Nova;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use PHPUnit\Framework\Attributes\PreserveGlobalState;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use Tests\TestCase;
@@ -262,6 +267,57 @@ class NovaSmokeTest extends TestCase
         $this->actingAs($user);
 
         $this->get('/dashboards/main')->assertForbidden();
+    }
+
+    public function test_main_dashboard_cards_switch_between_personal_and_operational_views(): void
+    {
+        $athlete = User::query()
+            ->whereNull('deleted_at')
+            ->where('is_athlete', true)
+            ->where('is_guide', false)
+            ->where('is_sys_admin', false)
+            ->where('is_admin', false)
+            ->where('is_team_leader', false)
+            ->firstOrFail();
+
+        $this->actingAs($athlete);
+        $athleteCardClasses = collect((new Main())->cards())->map(fn ($card) => $card::class)->all();
+        $this->assertContains(MyUpcomingSessions::class, $athleteCardClasses);
+        $this->assertNotContains(ScopedUpcomingSessions::class, $athleteCardClasses);
+
+        $staff = User::query()
+            ->whereNull('deleted_at')
+            ->where(function ($query) {
+                $query->where('is_sys_admin', true)
+                    ->orWhere('is_admin', true)
+                    ->orWhere('is_team_leader', true);
+            })
+            ->firstOrFail();
+
+        $this->actingAs($staff);
+        $staffCardClasses = collect((new Main())->cards())->map(fn ($card) => $card::class)->all();
+        $this->assertContains(ScopedUpcomingSessions::class, $staffCardClasses);
+    }
+
+    public function test_workout_signup_index_requires_explicit_scope(): void
+    {
+        $request = NovaRequest::create('/nova-api/workout-signups', 'GET');
+
+        $query = WorkoutSignupResource::indexQuery($request, WorkoutSignup::query());
+
+        $this->assertSame(0, $query->count());
+    }
+
+    public function test_workout_signup_index_scopes_to_selected_session(): void
+    {
+        $session = WorkoutSession::query()->has('signups')->firstOrFail();
+        $request = NovaRequest::create('/nova-api/workout-signups', 'GET', [
+            'resourceId' => $session->id,
+        ]);
+
+        $query = WorkoutSignupResource::indexQuery($request, WorkoutSignup::query());
+
+        $this->assertSame($session->signups()->count(), $query->count());
     }
 
     public function test_nova_api_endpoints_load_for_seeded_sys_admin(): void

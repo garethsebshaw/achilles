@@ -36,6 +36,6 @@ class ChapterFilter extends Filter
      */
     public function name()
     {
-        return 'Chapter';
+        return __('Chapter');
     }
 }

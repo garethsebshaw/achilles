@@ -12,7 +12,7 @@ class TimeWindowFilter extends Filter
 
     public function name()
     {
-        return 'Time Window';
+        return __('Time Window');
     }
 
     public function apply(NovaRequest $request, $query, $value)
@@ -35,11 +35,11 @@ class TimeWindowFilter extends Filter
     public function options(NovaRequest $request)
     {
         return [
-            '± 1 Hour' => 1,
-            '± 3 Hours' => 3,
-            '± 6 Hours' => 6,
-            '± 12 Hours' => 12,
-            'All Sessions' => 'all'
+            __('± 1 Hour') => 1,
+            __('± 3 Hours') => 3,
+            __('± 6 Hours') => 6,
+            __('± 12 Hours') => 12,
+            __('All Sessions') => 'all'
         ];
     }
 

@@ -202,12 +202,12 @@ class SystemLocationAccess extends Model
     public static function accessTypes(): array
     {
         return [
-            'key' => 'Key',
-            'code' => 'Access Code',
-            'card' => 'Access Card',
-            'fob' => 'Key Fob',
-            'biometric' => 'Biometric',
-            'other' => 'Other'
+            'key' => __('Key'),
+            'code' => __('Access Code'),
+            'card' => __('Access Card'),
+            'fob' => __('Key Fob'),
+            'biometric' => __('Biometric'),
+            'other' => __('Other')
         ];
     }
 }

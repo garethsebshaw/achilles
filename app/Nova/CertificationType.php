@@ -45,21 +45,21 @@ class CertificationType extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable()
                 ->rules('required', 'max:255', 'unique:certification_types,name')
                 ->creationRules('unique:certification_types,name')
                 ->updateRules('unique:certification_types,name,{{resourceId}}'),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->nullable()
                 ->alwaysShow(),
 
-            Boolean::make('Active')
+            Boolean::make(__('Active'))
                 ->sortable()
                 ->default(true),
 
-            HasMany::make('Certifications'),
+            HasMany::make(__('Certifications')),
         ];
     }
 

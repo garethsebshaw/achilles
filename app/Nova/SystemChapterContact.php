@@ -48,30 +48,30 @@ class SystemChapterContact extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Chapter', 'chapter', SystemChapter::class)
+            BelongsTo::make(__('Chapter'), 'chapter', SystemChapter::class)
                 ->sortable()
                 ->filterable()
                 ->showCreateRelationButton(),
 
-            BelongsTo::make('User', 'user', User::class)
+            BelongsTo::make(__('User'), 'user', User::class)
                 ->searchable()
                 ->sortable()
                 ->filterable()
                 ->showCreateRelationButton(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Title')->nullable(),
+            Text::make(__('Title'))->nullable(),
 
-            Text::make('Email')
+            Text::make(__('Email'))
                 ->nullable()
                 ->rules('nullable', 'email'),
 
-            Text::make('Phone')->nullable(),
+            Text::make(__('Phone'))->nullable(),
 
-            Boolean::make('Is Primary')
+            Boolean::make(__('Is Primary'))
                 ->sortable()
                 ->default(false),
         ];

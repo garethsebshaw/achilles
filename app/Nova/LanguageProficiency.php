@@ -46,22 +46,20 @@ class LanguageProficiency extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('User', 'user', User::class)
+            BelongsTo::make(__('User'), 'user', User::class)
                 ->searchable()
                 ->filterable()
                 ->sortable()
                 ->required(),
 
-            BelongsTo::make('Language', 'language', Language::class)
+            BelongsTo::make(__('Language'), 'language', Language::class)
                 ->filterable()
                 ->sortable()
                 ->required(),
 
-            BelongsTo::make('Proficiency Level', 'proficiencyStatus', SystemStatus::class)
+            BelongsTo::make(__('Proficiency Level'), 'proficiencyStatus', SystemStatus::class)
                 ->relatableQueryUsing(function (NovaRequest $request, Builder $query) {
-                    $query->whereHas('systemModule', function($q) {
-                        $q->where('model_type', \App\Models\LanguageProficiency::class);
-                    });
+                    return $query->forModelType(\App\Models\LanguageProficiency::class);
                 })
                 ->filterable()
                 ->sortable()
@@ -115,11 +113,11 @@ class LanguageProficiency extends Resource
 
     public static function label()
     {
-        return 'Language Proficiencies';
+        return __('Language Proficiencies');
     }
 
     public static function singularLabel()
     {
-        return 'Language Proficiency';
+        return __('Language Proficiency');
     }
 }

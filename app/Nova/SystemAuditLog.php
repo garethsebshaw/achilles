@@ -48,25 +48,25 @@ class SystemAuditLog extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('User')->nullable(),
+            BelongsTo::make(__('User'))->nullable(),
 
-            Text::make('Action')->sortable(),
+            Text::make(__('Action'))->sortable(),
 
-            Text::make('Entity Type')->sortable(),
+            Text::make(__('Entity Type'))->sortable(),
 
-            Text::make('Entity ID', 'entity_id'),
+            Text::make(__('Entity ID'), 'entity_id'),
 
-            Code::make('Old Values')
+            Code::make(__('Old Values'))
                 ->json()
                 ->nullable(),
 
-            Code::make('New Values')
+            Code::make(__('New Values'))
                 ->json()
                 ->nullable(),
 
-            Text::make('IP Address'),
+            Text::make(__('IP Address')),
 
-            DateTime::make('Created At')
+            DateTime::make(__('Created At'))
                 ->sortable()
                 ->exceptOnForms(),
         ];

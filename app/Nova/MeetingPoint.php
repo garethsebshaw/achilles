@@ -45,35 +45,35 @@ class MeetingPoint extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Workout Type', 'type', SystemCategory::class)
+            BelongsTo::make(__('Workout Type'), 'type', SystemCategory::class)
                 ->relatableQueryUsing(function (NovaRequest $request, $query, $model=null) use ($workoutsModule) {
                     return $query->where('system_module_id', $workoutsModule->id);
                 })
                 ->rules('required'),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->rules('required', 'max:255')
                 ->sortable(),
 
-            Text::make('Address')
+            Text::make(__('Address'))
                 ->rules('required'),
 
-            Number::make('Latitude')
+            Number::make(__('Latitude'))
                 ->nullable()
                 ->step(0.00000001),
 
-            Number::make('Longitude')
+            Number::make(__('Longitude'))
                 ->nullable()
                 ->step(0.00000001),
 
-            BelongsTo::make('Created By', 'createdBy', User::class)
+            BelongsTo::make(__('Created By'), 'createdBy', User::class)
                 ->exceptOnForms(),
 
-            BelongsTo::make('Chapter', 'chapter', SystemChapter::class)
+            BelongsTo::make(__('Chapter'), 'chapter', SystemChapter::class)
                 ->nullable(),
 
-            HasMany::make('Workout Templates', 'workoutTemplates', Workout::class),
-            HasMany::make('Workout Sessions', 'workoutSessions', WorkoutSession::class),
+            HasMany::make(__('Workout Templates'), 'workoutTemplates', Workout::class),
+            HasMany::make(__('Workout Sessions'), 'workoutSessions', WorkoutSession::class),
         ];
     }
 
@@ -99,6 +99,6 @@ class MeetingPoint extends Resource
 
     public static function label() {
 
-        return 'W/O Meeting Points';
+        return __('W/O Meeting Points');
     }
 }

@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\DB;
 use App\Nova\Filters\TimeWindowFilter;
 use App\Nova\Filters\ChapterFilter;
 use App\Nova\Filters\WorkoutFilter;
+use App\Nova\Filters\SessionSchedulePresetFilter;
+use App\Nova\Filters\SessionSignupPresenceFilter;
 
 class WorkoutSession extends Resource
 {
@@ -29,7 +31,7 @@ class WorkoutSession extends Resource
 
     public function title()
     {
-        return $this->workout ? $this->workout->name : 'Unnamed Workout';
+        return $this->workout ? $this->workout->name : __('Unnamed Workout');
     }
 
     public static $search = [
@@ -55,136 +57,138 @@ class WorkoutSession extends Resource
      */
     public static function indexQuery(NovaRequest $request, Builder $query): Builder
     {
-        return $query->with(['workout', 'location', 'status']);
+        return $query
+            ->with(['workout.activityType', 'location', 'status'])
+            ->withCount([
+                'signups as total_signups_count',
+                'signups as athlete_signups_count' => function ($signupQuery) {
+                    $signupQuery->whereHas('user', function ($userQuery) {
+                        $userQuery->where('is_athlete', true);
+                    });
+                },
+                'signups as guide_signups_count' => function ($signupQuery) {
+                    $signupQuery->whereHas('user', function ($userQuery) {
+                        $userQuery->where('is_guide', true);
+                    });
+                },
+            ]);
     }
 
     public static $group = 'Workout Management';
 
     public function fields(NovaRequest $request)
     {
-        $workoutsModuleId = \App\Models\SystemModule::where('name', 'Workouts')->first()->id;
         $withinWindow = $this->isWithinCheckInWindow();
 
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Location', 'location', SystemLocation::class)
+            BelongsTo::make(__('Location'), 'location', SystemLocation::class)
                 ->rules('required')
                 ->sortable(),
 
-            Text::make('Sport', function () {
-                return optional($this->workout->activityType)->name ?? 'Unknown Sport';
+            Text::make(__('Sport'), function () {
+                return optional($this->workout->activityType)->name ?? __('Unknown Sport');
             })
                 ->sortable()
                 ->filterable(),
 
-            BelongsTo::make('Workout')
+            BelongsTo::make(__('Workout'))
                 ->nullable()
                 ->hideFromIndex(),
 
-            Number::make('W/O Ver.', 'workout_version')
+            Number::make(__('W/O Ver.'), 'workout_version')
                 ->default(1)
                 ->hideFromIndex(),
 
-            Button::make('Check In Users')
+            Button::make(__('Check In Users'))
                 ->link('/resources/workout-signups?resourceId=' . $this->id, '_self')
                 ->style('success')
                 ->visible($this->isWithinCheckInWindow()),
 
-            Text::make('Session Date')
+            Text::make(__('Session Date'))
                 ->rules('required')
                 ->displayUsing(fn ($value) => $value ? $value->format('D d/m/Y') : '')
                 ->showOnIndex()
                 ->sortable(),
 
-            Text::make('Start Time')
+            Text::make(__('Start Time'))
                 ->rules('required')
                 ->displayUsing(fn ($value) => $value ? $value->format('g:ia') : '')
                 ->sortable(),
 
-            Text::make('End Time')
+            Text::make(__('End Time'))
                 ->rules('required')
                 ->displayUsing(fn ($value) => $value ? $value->format('g:ia') : '')
                 ->sortable(),
 
-            Number::make('Total Signups', function() {
-                return DB::table('workout_signups')
-                    ->where('workout_session_id', $this->id)
-                    ->distinct('user_id')
-                    ->count('user_id');
-            })
+            Number::make(__('Total Signups'), 'total_signups_count')
                 ->sortable()
                 ->textAlign('center'),
 
-            Number::make('Athletes', function() {
-                return DB::table('workout_signups')
-                    ->join('users', 'workout_signups.user_id', '=', 'users.id')
-                    ->where('workout_session_id', $this->id)
-                    ->where('users.is_athlete', true)
-                    ->distinct('workout_signups.user_id')
-                    ->count('workout_signups.user_id');
-            })
+            Number::make(__('Athletes'), 'athlete_signups_count')
                 ->sortable()
                 ->textAlign('center'),
 
-            Number::make('Guides', function() {
-                return DB::table('workout_signups')
-                    ->join('users', 'workout_signups.user_id', '=', 'users.id')
-                    ->where('workout_session_id', $this->id)
-                    ->where('users.is_guide', true)
-                    ->distinct('workout_signups.user_id')
-                    ->count('workout_signups.user_id');
-            })
+            Number::make(__('Guides'), 'guide_signups_count')
                 ->sortable()
                 ->textAlign('center'),
 
-            Number::make('Max Athletes')
+            Number::make(__('Max Athletes'))
                 ->nullable()
                 ->min(0)
                 ->hideFromIndex(),
 
-            Number::make('Max Guides')
+            Number::make(__('Max Guides'))
                 ->nullable()
                 ->min(0)
                 ->hideFromIndex(),
 
-            BelongsTo::make('Status', 'status', SystemStatus::class)
+            BelongsTo::make(__('Status'), 'status', SystemStatus::class)
                 ->relatableQueryUsing(function (NovaRequest $request, $query) {
-                    $workoutsModuleId = \App\Models\SystemModule::where('model_type', 'App\Models\Workout')->first()->id;
-                    return $query->where('system_module_id', $workoutsModuleId);
+                    return $query->forModelType(\App\Models\WorkoutSession::class);
                 }),
 
-            Text::make('Cancellation Reason')
+            Text::make(__('Cancellation Reason'))
                 ->nullable()
             ->hideFromIndex(),
 
-            BelongsTo::make('Cancelled By', 'cancelledBy', User::class)
+            BelongsTo::make(__('Cancelled By'), 'cancelledBy', User::class)
                 ->onlyOnDetail()
                 ->nullable(),
 
-            DateTime::make('Cancelled At')
+            DateTime::make(__('Cancelled At'))
                 ->onlyOnDetail()
                 ->nullable(),
 
-            Text::make('Notes')
+            Text::make(__('Notes'))
                 ->hideFromIndex()
                 ->nullable(),
 
 
-            HasMany::make('Signups', 'signups', WorkoutSignup::class),
+            HasMany::make(__('Signups'), 'signups', WorkoutSignup::class),
 
-            HasMany::make('Meeting Points', 'meetingPoints', MeetingPoint::class),
+            HasMany::make(__('Meeting Points'), 'meetingPoints', MeetingPoint::class),
         ];
     }
 
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+            new Metrics\SessionsThisWeek(),
+            new Metrics\SessionsNextWeek(),
+            new Metrics\UpcomingSessions30Days(),
+            new Metrics\SignupsThisWeek(),
+            new Metrics\SignupsNextWeek(),
+            new Metrics\UpcomingSignups30Days(),
+        ];
     }
 
     public function filters(NovaRequest $request)
     {
         return [
+            new Filters\SessionSchedulePresetFilter(),
+            new Filters\SessionSignupPresenceFilter(),
             new Filters\TimeWindowFilter(),
             new Filters\ChapterFilter(), // Chapter should be first
             new Filters\LocationFilter(), // Location updates based on Chapter
@@ -223,7 +227,7 @@ class WorkoutSession extends Resource
 
     public static function label() {
 
-        return 'Sessions';
+        return __('Sessions');
     }
 
 // Helper method to check if session is within check-in window

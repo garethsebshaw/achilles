@@ -47,31 +47,31 @@ class SystemRegion extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Code')
+            Text::make(__('Code'))
                 ->sortable()
                 ->rules('required', 'unique:system_regions,code,{{resourceId}}'),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->nullable()
                 ->hideFromIndex(),
 
-            Boolean::make('Active')
+            Boolean::make(__('Active'))
                 ->sortable()
                 ->filterable()
                 ->default(true),
 
-            Text::make('No. Chapters', function() {
+            Text::make(__('No. Chapters'), function() {
                 return $this->chapters_count;
 
             })
                 ->sortable()
                 ->onlyOnIndex(),  // Only show on index/listing page
 
-            HasMany::make('Chapters', 'chapters', SystemChapter::class),
+            HasMany::make(__('Chapters'), 'chapters', SystemChapter::class),
         ];
     }
 

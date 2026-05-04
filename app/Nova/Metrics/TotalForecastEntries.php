@@ -15,6 +15,6 @@ class TotalForecastEntries extends Value
 
     public function name()
     {
-        return 'Total Weather Forecasts Stored';
+        return __('Total Weather Forecasts Stored');
     }
 }

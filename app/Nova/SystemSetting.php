@@ -47,24 +47,24 @@ class SystemSetting extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Key')
+            Text::make(__('Key'))
                 ->rules('required', 'unique:system_settings,key,{{resourceId}}'),
 
-            Textarea::make('Value')->alwaysShow(),
+            Textarea::make(__('Value'))->alwaysShow(),
 
-            Select::make('Type')->options([
-                'string' => 'String',
-                'number' => 'Number',
-                'boolean' => 'Boolean',
-                'json' => 'JSON'
+            Select::make(__('Type'))->options([
+                'string' => __('String'),
+                'number' => __('Number'),
+                'boolean' => __('Boolean'),
+                'json' => __('JSON')
             ])->default('string'),
 
-            Boolean::make('Is Encrypted'),
+            Boolean::make(__('Is Encrypted')),
 
-            Textarea::make('Description'),
+            Textarea::make(__('Description')),
 
-            DateTime::make('Created At')->exceptOnForms(),
-            DateTime::make('Updated At')->exceptOnForms(),
+            DateTime::make(__('Created At'))->exceptOnForms(),
+            DateTime::make(__('Updated At'))->exceptOnForms(),
         ];
     }
 

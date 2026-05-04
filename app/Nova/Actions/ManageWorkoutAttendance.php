@@ -2,6 +2,8 @@
 
 namespace App\Nova\Actions;
 
+use App\Models\SystemStatus;
+use App\Models\WorkoutSignup;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Laravel\Nova\Actions\Action;
@@ -22,7 +24,7 @@ class ManageWorkoutAttendance extends Action
      */
     public function name()
     {
-        return 'Manage Attendance';
+        return __('Manage Attendance');
     }
 
     /**
@@ -38,20 +40,23 @@ class ManageWorkoutAttendance extends Action
             switch ($fields->action) {
                 case 'check-in':
                     $model->checked_in_at = now();
+                    $model->status_id = SystemStatus::idForModel(WorkoutSignup::class, 'signup_checked_in', ['signup_confirmed', 'signup_pending']);
                     break;
                 case 'check-out':
                     $model->checked_out_at = now();
+                    $model->status_id = SystemStatus::idForModel(WorkoutSignup::class, 'signup_checked_out', ['signup_attended', 'signup_checked_in']);
                     break;
                 case 'cancel-check-in':
                     $model->checked_in_at = null;
                     $model->checked_out_at = null;
+                    $model->status_id = SystemStatus::idForModel(WorkoutSignup::class, 'signup_confirmed', ['signup_pending']);
                     break;
             }
 
             $model->save();
         }
 
-        return Action::message('Attendance updated successfully');
+        return Action::message(__('Attendance updated successfully'));
     }
 
     /**
@@ -63,11 +68,11 @@ class ManageWorkoutAttendance extends Action
     public function fields(NovaRequest $request)
     {
         return [
-            Select::make('Action')
+            Select::make(__('Action'))
                 ->options([
-                    'check-in' => 'Check In',
-                    'check-out' => 'Check Out',
-                    'cancel-check-in' => 'Cancel Check In',
+                    'check-in' => __('Check In'),
+                    'check-out' => __('Check Out'),
+                    'cancel-check-in' => __('Cancel Check In'),
                 ])
                 ->rules('required'),
         ];

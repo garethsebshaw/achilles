@@ -8,7 +8,10 @@ use Carbon\Carbon;
 
 class SessionTimeRangeFilter extends Filter
 {
-    public $name = 'Session Time Range';
+    public function name()
+    {
+        return __('Session Time Range');
+    }
 
     /**
      * Apply the filter to the query.
@@ -27,10 +30,10 @@ class SessionTimeRangeFilter extends Filter
     public function options(Request $request)
     {
         return [
-            'Last 3 Hours' => 3,
-            'Last 6 Hours' => 6,
-            'Last 12 Hours' => 12,
-            'Last 24 Hours' => 24,
+            __('Last 3 Hours') => 3,
+            __('Last 6 Hours') => 6,
+            __('Last 12 Hours') => 12,
+            __('Last 24 Hours') => 24,
         ];
     }
 }

@@ -23,9 +23,9 @@ class TotalGuides extends Card
 
         // Manually set numeric values
         return $this->withTotal($guideCount)
-            ->title('Total Guides')
-            ->content("{$guideCount} Guides")
-            ->labels(['Guides', 'Non-Guides'])
+            ->title(__('Total Guides'))
+            ->content(__(':count Guides', ['count' => $guideCount]))
+            ->labels([__('Guides'), __('Non-Guides')])
             ->values([$guideCount, $nonGuideCount]);
     }
 

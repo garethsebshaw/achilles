@@ -48,31 +48,31 @@ class CertificationDocument extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Certification Type', 'certificationType', CertificationType::class)
+            BelongsTo::make(__('Certification Type'), 'certificationType', CertificationType::class)
                 ->nullable(),
 
-            Text::make('Name')->required(),
-            Textarea::make('Description')->alwaysShow(),
+            Text::make(__('Name'))->required(),
+            Textarea::make(__('Description'))->alwaysShow(),
 
-            Number::make('Validity Period')
+            Number::make(__('Validity Period'))
                 ->min(1)
                 ->max(255)
                 ->required(),
 
-            Boolean::make('Requires Document')
+            Boolean::make(__('Requires Document'))
                 ->default(false),
 
-            BelongsTo::make('User Certification', 'userCertification', UserCertification::class)
+            BelongsTo::make(__('User Certification'), 'userCertification', UserCertification::class)
                 ->required(),
 
-            File::make('Document', 'file_path')
+            File::make(__('Document'), 'file_path')
                 ->disk('public')
                 ->path('certification-documents')
                 ->prunable()
                 ->deletable(),
 
-            Text::make('File Type')->readonly(),
-            DateTime::make('Uploaded At')->readonly(),
+            Text::make(__('File Type'))->readonly(),
+            DateTime::make(__('Uploaded At'))->readonly(),
         ];
     }
 

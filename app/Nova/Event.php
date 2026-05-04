@@ -55,36 +55,39 @@ class Event extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->rules('required', 'max:255')
                 ->sortable(),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->nullable()
                 ->rows(3),
 
-            BelongsTo::make('Location', 'location', SystemLocation::class)
+            BelongsTo::make(__('Location'), 'location', SystemLocation::class)
                 ->nullable(),
 
-            DateTime::make('Start Date')
+            DateTime::make(__('Start Date'))
                 ->rules('required'),
 
-            DateTime::make('End Date')
+            DateTime::make(__('End Date'))
                 ->rules('required'),
 
-            BelongsTo::make('Status', 'status', SystemStatus::class)
+            BelongsTo::make(__('Status'), 'status', SystemStatus::class)
+                ->relatableQueryUsing(function (NovaRequest $request, $query) {
+                    return $query->forModelType(\App\Models\Event::class);
+                })
                 ->rules('required'),
 
-            BelongsTo::make('Created By', 'createdBy', User::class)
+            BelongsTo::make(__('Created By'), 'createdBy', User::class)
                 ->rules('required'),
 
-            Boolean::make('Is Active')
+            Boolean::make(__('Is Active'))
                 ->default(true),
 
-            DateTime::make('Created At')
+            DateTime::make(__('Created At'))
                 ->onlyOnDetail(),
 
-            DateTime::make('Updated At')
+            DateTime::make(__('Updated At'))
                 ->onlyOnDetail(),
         ];
     }

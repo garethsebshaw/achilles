@@ -49,90 +49,90 @@ class SystemLocation extends Resource
         return [
             ID::make()->sortable(),
 
-            new Panel('Basic Information', [
-                Text::make('Name')
+            new Panel(__('Basic Information'), [
+                Text::make(__('Name'))
                     ->rules('required', 'max:255')
                     ->sortable(),
 
-                Boolean::make('Active', 'is_active')
+                Boolean::make(__('Active'), 'is_active')
                     ->default(true)
                     ->sortable(),
             ]),
 
-            new Panel('Address Information', [
-                Text::make('Address Line 1')
+            new Panel(__('Address Information'), [
+                Text::make(__('Address Line 1'))
                     ->hideFromIndex(),
 
-                Text::make('Address Line 2')
+                Text::make(__('Address Line 2'))
                     ->hideFromIndex(),
 
-                Text::make('City')
+                Text::make(__('City'))
                     ->sortable(),
 
-                Text::make('State')
+                Text::make(__('State'))
                     ->sortable(),
 
-                Text::make('Postal Code'),
+                Text::make(__('Postal Code')),
 
-                BelongsTo::make('Country', 'country', SystemCountry::class)
+                BelongsTo::make(__('Country'), 'country', SystemCountry::class)
                     ->nullable(),
 
-                BelongsTo::make('Region', 'region', SystemRegion::class)
+                BelongsTo::make(__('Region'), 'region', SystemRegion::class)
                     ->nullable(),
 
-                BelongsTo::make('Chapter', 'chapter', SystemChapter::class)
+                BelongsTo::make(__('Chapter'), 'chapter', SystemChapter::class)
                     ->nullable(),
 
-                Text::make('Latitude')
+                Text::make(__('Latitude'))
                     ->rules('nullable', 'numeric', 'between:-90,90')
                     ->hideFromIndex(),
 
-                Text::make('Longitude')
+                Text::make(__('Longitude'))
                     ->rules('nullable', 'numeric', 'between:-180,180')
                     ->hideFromIndex(),
             ]),
 
-            new Panel('Contact Information', [
-                Text::make('Phone')
+            new Panel(__('Contact Information'), [
+                Text::make(__('Phone'))
                     ->rules('nullable', 'max:255'),
 
-                Text::make('Email')
+                Text::make(__('Email'))
                     ->rules('nullable', 'email', 'max:255'),
 
-                Text::make('Contact Name')
+                Text::make(__('Contact Name'))
                     ->rules('nullable', 'max:255'),
 
-                Text::make('Timezone')
+                Text::make(__('Timezone'))
                     ->rules('nullable', 'max:255')
                     ->hideFromIndex(),
             ]),
 
-            new Panel('Access Information', [
-                Text::make('Access Code')
+            new Panel(__('Access Information'), [
+                Text::make(__('Access Code'))
                     ->hideFromIndex()
                     ->onlyOnForms(),
 
-                Textarea::make('Access Instructions')
+                Textarea::make(__('Access Instructions'))
                     ->hideFromIndex()
                     ->rows(3),
 
-                HasMany::make('Access Records', 'userAccess', SystemLocationAccess::class),
+                HasMany::make(__('Access Records'), 'userAccess', SystemLocationAccess::class),
             ]),
 
-            new Panel('Additional Information', [
-                Textarea::make('Notes')
+            new Panel(__('Additional Information'), [
+                Textarea::make(__('Notes'))
                     ->hideFromIndex()
                     ->rows(3),
 
-                Code::make('Metadata')
+                Code::make(__('Metadata'))
                     ->json()
                     ->hideFromIndex(),
             ]),
 
-            new Panel('Related Items', [
-                HasMany::make('Equipment'),
-                HasMany::make('Storage Locations', 'storageLocations'),
-                HasMany::make('Events'),
+            new Panel(__('Related Items'), [
+                HasMany::make(__('Equipment')),
+                HasMany::make(__('Storage Locations'), 'storageLocations'),
+                HasMany::make(__('Events')),
             ]),
         ];
     }

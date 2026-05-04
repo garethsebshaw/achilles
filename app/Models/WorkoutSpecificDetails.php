@@ -41,16 +41,25 @@ class WorkoutSpecificDetails extends Model
 
     public function distanceUnit()
     {
-        return $this->belongsTo(SystemStatus::class, 'distance_unit_id');
+        return $this->belongsTo(SystemStatus::class, 'distance_unit_id')
+            ->whereHas('module', function ($query) {
+                $query->where('model_type', self::class);
+            });
     }
 
     public function paceUnit()
     {
-        return $this->belongsTo(SystemStatus::class, 'pace_unit_id');
+        return $this->belongsTo(SystemStatus::class, 'pace_unit_id')
+            ->whereHas('module', function ($query) {
+                $query->where('model_type', self::class);
+            });
     }
 
     public function speedUnit()
     {
-        return $this->belongsTo(SystemStatus::class, 'speed_unit_id');
+        return $this->belongsTo(SystemStatus::class, 'speed_unit_id')
+            ->whereHas('module', function ($query) {
+                $query->where('model_type', self::class);
+            });
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\CheckOutUser;
+use App\Models\SystemStatus;
+use App\Models\WorkoutSignup;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 
@@ -28,6 +30,7 @@ class HandleCheckOut
         }
 
         $signup->checked_out_at = Carbon::now();
+        $signup->status_id = SystemStatus::idForModel(WorkoutSignup::class, 'signup_checked_out', ['signup_attended', 'signup_checked_in']);
         $signup->save();
         Log::info("User Checked Out for {$signup->id}");
     }

@@ -17,6 +17,6 @@ class WeatherLocationCount extends Value
 
     public function name()
     {
-        return 'Active Weather Locations';
+        return __('Active Weather Locations');
     }
 }

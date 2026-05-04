@@ -37,29 +37,29 @@ class WorkoutSessionUsers extends Lens
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name', 'users.name')
+            Text::make(__('Name'), 'users.name')
                 ->sortable(),
 
-            Text::make('Email', 'users.email')
+            Text::make(__('Email'), 'users.email')
                 ->sortable(),
 
-            Badge::make('Role')->map([
+            Badge::make(__('Role'))->map([
                 'athlete' => 'info',
                 'guide' => 'success',
             ])->resolveUsing(function ($resource) {
                 return $resource->user->is_athlete ? 'athlete' : 'guide';
             }),
 
-            BelongsTo::make('Assigned To', 'athlete', \App\Nova\User::class)
+            BelongsTo::make(__('Assigned To'), 'athlete', \App\Nova\User::class)
                 ->nullable(),
 
-            DateTime::make('Checked In At')
+            DateTime::make(__('Checked In At'))
                 ->sortable(),
 
-            DateTime::make('Checked Out At')
+            DateTime::make(__('Checked Out At'))
                 ->sortable(),
 
-            Badge::make('Status', 'system_statuses.name')
+            Badge::make(__('Status'), 'system_statuses.name')
                 ->map([
                     'signed_up' => 'info',
                     'checked_in' => 'success',

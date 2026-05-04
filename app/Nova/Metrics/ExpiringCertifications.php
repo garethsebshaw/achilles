@@ -22,7 +22,7 @@ class ExpiringCertifications extends Value
 
     public function name()
     {
-        return 'Expiring Certifications';
+        return __('Expiring Certifications');
     }
 
     /**

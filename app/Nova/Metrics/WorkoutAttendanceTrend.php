@@ -16,16 +16,16 @@ class WorkoutAttendanceTrend extends Trend
 
     public function name()
     {
-        return 'Workout Attendance';
+        return __('Workout Attendance');
     }
 
     public function ranges()
     {
         return [
-            7 => '7 Days',
-            30 => '30 Days',
-            60 => '60 Days',
-            90 => '90 Days',
+            7 => __('7 Days'),
+            30 => __('30 Days'),
+            60 => __('60 Days'),
+            90 => __('90 Days'),
         ];
     }
 }

@@ -34,7 +34,10 @@ class Event extends Model //implements HasMedia
 
     public function status()
     {
-        return $this->belongsTo(SystemStatus::class, 'status_id');
+        return $this->belongsTo(SystemStatus::class, 'status_id')
+            ->whereHas('module', function ($query) {
+                $query->where('model_type', self::class);
+            });
     }
 
     public function createdBy()

@@ -62,7 +62,7 @@ class MeetingPointController extends Controller
         $meetingPoint = MeetingPoint::create($validated);
 
         return redirect()->route('meeting-points.show', $meetingPoint)
-            ->with('success', 'Meeting Point created successfully');
+            ->with('success', __('Meeting Point created successfully'));
     }
 
     public function show(MeetingPoint $meeting_point)
@@ -82,7 +82,7 @@ class MeetingPointController extends Controller
         $meeting_point->update($validated);
 
         return redirect()->route('meeting-points.show', $meeting_point)
-            ->with('success', 'Meeting Point updated successfully');
+            ->with('success', __('Meeting Point updated successfully'));
     }
 
     public function destroy(MeetingPoint $meeting_point)
@@ -90,6 +90,6 @@ class MeetingPointController extends Controller
         $meeting_point->delete();
 
         return redirect()->route('meeting-points.index')
-            ->with('success', 'Meeting Point deleted successfully');
+            ->with('success', __('Meeting Point deleted successfully'));
     }
 }

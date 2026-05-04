@@ -8,7 +8,10 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ActiveCategory extends Filter
 {
-    public $name = 'Active Categories';
+    public function name()
+    {
+        return __('Active Categories');
+    }
 
     public function apply(NovaRequest $request, $query, $value)
     {
@@ -18,8 +21,8 @@ class ActiveCategory extends Filter
     public function options(NovaRequest $request)
     {
         return [
-            'Active' => 1,
-            'Inactive' => 0
+            __('Active') => 1,
+            __('Inactive') => 0,
         ];
     }
 

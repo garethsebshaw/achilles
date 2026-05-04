@@ -9,7 +9,10 @@ use App\Models\SystemStatus;
 
 class LanguageProficiency extends Filter
 {
-    public $name = 'Proficiency Level';
+    public function name()
+    {
+        return __('Proficiency Level');
+    }
 
     public function apply(NovaRequest $request, $query, $value)
     {
@@ -18,7 +21,9 @@ class LanguageProficiency extends Filter
 
     public function options(NovaRequest $request)
     {
-        return SystemStatus::where('code', 'LIKE', 'lang_%')
+        return SystemStatus::query()
+            ->forModelType(\App\Models\LanguageProficiency::class)
+            ->where('code', 'LIKE', 'lang_%')
             ->pluck('name', 'id')
             ->toArray();
     }

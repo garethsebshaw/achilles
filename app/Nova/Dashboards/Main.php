@@ -2,16 +2,8 @@
 
 namespace App\Nova\Dashboards;
 
-use App\Nova\Cards\LanguageBreakdown;
-use App\Nova\Cards\TotalAthletes;
-use App\Nova\Cards\TotalGuides;
-use App\Nova\Cards\TotalTeamLeaders;
-use App\Nova\Metrics\GuidesGrowth;
-use App\Nova\Metrics\TotalLanguageProficiencies;
-use App\Nova\Metrics\UserGrowth;
-use Laravel\Nova\Cards\Help;
+use App\Models\User;
 use Laravel\Nova\Dashboards\Main as Dashboard;
-use App\Nova\Metrics\UserTypeDistribution;
 
 class Main extends Dashboard
 {
@@ -22,24 +14,50 @@ class Main extends Dashboard
      */
     public function cards(): array
     {
+        $user = auth()->user();
+
+        if (! $user instanceof User) {
+            return [];
+        }
+
+        $cards = [];
+
+        if ($user->hasPrivilegedRole()) {
+            $cards = array_merge($cards, $this->operationsCards());
+        }
+
+        if ($user->is_athlete || $user->is_guide || $cards === []) {
+            $cards = array_merge($cards, $this->personalCards());
+        }
+
+        return $cards;
+    }
+
+    private function operationsCards(): array
+    {
         return [
-            //new \App\Nova\Cards\CategoryBreakdown(),
-            //new LanguageBreakdown(),
-            new \App\Nova\Metrics\AthleteGuideDistribution(),
-            new \App\Nova\Metrics\UserTypeDistribution(),
-            //new UserGrowth(),
-            new \App\Nova\Metrics\GuideGrowth(),
-            new \App\Nova\Metrics\AthleteGrowth(),
-            //new \App\Nova\Metrics\TotalTeamLeaders(),
-            //new \App\Nova\Metrics\TotalTeamLeaders(),
-            //new TotalLanguageProficiencies(),
-            //new \App\Nova\Metrics\TotalTeamLeaders(),
-            //new \App\Nova\Metrics\WorkoutAttendanceTrend(),
-            //new \App\Nova\Metrics\ExpiringCertifications(),
-            //new \App\Nova\Metrics\EquipmentStatusDistribution(),
-            new \App\Nova\Metrics\TotalGuides(),
-            new \App\Nova\Metrics\TotalAthletes(),
-            new \App\Nova\Metrics\TotalTeamLeaders(),
+            new \App\Nova\Metrics\ScopedChapterCount(),
+            new \App\Nova\Metrics\ScopedLocationCount(),
+            new \App\Nova\Metrics\ScopedUpcomingSessions(),
+            new \App\Nova\Metrics\ScopedTodaySessions(),
+            new \App\Nova\Metrics\ScopedUpcomingSignups(),
+            new \App\Nova\Metrics\ScopedCheckedInToday(),
+            new \App\Nova\Metrics\ScopedOpenMaintenanceRequests(),
+            new \App\Nova\Metrics\ScopedUpcomingEvents(),
+            new \App\Nova\Metrics\ScopedSignupStatusBreakdown(),
+            new \App\Nova\Metrics\ScopedSessionTrend(),
+        ];
+    }
+
+    private function personalCards(): array
+    {
+        return [
+            new \App\Nova\Metrics\MyUpcomingSessions(),
+            new \App\Nova\Metrics\MyAttendedSessions(),
+            new \App\Nova\Metrics\MyMissedSessions(),
+            new \App\Nova\Metrics\MyPartnerCount(),
+            new \App\Nova\Metrics\MySportBreakdown(),
+            new \App\Nova\Metrics\MyAttendanceTrend(),
         ];
     }
 }

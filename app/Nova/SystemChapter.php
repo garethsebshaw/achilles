@@ -49,79 +49,79 @@ class SystemChapter extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Country', 'country', SystemCountry::class)
+            BelongsTo::make(__('Country'), 'country', SystemCountry::class)
                 ->sortable()
                 ->filterable()
                 ->relatableQueryUsing(function (NovaRequest $request, Builder $query) {
                     $query->where('active', [1]);}),
 
-            BelongsTo::make('Region', 'region', SystemRegion::class)
+            BelongsTo::make(__('Region'), 'region', SystemRegion::class)
                 ->sortable()
                 ->filterable()
                 ->showCreateRelationButton(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('City')
+            Text::make(__('City'))
                 ->sortable()
                 ->nullable()
                 ->hideFromIndex(),
 
-            Text::make('State')
+            Text::make(__('State'))
                 ->sortable()
                 ->nullable()
                 ->hideFromIndex(),
 
-            Text::make('Postal Code')
+            Text::make(__('Postal Code'))
                 ->nullable()
                 ->hideFromIndex(),
 
-            Text::make('Email')
+            Text::make(__('Email'))
                 ->nullable()
                 ->rules('nullable', 'email')
                 ->onlyOnIndex()
                 ->displayUsing(fn($value) => Str::limit($value, 30)),
 
-            Text::make('Email')
+            Text::make(__('Email'))
                 ->nullable()
                 ->hideFromIndex()
                 ->rules('nullable', 'email'),
 
-            Text::make('Phone')
+            Text::make(__('Phone'))
                 ->nullable(),
 
-            Text::make('Website')
+            Text::make(__('Website'))
                 ->nullable()
                 ->rules('nullable', 'url')
                 ->hideFromIndex(),
 
-            Code::make('Social Media')
+            Code::make(__('Social Media'))
                 ->json()
                 ->nullable()
                 ->hideFromIndex(),
 
-            Boolean::make('Is Headquarters')
+            Boolean::make(__('Is Headquarters'))
                 ->sortable()
                 ->filterable()
                 ->default(false),
 
-            Boolean::make('Active')
+            Boolean::make(__('Active'))
                 ->sortable()
                 ->filterable()
                 ->default(true),
 
-            Code::make('Metadata')
+            Code::make(__('Metadata'))
                 ->json()
                 ->nullable()
                 ->hideFromIndex(),
 
-            Text::make('No. Contacts', function() {
+            Text::make(__('No. Contacts'), function() {
                 return $this->contacts_count;
             })->onlyOnIndex(),
 
-            HasMany::make('Contacts', 'contacts', SystemChapterContact::class),
+            HasMany::make(__('Contacts'), 'contacts', SystemChapterContact::class),
         ];
     }
 

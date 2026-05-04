@@ -75,10 +75,12 @@ class WorkoutSignupController extends Controller
             DB::commit();
 
             return redirect()->route('workout-signups.show', $signup)
-                ->with('success', 'Signup created successfully');
+                ->with('success', __('Signup created successfully'));
         } catch (\Exception $e) {
             DB::rollBack();
-            return back()->withErrors(['msg' => 'Failed to create signup: ' . $e->getMessage()]);
+            return back()->withErrors([
+                'msg' => __('Failed to create signup: :message', ['message' => $e->getMessage()]),
+            ]);
         }
     }
 
@@ -128,10 +130,12 @@ class WorkoutSignupController extends Controller
             DB::commit();
 
             return redirect()->route('workout-signups.show', $workout_signup)
-                ->with('success', 'Signup updated successfully');
+                ->with('success', __('Signup updated successfully'));
         } catch (\Exception $e) {
             DB::rollBack();
-            return back()->withErrors(['msg' => 'Failed to update signup: ' . $e->getMessage()]);
+            return back()->withErrors([
+                'msg' => __('Failed to update signup: :message', ['message' => $e->getMessage()]),
+            ]);
         }
     }
 
@@ -140,7 +144,7 @@ class WorkoutSignupController extends Controller
         $workout_signup->delete();
 
         return redirect()->route('workout-signups.index')
-            ->with('success', 'Signup cancelled successfully');
+            ->with('success', __('Signup cancelled successfully'));
     }
 
     private function defaultSignupStatusId(): ?int

@@ -55,40 +55,40 @@ class EquipmentCheckout extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Equipment')
+            BelongsTo::make(__('Equipment'))
                 ->rules('required'),
 
-            BelongsTo::make('User')
+            BelongsTo::make(__('User'))
                 ->rules('required'),
 
-            BelongsTo::make('Event', 'event', Event::class)
+            BelongsTo::make(__('Event'), 'event', Event::class)
                 ->nullable(),
 
-            DateTime::make('Checked Out At')
+            DateTime::make(__('Checked Out At'))
                 ->rules('required'),
 
-            DateTime::make('Expected Return At')
+            DateTime::make(__('Expected Return At'))
                 ->nullable(),
 
-            DateTime::make('Returned At')
+            DateTime::make(__('Returned At'))
                 ->nullable(),
 
-            Number::make('Distance Traveled')
+            Number::make(__('Distance Traveled'))
                 ->nullable()
                 ->min(0),
 
-            BelongsTo::make('Condition Out', 'conditionOut', EquipmentCondition::class)
+            BelongsTo::make(__('Condition Out'), 'conditionOut', EquipmentCondition::class)
                 ->rules('required'),
 
-            BelongsTo::make('Condition In', 'conditionIn', EquipmentCondition::class)
+            BelongsTo::make(__('Condition In'), 'conditionIn', EquipmentCondition::class)
                 ->nullable(),
 
-            Textarea::make('Notes')
+            Textarea::make(__('Notes'))
                 ->nullable()
                 ->rows(3),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 

@@ -53,6 +53,9 @@ class WeatherData extends Model
     {
         return $this->belongsTo(SystemStatus::class, 'weather_code', 'code')
             ->whereRaw('BINARY system_statuses.code = weather_data.weather_code')
+            ->whereHas('module', function ($query) {
+                $query->where('model_type', self::class);
+            })
             ->withTrashed();
     }
 

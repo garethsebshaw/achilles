@@ -21,6 +21,6 @@ class NextWeatherForecast extends Value
 
     public function name()
     {
-        return 'Next Available Forecast';
+        return __('Next Available Forecast');
     }
 }

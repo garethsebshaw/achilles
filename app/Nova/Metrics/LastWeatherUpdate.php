@@ -22,6 +22,6 @@ class LastWeatherUpdate extends Value
 
     public function name()
     {
-        return 'Last Weather Update';
+        return __('Last Weather Update');
     }
 }

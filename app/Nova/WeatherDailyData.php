@@ -23,57 +23,57 @@ class WeatherDailyData extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Location', 'location', SystemLocation::class),
+            BelongsTo::make(__('Location'), 'location', SystemLocation::class),
 
-            DateTime::make('Date'),
-            DateTime::make('Generated At'),
+            DateTime::make(__('Date')),
+            DateTime::make(__('Generated At')),
 
-            new Panel('Temperature Data', [
-                Number::make('Temperature 2m Max', 'temperature_2m_max')
+            new Panel(__('Temperature Data'), [
+                Number::make(__('Temperature 2m Max'), 'temperature_2m_max')
                     ->step(0.01),
-                Number::make('Temperature 2m Min', 'temperature_2m_min')
+                Number::make(__('Temperature 2m Min'), 'temperature_2m_min')
                     ->step(0.01),
-                Number::make('Apparent Temperature Max', 'apparent_temperature_max')
+                Number::make(__('Apparent Temperature Max'), 'apparent_temperature_max')
                     ->step(0.01),
-                Number::make('Apparent Temperature Min', 'apparent_temperature_min')
+                Number::make(__('Apparent Temperature Min'), 'apparent_temperature_min')
                     ->step(0.01),
             ]),
 
-            new Panel('Precipitation Data', [
-                Number::make('Precipitation Sum', 'precipitation_sum')
+            new Panel(__('Precipitation Data'), [
+                Number::make(__('Precipitation Sum'), 'precipitation_sum')
                     ->step(0.01),
-                Number::make('Snowfall Sum', 'snowfall_sum')
+                Number::make(__('Snowfall Sum'), 'snowfall_sum')
                     ->step(0.01),
-                Number::make('Precipitation Hours', 'precipitation_hours'),
+                Number::make(__('Precipitation Hours'), 'precipitation_hours'),
             ]),
 
-            new Panel('Sun Data', [
-                DateTime::make('Sunrise'),
-                DateTime::make('Sunset'),
-                Number::make('Sunshine Duration', 'sunshine_duration'),
-                Number::make('Daylight Duration', 'daylight_duration'),
+            new Panel(__('Sun Data'), [
+                DateTime::make(__('Sunrise')),
+                DateTime::make(__('Sunset')),
+                Number::make(__('Sunshine Duration'), 'sunshine_duration'),
+                Number::make(__('Daylight Duration'), 'daylight_duration'),
             ]),
 
-            new Panel('Wind Data', [
-                Number::make('Wind Speed 10m Max', 'wind_speed_10m_max')
+            new Panel(__('Wind Data'), [
+                Number::make(__('Wind Speed 10m Max'), 'wind_speed_10m_max')
                     ->step(0.01),
-                Number::make('Wind Gusts 10m Max', 'wind_gusts_10m_max')
+                Number::make(__('Wind Gusts 10m Max'), 'wind_gusts_10m_max')
                     ->step(0.01),
-                Number::make('Wind Direction 10m Dominant', 'wind_direction_10m_dominant')
-                    ->step(0.01),
-            ]),
-
-            new Panel('Other Data', [
-                Number::make('Shortwave Radiation Sum', 'shortwave_radiation_sum')
-                    ->step(0.01),
-                Number::make('ET0 FAO Evapotranspiration', 'et0_fao_evapotranspiration')
+                Number::make(__('Wind Direction 10m Dominant'), 'wind_direction_10m_dominant')
                     ->step(0.01),
             ]),
 
-            DateTime::make('Created At')
+            new Panel(__('Other Data'), [
+                Number::make(__('Shortwave Radiation Sum'), 'shortwave_radiation_sum')
+                    ->step(0.01),
+                Number::make(__('ET0 FAO Evapotranspiration'), 'et0_fao_evapotranspiration')
+                    ->step(0.01),
+            ]),
+
+            DateTime::make(__('Created At'))
                 ->onlyOnDetail(),
 
-            DateTime::make('Updated At')
+            DateTime::make(__('Updated At'))
                 ->onlyOnDetail(),
         ];
     }

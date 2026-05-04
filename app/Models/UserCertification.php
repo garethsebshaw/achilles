@@ -58,7 +58,10 @@ class UserCertification extends Model
 
     public function systemStatus()
     {
-        return $this->belongsTo(SystemStatus::class, 'system_status_id');
+        return $this->belongsTo(SystemStatus::class, 'system_status_id')
+            ->whereHas('module', function ($query) {
+                $query->where('model_type', self::class);
+            });
     }
 
     public function documents()

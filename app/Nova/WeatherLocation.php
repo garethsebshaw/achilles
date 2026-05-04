@@ -34,38 +34,38 @@ class WeatherLocation extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable(),
 
-            Text::make('City')
+            Text::make(__('City'))
                 ->sortable(),
 
-            Text::make('State')
+            Text::make(__('State'))
                 ->sortable(),
 
-            Number::make('Latitude')
+            Number::make(__('Latitude'))
                 ->sortable()
                 ->step(0.000001),
 
-            Number::make('Longitude')
+            Number::make(__('Longitude'))
                 ->sortable()
                 ->step(0.000001),
 
-            Boolean::make('Active', 'is_active')
+            Boolean::make(__('Active'), 'is_active')
                 ->sortable(),
 
-            new Panel('Latest Weather Data', [
-                WeatherDashboard::make('Weather Dashboard')
+            new Panel(__('Latest Weather Data'), [
+                WeatherDashboard::make(__('Weather Dashboard'))
                     ->onlyOnDetail(),
             ]),
 
-            new Panel('Location Details', [
-                Text::make('Address Line 1'),
-                Text::make('Address Line 2'),
-                Text::make('Postal Code'),
-                Text::make('Timezone'),
-                Text::make('Phone'),
-                Text::make('Email'),
+            new Panel(__('Location Details'), [
+                Text::make(__('Address Line 1')),
+                Text::make(__('Address Line 2')),
+                Text::make(__('Postal Code')),
+                Text::make(__('Timezone')),
+                Text::make(__('Phone')),
+                Text::make(__('Email')),
             ]),
         ];
     }

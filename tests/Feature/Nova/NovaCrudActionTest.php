@@ -3,6 +3,9 @@
 namespace Tests\Feature\Nova;
 
 use App\Models\MeetingPoint;
+use App\Models\Equipment;
+use App\Models\Event;
+use App\Models\MaintenanceRequest;
 use App\Models\SystemCategory;
 use App\Models\SystemChapter;
 use App\Models\SystemLocation;
@@ -256,14 +259,17 @@ class NovaCrudActionTest extends TestCase
 
         $checkInResponse = (new CheckInAction())->handle($emptyFields, new Collection([$signup]));
         $this->assertArrayHasKey('message', $checkInResponse->jsonSerialize());
-        $this->assertNotNull($signup->fresh()->checked_in_at);
-
         $checkedInSignup = $signup->fresh();
+        $this->assertNotNull($checkedInSignup->checked_in_at);
+        $this->assertSame($this->signupStatusId('signup_checked_in'), $checkedInSignup->status_id);
+
         $checkOutResponse = (new CheckOutAction())->handle($emptyFields, new Collection([$checkedInSignup]));
         $this->assertArrayHasKey('message', $checkOutResponse->jsonSerialize());
-        $this->assertNotNull($checkedInSignup->fresh()->checked_out_at);
+        $checkedOutSignup = $checkedInSignup->fresh();
+        $this->assertNotNull($checkedOutSignup->checked_out_at);
+        $this->assertSame($this->signupStatusId('signup_checked_out'), $checkedOutSignup->status_id);
 
-        $managedSignup = $checkedInSignup->fresh();
+        $managedSignup = $checkedOutSignup->fresh();
         (new ManageWorkoutAttendance())->handle(
             new ActionFields(collect(['action' => 'cancel-check-in']), collect()),
             new Collection([$managedSignup])
@@ -272,6 +278,7 @@ class NovaCrudActionTest extends TestCase
         $managedSignup = $managedSignup->fresh();
         $this->assertNull($managedSignup->checked_in_at);
         $this->assertNull($managedSignup->checked_out_at);
+        $this->assertSame($this->signupStatusId('signup_confirmed'), $managedSignup->status_id);
 
         $visitResponse = (new ViewSessionUsers())->handle($emptyFields, new Collection([$managedSignup->workoutSession]));
         $visitPayload = json_decode(json_encode($visitResponse, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);
@@ -288,6 +295,24 @@ class NovaCrudActionTest extends TestCase
             $weatherPayload['redirect']['url']
         );
         $this->assertTrue($weatherPayload['redirect']['openInNewTab']);
+    }
+
+    public function test_status_relations_are_scoped_to_their_modules(): void
+    {
+        $workoutStatusId = $this->statusIdForModule(Workout::class, 'workout_active');
+        $session = WorkoutSession::query()->firstOrFail();
+        $session->forceFill(['status_id' => $workoutStatusId])->save();
+        $this->assertNull($session->fresh()->status);
+
+        $eventStatusId = $this->statusIdForModule(Event::class, 'event_draft');
+        $equipment = Equipment::query()->firstOrFail();
+        $equipment->forceFill(['status_id' => $eventStatusId])->save();
+        $this->assertNull($equipment->fresh()->status);
+
+        $maintenanceStatusId = $this->statusIdForModule(MaintenanceRequest::class, 'maintreq_reported');
+        $event = Event::query()->firstOrFail();
+        $event->forceFill(['status_id' => $maintenanceStatusId])->save();
+        $this->assertNull($event->fresh()->status);
     }
 
     private function admin(): User

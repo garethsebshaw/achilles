@@ -21,9 +21,9 @@ class TotalAthletes extends Card
         ]);
 
         return $this->withTotal($athleteCount)
-            ->title('Total Athletes')
-            ->content("{$athleteCount} Athletes")
-            ->labels(['Athletes', 'Non-Athletes'])
+            ->title(__('Total Athletes'))
+            ->content(__(':count Athletes', ['count' => $athleteCount]))
+            ->labels([__('Athletes'), __('Non-Athletes')])
             ->values([$athleteCount, $nonAthleteCount]);
     }
 

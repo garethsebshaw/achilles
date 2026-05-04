@@ -53,64 +53,67 @@ class MaintenanceRequest extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Equipment')
+            BelongsTo::make(__('Equipment'))
                 ->rules('required'),
 
-            BelongsTo::make('Component', 'component', EquipmentComponent::class)
+            BelongsTo::make(__('Component'), 'component', EquipmentComponent::class)
                 ->nullable(),
 
-            BelongsTo::make('Reported By', 'reportedBy', User::class)
+            BelongsTo::make(__('Reported By'), 'reportedBy', User::class)
                 ->rules('required'),
 
-            BelongsTo::make('Assigned To', 'assignedTo', User::class)
+            BelongsTo::make(__('Assigned To'), 'assignedTo', User::class)
                 ->nullable(),
 
-            BelongsTo::make('Status', 'status', SystemStatus::class)
+            BelongsTo::make(__('Status'), 'status', SystemStatus::class)
+                ->relatableQueryUsing(function (NovaRequest $request, $query) {
+                    return $query->forModelType(\App\Models\MaintenanceRequest::class);
+                })
                 ->rules('required'),
 
-            BelongsTo::make('Priority', 'priority', EquipmentMaintenancePriority::class)
+            BelongsTo::make(__('Priority'), 'priority', EquipmentMaintenancePriority::class)
                 ->rules('required'),
 
-            Textarea::make('Description')
+            Textarea::make(__('Description'))
                 ->rules('required'),
 
-            DateTime::make('Reported At')
+            DateTime::make(__('Reported At'))
                 ->rules('required'),
 
-            DateTime::make('Assigned At')
+            DateTime::make(__('Assigned At'))
                 ->nullable(),
 
-            Number::make('Estimated Time (Minutes)')
+            Number::make(__('Estimated Time (Minutes)'))
                 ->nullable()
                 ->min(0),
 
-            Number::make('Actual Time (Minutes)')
+            Number::make(__('Actual Time (Minutes)'))
                 ->nullable()
                 ->min(0),
 
-            Currency::make('Estimated Cost')
+            Currency::make(__('Estimated Cost'))
                 ->nullable(),
 
-            Currency::make('Actual Cost')
+            Currency::make(__('Actual Cost'))
                 ->nullable(),
 
-            DateTime::make('Completed At')
+            DateTime::make(__('Completed At'))
                 ->nullable(),
 
-            BelongsTo::make('Parent Request', 'parentRequest', MaintenanceRequest::class)
+            BelongsTo::make(__('Parent Request'), 'parentRequest', MaintenanceRequest::class)
                 ->nullable(),
 
-            Textarea::make('Notes')
+            Textarea::make(__('Notes'))
                 ->nullable()
                 ->rows(3),
 
-            Panel::make('Relationships', [
-                HasMany::make('Child Requests', 'childRequests', MaintenanceRequest::class),
-                HasMany::make('Maintenance Logs', 'maintenanceLogs', MaintenanceLog::class),
+            Panel::make(__('Relationships'), [
+                HasMany::make(__('Child Requests'), 'childRequests', MaintenanceRequest::class),
+                HasMany::make(__('Maintenance Logs'), 'maintenanceLogs', MaintenanceLog::class),
             ]),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
         ];
     }
 
