@@ -4,7 +4,6 @@ import { execFileSync } from 'node:child_process';
 type ResourceManifestEntry = {
     label: string;
     slug: string;
-    sampleId: number | null;
 };
 
 const adminEmail = process.env.AW_ADMIN_EMAIL ?? 'thisisg@gmail.com';
@@ -71,8 +70,9 @@ test.describe('browser validation', () => {
             await assertNovaRegistrationState(page);
             await assertNoPageError(page, `${resource.label} create`);
 
-            if (resource.sampleId !== null) {
-                const detailPath = `${indexPath}/${resource.sampleId}`;
+            const detailPath = await findDetailPath(page, resource.slug);
+
+            if (detailPath !== null) {
                 await page.goto(detailPath, { waitUntil: 'domcontentloaded' });
                 await assertNovaRegistrationState(page);
                 await assertNoPageError(page, `${resource.label} detail`);
@@ -86,12 +86,13 @@ test.describe('browser validation', () => {
     });
 
     test('workout-session check-in navigation resolves into a scoped signup page', async ({ page }) => {
-        const sessionResource = resourceManifest.find((resource) => resource.slug === 'workout-sessions');
-
-        test.skip(!sessionResource?.sampleId, 'No seeded workout session was available for browser validation.');
-
         await login(page);
-        await page.goto(`/resources/workout-sessions/${sessionResource!.sampleId}`, { waitUntil: 'domcontentloaded' });
+        await page.goto('/resources/workout-sessions', { waitUntil: 'domcontentloaded' });
+        const sessionDetailPath = await findDetailPath(page, 'workout-sessions');
+
+        test.skip(!sessionDetailPath, 'No workout session detail path was available for browser validation.');
+
+        await page.goto(sessionDetailPath!, { waitUntil: 'domcontentloaded' });
         await assertNovaRegistrationState(page);
         await assertNoPageError(page, 'workout session detail');
 
@@ -153,6 +154,24 @@ function getResourceManifest(): ResourceManifestEntry[] {
     });
 
     return JSON.parse(output) as ResourceManifestEntry[];
+}
+
+async function findDetailPath(page: import('@playwright/test').Page, slug: string): Promise<string | null> {
+    const links = await page.locator(`a[href^="/resources/${slug}/"]`).all();
+
+    for (const link of links) {
+        const href = await link.getAttribute('href');
+
+        if (! href) {
+            continue;
+        }
+
+        if (new RegExp(`^/resources/${escapeForRegex(slug)}/[^/]+$`).test(href)) {
+            return href;
+        }
+    }
+
+    return null;
 }
 
 function escapeForRegex(value: string): string {
