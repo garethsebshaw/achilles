@@ -26,6 +26,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
 
     public function run(): void
     {
+        $phase = strtolower((string) env('WORKOUT_SEED_PHASE', 'all'));
         $workoutModuleId = SystemModule::where('model_type', Workout::class)->value('id');
         $assignmentModuleId = SystemModule::where('model_type', \App\Models\WorkoutEquipmentAssignment::class)->value('id');
         $specificDetailsModuleId = SystemModule::where('model_type', WorkoutSpecificDetails::class)->value('id');
@@ -46,7 +47,8 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                     ->orWhere('is_admin', true);
             })
             ->orderBy('id')
-            ->value('id');
+            ->value('id')
+            ?? User::query()->orderBy('id')->value('id');
 
         $sessionStatusIds = SystemStatus::where('system_module_id', $sessionModuleId)->pluck('id', 'code');
         $signupStatusIds = SystemStatus::where('system_module_id', $signupModuleId)->pluck('id', 'code');
@@ -63,15 +65,90 @@ class WorkoutSessionAndSignupSeeder extends Seeder
             ->pluck('id')
             ->all();
 
+        if (! $creatorId) {
+            throw new \RuntimeException('Workout session demo seed requires at least one user record.');
+        }
+
+        match ($phase) {
+            'all' => $this->runAllPhases(
+                $locations,
+                $sports,
+                $creatorId,
+                $sessionStatusIds,
+                $signupStatusIds,
+                $unitStatusIds,
+                $assignmentTypeIds,
+                $athleteIds,
+                $guideIds
+            ),
+            'templates' => $this->seedWorkoutTemplatesPhase($locations, $sports, $creatorId),
+            'sessions' => $this->seedWorkoutSessionsPhase($sessionStatusIds),
+            'session_meeting_points' => $this->seedSessionMeetingPointsPhase(),
+            'signups' => $this->seedSignupsAndDetailsPhase(
+                $signupStatusIds,
+                $unitStatusIds,
+                $assignmentTypeIds,
+                $athleteIds,
+                $guideIds
+            ),
+            default => throw new \InvalidArgumentException("Unsupported WORKOUT_SEED_PHASE [{$phase}]."),
+        };
+    }
+
+    protected function runAllPhases(
+        Collection $locations,
+        Collection $sports,
+        int $creatorId,
+        Collection $sessionStatusIds,
+        Collection $signupStatusIds,
+        Collection $unitStatusIds,
+        Collection $assignmentTypeIds,
+        array $athleteIds,
+        array $guideIds
+    ): void {
+        $this->seedWorkoutTemplatesPhase($locations, $sports, $creatorId);
+        $sessionRows = $this->seedWorkoutSessionsPhase($sessionStatusIds);
+        $this->seedSessionMeetingPointsPhase($sessionRows);
+        $this->seedSignupsAndDetailsPhase(
+            $signupStatusIds,
+            $unitStatusIds,
+            $assignmentTypeIds,
+            $athleteIds,
+            $guideIds,
+            $sessionRows
+        );
+    }
+
+    protected function seedWorkoutTemplatesPhase(Collection $locations, Collection $sports, int $creatorId): void
+    {
         $this->command?->info('Seeding workout templates and meeting points');
         $this->seedWorkoutTemplatesAndMeetingPoints($locations, $sports, $creatorId);
+    }
+
+    protected function seedWorkoutSessionsPhase(Collection $sessionStatusIds): Collection
+    {
         $this->command?->info('Seeding workout sessions');
-        $sessionRows = $this->seedWorkoutSessions($sessionStatusIds);
+
+        return $this->seedWorkoutSessions($sessionStatusIds);
+    }
+
+    protected function seedSessionMeetingPointsPhase(?Collection $sessionRows = null): void
+    {
         $this->command?->info('Seeding workout session meeting points');
-        $this->seedSessionMeetingPoints($sessionRows);
+        $this->seedSessionMeetingPoints($sessionRows ?? $this->sessionRows());
+    }
+
+    protected function seedSignupsAndDetailsPhase(
+        Collection $signupStatusIds,
+        Collection $unitStatusIds,
+        Collection $assignmentTypeIds,
+        array $athleteIds,
+        array $guideIds,
+        ?Collection $sessionRows = null
+    ): void {
         $this->command?->info('Seeding workout signups, details, and equipment assignments');
         $this->seedSignupsAndDetails(
-            $sessionRows,
+            $sessionRows ?? $this->sessionRows(),
             $signupStatusIds,
             $unitStatusIds,
             $assignmentTypeIds,
@@ -80,7 +157,20 @@ class WorkoutSessionAndSignupSeeder extends Seeder
         );
     }
 
-    private function seedWorkoutTemplatesAndMeetingPoints(Collection $locations, Collection $sports, int $creatorId): void
+    protected function sessionRows(): Collection
+    {
+        return DB::table('workout_sessions')
+            ->select('id', 'workout_id', 'location_id', 'session_date')
+            ->orderBy('id')
+            ->get()
+            ->map(function ($session) {
+                $session->session_date = (string) $session->session_date;
+
+                return $session;
+            });
+    }
+
+    protected function seedWorkoutTemplatesAndMeetingPoints(Collection $locations, Collection $sports, int $creatorId): void
     {
         $now = now();
 
@@ -151,7 +241,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
         }
     }
 
-    private function seedWorkoutSessions(Collection $sessionStatusIds): Collection
+    protected function seedWorkoutSessions(Collection $sessionStatusIds): Collection
     {
         $now = now();
         $sessionRows = collect();
@@ -206,17 +296,10 @@ class WorkoutSessionAndSignupSeeder extends Seeder
             DB::table('workout_sessions')->insert($chunk->all());
         }
 
-        return DB::table('workout_sessions')
-            ->select('id', 'workout_id', 'location_id', 'session_date')
-            ->orderBy('id')
-            ->get()
-            ->map(function ($session) {
-                $session->session_date = (string) $session->session_date;
-                return $session;
-            });
+        return $this->sessionRows();
     }
 
-    private function seedSessionMeetingPoints(Collection $sessions): void
+    protected function seedSessionMeetingPoints(Collection $sessions): void
     {
         $meetingPointIds = DB::table('workout_template_meeting_points')
             ->join('workouts', 'workouts.id', '=', 'workout_template_meeting_points.workout_id')
@@ -249,7 +332,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
         }
     }
 
-    private function seedSignupsAndDetails(
+    protected function seedSignupsAndDetails(
         Collection $sessions,
         Collection $signupStatusIds,
         Collection $unitStatusIds,
