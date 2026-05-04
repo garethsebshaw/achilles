@@ -17,7 +17,7 @@ class UserSeederFull extends Seeder
 
         Schema::disableForeignKeyConstraints();
 
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophia.chelli@gmail.com',
             'name' => 'Sophia Herman',
             'first_name' => 'Sophia',
@@ -34,7 +34,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-07-14 15:31:28',
             'updated_at' => '2023-08-26 15:31:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nmaxwell2019@gmail.com',
             'name' => 'Nicholas Maxwell',
             'first_name' => 'Nicholas',
@@ -51,7 +51,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-07-14 18:12:39',
             'updated_at' => '2023-08-26 14:29:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mdejesus@achillesinternational.org',
             'name' => 'Margaret DeJesus',
             'first_name' => 'Margaret',
@@ -68,7 +68,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-07-15 18:59:42',
             'updated_at' => '2023-08-26 13:52:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arausin@achillesinternational.org',
             'name' => 'Arielle Rausin',
             'first_name' => 'Arielle',
@@ -85,7 +85,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-07-15 20:03:06',
             'updated_at' => '2024-07-03 13:15:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ryan.f.quick@gmail.com',
             'name' => 'Ryan Quick',
             'first_name' => 'Ryan',
@@ -102,7 +102,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-07-18 19:01:10',
             'updated_at' => '2024-01-10 21:11:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ggriffith@achillesinternational.org',
             'name' => 'Genna Griffith',
             'first_name' => 'Genna',
@@ -119,7 +119,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-07-18 19:05:16',
             'updated_at' => '2023-08-26 10:58:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'michaelandersonnyc@gmail.com',
             'name' => 'Michael Anderson',
             'first_name' => 'Michael',
@@ -136,7 +136,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-07-19 20:38:59',
             'updated_at' => '2023-08-26 14:08:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emily.l.glasser@gmail.com',
             'name' => 'Emily Glasser',
             'first_name' => 'Emily',
@@ -153,7 +153,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-07-20 17:24:07',
             'updated_at' => '2024-07-03 13:15:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hannahmcfaddenusa@gmail.com',
             'name' => 'Hannah McFadden',
             'first_name' => 'Hannah',
@@ -170,7 +170,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-07-21 20:39:19',
             'updated_at' => '2024-06-04 19:06:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kobrien822@gmail.com',
             'name' => 'Kelly OBrien',
             'first_name' => 'Kelly',
@@ -187,7 +187,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-03 00:16:24',
             'updated_at' => '2023-11-21 00:41:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kobrien@achillesinternational.org',
             'name' => 'Kelly O\'Brien',
             'first_name' => 'Kelly',
@@ -204,7 +204,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 20:54:02',
             'updated_at' => '2024-07-03 13:15:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'fayettevillear@achillesinternational.org',
             'name' => 'Fayetteville Arkansas',
             'first_name' => 'Fayetteville',
@@ -221,7 +221,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:38',
             'updated_at' => '2023-09-08 21:01:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'achillesphoenixaz@gmail.com',
             'name' => 'Phoenix Arizona',
             'first_name' => 'Phoenix',
@@ -238,7 +238,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:39',
             'updated_at' => '2024-04-06 05:43:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'achillestucson@gmail.com',
             'name' => 'Tucson Arizona',
             'first_name' => 'Tucson',
@@ -255,7 +255,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:40',
             'updated_at' => '2024-04-17 18:40:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'losangelesca@achillesinternational.org',
             'name' => 'Los Angeles California',
             'first_name' => 'Los Angeles',
@@ -272,7 +272,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:41',
             'updated_at' => '2023-09-08 21:01:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sanfranciscoca@achillesinternational.org',
             'name' => 'San Francisco California',
             'first_name' => 'San Francisco',
@@ -289,7 +289,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:43',
             'updated_at' => '2023-09-08 21:01:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'boulderco@achillesinternational.org',
             'name' => 'Boulder Colorado',
             'first_name' => 'Boulder',
@@ -306,7 +306,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:44',
             'updated_at' => '2023-09-08 21:01:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'denverco@achillesinternational.org',
             'name' => 'Denver Colorado',
             'first_name' => 'Denver',
@@ -323,7 +323,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:45',
             'updated_at' => '2023-09-08 21:01:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pikespeakco@achillesinternational.org',
             'name' => 'Pikes Peak Colorado',
             'first_name' => 'Pikes Peak',
@@ -340,7 +340,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:46',
             'updated_at' => '2023-09-08 21:01:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'washingtondc@achillesinternational.org',
             'name' => 'Washington DC',
             'first_name' => 'Washington',
@@ -357,7 +357,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:49',
             'updated_at' => '2023-09-08 21:02:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chicagoil@achillesinternational.org',
             'name' => 'Chicago Illinois',
             'first_name' => 'Chicago',
@@ -374,7 +374,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:50',
             'updated_at' => '2023-09-08 21:02:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kansascityks@achillesinternational.org',
             'name' => 'Kansas City Kansas',
             'first_name' => 'Kansas City',
@@ -391,7 +391,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:51',
             'updated_at' => '2023-09-08 21:02:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bostonma@achillesinternational.org',
             'name' => 'Boston Massachusetts',
             'first_name' => 'Boston',
@@ -408,7 +408,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:52',
             'updated_at' => '2023-08-26 12:00:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stlouismo@achillesinternational.org',
             'name' => 'St. Louis Missouri',
             'first_name' => 'St. Louis',
@@ -425,7 +425,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:54',
             'updated_at' => '2023-09-08 21:02:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'twincitiesmn@achillesinternational.org',
             'name' => 'Twin Cities Minnesota',
             'first_name' => 'Twin Cities',
@@ -442,7 +442,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:55',
             'updated_at' => '2023-09-08 21:02:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'newjersey@achillesinternational.org',
             'name' => 'New Jersey Chapter',
             'first_name' => 'New Jersey',
@@ -459,7 +459,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:56',
             'updated_at' => '2024-04-10 18:03:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lasvegasnv@achillesinternational.org',
             'name' => 'Las Vegas Nevada',
             'first_name' => 'Las Vegas',
@@ -476,7 +476,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:58',
             'updated_at' => '2024-05-30 00:55:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'longislandny@achillesinternational.org',
             'name' => 'Long Island New York',
             'first_name' => 'Long Island',
@@ -493,7 +493,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:56:59',
             'updated_at' => '2023-09-08 21:02:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'westchesterny@achillesinternational.org',
             'name' => 'Westchester New York',
             'first_name' => 'Westchester',
@@ -510,7 +510,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:57:03',
             'updated_at' => '2023-09-08 21:02:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'charlottenc@achillesinternational.org',
             'name' => 'Charlotte North Carolina',
             'first_name' => 'Charlotte',
@@ -527,7 +527,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:57:04',
             'updated_at' => '2023-09-08 21:02:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'philadelphiapa@achillesinternational.org',
             'name' => 'Philadelphia Pennsylvania',
             'first_name' => 'Philadelphia',
@@ -544,7 +544,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:57:07',
             'updated_at' => '2023-09-08 21:02:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'achillesnashville@gmail.com',
             'name' => 'Nashville Achilles Nashville',
             'first_name' => 'Nashville',
@@ -561,7 +561,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:57:08',
             'updated_at' => '2024-06-12 19:45:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'houstontx@achillesinternational.org',
             'name' => 'Houston Texas',
             'first_name' => 'Houston',
@@ -578,7 +578,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:57:09',
             'updated_at' => '2023-09-08 21:02:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'utah@achillesinternational.org',
             'name' => 'Salt Lake City Utah',
             'first_name' => 'Salt Lake City',
@@ -595,7 +595,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-16 23:57:11',
             'updated_at' => '2023-09-08 21:02:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brooklynny@achillesinternational.org',
             'name' => 'Brooklyn New York',
             'first_name' => 'Brooklyn',
@@ -612,7 +612,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-17 00:02:46',
             'updated_at' => '2024-07-03 13:15:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bronxny@achillesinternational.org',
             'name' => 'Bronx New York',
             'first_name' => 'Bronx',
@@ -629,7 +629,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-17 00:02:47',
             'updated_at' => '2024-05-07 19:24:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'queensny@achillesinternational.org',
             'name' => 'Queens New York',
             'first_name' => 'Queens',
@@ -646,7 +646,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-17 00:02:49',
             'updated_at' => '2023-09-12 20:39:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'manhattanny@achillesinternational.org',
             'name' => 'Manhattan New York',
             'first_name' => 'Manhattan',
@@ -663,7 +663,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-17 00:04:33',
             'updated_at' => '2024-06-07 20:55:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'schneidermanjoseph@gmail.com',
             'name' => 'Joseph Schneiderman',
             'first_name' => 'Joseph',
@@ -680,7 +680,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-17 17:07:37',
             'updated_at' => '2024-01-28 06:56:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lnovakovic@achillesinternational.org',
             'name' => 'Lindsey Novakovic',
             'first_name' => 'Lindsey',
@@ -697,7 +697,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-18 19:20:18',
             'updated_at' => '2023-12-16 04:04:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jlemar@achillesinternational.org',
             'name' => 'Joseph LeMar',
             'first_name' => 'Joseph',
@@ -714,7 +714,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-21 21:51:18',
             'updated_at' => '2024-04-02 21:53:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jpatton@achillesinternational.org',
             'name' => 'Janet Patton',
             'first_name' => 'Janet',
@@ -731,7 +731,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-08-29 19:54:12',
             'updated_at' => '2024-02-14 23:36:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kcassarini@achillesinternational.org',
             'name' => 'Kristen Cassarini',
             'first_name' => 'Kristen',
@@ -748,7 +748,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-09-09 21:19:35',
             'updated_at' => '2024-07-23 22:10:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jw434803@gmail.com',
             'name' => 'John Walker',
             'first_name' => 'John',
@@ -765,7 +765,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-09-10 19:21:22',
             'updated_at' => '2023-08-26 12:43:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dromano@achillesinternational.org',
             'name' => 'Domenic Romano',
             'first_name' => 'Domenic',
@@ -782,7 +782,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-09-10 20:44:26',
             'updated_at' => '2024-05-21 21:35:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'fmagisano@achillesinternational.org',
             'name' => 'Francesco Magisano',
             'first_name' => 'Francesco',
@@ -799,7 +799,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-09-15 18:18:36',
             'updated_at' => '2024-06-11 17:14:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'zh2500@columbia.edu',
             'name' => 'Zoe Herman',
             'first_name' => 'Zoe',
@@ -816,7 +816,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-03 03:16:35',
             'updated_at' => '2023-08-26 15:54:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'michael@shahfoundation.org',
             'name' => 'Michael Madigan',
             'first_name' => 'Michael',
@@ -833,7 +833,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-04 23:48:19',
             'updated_at' => '2024-05-23 18:28:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stephanie.ellis@compass.com',
             'name' => 'Stephanie Ellis',
             'first_name' => 'Stephanie',
@@ -850,7 +850,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 16:56:37',
             'updated_at' => '2023-08-26 15:33:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ge_petterson@yahoo.com',
             'name' => 'Geraldine Petterson',
             'first_name' => 'Geraldine',
@@ -867,7 +867,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 17:42:57',
             'updated_at' => '2023-08-26 10:59:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'margaretstacy99@gmail.com',
             'name' => 'Margaret Stacy',
             'first_name' => 'Margaret',
@@ -884,7 +884,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 17:45:21',
             'updated_at' => '2023-08-26 13:52:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'coulbster@gmail.com',
             'name' => 'Coulby Riehl',
             'first_name' => 'Coulby',
@@ -901,7 +901,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 19:11:00',
             'updated_at' => '2023-08-26 10:20:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mmm2471@columbia.edu',
             'name' => 'Martha MacDonald',
             'first_name' => 'Martha',
@@ -918,7 +918,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 19:13:43',
             'updated_at' => '2023-08-26 13:57:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sisakov13@gmail.com',
             'name' => 'Simon Isakov',
             'first_name' => 'Simon',
@@ -935,7 +935,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 19:35:09',
             'updated_at' => '2024-05-21 21:31:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stephenshafer@hotmail.com',
             'name' => 'Stephen Shafer',
             'first_name' => 'Stephen',
@@ -952,7 +952,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 19:39:34',
             'updated_at' => '2023-08-26 15:34:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stolzar@gmail.com',
             'name' => 'David Stolzar',
             'first_name' => 'David',
@@ -969,7 +969,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 21:02:22',
             'updated_at' => '2024-01-08 09:43:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cwynne@achillesinternational.org',
             'name' => 'carolyn wynne',
             'first_name' => 'carolyn',
@@ -986,7 +986,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 22:12:14',
             'updated_at' => '2023-08-26 10:10:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ruthie_grommes@yahoo.com',
             'name' => 'Shannon Grommes',
             'first_name' => 'Shannon',
@@ -1003,7 +1003,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 23:12:41',
             'updated_at' => '2023-08-26 15:28:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alan@kpsny.com',
             'name' => 'Alan Kaufman',
             'first_name' => 'Alan',
@@ -1020,7 +1020,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 23:37:33',
             'updated_at' => '2024-06-21 22:57:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lizzybstart@gmail.com',
             'name' => 'Sara Harris',
             'first_name' => 'Sara',
@@ -1037,7 +1037,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-06 23:45:55',
             'updated_at' => '2024-03-25 18:50:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'btm85@rwjms.rutgers.edu',
             'name' => 'Brett Musialowicz',
             'first_name' => 'Brett',
@@ -1054,7 +1054,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:05:34',
             'updated_at' => '2023-08-26 12:02:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kerimckay@me.com',
             'name' => 'Keri McKay',
             'first_name' => 'Keri',
@@ -1071,7 +1071,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:06:21',
             'updated_at' => '2023-08-26 13:01:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jochs2010@gmail.com',
             'name' => 'Julie Ochs',
             'first_name' => 'Julie',
@@ -1088,7 +1088,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:06:24',
             'updated_at' => '2024-01-21 22:21:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'al@thevinetimes.com',
             'name' => 'Gonzalo Hernandez',
             'first_name' => 'Gonzalo',
@@ -1105,7 +1105,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:06:53',
             'updated_at' => '2023-08-26 10:59:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ashley@foresttraveler.com',
             'name' => 'Ashley Forest',
             'first_name' => 'Ashley',
@@ -1122,7 +1122,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:07:34',
             'updated_at' => '2023-08-26 11:54:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'abusche2006@yahoo.com',
             'name' => 'Alex Busche',
             'first_name' => 'Alex',
@@ -1139,7 +1139,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:07:52',
             'updated_at' => '2023-08-26 11:38:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ajkinzel@gmail.com',
             'name' => 'Alli Kinzel',
             'first_name' => 'Alli',
@@ -1156,7 +1156,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:08:28',
             'updated_at' => '2023-08-26 11:42:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mortiz138@gmail.com',
             'name' => 'Melissa Ortiz-Feliciano',
             'first_name' => 'Melissa',
@@ -1173,7 +1173,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:08:28',
             'updated_at' => '2023-09-06 22:54:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anniedonnell@gmail.com',
             'name' => 'Annie Donnell',
             'first_name' => 'Annie',
@@ -1190,7 +1190,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:08:41',
             'updated_at' => '2023-09-12 00:56:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brandonresnick@gmail.com',
             'name' => 'Brandon Resnick',
             'first_name' => 'Brandon',
@@ -1207,7 +1207,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:09:00',
             'updated_at' => '2024-01-16 16:05:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'casey.roeder@gmail.com',
             'name' => 'Casey Roeder',
             'first_name' => 'Casey',
@@ -1224,7 +1224,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:09:32',
             'updated_at' => '2023-08-26 10:11:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ashley.zirkle@yahoo.com',
             'name' => 'Ashley Zirkle',
             'first_name' => 'Ashley',
@@ -1241,7 +1241,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:09:40',
             'updated_at' => '2023-08-26 11:54:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maryceceliajohnson@gmail.com',
             'name' => 'Mary Johnson',
             'first_name' => 'Mary',
@@ -1258,7 +1258,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:10:16',
             'updated_at' => '2024-07-03 06:40:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ianwax@gmail.com',
             'name' => 'Ian Wax',
             'first_name' => 'Ian',
@@ -1275,7 +1275,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:11:11',
             'updated_at' => '2023-08-26 11:07:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bradgiardino@gmail.com',
             'name' => 'Brad Giardino',
             'first_name' => 'Brad',
@@ -1292,7 +1292,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:11:18',
             'updated_at' => '2023-08-26 12:00:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kasondramarlene@gmail.com',
             'name' => 'Kasondra Farmer',
             'first_name' => 'Kasondra',
@@ -1309,7 +1309,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:11:37',
             'updated_at' => '2024-01-23 01:48:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chickenunderwear@gmail.com',
             'name' => 'Michael Ring',
             'first_name' => 'Michael',
@@ -1326,7 +1326,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:11:43',
             'updated_at' => '2024-07-18 15:21:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'krishna.ravivarapu@icahn.mssm.edu',
             'name' => 'Krishna Ravivarapu',
             'first_name' => 'Krishna',
@@ -1343,7 +1343,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:11:48',
             'updated_at' => '2023-08-26 13:04:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ppppppsasook@gmail.com',
             'name' => 'Pirapan Sasook',
             'first_name' => 'Pirapan',
@@ -1360,7 +1360,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:12:14',
             'updated_at' => '2023-08-26 14:38:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'afranzese4@gmail.com',
             'name' => 'Anthony Franzese',
             'first_name' => 'Anthony',
@@ -1377,7 +1377,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:12:16',
             'updated_at' => '2024-05-30 15:08:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dgdangelo@yahoo.com',
             'name' => 'Doug Dâ€™Angelo',
             'first_name' => 'Doug',
@@ -1394,7 +1394,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:12:35',
             'updated_at' => '2023-08-26 10:31:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'deepti.mahajan@downstate.edu',
             'name' => 'Deepti Mahajan',
             'first_name' => 'Deepti',
@@ -1411,7 +1411,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:12:56',
             'updated_at' => '2023-08-26 10:28:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '24lvisser@loyolanyc.org',
             'name' => 'Lynn Visser',
             'first_name' => 'Lynn',
@@ -1428,7 +1428,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:13:26',
             'updated_at' => '2024-05-04 17:26:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marycvw@gmail.com',
             'name' => 'Mary Waldorf',
             'first_name' => 'Mary',
@@ -1445,7 +1445,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:13:34',
             'updated_at' => '2023-08-26 13:58:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'francokenny22@gmail.com',
             'name' => 'Kenny Franco',
             'first_name' => 'Kenny',
@@ -1462,7 +1462,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:13:45',
             'updated_at' => '2024-06-21 22:44:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jendamtim@gmail.com',
             'name' => 'Timothy Murphy',
             'first_name' => 'Timothy',
@@ -1479,7 +1479,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:13:59',
             'updated_at' => '2023-09-05 21:04:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juweihua@yahoo.com',
             'name' => 'Weihua Ju',
             'first_name' => 'Weihua',
@@ -1496,7 +1496,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:16:02',
             'updated_at' => '2023-08-26 15:48:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'isaac.qgrivett@gmail.com',
             'name' => 'Isaac Grivett',
             'first_name' => 'Isaac',
@@ -1513,7 +1513,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:18:45',
             'updated_at' => '2023-08-26 11:08:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'max.woodbury@gmail.com',
             'name' => 'Edgar Woodbury',
             'first_name' => 'Edgar',
@@ -1530,7 +1530,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:18:47',
             'updated_at' => '2023-08-26 10:32:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ashleycharleson@gmail.com',
             'name' => 'Ashley Charleson',
             'first_name' => 'Ashley',
@@ -1547,7 +1547,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:19:10',
             'updated_at' => '2023-08-26 11:54:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'djl63@roadrunner.com',
             'name' => 'Dennis Lavoie',
             'first_name' => 'Dennis',
@@ -1564,7 +1564,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:19:22',
             'updated_at' => '2023-08-26 10:29:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nbarokas@aol.com',
             'name' => 'nisim barokas',
             'first_name' => 'nisim',
@@ -1581,7 +1581,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:20:05',
             'updated_at' => '2024-04-21 02:02:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pauline_issard@hotmail.com',
             'name' => 'Pauline Issard',
             'first_name' => 'Pauline',
@@ -1598,7 +1598,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:20:32',
             'updated_at' => '2023-08-26 14:36:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mrrichardgooding@yahoo.com',
             'name' => 'Richard Gooding',
             'first_name' => 'Richard',
@@ -1615,7 +1615,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:22:28',
             'updated_at' => '2023-08-26 14:44:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Romanleykin@gmail.com',
             'name' => 'Roman Leykin',
             'first_name' => 'Roman',
@@ -1632,7 +1632,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:23:06',
             'updated_at' => '2024-03-19 19:28:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arosenkass@gmail.com',
             'name' => 'AMY ROSENFELD-KASS',
             'first_name' => 'AMY',
@@ -1649,7 +1649,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:24:21',
             'updated_at' => '2023-08-26 11:46:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jordanshenker@gmail.com',
             'name' => 'Jordan Shenker',
             'first_name' => 'Jordan',
@@ -1666,7 +1666,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:24:37',
             'updated_at' => '2024-04-04 17:46:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dsd6@georgetown.edu',
             'name' => 'Douglas Donohue',
             'first_name' => 'Douglas',
@@ -1683,7 +1683,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:25:09',
             'updated_at' => '2024-07-21 01:30:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Zipdrv23@aol.com',
             'name' => 'James Douglass',
             'first_name' => 'James',
@@ -1700,7 +1700,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:25:43',
             'updated_at' => '2023-08-26 11:12:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lawrencesc00@gmail.com',
             'name' => 'Lawrence Chen',
             'first_name' => 'Lawrence',
@@ -1717,7 +1717,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:25:47',
             'updated_at' => '2023-08-26 13:41:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexandria.a.vella@gmail.com',
             'name' => 'Alexandria Vella',
             'first_name' => 'Alexandria',
@@ -1734,7 +1734,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:26:40',
             'updated_at' => '2023-08-26 11:40:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Dchatkewitz@gmail.com',
             'name' => 'Dylan Chatkewitz',
             'first_name' => 'Dylan',
@@ -1751,7 +1751,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:27:12',
             'updated_at' => '2024-07-15 20:24:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Mareybailey@hotmail.com',
             'name' => 'Marey Bailey',
             'first_name' => 'Marey',
@@ -1768,7 +1768,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:27:52',
             'updated_at' => '2023-08-26 13:52:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'damiondigrazia@gmail.com',
             'name' => 'Damion DiGrazia',
             'first_name' => 'Damion',
@@ -1785,7 +1785,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:30:14',
             'updated_at' => '2023-08-26 10:22:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'smahon92@gmail.com',
             'name' => 'SARAH MAHON',
             'first_name' => 'SARAH',
@@ -1802,7 +1802,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:30:19',
             'updated_at' => '2023-08-26 15:24:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'djhanggi@gmail.com',
             'name' => 'Daniel Hanggi',
             'first_name' => 'Daniel',
@@ -1819,7 +1819,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:30:33',
             'updated_at' => '2023-08-26 10:22:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'christina.mcginnis5@gmail.com',
             'name' => 'Christina McGinnis',
             'first_name' => 'Christina',
@@ -1836,7 +1836,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:32:30',
             'updated_at' => '2023-08-26 10:15:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chlokram@gmail.com',
             'name' => 'Chloe Kramer',
             'first_name' => 'Chloe',
@@ -1853,7 +1853,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:33:31',
             'updated_at' => '2024-07-17 16:21:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amtroy2@gmail.com',
             'name' => 'Anne Troy',
             'first_name' => 'Anne',
@@ -1870,7 +1870,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:34:09',
             'updated_at' => '2023-08-26 11:50:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'studioadair@gmail.com',
             'name' => 'Simone Adair',
             'first_name' => 'Simone',
@@ -1887,7 +1887,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:34:51',
             'updated_at' => '2023-09-05 23:04:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'greg@drmilbourne.com',
             'name' => 'Gregory Milbourne',
             'first_name' => 'Gregory',
@@ -1904,7 +1904,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:40:08',
             'updated_at' => '2024-01-31 19:49:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cassidy@panix.com',
             'name' => 'Michael Cassidy',
             'first_name' => 'Michael',
@@ -1921,7 +1921,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:41:14',
             'updated_at' => '2023-08-26 14:08:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erin.shea.macdaniel@gmail.com',
             'name' => 'Erin MacDaniel',
             'first_name' => 'Erin',
@@ -1938,7 +1938,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:46:25',
             'updated_at' => '2023-08-26 10:53:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'blake.l.weir@gmail.com',
             'name' => 'Blake Weir',
             'first_name' => 'Blake',
@@ -1955,7 +1955,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:46:57',
             'updated_at' => '2023-08-26 12:00:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jlberry1@gmail.com',
             'name' => 'jessica berry',
             'first_name' => 'jessica',
@@ -1972,7 +1972,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:47:09',
             'updated_at' => '2024-06-24 20:59:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'angela.sarhaddi@gmail.com',
             'name' => 'Angela Sarhaddi',
             'first_name' => 'Angela',
@@ -1989,7 +1989,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:48:35',
             'updated_at' => '2023-08-26 11:49:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ian.norman@astellas.com',
             'name' => 'Ian Norman',
             'first_name' => 'Ian',
@@ -2006,7 +2006,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:48:45',
             'updated_at' => '2023-08-26 11:07:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'PASCALLEGRAND@MAC.COM',
             'name' => 'PASCAL LEGRAND',
             'first_name' => 'PASCAL',
@@ -2023,7 +2023,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:48:57',
             'updated_at' => '2023-08-26 14:34:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lavar.phillips@gmail.com',
             'name' => 'Lavar Phillips',
             'first_name' => 'Lavar',
@@ -2040,7 +2040,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:51:53',
             'updated_at' => '2023-08-26 13:41:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lcervantes1212@gmail.com',
             'name' => 'Leticia Cervantes',
             'first_name' => 'Leticia',
@@ -2057,7 +2057,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:53:08',
             'updated_at' => '2023-08-26 13:42:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Wordbox@gmail.com',
             'name' => 'Angela Woon',
             'first_name' => 'Angela',
@@ -2074,7 +2074,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:53:38',
             'updated_at' => '2023-08-26 11:49:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jinauh@yahoo.com',
             'name' => 'Jin Auh',
             'first_name' => 'Jin',
@@ -2091,7 +2091,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:54:45',
             'updated_at' => '2024-02-07 01:41:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'heyitscael5@gmail.com',
             'name' => 'Cael Milbourne',
             'first_name' => 'Cael',
@@ -2108,7 +2108,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:55:08',
             'updated_at' => '2023-08-26 12:04:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pabloestua@icloud.com',
             'name' => 'Pablo Estua Carrillo',
             'first_name' => 'Pablo',
@@ -2125,7 +2125,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 01:57:36',
             'updated_at' => '2023-09-05 20:25:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'christineborchard@gmail.com',
             'name' => 'Christine Birchard',
             'first_name' => 'Christine',
@@ -2142,7 +2142,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:00:50',
             'updated_at' => '2023-08-26 10:16:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'asifkadiwala@gmail.com',
             'name' => 'Asif Kadiwala',
             'first_name' => 'Asif',
@@ -2159,7 +2159,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:03:00',
             'updated_at' => '2023-08-26 11:55:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rcascudo@yahoo.com',
             'name' => 'Rosita Cascudo',
             'first_name' => 'Rosita',
@@ -2176,7 +2176,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:03:37',
             'updated_at' => '2024-07-03 13:15:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'c_w_h_i_t_e@hotmail.com',
             'name' => 'Christopher White',
             'first_name' => 'Christopher',
@@ -2193,7 +2193,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:03:47',
             'updated_at' => '2023-08-26 10:17:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jenkursman@gmail.com',
             'name' => 'Jennifer Kursman',
             'first_name' => 'Jennifer',
@@ -2210,7 +2210,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:07:28',
             'updated_at' => '2024-03-30 17:58:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 't.stearley@snet.net',
             'name' => 'Thomas Stearley',
             'first_name' => 'Thomas',
@@ -2227,7 +2227,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:09:16',
             'updated_at' => '2024-06-22 03:56:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'liam.mccoy10@outlook.com',
             'name' => 'Liam McCoy',
             'first_name' => 'Liam',
@@ -2244,7 +2244,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:10:01',
             'updated_at' => '2023-08-26 13:42:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marjorielstein@gmail.com',
             'name' => 'Marjorie Stein',
             'first_name' => 'Marjorie',
@@ -2261,7 +2261,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:10:35',
             'updated_at' => '2024-03-08 20:38:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'shyok316@gmail.com',
             'name' => 'Sang Hyo Kim',
             'first_name' => 'Sang Hyo',
@@ -2278,7 +2278,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:17:56',
             'updated_at' => '2024-07-05 14:51:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anna.mercatili@gmail.com',
             'name' => 'Anna Mercatili',
             'first_name' => 'Anna',
@@ -2295,7 +2295,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:23:59',
             'updated_at' => '2024-07-03 13:15:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ruben.berrios1950@gmail.com',
             'name' => 'Rubin J Berrios',
             'first_name' => 'Rubin J',
@@ -2312,7 +2312,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:25:14',
             'updated_at' => '2024-07-14 00:41:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Bells1009@yahoo.com',
             'name' => 'Stephanie Bell',
             'first_name' => 'Stephanie',
@@ -2329,7 +2329,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:27:37',
             'updated_at' => '2024-06-03 17:53:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'welkhenia@gmail.com',
             'name' => 'Welkhenia Daley',
             'first_name' => 'Welkhenia',
@@ -2346,7 +2346,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:27:48',
             'updated_at' => '2024-04-20 15:51:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carrie.kretsch@gmail.com',
             'name' => 'Carolyn Kretsch',
             'first_name' => 'Carolyn',
@@ -2363,7 +2363,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:28:38',
             'updated_at' => '2023-08-26 10:10:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hshelton23@westminstertools.org',
             'name' => 'Hewitt Shelton',
             'first_name' => 'Hewitt',
@@ -2380,7 +2380,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:28:49',
             'updated_at' => '2023-09-05 21:04:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jenniferlepine@hotmail.com',
             'name' => 'Jennifer DiGaetano',
             'first_name' => 'Jennifer',
@@ -2397,7 +2397,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:33:38',
             'updated_at' => '2023-08-26 12:36:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'teri.izquierdo@gmail.com',
             'name' => 'Teresa Izquierdo',
             'first_name' => 'Teresa',
@@ -2414,7 +2414,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:34:43',
             'updated_at' => '2024-04-03 01:54:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophiemsun@gmail.com',
             'name' => 'Sophie Sun',
             'first_name' => 'Sophie',
@@ -2431,7 +2431,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:40:36',
             'updated_at' => '2023-08-26 15:32:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sierrajackovics@gmail.com',
             'name' => 'Sierra Jackovics',
             'first_name' => 'Sierra',
@@ -2448,7 +2448,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:40:44',
             'updated_at' => '2023-08-26 15:31:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'HaileLarry1@gmail.com',
             'name' => 'Larry Haile',
             'first_name' => 'Larry',
@@ -2465,7 +2465,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:43:40',
             'updated_at' => '2024-02-08 21:26:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caitlinnelson19@gmail.com',
             'name' => 'Caitlin Nelson',
             'first_name' => 'Caitlin',
@@ -2482,7 +2482,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:46:19',
             'updated_at' => '2024-01-31 21:45:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'declan1322@aol.com',
             'name' => 'Declan Ryan',
             'first_name' => 'Declan',
@@ -2499,7 +2499,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:49:37',
             'updated_at' => '2024-07-08 21:32:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'isabella.solomon23@trinityschoolnyc.org',
             'name' => 'Isabella Solomon',
             'first_name' => 'Isabella',
@@ -2516,7 +2516,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:50:37',
             'updated_at' => '2023-08-26 11:08:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hbharrisbedford@gmail.com',
             'name' => 'Jason Breslin',
             'first_name' => 'Jason',
@@ -2533,7 +2533,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:52:14',
             'updated_at' => '2024-06-21 23:51:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Ka0ypx@gmail.com',
             'name' => 'Frank Roybal',
             'first_name' => 'Frank',
@@ -2550,7 +2550,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:55:35',
             'updated_at' => '2024-03-28 22:33:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Edemarcolaw@aol.com',
             'name' => 'Enrico DeMarco',
             'first_name' => 'Enrico',
@@ -2567,7 +2567,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 02:57:29',
             'updated_at' => '2023-08-26 10:51:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'oliviaferre@icloud.com',
             'name' => 'Olivia Ferre',
             'first_name' => 'Olivia',
@@ -2584,7 +2584,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:00:06',
             'updated_at' => '2024-03-12 02:43:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nbellefleur@att.net',
             'name' => 'Noelle Bozzuto',
             'first_name' => 'Noelle',
@@ -2601,7 +2601,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:00:06',
             'updated_at' => '2023-08-26 14:31:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jdempseywarren@gmail.com',
             'name' => 'J Warren',
             'first_name' => 'J',
@@ -2618,7 +2618,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:02:06',
             'updated_at' => '2023-08-26 11:09:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jbyun06@gmail.com',
             'name' => 'Jung Ryun Byun',
             'first_name' => 'Jung Ryun',
@@ -2635,7 +2635,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:05:12',
             'updated_at' => '2023-08-26 12:52:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'krausbx@gmail.com',
             'name' => 'Benedikt Kraus',
             'first_name' => 'Benedikt',
@@ -2652,7 +2652,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:07:40',
             'updated_at' => '2023-08-26 11:58:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juliewhite1@mac.com',
             'name' => 'Julie Blacklock',
             'first_name' => 'Julie',
@@ -2669,7 +2669,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:07:51',
             'updated_at' => '2023-08-26 12:51:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'christian.kolking@gmail.com',
             'name' => 'Christian Kolking',
             'first_name' => 'Christian',
@@ -2686,7 +2686,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:08:00',
             'updated_at' => '2023-08-26 19:30:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rsorbanelli@hotmail.com',
             'name' => 'Ruth Sorbanelli',
             'first_name' => 'Ruth',
@@ -2703,7 +2703,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:08:22',
             'updated_at' => '2023-12-31 01:10:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'schoi09@outlook.com',
             'name' => 'Seyoon Choi',
             'first_name' => 'Seyoon',
@@ -2720,7 +2720,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:11:48',
             'updated_at' => '2023-08-26 15:28:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Lpolonsky51@gmail.com',
             'name' => 'Lester Polonsky',
             'first_name' => 'Lester',
@@ -2737,7 +2737,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:12:10',
             'updated_at' => '2023-08-26 13:42:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jrb1244@aol.com',
             'name' => 'George Barilla',
             'first_name' => 'George',
@@ -2754,7 +2754,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:12:14',
             'updated_at' => '2023-08-26 10:58:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mullaney@carolina.rr.com',
             'name' => 'Mark Mullaney',
             'first_name' => 'Mark',
@@ -2771,7 +2771,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:13:51',
             'updated_at' => '2023-08-26 13:56:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'u1366338@umail.utah.edu',
             'name' => 'Andrew Bray',
             'first_name' => 'Andrew',
@@ -2788,7 +2788,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:15:50',
             'updated_at' => '2023-08-26 11:48:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mmullaney@carolina.rr.com',
             'name' => 'Melissa Mullaney',
             'first_name' => 'Melissa',
@@ -2805,7 +2805,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:19:41',
             'updated_at' => '2023-08-26 14:04:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'melanietort@aol.com',
             'name' => 'melanie tortora',
             'first_name' => 'melanie',
@@ -2822,7 +2822,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:21:57',
             'updated_at' => '2024-01-14 07:50:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jwkeim@me.com',
             'name' => 'Jeremy Keim',
             'first_name' => 'Jeremy',
@@ -2839,7 +2839,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:23:57',
             'updated_at' => '2023-08-26 12:39:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'firstfedexgal@msn.com',
             'name' => 'Lee Doster-Ward',
             'first_name' => 'Lee',
@@ -2856,7 +2856,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:24:28',
             'updated_at' => '2023-08-26 13:41:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mw080@hotmail.com',
             'name' => 'Michael Ward',
             'first_name' => 'Michael',
@@ -2873,7 +2873,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:29:05',
             'updated_at' => '2023-08-26 14:08:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vdigirolamo@gmail.com',
             'name' => 'Vincenzo DiGirolamo',
             'first_name' => 'Vincenzo',
@@ -2890,7 +2890,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:37:13',
             'updated_at' => '2023-08-26 15:47:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kk922@msn.com',
             'name' => 'John Massaro',
             'first_name' => 'John',
@@ -2907,7 +2907,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:45:13',
             'updated_at' => '2024-02-19 21:20:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laura.boullianne@gmail.com',
             'name' => 'Laura Boullianne',
             'first_name' => 'Laura',
@@ -2924,7 +2924,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:45:22',
             'updated_at' => '2023-08-26 13:39:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joe.sorbanelli@gmail.com',
             'name' => 'Joe Sorbanelli',
             'first_name' => 'Joe',
@@ -2941,7 +2941,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:48:59',
             'updated_at' => '2024-01-16 20:39:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davefriedland21@gmail.com',
             'name' => 'David Friedland',
             'first_name' => 'David',
@@ -2958,7 +2958,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:53:03',
             'updated_at' => '2023-12-12 23:11:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emmatinney17@gmail.com',
             'name' => 'Emma Tinney',
             'first_name' => 'Emma',
@@ -2975,7 +2975,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 03:57:37',
             'updated_at' => '2024-03-28 20:25:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Kgb2125@cumc.columbia.edu',
             'name' => 'Kevin Bath',
             'first_name' => 'Kevin',
@@ -2992,7 +2992,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:02:52',
             'updated_at' => '2023-08-26 13:01:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joemaller@gmail.com',
             'name' => 'Joe Maller',
             'first_name' => 'Joe',
@@ -3009,7 +3009,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:09:08',
             'updated_at' => '2023-08-26 12:42:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'johnlovestorun@gmail.com',
             'name' => 'John Pierre',
             'first_name' => 'John',
@@ -3026,7 +3026,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:11:23',
             'updated_at' => '2024-07-19 08:11:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'iherman.2023@lfny.org',
             'name' => 'Isabelle Herman',
             'first_name' => 'Isabelle',
@@ -3043,7 +3043,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:20:28',
             'updated_at' => '2023-09-05 20:25:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mary.quinn987@gmail.com',
             'name' => 'Mary Quinn',
             'first_name' => 'Mary',
@@ -3060,7 +3060,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:21:00',
             'updated_at' => '2023-08-26 13:58:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'krouse.dylan@gmail.com',
             'name' => 'Dylan Krouse',
             'first_name' => 'Dylan',
@@ -3077,7 +3077,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:21:34',
             'updated_at' => '2024-05-21 22:30:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mnettler190@gmail.com',
             'name' => 'Melanie Nettler',
             'first_name' => 'Melanie',
@@ -3094,7 +3094,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:23:27',
             'updated_at' => '2023-09-01 00:54:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'petrina.schneiderman@gmail.com',
             'name' => 'Petrina Schneiderman',
             'first_name' => 'Petrina',
@@ -3111,7 +3111,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:26:56',
             'updated_at' => '2023-08-26 14:37:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophiamstone@gmail.com',
             'name' => 'Sophia Stone',
             'first_name' => 'Sophia',
@@ -3128,7 +3128,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:31:45',
             'updated_at' => '2023-08-27 19:54:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jasonkoolthere@gmail.com',
             'name' => 'Raymond Murphy',
             'first_name' => 'Raymond',
@@ -3145,7 +3145,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:31:47',
             'updated_at' => '2024-07-16 15:45:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Elizabethmariehunt@gmail.com',
             'name' => 'Elizabeth Hunt',
             'first_name' => 'Elizabeth',
@@ -3162,7 +3162,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:31:55',
             'updated_at' => '2023-08-26 10:35:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amandaluke800@gmail.com',
             'name' => 'Amanda Luke',
             'first_name' => 'Amanda',
@@ -3179,7 +3179,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:41:35',
             'updated_at' => '2023-08-26 11:44:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'geltnerpeter@yahoo.com',
             'name' => 'Peter Geltner',
             'first_name' => 'Peter',
@@ -3196,7 +3196,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:41:40',
             'updated_at' => '2023-08-26 14:37:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'johnnyvisinhous@aim.com',
             'name' => 'John Vacca',
             'first_name' => 'John',
@@ -3213,7 +3213,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:43:56',
             'updated_at' => '2023-11-12 16:10:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eleven30pace@hotmail.com',
             'name' => 'Sharon Geltner',
             'first_name' => 'Sharon',
@@ -3230,7 +3230,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 04:58:49',
             'updated_at' => '2024-04-17 00:22:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'thing7315@gmail.com',
             'name' => 'Marisa Baca',
             'first_name' => 'Marisa',
@@ -3247,7 +3247,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:00:11',
             'updated_at' => '2023-08-26 13:55:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gkgrubelich@gmail.com',
             'name' => 'Grete Grubelich',
             'first_name' => 'Grete',
@@ -3264,7 +3264,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:05:37',
             'updated_at' => '2024-02-07 01:28:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gunny.ragtag0q@icloud.com',
             'name' => 'Sean Borah',
             'first_name' => 'Sean',
@@ -3281,7 +3281,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:08:01',
             'updated_at' => '2023-08-26 15:27:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mbiancamano@gmail.com',
             'name' => 'Mario Biancamano',
             'first_name' => 'Mario',
@@ -3298,7 +3298,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:10:30',
             'updated_at' => '2023-08-26 13:55:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Melissa.Blume@gmail.com',
             'name' => 'Melissa Blume',
             'first_name' => 'Melissa',
@@ -3315,7 +3315,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:13:39',
             'updated_at' => '2024-03-22 05:09:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'addisongracepeters@gmail.com',
             'name' => 'Addison Peters',
             'first_name' => 'Addison',
@@ -3332,7 +3332,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:27:45',
             'updated_at' => '2023-08-26 11:36:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wmalusa@yahoo.com',
             'name' => 'William Alvarez',
             'first_name' => 'William',
@@ -3349,7 +3349,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:33:26',
             'updated_at' => '2024-06-18 20:25:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gamecom17@yahoo.com',
             'name' => 'John Young',
             'first_name' => 'John',
@@ -3366,7 +3366,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:39:47',
             'updated_at' => '2024-07-24 00:25:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sjackson2513@icloud.com',
             'name' => 'Sally Jackson',
             'first_name' => 'Sally',
@@ -3383,7 +3383,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:40:55',
             'updated_at' => '2024-07-19 03:35:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'clay@bolinger.com',
             'name' => 'Clayton Bolinger',
             'first_name' => 'Clayton',
@@ -3400,7 +3400,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:41:45',
             'updated_at' => '2023-08-26 10:19:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'orlansky.isabelle@gmail.com',
             'name' => 'David Orlansky',
             'first_name' => 'David',
@@ -3417,7 +3417,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:41:49',
             'updated_at' => '2024-04-04 01:15:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'reconray@verizon.net',
             'name' => 'Raymond Johnson',
             'first_name' => 'Raymond',
@@ -3434,7 +3434,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:48:19',
             'updated_at' => '2024-04-29 03:42:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lester.chiang80@gmail.com',
             'name' => 'Mr. Achilles',
             'first_name' => 'Mr.',
@@ -3451,7 +3451,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:53:18',
             'updated_at' => '2024-04-30 00:19:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'scott.teigen@gmail.com',
             'name' => 'Scott Teigen',
             'first_name' => 'Scott',
@@ -3468,7 +3468,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 05:56:53',
             'updated_at' => '2023-08-26 15:26:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'samys2973@gmail.com',
             'name' => 'Yaniris Barjan',
             'first_name' => 'Yaniris',
@@ -3485,7 +3485,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:07:43',
             'updated_at' => '2023-09-05 20:30:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adessaellis@yahoo.com',
             'name' => 'Adessa Nolan',
             'first_name' => 'Adessa',
@@ -3502,7 +3502,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:09:30',
             'updated_at' => '2024-04-12 21:42:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Lduman@charter.net',
             'name' => 'Laura Duman',
             'first_name' => 'Laura',
@@ -3519,7 +3519,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:12:06',
             'updated_at' => '2023-08-26 13:39:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kss+ai@konfedence.com',
             'name' => 'Kenneth Skrien',
             'first_name' => 'Kenneth',
@@ -3536,7 +3536,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:16:34',
             'updated_at' => '2023-12-07 05:52:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chesneyjackson23@gmail.com',
             'name' => 'Chesney Jackson',
             'first_name' => 'Chesney',
@@ -3553,7 +3553,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:18:53',
             'updated_at' => '2023-08-26 10:14:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ivonnem99@yahoo.com',
             'name' => 'Ivonne Mosquera-Schmidt',
             'first_name' => 'Ivonne',
@@ -3570,7 +3570,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:24:39',
             'updated_at' => '2024-05-21 17:41:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jodiisman0930@gmail.com',
             'name' => 'Jodi Isman',
             'first_name' => 'Jodi',
@@ -3587,7 +3587,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:32:23',
             'updated_at' => '2024-05-08 00:24:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carlsonbw@sbcglobal.net',
             'name' => 'Brian Carlson',
             'first_name' => 'Brian',
@@ -3604,7 +3604,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:46:40',
             'updated_at' => '2023-08-26 12:02:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'toainolan1@comcast.net',
             'name' => 'Toai Nolan',
             'first_name' => 'Toai',
@@ -3621,7 +3621,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:47:03',
             'updated_at' => '2023-09-05 23:04:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vikings_29@hotmail.com',
             'name' => 'Greg St. George',
             'first_name' => 'Greg',
@@ -3638,7 +3638,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:49:36',
             'updated_at' => '2024-07-20 05:05:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mjb11372@yahoo.com',
             'name' => 'Mauricio Blandino',
             'first_name' => 'Mauricio',
@@ -3655,7 +3655,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 06:59:24',
             'updated_at' => '2024-07-26 18:32:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'scoutjoshua9106@gmail.com',
             'name' => 'Joshua Riddle',
             'first_name' => 'Joshua',
@@ -3672,7 +3672,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 07:10:19',
             'updated_at' => '2023-09-05 20:30:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'egargiulo@mecoxrep.com',
             'name' => 'Edward Gargiulo',
             'first_name' => 'Edward',
@@ -3689,7 +3689,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 07:19:33',
             'updated_at' => '2023-08-26 10:32:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ann.demyanenko@gmail.com',
             'name' => 'Anna Demyanenko',
             'first_name' => 'Anna',
@@ -3706,7 +3706,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 07:23:01',
             'updated_at' => '2023-08-26 11:50:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lovietre@optonline.net',
             'name' => 'Sharmon Still',
             'first_name' => 'Sharmon',
@@ -3723,7 +3723,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 07:25:10',
             'updated_at' => '2024-03-16 06:34:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'julia.m.reilly@gmail.com',
             'name' => 'Julia Reilly',
             'first_name' => 'Julia',
@@ -3740,7 +3740,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 07:26:04',
             'updated_at' => '2023-08-26 12:50:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dolma.tsering@gmail.com',
             'name' => 'Wu Shu',
             'first_name' => 'Wu',
@@ -3757,7 +3757,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 07:29:26',
             'updated_at' => '2023-08-26 15:51:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davemonk2010@hotmail.com',
             'name' => 'David Folan',
             'first_name' => 'David',
@@ -3774,7 +3774,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 07:43:01',
             'updated_at' => '2023-08-26 10:25:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vhartman711@gmail.com',
             'name' => 'Valerie Hartman',
             'first_name' => 'Valerie',
@@ -3791,7 +3791,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 07:45:42',
             'updated_at' => '2024-07-27 13:54:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'axg3362@lausd.net',
             'name' => 'Antonia Guzman',
             'first_name' => 'Antonia',
@@ -3808,7 +3808,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 08:26:37',
             'updated_at' => '2023-08-26 11:52:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'georgeliang03@gmail.com',
             'name' => 'George Liang',
             'first_name' => 'George',
@@ -3825,7 +3825,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 08:43:15',
             'updated_at' => '2023-08-26 10:58:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikemott821@gmail.com',
             'name' => 'Michael Manitta',
             'first_name' => 'Michael',
@@ -3842,7 +3842,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 09:04:41',
             'updated_at' => '2024-07-07 05:10:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rweisbrod@aol.com',
             'name' => 'Frederick Weisbrod',
             'first_name' => 'Frederick',
@@ -3859,7 +3859,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 10:49:31',
             'updated_at' => '2023-12-06 20:03:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mtoyohara1@gmail.com',
             'name' => 'Michio Toyohara',
             'first_name' => 'Michio',
@@ -3876,7 +3876,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 11:26:03',
             'updated_at' => '2023-08-26 14:23:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eric.lauger@videotron.ca',
             'name' => 'Eric Lauger',
             'first_name' => 'Eric',
@@ -3893,7 +3893,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 11:36:30',
             'updated_at' => '2024-07-27 20:24:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'damorekendall@gmail.com',
             'name' => 'Kendall D\'Amore',
             'first_name' => 'Kendall',
@@ -3910,7 +3910,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 11:49:28',
             'updated_at' => '2024-07-18 05:51:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'msgirvan@gmail.com',
             'name' => 'Matthew Girvan',
             'first_name' => 'Matthew',
@@ -3927,7 +3927,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 13:21:07',
             'updated_at' => '2023-08-26 14:00:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'shari@ciapka.com',
             'name' => 'Shari Ciapka',
             'first_name' => 'Shari',
@@ -3944,7 +3944,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 13:22:14',
             'updated_at' => '2023-08-26 15:29:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joe@joequint.com',
             'name' => 'Joe Quint',
             'first_name' => 'Joe',
@@ -3961,7 +3961,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 14:16:33',
             'updated_at' => '2023-08-26 12:42:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilyduffner1@gmail.com',
             'name' => 'Emily Duffner',
             'first_name' => 'Emily',
@@ -3978,7 +3978,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 14:48:03',
             'updated_at' => '2023-09-25 03:13:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joannacatherinewood@gmail.com',
             'name' => 'Joanna Wood',
             'first_name' => 'Joanna',
@@ -3995,7 +3995,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 15:00:23',
             'updated_at' => '2023-08-26 12:42:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lstethers@gmail.com',
             'name' => 'Lori Stethers',
             'first_name' => 'Lori',
@@ -4012,7 +4012,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 15:22:57',
             'updated_at' => '2024-07-13 22:21:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'terryfhlee@gmail.com',
             'name' => 'Terry Lee',
             'first_name' => 'Terry',
@@ -4029,7 +4029,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 15:35:53',
             'updated_at' => '2024-07-03 13:15:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wendygennaro@gmail.com',
             'name' => 'Wendy Phaff Gennaro',
             'first_name' => 'Wendy',
@@ -4046,7 +4046,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 15:46:26',
             'updated_at' => '2023-08-26 15:48:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rdegrazio@gmail.com',
             'name' => 'Robert DeGrazio',
             'first_name' => 'Robert',
@@ -4063,7 +4063,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 15:48:45',
             'updated_at' => '2023-08-26 14:46:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kelslschrader@gmail.com',
             'name' => 'Kelsie Schrader',
             'first_name' => 'Kelsie',
@@ -4080,7 +4080,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 15:53:21',
             'updated_at' => '2024-05-28 14:24:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'browneagle4@msn.com',
             'name' => 'Eli Solis',
             'first_name' => 'Eli',
@@ -4097,7 +4097,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 16:11:40',
             'updated_at' => '2023-08-26 10:33:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cobes413@gmail.com',
             'name' => 'Laura Russell',
             'first_name' => 'Laura',
@@ -4114,7 +4114,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 16:17:15',
             'updated_at' => '2023-08-26 13:39:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yj.ding@u.northwestern.edu',
             'name' => 'Yujia Ding',
             'first_name' => 'Yujia',
@@ -4131,7 +4131,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 16:28:09',
             'updated_at' => '2023-08-26 15:52:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'megmcelroy97@gmail.com',
             'name' => 'Meaghan McElroy',
             'first_name' => 'Meaghan',
@@ -4148,7 +4148,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 16:34:01',
             'updated_at' => '2023-08-26 14:02:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'edsonsanti@achillesinternationalbrazil.com',
             'name' => 'EDSON SANTI',
             'first_name' => 'EDSON',
@@ -4165,7 +4165,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 16:34:38',
             'updated_at' => '2024-02-22 18:28:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'exit176@icloud.com',
             'name' => 'Peter Bianco',
             'first_name' => 'Peter',
@@ -4182,7 +4182,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 16:44:17',
             'updated_at' => '2023-08-26 14:37:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stephenkaminsky5@gmail.com',
             'name' => 'Stephen Kaminsky',
             'first_name' => 'Stephen',
@@ -4199,7 +4199,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 16:48:09',
             'updated_at' => '2024-03-30 17:57:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'melaniespeight@gmail.com',
             'name' => 'Melanie Speight',
             'first_name' => 'Melanie',
@@ -4216,7 +4216,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 16:52:23',
             'updated_at' => '2023-08-26 14:04:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stern.gabrielle@gmail.com',
             'name' => 'Gabrielle Stern',
             'first_name' => 'Gabrielle',
@@ -4233,7 +4233,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 16:56:08',
             'updated_at' => '2023-08-26 10:57:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erica.haselton@rehabwithoutwalls.com',
             'name' => 'Erica Haselton',
             'first_name' => 'Erica',
@@ -4250,7 +4250,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:00:26',
             'updated_at' => '2023-08-26 10:52:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marcia.shury@gmail.com',
             'name' => 'Marcia Shury',
             'first_name' => 'Marcia',
@@ -4267,7 +4267,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:14:29',
             'updated_at' => '2024-06-23 04:02:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'deodato@uol.com.br',
             'name' => 'Deodato Santos',
             'first_name' => 'Deodato',
@@ -4284,7 +4284,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:15:48',
             'updated_at' => '2023-08-26 10:29:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erinmkleiber@gmail.com',
             'name' => 'Erin Mahr',
             'first_name' => 'Erin',
@@ -4301,7 +4301,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:23:03',
             'updated_at' => '2023-08-26 10:53:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aclyon10@gmail.com',
             'name' => 'Ashley Lyon',
             'first_name' => 'Ashley',
@@ -4318,7 +4318,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:30:46',
             'updated_at' => '2023-08-26 11:55:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mwaugh22@gmail.com',
             'name' => 'Mark Waugh',
             'first_name' => 'Mark',
@@ -4335,7 +4335,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:35:03',
             'updated_at' => '2024-02-07 00:27:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gabirosenfeld@gmail.com',
             'name' => 'Gabrielle Rosenfeld',
             'first_name' => 'Gabrielle',
@@ -4352,7 +4352,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:39:22',
             'updated_at' => '2024-01-23 19:22:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'corsokristen@gmail.com',
             'name' => 'Kristen Corso',
             'first_name' => 'Kristen',
@@ -4369,7 +4369,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:49:58',
             'updated_at' => '2024-03-05 00:47:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ferraro.brandon@gmail.com',
             'name' => 'Brandon Ferraro',
             'first_name' => 'Brandon',
@@ -4386,7 +4386,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:53:37',
             'updated_at' => '2023-08-26 12:01:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bbsolberg@aol.com',
             'name' => 'Bryon Solberg',
             'first_name' => 'Bryon',
@@ -4403,7 +4403,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 17:57:16',
             'updated_at' => '2024-03-22 12:14:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'selenalarson@gmail.com',
             'name' => 'Selena Larson',
             'first_name' => 'Selena',
@@ -4420,7 +4420,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:03:28',
             'updated_at' => '2024-02-21 18:21:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tzvimkatz+achilles@gmail.com',
             'name' => 'Tzvi Katz',
             'first_name' => 'Tzvi',
@@ -4437,7 +4437,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:07:31',
             'updated_at' => '2023-08-26 15:45:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'drewzaweski@gmail.com',
             'name' => 'Drew Zaweski',
             'first_name' => 'Drew',
@@ -4454,7 +4454,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:12:17',
             'updated_at' => '2024-07-21 16:29:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mlw118@students.jefferson.edu',
             'name' => 'Makala Wang',
             'first_name' => 'Makala',
@@ -4471,7 +4471,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:14:22',
             'updated_at' => '2023-08-26 13:51:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caitlinpw2@gmail.com',
             'name' => 'Caitlin Pieper-Wetmore',
             'first_name' => 'Caitlin',
@@ -4488,7 +4488,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:20:24',
             'updated_at' => '2023-09-05 20:25:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'avtnyc@gmail.com',
             'name' => 'Anthony Thompson',
             'first_name' => 'Anthony',
@@ -4505,7 +4505,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:22:49',
             'updated_at' => '2023-08-26 11:51:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nyo3054@gmail.com',
             'name' => 'Adnan Shamsi',
             'first_name' => 'Adnan',
@@ -4522,7 +4522,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:26:46',
             'updated_at' => '2023-08-26 11:36:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kitzchy@yahoo.com',
             'name' => 'Catherine Karas',
             'first_name' => 'Catherine',
@@ -4539,7 +4539,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:27:05',
             'updated_at' => '2024-07-14 15:01:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kristinbgupta@gmail.com',
             'name' => 'Kristin Gupta',
             'first_name' => 'Kristin',
@@ -4556,7 +4556,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:42:50',
             'updated_at' => '2023-08-26 13:04:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'christina.comeyne@web.de',
             'name' => 'Christina Comeyne',
             'first_name' => 'Christina',
@@ -4573,7 +4573,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:49:21',
             'updated_at' => '2023-08-26 10:15:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'JakeSimon262@gmail.com',
             'name' => 'Jake Simon',
             'first_name' => 'Jake',
@@ -4590,7 +4590,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:54:50',
             'updated_at' => '2023-08-26 11:12:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ross.wilson76@gmail.com',
             'name' => 'Ross Wilson',
             'first_name' => 'Ross',
@@ -4607,7 +4607,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:56:30',
             'updated_at' => '2023-08-26 14:49:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davefriedman.8@gmail.com',
             'name' => 'David Friedman',
             'first_name' => 'David',
@@ -4624,7 +4624,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 18:58:37',
             'updated_at' => '2023-08-26 10:25:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bob.labanca@gmail.com',
             'name' => 'Bob LaBanca',
             'first_name' => 'Bob',
@@ -4641,7 +4641,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 19:00:50',
             'updated_at' => '2023-08-26 12:00:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'oamurph@gmail.com',
             'name' => 'Olivia Williams',
             'first_name' => 'Olivia',
@@ -4658,7 +4658,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 19:22:23',
             'updated_at' => '2023-08-26 14:33:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'asucolin@yahoo.com',
             'name' => 'Colin Hall',
             'first_name' => 'Colin',
@@ -4675,7 +4675,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 19:25:23',
             'updated_at' => '2023-08-26 10:19:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'isaacsmartha@gmail.com',
             'name' => 'Martha Isaacs',
             'first_name' => 'Martha',
@@ -4692,7 +4692,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 19:27:01',
             'updated_at' => '2023-08-26 13:57:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'AYOUNG1366@AOL.COM',
             'name' => 'Alan Young',
             'first_name' => 'Alan',
@@ -4709,7 +4709,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 19:27:21',
             'updated_at' => '2023-08-26 11:37:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carroll.kathryn.e@gmail.com',
             'name' => 'Kathryn Carroll',
             'first_name' => 'Kathryn',
@@ -4726,7 +4726,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 19:27:49',
             'updated_at' => '2023-08-26 12:57:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'embraley@gmail.com',
             'name' => 'Erin Braley',
             'first_name' => 'Erin',
@@ -4743,7 +4743,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 19:35:34',
             'updated_at' => '2023-08-26 10:53:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wakelym@gmail.com',
             'name' => 'Megan Wakely',
             'first_name' => 'Megan',
@@ -4760,7 +4760,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 20:03:33',
             'updated_at' => '2023-08-26 14:02:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elena.horton21@gmail.com',
             'name' => 'Elena Horton',
             'first_name' => 'Elena',
@@ -4777,7 +4777,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 20:09:54',
             'updated_at' => '2023-08-26 10:33:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'megdippel@gmail.com',
             'name' => 'Meghan Dippel',
             'first_name' => 'Meghan',
@@ -4794,7 +4794,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 20:10:01',
             'updated_at' => '2023-08-26 14:03:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Frimpongbernice528@gmail.com',
             'name' => 'Bernice Frimpong',
             'first_name' => 'Bernice',
@@ -4811,7 +4811,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 20:11:54',
             'updated_at' => '2024-07-03 13:15:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cphutton@cphutton.com',
             'name' => 'Clelland Hutton',
             'first_name' => 'Clelland',
@@ -4828,7 +4828,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 20:16:53',
             'updated_at' => '2023-08-26 10:19:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mary.catherine.dean@gmail.com',
             'name' => 'Mary Dean',
             'first_name' => 'Mary',
@@ -4845,7 +4845,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 20:26:29',
             'updated_at' => '2023-08-26 13:58:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'talia.fromm@gmail.com',
             'name' => 'Talia Fromm',
             'first_name' => 'Talia',
@@ -4862,7 +4862,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 20:30:59',
             'updated_at' => '2023-08-26 15:38:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rmbeals@gmail.com',
             'name' => 'Robert Beals',
             'first_name' => 'Robert',
@@ -4879,7 +4879,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 20:33:00',
             'updated_at' => '2024-07-11 06:21:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'liftandrun4fun@gmail.com',
             'name' => 'Katie Mercadante',
             'first_name' => 'Katie',
@@ -4896,7 +4896,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 20:38:37',
             'updated_at' => '2023-08-26 12:57:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dchaplin1990@yahoo.com',
             'name' => 'Daniel Chaplin',
             'first_name' => 'Daniel',
@@ -4913,7 +4913,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 21:04:24',
             'updated_at' => '2023-08-26 10:23:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sbapplegate@gmail.com',
             'name' => 'Sharon Applegate',
             'first_name' => 'Sharon',
@@ -4930,7 +4930,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 21:07:24',
             'updated_at' => '2023-08-26 15:29:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'deb.a.cosgrove@gmail.com',
             'name' => 'Deb Cosgrove',
             'first_name' => 'Deb',
@@ -4947,7 +4947,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 21:21:33',
             'updated_at' => '2023-08-26 10:27:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amypat8@hotmail.com',
             'name' => 'Amy Aguilar',
             'first_name' => 'Amy',
@@ -4964,7 +4964,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 21:22:45',
             'updated_at' => '2024-07-07 03:27:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilyclairesmith2@gmail.com',
             'name' => 'Emily Smith',
             'first_name' => 'Emily',
@@ -4981,7 +4981,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 21:31:53',
             'updated_at' => '2024-07-30 01:42:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'welandanddylan@aol.com',
             'name' => 'Dylan Bourne',
             'first_name' => 'Dylan',
@@ -4998,7 +4998,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 22:04:50',
             'updated_at' => '2024-06-22 12:35:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lkwong10@gmail.com',
             'name' => 'Loretta Kwong',
             'first_name' => 'Loretta',
@@ -5015,7 +5015,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 22:41:50',
             'updated_at' => '2023-08-26 13:46:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'harperjackson@mac.com',
             'name' => 'Harper Jackson',
             'first_name' => 'Harper',
@@ -5032,7 +5032,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 23:01:49',
             'updated_at' => '2023-08-26 11:03:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'spsmyth1@yahoo.com',
             'name' => 'Susan Smyth',
             'first_name' => 'Susan',
@@ -5049,7 +5049,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 23:08:43',
             'updated_at' => '2023-12-29 22:08:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gcappadona8@gmail.com',
             'name' => 'Gabrielle Cappadona',
             'first_name' => 'Gabrielle',
@@ -5066,7 +5066,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 23:10:35',
             'updated_at' => '2024-04-26 02:02:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'milesbymadi@gmail.com',
             'name' => 'Madison Flotteron',
             'first_name' => 'Madison',
@@ -5083,7 +5083,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 23:14:59',
             'updated_at' => '2023-08-26 13:50:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hughesjp@gmail.com',
             'name' => 'JOHN Hughes',
             'first_name' => 'JOHN',
@@ -5100,7 +5100,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 23:22:55',
             'updated_at' => '2023-12-14 02:24:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'happylegs@optimum.net',
             'name' => 'Larry Sillen',
             'first_name' => 'Larry',
@@ -5117,7 +5117,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 23:31:57',
             'updated_at' => '2023-08-26 13:07:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'frrusso3@gmail.com',
             'name' => 'Francis Russo Jr',
             'first_name' => 'Francis',
@@ -5134,7 +5134,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-07 23:35:38',
             'updated_at' => '2023-08-26 10:56:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yoro01@aol.com',
             'name' => 'Nyla Genus',
             'first_name' => 'Nyla',
@@ -5151,7 +5151,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 00:14:19',
             'updated_at' => '2024-06-26 19:12:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jackiejones83@gmail.com',
             'name' => 'Jackie Jones',
             'first_name' => 'Jackie',
@@ -5168,7 +5168,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 00:40:04',
             'updated_at' => '2023-08-26 11:09:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sarahjmcc@gmail.com',
             'name' => 'sarah mccurdy',
             'first_name' => 'sarah',
@@ -5185,7 +5185,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 00:48:07',
             'updated_at' => '2023-08-26 15:24:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kaitlin.e.mckernan@vanderbilt.edu',
             'name' => 'Kaitlin McKernan',
             'first_name' => 'Kaitlin',
@@ -5202,7 +5202,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 00:48:18',
             'updated_at' => '2023-09-29 06:33:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'khe9323@gmail.com',
             'name' => 'Kathleen He',
             'first_name' => 'Kathleen',
@@ -5219,7 +5219,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 01:11:54',
             'updated_at' => '2023-08-26 12:56:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'goldengoggles1650@gmail.com',
             'name' => 'Ashley Hall',
             'first_name' => 'Ashley',
@@ -5236,7 +5236,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 01:15:41',
             'updated_at' => '2023-08-26 11:55:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amgardens24@gmail.com',
             'name' => 'Amber Desjardins',
             'first_name' => 'Amber',
@@ -5253,7 +5253,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 01:16:25',
             'updated_at' => '2023-08-26 11:45:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'deena.zeelens@gmail.com',
             'name' => 'Deena Zeelens',
             'first_name' => 'Deena',
@@ -5270,7 +5270,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 01:36:05',
             'updated_at' => '2024-02-07 01:33:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stevie.e.feliciano@gmail.com',
             'name' => 'Stevie Feliciano',
             'first_name' => 'Stevie',
@@ -5287,7 +5287,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 01:37:45',
             'updated_at' => '2023-08-26 15:35:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'noelar77@gmail.com',
             'name' => 'Noel Rodriguez',
             'first_name' => 'Noel',
@@ -5304,7 +5304,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 01:54:22',
             'updated_at' => '2023-08-26 14:31:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dstoppelmann@gmail.com',
             'name' => 'Dani Stoppelmann',
             'first_name' => 'Dani',
@@ -5321,7 +5321,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 02:39:47',
             'updated_at' => '2023-08-26 10:22:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jtoenies@hotmail.com',
             'name' => 'Jeff Toenies',
             'first_name' => 'Jeff',
@@ -5338,7 +5338,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 02:58:00',
             'updated_at' => '2023-08-26 11:16:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'schoins@optonline.net',
             'name' => 'joseph choinski',
             'first_name' => 'joseph',
@@ -5355,7 +5355,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 04:06:42',
             'updated_at' => '2023-08-26 12:47:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tomomiseki57@gmail.com',
             'name' => 'Tomomi Seki',
             'first_name' => 'Tomomi',
@@ -5372,7 +5372,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 04:13:01',
             'updated_at' => '2023-08-26 15:43:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jverstraete@gmail.com',
             'name' => 'Johannes E Verstraete',
             'first_name' => 'Johannes E',
@@ -5389,7 +5389,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 04:44:04',
             'updated_at' => '2023-08-26 12:43:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'premierdentalofwoodhaven@gmail.com',
             'name' => 'Tavish Williams',
             'first_name' => 'Tavish',
@@ -5406,7 +5406,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 05:19:00',
             'updated_at' => '2023-08-26 15:39:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '05arnager@gmail.com',
             'name' => 'Stephen Norris',
             'first_name' => 'Stephen',
@@ -5423,7 +5423,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 05:48:08',
             'updated_at' => '2023-08-26 15:34:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chrisrinko@gmail.com',
             'name' => 'Christopher Rinko',
             'first_name' => 'Christopher',
@@ -5440,7 +5440,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 06:19:20',
             'updated_at' => '2024-02-07 01:42:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kellieportie@gmail.com',
             'name' => 'Kellie Portie',
             'first_name' => 'Kellie',
@@ -5457,7 +5457,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 06:34:44',
             'updated_at' => '2023-08-26 12:59:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'paulmorse22@gmail.com',
             'name' => 'Paul Morse',
             'first_name' => 'Paul',
@@ -5474,7 +5474,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 09:01:59',
             'updated_at' => '2023-08-26 14:36:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arik@gruberlaw.co.il',
             'name' => 'Arie Gruber',
             'first_name' => 'Arie',
@@ -5491,7 +5491,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 14:35:38',
             'updated_at' => '2023-09-05 23:04:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marianhuttonmcdermott@gmail.com',
             'name' => 'Marian McDermott',
             'first_name' => 'Marian',
@@ -5508,7 +5508,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 14:47:36',
             'updated_at' => '2023-08-26 13:54:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Mr26point2@aol.com',
             'name' => 'Frank Arcuri',
             'first_name' => 'Frank',
@@ -5525,7 +5525,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 14:58:12',
             'updated_at' => '2023-08-26 10:56:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'allan.tyson@gmail.com',
             'name' => 'Allan Tyson',
             'first_name' => 'Allan',
@@ -5542,7 +5542,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 14:58:36',
             'updated_at' => '2024-07-22 06:02:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'demotti@gmail.com',
             'name' => 'Ottilia Demeter',
             'first_name' => 'Ottilia',
@@ -5559,7 +5559,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 15:09:55',
             'updated_at' => '2024-06-10 07:07:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cynyoung@gmail.com',
             'name' => 'Cynthia Young',
             'first_name' => 'Cynthia',
@@ -5576,7 +5576,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 15:39:37',
             'updated_at' => '2024-02-07 01:23:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'calihayo@gmail.com',
             'name' => 'Caroline Yoon',
             'first_name' => 'Caroline',
@@ -5593,7 +5593,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 16:13:42',
             'updated_at' => '2023-08-26 10:09:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophiashaw@icloud.com',
             'name' => 'Sophia Shaw',
             'first_name' => 'Sophia',
@@ -5610,7 +5610,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 16:13:48',
             'updated_at' => '2024-06-08 22:05:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'melanieb513@gmail.com',
             'name' => 'Melanie Bader',
             'first_name' => 'Melanie',
@@ -5627,7 +5627,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 16:56:05',
             'updated_at' => '2023-08-26 14:04:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jacquelinegclemente@gmail.com',
             'name' => 'Jacqueline Clemente',
             'first_name' => 'Jacqueline',
@@ -5644,7 +5644,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 17:04:20',
             'updated_at' => '2023-09-26 18:10:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sosa226@hotmail.com',
             'name' => 'Carlos Sosa De La Torre',
             'first_name' => 'Carlos',
@@ -5661,7 +5661,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 17:16:26',
             'updated_at' => '2023-08-26 10:08:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jill@theshu.com',
             'name' => 'Jill Shuman',
             'first_name' => 'Jill',
@@ -5678,7 +5678,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 17:50:11',
             'updated_at' => '2023-08-26 12:41:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vanscoyocam@gmail.com',
             'name' => 'Allison Van Scoyoc',
             'first_name' => 'Allison',
@@ -5695,7 +5695,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 17:59:44',
             'updated_at' => '2023-08-26 11:42:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jbjb4345@gmail.com',
             'name' => 'Julia Bergquist',
             'first_name' => 'Julia',
@@ -5712,7 +5712,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 18:32:13',
             'updated_at' => '2023-08-26 12:50:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'xh73@georgetown.edu',
             'name' => 'Xinlan Hu',
             'first_name' => 'Xinlan',
@@ -5729,7 +5729,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 18:33:07',
             'updated_at' => '2023-08-26 15:51:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'victoria4493@aol.com',
             'name' => 'Victoria Stoerger',
             'first_name' => 'Victoria',
@@ -5746,7 +5746,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 18:45:37',
             'updated_at' => '2023-08-26 15:47:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'edt32@cornell.edu',
             'name' => 'Emma Thanhauser',
             'first_name' => 'Emma',
@@ -5763,7 +5763,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 19:19:47',
             'updated_at' => '2023-08-26 10:50:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jacobjmoy@gmail.com',
             'name' => 'Jacob Moy',
             'first_name' => 'Jacob',
@@ -5780,7 +5780,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 19:57:47',
             'updated_at' => '2023-08-26 11:10:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sam.ashinoff@gmail.com',
             'name' => 'Samantha Ashinoff',
             'first_name' => 'Samantha',
@@ -5797,7 +5797,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 21:02:38',
             'updated_at' => '2023-08-26 14:52:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joshuajcohu@gmail.com',
             'name' => 'Joshua Cohu',
             'first_name' => 'Joshua',
@@ -5814,7 +5814,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 21:10:23',
             'updated_at' => '2023-08-26 12:49:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eric.brinkman1@gmail.com',
             'name' => 'Eric Brinkman',
             'first_name' => 'Eric',
@@ -5831,7 +5831,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 21:15:12',
             'updated_at' => '2024-07-19 00:20:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stuart.selig@gmail.com',
             'name' => 'Stuart Selig',
             'first_name' => 'Stuart',
@@ -5848,7 +5848,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 21:17:29',
             'updated_at' => '2023-08-26 15:35:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kevlydon28@gmail.com',
             'name' => 'Kevin Lydon',
             'first_name' => 'Kevin',
@@ -5865,7 +5865,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 22:36:44',
             'updated_at' => '2023-08-26 13:01:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexander.lindsayingles@gmail.com',
             'name' => 'Lindsay Alexander',
             'first_name' => 'Lindsay',
@@ -5882,7 +5882,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 23:38:59',
             'updated_at' => '2023-08-26 13:43:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mfjhaguel@gmail.com',
             'name' => 'Marie Haguel',
             'first_name' => 'Marie',
@@ -5899,7 +5899,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-08 23:54:58',
             'updated_at' => '2024-02-08 02:40:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Karenfittinghoff@gmail.com',
             'name' => 'Karen Fittinghoff',
             'first_name' => 'Karen',
@@ -5916,7 +5916,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 00:34:03',
             'updated_at' => '2024-03-27 01:59:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stephaniecmalek@gmail.com',
             'name' => 'Stephanie Malek',
             'first_name' => 'Stephanie',
@@ -5933,7 +5933,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 00:41:41',
             'updated_at' => '2023-08-26 15:33:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kfittinghoff@gmail.com',
             'name' => 'Kevin Fittinghoff',
             'first_name' => 'Kevin',
@@ -5950,7 +5950,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 00:55:43',
             'updated_at' => '2024-06-13 23:07:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'donavan.trieu@gmail.com',
             'name' => 'Donavan Trieu',
             'first_name' => 'Donavan',
@@ -5967,7 +5967,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 02:13:01',
             'updated_at' => '2023-08-26 10:30:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gshinder@gmail.com',
             'name' => 'Gennady Shinder',
             'first_name' => 'Gennady',
@@ -5984,7 +5984,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 03:25:06',
             'updated_at' => '2023-08-26 10:58:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'angelallaica5@gmail.com',
             'name' => 'ANGEL ALLAICA',
             'first_name' => 'ANGEL',
@@ -6001,7 +6001,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 04:47:11',
             'updated_at' => '2024-02-24 07:17:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ximealexmendez@gmail.com',
             'name' => 'XIMENA MENDEZ',
             'first_name' => 'XIMENA',
@@ -6018,7 +6018,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 05:14:52',
             'updated_at' => '2023-08-26 15:51:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stalinpozo@yahoo.es',
             'name' => 'BYRON POZO',
             'first_name' => 'BYRON',
@@ -6035,7 +6035,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 05:26:47',
             'updated_at' => '2024-01-11 20:03:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'luis-guerra@hotmail.com',
             'name' => 'LUIS GUERRA',
             'first_name' => 'LUIS',
@@ -6052,7 +6052,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 05:49:04',
             'updated_at' => '2024-04-17 05:20:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jimenezjhonny938@gmail.com',
             'name' => 'JHONNY JIMENEZ',
             'first_name' => 'JHONNY',
@@ -6069,7 +6069,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 06:01:55',
             'updated_at' => '2023-12-08 21:28:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kmstephenson@gmail.com',
             'name' => 'Kathryn Stephenson',
             'first_name' => 'Kathryn',
@@ -6086,7 +6086,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 06:54:13',
             'updated_at' => '2023-08-26 12:57:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'monicamuycela84@gmail.com',
             'name' => 'MONICA MUYCELA',
             'first_name' => 'MONICA',
@@ -6103,7 +6103,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 06:56:10',
             'updated_at' => '2023-08-26 14:25:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mmarotta616@gmail.com',
             'name' => 'Madeline Marotta',
             'first_name' => 'Madeline',
@@ -6120,7 +6120,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 07:54:38',
             'updated_at' => '2023-08-26 13:49:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marcummings@gmail.com',
             'name' => 'Marisa Cummings',
             'first_name' => 'Marisa',
@@ -6137,7 +6137,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 13:19:38',
             'updated_at' => '2024-02-07 01:36:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mr.jamesmyers@gmail.com',
             'name' => 'James Myers',
             'first_name' => 'James',
@@ -6154,7 +6154,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 15:03:16',
             'updated_at' => '2023-08-26 11:12:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wizardofthecity@aol.com',
             'name' => 'Dana Evans',
             'first_name' => 'Dana',
@@ -6171,7 +6171,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 15:41:51',
             'updated_at' => '2023-11-16 05:07:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kab343@gmail.com',
             'name' => 'Kyle Bergman',
             'first_name' => 'Kyle',
@@ -6188,7 +6188,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 15:50:23',
             'updated_at' => '2023-08-26 13:06:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikekotek@hotmail.com',
             'name' => 'Michael Kotek',
             'first_name' => 'Michael',
@@ -6205,7 +6205,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 16:32:18',
             'updated_at' => '2023-08-26 14:08:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Naety@aol.com',
             'name' => 'Nadine McNeil',
             'first_name' => 'Nadine',
@@ -6222,7 +6222,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 17:03:40',
             'updated_at' => '2024-04-02 19:57:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marchesi.paolo@gmail.com',
             'name' => 'Paolo Marchesi',
             'first_name' => 'Paolo',
@@ -6239,7 +6239,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 17:17:07',
             'updated_at' => '2024-07-03 13:15:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'james.m.gilliard@gmail.com',
             'name' => 'James Gilliard',
             'first_name' => 'James',
@@ -6256,7 +6256,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 19:35:46',
             'updated_at' => '2023-08-26 11:12:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'daynaryan1@gmail.com',
             'name' => 'Dayna Ryan',
             'first_name' => 'Dayna',
@@ -6273,7 +6273,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 19:45:03',
             'updated_at' => '2023-08-26 10:27:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'daniel@sports-insider.de',
             'name' => 'Daniel Klarkowski',
             'first_name' => 'Daniel',
@@ -6290,7 +6290,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 19:56:23',
             'updated_at' => '2023-08-26 10:23:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robert.novo@macaulay.cuny.edu',
             'name' => 'Robert Novo',
             'first_name' => 'Robert',
@@ -6307,7 +6307,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 20:07:26',
             'updated_at' => '2023-08-26 14:46:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kim.mccoy.bsn@gmail.com',
             'name' => 'Kimberly McCoy',
             'first_name' => 'Kimberly',
@@ -6324,7 +6324,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 20:53:10',
             'updated_at' => '2023-08-26 13:03:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sharedrider2@gmail.com',
             'name' => 'Craig Jones',
             'first_name' => 'Craig',
@@ -6341,7 +6341,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 20:56:34',
             'updated_at' => '2023-08-26 10:21:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tm3291@aol.com',
             'name' => 'Trisha Masters',
             'first_name' => 'Trisha',
@@ -6358,7 +6358,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 20:58:09',
             'updated_at' => '2023-08-26 15:45:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'fraujen2u@gmail.com',
             'name' => 'Jennifer Keller',
             'first_name' => 'Jennifer',
@@ -6375,7 +6375,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 21:03:50',
             'updated_at' => '2023-11-28 02:27:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caitlin.samet@gmail.com',
             'name' => 'Caitlin Samet',
             'first_name' => 'Caitlin',
@@ -6392,7 +6392,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 21:11:17',
             'updated_at' => '2023-12-02 00:08:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eemclachlan@gmail.com',
             'name' => 'Erin Mclachlan',
             'first_name' => 'Erin',
@@ -6409,7 +6409,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 22:44:18',
             'updated_at' => '2023-08-26 10:53:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'christinedunne29@gmail.com',
             'name' => 'Christine Dunne',
             'first_name' => 'Christine',
@@ -6426,7 +6426,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 23:09:51',
             'updated_at' => '2024-01-05 18:40:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jyl2188@columbia.edu',
             'name' => 'James Lao',
             'first_name' => 'James',
@@ -6443,7 +6443,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-09 23:50:05',
             'updated_at' => '2023-08-26 11:12:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rmp299@nyu.edu',
             'name' => 'Rachel Presskreischer',
             'first_name' => 'Rachel',
@@ -6460,7 +6460,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 00:53:32',
             'updated_at' => '2023-08-26 14:40:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mariahowe96@gmail.com',
             'name' => 'Maria Howe',
             'first_name' => 'Maria',
@@ -6477,7 +6477,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 01:22:43',
             'updated_at' => '2023-08-26 13:53:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sebastianjmoreno32@gmail.com',
             'name' => 'John Moreno',
             'first_name' => 'John',
@@ -6494,7 +6494,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 01:26:33',
             'updated_at' => '2024-05-12 03:26:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'epzimmerman@yahoo.com',
             'name' => 'Eric Zimmerman',
             'first_name' => 'Eric',
@@ -6511,7 +6511,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 01:46:43',
             'updated_at' => '2023-08-26 10:52:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jamiemandel@mac.com',
             'name' => 'Jamie Mandel',
             'first_name' => 'Jamie',
@@ -6528,7 +6528,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 02:51:24',
             'updated_at' => '2023-08-26 11:13:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'TIMLIPOVSKY@GMAIL.COM',
             'name' => 'TIMOTHY LIPOVSKY',
             'first_name' => 'TIMOTHY',
@@ -6545,7 +6545,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 03:20:44',
             'updated_at' => '2023-08-26 15:42:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'scmiller16@gmail.com',
             'name' => 'Sarah Miller',
             'first_name' => 'Sarah',
@@ -6562,7 +6562,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 03:22:56',
             'updated_at' => '2024-07-03 13:15:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'MELLIOT9857@SBCGLOBAL.NET',
             'name' => 'MELANIE ELLIOT',
             'first_name' => 'MELANIE',
@@ -6579,7 +6579,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 03:35:30',
             'updated_at' => '2024-05-09 14:40:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kaligarita@gmail.com',
             'name' => 'Kali Garita',
             'first_name' => 'Kali',
@@ -6596,7 +6596,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 04:05:00',
             'updated_at' => '2023-08-26 12:53:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jjnicolekells@gmail.com',
             'name' => 'Jacqueline Kells',
             'first_name' => 'Jacqueline',
@@ -6613,7 +6613,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 04:51:33',
             'updated_at' => '2023-08-26 11:10:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eengel29@gmail.com',
             'name' => 'Eliza Engel',
             'first_name' => 'Eliza',
@@ -6630,7 +6630,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 05:24:56',
             'updated_at' => '2023-08-26 10:34:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rodrigosfernandes@gmail.com',
             'name' => 'Melissa Cortale',
             'first_name' => 'Melissa',
@@ -6647,7 +6647,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 05:48:49',
             'updated_at' => '2024-01-02 22:55:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ginardemeo@gmail.com',
             'name' => 'Gina DeMeo',
             'first_name' => 'Gina',
@@ -6664,7 +6664,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 06:10:20',
             'updated_at' => '2023-08-26 10:59:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'reneeberman@gmail.com',
             'name' => 'Renee Berman',
             'first_name' => 'Renee',
@@ -6681,7 +6681,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 06:49:09',
             'updated_at' => '2023-08-26 14:44:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'PDRAMIREZG@YAHOO.ES',
             'name' => 'Pierry Ramirez',
             'first_name' => 'Pierry',
@@ -6698,7 +6698,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 08:31:58',
             'updated_at' => '2024-02-25 00:58:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'leolw@optonline.net',
             'name' => 'Leol Williams',
             'first_name' => 'Leol',
@@ -6715,7 +6715,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 09:17:42',
             'updated_at' => '2023-08-26 13:42:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lisa.mcqueen@gmail.com',
             'name' => 'Alisa McQueen',
             'first_name' => 'Alisa',
@@ -6732,7 +6732,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 15:23:40',
             'updated_at' => '2023-08-26 11:41:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'patrickturek@gmail.com',
             'name' => 'Patrick Turek',
             'first_name' => 'Patrick',
@@ -6749,7 +6749,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 16:02:27',
             'updated_at' => '2023-08-26 14:35:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilyrosie427@gmail.com',
             'name' => 'Emily Rosenfeld',
             'first_name' => 'Emily',
@@ -6766,7 +6766,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 16:32:39',
             'updated_at' => '2023-08-26 10:48:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'falcofalcofalco@gmail.com',
             'name' => 'Nicholas Falco',
             'first_name' => 'Nicholas',
@@ -6783,7 +6783,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 16:53:19',
             'updated_at' => '2023-08-26 14:29:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophiapsyhojos@gmail.com',
             'name' => 'Sophia Psyhojos',
             'first_name' => 'Sophia',
@@ -6800,7 +6800,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 16:54:37',
             'updated_at' => '2023-08-26 15:32:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kaleighdonnelly04@gmail.com',
             'name' => 'Kaleigh Donnelly',
             'first_name' => 'Kaleigh',
@@ -6817,7 +6817,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:08:56',
             'updated_at' => '2023-08-26 12:53:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adamcook1212@gmail.com',
             'name' => 'Adam Cook',
             'first_name' => 'Adam',
@@ -6834,7 +6834,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:10:50',
             'updated_at' => '2023-08-26 11:36:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikelilly@gmail.com',
             'name' => 'Michael Lilly',
             'first_name' => 'Michael',
@@ -6851,7 +6851,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:18:58',
             'updated_at' => '2023-08-26 14:08:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gretchen.swarr@gmail.com',
             'name' => 'Gretchen Swarr',
             'first_name' => 'Gretchen',
@@ -6868,7 +6868,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:21:37',
             'updated_at' => '2023-08-26 11:01:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'patricia.crebase@cigna.com',
             'name' => 'Patricia Crebase',
             'first_name' => 'Patricia',
@@ -6885,7 +6885,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:23:27',
             'updated_at' => '2023-08-26 14:34:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cdvariam@comcast.net',
             'name' => 'Celina Variam',
             'first_name' => 'Celina',
@@ -6902,7 +6902,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:24:22',
             'updated_at' => '2023-08-26 10:12:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'staceylacomba@yahoo.com',
             'name' => 'Stacey Lacomba',
             'first_name' => 'Stacey',
@@ -6919,7 +6919,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:30:31',
             'updated_at' => '2024-02-07 00:19:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chapel.faye.tinius@gmail.com',
             'name' => 'Chapel Tinius',
             'first_name' => 'Chapel',
@@ -6936,7 +6936,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:34:41',
             'updated_at' => '2023-08-26 10:12:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jasmine.shay@gmail.com',
             'name' => 'Jasmine Lellock',
             'first_name' => 'Jasmine',
@@ -6953,7 +6953,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:36:34',
             'updated_at' => '2023-08-26 11:14:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bsimanski@gmail.com',
             'name' => 'Benjamin Simanski',
             'first_name' => 'Benjamin',
@@ -6970,7 +6970,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:37:49',
             'updated_at' => '2023-08-26 11:58:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robert.sanchas@gmail.com',
             'name' => 'Robert Sanchas',
             'first_name' => 'Robert',
@@ -6987,7 +6987,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:40:41',
             'updated_at' => '2023-12-06 20:03:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jacobryanbrown215@gmail.com',
             'name' => 'Jacob Brown',
             'first_name' => 'Jacob',
@@ -7004,7 +7004,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:46:41',
             'updated_at' => '2023-11-20 04:07:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gracefilled_life@yahoo.com',
             'name' => 'Kim Chadwell',
             'first_name' => 'Kim',
@@ -7021,7 +7021,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:47:31',
             'updated_at' => '2023-08-26 13:02:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kellyjacobs417@gmail.com',
             'name' => 'Kelly Jacobs',
             'first_name' => 'Kelly',
@@ -7038,7 +7038,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:47:52',
             'updated_at' => '2023-08-26 12:59:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pasc.perrottet@bluewin.ch',
             'name' => 'Pascale Perrottet',
             'first_name' => 'Pascale',
@@ -7055,7 +7055,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:49:36',
             'updated_at' => '2023-08-26 14:34:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jonesmr9@miamioh.edu',
             'name' => 'Morgan Jones',
             'first_name' => 'Morgan',
@@ -7072,7 +7072,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:52:46',
             'updated_at' => '2023-10-10 20:03:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rfrank3455@yahoo.com',
             'name' => 'Ryan Frank',
             'first_name' => 'Ryan',
@@ -7089,7 +7089,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 17:56:11',
             'updated_at' => '2023-08-26 14:50:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sgs723@gmail.com',
             'name' => 'Samantha Smith',
             'first_name' => 'Samantha',
@@ -7106,7 +7106,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 18:04:47',
             'updated_at' => '2023-08-26 14:52:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kimumbach1@gmail.com',
             'name' => 'Kim Umbach',
             'first_name' => 'Kim',
@@ -7123,7 +7123,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 18:08:17',
             'updated_at' => '2023-08-26 13:02:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mtesta996@gmail.com',
             'name' => 'Marco Testa',
             'first_name' => 'Marco',
@@ -7140,7 +7140,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 18:13:20',
             'updated_at' => '2023-08-26 13:52:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gwen.e.owens@gmail.com',
             'name' => 'Gwen Owens',
             'first_name' => 'Gwen',
@@ -7157,7 +7157,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 18:25:51',
             'updated_at' => '2023-08-26 11:02:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'auchingirls@gmail.com',
             'name' => 'Hannah Auchincloss',
             'first_name' => 'Hannah',
@@ -7174,7 +7174,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 18:33:50',
             'updated_at' => '2023-08-26 11:03:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kmmcanarney@yahoo.com',
             'name' => 'Katharine McAnarney',
             'first_name' => 'Katharine',
@@ -7191,7 +7191,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 18:52:01',
             'updated_at' => '2024-07-03 20:21:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mberry5782@gmail.com',
             'name' => 'Margaret Berry',
             'first_name' => 'Margaret',
@@ -7208,7 +7208,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 18:59:30',
             'updated_at' => '2024-06-23 00:12:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elettoVT@optimum.net',
             'name' => 'Alex Eletto',
             'first_name' => 'Alex',
@@ -7225,7 +7225,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 19:04:34',
             'updated_at' => '2024-04-29 02:46:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brad@martinsvilleymca.com',
             'name' => 'Brad Kinkema',
             'first_name' => 'Brad',
@@ -7242,7 +7242,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 19:26:20',
             'updated_at' => '2023-08-26 12:00:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erinspaulding@comcast.net',
             'name' => 'Erin Spaulding',
             'first_name' => 'Erin',
@@ -7259,7 +7259,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 19:28:13',
             'updated_at' => '2024-07-03 13:15:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anthony.bonamassa@gmail.com',
             'name' => 'Anthony Bonamassa',
             'first_name' => 'Anthony',
@@ -7276,7 +7276,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 19:35:23',
             'updated_at' => '2024-07-06 23:21:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jeffkennedy19@gmail.com',
             'name' => 'Jeffrey Kennedy',
             'first_name' => 'Jeffrey',
@@ -7293,7 +7293,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 19:40:22',
             'updated_at' => '2023-08-26 11:16:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jbdelabarthe@gmail.com',
             'name' => 'JB de Labarthe',
             'first_name' => 'JB',
@@ -7310,7 +7310,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 19:43:51',
             'updated_at' => '2023-08-26 11:15:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'axpfaia@gmail.com',
             'name' => 'Michael Faia',
             'first_name' => 'Michael',
@@ -7327,7 +7327,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 19:44:05',
             'updated_at' => '2024-07-15 22:07:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'megthehoffman@gmail.com',
             'name' => 'Megan Hoffman',
             'first_name' => 'Megan',
@@ -7344,7 +7344,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 19:47:16',
             'updated_at' => '2023-08-26 14:02:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'xhuang6301@gmail.com',
             'name' => 'Xinyan Huang',
             'first_name' => 'Xinyan',
@@ -7361,7 +7361,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 20:12:19',
             'updated_at' => '2023-08-26 15:51:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'majorano@sas.upenn.edu',
             'name' => 'Barbara Majorano',
             'first_name' => 'Barbara',
@@ -7378,7 +7378,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 20:12:31',
             'updated_at' => '2023-08-26 11:57:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stacyadeveau@gmail.com',
             'name' => 'Stacy Deveau',
             'first_name' => 'Stacy',
@@ -7395,7 +7395,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 20:22:28',
             'updated_at' => '2023-08-26 15:33:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'julie@juliemonello.com',
             'name' => 'Julie Monello',
             'first_name' => 'Julie',
@@ -7412,7 +7412,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 20:22:48',
             'updated_at' => '2023-08-26 12:51:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'audreymcaplan@gmail.com',
             'name' => 'Audrey Caplan',
             'first_name' => 'Audrey',
@@ -7429,7 +7429,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 20:28:11',
             'updated_at' => '2023-08-26 11:56:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikeferm@gmail.com',
             'name' => 'Michael Ferm',
             'first_name' => 'Michael',
@@ -7446,7 +7446,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 20:34:21',
             'updated_at' => '2023-08-26 14:08:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'klainphl@gmail.com',
             'name' => 'Karen Andersen',
             'first_name' => 'Karen',
@@ -7463,7 +7463,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 20:41:46',
             'updated_at' => '2023-08-26 12:54:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'folkes.ar@gmail.com',
             'name' => 'Ashlee Folkes',
             'first_name' => 'Ashlee',
@@ -7480,7 +7480,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 20:51:46',
             'updated_at' => '2023-08-26 11:54:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'meghanmcdonough325@gmail.com',
             'name' => 'Meghan McDonough',
             'first_name' => 'Meghan',
@@ -7497,7 +7497,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 21:19:26',
             'updated_at' => '2023-08-26 14:03:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pendleyelizabeth1@gmail.com',
             'name' => 'Elizabeth Pendley',
             'first_name' => 'Elizabeth',
@@ -7514,7 +7514,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 21:54:28',
             'updated_at' => '2023-08-26 10:35:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'peppyhun@yahoo.com',
             'name' => 'Devann Murphy',
             'first_name' => 'Devann',
@@ -7531,7 +7531,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 22:04:23',
             'updated_at' => '2024-03-22 02:48:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amy.courtney.harris@gmail.com',
             'name' => 'Amy Harris',
             'first_name' => 'Amy',
@@ -7548,7 +7548,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 22:15:45',
             'updated_at' => '2024-02-21 00:15:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rschmidt98@gmail.com',
             'name' => 'Rebecca Schmidt',
             'first_name' => 'Rebecca',
@@ -7565,7 +7565,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 22:31:04',
             'updated_at' => '2023-08-26 14:42:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nicolewright.patrick@gmail.com',
             'name' => 'Nicole Patrick',
             'first_name' => 'Nicole',
@@ -7582,7 +7582,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 22:34:35',
             'updated_at' => '2023-08-26 14:30:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielcombs@live.com',
             'name' => 'Daniel Combs',
             'first_name' => 'Daniel',
@@ -7599,7 +7599,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 23:23:01',
             'updated_at' => '2024-05-08 02:57:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'EMILY.GRIPP1@GMAIL.COM',
             'name' => 'Emily Gripp',
             'first_name' => 'Emily',
@@ -7616,7 +7616,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 23:29:39',
             'updated_at' => '2023-08-26 10:48:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'angkick@gmail.com',
             'name' => 'Angela Kicklighter',
             'first_name' => 'Angela',
@@ -7633,7 +7633,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-10 23:33:45',
             'updated_at' => '2023-08-26 11:49:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cjoy@dkp.com',
             'name' => 'Caroline Joy',
             'first_name' => 'Caroline',
@@ -7650,7 +7650,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 00:07:11',
             'updated_at' => '2023-08-26 10:09:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rv.alexander@gmail.com',
             'name' => 'Ronald Peet',
             'first_name' => 'Ronald',
@@ -7667,7 +7667,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 00:08:11',
             'updated_at' => '2024-04-29 02:03:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sq2139@gmail.com',
             'name' => 'Sisi Qiu',
             'first_name' => 'Sisi',
@@ -7684,7 +7684,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 00:14:40',
             'updated_at' => '2023-08-26 15:31:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'thewarners3@cox.net',
             'name' => 'Colleen Warner',
             'first_name' => 'Colleen',
@@ -7701,7 +7701,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 00:15:16',
             'updated_at' => '2023-08-26 10:19:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'shakira.soderstrom@gmail.com',
             'name' => 'Shakira Soderstrom',
             'first_name' => 'Shakira',
@@ -7718,7 +7718,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 00:20:35',
             'updated_at' => '2023-08-26 15:28:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lmshearer1@gmail.com',
             'name' => 'Lori Shearer',
             'first_name' => 'Lori',
@@ -7735,7 +7735,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 00:40:20',
             'updated_at' => '2023-08-26 13:46:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rac142@gmail.com',
             'name' => 'Robert Crescenzo',
             'first_name' => 'Robert',
@@ -7752,7 +7752,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 00:44:19',
             'updated_at' => '2023-08-26 14:46:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'scinnick@gmail.com',
             'name' => 'Samantha Cinnick',
             'first_name' => 'Samantha',
@@ -7769,7 +7769,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 00:50:42',
             'updated_at' => '2023-08-26 14:52:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'zoegompers@gmail.com',
             'name' => 'Zoe Gompers',
             'first_name' => 'Zoe',
@@ -7786,7 +7786,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 00:58:09',
             'updated_at' => '2023-08-26 15:54:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anniepill01@gmail.com',
             'name' => 'Annie Pill',
             'first_name' => 'Annie',
@@ -7803,7 +7803,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 01:05:33',
             'updated_at' => '2023-09-05 22:11:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'harmon.caroline97@gmail.com',
             'name' => 'Caroline Harmon',
             'first_name' => 'Caroline',
@@ -7820,7 +7820,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 01:45:46',
             'updated_at' => '2023-08-26 10:09:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lesley@lesleysellsnaples.com',
             'name' => 'Lesley Colantonio',
             'first_name' => 'Lesley',
@@ -7837,7 +7837,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 01:50:19',
             'updated_at' => '2024-07-19 03:35:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yoko.nitta@mac.com',
             'name' => 'Yoko Nitta',
             'first_name' => 'Yoko',
@@ -7854,7 +7854,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 01:52:42',
             'updated_at' => '2023-08-26 15:52:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'burgess.dianne@yahoo.com',
             'name' => 'Dianne Burgess',
             'first_name' => 'Dianne',
@@ -7871,7 +7871,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 01:52:45',
             'updated_at' => '2023-08-26 10:30:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sjk314@gmail.com',
             'name' => 'Samantha Klasfeld',
             'first_name' => 'Samantha',
@@ -7888,7 +7888,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 02:05:42',
             'updated_at' => '2023-08-26 14:52:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katybballplayer@gmail.com',
             'name' => 'Kathryn Sanchez',
             'first_name' => 'Kathryn',
@@ -7905,7 +7905,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 02:07:34',
             'updated_at' => '2024-01-20 01:52:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elliecsmith92@gmail.com',
             'name' => 'Ellie Smith',
             'first_name' => 'Ellie',
@@ -7922,7 +7922,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 02:08:48',
             'updated_at' => '2023-08-26 10:47:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caroline.eckman@gmail.com',
             'name' => 'Caroline Eckman',
             'first_name' => 'Caroline',
@@ -7939,7 +7939,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 02:32:09',
             'updated_at' => '2023-08-26 10:09:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'allysonjroesch@gmail.com',
             'name' => 'Allyson Roesch',
             'first_name' => 'Allyson',
@@ -7956,7 +7956,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 02:42:13',
             'updated_at' => '2024-04-24 02:26:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brent.scholar@icloud.com',
             'name' => 'Brent Scholar',
             'first_name' => 'Brent',
@@ -7973,7 +7973,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 03:25:59',
             'updated_at' => '2023-08-26 12:01:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'durbincg@gmail.com',
             'name' => 'Claudia Durbin',
             'first_name' => 'Claudia',
@@ -7990,7 +7990,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 03:59:54',
             'updated_at' => '2024-07-20 23:27:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bergmansar@gmail.com',
             'name' => 'Sarah Bergman',
             'first_name' => 'Sarah',
@@ -8007,7 +8007,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 04:05:42',
             'updated_at' => '2023-08-26 15:24:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juliedaigr@aol.com',
             'name' => 'Kate McCuen',
             'first_name' => 'Kate',
@@ -8024,7 +8024,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 05:04:44',
             'updated_at' => '2023-09-05 20:30:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'xraychoy@gmail.com',
             'name' => 'Raymond Choy',
             'first_name' => 'Raymond',
@@ -8041,7 +8041,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 05:06:32',
             'updated_at' => '2024-07-20 04:20:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katmcd22@gmail.com',
             'name' => 'Katharine McDonald',
             'first_name' => 'Katharine',
@@ -8058,7 +8058,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 05:07:15',
             'updated_at' => '2023-08-26 12:55:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kristin.twiford@gmail.com',
             'name' => 'Kristin Twiford',
             'first_name' => 'Kristin',
@@ -8075,7 +8075,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 05:11:48',
             'updated_at' => '2023-08-26 13:04:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mholl99@gmail.com',
             'name' => 'Marissa Holl',
             'first_name' => 'Marissa',
@@ -8092,7 +8092,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 06:34:32',
             'updated_at' => '2024-07-16 00:57:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cgaughran14@gmail.com',
             'name' => 'Colleen Gaughran',
             'first_name' => 'Colleen',
@@ -8109,7 +8109,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 08:00:55',
             'updated_at' => '2024-07-03 13:15:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jroman1445@aol.com',
             'name' => 'Jennifer Romanoff',
             'first_name' => 'Jennifer',
@@ -8126,7 +8126,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 10:21:03',
             'updated_at' => '2024-01-11 01:17:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ctresser@gmail.com',
             'name' => 'Callie Tresser',
             'first_name' => 'Callie',
@@ -8143,7 +8143,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 14:11:43',
             'updated_at' => '2023-12-22 22:36:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vivianecamerin@gmail.com',
             'name' => 'Viviane Camerin',
             'first_name' => 'Viviane',
@@ -8160,7 +8160,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 14:56:55',
             'updated_at' => '2023-08-26 15:48:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amgaydos66@gmail.com',
             'name' => 'Matthew Gaydos',
             'first_name' => 'Matthew',
@@ -8177,7 +8177,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 15:36:00',
             'updated_at' => '2024-07-16 13:14:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mcourcel@gmail.com',
             'name' => 'Martin Courcelles',
             'first_name' => 'Martin',
@@ -8194,7 +8194,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 15:47:29',
             'updated_at' => '2023-08-26 13:57:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hirscharielle@gmail.com',
             'name' => 'Arielle Hirsch',
             'first_name' => 'Arielle',
@@ -8211,7 +8211,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 16:14:01',
             'updated_at' => '2023-08-26 11:53:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'susanschwartzhh@gmail.com',
             'name' => 'Susan Schwartz',
             'first_name' => 'Susan',
@@ -8228,7 +8228,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 16:28:36',
             'updated_at' => '2023-11-18 18:26:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sirtiger@gmail.com',
             'name' => 'anthony chan',
             'first_name' => 'anthony',
@@ -8245,7 +8245,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 16:50:12',
             'updated_at' => '2024-06-07 01:41:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'a_zilberman@yahoo.com',
             'name' => 'Anna Park',
             'first_name' => 'Anna',
@@ -8262,7 +8262,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 16:56:23',
             'updated_at' => '2024-01-18 20:34:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'grant.palmer@gmail.com',
             'name' => 'Grant Palmer',
             'first_name' => 'Grant',
@@ -8279,7 +8279,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 16:56:52',
             'updated_at' => '2023-08-26 11:00:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dacuimaster@gmail.com',
             'name' => 'Daniel Cui',
             'first_name' => 'Daniel',
@@ -8296,7 +8296,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 17:38:30',
             'updated_at' => '2023-08-26 10:23:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tyson.warner.palmer@gmail.com',
             'name' => 'Tyson Palmer',
             'first_name' => 'Tyson',
@@ -8313,7 +8313,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 17:58:20',
             'updated_at' => '2023-09-05 20:30:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eitan.rothman@gmail.com',
             'name' => 'Eitan Rothman',
             'first_name' => 'Eitan',
@@ -8330,7 +8330,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 17:59:27',
             'updated_at' => '2023-08-26 10:33:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rdb@sdnjlaw.com',
             'name' => 'Bob Brown',
             'first_name' => 'Bob',
@@ -8347,7 +8347,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 18:07:07',
             'updated_at' => '2024-07-23 19:00:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elijahjelisavcic@gmail.com',
             'name' => 'Elijah Jelisavcic',
             'first_name' => 'Elijah',
@@ -8364,7 +8364,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 18:07:31',
             'updated_at' => '2023-08-26 10:34:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'michalkislev@hotmail.com',
             'name' => 'Asaf Kislev Reshef',
             'first_name' => 'Asaf',
@@ -8381,7 +8381,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 18:16:10',
             'updated_at' => '2024-07-29 23:26:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'claudiamoore10@icloud.com',
             'name' => 'Claudia Moore',
             'first_name' => 'Claudia',
@@ -8398,7 +8398,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 18:19:23',
             'updated_at' => '2023-09-05 20:25:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nklausner@dglaw.com',
             'name' => 'Neal Klausner',
             'first_name' => 'Neal',
@@ -8415,7 +8415,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 18:34:23',
             'updated_at' => '2023-08-26 14:28:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arendbroekmate1996@gmail.com',
             'name' => 'Arend broekmate',
             'first_name' => 'Arend',
@@ -8432,7 +8432,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 18:51:40',
             'updated_at' => '2023-08-26 11:52:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lanier.abigail@gmail.com',
             'name' => 'Abigail Shaw',
             'first_name' => 'Abigail',
@@ -8449,7 +8449,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 19:13:45',
             'updated_at' => '2024-06-03 19:02:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amfair@bu.edu',
             'name' => 'Alison Fairbairn',
             'first_name' => 'Alison',
@@ -8466,7 +8466,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 19:38:03',
             'updated_at' => '2023-08-26 11:41:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'margaret07richards@gmail.com',
             'name' => 'margaret Richards',
             'first_name' => 'margaret',
@@ -8483,7 +8483,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 19:40:13',
             'updated_at' => '2024-03-31 01:35:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kyla.aiuto@gmail.com',
             'name' => 'Kyla Aiuto',
             'first_name' => 'Kyla',
@@ -8500,7 +8500,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 19:50:37',
             'updated_at' => '2023-08-26 13:05:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'howard.ludlow@gmail.com',
             'name' => 'Howard Ludlow',
             'first_name' => 'Howard',
@@ -8517,7 +8517,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 20:01:04',
             'updated_at' => '2024-03-21 21:00:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ekeefe@cshnyc.org',
             'name' => 'Elise Keefe',
             'first_name' => 'Elise',
@@ -8534,7 +8534,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 20:58:06',
             'updated_at' => '2023-09-05 20:25:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'RunLindaLam@gmail.com',
             'name' => 'Linda Lam',
             'first_name' => 'Linda',
@@ -8551,7 +8551,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 21:09:29',
             'updated_at' => '2024-06-29 03:04:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mpembroke5@gmail.com',
             'name' => 'Matt Pembroke',
             'first_name' => 'Matt',
@@ -8568,7 +8568,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 21:15:24',
             'updated_at' => '2023-08-26 13:59:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'meredithm3@gmail.com',
             'name' => 'Meredith McIntosh',
             'first_name' => 'Meredith',
@@ -8585,7 +8585,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 21:36:58',
             'updated_at' => '2023-08-26 14:05:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aaeisenmenger@gmail.com',
             'name' => 'Ashley Eisenmenger',
             'first_name' => 'Ashley',
@@ -8602,7 +8602,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 21:45:44',
             'updated_at' => '2023-08-26 11:55:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tammybear72@gmail.com',
             'name' => 'Tammy M McKay',
             'first_name' => 'Tammy M',
@@ -8619,7 +8619,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 21:46:13',
             'updated_at' => '2023-08-26 15:38:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'luisah1385@gmail.com',
             'name' => 'LUIS AGUAYO',
             'first_name' => 'LUIS',
@@ -8636,7 +8636,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 21:48:23',
             'updated_at' => '2023-08-26 13:47:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'portcarly@gmail.com',
             'name' => 'Carly Port',
             'first_name' => 'Carly',
@@ -8653,7 +8653,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 21:57:17',
             'updated_at' => '2023-08-26 10:08:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'haley930@optonline.net',
             'name' => 'Haley Vavoules',
             'first_name' => 'Haley',
@@ -8670,7 +8670,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 22:08:24',
             'updated_at' => '2023-08-26 11:02:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ortizbanom@gmail.com',
             'name' => 'MARIO ORTIZ',
             'first_name' => 'MARIO',
@@ -8687,7 +8687,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 22:09:06',
             'updated_at' => '2024-02-24 08:40:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'giovanymerlo@gmail.com',
             'name' => 'WILSON MERLO',
             'first_name' => 'WILSON',
@@ -8704,7 +8704,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 22:23:04',
             'updated_at' => '2023-12-21 18:16:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'whitelioncub@earthlink.net',
             'name' => 'Timothy Gallagher',
             'first_name' => 'Timothy',
@@ -8721,7 +8721,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 22:41:26',
             'updated_at' => '2024-07-21 17:50:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'macampbell9@gmail.com',
             'name' => 'Mackenzie Campbell',
             'first_name' => 'Mackenzie',
@@ -8738,7 +8738,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 22:49:07',
             'updated_at' => '2023-08-26 13:48:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alyssa.coan@outlook.com',
             'name' => 'Alyssa Coan',
             'first_name' => 'Alyssa',
@@ -8755,7 +8755,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 22:53:37',
             'updated_at' => '2024-07-04 03:36:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'phillip@phillipmcsween.com',
             'name' => 'Phillip McSween',
             'first_name' => 'Phillip',
@@ -8772,7 +8772,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 23:12:42',
             'updated_at' => '2023-08-26 14:38:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cmaedasan@gmail.com',
             'name' => 'Christopher Maeda',
             'first_name' => 'Christopher',
@@ -8789,7 +8789,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 23:14:50',
             'updated_at' => '2023-08-26 10:17:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mdioriocat@aol.com',
             'name' => 'Marjorie Diorio',
             'first_name' => 'Marjorie',
@@ -8806,7 +8806,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 23:25:48',
             'updated_at' => '2023-08-26 13:56:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mmsantillo@gmail.com',
             'name' => 'Michaela Santillo',
             'first_name' => 'Michaela',
@@ -8823,7 +8823,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 23:48:40',
             'updated_at' => '2024-05-22 02:00:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'noaslevine2006@gmail.com',
             'name' => 'Noa Levine',
             'first_name' => 'Noa',
@@ -8840,7 +8840,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-11 23:48:55',
             'updated_at' => '2023-09-05 20:30:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lorih@mjhcpas.com',
             'name' => 'Lori Hendrick',
             'first_name' => 'Lori',
@@ -8857,7 +8857,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 00:14:00',
             'updated_at' => '2023-08-26 13:46:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mebranna@verizon.net',
             'name' => 'MaryEllen Branna',
             'first_name' => 'MaryEllen',
@@ -8874,7 +8874,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 01:10:03',
             'updated_at' => '2023-08-26 13:59:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mzilberg@aol.com',
             'name' => 'Jonathan Zilberg',
             'first_name' => 'Jonathan',
@@ -8891,7 +8891,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 01:12:14',
             'updated_at' => '2023-08-26 12:46:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ale15serrano@hotmail.com',
             'name' => 'ALEJANDRA SERRANO',
             'first_name' => 'ALEJANDRA',
@@ -8908,7 +8908,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 01:15:06',
             'updated_at' => '2023-08-26 11:38:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yreza.nyc@gmail.com',
             'name' => 'Yasmeen Reza',
             'first_name' => 'Yasmeen',
@@ -8925,7 +8925,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 01:29:13',
             'updated_at' => '2023-08-26 15:52:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marcleffler56@gmail.com',
             'name' => 'Marc Leffler',
             'first_name' => 'Marc',
@@ -8942,7 +8942,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 01:42:03',
             'updated_at' => '2023-08-26 13:52:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brook@blackshaw.us',
             'name' => 'Brook Blackshaw',
             'first_name' => 'Brook',
@@ -8959,7 +8959,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 01:47:12',
             'updated_at' => '2023-08-26 12:03:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'declan.b.cummings@gmail.com',
             'name' => 'Declan Cummings',
             'first_name' => 'Declan',
@@ -8976,7 +8976,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 01:53:18',
             'updated_at' => '2023-08-26 10:27:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kyleborah1234321@gmail.com',
             'name' => 'Kyle Borah',
             'first_name' => 'Kyle',
@@ -8993,7 +8993,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 02:12:27',
             'updated_at' => '2023-08-26 13:06:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'angelfares12@gmail.com',
             'name' => 'ANGEL FARES',
             'first_name' => 'ANGEL',
@@ -9010,7 +9010,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 02:28:54',
             'updated_at' => '2023-08-26 11:49:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kurt.helstrom@verizon.net',
             'name' => 'Kurt Helstrom',
             'first_name' => 'Kurt',
@@ -9027,7 +9027,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 02:37:25',
             'updated_at' => '2023-08-26 13:05:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'trenlema@gmail.com',
             'name' => 'HJOFRE LEMA',
             'first_name' => 'HJOFRE',
@@ -9044,7 +9044,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 02:37:49',
             'updated_at' => '2023-12-08 23:52:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wilsondelacruz1969@gmail.com',
             'name' => 'WILSON CRUZ',
             'first_name' => 'WILSON',
@@ -9061,7 +9061,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 02:48:45',
             'updated_at' => '2023-12-08 21:19:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dayannapozoamuy@hotmail.com',
             'name' => 'BRENDA POZO',
             'first_name' => 'BRENDA',
@@ -9078,7 +9078,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 03:02:54',
             'updated_at' => '2023-08-26 12:01:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elainelsankey@gmail.com',
             'name' => 'Ruth Sankey',
             'first_name' => 'Ruth',
@@ -9095,7 +9095,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 03:34:23',
             'updated_at' => '2023-11-29 04:39:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sisson.josh@gmail.com',
             'name' => 'Josh Sisson',
             'first_name' => 'Josh',
@@ -9112,7 +9112,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 03:43:30',
             'updated_at' => '2023-08-26 12:48:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'passle@roadrunner.com',
             'name' => 'Shirley Helminski',
             'first_name' => 'Shirley',
@@ -9129,7 +9129,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 04:00:46',
             'updated_at' => '2024-07-04 01:45:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kevindcarver@gmail.com',
             'name' => 'Kevin Carver',
             'first_name' => 'Kevin',
@@ -9146,7 +9146,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 04:34:42',
             'updated_at' => '2023-08-26 13:01:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cfree825@gmail.com',
             'name' => 'Cynthia Freeman',
             'first_name' => 'Cynthia',
@@ -9163,7 +9163,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 04:38:56',
             'updated_at' => '2024-04-29 18:44:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophiekaemmerle@gmail.com',
             'name' => 'Ann-Sophie Kaemmerle',
             'first_name' => 'Ann-Sophie',
@@ -9180,7 +9180,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 04:44:53',
             'updated_at' => '2023-08-26 11:50:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tsaltz83@gmail.com',
             'name' => 'Tori Saltz',
             'first_name' => 'Tori',
@@ -9197,7 +9197,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 05:08:55',
             'updated_at' => '2023-08-26 15:44:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'blessinda@gmail.com',
             'name' => 'Santa Rosario',
             'first_name' => 'Santa',
@@ -9214,7 +9214,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 05:12:47',
             'updated_at' => '2023-08-26 15:24:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'scassine@gmail.com',
             'name' => 'Silvina Cassinelli',
             'first_name' => 'Silvina',
@@ -9231,7 +9231,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 06:09:44',
             'updated_at' => '2024-02-07 21:52:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aldchat93@gmail.com',
             'name' => 'Dylan Chatkewitz',
             'first_name' => 'Dylan',
@@ -9248,7 +9248,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 06:17:04',
             'updated_at' => '2023-09-05 20:30:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eshire89@gmail.com',
             'name' => 'Emily Shire',
             'first_name' => 'Emily',
@@ -9265,7 +9265,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 07:22:44',
             'updated_at' => '2024-02-03 20:21:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aminagarau@gmail.com',
             'name' => 'Amina Garau',
             'first_name' => 'Amina',
@@ -9282,7 +9282,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 09:43:20',
             'updated_at' => '2023-08-26 11:45:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mgottlieb31@gmail.com',
             'name' => 'Mitchell Gottlieb',
             'first_name' => 'Mitchell',
@@ -9299,7 +9299,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 16:06:58',
             'updated_at' => '2024-07-01 00:58:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Maxmillupa@gmail.com',
             'name' => 'Maximilian Lupa',
             'first_name' => 'Maximilian',
@@ -9316,7 +9316,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 16:25:56',
             'updated_at' => '2023-08-26 14:01:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'susantayloryvr@gmail.com',
             'name' => 'Susan Taylor',
             'first_name' => 'Susan',
@@ -9333,7 +9333,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 16:59:35',
             'updated_at' => '2023-08-26 15:36:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jane.anderson@bell.net',
             'name' => 'Jane Anderson',
             'first_name' => 'Jane',
@@ -9350,7 +9350,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 17:10:07',
             'updated_at' => '2023-08-26 11:13:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tilly.e.pecker@gmail.com',
             'name' => 'Tilly Pecker',
             'first_name' => 'Tilly',
@@ -9367,7 +9367,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 17:13:10',
             'updated_at' => '2023-08-26 15:42:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'johntullygordon@gmail.com',
             'name' => 'John Gordon',
             'first_name' => 'John',
@@ -9384,7 +9384,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 17:21:17',
             'updated_at' => '2023-09-08 02:15:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lizanncohen@gmail.com',
             'name' => 'Elizabeth Cohen',
             'first_name' => 'Elizabeth',
@@ -9401,7 +9401,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 17:23:49',
             'updated_at' => '2023-08-26 10:35:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'thomas.brb@gmail.com',
             'name' => 'Thomas Barbe',
             'first_name' => 'Thomas',
@@ -9418,7 +9418,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 17:43:50',
             'updated_at' => '2023-08-26 15:41:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dpazmino.advocatus@gmail.com',
             'name' => 'DIEGO PAZMIÃ‘O',
             'first_name' => 'DIEGO',
@@ -9435,7 +9435,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 18:02:20',
             'updated_at' => '2023-08-26 10:30:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rachelerinmccoy@gmail.com',
             'name' => 'Rachel McCoy',
             'first_name' => 'Rachel',
@@ -9452,7 +9452,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 18:30:08',
             'updated_at' => '2023-08-26 14:40:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'byronect@outlook.com',
             'name' => 'BYRON CAMPAÃ‘A',
             'first_name' => 'BYRON',
@@ -9469,7 +9469,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 18:30:43',
             'updated_at' => '2023-08-26 12:04:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rebeccaterese@gmail.com',
             'name' => 'Amari Sanchez',
             'first_name' => 'Amari',
@@ -9486,7 +9486,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 18:37:39',
             'updated_at' => '2023-09-05 20:30:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Lisafliny@optonline.com',
             'name' => 'Lisa Marrin',
             'first_name' => 'Lisa',
@@ -9503,7 +9503,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 18:40:39',
             'updated_at' => '2024-07-15 16:34:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'atleta_bmay@yahoo.es',
             'name' => 'BYRON ESCOBAR',
             'first_name' => 'BYRON',
@@ -9520,7 +9520,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 18:55:28',
             'updated_at' => '2023-08-26 12:04:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jacksonfkemper@gmail.com',
             'name' => 'Jackson Kemper',
             'first_name' => 'Jackson',
@@ -9537,7 +9537,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 18:58:22',
             'updated_at' => '2023-08-26 11:09:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ks2019@alumni.stanford.edu',
             'name' => 'Kaitlin Schroeder',
             'first_name' => 'Kaitlin',
@@ -9554,7 +9554,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 19:36:43',
             'updated_at' => '2024-03-20 04:47:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marygaresche@gmail.com',
             'name' => 'Mary Garesche',
             'first_name' => 'Mary',
@@ -9571,7 +9571,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 19:59:08',
             'updated_at' => '2023-08-26 13:58:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eli7jc@gmail.com',
             'name' => 'Elisheva Jasie',
             'first_name' => 'Elisheva',
@@ -9588,7 +9588,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:04:28',
             'updated_at' => '2023-08-26 10:34:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '9tailedakatsuki@gmail.com',
             'name' => 'Roberto Ramos',
             'first_name' => 'Roberto',
@@ -9605,7 +9605,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:07:51',
             'updated_at' => '2023-08-26 14:47:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alyssaterk@gmail.com',
             'name' => 'Alyssa Terk',
             'first_name' => 'Alyssa',
@@ -9622,7 +9622,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:10:13',
             'updated_at' => '2023-09-19 19:26:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'iritmaor@gmail.com',
             'name' => 'Irit Maor',
             'first_name' => 'Irit',
@@ -9639,7 +9639,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:31:25',
             'updated_at' => '2023-08-26 11:07:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'quadar@gmail.com',
             'name' => 'Zeeshan Quadar',
             'first_name' => 'Zeeshan',
@@ -9656,7 +9656,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:34:45',
             'updated_at' => '2023-08-26 15:53:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tlway48@gmail.com',
             'name' => 'T Way',
             'first_name' => 'T',
@@ -9673,7 +9673,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:45:59',
             'updated_at' => '2023-08-26 15:37:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'magdelismagdelis@yahoo.com',
             'name' => 'Magdelis Davila',
             'first_name' => 'Magdelis',
@@ -9690,7 +9690,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:48:01',
             'updated_at' => '2023-08-26 13:50:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alison.raisian@gmail.com',
             'name' => 'Alison Raisian',
             'first_name' => 'Alison',
@@ -9707,7 +9707,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:50:28',
             'updated_at' => '2023-08-26 11:41:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ast004@bucknell.edu',
             'name' => 'Alex Tang',
             'first_name' => 'Alex',
@@ -9724,7 +9724,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:59:13',
             'updated_at' => '2023-08-26 11:38:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joeborchard@gmail.com',
             'name' => 'Joe Borchard',
             'first_name' => 'Joe',
@@ -9741,7 +9741,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 20:59:14',
             'updated_at' => '2023-08-26 12:42:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rahulanand0189@gmail.com',
             'name' => 'Rahul Anand',
             'first_name' => 'Rahul',
@@ -9758,7 +9758,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 21:04:27',
             'updated_at' => '2023-08-26 14:41:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'fraufamily@verizon.net',
             'name' => 'Angel Frau',
             'first_name' => 'Angel',
@@ -9775,7 +9775,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 21:05:42',
             'updated_at' => '2024-05-30 01:18:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'andyashwell5@gmail.com',
             'name' => 'Andrew Ashwell',
             'first_name' => 'Andrew',
@@ -9792,7 +9792,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 21:22:46',
             'updated_at' => '2023-08-26 11:48:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'riyanazafira@gmail.com',
             'name' => 'Riyana Razalee',
             'first_name' => 'Riyana',
@@ -9809,7 +9809,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 21:42:09',
             'updated_at' => '2023-08-26 14:46:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Newtrees@gmail.com',
             'name' => 'Etzion Neuer',
             'first_name' => 'Etzion',
@@ -9826,7 +9826,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 21:44:36',
             'updated_at' => '2023-08-26 10:54:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'debbyebrown@hotmail.com',
             'name' => 'Deborah Brown',
             'first_name' => 'Deborah',
@@ -9843,7 +9843,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 22:06:07',
             'updated_at' => '2023-10-05 23:21:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maustin736@gmail.com',
             'name' => 'Miranda Lehman',
             'first_name' => 'Miranda',
@@ -9860,7 +9860,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 22:28:50',
             'updated_at' => '2023-08-26 14:24:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mymayer1@gmail.com',
             'name' => 'Michelle Mayer',
             'first_name' => 'Michelle',
@@ -9877,7 +9877,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 22:34:19',
             'updated_at' => '2024-06-03 04:04:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ndhunter08@yahoo.com',
             'name' => 'Nekita Hunter',
             'first_name' => 'Nekita',
@@ -9894,7 +9894,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 22:36:49',
             'updated_at' => '2023-09-05 23:04:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juliebrail@yahoo.com',
             'name' => 'Julie Brail',
             'first_name' => 'Julie',
@@ -9911,7 +9911,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 22:40:14',
             'updated_at' => '2023-08-26 12:51:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tmustipher@gmail.com',
             'name' => 'Tamika Mustipher',
             'first_name' => 'Tamika',
@@ -9928,7 +9928,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 22:55:22',
             'updated_at' => '2024-03-12 21:45:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hannah.cohen25@trinityschoolnyc.org',
             'name' => 'Hannah Cohen',
             'first_name' => 'Hannah',
@@ -9945,7 +9945,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 23:11:33',
             'updated_at' => '2023-09-05 20:25:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Oamdur@gmail.com',
             'name' => 'Olivia Amdur',
             'first_name' => 'Olivia',
@@ -9962,7 +9962,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-12 23:44:18',
             'updated_at' => '2023-08-26 14:33:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rosealleva@gmail.com',
             'name' => 'Rose Alleva',
             'first_name' => 'Rose',
@@ -9979,7 +9979,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 00:14:44',
             'updated_at' => '2023-08-26 14:49:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'MOHAMMEDAHUSSAIN786@YAHOO.COM',
             'name' => 'mohammed Hussain',
             'first_name' => 'mohammed',
@@ -9996,7 +9996,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 00:29:38',
             'updated_at' => '2023-08-26 14:24:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bfishman@gmail.com',
             'name' => 'Ben Fishman',
             'first_name' => 'Ben',
@@ -10013,7 +10013,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 00:37:19',
             'updated_at' => '2023-08-26 11:58:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sampassow@gmail.com',
             'name' => 'Sam Passow',
             'first_name' => 'Sam',
@@ -10030,7 +10030,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 01:18:56',
             'updated_at' => '2024-06-11 01:03:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bpersitz@gmail.com',
             'name' => 'Benjamin Persitz',
             'first_name' => 'Benjamin',
@@ -10047,7 +10047,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 01:41:21',
             'updated_at' => '2023-09-17 21:05:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joshua.d.heinen@gmail.com',
             'name' => 'Joshua Heinen',
             'first_name' => 'Joshua',
@@ -10064,7 +10064,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 01:42:12',
             'updated_at' => '2024-06-21 02:10:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'strausslinda1@gmail.com',
             'name' => 'Linda Strauss',
             'first_name' => 'Linda',
@@ -10081,7 +10081,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 02:12:40',
             'updated_at' => '2024-03-10 15:36:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'samhw92@gmail.com',
             'name' => 'Sam Williams',
             'first_name' => 'Sam',
@@ -10098,7 +10098,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 02:13:07',
             'updated_at' => '2024-05-28 21:08:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adelmanl@bu.edu',
             'name' => 'Lauren Adelman',
             'first_name' => 'Lauren',
@@ -10115,7 +10115,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 02:39:16',
             'updated_at' => '2024-07-27 02:12:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'luiscavazos43@gmail.com',
             'name' => 'Luis Cavazos',
             'first_name' => 'Luis',
@@ -10132,7 +10132,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 02:40:34',
             'updated_at' => '2023-08-26 13:47:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikealcaide@gmail.com',
             'name' => 'Michael Alcaide',
             'first_name' => 'Michael',
@@ -10149,7 +10149,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 02:51:35',
             'updated_at' => '2023-08-26 14:08:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'thorntonjacqi5@gmail.com',
             'name' => 'jacqlyne thornton',
             'first_name' => 'jacqlyne',
@@ -10166,7 +10166,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 02:53:31',
             'updated_at' => '2023-08-26 12:36:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jhill1227@gmail.com',
             'name' => 'Jenni Dorsey-Spitz',
             'first_name' => 'Jenni',
@@ -10183,7 +10183,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 03:00:59',
             'updated_at' => '2023-08-26 12:36:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikeykim@gmail.com',
             'name' => 'Michael Kim',
             'first_name' => 'Michael',
@@ -10200,7 +10200,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 03:11:18',
             'updated_at' => '2023-08-26 14:08:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sarahaberman2@gmail.com',
             'name' => 'Sara Haberman',
             'first_name' => 'Sara',
@@ -10217,7 +10217,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 03:15:59',
             'updated_at' => '2023-08-26 15:24:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mrjjyoung@gmail.com',
             'name' => 'Jeremy Young',
             'first_name' => 'Jeremy',
@@ -10234,7 +10234,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 03:19:51',
             'updated_at' => '2023-09-05 23:04:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adamjkim@gmail.com',
             'name' => 'Adam Kim',
             'first_name' => 'Adam',
@@ -10251,7 +10251,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 03:20:01',
             'updated_at' => '2023-09-17 16:16:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kimhannah@gmail.com',
             'name' => 'Hannah Kim',
             'first_name' => 'Hannah',
@@ -10268,7 +10268,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 03:24:03',
             'updated_at' => '2023-08-26 11:03:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'martinezjuliana09@gmail.com',
             'name' => 'Juliana Martinez',
             'first_name' => 'Juliana',
@@ -10285,7 +10285,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 04:02:40',
             'updated_at' => '2024-03-07 02:54:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'miriamsamet@icloud.com',
             'name' => 'Miriam Samet',
             'first_name' => 'Miriam',
@@ -10302,7 +10302,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 04:47:12',
             'updated_at' => '2023-08-26 14:24:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jpmeyers7@gmail.com',
             'name' => 'Charlotte Meyers',
             'first_name' => 'Charlotte',
@@ -10319,7 +10319,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 04:50:18',
             'updated_at' => '2023-08-26 10:13:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jpmeyers7@yahoo.com',
             'name' => 'Benjamin Meyers',
             'first_name' => 'Benjamin',
@@ -10336,7 +10336,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 04:54:21',
             'updated_at' => '2023-09-05 20:30:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'james.keeley@hotmail.com',
             'name' => 'james keeley',
             'first_name' => 'james',
@@ -10353,7 +10353,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 05:07:26',
             'updated_at' => '2023-08-26 11:12:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jen99hwang@gmail.com',
             'name' => 'Jenny Hwang',
             'first_name' => 'Jenny',
@@ -10370,7 +10370,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 05:30:12',
             'updated_at' => '2024-07-16 19:43:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'daveddude2@aol.com',
             'name' => 'David Hyde',
             'first_name' => 'David',
@@ -10387,7 +10387,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 06:16:49',
             'updated_at' => '2023-08-26 10:25:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mlls.jhn@gmail.com',
             'name' => 'John Mills',
             'first_name' => 'John',
@@ -10404,7 +10404,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 06:49:52',
             'updated_at' => '2024-02-10 19:37:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mlls.cnr@gmail.com',
             'name' => 'Conor Mills',
             'first_name' => 'Conor',
@@ -10421,7 +10421,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 07:02:05',
             'updated_at' => '2023-08-26 10:20:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adolphson123@gmail.com',
             'name' => 'Andrew Adolphson',
             'first_name' => 'Andrew',
@@ -10438,7 +10438,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 07:06:04',
             'updated_at' => '2023-08-26 11:48:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'taylorkatkin@gmail.com',
             'name' => 'Taylor Atkin',
             'first_name' => 'Taylor',
@@ -10455,7 +10455,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 07:47:20',
             'updated_at' => '2023-08-26 15:39:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'leskin@optonline.net',
             'name' => 'Eric Leskin',
             'first_name' => 'Eric',
@@ -10472,7 +10472,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 15:26:07',
             'updated_at' => '2023-08-26 10:52:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tomdjenkins@yahoo.com',
             'name' => 'Thomas Jenkins',
             'first_name' => 'Thomas',
@@ -10489,7 +10489,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 15:28:15',
             'updated_at' => '2023-08-26 15:41:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joyceporter0629@gmail.com',
             'name' => 'Joyce Porter',
             'first_name' => 'Joyce',
@@ -10506,7 +10506,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 15:32:45',
             'updated_at' => '2023-08-26 12:49:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hugoguanais@gmail.com',
             'name' => 'Hugo Poli Guanais',
             'first_name' => 'Hugo',
@@ -10523,7 +10523,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 16:13:57',
             'updated_at' => '2023-08-26 11:06:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophienoeldodd@gmail.com',
             'name' => 'Sophie Dodd',
             'first_name' => 'Sophie',
@@ -10540,7 +10540,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 16:48:58',
             'updated_at' => '2023-08-26 15:32:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yoshikojo@gmail.com',
             'name' => 'Yoshiko Jo',
             'first_name' => 'Yoshiko',
@@ -10557,7 +10557,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 17:10:01',
             'updated_at' => '2023-08-26 15:52:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mialardiere@gmail.com',
             'name' => 'Mia Lardiere',
             'first_name' => 'Mia',
@@ -10574,7 +10574,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 17:34:42',
             'updated_at' => '2023-08-26 14:05:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sclarke221@msn.com',
             'name' => 'Sharon Clarke',
             'first_name' => 'Sharon',
@@ -10591,7 +10591,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 17:48:08',
             'updated_at' => '2024-01-12 19:20:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'monacom98@gmail.com',
             'name' => 'Matthew Monaco',
             'first_name' => 'Matthew',
@@ -10608,7 +10608,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 18:18:09',
             'updated_at' => '2023-08-26 14:00:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jon.aw24@gmail.com',
             'name' => 'Jonathan Aguilar',
             'first_name' => 'Jonathan',
@@ -10625,7 +10625,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 18:44:38',
             'updated_at' => '2023-08-26 12:46:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'christophersilver@gmail.com',
             'name' => 'Christopher Silver',
             'first_name' => 'Christopher',
@@ -10642,7 +10642,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 19:00:15',
             'updated_at' => '2023-08-26 10:17:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'john.donnell1@gmail.com',
             'name' => 'John Donnell',
             'first_name' => 'John',
@@ -10659,7 +10659,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 19:02:51',
             'updated_at' => '2023-08-26 12:43:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tctisell@gmail.com',
             'name' => 'Thomas Tisell',
             'first_name' => 'Thomas',
@@ -10676,7 +10676,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 19:41:05',
             'updated_at' => '2023-08-26 15:41:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amysaffell@yahoo.com',
             'name' => 'Amy Saffell',
             'first_name' => 'Amy',
@@ -10693,7 +10693,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 19:49:13',
             'updated_at' => '2023-08-26 11:46:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'malinco.jessica@gmail.com',
             'name' => 'Jessica Malinconico',
             'first_name' => 'Jessica',
@@ -10710,7 +10710,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 19:51:30',
             'updated_at' => '2023-11-02 05:19:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'megankdavis913@gmail.com',
             'name' => 'Megan Garden',
             'first_name' => 'Megan',
@@ -10727,7 +10727,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 20:09:55',
             'updated_at' => '2023-08-26 14:03:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'annettenowakowski@att.net',
             'name' => 'Annette Nowakowski',
             'first_name' => 'Annette',
@@ -10744,7 +10744,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 20:31:20',
             'updated_at' => '2023-08-26 11:51:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tony.cannavina@ey.com',
             'name' => 'Brian Cannavina',
             'first_name' => 'Brian',
@@ -10761,7 +10761,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 20:52:03',
             'updated_at' => '2024-07-29 19:38:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'playbbebe26@msn.com',
             'name' => 'Sagirah Ahmed Norris',
             'first_name' => 'Sagirah',
@@ -10778,7 +10778,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 21:00:25',
             'updated_at' => '2023-09-14 13:43:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Lmulstay@yahoo.com',
             'name' => 'Laura Mulstay',
             'first_name' => 'Laura',
@@ -10795,7 +10795,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 21:00:38',
             'updated_at' => '2023-08-26 13:39:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wolf67120@gmail.com',
             'name' => 'Erika Wolf',
             'first_name' => 'Erika',
@@ -10812,7 +10812,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 21:01:38',
             'updated_at' => '2023-08-26 10:52:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ashley.m.lekach@gmail.com',
             'name' => 'Ashley Lekach',
             'first_name' => 'Ashley',
@@ -10829,7 +10829,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 21:45:57',
             'updated_at' => '2023-08-26 11:55:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alyssagits@gmail.com',
             'name' => 'Alyssa Gits',
             'first_name' => 'Alyssa',
@@ -10846,7 +10846,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 21:53:06',
             'updated_at' => '2023-08-26 11:43:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anthonypopola@gmail.com',
             'name' => 'Connor Popola',
             'first_name' => 'Connor',
@@ -10863,7 +10863,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 21:58:34',
             'updated_at' => '2023-08-26 10:20:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tristan.wille@gmail.com',
             'name' => 'Tristan Wille',
             'first_name' => 'Tristan',
@@ -10880,7 +10880,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 22:10:03',
             'updated_at' => '2023-08-26 15:45:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ereddix21@gmail.com',
             'name' => 'Emily Reddix',
             'first_name' => 'Emily',
@@ -10897,7 +10897,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 22:19:24',
             'updated_at' => '2023-08-26 10:48:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carroll@pierce35.com',
             'name' => 'Carroll Pierce',
             'first_name' => 'Carroll',
@@ -10914,7 +10914,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 22:32:37',
             'updated_at' => '2023-08-26 10:10:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'christygadoury@gmail.com',
             'name' => 'Christine Gadoury',
             'first_name' => 'Christine',
@@ -10931,7 +10931,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 22:52:06',
             'updated_at' => '2023-08-26 10:16:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'xoerika4xo@yahoo.com',
             'name' => 'Erika Landa',
             'first_name' => 'Erika',
@@ -10948,7 +10948,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 23:06:29',
             'updated_at' => '2023-08-26 10:52:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laurieportner@gmail.com',
             'name' => 'Laurie Portner',
             'first_name' => 'Laurie',
@@ -10965,7 +10965,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 23:07:54',
             'updated_at' => '2023-08-26 13:40:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'clancelet@yahoo.com',
             'name' => 'Carol Ancelet',
             'first_name' => 'Carol',
@@ -10982,7 +10982,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-13 23:41:33',
             'updated_at' => '2023-08-26 10:09:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lkreinik@gmail.com',
             'name' => 'Lauren Kreinik',
             'first_name' => 'Lauren',
@@ -10999,7 +10999,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 00:19:07',
             'updated_at' => '2023-08-26 13:40:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vickyzhang2017@gmail.com',
             'name' => 'Victoria Zhang',
             'first_name' => 'Victoria',
@@ -11016,7 +11016,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 00:30:09',
             'updated_at' => '2023-08-26 15:47:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielle.stamand27@gmail.com',
             'name' => 'Danielle St Amand',
             'first_name' => 'Danielle',
@@ -11033,7 +11033,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 00:34:18',
             'updated_at' => '2023-08-26 10:24:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lhamo312@gmail.com',
             'name' => 'Pasang Lhamo',
             'first_name' => 'Pasang',
@@ -11050,7 +11050,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 01:30:52',
             'updated_at' => '2023-08-26 14:34:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jas868@cornell.edu',
             'name' => 'Julie Shields',
             'first_name' => 'Julie',
@@ -11067,7 +11067,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 01:44:38',
             'updated_at' => '2023-08-26 12:51:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'javierreyesn3@gmail.com',
             'name' => 'Javier Reyes',
             'first_name' => 'Javier',
@@ -11084,7 +11084,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 02:19:01',
             'updated_at' => '2023-09-05 20:25:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'seth.gaurav98@gmail.com',
             'name' => 'Gaurav Seth',
             'first_name' => 'Gaurav',
@@ -11101,7 +11101,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 03:20:12',
             'updated_at' => '2023-08-26 10:58:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'meggisarbs@gmail.com',
             'name' => 'Meghan Sarbanis',
             'first_name' => 'Meghan',
@@ -11118,7 +11118,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 03:22:09',
             'updated_at' => '2023-08-26 14:03:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bbuddy925@yahoo.com',
             'name' => 'Bonnie Eng',
             'first_name' => 'Bonnie',
@@ -11135,7 +11135,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 03:46:45',
             'updated_at' => '2024-05-22 07:05:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mkurtulik@gmail.com',
             'name' => 'Matthew Kurtulik',
             'first_name' => 'Matthew',
@@ -11152,7 +11152,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 04:02:42',
             'updated_at' => '2023-08-26 14:00:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gpig24@gmail.com',
             'name' => 'Gunnar Pignotti',
             'first_name' => 'Gunnar',
@@ -11169,7 +11169,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 04:50:38',
             'updated_at' => '2023-08-26 11:02:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bsleiendecker@gmail.com',
             'name' => 'Brock Leiendecker',
             'first_name' => 'Brock',
@@ -11186,7 +11186,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 04:54:08',
             'updated_at' => '2023-08-26 12:03:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cmccoy1956@gmail.com',
             'name' => 'Charles McCoy',
             'first_name' => 'Charles',
@@ -11203,7 +11203,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 05:19:09',
             'updated_at' => '2023-08-26 10:13:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elmer.lee@gmail.com',
             'name' => 'Elmer Lee',
             'first_name' => 'Elmer',
@@ -11220,7 +11220,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 05:21:26',
             'updated_at' => '2023-08-26 10:47:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jordana.fremed@gmail.com',
             'name' => 'Jordana Pleat',
             'first_name' => 'Jordana',
@@ -11237,7 +11237,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 05:30:15',
             'updated_at' => '2023-11-19 19:35:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'garrrobert9@gmail.com',
             'name' => 'Robert Garr',
             'first_name' => 'Robert',
@@ -11254,7 +11254,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 05:41:03',
             'updated_at' => '2024-03-15 22:11:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'oberholzerr@gmail.com',
             'name' => 'Roger Oberholzer',
             'first_name' => 'Roger',
@@ -11271,7 +11271,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 06:20:28',
             'updated_at' => '2023-08-26 14:48:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tessgavrielle@gmail.com',
             'name' => 'Tess Levinson',
             'first_name' => 'Tess',
@@ -11288,7 +11288,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 06:24:44',
             'updated_at' => '2024-04-08 06:14:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'khernandez1693@gmail.com',
             'name' => 'Kassandra Hernandez',
             'first_name' => 'Kassandra',
@@ -11305,7 +11305,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 06:55:45',
             'updated_at' => '2023-08-26 12:55:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kennyc559@gmail.com',
             'name' => 'Ken Clausell',
             'first_name' => 'Ken',
@@ -11322,7 +11322,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 08:10:51',
             'updated_at' => '2024-07-04 06:08:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jjohnson@nusmile.com',
             'name' => 'Jason Johnson',
             'first_name' => 'Jason',
@@ -11339,7 +11339,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 15:53:20',
             'updated_at' => '2023-11-18 05:03:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Amanda.Foisy@gmail.com',
             'name' => 'Amanda Foisy',
             'first_name' => 'Amanda',
@@ -11356,7 +11356,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 16:16:19',
             'updated_at' => '2024-06-25 05:19:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tmslesinski@gmail.com',
             'name' => 'Taylor Slesinski',
             'first_name' => 'Taylor',
@@ -11373,7 +11373,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 16:50:28',
             'updated_at' => '2024-03-28 16:25:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lvarsa@gmail.com',
             'name' => 'Lailo Varsa',
             'first_name' => 'Lailo',
@@ -11390,7 +11390,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 17:03:25',
             'updated_at' => '2024-07-15 18:32:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kristine.olli@gmail.com',
             'name' => 'Kristine Olli',
             'first_name' => 'Kristine',
@@ -11407,7 +11407,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 17:46:50',
             'updated_at' => '2024-03-19 19:10:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bayco13@hotmail.com',
             'name' => 'Martha Cordoba',
             'first_name' => 'Martha',
@@ -11424,7 +11424,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 17:59:51',
             'updated_at' => '2023-08-26 13:57:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'garbermadeline@gmail.com',
             'name' => 'Madeline Garber',
             'first_name' => 'Madeline',
@@ -11441,7 +11441,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 18:16:57',
             'updated_at' => '2023-08-26 13:49:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sharecycle08@gmail.com',
             'name' => 'Hugh Share',
             'first_name' => 'Hugh',
@@ -11458,7 +11458,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 18:38:47',
             'updated_at' => '2023-08-26 11:06:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mdmcculloch1@gmail.com',
             'name' => 'Michael McCulloch',
             'first_name' => 'Michael',
@@ -11475,7 +11475,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 18:45:18',
             'updated_at' => '2023-08-26 14:08:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'john.g.erwin.je@gmail.com',
             'name' => 'John Erwin',
             'first_name' => 'John',
@@ -11492,7 +11492,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 18:48:22',
             'updated_at' => '2023-10-13 16:35:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cosmotradinginc@gmail.com',
             'name' => 'Adnan Shamsi',
             'first_name' => 'Adnan',
@@ -11509,7 +11509,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 19:04:24',
             'updated_at' => '2023-08-26 11:36:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wgerard92@gmail.com',
             'name' => 'William Gerard',
             'first_name' => 'William',
@@ -11526,7 +11526,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 19:26:09',
             'updated_at' => '2023-08-26 15:50:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'parkerdwalsh@gmail.com',
             'name' => 'Parker Walsh',
             'first_name' => 'Parker',
@@ -11543,7 +11543,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 19:43:40',
             'updated_at' => '2023-08-26 14:34:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielle.cappadona@gmail.com',
             'name' => 'Danielle Cappadona',
             'first_name' => 'Danielle',
@@ -11560,7 +11560,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 19:54:39',
             'updated_at' => '2024-07-03 13:15:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anapaulamendoza@gmail.com',
             'name' => 'Ana Paula Mendoza Urrutia',
             'first_name' => 'Ana Paula',
@@ -11577,7 +11577,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 20:59:55',
             'updated_at' => '2023-08-26 11:46:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kelseej123@gmail.com',
             'name' => 'Kelsee Hill',
             'first_name' => 'Kelsee',
@@ -11594,7 +11594,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 21:28:07',
             'updated_at' => '2023-08-26 13:00:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'agm.milic@live.com',
             'name' => 'Milica Milic',
             'first_name' => 'Milica',
@@ -11611,7 +11611,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 22:02:48',
             'updated_at' => '2023-08-26 14:23:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mgcarmean@gmail.com',
             'name' => 'Marguerite Carmean',
             'first_name' => 'Marguerite',
@@ -11628,7 +11628,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 23:02:22',
             'updated_at' => '2023-08-26 13:53:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jennifer.m.salvatore@gmail.com',
             'name' => 'Jennifer Salvatore',
             'first_name' => 'Jennifer',
@@ -11645,7 +11645,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 23:08:36',
             'updated_at' => '2024-07-21 15:21:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arun.gaalla@gmail.com',
             'name' => 'Arun Gaalla',
             'first_name' => 'Arun',
@@ -11662,7 +11662,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 23:44:10',
             'updated_at' => '2024-04-10 22:26:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'angelaxyang@gmail.com',
             'name' => 'XIAOHAN Yang',
             'first_name' => 'XIAOHAN',
@@ -11679,7 +11679,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 23:45:49',
             'updated_at' => '2023-08-26 15:51:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Bevin.Bullock@gmail.com',
             'name' => 'Bevin Bullock',
             'first_name' => 'Bevin',
@@ -11696,7 +11696,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-14 23:50:46',
             'updated_at' => '2023-08-26 11:59:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'balleza.alro13@gmail.com',
             'name' => 'Alma Balleza',
             'first_name' => 'Alma',
@@ -11713,7 +11713,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 00:13:59',
             'updated_at' => '2024-05-31 04:18:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'apcdgg@aol.com',
             'name' => 'Deborah Groeber',
             'first_name' => 'Deborah',
@@ -11730,7 +11730,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 00:16:34',
             'updated_at' => '2024-01-05 23:02:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'shelina.kassam@gmail.com',
             'name' => 'Shelina Kassam',
             'first_name' => 'Shelina',
@@ -11747,7 +11747,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 00:19:52',
             'updated_at' => '2023-11-02 04:29:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'samzinman27@gmail.com',
             'name' => 'Samantha Zinman',
             'first_name' => 'Samantha',
@@ -11764,7 +11764,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 01:24:57',
             'updated_at' => '2023-08-26 14:52:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'csquire15@gmail.com',
             'name' => 'Clayton Squire',
             'first_name' => 'Clayton',
@@ -11781,7 +11781,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 02:58:32',
             'updated_at' => '2024-06-06 22:11:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pauline.november@gmail.com',
             'name' => 'Pauline November',
             'first_name' => 'Pauline',
@@ -11798,7 +11798,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 03:22:39',
             'updated_at' => '2023-08-26 14:36:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lawmom@optonline.net',
             'name' => 'Lori Leskin',
             'first_name' => 'Lori',
@@ -11815,7 +11815,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 04:15:24',
             'updated_at' => '2023-08-26 13:46:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophiezhang@gmail.com',
             'name' => 'Yuan Zhang',
             'first_name' => 'Yuan',
@@ -11832,7 +11832,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 06:12:41',
             'updated_at' => '2023-08-26 15:52:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tahneebaker10@gmail.com',
             'name' => 'Tahnee Baker',
             'first_name' => 'Tahnee',
@@ -11849,7 +11849,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 06:17:03',
             'updated_at' => '2023-08-26 15:37:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sadia.imran@live.com',
             'name' => 'Sadia Imran',
             'first_name' => 'Sadia',
@@ -11866,7 +11866,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 07:37:33',
             'updated_at' => '2023-08-26 14:51:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'oconnelljustin5@gmail.com',
             'name' => 'Justin Oconnell',
             'first_name' => 'Justin',
@@ -11883,7 +11883,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 08:54:14',
             'updated_at' => '2024-03-28 21:00:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rcorralachiles@hotmail.com',
             'name' => 'Ricardo Corral',
             'first_name' => 'Ricardo',
@@ -11900,7 +11900,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 10:40:56',
             'updated_at' => '2024-03-22 00:59:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kathryn.e.glessner@medtronic.com',
             'name' => 'Katie Glessner',
             'first_name' => 'Katie',
@@ -11917,7 +11917,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 12:15:48',
             'updated_at' => '2023-08-26 12:57:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'qnaqui@gmail.com',
             'name' => 'Qudsiya Naqui',
             'first_name' => 'Qudsiya',
@@ -11934,7 +11934,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 15:34:20',
             'updated_at' => '2023-08-26 14:39:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eli.g.karpe@gmail.com',
             'name' => 'Eli Karpe',
             'first_name' => 'Eli',
@@ -11951,7 +11951,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 17:51:18',
             'updated_at' => '2023-08-26 10:33:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dylankordic@gmail.com',
             'name' => 'Dylan Kordic',
             'first_name' => 'Dylan',
@@ -11968,7 +11968,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 19:05:49',
             'updated_at' => '2023-08-26 10:31:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jessicalimfh@yahoo.com',
             'name' => 'jessica Lim',
             'first_name' => 'jessica',
@@ -11985,7 +11985,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 19:25:19',
             'updated_at' => '2023-08-26 12:40:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amayav.andrea@gmail.com',
             'name' => 'andrea amaya',
             'first_name' => 'andrea',
@@ -12002,7 +12002,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 19:47:15',
             'updated_at' => '2023-08-26 11:47:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'leahmpcunningham@gmail.com',
             'name' => 'Leah Cunningham',
             'first_name' => 'Leah',
@@ -12019,7 +12019,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 19:59:12',
             'updated_at' => '2023-11-17 01:41:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'annalisa.merelli@gmail.com',
             'name' => 'Annalisa Merelli',
             'first_name' => 'Annalisa',
@@ -12036,7 +12036,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 20:07:28',
             'updated_at' => '2023-08-26 11:50:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laurensherwin@gmail.com',
             'name' => 'Lauren Sherwin',
             'first_name' => 'Lauren',
@@ -12053,7 +12053,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 20:29:26',
             'updated_at' => '2024-07-10 19:18:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hmcgowan94@gmail.com',
             'name' => 'Henry McGowan',
             'first_name' => 'Henry',
@@ -12070,7 +12070,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 20:30:08',
             'updated_at' => '2023-08-26 11:05:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kathe.soto5@gmail.com',
             'name' => 'Katherine Soto',
             'first_name' => 'Katherine',
@@ -12087,7 +12087,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 22:23:34',
             'updated_at' => '2023-08-26 12:55:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marilyn.wenzel@icloud.com',
             'name' => 'Marilyn Wenzel',
             'first_name' => 'Marilyn',
@@ -12104,7 +12104,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 22:41:18',
             'updated_at' => '2024-06-02 22:43:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'babsbiztri@gmail.com',
             'name' => 'Barbara Christianson',
             'first_name' => 'Barbara',
@@ -12121,7 +12121,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-15 23:18:55',
             'updated_at' => '2024-02-11 16:25:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'annahita100@gmail.com',
             'name' => 'Annahita Forghan',
             'first_name' => 'Annahita',
@@ -12138,7 +12138,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 01:31:16',
             'updated_at' => '2023-08-26 11:50:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'victor.weisberg@verizon.net',
             'name' => 'Victor Weisberg',
             'first_name' => 'Victor',
@@ -12155,7 +12155,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 01:48:37',
             'updated_at' => '2024-04-02 02:19:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kaitlyncestaro@yahoo.com',
             'name' => 'Kaitlyn Cestaro',
             'first_name' => 'Kaitlyn',
@@ -12172,7 +12172,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 02:57:25',
             'updated_at' => '2023-08-26 12:53:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lhulett9804@gmail.com',
             'name' => 'Robert Hulett',
             'first_name' => 'Robert',
@@ -12189,7 +12189,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 03:44:34',
             'updated_at' => '2023-09-09 02:40:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arich9130@gmail.com',
             'name' => 'Amanda Shaffer',
             'first_name' => 'Amanda',
@@ -12206,7 +12206,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 03:52:47',
             'updated_at' => '2023-08-26 11:44:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'reagan.menz@nyulangone.org',
             'name' => 'Reagan Menz',
             'first_name' => 'Reagan',
@@ -12223,7 +12223,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 04:17:48',
             'updated_at' => '2023-10-04 02:42:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ciaraduggan98@gmail.com',
             'name' => 'Ciara Duggan',
             'first_name' => 'Ciara',
@@ -12240,7 +12240,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 05:22:07',
             'updated_at' => '2023-08-26 10:18:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'grace.ortelere@gmail.com',
             'name' => 'Grace Ortelere',
             'first_name' => 'Grace',
@@ -12257,7 +12257,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 07:12:23',
             'updated_at' => '2023-08-26 11:00:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'craftingatthenest@bellsouth.net',
             'name' => 'Cindy Bosnyak',
             'first_name' => 'Cindy',
@@ -12274,7 +12274,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 17:45:55',
             'updated_at' => '2024-07-22 19:34:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'apcdgg@gmail.com',
             'name' => 'Anthony Cirillo',
             'first_name' => 'Anthony',
@@ -12291,7 +12291,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 22:33:57',
             'updated_at' => '2023-08-26 11:51:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mbaygood@att.net',
             'name' => 'Madelyn Baygood',
             'first_name' => 'Madelyn',
@@ -12308,7 +12308,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 22:38:54',
             'updated_at' => '2023-08-26 13:50:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kellsie.fink@gmail.com',
             'name' => 'Kellsie Fink',
             'first_name' => 'Kellsie',
@@ -12325,7 +12325,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 22:53:17',
             'updated_at' => '2023-08-26 12:59:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dbowmanbda@hotmail.com',
             'name' => 'Donald Bowman',
             'first_name' => 'Donald',
@@ -12342,7 +12342,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 23:21:10',
             'updated_at' => '2023-08-26 10:30:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robdowney83@yahoo.com',
             'name' => 'Rob Downey',
             'first_name' => 'Rob',
@@ -12359,7 +12359,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-16 23:25:53',
             'updated_at' => '2023-08-26 14:46:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'federica.brandizzi@gmail.com',
             'name' => 'Federica Brandizzi',
             'first_name' => 'Federica',
@@ -12376,7 +12376,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 02:08:08',
             'updated_at' => '2023-11-09 02:28:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'barbaracampbell7@yahoo.com',
             'name' => 'Barbara Campbell',
             'first_name' => 'Barbara',
@@ -12393,7 +12393,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 02:24:44',
             'updated_at' => '2024-07-21 07:11:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carolmorman@gmail.com',
             'name' => 'Carol Morman',
             'first_name' => 'Carol',
@@ -12410,7 +12410,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 04:12:14',
             'updated_at' => '2024-05-26 04:49:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ybolortuya@mac.com',
             'name' => 'Yunren Bolortuya',
             'first_name' => 'Yunren',
@@ -12427,7 +12427,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 04:40:31',
             'updated_at' => '2023-08-26 15:53:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carlybrail@gmail.com',
             'name' => 'Carly Brail',
             'first_name' => 'Carly',
@@ -12444,7 +12444,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 04:44:13',
             'updated_at' => '2023-09-05 21:05:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jamielsue@gmail.com',
             'name' => 'Susan Jamiel',
             'first_name' => 'Susan',
@@ -12461,7 +12461,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 04:47:25',
             'updated_at' => '2023-08-26 15:36:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'esrunnergirl@gmail.com',
             'name' => 'Eleanor Scherck',
             'first_name' => 'Eleanor',
@@ -12478,7 +12478,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 05:09:31',
             'updated_at' => '2023-08-26 10:33:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'abbyrwax@gmail.com',
             'name' => 'Abigail Wax',
             'first_name' => 'Abigail',
@@ -12495,7 +12495,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 05:10:06',
             'updated_at' => '2023-08-26 11:35:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'spustell@caretaker-021.org',
             'name' => 'Steve Pustell',
             'first_name' => 'Steve',
@@ -12512,7 +12512,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 05:25:49',
             'updated_at' => '2023-08-26 15:35:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'n.bou@me.com',
             'name' => 'Nydia Bou',
             'first_name' => 'Nydia',
@@ -12529,7 +12529,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 05:50:41',
             'updated_at' => '2023-08-26 14:32:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vdubya89@gmail.com',
             'name' => 'Vanessa Wood',
             'first_name' => 'Vanessa',
@@ -12546,7 +12546,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 06:39:21',
             'updated_at' => '2023-08-26 15:46:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'john.godwin@cox.net',
             'name' => 'John Godwin',
             'first_name' => 'John',
@@ -12563,7 +12563,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 06:41:44',
             'updated_at' => '2023-08-26 12:43:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mschneider729@gmail.com',
             'name' => 'Margaret Schneider',
             'first_name' => 'Margaret',
@@ -12580,7 +12580,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 06:45:31',
             'updated_at' => '2023-08-26 13:52:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vparker1973@gmail.com',
             'name' => 'Vanessa Parker',
             'first_name' => 'Vanessa',
@@ -12597,7 +12597,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 07:01:17',
             'updated_at' => '2023-08-26 15:46:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'trege96@gmail.com',
             'name' => 'Tanya Rege',
             'first_name' => 'Tanya',
@@ -12614,7 +12614,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 13:56:16',
             'updated_at' => '2023-08-26 15:38:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jmldn@google.com',
             'name' => 'John Muldoon',
             'first_name' => 'John',
@@ -12631,7 +12631,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 14:48:15',
             'updated_at' => '2023-08-26 12:43:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilyjthilo@gmail.com',
             'name' => 'Emily Thilo',
             'first_name' => 'Emily',
@@ -12648,7 +12648,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 15:22:17',
             'updated_at' => '2023-08-26 10:49:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joe.walsh@adaptivesportsne.org',
             'name' => 'Joe Walsh',
             'first_name' => 'Joe',
@@ -12665,7 +12665,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 15:33:02',
             'updated_at' => '2023-08-26 12:42:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kelly7wolfle@gmail.com',
             'name' => 'Kelly Wolfle',
             'first_name' => 'Kelly',
@@ -12682,7 +12682,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 16:55:14',
             'updated_at' => '2023-08-26 12:59:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davidhart.org@gmail.com',
             'name' => 'David Hart',
             'first_name' => 'David',
@@ -12699,7 +12699,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 17:41:12',
             'updated_at' => '2024-07-01 19:38:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'beckyjdoster@gmail.com',
             'name' => 'Becky Doster',
             'first_name' => 'Becky',
@@ -12716,7 +12716,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 17:48:43',
             'updated_at' => '2023-08-26 11:57:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brandongarnierwinkler@gmail.com',
             'name' => 'Brandon Garnier Winkler',
             'first_name' => 'Brandon',
@@ -12733,7 +12733,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 18:05:53',
             'updated_at' => '2023-08-26 12:01:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'david.p.morse@gmail.com',
             'name' => 'David Morse',
             'first_name' => 'David',
@@ -12750,7 +12750,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 18:19:33',
             'updated_at' => '2023-08-26 10:25:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amillerperrin@gmail.com',
             'name' => 'Alexandra Perrin',
             'first_name' => 'Alexandra',
@@ -12767,7 +12767,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 18:21:57',
             'updated_at' => '2023-08-26 11:40:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rosellen.grant@gmail.com',
             'name' => 'Rosellen Grant',
             'first_name' => 'Rosellen',
@@ -12784,7 +12784,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 18:40:05',
             'updated_at' => '2024-05-09 08:46:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jgares@comcast.net',
             'name' => 'John Gares',
             'first_name' => 'John',
@@ -12801,7 +12801,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 18:49:04',
             'updated_at' => '2023-08-26 12:43:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'harrigke@gmail.com',
             'name' => 'Kelly Harrigan',
             'first_name' => 'Kelly',
@@ -12818,7 +12818,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 19:10:31',
             'updated_at' => '2023-08-26 12:59:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'annacruser@gmail.com',
             'name' => 'Anna Cruser',
             'first_name' => 'Anna',
@@ -12835,7 +12835,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 19:37:20',
             'updated_at' => '2023-08-26 11:50:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rebeccalindenbaum@gmail.com',
             'name' => 'Rebecca Lindenbaum',
             'first_name' => 'Rebecca',
@@ -12852,7 +12852,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 20:21:21',
             'updated_at' => '2024-07-12 22:34:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carriegoodian13@gmail.com',
             'name' => 'Carrie Goodian',
             'first_name' => 'Carrie',
@@ -12869,7 +12869,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 20:30:35',
             'updated_at' => '2023-08-26 10:10:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'daloyo16@gmail.com',
             'name' => 'Daniel Loyo',
             'first_name' => 'Daniel',
@@ -12886,7 +12886,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 20:43:11',
             'updated_at' => '2023-08-26 10:23:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bridges.katie2@gmail.com',
             'name' => 'Samantha Bridges',
             'first_name' => 'Samantha',
@@ -12903,7 +12903,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 21:37:47',
             'updated_at' => '2023-08-26 14:53:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jokunharper@gmail.com',
             'name' => 'Jessica Harper',
             'first_name' => 'Jessica',
@@ -12920,7 +12920,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 21:41:54',
             'updated_at' => '2023-08-26 12:40:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bingamanmaya@yahoo.com',
             'name' => 'Maya Bingaman',
             'first_name' => 'Maya',
@@ -12937,7 +12937,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 22:35:40',
             'updated_at' => '2023-08-26 14:01:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'avammckeel@gmail.com',
             'name' => 'Ava McKeel',
             'first_name' => 'Ava',
@@ -12954,7 +12954,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 23:14:57',
             'updated_at' => '2023-08-26 11:56:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ryanmcmanemin@icloud.com',
             'name' => 'Ryan McManemin',
             'first_name' => 'Ryan',
@@ -12971,7 +12971,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 23:15:11',
             'updated_at' => '2024-07-03 13:15:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexandrapopkin@gmail.com',
             'name' => 'Alexandra Popkin',
             'first_name' => 'Alexandra',
@@ -12988,7 +12988,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 23:22:14',
             'updated_at' => '2023-08-26 11:40:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yabdielyssofiasilva@gmail.com',
             'name' => 'Yabdielys Silva',
             'first_name' => 'Yabdielys',
@@ -13005,7 +13005,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-17 23:47:14',
             'updated_at' => '2023-08-26 15:51:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'justgrit@gmail.com',
             'name' => 'Margaret Rorrio',
             'first_name' => 'Margaret',
@@ -13022,7 +13022,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 00:00:58',
             'updated_at' => '2023-11-03 18:55:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mgramer@gmail.com',
             'name' => 'Michael Gramer',
             'first_name' => 'Michael',
@@ -13039,7 +13039,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 00:10:17',
             'updated_at' => '2023-08-26 14:08:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mslorna1@hotmail.com',
             'name' => 'Lorna Alvaranga',
             'first_name' => 'Lorna',
@@ -13056,7 +13056,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 00:19:34',
             'updated_at' => '2023-10-18 17:36:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'csestak3@gmail.com',
             'name' => 'Connor Sestak',
             'first_name' => 'Connor',
@@ -13073,7 +13073,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 00:54:06',
             'updated_at' => '2023-08-26 10:20:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mfp2128@barnard.edu',
             'name' => 'Margaux Pisciotta',
             'first_name' => 'Margaux',
@@ -13090,7 +13090,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 01:06:07',
             'updated_at' => '2023-08-26 13:53:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ddomian@hotmail.com',
             'name' => 'Danae Domian',
             'first_name' => 'Danae',
@@ -13107,7 +13107,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 01:14:22',
             'updated_at' => '2023-08-26 10:22:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'raj.karnani@gmail.com',
             'name' => 'Rajesh Karnani',
             'first_name' => 'Rajesh',
@@ -13124,7 +13124,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 02:49:54',
             'updated_at' => '2023-08-26 14:41:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jdsmms@me.com',
             'name' => 'Marian Sutton',
             'first_name' => 'Marian',
@@ -13141,7 +13141,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 02:55:01',
             'updated_at' => '2023-12-12 18:23:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'suturb2015@icloud.com',
             'name' => 'Fortunato Procopio',
             'first_name' => 'Fortunato',
@@ -13158,7 +13158,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 02:59:12',
             'updated_at' => '2023-08-26 10:55:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dbj@intechno.com',
             'name' => 'Barbara Scott',
             'first_name' => 'Barbara',
@@ -13175,7 +13175,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 03:09:45',
             'updated_at' => '2024-04-29 18:20:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jaz.tay@gmail.com',
             'name' => 'Harry Houng-Lee',
             'first_name' => 'Harry',
@@ -13192,7 +13192,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 03:50:20',
             'updated_at' => '2024-02-07 22:15:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cheweylam@gmail.com',
             'name' => 'Chewey Lam',
             'first_name' => 'Chewey',
@@ -13209,7 +13209,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 04:08:17',
             'updated_at' => '2023-10-27 18:56:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'claire.yi512@gmail.com',
             'name' => 'Claire Yi',
             'first_name' => 'Claire',
@@ -13226,7 +13226,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 04:16:21',
             'updated_at' => '2023-08-26 10:18:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'blackodevil@gmail.com',
             'name' => 'Sean Porter',
             'first_name' => 'Sean',
@@ -13243,7 +13243,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 04:16:25',
             'updated_at' => '2023-10-07 08:20:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gillian.zipursky@gmail.com',
             'name' => 'Gillian Zipursky',
             'first_name' => 'Gillian',
@@ -13260,7 +13260,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 04:24:58',
             'updated_at' => '2023-08-26 10:59:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'richardvpham@gmail.com',
             'name' => 'Richard Pham',
             'first_name' => 'Richard',
@@ -13277,7 +13277,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 04:28:23',
             'updated_at' => '2023-08-26 14:44:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kieronar@gmail.com',
             'name' => 'Kieron Ragoonath',
             'first_name' => 'Kieron',
@@ -13294,7 +13294,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 05:12:30',
             'updated_at' => '2024-07-17 18:59:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vdelcid1@gmail.com',
             'name' => 'vincent Del-Cid',
             'first_name' => 'vincent',
@@ -13311,7 +13311,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 05:24:00',
             'updated_at' => '2023-08-26 15:47:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chakrabortylauren@gmail.com',
             'name' => 'Lauren Chakraborty',
             'first_name' => 'Lauren',
@@ -13328,7 +13328,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 05:40:36',
             'updated_at' => '2024-07-03 13:15:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Jibeslc10@gmail.com',
             'name' => 'Suzanne Corrie Del-Cid',
             'first_name' => 'Suzanne',
@@ -13345,7 +13345,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 05:42:24',
             'updated_at' => '2023-08-26 15:37:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ababaian@aol.com',
             'name' => 'Alexandra Lippens',
             'first_name' => 'Alexandra',
@@ -13362,7 +13362,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 06:00:55',
             'updated_at' => '2023-08-26 11:40:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'francesca.vansant@gmail.com',
             'name' => 'Francesca Van Sant',
             'first_name' => 'Francesca',
@@ -13379,7 +13379,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 06:14:41',
             'updated_at' => '2023-08-26 10:56:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'isogawa@home.email.ne.jp',
             'name' => 'Hiroaki Isogawa',
             'first_name' => 'Hiroaki',
@@ -13396,7 +13396,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 08:55:53',
             'updated_at' => '2023-08-26 11:05:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gcbrugo@gmail.com',
             'name' => 'Graham Brugo',
             'first_name' => 'Graham',
@@ -13413,7 +13413,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 10:13:23',
             'updated_at' => '2023-08-26 11:00:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marieke.dressler@gmx.de',
             'name' => 'Inna Mai',
             'first_name' => 'Inna',
@@ -13430,7 +13430,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 10:34:16',
             'updated_at' => '2024-02-24 13:02:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mitchell.emilyp@gmail.com',
             'name' => 'Emily Mitchell',
             'first_name' => 'Emily',
@@ -13447,7 +13447,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 15:50:52',
             'updated_at' => '2023-09-11 19:51:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stephanie.wank6@gmail.com',
             'name' => 'Stephanie Wank',
             'first_name' => 'Stephanie',
@@ -13464,7 +13464,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 16:36:31',
             'updated_at' => '2023-08-26 15:33:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chrisdeneen61@gmail.com',
             'name' => 'Chris Deneen',
             'first_name' => 'Chris',
@@ -13481,7 +13481,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 16:56:44',
             'updated_at' => '2023-08-26 10:14:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Alexis.parente2@gmail.com',
             'name' => 'Alexis Parente',
             'first_name' => 'Alexis',
@@ -13498,7 +13498,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 16:56:52',
             'updated_at' => '2023-08-26 11:41:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'taylor.ee.smith@gmail.com',
             'name' => 'Taylor Smith',
             'first_name' => 'Taylor',
@@ -13515,7 +13515,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 17:16:48',
             'updated_at' => '2023-12-04 20:29:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'harrysinger21@gmail.com',
             'name' => 'Harry Singer',
             'first_name' => 'Harry',
@@ -13532,7 +13532,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 17:25:01',
             'updated_at' => '2023-08-26 11:03:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nina.heebink@gmail.com',
             'name' => 'Remi Schmidt',
             'first_name' => 'Remi',
@@ -13549,7 +13549,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 17:30:47',
             'updated_at' => '2023-09-05 20:30:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lesendejesus@yahoo.com',
             'name' => 'Juan De Jesus',
             'first_name' => 'Juan',
@@ -13566,7 +13566,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 19:16:30',
             'updated_at' => '2023-08-26 12:49:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lily.h.beveridge@gmail.com',
             'name' => 'Lily Beveridge',
             'first_name' => 'Lily',
@@ -13583,7 +13583,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 20:22:41',
             'updated_at' => '2023-08-26 13:42:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tykanoya.events@gmail.com',
             'name' => 'Tyson Kanoya',
             'first_name' => 'Tyson',
@@ -13600,7 +13600,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 20:37:31',
             'updated_at' => '2023-08-26 15:45:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'info@alexalorro.com',
             'name' => 'Alex Alorro',
             'first_name' => 'Alex',
@@ -13617,7 +13617,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 20:56:31',
             'updated_at' => '2023-08-26 11:38:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilyleakaufman@gmail.com',
             'name' => 'Emily Kaufman',
             'first_name' => 'Emily',
@@ -13634,7 +13634,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 21:14:21',
             'updated_at' => '2023-08-26 10:49:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jsafferstein@gmail.com',
             'name' => 'Julie Safferstein',
             'first_name' => 'Julie',
@@ -13651,7 +13651,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 22:05:17',
             'updated_at' => '2024-07-03 20:12:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'theodora.yoch@gmail.com',
             'name' => 'Theodora Yoch',
             'first_name' => 'Theodora',
@@ -13668,7 +13668,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 22:14:35',
             'updated_at' => '2023-08-26 15:40:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophw1000@gmail.com',
             'name' => 'Sophia Watts',
             'first_name' => 'Sophia',
@@ -13685,7 +13685,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 22:50:09',
             'updated_at' => '2024-05-30 01:28:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'christian.j.mclaughlin@gmail.com',
             'name' => 'Christian McLaughlin',
             'first_name' => 'Christian',
@@ -13702,7 +13702,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 22:58:33',
             'updated_at' => '2023-08-26 10:15:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bkarav@gmail.com',
             'name' => 'Blake Karavas',
             'first_name' => 'Blake',
@@ -13719,7 +13719,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 23:04:43',
             'updated_at' => '2023-08-26 12:00:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chsonntag@aol.com',
             'name' => 'Christopher Sonntag',
             'first_name' => 'Christopher',
@@ -13736,7 +13736,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 23:41:00',
             'updated_at' => '2023-08-26 10:17:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'natalie.receipts@gmail.com',
             'name' => 'Natalie Lynch',
             'first_name' => 'Natalie',
@@ -13753,7 +13753,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-18 23:50:20',
             'updated_at' => '2023-08-26 14:27:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jerseygrl07960@yahoo.com',
             'name' => 'Victoria Kendra',
             'first_name' => 'Victoria',
@@ -13770,7 +13770,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 00:19:11',
             'updated_at' => '2023-08-26 15:47:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cdharden24@gmail.com',
             'name' => 'Caldewll Harden',
             'first_name' => 'Caldewll',
@@ -13787,7 +13787,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 00:52:16',
             'updated_at' => '2023-08-26 10:06:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'diego.a.lacayo@gmail.com',
             'name' => 'Diego Lacayo',
             'first_name' => 'Diego',
@@ -13804,7 +13804,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 01:00:49',
             'updated_at' => '2024-07-14 19:50:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'leary.dan@gmail.com',
             'name' => 'Daniel Leary',
             'first_name' => 'Daniel',
@@ -13821,7 +13821,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 01:58:49',
             'updated_at' => '2023-11-20 23:51:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carlym22@gmail.com',
             'name' => 'Caroline Moore',
             'first_name' => 'Caroline',
@@ -13838,7 +13838,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 02:34:32',
             'updated_at' => '2023-08-26 10:09:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jmarti44@alumni.nd.edu',
             'name' => 'Jenna Martin',
             'first_name' => 'Jenna',
@@ -13855,7 +13855,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 02:35:50',
             'updated_at' => '2024-04-01 23:07:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'revmarkperez@gmail.com',
             'name' => 'MARK PEREZ',
             'first_name' => 'MARK',
@@ -13872,7 +13872,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 03:05:42',
             'updated_at' => '2023-09-05 23:04:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chrisenz1@hotmail.com',
             'name' => 'Gabe Enz',
             'first_name' => 'Gabe',
@@ -13889,7 +13889,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 05:29:52',
             'updated_at' => '2023-08-26 10:57:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mariajividen@gmail.com',
             'name' => 'Maria Jividen',
             'first_name' => 'Maria',
@@ -13906,7 +13906,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 06:18:42',
             'updated_at' => '2023-08-26 13:53:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ggevans@svsu.edu',
             'name' => 'Gretchen Evans',
             'first_name' => 'Gretchen',
@@ -13923,7 +13923,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 14:46:55',
             'updated_at' => '2023-09-05 23:04:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ablackny2@gmail.com',
             'name' => 'Alexander Black',
             'first_name' => 'Alexander',
@@ -13940,7 +13940,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 15:26:46',
             'updated_at' => '2024-07-17 12:07:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'oliviagonzalez828@gmail.com',
             'name' => 'Olivia Gonzalez',
             'first_name' => 'Olivia',
@@ -13957,7 +13957,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 16:20:03',
             'updated_at' => '2023-08-26 14:33:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dylanjcoop@gmail.com',
             'name' => 'Dylan Cooper',
             'first_name' => 'Dylan',
@@ -13974,7 +13974,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 16:39:34',
             'updated_at' => '2024-02-07 00:41:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kelseykhumphreys@gmail.com',
             'name' => 'Kelsey Humphreys',
             'first_name' => 'Kelsey',
@@ -13991,7 +13991,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 18:20:57',
             'updated_at' => '2024-06-06 21:27:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dykstralarkin@gmail.com',
             'name' => 'Larkin Dykstra',
             'first_name' => 'Larkin',
@@ -14008,7 +14008,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 18:47:34',
             'updated_at' => '2023-08-26 13:07:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'qhoogkamer@achillesinternational.org',
             'name' => 'Querine Hoogkamer',
             'first_name' => 'Querine',
@@ -14025,7 +14025,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 19:06:29',
             'updated_at' => '2023-08-26 14:39:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bassonyc@gmail.com',
             'name' => 'Sheridan Basso',
             'first_name' => 'Sheridan',
@@ -14042,7 +14042,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 19:44:34',
             'updated_at' => '2023-08-26 15:30:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hvservices7@gmail.com',
             'name' => 'Hector Villagran',
             'first_name' => 'Hector',
@@ -14059,7 +14059,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 19:55:46',
             'updated_at' => '2023-08-26 11:04:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'crmchugh@email.uark.edu',
             'name' => 'Cecilia McHugh',
             'first_name' => 'Cecilia',
@@ -14076,7 +14076,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 20:15:54',
             'updated_at' => '2023-08-26 10:11:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Zzlawpc@gmail.com',
             'name' => 'Stephane Zwirn',
             'first_name' => 'Stephane',
@@ -14093,7 +14093,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 21:07:25',
             'updated_at' => '2024-07-29 21:45:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'georgiacwalsh@gmail.com',
             'name' => 'Georgia Walsh',
             'first_name' => 'Georgia',
@@ -14110,7 +14110,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 21:48:37',
             'updated_at' => '2023-08-26 10:59:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'collyer.14@osu.edu',
             'name' => 'Meghan Collyer',
             'first_name' => 'Meghan',
@@ -14127,7 +14127,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 21:51:14',
             'updated_at' => '2024-01-05 02:52:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emiliafcardenas4@gmail.com',
             'name' => 'Emilia Cardenas',
             'first_name' => 'Emilia',
@@ -14144,7 +14144,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 22:23:13',
             'updated_at' => '2024-07-14 23:54:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pmeissel@gmail.com',
             'name' => 'Phyllis Meissel',
             'first_name' => 'Phyllis',
@@ -14161,7 +14161,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 22:47:12',
             'updated_at' => '2023-08-26 14:38:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'slartigu@student.nymc.edu',
             'name' => 'Schan Lartigue',
             'first_name' => 'Schan',
@@ -14178,7 +14178,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 23:01:06',
             'updated_at' => '2023-08-26 15:26:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jmsnyc47@gmail.com',
             'name' => 'Jeremy Silverman',
             'first_name' => 'Jeremy',
@@ -14195,7 +14195,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 23:08:11',
             'updated_at' => '2023-08-26 12:39:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'roybell2@gmail.com',
             'name' => 'Roy Bell Sr',
             'first_name' => 'Roy',
@@ -14212,7 +14212,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 23:15:44',
             'updated_at' => '2023-10-13 02:44:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Danny@rstdevelopment.com',
             'name' => 'Danny Copeland',
             'first_name' => 'Danny',
@@ -14229,7 +14229,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-19 23:26:25',
             'updated_at' => '2023-08-26 10:24:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'honus67@gmail.com',
             'name' => 'John Wagner',
             'first_name' => 'John',
@@ -14246,7 +14246,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 00:12:32',
             'updated_at' => '2024-06-17 01:13:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aritchie817@gmail.com',
             'name' => 'Allison Sims',
             'first_name' => 'Allison',
@@ -14263,7 +14263,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 00:13:03',
             'updated_at' => '2024-03-02 02:50:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gjtbballer21@yahoo.com',
             'name' => 'Janelle Tan',
             'first_name' => 'Janelle',
@@ -14280,7 +14280,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 00:33:16',
             'updated_at' => '2023-08-26 11:13:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mavishur@gmail.com',
             'name' => 'Macccabee Avishur',
             'first_name' => 'Macccabee',
@@ -14297,7 +14297,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 00:43:17',
             'updated_at' => '2024-03-22 04:17:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'suzanne@suzannesearle.com',
             'name' => 'Suzanne Searle',
             'first_name' => 'Suzanne',
@@ -14314,7 +14314,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 00:54:26',
             'updated_at' => '2023-08-26 15:37:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lpayson@gmail.com',
             'name' => 'Linda Payson',
             'first_name' => 'Linda',
@@ -14331,7 +14331,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 01:31:39',
             'updated_at' => '2023-08-26 13:43:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'josephineteat@gmail.com',
             'name' => 'Josephine Teat',
             'first_name' => 'Josephine',
@@ -14348,7 +14348,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 01:32:43',
             'updated_at' => '2023-08-26 12:48:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexismgordon@gmail.com',
             'name' => 'Alexis Gordon',
             'first_name' => 'Alexis',
@@ -14365,7 +14365,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 02:04:32',
             'updated_at' => '2023-08-26 11:41:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carolinelu@cox.net',
             'name' => 'Caroline Meyer',
             'first_name' => 'Caroline',
@@ -14382,7 +14382,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 02:13:01',
             'updated_at' => '2024-02-02 08:53:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davidhughes2342@gmail.com',
             'name' => 'David Hughes',
             'first_name' => 'David',
@@ -14399,7 +14399,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 02:16:08',
             'updated_at' => '2023-08-26 10:25:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gagafanchristel@gmail.com',
             'name' => 'Christel Womack',
             'first_name' => 'Christel',
@@ -14416,7 +14416,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 02:20:13',
             'updated_at' => '2024-04-03 17:49:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anneelizabethussery@gmail.com',
             'name' => 'Anne Ussery',
             'first_name' => 'Anne',
@@ -14433,7 +14433,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 02:25:43',
             'updated_at' => '2023-08-26 11:51:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'roslyn.williamson@comcast.net',
             'name' => 'Roslyn Williamson',
             'first_name' => 'Roslyn',
@@ -14450,7 +14450,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 02:42:55',
             'updated_at' => '2023-08-26 14:49:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dentonbh@gmail.com',
             'name' => 'Hannah Denton',
             'first_name' => 'Hannah',
@@ -14467,7 +14467,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 03:05:22',
             'updated_at' => '2023-08-26 11:03:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lnessary@icloud.com',
             'name' => 'Leah Essary',
             'first_name' => 'Leah',
@@ -14484,7 +14484,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 03:20:39',
             'updated_at' => '2023-08-26 13:41:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sakari2019@yahoo.com',
             'name' => 'Chassity Choate',
             'first_name' => 'Chassity',
@@ -14501,7 +14501,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 04:11:56',
             'updated_at' => '2023-08-26 10:13:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jackiechoucair@gmail.com',
             'name' => 'Jackie Choucair',
             'first_name' => 'Jackie',
@@ -14518,7 +14518,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 04:59:41',
             'updated_at' => '2024-03-07 05:46:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mitchellkirstenk@gmail.com',
             'name' => 'Kirsten Mitchell',
             'first_name' => 'Kirsten',
@@ -14535,7 +14535,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 05:08:59',
             'updated_at' => '2023-08-26 13:03:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wali.sabuhi@gmail.com',
             'name' => 'Wali Sabuhi',
             'first_name' => 'Wali',
@@ -14552,7 +14552,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 05:18:53',
             'updated_at' => '2023-08-26 15:48:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexismsmith28@gmail.com',
             'name' => 'Alexis Smith',
             'first_name' => 'Alexis',
@@ -14569,7 +14569,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 05:26:57',
             'updated_at' => '2023-08-26 11:41:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'patrickthowley@gmail.com',
             'name' => 'Patrick Howley',
             'first_name' => 'Patrick',
@@ -14586,7 +14586,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 06:02:49',
             'updated_at' => '2024-03-15 18:14:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Derron2000@aol.com',
             'name' => 'Derron Palmer',
             'first_name' => 'Derron',
@@ -14603,7 +14603,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 06:43:48',
             'updated_at' => '2023-08-26 10:29:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'blacktrixie@yahoo.com',
             'name' => 'Sara Fults',
             'first_name' => 'Sara',
@@ -14620,7 +14620,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 07:05:12',
             'updated_at' => '2023-10-08 02:04:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cartermsmith05@gmail.com',
             'name' => 'Carter Smith',
             'first_name' => 'Carter',
@@ -14637,7 +14637,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 07:12:54',
             'updated_at' => '2024-05-23 19:50:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mel.lee.nyc@gmail.com',
             'name' => 'Melissa Lee',
             'first_name' => 'Melissa',
@@ -14654,7 +14654,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 08:01:08',
             'updated_at' => '2023-08-26 14:04:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kelseycunniff@gmail.com',
             'name' => 'Kelsey Fazio',
             'first_name' => 'Kelsey',
@@ -14671,7 +14671,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 08:23:05',
             'updated_at' => '2024-03-21 04:10:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '2mychelle@gmail.com',
             'name' => 'Michelle Gonyea',
             'first_name' => 'Michelle',
@@ -14688,7 +14688,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 15:38:39',
             'updated_at' => '2023-08-26 14:22:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jonah@kazam.net',
             'name' => 'Jonah Kazam',
             'first_name' => 'Jonah',
@@ -14705,7 +14705,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 17:21:26',
             'updated_at' => '2023-09-05 20:25:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'martingruberny@gmail.com',
             'name' => 'Martin Gruber',
             'first_name' => 'Martin',
@@ -14722,7 +14722,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 17:40:17',
             'updated_at' => '2023-08-26 13:57:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bcisouza@aol.com',
             'name' => 'Paul Souza',
             'first_name' => 'Paul',
@@ -14739,7 +14739,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 17:46:49',
             'updated_at' => '2023-08-26 14:36:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tracyhparkin@gmail.com',
             'name' => 'Tracy Parkin',
             'first_name' => 'Tracy',
@@ -14756,7 +14756,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 18:00:26',
             'updated_at' => '2023-08-26 15:44:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'smihailin@aol.com',
             'name' => 'Thomas Mihailin',
             'first_name' => 'Thomas',
@@ -14773,7 +14773,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 18:55:52',
             'updated_at' => '2023-08-26 15:41:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tkingrun@sbcglobal.net',
             'name' => 'Tricia King',
             'first_name' => 'Tricia',
@@ -14790,7 +14790,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 18:58:51',
             'updated_at' => '2023-08-26 15:44:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'RSDOGRA17@yahoo.com',
             'name' => 'Rupali Dogra',
             'first_name' => 'Rupali',
@@ -14807,7 +14807,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 19:02:59',
             'updated_at' => '2023-08-26 14:49:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'enovick10@gmail.com',
             'name' => 'Eliza Novick',
             'first_name' => 'Eliza',
@@ -14824,7 +14824,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 19:58:16',
             'updated_at' => '2023-08-26 10:34:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gabrielcardenasparty@gmail.com',
             'name' => 'Gabriel Cardenas',
             'first_name' => 'Gabriel',
@@ -14841,7 +14841,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 20:14:18',
             'updated_at' => '2023-08-26 10:57:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'frank.arcurijr@gmail.com',
             'name' => 'Frank Arcuri Jr',
             'first_name' => 'Frank',
@@ -14858,7 +14858,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 20:18:09',
             'updated_at' => '2023-08-26 10:56:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nrsedeeb@yahoo.com',
             'name' => 'Dena Klein',
             'first_name' => 'Dena',
@@ -14875,7 +14875,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 20:35:07',
             'updated_at' => '2023-08-26 10:28:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'veichmark@gmail.com',
             'name' => 'Mark Veich',
             'first_name' => 'Mark',
@@ -14892,7 +14892,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 20:53:02',
             'updated_at' => '2023-08-26 13:56:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'angiebullaro@gmail.com',
             'name' => 'Angie Bullaro Musco',
             'first_name' => 'Angie',
@@ -14909,7 +14909,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 21:38:43',
             'updated_at' => '2023-08-26 11:49:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'prabhavjain2023@u.northwestern.edu',
             'name' => 'Prabhav Jain',
             'first_name' => 'Prabhav',
@@ -14926,7 +14926,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 22:13:04',
             'updated_at' => '2023-08-26 14:38:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jshteingart@gmail.com',
             'name' => 'Jacob Shteingart',
             'first_name' => 'Jacob',
@@ -14943,7 +14943,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 22:36:44',
             'updated_at' => '2023-08-26 11:10:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bridgetboru@gmail.com',
             'name' => 'Bridget O\'Brien',
             'first_name' => 'Bridget',
@@ -14960,7 +14960,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-20 23:55:03',
             'updated_at' => '2024-05-08 19:31:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aripcohen@gmail.com',
             'name' => 'Ariel Cohen',
             'first_name' => 'Ariel',
@@ -14977,7 +14977,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 00:15:19',
             'updated_at' => '2023-08-26 11:53:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sbr123@hotmail.com',
             'name' => 'Stacy McCowan',
             'first_name' => 'Stacy',
@@ -14994,7 +14994,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 00:15:48',
             'updated_at' => '2024-03-09 03:41:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mrmic05@msn.com',
             'name' => 'Mark McCowan',
             'first_name' => 'Mark',
@@ -15011,7 +15011,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 00:29:05',
             'updated_at' => '2023-09-20 05:00:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'grossitony60@gmail.com',
             'name' => 'Anthony Grossi',
             'first_name' => 'Anthony',
@@ -15028,7 +15028,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 00:32:36',
             'updated_at' => '2024-07-06 19:02:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'xlisa.zhang@gmail.com',
             'name' => 'Lisa Zhang',
             'first_name' => 'Lisa',
@@ -15045,7 +15045,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 00:36:15',
             'updated_at' => '2024-07-24 02:27:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marykatherinecooper@me.com',
             'name' => 'Mary Cooper',
             'first_name' => 'Mary',
@@ -15062,7 +15062,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 00:36:55',
             'updated_at' => '2023-08-26 13:58:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'torilong210@gmail.com',
             'name' => 'Victoria Long',
             'first_name' => 'Victoria',
@@ -15079,7 +15079,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 00:59:58',
             'updated_at' => '2023-08-26 15:47:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tuan.nguyen2011@comcast.net',
             'name' => 'Tuan Nguyen',
             'first_name' => 'Tuan',
@@ -15096,7 +15096,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 01:04:08',
             'updated_at' => '2023-08-26 15:45:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ahg5@me.com',
             'name' => 'Alexis Sestak',
             'first_name' => 'Alexis',
@@ -15113,7 +15113,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 01:04:29',
             'updated_at' => '2023-08-26 11:41:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'matteturner@gmail.com',
             'name' => 'Matthew Turner',
             'first_name' => 'Matthew',
@@ -15130,7 +15130,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 01:10:21',
             'updated_at' => '2024-07-03 13:15:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cjalilie03@gmail.com',
             'name' => 'Cassandra Jalilie',
             'first_name' => 'Cassandra',
@@ -15147,7 +15147,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 01:11:08',
             'updated_at' => '2023-08-26 10:11:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cecilwilliams3rd@gmail.com',
             'name' => 'Cecil Williams',
             'first_name' => 'Cecil',
@@ -15164,7 +15164,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 01:23:20',
             'updated_at' => '2023-08-26 10:11:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rsbalucas@gmail.com',
             'name' => 'Robert Balucas',
             'first_name' => 'Robert',
@@ -15181,7 +15181,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 01:27:09',
             'updated_at' => '2023-08-26 14:46:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arirevelas@gmail.com',
             'name' => 'Ariana Revelas',
             'first_name' => 'Ariana',
@@ -15198,7 +15198,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 01:58:36',
             'updated_at' => '2024-02-07 01:31:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'simmonsben@hotmail.com',
             'name' => 'Benjamin Simmons',
             'first_name' => 'Benjamin',
@@ -15215,7 +15215,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:03:51',
             'updated_at' => '2024-07-12 04:13:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kjames424@icloud.com',
             'name' => 'Kelly James',
             'first_name' => 'Kelly',
@@ -15232,7 +15232,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:06:37',
             'updated_at' => '2023-08-26 12:59:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'meneses.lpedro@gmail.com',
             'name' => 'Pedro Rodriguez',
             'first_name' => 'Pedro',
@@ -15249,7 +15249,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:31:20',
             'updated_at' => '2023-12-08 21:19:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danifey@gmail.com',
             'name' => 'Danielle Fey',
             'first_name' => 'Danielle',
@@ -15266,7 +15266,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:31:36',
             'updated_at' => '2023-08-26 10:24:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'suzypomerantz@gmail.com',
             'name' => 'Sarah Pomerantz',
             'first_name' => 'Sarah',
@@ -15283,7 +15283,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:33:13',
             'updated_at' => '2024-01-17 02:20:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ally98003@aol.com',
             'name' => 'Allyson Sega',
             'first_name' => 'Allyson',
@@ -15300,7 +15300,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:33:42',
             'updated_at' => '2024-01-18 20:33:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'suzanne.cayer@gmail.com',
             'name' => 'Suzanne Cayer',
             'first_name' => 'Suzanne',
@@ -15317,7 +15317,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:41:13',
             'updated_at' => '2023-08-26 19:34:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'annoconnell@hotmail.com',
             'name' => 'Ann OConnell',
             'first_name' => 'Ann',
@@ -15334,7 +15334,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:48:24',
             'updated_at' => '2023-10-26 18:39:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'white.nolan23@yahoo.com',
             'name' => 'Nolan White',
             'first_name' => 'Nolan',
@@ -15351,7 +15351,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:49:49',
             'updated_at' => '2024-07-03 13:15:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'catchley90@gmail.com',
             'name' => 'Clare Atchley',
             'first_name' => 'Clare',
@@ -15368,7 +15368,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:52:18',
             'updated_at' => '2023-08-26 10:18:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hari.dudd@gmail.com',
             'name' => 'Harikrishna Duddela',
             'first_name' => 'Harikrishna',
@@ -15385,7 +15385,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:53:38',
             'updated_at' => '2023-08-26 11:03:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gnesse219@gmail.com',
             'name' => 'gabriella Nesse',
             'first_name' => 'gabriella',
@@ -15402,7 +15402,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 02:55:53',
             'updated_at' => '2024-07-03 22:59:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jbrown369@me.com',
             'name' => 'James Brown',
             'first_name' => 'James',
@@ -15419,7 +15419,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 03:01:49',
             'updated_at' => '2023-08-26 11:12:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cherylreeves00@hotmail.com',
             'name' => 'Cheryl Reeves-Hayes',
             'first_name' => 'Cheryl',
@@ -15436,7 +15436,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 03:09:22',
             'updated_at' => '2023-08-26 10:14:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'fatgirl11220@yahoo.com',
             'name' => 'Jacky Lee',
             'first_name' => 'Jacky',
@@ -15453,7 +15453,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 03:22:26',
             'updated_at' => '2023-08-26 11:09:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Melissa.knoblock15@gmail.com',
             'name' => 'Melissa Knoblock',
             'first_name' => 'Melissa',
@@ -15470,7 +15470,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 03:37:22',
             'updated_at' => '2023-08-26 14:04:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carterwinstonware@gmail.com',
             'name' => 'Carter Ware',
             'first_name' => 'Carter',
@@ -15487,7 +15487,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 04:07:14',
             'updated_at' => '2023-08-26 10:10:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cornacchinimorgan@gmail.com',
             'name' => 'Morgan Cornacchini',
             'first_name' => 'Morgan',
@@ -15504,7 +15504,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 04:27:42',
             'updated_at' => '2024-07-04 19:51:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'allisonafeeney0504@gmail.com',
             'name' => 'Allison Feeney',
             'first_name' => 'Allison',
@@ -15521,7 +15521,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 04:40:56',
             'updated_at' => '2023-08-26 11:42:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'depoppel@comcast.net',
             'name' => 'David Poppel',
             'first_name' => 'David',
@@ -15538,7 +15538,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 04:49:26',
             'updated_at' => '2023-08-26 10:25:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hassantarek1996@gmail.com',
             'name' => 'Hassan Elabbady',
             'first_name' => 'Hassan',
@@ -15555,7 +15555,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 05:09:43',
             'updated_at' => '2023-08-26 11:04:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cmcovella@gmail.com',
             'name' => 'Caryn Covella',
             'first_name' => 'Caryn',
@@ -15572,7 +15572,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 05:58:58',
             'updated_at' => '2023-08-26 10:10:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Leahvsommers@gmail.com',
             'name' => 'Leah Vetsch Sommers',
             'first_name' => 'Leah',
@@ -15589,7 +15589,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 06:31:14',
             'updated_at' => '2023-08-26 13:41:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dennismsullivan@gmail.com',
             'name' => 'Dennis Sullivan',
             'first_name' => 'Dennis',
@@ -15606,7 +15606,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 06:55:52',
             'updated_at' => '2023-08-26 10:29:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bo.barley@gmail.com',
             'name' => 'Kevin Barley',
             'first_name' => 'Kevin',
@@ -15623,7 +15623,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 07:16:26',
             'updated_at' => '2023-08-26 13:01:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jenjam@mac.com',
             'name' => 'Jennifer Perez',
             'first_name' => 'Jennifer',
@@ -15640,7 +15640,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 07:33:08',
             'updated_at' => '2023-08-26 12:37:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'everodriguez2@gmail.com',
             'name' => 'Evelyn Rodriguez',
             'first_name' => 'Evelyn',
@@ -15657,7 +15657,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 12:44:39',
             'updated_at' => '2024-07-28 02:09:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'zaia2303@gmail.com',
             'name' => 'Jennifer Boulette',
             'first_name' => 'Jennifer',
@@ -15674,7 +15674,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 14:04:23',
             'updated_at' => '2023-08-26 12:37:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lewindeirdre@gmail.com',
             'name' => 'Deirdre Lewin',
             'first_name' => 'Deirdre',
@@ -15691,7 +15691,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 14:24:40',
             'updated_at' => '2023-08-26 10:28:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carlos3000@hotmail.com',
             'name' => 'Carlos Costa',
             'first_name' => 'Carlos',
@@ -15708,7 +15708,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 16:12:10',
             'updated_at' => '2023-08-26 10:08:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emily.teschner@gmail.com',
             'name' => 'Emily Teschner',
             'first_name' => 'Emily',
@@ -15725,7 +15725,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 16:14:05',
             'updated_at' => '2023-08-26 10:49:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jjhodg@gmail.com',
             'name' => 'John Hodgson',
             'first_name' => 'John',
@@ -15742,7 +15742,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 16:15:16',
             'updated_at' => '2024-07-05 19:27:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'asims217@gmail.com',
             'name' => 'Richard Sims',
             'first_name' => 'Richard',
@@ -15759,7 +15759,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 16:22:59',
             'updated_at' => '2023-08-26 14:45:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'norman_drayton11@msn.com',
             'name' => 'Geoffrey Straughn',
             'first_name' => 'Geoffrey',
@@ -15776,7 +15776,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 17:35:00',
             'updated_at' => '2023-08-26 12:36:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hicksonbenjamin@gmail.com',
             'name' => 'Benjamin Hickson',
             'first_name' => 'Benjamin',
@@ -15793,7 +15793,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 17:50:36',
             'updated_at' => '2023-08-26 11:58:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brittanyniles.15@gmail.com',
             'name' => 'Brittany Niles',
             'first_name' => 'Brittany',
@@ -15810,7 +15810,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 17:53:38',
             'updated_at' => '2023-08-26 12:03:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'considine.e@gmail.com',
             'name' => 'Elizabeth Considine',
             'first_name' => 'Elizabeth',
@@ -15827,7 +15827,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 17:56:50',
             'updated_at' => '2024-07-23 17:02:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'painter.brandon@gmail.com',
             'name' => 'Brandon Painter',
             'first_name' => 'Brandon',
@@ -15844,7 +15844,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 17:57:32',
             'updated_at' => '2023-08-26 12:01:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'candy.alfano@gmail.com',
             'name' => 'Priscilla Alfano',
             'first_name' => 'Priscilla',
@@ -15861,7 +15861,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 18:20:29',
             'updated_at' => '2023-08-26 14:38:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lexavishur@gmail.com',
             'name' => 'Alexis Avishur',
             'first_name' => 'Alexis',
@@ -15878,7 +15878,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 18:36:24',
             'updated_at' => '2023-08-26 11:41:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'madalynpeterson19@gmail.com',
             'name' => 'Madalyn Peterson',
             'first_name' => 'Madalyn',
@@ -15895,7 +15895,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 19:06:08',
             'updated_at' => '2023-08-26 13:48:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'abbeymtozer@gmail.com',
             'name' => 'Abbey Tozer',
             'first_name' => 'Abbey',
@@ -15912,7 +15912,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 19:07:10',
             'updated_at' => '2024-03-21 17:10:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jennifer.lee.desiderio@gmail.com',
             'name' => 'Jennifer Desiderio',
             'first_name' => 'Jennifer',
@@ -15929,7 +15929,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 19:07:46',
             'updated_at' => '2023-08-26 12:37:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ASHLEYMARYDEAN@GMAIL.COM',
             'name' => 'Ashley Dean',
             'first_name' => 'Ashley',
@@ -15946,7 +15946,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 19:17:20',
             'updated_at' => '2023-08-26 11:55:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mcnickerton@yahoo.com',
             'name' => 'Nicole Bare',
             'first_name' => 'Nicole',
@@ -15963,7 +15963,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 19:25:54',
             'updated_at' => '2023-08-26 14:30:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erinmondello@gmail.com',
             'name' => 'Erin Mondello',
             'first_name' => 'Erin',
@@ -15980,7 +15980,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 19:41:54',
             'updated_at' => '2024-06-22 05:58:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'njmars@verizon.net',
             'name' => 'Natalie Mars',
             'first_name' => 'Natalie',
@@ -15997,7 +15997,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 19:53:10',
             'updated_at' => '2024-02-21 03:06:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '98lizortega@gmail.com',
             'name' => 'Levi Ortega',
             'first_name' => 'Levi',
@@ -16014,7 +16014,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 19:56:50',
             'updated_at' => '2023-12-12 21:12:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laurel@laurelhilbert.com',
             'name' => 'Laurel Hilbert',
             'first_name' => 'Laurel',
@@ -16031,7 +16031,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 20:22:14',
             'updated_at' => '2023-08-26 13:39:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wbrosse@gmail.com',
             'name' => 'Wendy Brosse',
             'first_name' => 'Wendy',
@@ -16048,7 +16048,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 20:46:02',
             'updated_at' => '2023-08-26 15:48:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'phubbert@guidingeyes.org',
             'name' => 'Payden Hubbert',
             'first_name' => 'Payden',
@@ -16065,7 +16065,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 20:47:51',
             'updated_at' => '2023-08-26 14:36:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jasonmartuscello@hotmail.com',
             'name' => 'Jason Martuscello',
             'first_name' => 'Jason',
@@ -16082,7 +16082,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 20:51:54',
             'updated_at' => '2023-08-26 11:14:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Lisanordfors@gmail.com',
             'name' => 'Lisa Nordfors',
             'first_name' => 'Lisa',
@@ -16099,7 +16099,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 21:14:53',
             'updated_at' => '2023-08-26 13:44:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'PATDALY777@GMAIL.COM',
             'name' => 'PATRICK DALY',
             'first_name' => 'PATRICK',
@@ -16116,7 +16116,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 21:21:10',
             'updated_at' => '2023-08-26 14:35:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'slepmid@yahoo.com',
             'name' => 'Puspa Poarangan',
             'first_name' => 'Puspa',
@@ -16133,7 +16133,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 21:54:43',
             'updated_at' => '2024-07-04 19:55:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maxim.michaeli@gmail.com',
             'name' => 'Maxim Michaeli',
             'first_name' => 'Maxim',
@@ -16150,7 +16150,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 22:00:56',
             'updated_at' => '2023-08-26 14:01:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gabrielcardier@gmail.com',
             'name' => 'Gabriel Cardier',
             'first_name' => 'Gabriel',
@@ -16167,7 +16167,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-21 23:42:55',
             'updated_at' => '2024-05-16 06:24:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cl.penn508@gmail.com',
             'name' => 'Christopher Pennington',
             'first_name' => 'Christopher',
@@ -16184,7 +16184,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 00:33:09',
             'updated_at' => '2024-01-17 04:53:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joelantoniolopez@hotmail.com',
             'name' => 'Joel Lopez',
             'first_name' => 'Joel',
@@ -16201,7 +16201,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 01:25:57',
             'updated_at' => '2023-08-26 12:42:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maureen.keleher@gmail.com',
             'name' => 'Maureen Keleher',
             'first_name' => 'Maureen',
@@ -16218,7 +16218,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 01:47:45',
             'updated_at' => '2023-08-26 14:01:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'audreyazmin22@gmail.com',
             'name' => 'Audrei Gonzalez',
             'first_name' => 'Audrei',
@@ -16235,7 +16235,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 01:57:09',
             'updated_at' => '2023-08-26 11:56:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'asim.a.baig86@gmail.com',
             'name' => 'Asim Baig',
             'first_name' => 'Asim',
@@ -16252,7 +16252,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 01:58:53',
             'updated_at' => '2024-07-19 19:41:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Dizwendy@yahoo.com',
             'name' => 'Wendy Larsen',
             'first_name' => 'Wendy',
@@ -16269,7 +16269,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 02:32:01',
             'updated_at' => '2023-08-26 15:48:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carlitospineda@gmail.com',
             'name' => 'Carlos Pineda',
             'first_name' => 'Carlos',
@@ -16286,7 +16286,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 03:26:17',
             'updated_at' => '2023-08-26 10:08:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'harsh.bhasin88@gmail.com',
             'name' => 'Harsh Bhasin',
             'first_name' => 'Harsh',
@@ -16303,7 +16303,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 03:29:07',
             'updated_at' => '2023-08-26 11:03:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rzoltowski@infolynxeft.com',
             'name' => 'Raymond Zoltowski',
             'first_name' => 'Raymond',
@@ -16320,7 +16320,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 04:03:31',
             'updated_at' => '2023-11-30 04:13:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kristenmhenning@gmail.com',
             'name' => 'Kristen Henning',
             'first_name' => 'Kristen',
@@ -16337,7 +16337,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 05:43:59',
             'updated_at' => '2023-08-26 13:04:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tyrrellynn@gmail.com',
             'name' => 'Tyrrell Schmidt',
             'first_name' => 'Tyrrell',
@@ -16354,7 +16354,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 16:25:01',
             'updated_at' => '2023-08-26 15:45:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'phillip.howard@gmail.com',
             'name' => 'Phillip Howard',
             'first_name' => 'Phillip',
@@ -16371,7 +16371,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 17:15:52',
             'updated_at' => '2023-08-26 14:38:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vidajvrobinson@gmail.com',
             'name' => 'Vida Robinson',
             'first_name' => 'Vida',
@@ -16388,7 +16388,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 17:16:18',
             'updated_at' => '2023-08-26 15:47:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'trunswim1@aol.com',
             'name' => 'Talia McKinney',
             'first_name' => 'Talia',
@@ -16405,7 +16405,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 17:27:08',
             'updated_at' => '2024-05-31 21:18:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'loventhalchad@gmail.com',
             'name' => 'Chad Loventhal',
             'first_name' => 'Chad',
@@ -16422,7 +16422,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 18:26:17',
             'updated_at' => '2023-08-26 10:12:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cecelialawson64@gmail.com',
             'name' => 'Veronica Maddy',
             'first_name' => 'Veronica',
@@ -16439,7 +16439,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 18:59:54',
             'updated_at' => '2024-05-11 17:55:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jrcolognesi@gmail.com',
             'name' => 'Jacqueline Colognesi',
             'first_name' => 'Jacqueline',
@@ -16456,7 +16456,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 19:00:52',
             'updated_at' => '2023-08-26 11:10:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sarahheller9@gmail.com',
             'name' => 'Sarah Heller',
             'first_name' => 'Sarah',
@@ -16473,7 +16473,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 19:22:57',
             'updated_at' => '2024-02-22 20:42:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chiangkv@hotmail.com',
             'name' => 'Zachary Lawless',
             'first_name' => 'Zachary',
@@ -16490,7 +16490,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 19:40:47',
             'updated_at' => '2023-09-06 23:39:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'taylor.reagan@reckitt.com',
             'name' => 'taylor Reagan',
             'first_name' => 'taylor',
@@ -16507,7 +16507,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 20:39:23',
             'updated_at' => '2023-08-26 15:39:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juliankane10@gmail.com',
             'name' => 'Julian Kane',
             'first_name' => 'Julian',
@@ -16524,7 +16524,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 20:43:25',
             'updated_at' => '2024-07-03 13:15:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'richardmagnus123@gmail.com',
             'name' => 'Rich Magnus',
             'first_name' => 'Rich',
@@ -16541,7 +16541,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 21:33:12',
             'updated_at' => '2023-08-26 14:44:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eveladenmauro@gmail.com',
             'name' => 'Eve Laden Mauro',
             'first_name' => 'Eve',
@@ -16558,7 +16558,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 22:15:26',
             'updated_at' => '2023-08-26 10:54:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'del_sol94@yahoo.com',
             'name' => 'Dale Norman',
             'first_name' => 'Dale',
@@ -16575,7 +16575,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 22:20:18',
             'updated_at' => '2023-08-26 10:22:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'taylorareagan@msn.com',
             'name' => 'Taylor Reagan',
             'first_name' => 'Taylor',
@@ -16592,7 +16592,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-22 22:42:46',
             'updated_at' => '2023-08-26 15:39:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mechemv@yahoo.com',
             'name' => 'mercedes maturrano',
             'first_name' => 'mercedes',
@@ -16609,7 +16609,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 00:13:26',
             'updated_at' => '2023-09-05 23:05:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'debg217@optonline.net',
             'name' => 'Deborah Gordon',
             'first_name' => 'Deborah',
@@ -16626,7 +16626,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 00:15:26',
             'updated_at' => '2024-04-02 01:30:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alee394824@gmail.com',
             'name' => 'Alexa Diyarza',
             'first_name' => 'Alexa',
@@ -16643,7 +16643,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 01:03:44',
             'updated_at' => '2024-03-16 06:21:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rebeccasantin@yahoo.com',
             'name' => 'Rebecca Alpert',
             'first_name' => 'Rebecca',
@@ -16660,7 +16660,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 01:14:01',
             'updated_at' => '2023-12-30 23:41:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kevindean7777@yahoo.com',
             'name' => 'Kevin Dean',
             'first_name' => 'Kevin',
@@ -16677,7 +16677,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 02:06:03',
             'updated_at' => '2023-08-26 13:01:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emily.linsay@gmail.com',
             'name' => 'Emily Linsay',
             'first_name' => 'Emily',
@@ -16694,7 +16694,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 02:33:13',
             'updated_at' => '2023-08-26 10:49:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sam.cedarbaum@icloud.com',
             'name' => 'Samuel Cedarbaum',
             'first_name' => 'Samuel',
@@ -16711,7 +16711,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 03:54:39',
             'updated_at' => '2024-07-03 13:15:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mmerendino8@gmail.com',
             'name' => 'Meagan Merendino',
             'first_name' => 'Meagan',
@@ -16728,7 +16728,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 04:15:04',
             'updated_at' => '2023-08-26 14:02:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juliannemlally@gmail.com',
             'name' => 'Julianne Lally',
             'first_name' => 'Julianne',
@@ -16745,7 +16745,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 04:51:27',
             'updated_at' => '2023-08-26 12:51:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chengfred@aol.com',
             'name' => 'Frederick Cheng',
             'first_name' => 'Frederick',
@@ -16762,7 +16762,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 05:02:03',
             'updated_at' => '2023-08-26 10:56:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'thesciphers@gmail.com',
             'name' => 'Michael Perdomo',
             'first_name' => 'Michael',
@@ -16779,7 +16779,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 06:29:07',
             'updated_at' => '2023-08-26 14:08:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marta.matanzo@hotmail.com',
             'name' => 'Marta Matanzo Senra',
             'first_name' => 'Marta',
@@ -16796,7 +16796,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 06:49:45',
             'updated_at' => '2023-08-26 13:57:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cmalbrecht1@gmail.com',
             'name' => 'Colleen DeMeo',
             'first_name' => 'Colleen',
@@ -16813,7 +16813,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 06:50:37',
             'updated_at' => '2023-08-26 10:19:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yap.liann@gmail.com',
             'name' => 'Li-Ann Yap',
             'first_name' => 'Li-Ann',
@@ -16830,7 +16830,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 06:58:14',
             'updated_at' => '2023-08-26 13:42:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'zjbentley@gmail.com',
             'name' => 'Zak Bentley',
             'first_name' => 'Zak',
@@ -16847,7 +16847,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 07:01:00',
             'updated_at' => '2024-07-03 13:15:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maytran2003@outlook.com',
             'name' => 'May Tran',
             'first_name' => 'May',
@@ -16864,7 +16864,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 07:09:04',
             'updated_at' => '2023-08-26 14:01:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'plk3d21@gmail.com',
             'name' => 'Patrick Fung',
             'first_name' => 'Patrick',
@@ -16881,7 +16881,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 10:31:22',
             'updated_at' => '2023-08-26 14:35:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kwet@snet.net',
             'name' => 'Kristin Wetmore',
             'first_name' => 'Kristin',
@@ -16898,7 +16898,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 15:08:53',
             'updated_at' => '2024-07-19 18:26:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'helpsavetheworld@gmail.com',
             'name' => 'Jacob Waltuck',
             'first_name' => 'Jacob',
@@ -16915,7 +16915,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 16:30:59',
             'updated_at' => '2024-03-16 15:54:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anthonykopatsis@gmail.com',
             'name' => 'Anthony Kopatsis',
             'first_name' => 'Anthony',
@@ -16932,7 +16932,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 17:36:43',
             'updated_at' => '2023-08-26 11:51:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jaime0813@yahoo.com',
             'name' => 'Jaime Gryctko',
             'first_name' => 'Jaime',
@@ -16949,7 +16949,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 18:15:41',
             'updated_at' => '2023-08-26 11:11:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wincheng.lin@gmail.com',
             'name' => 'Wincheng Lin',
             'first_name' => 'Wincheng',
@@ -16966,7 +16966,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 18:21:44',
             'updated_at' => '2023-08-26 15:51:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ceciortega01@gmail.com',
             'name' => 'Cecilia Ortega',
             'first_name' => 'Cecilia',
@@ -16983,7 +16983,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 19:28:44',
             'updated_at' => '2024-02-09 00:03:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'taylorgoddu@gmail.com',
             'name' => 'Taylor Goddu',
             'first_name' => 'Taylor',
@@ -17000,7 +17000,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 19:35:34',
             'updated_at' => '2023-08-26 15:39:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'swislo@gmail.com',
             'name' => 'STEVEN WISLO',
             'first_name' => 'STEVEN',
@@ -17017,7 +17017,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 20:12:31',
             'updated_at' => '2023-08-26 15:35:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tonyarriaga007@gmail.com',
             'name' => 'Tony Arriaga',
             'first_name' => 'Tony',
@@ -17034,7 +17034,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 20:26:41',
             'updated_at' => '2023-08-26 15:43:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'akmullane@yahoo.com',
             'name' => 'Alexandra Mullane',
             'first_name' => 'Alexandra',
@@ -17051,7 +17051,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 20:30:33',
             'updated_at' => '2023-08-26 11:40:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adnanasaric@gmail.com',
             'name' => 'adnana saric',
             'first_name' => 'adnana',
@@ -17068,7 +17068,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 22:06:18',
             'updated_at' => '2023-08-26 11:36:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ljdonnelly@gmail.com',
             'name' => 'Lauren Donnelly',
             'first_name' => 'Lauren',
@@ -17085,7 +17085,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 22:33:13',
             'updated_at' => '2023-08-26 13:40:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'keeversmith@gmail.com',
             'name' => 'Oliver Smith',
             'first_name' => 'Oliver',
@@ -17102,7 +17102,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 23:28:54',
             'updated_at' => '2023-09-05 20:30:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'frannie.rochat@gmail.com',
             'name' => 'Frances Rochat',
             'first_name' => 'Frances',
@@ -17119,7 +17119,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-23 23:34:46',
             'updated_at' => '2023-08-26 12:36:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jroserubin@yahoo.com',
             'name' => 'Jeannie Rose Rubin',
             'first_name' => 'Jeannie Rose',
@@ -17136,7 +17136,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 01:09:17',
             'updated_at' => '2023-08-26 11:16:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'billy.davis@compass.com',
             'name' => 'William Davis',
             'first_name' => 'William',
@@ -17153,7 +17153,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 01:15:59',
             'updated_at' => '2024-07-16 21:04:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'andrew.hogan819@gmail.com',
             'name' => 'Andrew Hogan',
             'first_name' => 'Andrew',
@@ -17170,7 +17170,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 01:18:04',
             'updated_at' => '2023-08-26 11:48:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'allisontrager4@gmail.com',
             'name' => 'Allison Trager',
             'first_name' => 'Allison',
@@ -17187,7 +17187,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 01:27:21',
             'updated_at' => '2023-08-26 11:43:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eyoon61@gmail.com',
             'name' => 'Eric Yoon',
             'first_name' => 'Eric',
@@ -17204,7 +17204,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 01:29:39',
             'updated_at' => '2023-08-26 10:52:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nancy@thebradygroupllc.com',
             'name' => 'nancy Ernst',
             'first_name' => 'nancy',
@@ -17221,7 +17221,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 02:02:08',
             'updated_at' => '2023-08-26 14:26:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robynhcooper@yahoo.com',
             'name' => 'Robyn Cooper',
             'first_name' => 'Robyn',
@@ -17238,7 +17238,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 03:17:20',
             'updated_at' => '2024-06-03 12:15:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jrkeltz1@gmail.com',
             'name' => 'Jennifer Keltz',
             'first_name' => 'Jennifer',
@@ -17255,7 +17255,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 03:32:19',
             'updated_at' => '2023-08-26 12:37:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'daniellenblass@gmail.com',
             'name' => 'Danielle Blass',
             'first_name' => 'Danielle',
@@ -17272,7 +17272,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 03:55:50',
             'updated_at' => '2023-09-16 15:55:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gramza.meg@gmail.com',
             'name' => 'Margaret Gramza',
             'first_name' => 'Margaret',
@@ -17289,7 +17289,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 04:21:34',
             'updated_at' => '2024-02-07 01:10:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lrkoizumi@gmail.com',
             'name' => 'Luna Koizumi',
             'first_name' => 'Luna',
@@ -17306,7 +17306,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 04:59:55',
             'updated_at' => '2024-07-10 21:39:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carlyragozzino@gmail.com',
             'name' => 'carly ragozzino',
             'first_name' => 'carly',
@@ -17323,7 +17323,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 05:16:22',
             'updated_at' => '2023-08-26 10:09:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emma.alvidrez92@gmail.com',
             'name' => 'Emma Alvidrez',
             'first_name' => 'Emma',
@@ -17340,7 +17340,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 05:33:15',
             'updated_at' => '2024-07-03 13:15:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kaileynlyons@gmail.com',
             'name' => 'Kailey Lyons',
             'first_name' => 'Kailey',
@@ -17357,7 +17357,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 05:47:56',
             'updated_at' => '2023-08-26 12:53:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nmliem@gmail.com',
             'name' => 'Natalie Liem',
             'first_name' => 'Natalie',
@@ -17374,7 +17374,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 06:03:08',
             'updated_at' => '2023-08-26 14:27:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'camellacarlson@gmail.com',
             'name' => 'Camella Carlson',
             'first_name' => 'Camella',
@@ -17391,7 +17391,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 06:39:41',
             'updated_at' => '2023-08-26 10:07:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nakita.bozinoski@gmail.com',
             'name' => 'Nakita Bozinoski',
             'first_name' => 'Nakita',
@@ -17408,7 +17408,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 08:57:33',
             'updated_at' => '2024-07-15 17:21:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ofirliv@gmail.com',
             'name' => 'Ofir Livne',
             'first_name' => 'Ofir',
@@ -17425,7 +17425,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 13:34:24',
             'updated_at' => '2023-08-26 14:32:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jencmuse@gmail.com',
             'name' => 'Jennifer Muse',
             'first_name' => 'Jennifer',
@@ -17442,7 +17442,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 16:43:08',
             'updated_at' => '2024-06-06 21:23:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ian.kaufman4@gmail.com',
             'name' => 'Ian Kaufman',
             'first_name' => 'Ian',
@@ -17459,7 +17459,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 17:02:59',
             'updated_at' => '2024-06-03 01:24:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arielkaylahaberman@gmail.com',
             'name' => 'Ariel Haberman',
             'first_name' => 'Ariel',
@@ -17476,7 +17476,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 17:32:25',
             'updated_at' => '2023-08-26 11:53:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nayrin18@yahoo.es',
             'name' => 'Nayrin Ruiz',
             'first_name' => 'Nayrin',
@@ -17493,7 +17493,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 18:31:06',
             'updated_at' => '2023-08-26 14:28:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'degraciakeira@gmail.com',
             'name' => 'Keira De Gracia',
             'first_name' => 'Keira',
@@ -17510,7 +17510,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 18:37:05',
             'updated_at' => '2023-08-26 12:58:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jamsmmm11@gmail.com',
             'name' => 'Judith MuÃ±oz',
             'first_name' => 'Judith',
@@ -17527,7 +17527,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 18:41:04',
             'updated_at' => '2023-08-26 12:50:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dejfrancisco@gmail.com',
             'name' => 'Carlos Tejada',
             'first_name' => 'Carlos',
@@ -17544,7 +17544,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 18:45:08',
             'updated_at' => '2023-12-08 21:22:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'perezmiguel.kl@gmail.com',
             'name' => 'Miguel Perez',
             'first_name' => 'Miguel',
@@ -17561,7 +17561,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 18:50:42',
             'updated_at' => '2023-12-08 21:23:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'symasson@gmail.com',
             'name' => 'Sylvain Masson',
             'first_name' => 'Sylvain',
@@ -17578,7 +17578,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 19:07:51',
             'updated_at' => '2023-12-21 01:04:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alwinortega740@gmail.com',
             'name' => 'Alwin Ortega',
             'first_name' => 'Alwin',
@@ -17595,7 +17595,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 19:09:43',
             'updated_at' => '2023-08-26 11:43:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eduardin608@gmail.com',
             'name' => 'Eduardo MuÃ±oz',
             'first_name' => 'Eduardo',
@@ -17612,7 +17612,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 19:16:07',
             'updated_at' => '2023-12-08 21:23:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dare25lys@gmail.com',
             'name' => 'Darelys MuÃ±oz',
             'first_name' => 'Darelys',
@@ -17629,7 +17629,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 19:20:55',
             'updated_at' => '2023-08-26 10:25:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mark.gudgel@yahoo.com',
             'name' => 'Mark Gudgel',
             'first_name' => 'Mark',
@@ -17646,7 +17646,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 19:29:12',
             'updated_at' => '2023-12-21 17:39:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'achilles@levitts.org',
             'name' => 'Lee Levitt',
             'first_name' => 'Lee',
@@ -17663,7 +17663,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 19:50:01',
             'updated_at' => '2023-08-26 13:41:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'j.pasquale@att.net',
             'name' => 'James Pasquale',
             'first_name' => 'James',
@@ -17680,7 +17680,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 19:59:35',
             'updated_at' => '2023-08-26 11:12:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jasonwmforrester@gmail.com',
             'name' => 'Lachlan Forrester-Willis',
             'first_name' => 'Lachlan',
@@ -17697,7 +17697,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 20:36:37',
             'updated_at' => '2023-09-05 20:30:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'horrigan.ryan16@gmail.com',
             'name' => 'Ryan Horrigan',
             'first_name' => 'Ryan',
@@ -17714,7 +17714,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 21:01:53',
             'updated_at' => '2024-03-02 21:57:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Fdeleon393@gmail.com',
             'name' => 'Frank De Leon',
             'first_name' => 'Frank',
@@ -17731,7 +17731,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 22:15:28',
             'updated_at' => '2024-04-26 18:02:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jy.no315@gmail.com',
             'name' => 'Julie No',
             'first_name' => 'Julie',
@@ -17748,7 +17748,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 22:18:43',
             'updated_at' => '2023-08-26 12:51:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'johnnybontemps@gmail.com',
             'name' => 'Johnny Bontemps',
             'first_name' => 'Johnny',
@@ -17765,7 +17765,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 23:17:20',
             'updated_at' => '2023-08-26 12:45:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'samhoskin4@gmail.com',
             'name' => 'Sam Hoskin',
             'first_name' => 'Sam',
@@ -17782,7 +17782,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 23:29:06',
             'updated_at' => '2023-08-26 14:51:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'zoemetalios@gmail.com',
             'name' => 'Zoe Metalios',
             'first_name' => 'Zoe',
@@ -17799,7 +17799,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 23:37:33',
             'updated_at' => '2023-08-26 15:54:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'circlebgang@gmail.com',
             'name' => 'Beth Sanden',
             'first_name' => 'Beth',
@@ -17816,7 +17816,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 23:38:37',
             'updated_at' => '2024-03-23 21:54:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kelseydid@gmail.com',
             'name' => 'Kelsey Didericksen',
             'first_name' => 'Kelsey',
@@ -17833,7 +17833,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 23:41:05',
             'updated_at' => '2023-08-26 13:00:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'megankramer1@hotmail.com',
             'name' => 'Megan Kramer',
             'first_name' => 'Megan',
@@ -17850,7 +17850,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 23:51:34',
             'updated_at' => '2023-08-26 14:03:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'saraballen24@gmail.com',
             'name' => 'Steph Jackson',
             'first_name' => 'Steph',
@@ -17867,7 +17867,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-24 23:56:30',
             'updated_at' => '2024-07-22 23:58:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Jena.rakoff@gmail.com',
             'name' => 'Jena Epstein',
             'first_name' => 'Jena',
@@ -17884,7 +17884,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 00:24:51',
             'updated_at' => '2023-08-26 11:17:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aldenritzjack@gmail.com',
             'name' => 'Alden Ritz-Jack',
             'first_name' => 'Alden',
@@ -17901,7 +17901,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 00:57:16',
             'updated_at' => '2023-09-05 20:25:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emily.balogh@outlook.com',
             'name' => 'Emily Balogh',
             'first_name' => 'Emily',
@@ -17918,7 +17918,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 01:04:19',
             'updated_at' => '2023-08-26 10:49:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mhuey7335@gmail.com',
             'name' => 'Madison Houston',
             'first_name' => 'Madison',
@@ -17935,7 +17935,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 01:16:04',
             'updated_at' => '2023-08-26 13:50:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maxinekjacobson@gmail.com',
             'name' => 'Maxine Jacobson',
             'first_name' => 'Maxine',
@@ -17952,7 +17952,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 01:30:41',
             'updated_at' => '2023-08-26 14:01:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alhuang96@gmail.com',
             'name' => 'Angela Huang',
             'first_name' => 'Angela',
@@ -17969,7 +17969,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 02:41:07',
             'updated_at' => '2023-08-26 11:49:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bethsegar808@gmail.com',
             'name' => 'Elizabeth Segar',
             'first_name' => 'Elizabeth',
@@ -17986,7 +17986,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 02:46:06',
             'updated_at' => '2023-08-26 10:35:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yammarino@gmail.com',
             'name' => 'Paola Yammarino',
             'first_name' => 'Paola',
@@ -18003,7 +18003,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 03:08:12',
             'updated_at' => '2023-12-06 23:21:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jaredyammster@gmail.com',
             'name' => 'Jared Yammarino',
             'first_name' => 'Jared',
@@ -18020,7 +18020,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 03:32:20',
             'updated_at' => '2023-08-26 11:14:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jsgarfinkel@gmail.com',
             'name' => 'Jordan Garfinkel',
             'first_name' => 'Jordan',
@@ -18037,7 +18037,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 04:02:01',
             'updated_at' => '2023-08-26 12:46:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gillotti421@gmail.com',
             'name' => 'Casey Gillotti',
             'first_name' => 'Casey',
@@ -18054,7 +18054,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 05:00:58',
             'updated_at' => '2024-07-16 04:02:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '24scheng@loyolanyc.org',
             'name' => 'Sabrina Cheng',
             'first_name' => 'Sabrina',
@@ -18071,7 +18071,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 05:53:45',
             'updated_at' => '2023-09-05 20:26:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erika.hendersonflak@gmail.com',
             'name' => 'Erika Flak',
             'first_name' => 'Erika',
@@ -18088,7 +18088,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 06:35:35',
             'updated_at' => '2023-08-26 10:52:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jmoruzzi@lordabbett.com',
             'name' => 'Jacqueline Moruzzi',
             'first_name' => 'Jacqueline',
@@ -18105,7 +18105,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 06:39:58',
             'updated_at' => '2024-02-07 01:34:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'karla.gilbride@gmail.com',
             'name' => 'Karla Gilbride',
             'first_name' => 'Karla',
@@ -18122,7 +18122,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 07:30:57',
             'updated_at' => '2023-08-26 12:54:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erinnbnyc@aol.com',
             'name' => 'Erinn Bucklan',
             'first_name' => 'Erinn',
@@ -18139,7 +18139,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 07:46:58',
             'updated_at' => '2024-07-19 10:06:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jk@thekregroup.com',
             'name' => 'Jonathan Kushner',
             'first_name' => 'Jonathan',
@@ -18156,7 +18156,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 11:47:34',
             'updated_at' => '2023-08-26 12:46:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'victorwewin@yahoo.com',
             'name' => 'William Rosario',
             'first_name' => 'William',
@@ -18173,7 +18173,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 15:52:32',
             'updated_at' => '2023-10-01 04:07:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marinedumortier@hotmail.com',
             'name' => 'Marine Dumortier',
             'first_name' => 'Marine',
@@ -18190,7 +18190,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 17:23:18',
             'updated_at' => '2023-08-26 13:55:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jonathanyamm@gmail.com',
             'name' => 'Jonathan Yammarino',
             'first_name' => 'Jonathan',
@@ -18207,7 +18207,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 18:39:14',
             'updated_at' => '2023-08-26 12:46:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hweinstein@hotmail.com',
             'name' => 'Howie Weinstein',
             'first_name' => 'Howie',
@@ -18224,7 +18224,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 19:35:14',
             'updated_at' => '2023-08-26 11:06:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'matthew.zamore@gmail.com',
             'name' => 'Matthew Zamore',
             'first_name' => 'Matthew',
@@ -18241,7 +18241,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 20:25:35',
             'updated_at' => '2023-08-26 14:00:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jndohse@gmail.com',
             'name' => 'Janessa Juarez',
             'first_name' => 'Janessa',
@@ -18258,7 +18258,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 20:27:23',
             'updated_at' => '2023-08-26 11:14:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nicolemiko17@gmail.com',
             'name' => 'Nicole Miko',
             'first_name' => 'Nicole',
@@ -18275,7 +18275,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 20:52:26',
             'updated_at' => '2024-03-03 09:35:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jdelzz21@gmail.com',
             'name' => 'Joseph Del Rio',
             'first_name' => 'Joseph',
@@ -18292,7 +18292,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 20:54:27',
             'updated_at' => '2023-08-26 12:48:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'henrygreen10@gmail.com',
             'name' => 'Henry Green',
             'first_name' => 'Henry',
@@ -18309,7 +18309,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 21:46:26',
             'updated_at' => '2023-08-26 11:05:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lupita.rodriguezz.32@gmail.com',
             'name' => 'Lupita Rodriguez',
             'first_name' => 'Lupita',
@@ -18326,7 +18326,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 21:51:28',
             'updated_at' => '2023-08-26 13:48:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brovai@me.com',
             'name' => 'Bruno Rovai',
             'first_name' => 'Bruno',
@@ -18343,7 +18343,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 22:26:50',
             'updated_at' => '2024-06-27 17:15:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pgoodman@kggp.com',
             'name' => 'Paul Goodman',
             'first_name' => 'Paul',
@@ -18360,7 +18360,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-25 23:16:28',
             'updated_at' => '2023-08-26 14:36:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jasonbarefoot99@gmail.com',
             'name' => 'Jason Barefoot',
             'first_name' => 'Jason',
@@ -18377,7 +18377,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 00:19:25',
             'updated_at' => '2023-08-26 11:15:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joshrkahn@gmail.com',
             'name' => 'Josh Kahn',
             'first_name' => 'Josh',
@@ -18394,7 +18394,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 00:48:50',
             'updated_at' => '2023-08-26 12:48:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adamrivera1198@gmail.com',
             'name' => 'Adam Rivera',
             'first_name' => 'Adam',
@@ -18411,7 +18411,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 02:22:50',
             'updated_at' => '2023-08-26 11:36:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Zachary.cooper12@gmail.com',
             'name' => 'Zachary Cooper',
             'first_name' => 'Zachary',
@@ -18428,7 +18428,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 02:58:19',
             'updated_at' => '2023-08-26 15:53:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'j.mccollum64@comcast.net',
             'name' => 'Jim McCollum',
             'first_name' => 'Jim',
@@ -18445,7 +18445,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 03:20:44',
             'updated_at' => '2024-07-10 17:57:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tortoisef@verizon.net',
             'name' => 'Ruth Liebowitz',
             'first_name' => 'Ruth',
@@ -18462,7 +18462,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 03:35:50',
             'updated_at' => '2024-07-16 03:00:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'daradalmata@yahoo.com',
             'name' => 'Dara Dalmata',
             'first_name' => 'Dara',
@@ -18479,7 +18479,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 04:31:20',
             'updated_at' => '2023-08-26 10:25:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jeremycohen419@gmail.com',
             'name' => 'Jeremy Cohen',
             'first_name' => 'Jeremy',
@@ -18496,7 +18496,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 04:32:34',
             'updated_at' => '2023-08-26 12:39:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bdpinder@gmail.com',
             'name' => 'Brandy Pinder',
             'first_name' => 'Brandy',
@@ -18513,7 +18513,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 05:39:02',
             'updated_at' => '2024-07-03 13:15:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'whitneyfamily5@comcast.net',
             'name' => 'Bruce Whitney',
             'first_name' => 'Bruce',
@@ -18530,7 +18530,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 05:56:27',
             'updated_at' => '2024-07-03 13:15:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yolismami@gmail.com',
             'name' => 'Judith Gonzalez',
             'first_name' => 'Judith',
@@ -18547,7 +18547,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 06:02:18',
             'updated_at' => '2023-08-26 12:50:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jgonzalezh614@icloud.com',
             'name' => 'Juan Gonzalez',
             'first_name' => 'Juan',
@@ -18564,7 +18564,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 07:32:53',
             'updated_at' => '2023-08-26 12:50:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jemgumussoy@hotmail.co.uk',
             'name' => 'Jem Gumussoy',
             'first_name' => 'Jem',
@@ -18581,7 +18581,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 16:37:50',
             'updated_at' => '2024-07-22 23:30:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pbenking@gmail.com',
             'name' => 'Paul King',
             'first_name' => 'Paul',
@@ -18598,7 +18598,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 16:40:44',
             'updated_at' => '2024-07-25 15:17:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wahl.allie@gmail.com',
             'name' => 'Allison Wahl',
             'first_name' => 'Allison',
@@ -18615,7 +18615,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 17:37:44',
             'updated_at' => '2023-08-26 11:43:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'slyk100@gmail.com',
             'name' => 'Sylvia Lai',
             'first_name' => 'Sylvia',
@@ -18632,7 +18632,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 17:38:04',
             'updated_at' => '2023-08-26 15:37:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carlin@carlinwellness.com',
             'name' => 'Carlin Greenstein',
             'first_name' => 'Carlin',
@@ -18649,7 +18649,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 18:03:35',
             'updated_at' => '2023-08-26 10:08:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alanleblanc02@gmail.com',
             'name' => 'Alan LeBlanc',
             'first_name' => 'Alan',
@@ -18666,7 +18666,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 18:29:17',
             'updated_at' => '2023-08-26 11:37:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'w.barry.conrad@gmail.com',
             'name' => 'William Conrad',
             'first_name' => 'William',
@@ -18683,7 +18683,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 18:56:57',
             'updated_at' => '2024-07-25 18:06:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Mvcompher@gmail.com',
             'name' => 'Morgan Compher',
             'first_name' => 'Morgan',
@@ -18700,7 +18700,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 19:18:49',
             'updated_at' => '2023-08-26 14:25:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ibarra31@gmail.com',
             'name' => 'Geovanni Ibarra',
             'first_name' => 'Geovanni',
@@ -18717,7 +18717,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 20:10:37',
             'updated_at' => '2023-08-26 10:59:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rehmj23@ensworth.com',
             'name' => 'Jackson Rehm',
             'first_name' => 'Jackson',
@@ -18734,7 +18734,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 20:56:12',
             'updated_at' => '2023-08-26 11:09:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'meichner14@gmail.com',
             'name' => 'Max Eichner',
             'first_name' => 'Max',
@@ -18751,7 +18751,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 21:48:36',
             'updated_at' => '2024-06-06 21:19:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kris.rehm@vumc.org',
             'name' => 'Kris Rehm',
             'first_name' => 'Kris',
@@ -18768,7 +18768,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 21:48:43',
             'updated_at' => '2023-08-26 13:04:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'CDRMASON@YAHOO.COM',
             'name' => 'RICHARD MASON',
             'first_name' => 'RICHARD',
@@ -18785,7 +18785,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-26 22:54:38',
             'updated_at' => '2023-08-26 14:45:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wratner@wesleyan.edu',
             'name' => 'Will Ratner',
             'first_name' => 'Will',
@@ -18802,7 +18802,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 00:10:58',
             'updated_at' => '2023-08-26 15:49:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'molly@mollymillercounseling.com',
             'name' => 'Molly Miller',
             'first_name' => 'Molly',
@@ -18819,7 +18819,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 00:26:52',
             'updated_at' => '2023-08-26 14:24:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ashleshakulkarni524@yahoo.com',
             'name' => 'Ashlesha Kulkarni',
             'first_name' => 'Ashlesha',
@@ -18836,7 +18836,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 00:59:28',
             'updated_at' => '2024-05-23 19:50:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kkline1810@gmail.com',
             'name' => 'Kevin Kline',
             'first_name' => 'Kevin',
@@ -18853,7 +18853,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 02:08:22',
             'updated_at' => '2023-08-26 13:01:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mkulkarni713@gmail.com',
             'name' => 'Madhavi Kulkarni',
             'first_name' => 'Madhavi',
@@ -18870,7 +18870,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 02:23:49',
             'updated_at' => '2024-05-23 19:51:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dana.r.pier@gmail.com',
             'name' => 'Dana Pier',
             'first_name' => 'Dana',
@@ -18887,7 +18887,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 03:01:35',
             'updated_at' => '2023-08-26 10:22:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'madelineroserodgers@gmail.com',
             'name' => 'Madeline Rodgers',
             'first_name' => 'Madeline',
@@ -18904,7 +18904,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 03:44:48',
             'updated_at' => '2023-08-26 13:49:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ainenichathail@gmail.com',
             'name' => 'Anna Cahill',
             'first_name' => 'Anna',
@@ -18921,7 +18921,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 06:16:49',
             'updated_at' => '2024-02-07 01:14:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Lrdna@yahoo.com',
             'name' => 'Loredana Delucchi',
             'first_name' => 'Loredana',
@@ -18938,7 +18938,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 07:15:26',
             'updated_at' => '2023-08-26 13:45:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nicole.capra07@gmail.com',
             'name' => 'Nicole Zambelletti',
             'first_name' => 'Nicole',
@@ -18955,7 +18955,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 07:41:46',
             'updated_at' => '2023-08-26 14:30:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mosorio9981@gmail.com',
             'name' => 'Martin Osorio',
             'first_name' => 'Martin',
@@ -18972,7 +18972,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 08:41:08',
             'updated_at' => '2023-08-26 13:58:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Kimberly.tucker@ASU.edu',
             'name' => 'Kim Tucker',
             'first_name' => 'Kim',
@@ -18989,7 +18989,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 11:17:16',
             'updated_at' => '2023-08-26 13:02:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophiaahoward77@gmail.com',
             'name' => 'Sophia Howard',
             'first_name' => 'Sophia',
@@ -19006,7 +19006,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 14:49:15',
             'updated_at' => '2023-08-26 15:32:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emonta4@gmail.com',
             'name' => 'Elizabeth Montalvo',
             'first_name' => 'Elizabeth',
@@ -19023,7 +19023,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 15:13:50',
             'updated_at' => '2024-07-25 23:29:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mcntrish@yahoo.com',
             'name' => 'Patricia McNaughton',
             'first_name' => 'Patricia',
@@ -19040,7 +19040,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 18:26:53',
             'updated_at' => '2023-08-26 14:34:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jraeoleary@gmail.com',
             'name' => 'Jaimie Oâ€™Leary',
             'first_name' => 'Jaimie',
@@ -19057,7 +19057,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 18:32:58',
             'updated_at' => '2023-10-18 22:06:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jennifer.perry@maine.edu',
             'name' => 'Jennifer Perry',
             'first_name' => 'Jennifer',
@@ -19074,7 +19074,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 19:20:45',
             'updated_at' => '2023-08-26 12:37:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carraghercornelia@gmail.com',
             'name' => 'Cornelia Carragher',
             'first_name' => 'Cornelia',
@@ -19091,7 +19091,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 19:38:49',
             'updated_at' => '2023-08-26 10:20:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ejwursthorn@icloud.com',
             'name' => 'Eric Wursthorn',
             'first_name' => 'Eric',
@@ -19108,7 +19108,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 19:50:10',
             'updated_at' => '2023-08-26 10:52:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'edamstramsw@yahoo.com',
             'name' => 'David Damstra',
             'first_name' => 'David',
@@ -19125,7 +19125,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 20:06:55',
             'updated_at' => '2023-08-26 10:25:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mayking0523@gmail.com',
             'name' => 'May Angela King',
             'first_name' => 'May Angela',
@@ -19142,7 +19142,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 21:40:10',
             'updated_at' => '2023-08-26 14:01:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'david.gettis@gmail.com',
             'name' => 'David Gettis',
             'first_name' => 'David',
@@ -19159,7 +19159,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 22:28:52',
             'updated_at' => '2023-08-26 10:25:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jwgobron@gmail.com',
             'name' => 'John Gobron',
             'first_name' => 'John',
@@ -19176,7 +19176,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 22:56:24',
             'updated_at' => '2023-08-26 12:43:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sarahjohnson01210@gmail.com',
             'name' => 'Sarah Johnson',
             'first_name' => 'Sarah',
@@ -19193,7 +19193,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-27 23:32:09',
             'updated_at' => '2023-08-26 15:24:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rebiwong@gmail.com',
             'name' => 'Rebi Connors',
             'first_name' => 'Rebi',
@@ -19210,7 +19210,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 00:16:20',
             'updated_at' => '2024-02-14 01:14:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adlercarly2020@gmail.com',
             'name' => 'Carly Adler',
             'first_name' => 'Carly',
@@ -19227,7 +19227,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 00:37:13',
             'updated_at' => '2023-08-26 10:09:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'magri612@yahoo.com',
             'name' => 'Celestino Frade',
             'first_name' => 'Celestino',
@@ -19244,7 +19244,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 01:11:10',
             'updated_at' => '2024-07-29 20:51:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Antaeus.Jones@tn.gov',
             'name' => 'Antaeus Jones',
             'first_name' => 'Antaeus',
@@ -19261,7 +19261,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 01:43:28',
             'updated_at' => '2023-08-26 11:51:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jacob.poloway@gmail.com',
             'name' => 'Jacob Poloway',
             'first_name' => 'Jacob',
@@ -19278,7 +19278,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 01:54:32',
             'updated_at' => '2023-08-26 11:10:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'annette.duzant.tasch@gmail.com',
             'name' => 'Julian Tasch',
             'first_name' => 'Julian',
@@ -19295,7 +19295,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 02:22:41',
             'updated_at' => '2023-08-26 12:51:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bstromer@gmail.com',
             'name' => 'Bryan Stromer',
             'first_name' => 'Bryan',
@@ -19312,7 +19312,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 02:46:43',
             'updated_at' => '2024-06-01 18:52:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'behreini.ida@gmail.com',
             'name' => 'Ida Behreini',
             'first_name' => 'Ida',
@@ -19329,7 +19329,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 02:53:30',
             'updated_at' => '2024-02-29 22:58:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'karaughbrown@gmail.com',
             'name' => 'Karaugh Brown',
             'first_name' => 'Karaugh',
@@ -19346,7 +19346,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 03:02:36',
             'updated_at' => '2024-07-19 16:55:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexjkirk10@gmail.com',
             'name' => 'Alexander Kirk',
             'first_name' => 'Alexander',
@@ -19363,7 +19363,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 03:27:48',
             'updated_at' => '2023-08-26 11:39:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'neillbiddy80@gmail.com',
             'name' => 'Neill Biddy',
             'first_name' => 'Neill',
@@ -19380,7 +19380,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 04:27:02',
             'updated_at' => '2024-06-02 23:28:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tinatsiang@gmail.com',
             'name' => 'Christina Tsiang-smShorr',
             'first_name' => 'Christina',
@@ -19397,7 +19397,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 04:51:27',
             'updated_at' => '2023-12-12 23:11:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Treymask21@gmail.com',
             'name' => 'Treyvon Mask',
             'first_name' => 'Treyvon',
@@ -19414,7 +19414,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 05:26:09',
             'updated_at' => '2024-07-29 05:53:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sungeunjin78@gmail.com',
             'name' => 'Sung Jin',
             'first_name' => 'Sung',
@@ -19431,7 +19431,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 05:42:53',
             'updated_at' => '2023-08-26 15:36:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dpriscila.avila@gmail.com',
             'name' => 'Logan Avila',
             'first_name' => 'Logan',
@@ -19448,7 +19448,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 05:44:00',
             'updated_at' => '2023-09-05 20:30:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sissimaguire@yahoo.com',
             'name' => 'anelise normann',
             'first_name' => 'anelise',
@@ -19465,7 +19465,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 06:34:43',
             'updated_at' => '2023-08-26 11:48:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'morales.hdez2505@gmail.com',
             'name' => 'Monica Morales',
             'first_name' => 'Monica',
@@ -19482,7 +19482,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 06:54:42',
             'updated_at' => '2023-08-26 14:25:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lubecabet@gmail.com',
             'name' => 'Lubeca Betancourt',
             'first_name' => 'Lubeca',
@@ -19499,7 +19499,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 07:10:18',
             'updated_at' => '2023-08-26 13:47:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chavouss@emmanuel.edu',
             'name' => 'Sydney Chavous',
             'first_name' => 'Sydney',
@@ -19516,7 +19516,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 07:38:57',
             'updated_at' => '2023-08-26 15:37:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ken_tiongson@yahoo.com',
             'name' => 'Ken Tiongson',
             'first_name' => 'Ken',
@@ -19533,7 +19533,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 08:03:51',
             'updated_at' => '2023-08-26 13:00:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dqfhag@aol.com',
             'name' => 'Robin Carlson',
             'first_name' => 'Robin',
@@ -19550,7 +19550,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 17:37:27',
             'updated_at' => '2023-08-26 14:47:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tfleming@colgate.edu',
             'name' => 'Taylor Fleming',
             'first_name' => 'Taylor',
@@ -19567,7 +19567,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 17:45:55',
             'updated_at' => '2023-08-26 15:39:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'madelinecampbell@ymail.com',
             'name' => 'Madeline Fitzpatrick',
             'first_name' => 'Madeline',
@@ -19584,7 +19584,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 18:07:09',
             'updated_at' => '2023-08-26 13:49:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'matt.davis@wku.edu',
             'name' => 'Matthew Davis',
             'first_name' => 'Matthew',
@@ -19601,7 +19601,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 18:43:00',
             'updated_at' => '2023-08-26 14:00:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rohini.malkani@gmail.com',
             'name' => 'Rohini Malkani',
             'first_name' => 'Rohini',
@@ -19618,7 +19618,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 19:27:08',
             'updated_at' => '2023-08-26 14:48:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kevin.kunz@einsteinmed.edu',
             'name' => 'Kevin Kunz',
             'first_name' => 'Kevin',
@@ -19635,7 +19635,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 20:15:26',
             'updated_at' => '2023-08-26 13:01:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'damnyrosario63@gmail.com',
             'name' => 'Daniel Rosario',
             'first_name' => 'Daniel',
@@ -19652,7 +19652,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 21:14:23',
             'updated_at' => '2023-08-26 10:23:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alec.glassman@gmail.com',
             'name' => 'Alec Glassman',
             'first_name' => 'Alec',
@@ -19669,7 +19669,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 21:15:01',
             'updated_at' => '2024-07-03 13:15:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'christopher@bharacing.com',
             'name' => 'Christopher Anderson',
             'first_name' => 'Christopher',
@@ -19686,7 +19686,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 22:02:21',
             'updated_at' => '2023-08-26 10:17:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ram11749@cox.net',
             'name' => 'Ronald Morgan',
             'first_name' => 'Ronald',
@@ -19703,7 +19703,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 22:55:27',
             'updated_at' => '2023-08-26 14:48:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vilen13@yahoo.com',
             'name' => 'Rini Sugianto',
             'first_name' => 'Rini',
@@ -19720,7 +19720,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 23:24:18',
             'updated_at' => '2023-09-06 23:43:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'weenieart@gmail.com',
             'name' => 'Miriam Weiskind',
             'first_name' => 'Miriam',
@@ -19737,7 +19737,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-28 23:55:56',
             'updated_at' => '2023-08-26 14:24:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sotomelanierod@gmail.com',
             'name' => 'Melanie Soto',
             'first_name' => 'Melanie',
@@ -19754,7 +19754,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 00:03:16',
             'updated_at' => '2023-08-26 14:04:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophia.lbyer@gmail.com',
             'name' => 'Sophia Byer',
             'first_name' => 'Sophia',
@@ -19771,7 +19771,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 00:51:44',
             'updated_at' => '2023-08-26 15:32:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'enaqee2@gmail.com',
             'name' => 'Esmeil Naqeeb',
             'first_name' => 'Esmeil',
@@ -19788,7 +19788,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 01:36:34',
             'updated_at' => '2023-08-26 10:54:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mskamagki@proton.me',
             'name' => 'Maria Skamagki',
             'first_name' => 'Maria',
@@ -19805,7 +19805,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 02:04:32',
             'updated_at' => '2023-09-15 19:44:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jebregman@gmail.com',
             'name' => 'Maya Bregman',
             'first_name' => 'Maya',
@@ -19822,7 +19822,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 02:32:37',
             'updated_at' => '2023-08-26 14:02:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jordan.marie.sweat@gmail.com',
             'name' => 'Jordan Sweat',
             'first_name' => 'Jordan',
@@ -19839,7 +19839,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 03:57:06',
             'updated_at' => '2023-08-26 12:46:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'melissaeinhorn03@gmail.com',
             'name' => 'Melissa Einhorn',
             'first_name' => 'Melissa',
@@ -19856,7 +19856,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 04:30:30',
             'updated_at' => '2023-08-26 14:04:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'thistle@cfl.rr.com',
             'name' => 'Bronwen Thompson',
             'first_name' => 'Bronwen',
@@ -19873,7 +19873,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 06:15:56',
             'updated_at' => '2024-03-27 02:16:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'margaretamoore16@gmail.com',
             'name' => 'Margaret Moore',
             'first_name' => 'Margaret',
@@ -19890,7 +19890,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 07:27:55',
             'updated_at' => '2024-07-18 07:31:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tec2day@aol.com',
             'name' => 'Craig Polakoff',
             'first_name' => 'Craig',
@@ -19907,7 +19907,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 17:14:26',
             'updated_at' => '2023-09-16 01:32:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sambiskynis@gmail.com',
             'name' => 'Samantha Biskykins',
             'first_name' => 'Samantha',
@@ -19924,7 +19924,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 18:51:06',
             'updated_at' => '2023-08-26 14:53:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jane.kirk@gmail.com',
             'name' => 'Jane Kirk',
             'first_name' => 'Jane',
@@ -19941,7 +19941,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 19:30:30',
             'updated_at' => '2023-08-26 11:13:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bpherrera1@gmail.com',
             'name' => 'Betty Phillips-Herrera',
             'first_name' => 'Betty',
@@ -19958,7 +19958,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 19:31:34',
             'updated_at' => '2023-08-26 11:59:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alpol67@gmail.com',
             'name' => 'Allison Polchinski',
             'first_name' => 'Allison',
@@ -19975,7 +19975,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 20:08:51',
             'updated_at' => '2024-07-22 04:53:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rachelahbrown@gmail.com',
             'name' => 'Rachel Brown',
             'first_name' => 'Rachel',
@@ -19992,7 +19992,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 20:17:30',
             'updated_at' => '2023-08-26 14:40:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emd2196@columbia.edu',
             'name' => 'Emily DiVito',
             'first_name' => 'Emily',
@@ -20009,7 +20009,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 20:31:10',
             'updated_at' => '2024-07-05 18:25:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'montascarlos267@gmail.com',
             'name' => 'Carlos Montas',
             'first_name' => 'Carlos',
@@ -20026,7 +20026,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 20:54:37',
             'updated_at' => '2023-08-26 10:08:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dleighsumner@gmail.com',
             'name' => 'Dianne Leigh Sumner',
             'first_name' => 'Dianne Leigh',
@@ -20043,7 +20043,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 21:15:28',
             'updated_at' => '2023-12-06 20:03:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jacobshocknesse@gmail.com',
             'name' => 'Jacob Shocknesse',
             'first_name' => 'Jacob',
@@ -20060,7 +20060,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 21:31:46',
             'updated_at' => '2023-09-05 23:05:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'CourtneyEHindle@gmail.com',
             'name' => 'Courtney Hindle',
             'first_name' => 'Courtney',
@@ -20077,7 +20077,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 21:34:07',
             'updated_at' => '2023-08-26 10:20:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'saggi_s@hotmail.ca',
             'name' => 'Shreshth Saggi',
             'first_name' => 'Shreshth',
@@ -20094,7 +20094,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-29 22:39:32',
             'updated_at' => '2023-08-26 15:30:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilygoldman96@gmail.com',
             'name' => 'Emily Goldman',
             'first_name' => 'Emily',
@@ -20111,7 +20111,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 01:10:28',
             'updated_at' => '2023-08-26 10:49:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sgeames567@gmail.com',
             'name' => 'Shannon Geames',
             'first_name' => 'Shannon',
@@ -20128,7 +20128,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 01:22:26',
             'updated_at' => '2023-08-26 15:28:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'karolinejoy99@gmail.com',
             'name' => 'Kara Ashpole',
             'first_name' => 'Kara',
@@ -20145,7 +20145,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 04:31:11',
             'updated_at' => '2023-08-26 12:54:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ameliadickerson@gmail.com',
             'name' => 'Amelia Dickerson',
             'first_name' => 'Amelia',
@@ -20162,7 +20162,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 04:57:59',
             'updated_at' => '2023-08-26 11:45:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ashley.m.robin@gmail.com',
             'name' => 'Ashley Robin',
             'first_name' => 'Ashley',
@@ -20179,7 +20179,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 05:32:06',
             'updated_at' => '2023-08-26 11:55:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'delainemansfield@gmail.com',
             'name' => 'Delaine Mansfield',
             'first_name' => 'Delaine',
@@ -20196,7 +20196,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 06:49:25',
             'updated_at' => '2023-08-26 10:28:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'spro1980@gmail.com',
             'name' => 'Stacy Ciarleglio',
             'first_name' => 'Stacy',
@@ -20213,7 +20213,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 07:00:45',
             'updated_at' => '2023-08-26 15:33:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'corvinb@gmail.com',
             'name' => 'Corvin Bazgan',
             'first_name' => 'Corvin',
@@ -20230,7 +20230,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 08:34:27',
             'updated_at' => '2023-08-26 10:20:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nelrusung@gmail.com',
             'name' => 'Elwin Davis',
             'first_name' => 'Elwin',
@@ -20247,7 +20247,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 11:49:49',
             'updated_at' => '2023-08-26 10:47:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'krasamny@gmail.com',
             'name' => 'Kenneth Rasamny',
             'first_name' => 'Kenneth',
@@ -20264,7 +20264,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 18:56:20',
             'updated_at' => '2023-08-26 13:00:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'leaann.renner.9597@gmail.com',
             'name' => 'Lea Ann Renner',
             'first_name' => 'Lea Ann',
@@ -20281,7 +20281,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 21:13:12',
             'updated_at' => '2023-08-26 13:41:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'batwood@skiff.com',
             'name' => 'Bruce Atwood',
             'first_name' => 'Bruce',
@@ -20298,7 +20298,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 21:15:40',
             'updated_at' => '2023-08-26 12:03:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'michelle.reynard@gmail.com',
             'name' => 'Michelle Georgevich',
             'first_name' => 'Michelle',
@@ -20315,7 +20315,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 22:09:11',
             'updated_at' => '2024-07-28 17:26:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danaroxanne@gmail.com',
             'name' => 'Dana Martin',
             'first_name' => 'Dana',
@@ -20332,7 +20332,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 22:23:42',
             'updated_at' => '2024-07-20 21:09:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rohan.parekh92@gmail.com',
             'name' => 'Rohan Parekh',
             'first_name' => 'Rohan',
@@ -20349,7 +20349,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 22:59:27',
             'updated_at' => '2023-08-26 14:48:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cameronbal@yahoo.com',
             'name' => 'Cameron Bellantonio',
             'first_name' => 'Cameron',
@@ -20366,7 +20366,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 23:02:33',
             'updated_at' => '2023-08-26 10:07:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amarishornbuckle@gmail.com',
             'name' => 'Amaris Hornbuckle',
             'first_name' => 'Amaris',
@@ -20383,7 +20383,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 23:15:54',
             'updated_at' => '2023-08-26 11:45:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lauramays013@gmail.com',
             'name' => 'Laura Mays',
             'first_name' => 'Laura',
@@ -20400,7 +20400,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 23:22:22',
             'updated_at' => '2023-08-26 13:39:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lylysalisbury@yahoo.com',
             'name' => 'LyLy Hin',
             'first_name' => 'LyLy',
@@ -20417,7 +20417,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-30 23:49:26',
             'updated_at' => '2023-08-26 13:48:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'delanej17@gmail.com',
             'name' => 'Jordan Delane',
             'first_name' => 'Jordan',
@@ -20434,7 +20434,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 00:10:55',
             'updated_at' => '2023-08-26 12:46:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'makehomehappy@gmail.com',
             'name' => 'Laura Weinberg',
             'first_name' => 'Laura',
@@ -20451,7 +20451,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 00:18:14',
             'updated_at' => '2023-08-26 13:39:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nhtony17@gmail.com',
             'name' => 'Linda Large',
             'first_name' => 'Linda',
@@ -20468,7 +20468,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 00:57:20',
             'updated_at' => '2024-05-28 14:46:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'weinbergl1@icloud.com',
             'name' => 'William Aronow',
             'first_name' => 'William',
@@ -20485,7 +20485,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 00:58:59',
             'updated_at' => '2023-08-26 15:50:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bdash20@aol.com',
             'name' => 'William Dash',
             'first_name' => 'William',
@@ -20502,7 +20502,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 01:28:33',
             'updated_at' => '2023-08-26 15:50:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Billswheelsopal@gmail.com',
             'name' => 'William Reilly',
             'first_name' => 'William',
@@ -20519,7 +20519,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 01:58:54',
             'updated_at' => '2024-06-18 21:26:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carlaparker@justserve.org',
             'name' => 'Carla Parker',
             'first_name' => 'Carla',
@@ -20536,7 +20536,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 02:18:39',
             'updated_at' => '2023-08-26 10:08:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gingerruthie@yahoo.com',
             'name' => 'Virginia Roelle',
             'first_name' => 'Virginia',
@@ -20553,7 +20553,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 02:22:12',
             'updated_at' => '2023-08-26 15:47:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'madepq@gmail.com',
             'name' => 'Madelaine Quintero',
             'first_name' => 'Madelaine',
@@ -20570,7 +20570,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 03:25:58',
             'updated_at' => '2023-08-26 13:49:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davidkuhn1@frontier.com',
             'name' => 'David Kuhn',
             'first_name' => 'David',
@@ -20587,7 +20587,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 03:38:22',
             'updated_at' => '2024-07-06 20:48:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sherryrosenk@gmail.com',
             'name' => 'Sherry Rosenkrantz',
             'first_name' => 'Sherry',
@@ -20604,7 +20604,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 04:14:08',
             'updated_at' => '2023-08-26 15:30:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adolphson456@gmail.com',
             'name' => 'Danielle Adolphson',
             'first_name' => 'Danielle',
@@ -20621,7 +20621,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 05:33:31',
             'updated_at' => '2023-08-26 10:24:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maddiestaczek@gmail.com',
             'name' => 'Madelyn Staczek',
             'first_name' => 'Madelyn',
@@ -20638,7 +20638,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 06:13:00',
             'updated_at' => '2023-08-26 13:50:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielle.mizrachi1@gmail.com',
             'name' => 'Danielle Mizrachi',
             'first_name' => 'Danielle',
@@ -20655,7 +20655,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 14:17:40',
             'updated_at' => '2023-08-26 10:24:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilyjfunk@gmail.com',
             'name' => 'Emily Funk',
             'first_name' => 'Emily',
@@ -20672,7 +20672,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 15:37:53',
             'updated_at' => '2023-08-26 10:49:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'justinbchan@gmail.com',
             'name' => 'Justin Chan',
             'first_name' => 'Justin',
@@ -20689,7 +20689,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 17:34:43',
             'updated_at' => '2023-08-26 12:52:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'darrenmonti@yahoo.com',
             'name' => 'Darren Monti',
             'first_name' => 'Darren',
@@ -20706,7 +20706,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 17:39:31',
             'updated_at' => '2024-04-12 01:15:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brittanyannp10@gmail.com',
             'name' => 'Brittany Parker',
             'first_name' => 'Brittany',
@@ -20723,7 +20723,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 19:14:13',
             'updated_at' => '2023-08-26 12:03:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eltonthomasmba@gmail.com',
             'name' => 'Elton Thomas',
             'first_name' => 'Elton',
@@ -20740,7 +20740,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 19:44:18',
             'updated_at' => '2023-08-26 10:47:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cdillon351@gmail.com',
             'name' => 'Chad Dillon',
             'first_name' => 'Chad',
@@ -20757,7 +20757,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 19:55:34',
             'updated_at' => '2023-08-26 10:12:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'navega068@gmail.com',
             'name' => 'Natalie Vega',
             'first_name' => 'Natalie',
@@ -20774,7 +20774,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 20:47:06',
             'updated_at' => '2024-02-08 21:24:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophia.kaounas@gmail.com',
             'name' => 'Sophia Kaounas',
             'first_name' => 'Sophia',
@@ -20791,7 +20791,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 21:01:51',
             'updated_at' => '2023-08-26 15:32:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bonniejeanmac@gmail.com',
             'name' => 'Bonnie MacEachern',
             'first_name' => 'Bonnie',
@@ -20808,7 +20808,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 21:43:58',
             'updated_at' => '2023-08-26 12:00:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kimkdixon512@yahoo.com',
             'name' => 'Kim Dixon',
             'first_name' => 'Kim',
@@ -20825,7 +20825,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 22:01:04',
             'updated_at' => '2023-08-26 13:02:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jessica.murd.123@gmail.com',
             'name' => 'Jessica Murdzek',
             'first_name' => 'Jessica',
@@ -20842,7 +20842,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-10-31 23:44:10',
             'updated_at' => '2023-08-26 12:40:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jrowland74@gmail.com',
             'name' => 'Justin Rowland',
             'first_name' => 'Justin',
@@ -20859,7 +20859,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 00:44:42',
             'updated_at' => '2024-07-04 20:20:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilyrwaples@gmail.com',
             'name' => 'Emily Waples',
             'first_name' => 'Emily',
@@ -20876,7 +20876,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 01:19:33',
             'updated_at' => '2023-08-26 10:49:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'odonnellkailyn@gmail.com',
             'name' => 'Kailyn Odonnell',
             'first_name' => 'Kailyn',
@@ -20893,7 +20893,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 01:23:10',
             'updated_at' => '2024-07-12 00:23:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jaqchandesign@gmail.com',
             'name' => 'Jackie Chan',
             'first_name' => 'Jackie',
@@ -20910,7 +20910,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 01:43:20',
             'updated_at' => '2023-11-09 01:12:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tarajalal@gmail.com',
             'name' => 'Tara Jalal',
             'first_name' => 'Tara',
@@ -20927,7 +20927,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 02:16:56',
             'updated_at' => '2023-08-26 15:38:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bweiss9@gmail.com',
             'name' => 'Brennan Weiss',
             'first_name' => 'Brennan',
@@ -20944,7 +20944,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 02:37:19',
             'updated_at' => '2024-06-04 21:56:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Petrina.talbot@gmail.com',
             'name' => 'Petrina Talbot',
             'first_name' => 'Petrina',
@@ -20961,7 +20961,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 02:54:29',
             'updated_at' => '2023-08-26 14:37:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lsweeney150@gmail.com',
             'name' => 'Lisa Sweeney',
             'first_name' => 'Lisa',
@@ -20978,7 +20978,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 02:57:53',
             'updated_at' => '2024-07-19 18:42:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'seand1956@att.net',
             'name' => 'SEAN DUNN',
             'first_name' => 'SEAN',
@@ -20995,7 +20995,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 03:01:28',
             'updated_at' => '2023-08-26 15:27:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mrosselson@yahoo.com',
             'name' => 'Maria Rosselson',
             'first_name' => 'Maria',
@@ -21012,7 +21012,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 03:40:31',
             'updated_at' => '2023-08-26 13:54:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ADSchefers@gmail.com',
             'name' => 'Alida Schefers',
             'first_name' => 'Alida',
@@ -21029,7 +21029,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 03:58:41',
             'updated_at' => '2024-01-18 20:32:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chandonthompson@gmail.com',
             'name' => 'Chandon Thompson',
             'first_name' => 'Chandon',
@@ -21046,7 +21046,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 04:38:14',
             'updated_at' => '2023-08-26 10:12:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'KBOLTON8926@gmail.com',
             'name' => 'Kara Bolton',
             'first_name' => 'Kara',
@@ -21063,7 +21063,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 05:13:37',
             'updated_at' => '2023-08-26 12:54:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'LKollinger@gmail.com',
             'name' => 'Lauren Kollinger',
             'first_name' => 'Lauren',
@@ -21080,7 +21080,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 05:14:37',
             'updated_at' => '2023-08-26 13:40:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'taneesh.makkena@slu.edu',
             'name' => 'Taneesh Makkena',
             'first_name' => 'Taneesh',
@@ -21097,7 +21097,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 05:42:31',
             'updated_at' => '2024-01-31 05:32:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cmcall24@gmail.com',
             'name' => 'Christie McAllister',
             'first_name' => 'Christie',
@@ -21114,7 +21114,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 06:00:39',
             'updated_at' => '2023-08-26 10:15:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'boggs.kayla98@gmail.com',
             'name' => 'Kayla Boggs',
             'first_name' => 'Kayla',
@@ -21131,7 +21131,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 06:02:19',
             'updated_at' => '2023-08-26 12:58:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jmwallace1030@gmail.com',
             'name' => 'Jessie Wallace',
             'first_name' => 'Jessie',
@@ -21148,7 +21148,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 06:04:30',
             'updated_at' => '2023-08-26 12:40:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lfoughty@mindseyeradio.org',
             'name' => 'Laura Foughty',
             'first_name' => 'Laura',
@@ -21165,7 +21165,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 06:20:12',
             'updated_at' => '2023-08-26 13:39:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anat.nivsolomon@gmail.com',
             'name' => 'Anat Solomon',
             'first_name' => 'Anat',
@@ -21182,7 +21182,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 07:00:36',
             'updated_at' => '2024-03-04 18:34:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elizabethgehrmann326@gmail.com',
             'name' => 'Elizabeth Gehrmann',
             'first_name' => 'Elizabeth',
@@ -21199,7 +21199,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 07:09:16',
             'updated_at' => '2023-08-26 10:35:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anawilliams2@gmail.com',
             'name' => 'Ana Leffel',
             'first_name' => 'Ana',
@@ -21216,7 +21216,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 07:24:31',
             'updated_at' => '2023-08-26 11:46:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aurore_perrottet@yahoo.fr',
             'name' => 'Aurore Perrottet',
             'first_name' => 'Aurore',
@@ -21233,7 +21233,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 14:07:46',
             'updated_at' => '2023-08-26 11:56:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'j_certosimo@hotmail.com',
             'name' => 'Jill Certosimo',
             'first_name' => 'Jill',
@@ -21250,7 +21250,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 15:03:25',
             'updated_at' => '2024-07-20 17:20:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'shannon.cullen@gmail.com',
             'name' => 'shannon cullen',
             'first_name' => 'shannon',
@@ -21267,7 +21267,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 15:35:04',
             'updated_at' => '2023-08-26 15:28:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ginannw@outlook.com',
             'name' => 'Gina Wetstein',
             'first_name' => 'Gina',
@@ -21284,7 +21284,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 16:53:42',
             'updated_at' => '2023-10-21 17:56:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ruthielaz@gmail.com',
             'name' => 'ruth lazarus',
             'first_name' => 'ruth',
@@ -21301,7 +21301,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 17:05:05',
             'updated_at' => '2023-08-26 14:50:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'daverublin@gmail.com',
             'name' => 'David Rublin',
             'first_name' => 'David',
@@ -21318,7 +21318,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 17:55:26',
             'updated_at' => '2023-08-26 10:25:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'racheltodhunter12@gmail.com',
             'name' => 'Rachel Todhunter',
             'first_name' => 'Rachel',
@@ -21335,7 +21335,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 18:05:51',
             'updated_at' => '2023-08-26 14:40:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rbecker26.2@gmail.com',
             'name' => 'Robert Becker',
             'first_name' => 'Robert',
@@ -21352,7 +21352,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 18:07:46',
             'updated_at' => '2024-04-22 21:57:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'heywoodashley@gmail.com',
             'name' => 'Ashley Heywood',
             'first_name' => 'Ashley',
@@ -21369,7 +21369,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 18:11:17',
             'updated_at' => '2023-08-26 11:55:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jenniferfong14@gmail.com',
             'name' => 'Jennifer Fong',
             'first_name' => 'Jennifer',
@@ -21386,7 +21386,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 18:33:55',
             'updated_at' => '2023-08-26 12:37:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hwh_123@yahoo.com',
             'name' => 'Hannah Haddad',
             'first_name' => 'Hannah',
@@ -21403,7 +21403,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 19:05:13',
             'updated_at' => '2023-08-26 11:03:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marissamilchak@gmail.com',
             'name' => 'Marissa Milchak',
             'first_name' => 'Marissa',
@@ -21420,7 +21420,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 20:46:34',
             'updated_at' => '2023-08-26 13:56:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ricky.jones092@gmail.com',
             'name' => 'Richard Jones',
             'first_name' => 'Richard',
@@ -21437,7 +21437,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 22:17:11',
             'updated_at' => '2023-08-26 14:45:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laston@comcast.net',
             'name' => 'Lisa Aston',
             'first_name' => 'Lisa',
@@ -21454,7 +21454,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 22:19:59',
             'updated_at' => '2023-08-26 13:44:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'peterzar@vikingproductions.net',
             'name' => 'Peter Zar',
             'first_name' => 'Peter',
@@ -21471,7 +21471,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-01 22:27:07',
             'updated_at' => '2024-02-07 01:27:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'barrybaker007@gmail.com',
             'name' => 'Barry Baker',
             'first_name' => 'Barry',
@@ -21488,7 +21488,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 01:24:57',
             'updated_at' => '2024-06-27 23:18:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kccienkus@gmail.com',
             'name' => 'Katherine Cienkus',
             'first_name' => 'Katherine',
@@ -21505,7 +21505,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 02:01:26',
             'updated_at' => '2023-08-26 12:56:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vesal.yazdi@gmail.com',
             'name' => 'Vesal Yazdi',
             'first_name' => 'Vesal',
@@ -21522,7 +21522,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 02:25:20',
             'updated_at' => '2023-08-26 15:46:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lizzietian551@gmail.com',
             'name' => 'Elizabeth Tian',
             'first_name' => 'Elizabeth',
@@ -21539,7 +21539,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 02:34:27',
             'updated_at' => '2023-08-26 10:35:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kim_lurie@yahoo.com',
             'name' => 'Kim Lurie',
             'first_name' => 'Kim',
@@ -21556,7 +21556,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 02:48:20',
             'updated_at' => '2023-08-26 13:02:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'parathlete@gmail.com',
             'name' => 'Ralph Pieplenbos',
             'first_name' => 'Ralph',
@@ -21573,7 +21573,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 03:08:38',
             'updated_at' => '2023-08-26 14:41:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'msolomondo@gmail.com',
             'name' => 'Michael Solomon',
             'first_name' => 'Michael',
@@ -21590,7 +21590,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 03:23:21',
             'updated_at' => '2024-04-07 07:16:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jennywjung@gmail.com',
             'name' => 'Jenny Jung',
             'first_name' => 'Jenny',
@@ -21607,7 +21607,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 04:01:50',
             'updated_at' => '2024-06-28 02:14:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stephchoi91@gmail.com',
             'name' => 'Stephanie Choi',
             'first_name' => 'Stephanie',
@@ -21624,7 +21624,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 04:32:09',
             'updated_at' => '2023-08-26 15:33:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'edmagarin@gmail.com',
             'name' => 'Edward Magarin',
             'first_name' => 'Edward',
@@ -21641,7 +21641,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 07:06:52',
             'updated_at' => '2023-08-26 10:32:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eaconner@yahoo.com',
             'name' => 'elizabeth conner',
             'first_name' => 'elizabeth',
@@ -21658,7 +21658,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 08:53:44',
             'updated_at' => '2023-12-07 21:52:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'madeleinehoang0@gmail.com',
             'name' => 'Madeleine Hoang',
             'first_name' => 'Madeleine',
@@ -21675,7 +21675,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 12:24:52',
             'updated_at' => '2023-08-26 13:49:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rodriguezlemusluis@gmail.com',
             'name' => 'Luis Rodriguez-Lemus',
             'first_name' => 'Luis',
@@ -21692,7 +21692,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 14:24:40',
             'updated_at' => '2023-08-26 14:22:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yohnatanlmao@gmail.com',
             'name' => 'Yonatan Amster',
             'first_name' => 'Yonatan',
@@ -21709,7 +21709,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 17:27:35',
             'updated_at' => '2023-09-18 19:44:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emmaquinn12@hotmail.co.uk',
             'name' => 'Emma Quinn',
             'first_name' => 'Emma',
@@ -21726,7 +21726,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 18:27:11',
             'updated_at' => '2023-08-26 10:50:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marissamelnick@gmail.com',
             'name' => 'Marissa Melnick',
             'first_name' => 'Marissa',
@@ -21743,7 +21743,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 18:45:07',
             'updated_at' => '2023-08-26 13:56:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'monahan.christopher13@gmail.com',
             'name' => 'Christopher Monahan',
             'first_name' => 'Christopher',
@@ -21760,7 +21760,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 20:21:17',
             'updated_at' => '2023-08-26 10:17:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'douglascidcarvalho@gmail.com',
             'name' => 'Douglas Carvalho',
             'first_name' => 'Douglas',
@@ -21777,7 +21777,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 21:31:03',
             'updated_at' => '2023-08-26 10:31:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carlosortega2479@yahoo.com',
             'name' => 'Carlos Ortega',
             'first_name' => 'Carlos',
@@ -21794,7 +21794,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 21:39:05',
             'updated_at' => '2023-08-26 10:08:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rolanzg78@hotmail.com',
             'name' => 'Rolando Gibbs',
             'first_name' => 'Rolando',
@@ -21811,7 +21811,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 21:44:58',
             'updated_at' => '2023-08-26 14:48:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lili@siegelson.com',
             'name' => 'Lili Siegelson',
             'first_name' => 'Lili',
@@ -21828,7 +21828,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 21:56:25',
             'updated_at' => '2024-01-18 21:28:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rjadotte@yahoo.com',
             'name' => 'Nicholas Tangney',
             'first_name' => 'Nicholas',
@@ -21845,7 +21845,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 22:29:24',
             'updated_at' => '2023-11-02 03:04:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielgg42@hotmail.com',
             'name' => 'Daniel Gonzalez',
             'first_name' => 'Daniel',
@@ -21862,7 +21862,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 23:15:31',
             'updated_at' => '2023-08-26 10:23:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kathleen_birch@yahoo.com',
             'name' => 'Kathleen Karwelies',
             'first_name' => 'Kathleen',
@@ -21879,7 +21879,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-02 23:40:12',
             'updated_at' => '2024-03-06 22:20:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caroline.decamp@brookfield.com',
             'name' => 'Caroline DeCamp',
             'first_name' => 'Caroline',
@@ -21896,7 +21896,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 00:07:22',
             'updated_at' => '2023-08-26 10:09:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lopezbalboat@gmail.com',
             'name' => 'Taylor Lopez-Balboa',
             'first_name' => 'Taylor',
@@ -21913,7 +21913,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 00:08:38',
             'updated_at' => '2023-08-26 15:39:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wpgjao@aol.com',
             'name' => 'Jeffrey Owens',
             'first_name' => 'Jeffrey',
@@ -21930,7 +21930,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 00:16:21',
             'updated_at' => '2023-08-26 11:16:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'JOhannadgotts@gmail.com',
             'name' => 'Johanna gottlieb',
             'first_name' => 'Johanna',
@@ -21947,7 +21947,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 00:55:36',
             'updated_at' => '2024-05-23 22:11:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brendan.hounglee@gmail.com',
             'name' => 'Harry Houng-Lee',
             'first_name' => 'Harry',
@@ -21964,7 +21964,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 01:26:03',
             'updated_at' => '2024-02-07 22:15:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'winsig1059@gmail.com',
             'name' => 'Ian winson',
             'first_name' => 'Ian',
@@ -21981,7 +21981,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 01:32:20',
             'updated_at' => '2023-12-08 21:24:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kelseyamiller13@gmail.com',
             'name' => 'Kelsey Miller',
             'first_name' => 'Kelsey',
@@ -21998,7 +21998,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 02:05:05',
             'updated_at' => '2023-08-26 13:00:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'martinez.veronicac@gmail.com',
             'name' => 'Veronica Martinez',
             'first_name' => 'Veronica',
@@ -22015,7 +22015,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 03:26:28',
             'updated_at' => '2023-09-16 07:21:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'liskamen13@gmail.com',
             'name' => 'Liska Mendoza',
             'first_name' => 'Liska',
@@ -22032,7 +22032,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 03:28:41',
             'updated_at' => '2023-08-26 13:45:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'coka181@gmail.com',
             'name' => 'Katie Costable',
             'first_name' => 'Katie',
@@ -22049,7 +22049,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 03:37:24',
             'updated_at' => '2023-08-26 12:57:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jmcenroe77@yahoo.com',
             'name' => 'James McEnroe',
             'first_name' => 'James',
@@ -22066,7 +22066,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 04:19:35',
             'updated_at' => '2024-03-21 09:05:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Lindseycoyle91@gmail.com',
             'name' => 'Lindsey Marie Chee',
             'first_name' => 'Lindsey Marie',
@@ -22083,7 +22083,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 04:54:50',
             'updated_at' => '2023-10-31 21:05:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erika@erikachau.com',
             'name' => 'Erika Chau',
             'first_name' => 'Erika',
@@ -22100,7 +22100,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 05:53:55',
             'updated_at' => '2023-08-26 10:53:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ccombe@combe.com',
             'name' => 'Christopher Combe',
             'first_name' => 'Christopher',
@@ -22117,7 +22117,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 06:40:18',
             'updated_at' => '2023-08-26 10:17:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'umbravenus@gmail.com',
             'name' => 'Elyssa Warner',
             'first_name' => 'Elyssa',
@@ -22134,7 +22134,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 07:46:01',
             'updated_at' => '2023-08-26 10:47:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'camsox@gmail.com',
             'name' => 'Cameron Smith',
             'first_name' => 'Cameron',
@@ -22151,7 +22151,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 09:16:59',
             'updated_at' => '2023-08-26 10:07:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'loganswalk@yahoo.com',
             'name' => 'Bruce Logan',
             'first_name' => 'Bruce',
@@ -22168,7 +22168,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 09:25:14',
             'updated_at' => '2023-11-26 21:54:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jadavidal15@gmail.com',
             'name' => 'Jada Vidal',
             'first_name' => 'Jada',
@@ -22185,7 +22185,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 11:34:52',
             'updated_at' => '2023-08-26 11:11:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'timvelliky@gmail.com',
             'name' => 'Timothy Velliky',
             'first_name' => 'Timothy',
@@ -22202,7 +22202,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 15:28:13',
             'updated_at' => '2023-08-26 15:42:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'casie.donovan@gmail.com',
             'name' => 'Casie Donovan',
             'first_name' => 'Casie',
@@ -22219,7 +22219,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 15:32:21',
             'updated_at' => '2024-07-03 20:14:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Jiyoungemma@yahoo.com',
             'name' => 'Jiyoung Kim',
             'first_name' => 'Jiyoung',
@@ -22236,7 +22236,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 15:39:26',
             'updated_at' => '2024-07-22 21:13:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eschein13@gmail.com',
             'name' => 'Eli Scheinholtz',
             'first_name' => 'Eli',
@@ -22253,7 +22253,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 16:07:38',
             'updated_at' => '2023-08-26 10:33:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brady@mgworld.net',
             'name' => 'Brady D\'Elia',
             'first_name' => 'Brady',
@@ -22270,7 +22270,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 16:15:44',
             'updated_at' => '2024-01-05 00:53:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ellen.chung1@gmail.com',
             'name' => 'Sebastian Rafael',
             'first_name' => 'Sebastian',
@@ -22287,7 +22287,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 16:37:51',
             'updated_at' => '2024-05-31 15:28:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joeredmond1979@gmail.com',
             'name' => 'Joseph Redmond',
             'first_name' => 'Joseph',
@@ -22304,7 +22304,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 16:59:13',
             'updated_at' => '2023-08-26 12:48:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arielle.disick@gmail.com',
             'name' => 'Arielle Disick',
             'first_name' => 'Arielle',
@@ -22321,7 +22321,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 17:03:52',
             'updated_at' => '2023-08-26 11:53:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jsbrooks8@gmail.com',
             'name' => 'James Brooks',
             'first_name' => 'James',
@@ -22338,7 +22338,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 17:24:12',
             'updated_at' => '2023-08-26 11:12:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sutchao@gmail.com',
             'name' => 'Declan Ung',
             'first_name' => 'Declan',
@@ -22355,7 +22355,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 17:56:20',
             'updated_at' => '2023-09-05 20:31:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mv2910@cumc.columbia.edu',
             'name' => 'Megan Vosberg',
             'first_name' => 'Megan',
@@ -22372,7 +22372,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 18:22:08',
             'updated_at' => '2023-08-26 14:03:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cojocobb@gmail.com',
             'name' => 'Connor Cobb',
             'first_name' => 'Connor',
@@ -22389,7 +22389,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 18:46:39',
             'updated_at' => '2023-08-26 10:20:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yanildericart@gmail.com',
             'name' => 'Ryan Ricart Guzman',
             'first_name' => 'Ryan',
@@ -22406,7 +22406,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 18:47:03',
             'updated_at' => '2024-07-27 17:20:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ameliapowerdelvalle@gmail.com',
             'name' => 'Amelia Power del Valle',
             'first_name' => 'Amelia',
@@ -22423,7 +22423,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 18:50:19',
             'updated_at' => '2024-07-03 13:15:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jordanmack941@gmail.com',
             'name' => 'Jordan Mack',
             'first_name' => 'Jordan',
@@ -22440,7 +22440,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 19:08:02',
             'updated_at' => '2023-08-26 12:46:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lexi.cafiero@yahoo.com',
             'name' => 'Alexandra Cafiero',
             'first_name' => 'Alexandra',
@@ -22457,7 +22457,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 19:17:13',
             'updated_at' => '2023-08-26 11:40:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'simon.lauermann@gmail.com',
             'name' => 'Simon Lauermann',
             'first_name' => 'Simon',
@@ -22474,7 +22474,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 19:54:28',
             'updated_at' => '2024-02-09 07:09:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kdownes002@gmail.com',
             'name' => 'Kathleen Downey',
             'first_name' => 'Kathleen',
@@ -22491,7 +22491,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 21:30:20',
             'updated_at' => '2023-10-04 22:46:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caleb.haizlett@gmail.com',
             'name' => 'Caleb Haizlett',
             'first_name' => 'Caleb',
@@ -22508,7 +22508,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 23:09:11',
             'updated_at' => '2023-08-26 10:06:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mkatedalton@gmail.com',
             'name' => 'Mary Kate Dalton',
             'first_name' => 'Mary Kate',
@@ -22525,7 +22525,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-03 23:41:36',
             'updated_at' => '2023-08-26 13:59:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yoon50469@gmail.com',
             'name' => 'Peter Yoon',
             'first_name' => 'Peter',
@@ -22542,7 +22542,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 00:10:54',
             'updated_at' => '2023-09-09 18:30:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elizabeth13e@gmail.com',
             'name' => 'Elizabeth Epstein',
             'first_name' => 'Elizabeth',
@@ -22559,7 +22559,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 00:33:16',
             'updated_at' => '2023-08-26 10:35:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cindy@xindygao.com',
             'name' => 'Xin Er Gao',
             'first_name' => 'Xin Er',
@@ -22576,7 +22576,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 01:25:18',
             'updated_at' => '2023-08-26 15:51:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davejang@gmail.com',
             'name' => 'David Jang',
             'first_name' => 'David',
@@ -22593,7 +22593,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 01:27:36',
             'updated_at' => '2023-08-26 10:25:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'andrewconces@gmail.com',
             'name' => 'Andrew Conces',
             'first_name' => 'Andrew',
@@ -22610,7 +22610,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 01:35:27',
             'updated_at' => '2023-08-26 11:48:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jason.savageau@gmail.com',
             'name' => 'Jason Savageau',
             'first_name' => 'Jason',
@@ -22627,7 +22627,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 01:46:07',
             'updated_at' => '2024-03-31 04:16:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'deangelis.angie@gmail.com',
             'name' => 'Angie Angelis',
             'first_name' => 'Angie',
@@ -22644,7 +22644,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 01:59:02',
             'updated_at' => '2024-03-08 07:52:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Jcriding93@gmail.com',
             'name' => 'James Ridinger',
             'first_name' => 'James',
@@ -22661,7 +22661,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 03:45:39',
             'updated_at' => '2023-08-26 11:12:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stephanie.sanders@gmail.com',
             'name' => 'Stephanie Sanders',
             'first_name' => 'Stephanie',
@@ -22678,7 +22678,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 03:45:39',
             'updated_at' => '2023-08-26 15:34:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lsplotnicki@aol.com',
             'name' => 'Linda Plotnicki',
             'first_name' => 'Linda',
@@ -22695,7 +22695,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 03:45:39',
             'updated_at' => '2023-08-26 13:43:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carogsims@gmail.com',
             'name' => 'Caroline Butterworth',
             'first_name' => 'Caroline',
@@ -22712,7 +22712,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 03:45:39',
             'updated_at' => '2023-08-26 10:09:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'susanepstein@mindspring.com',
             'name' => 'Susan Epstein',
             'first_name' => 'Susan',
@@ -22729,7 +22729,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 04:29:20',
             'updated_at' => '2023-08-26 15:36:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Lj2358@columbia.edu',
             'name' => 'Lilia Jimenez',
             'first_name' => 'Lilia',
@@ -22746,7 +22746,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 06:03:18',
             'updated_at' => '2023-08-26 13:42:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'smitanalluri@gmail.com',
             'name' => 'Smita Nalluri',
             'first_name' => 'Smita',
@@ -22763,7 +22763,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 06:51:59',
             'updated_at' => '2024-06-12 01:58:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '2smart4sox@gmail.com',
             'name' => 'Andrew Lee',
             'first_name' => 'Andrew',
@@ -22780,7 +22780,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 08:01:28',
             'updated_at' => '2024-03-20 18:46:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kirill.rakhmangulov@gmail.com',
             'name' => 'Kirill Rakhmangulov',
             'first_name' => 'Kirill',
@@ -22797,7 +22797,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 13:24:13',
             'updated_at' => '2023-08-26 13:03:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'zyadqamer@gmail.com',
             'name' => 'Syed J Qamer',
             'first_name' => 'Syed J',
@@ -22814,7 +22814,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 18:15:03',
             'updated_at' => '2024-06-13 23:39:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marillahirsch@gmail.com',
             'name' => 'Marilla Hirsch',
             'first_name' => 'Marilla',
@@ -22831,7 +22831,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 19:01:55',
             'updated_at' => '2023-09-05 21:05:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'patrickyang518@gmail.com',
             'name' => 'Patrick Yang',
             'first_name' => 'Patrick',
@@ -22848,7 +22848,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 19:18:59',
             'updated_at' => '2023-08-26 14:35:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Brian.Evanko@cigna.com',
             'name' => 'Brian Evanko',
             'first_name' => 'Brian',
@@ -22865,7 +22865,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 20:25:01',
             'updated_at' => '2023-08-26 12:02:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kellywang422@gmail.com',
             'name' => 'Kelly Wang',
             'first_name' => 'Kelly',
@@ -22882,7 +22882,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 20:50:14',
             'updated_at' => '2023-08-26 12:59:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'iris.hoang.nguyen@gmail.com',
             'name' => 'Ngoc Nguyen',
             'first_name' => 'Ngoc',
@@ -22899,7 +22899,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 21:37:17',
             'updated_at' => '2023-08-26 14:28:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aewallace1028@gmail.com',
             'name' => 'Anna Wallace',
             'first_name' => 'Anna',
@@ -22916,7 +22916,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 23:24:06',
             'updated_at' => '2023-08-26 11:50:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marablumenstein14@gmail.com',
             'name' => 'Mara Blumenstein',
             'first_name' => 'Mara',
@@ -22933,7 +22933,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 23:39:14',
             'updated_at' => '2024-07-03 13:15:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'grace.grommes@gmail.com',
             'name' => 'Grace Grommes',
             'first_name' => 'Grace',
@@ -22950,7 +22950,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 23:41:29',
             'updated_at' => '2023-10-07 00:12:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'c.antonia.g@gmail.com',
             'name' => 'Cassandra Gonzalez',
             'first_name' => 'Cassandra',
@@ -22967,7 +22967,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-04 23:56:20',
             'updated_at' => '2023-08-26 10:11:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Alyssa.silver19@gmail.com',
             'name' => 'Alyssa Silver',
             'first_name' => 'Alyssa',
@@ -22984,7 +22984,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 00:53:43',
             'updated_at' => '2023-08-26 11:43:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'angelo@mdsisearch.com',
             'name' => 'Angelo Messina',
             'first_name' => 'Angelo',
@@ -23001,7 +23001,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 00:55:51',
             'updated_at' => '2024-05-30 22:40:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ellerymaerobinson@gmail.com',
             'name' => 'Ellery Robinson',
             'first_name' => 'Ellery',
@@ -23018,7 +23018,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 02:40:34',
             'updated_at' => '2023-08-26 10:47:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ericdo2027@gmail.com',
             'name' => 'Eric Do',
             'first_name' => 'Eric',
@@ -23035,7 +23035,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 02:50:26',
             'updated_at' => '2023-09-05 21:05:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'messageling@gmail.com',
             'name' => 'Ling Hu',
             'first_name' => 'Ling',
@@ -23052,7 +23052,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 03:34:29',
             'updated_at' => '2023-08-26 13:44:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mrafleisher@gmail.com',
             'name' => 'Adam Fleisher',
             'first_name' => 'Adam',
@@ -23069,7 +23069,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 03:41:46',
             'updated_at' => '2024-04-22 03:20:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'allison.paige.katz@gmail.com',
             'name' => 'Allison Katz',
             'first_name' => 'Allison',
@@ -23086,7 +23086,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 03:47:27',
             'updated_at' => '2024-06-06 22:32:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joejamest316@yahoo.com',
             'name' => 'Joseph Tamborra',
             'first_name' => 'Joseph',
@@ -23103,7 +23103,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 04:19:49',
             'updated_at' => '2024-07-02 01:09:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ric25214@gmail.com',
             'name' => 'Theodoric Huang',
             'first_name' => 'Theodoric',
@@ -23120,7 +23120,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 04:56:48',
             'updated_at' => '2023-08-26 15:40:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'isabel.sheinman@gmail.com',
             'name' => 'Isabel Sheinman',
             'first_name' => 'Isabel',
@@ -23137,7 +23137,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 04:57:06',
             'updated_at' => '2023-08-26 11:08:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jdickinson204@yahoo.com',
             'name' => 'Julie Dickinson',
             'first_name' => 'Julie',
@@ -23154,7 +23154,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 06:20:45',
             'updated_at' => '2023-08-26 12:52:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lucy@poplin.co.uk',
             'name' => 'Lucy Guinness',
             'first_name' => 'Lucy',
@@ -23171,7 +23171,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 07:35:50',
             'updated_at' => '2023-08-26 13:47:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'verapertsovskaya@gmail.com',
             'name' => 'Vera Pertsovskaya',
             'first_name' => 'Vera',
@@ -23188,7 +23188,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 13:38:23',
             'updated_at' => '2023-08-26 15:46:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'klarosa@gmu.edu',
             'name' => 'Kathryn LaRosa',
             'first_name' => 'Kathryn',
@@ -23205,7 +23205,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 15:48:02',
             'updated_at' => '2023-08-26 12:57:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elsayed.a.osman@gmail.com',
             'name' => 'Elsayed Osman',
             'first_name' => 'Elsayed',
@@ -23222,7 +23222,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 16:07:51',
             'updated_at' => '2023-08-26 10:47:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'paige.volandes@gmail.com',
             'name' => 'Paige Volandes',
             'first_name' => 'Paige',
@@ -23239,7 +23239,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 18:31:33',
             'updated_at' => '2023-08-26 14:33:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marcrshapiro@hotmail.com',
             'name' => 'Marc Shapiro',
             'first_name' => 'Marc',
@@ -23256,7 +23256,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 18:44:36',
             'updated_at' => '2023-08-26 13:52:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'skbutler95@gmail.com',
             'name' => 'Savannah Butler',
             'first_name' => 'Savannah',
@@ -23273,7 +23273,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 18:48:01',
             'updated_at' => '2023-08-26 15:26:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nicole.fernandez5@gmail.com',
             'name' => 'Nicole Fernandez',
             'first_name' => 'Nicole',
@@ -23290,7 +23290,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 18:50:46',
             'updated_at' => '2023-08-26 14:30:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rahmantaef@yahoo.com',
             'name' => 'Taef Rahman',
             'first_name' => 'Taef',
@@ -23307,7 +23307,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 19:11:32',
             'updated_at' => '2023-08-26 15:37:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marcusmori01@gmail.com',
             'name' => 'Raymond Mori',
             'first_name' => 'Raymond',
@@ -23324,7 +23324,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 19:23:13',
             'updated_at' => '2023-08-26 14:42:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stephaniegbuckler@gmail.com',
             'name' => 'Stephanie Buckler',
             'first_name' => 'Stephanie',
@@ -23341,7 +23341,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 19:39:46',
             'updated_at' => '2023-08-26 15:34:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexander.torske@mail.mcgill.ca',
             'name' => 'Alexander Torske',
             'first_name' => 'Alexander',
@@ -23358,7 +23358,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 21:02:24',
             'updated_at' => '2023-08-26 11:39:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ptrebilcock@nyc.rr.com',
             'name' => 'Paul Trebilcock',
             'first_name' => 'Paul',
@@ -23375,7 +23375,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 21:56:56',
             'updated_at' => '2023-08-26 14:36:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'notsomad@gmail.com',
             'name' => 'Alex Dresner',
             'first_name' => 'Alex',
@@ -23392,7 +23392,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 22:46:55',
             'updated_at' => '2023-08-26 11:38:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mpwhitney62@icloud.com',
             'name' => 'Mary Whitney',
             'first_name' => 'Mary',
@@ -23409,7 +23409,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 23:11:16',
             'updated_at' => '2024-06-01 15:32:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'K.c.iwanicki@gmail.com',
             'name' => 'Krista Iwanicki',
             'first_name' => 'Krista',
@@ -23426,7 +23426,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-05 23:58:40',
             'updated_at' => '2023-08-26 13:04:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cwolf2004@hotmail.com',
             'name' => 'Catherine Wolf',
             'first_name' => 'Catherine',
@@ -23443,7 +23443,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 00:34:27',
             'updated_at' => '2023-08-26 10:11:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mnmyong@hotmail.com',
             'name' => 'Emily Yong',
             'first_name' => 'Emily',
@@ -23460,7 +23460,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 02:42:38',
             'updated_at' => '2023-08-26 10:49:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sstepanchick@gmail.com',
             'name' => 'Stephanie Stepanchick',
             'first_name' => 'Stephanie',
@@ -23477,7 +23477,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 03:31:53',
             'updated_at' => '2023-08-26 15:34:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'michelle.ganson@gmail.com',
             'name' => 'Michelle Ganson',
             'first_name' => 'Michelle',
@@ -23494,7 +23494,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 03:36:26',
             'updated_at' => '2023-10-20 13:08:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bahaydu@comcast.net',
             'name' => 'Beth Haydu',
             'first_name' => 'Beth',
@@ -23511,7 +23511,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 04:34:23',
             'updated_at' => '2023-08-26 11:59:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ski29@icloud.com',
             'name' => 'Frank Novak',
             'first_name' => 'Frank',
@@ -23528,7 +23528,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 08:50:26',
             'updated_at' => '2023-08-26 10:56:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chavar491@gmail.com',
             'name' => 'Chava Burger',
             'first_name' => 'Chava',
@@ -23545,7 +23545,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 09:14:56',
             'updated_at' => '2023-08-26 10:13:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chelsiej15@gmail.com',
             'name' => 'Chelsie Jacques',
             'first_name' => 'Chelsie',
@@ -23562,7 +23562,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 20:43:23',
             'updated_at' => '2023-08-26 10:13:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amaya.smole@gmail.com',
             'name' => 'Amaya Smole',
             'first_name' => 'Amaya',
@@ -23579,7 +23579,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 21:19:50',
             'updated_at' => '2023-08-26 11:45:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'runnunezrun@yahoo.com',
             'name' => 'Joyce Nunez Gary',
             'first_name' => 'Joyce',
@@ -23596,7 +23596,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 21:38:00',
             'updated_at' => '2023-08-26 12:49:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ssankaran17@gmail.com',
             'name' => 'Sangeetha Sankaran',
             'first_name' => 'Sangeetha',
@@ -23613,7 +23613,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 21:48:42',
             'updated_at' => '2024-02-07 02:39:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katie.lingen06@gmail.com',
             'name' => 'Kathryn Lingen',
             'first_name' => 'Kathryn',
@@ -23630,7 +23630,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 21:50:52',
             'updated_at' => '2023-08-26 12:57:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nathan.dambrosio@gmail.com',
             'name' => 'Nathan D\'Ambrosio',
             'first_name' => 'Nathan',
@@ -23647,7 +23647,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 23:00:33',
             'updated_at' => '2023-08-26 14:28:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'luciencbruggeman@gmail.com',
             'name' => 'Lucien Bruggeman',
             'first_name' => 'Lucien',
@@ -23664,7 +23664,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-06 23:53:45',
             'updated_at' => '2024-05-12 03:38:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lupidcock@gmail.com',
             'name' => 'Louise Pidcock',
             'first_name' => 'Louise',
@@ -23681,7 +23681,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 00:05:08',
             'updated_at' => '2023-08-26 13:46:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'michael.schwartz90@gmail.com',
             'name' => 'Michael Schwartz',
             'first_name' => 'Michael',
@@ -23698,7 +23698,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 00:34:12',
             'updated_at' => '2023-08-26 14:09:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mollycrossin@gmail.com',
             'name' => 'Emily Crossin',
             'first_name' => 'Emily',
@@ -23715,7 +23715,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 00:40:20',
             'updated_at' => '2023-08-26 10:49:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'menixdomain@gmail.com',
             'name' => 'Menachem Green',
             'first_name' => 'Menachem',
@@ -23732,7 +23732,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 00:48:09',
             'updated_at' => '2023-08-26 14:05:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hhessler19@gmail.com',
             'name' => 'Henry Hessler',
             'first_name' => 'Henry',
@@ -23749,7 +23749,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 02:42:42',
             'updated_at' => '2024-06-18 04:20:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'belinkie.michelle@gmail.com',
             'name' => 'Michelle Belinkie',
             'first_name' => 'Michelle',
@@ -23766,7 +23766,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 02:44:17',
             'updated_at' => '2023-08-26 14:23:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lmunnelly21@gmail.com',
             'name' => 'Leah Munnelly',
             'first_name' => 'Leah',
@@ -23783,7 +23783,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 03:18:38',
             'updated_at' => '2023-08-26 13:41:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pmcampbell@gmail.com',
             'name' => 'Peter Campbell',
             'first_name' => 'Peter',
@@ -23800,7 +23800,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 03:30:07',
             'updated_at' => '2023-08-26 14:37:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yousafzai_zeb@yahoo.com',
             'name' => 'Alamzeb Yousafzai',
             'first_name' => 'Alamzeb',
@@ -23817,7 +23817,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 03:33:39',
             'updated_at' => '2023-08-26 11:37:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'm.sleeper23@gmail.com',
             'name' => 'Meegan Sleeper',
             'first_name' => 'Meegan',
@@ -23834,7 +23834,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 03:52:08',
             'updated_at' => '2023-08-26 14:02:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mshear03@gmail.com',
             'name' => 'Morgan Shear',
             'first_name' => 'Morgan',
@@ -23851,7 +23851,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 03:56:32',
             'updated_at' => '2023-08-26 14:25:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'allisonfournier26@gmail.com',
             'name' => 'Allison Fournier',
             'first_name' => 'Allison',
@@ -23868,7 +23868,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 04:19:01',
             'updated_at' => '2023-08-26 11:43:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jackie.d.jing@gmail.com',
             'name' => 'Jackie Jing',
             'first_name' => 'Jackie',
@@ -23885,7 +23885,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 04:38:05',
             'updated_at' => '2023-08-26 11:09:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eb10103@hotmail.com',
             'name' => 'Emma Brown',
             'first_name' => 'Emma',
@@ -23902,7 +23902,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 04:59:23',
             'updated_at' => '2023-08-26 10:50:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'levancheck@gmail.com',
             'name' => 'Lauren Zimmer',
             'first_name' => 'Lauren',
@@ -23919,7 +23919,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 04:59:55',
             'updated_at' => '2023-08-26 13:40:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dougewilcox@gmail.com',
             'name' => 'Douglas Wilcox',
             'first_name' => 'Douglas',
@@ -23936,7 +23936,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 05:07:00',
             'updated_at' => '2023-08-26 10:31:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jwilson39@gwmail.gwu.edu',
             'name' => 'Jack Wilson',
             'first_name' => 'Jack',
@@ -23953,7 +23953,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 05:30:50',
             'updated_at' => '2023-08-26 11:09:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kristin.layne.mendez@gmail.com',
             'name' => 'Kristin Mendez',
             'first_name' => 'Kristin',
@@ -23970,7 +23970,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 06:02:07',
             'updated_at' => '2023-08-26 13:05:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kewardo@gmail.com',
             'name' => 'Katherine Ward',
             'first_name' => 'Katherine',
@@ -23987,7 +23987,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 06:22:24',
             'updated_at' => '2023-08-26 12:56:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gracelauson@gmail.com',
             'name' => 'Grace Lauson',
             'first_name' => 'Grace',
@@ -24004,7 +24004,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 06:37:34',
             'updated_at' => '2023-08-26 11:00:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mcclelland.lindsay@gmail.com',
             'name' => 'Lindsay McClelland',
             'first_name' => 'Lindsay',
@@ -24021,7 +24021,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 06:48:39',
             'updated_at' => '2023-08-26 13:43:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'isa96bee@hotmail.com',
             'name' => 'Isabel Kozmann',
             'first_name' => 'Isabel',
@@ -24038,7 +24038,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 06:50:58',
             'updated_at' => '2024-07-03 13:15:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tessacwestfall@gmail.com',
             'name' => 'Tessa Westfall',
             'first_name' => 'Tessa',
@@ -24055,7 +24055,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 07:08:51',
             'updated_at' => '2023-08-26 15:40:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'judysulkilee@gmail.com',
             'name' => 'Judy Lee',
             'first_name' => 'Judy',
@@ -24072,7 +24072,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 07:22:16',
             'updated_at' => '2024-07-25 15:48:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sannamente@yahoo.com',
             'name' => 'Ian Aquino',
             'first_name' => 'Ian',
@@ -24089,7 +24089,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 08:15:50',
             'updated_at' => '2023-09-05 20:31:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marypsaleh@gmail.com',
             'name' => 'Mary Saleh',
             'first_name' => 'Mary',
@@ -24106,7 +24106,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 08:18:55',
             'updated_at' => '2023-08-26 13:58:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rrh2133@barnard.edu',
             'name' => 'Rania Hussain',
             'first_name' => 'Rania',
@@ -24123,7 +24123,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 08:26:40',
             'updated_at' => '2023-10-17 02:08:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'areino@alumni.princeton.edu',
             'name' => 'Andrea Reino',
             'first_name' => 'Andrea',
@@ -24140,7 +24140,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 08:49:34',
             'updated_at' => '2023-08-26 11:47:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kaitlynhansen12@gmail.com',
             'name' => 'Kaitlyn Hansen',
             'first_name' => 'Kaitlyn',
@@ -24157,7 +24157,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 08:53:50',
             'updated_at' => '2023-08-26 12:53:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emfrith1@gmail.com',
             'name' => 'Emma Frith',
             'first_name' => 'Emma',
@@ -24174,7 +24174,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 10:26:48',
             'updated_at' => '2023-08-26 10:50:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'freelandc12@gmail.com',
             'name' => 'Catherine Freeland',
             'first_name' => 'Catherine',
@@ -24191,7 +24191,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 16:38:01',
             'updated_at' => '2023-08-26 10:11:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hatfiebn@gmail.com',
             'name' => 'Bridget Hatfield',
             'first_name' => 'Bridget',
@@ -24208,7 +24208,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 18:21:40',
             'updated_at' => '2023-08-26 12:02:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'moore.kristina@gmail.com',
             'name' => 'Kristina Moore',
             'first_name' => 'Kristina',
@@ -24225,7 +24225,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 18:25:55',
             'updated_at' => '2023-08-26 13:05:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jencharmatz@yahoo.com',
             'name' => 'Jen Charmatz',
             'first_name' => 'Jen',
@@ -24242,7 +24242,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 18:49:52',
             'updated_at' => '2023-10-10 04:19:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'costanza.uslenghi@gmail.com',
             'name' => 'Costanza Uslenghi',
             'first_name' => 'Costanza',
@@ -24259,7 +24259,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 19:19:19',
             'updated_at' => '2023-08-26 10:20:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'boutros.philippe@gmail.com',
             'name' => 'Philippe Boutros',
             'first_name' => 'Philippe',
@@ -24276,7 +24276,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 19:20:20',
             'updated_at' => '2023-08-26 14:38:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'karlsson.banks@gmail.com',
             'name' => 'Karlsson Banks',
             'first_name' => 'Karlsson',
@@ -24293,7 +24293,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 19:23:56',
             'updated_at' => '2023-08-26 12:55:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gennyshaw@gmail.com',
             'name' => 'William Brown',
             'first_name' => 'William',
@@ -24310,7 +24310,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 19:43:04',
             'updated_at' => '2024-02-07 22:48:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aranay22@gmail.com',
             'name' => 'Ariel Eide',
             'first_name' => 'Ariel',
@@ -24327,7 +24327,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 19:48:47',
             'updated_at' => '2023-08-26 11:53:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'shergentile@gmail.com',
             'name' => 'Sherri Gentile',
             'first_name' => 'Sherri',
@@ -24344,7 +24344,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 19:55:00',
             'updated_at' => '2023-08-26 15:30:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'slockehenderson@gmail.com',
             'name' => 'Sarah Locke-Henderson',
             'first_name' => 'Sarah',
@@ -24361,7 +24361,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 19:59:44',
             'updated_at' => '2024-06-26 01:39:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Rocknriverdesign@gmail.com',
             'name' => 'Mary Bermudez',
             'first_name' => 'Mary',
@@ -24378,7 +24378,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 20:14:02',
             'updated_at' => '2023-08-26 13:58:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Sarahholl44@gmail.com',
             'name' => 'Sarah Holl',
             'first_name' => 'Sarah',
@@ -24395,7 +24395,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 20:28:16',
             'updated_at' => '2024-06-05 00:08:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'victoriasonlin@gmail.com',
             'name' => 'Victoria Sonlin',
             'first_name' => 'Victoria',
@@ -24412,7 +24412,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 20:29:30',
             'updated_at' => '2023-08-26 15:47:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '16jw73@gmail.com',
             'name' => 'Jade Watson',
             'first_name' => 'Jade',
@@ -24429,7 +24429,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 20:47:50',
             'updated_at' => '2024-06-06 21:17:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tmolloy363@gmail.com',
             'name' => 'Theresa Molloy',
             'first_name' => 'Theresa',
@@ -24446,7 +24446,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 20:52:29',
             'updated_at' => '2024-02-07 03:24:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juliahfarley@gmail.com',
             'name' => 'Julia Farley',
             'first_name' => 'Julia',
@@ -24463,7 +24463,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 20:59:43',
             'updated_at' => '2023-08-26 12:50:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'megan.a.murphy@gmail.com',
             'name' => 'Megan Murphy',
             'first_name' => 'Megan',
@@ -24480,7 +24480,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 21:09:55',
             'updated_at' => '2023-12-06 02:09:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jls@jlslawgroup.com',
             'name' => 'Jeffrey Schulman',
             'first_name' => 'Jeffrey',
@@ -24497,7 +24497,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 21:12:44',
             'updated_at' => '2023-08-26 11:16:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jenpink7@yahoo.com',
             'name' => 'Jennifer Walsh',
             'first_name' => 'Jennifer',
@@ -24514,7 +24514,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 21:25:05',
             'updated_at' => '2023-08-26 12:37:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nbeuke@gmail.com',
             'name' => 'Nicolas Beuke',
             'first_name' => 'Nicolas',
@@ -24531,7 +24531,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 21:36:58',
             'updated_at' => '2023-09-05 23:05:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'viverawbymaura@gmail.com',
             'name' => 'Maura Vargas',
             'first_name' => 'Maura',
@@ -24548,7 +24548,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 21:54:27',
             'updated_at' => '2023-08-26 14:01:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sachi.cooper@gmail.com',
             'name' => 'Sachi Cooper',
             'first_name' => 'Sachi',
@@ -24565,7 +24565,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 21:54:43',
             'updated_at' => '2023-09-01 00:12:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'madiganlyden@gmail.com',
             'name' => 'Madigan Lyden',
             'first_name' => 'Madigan',
@@ -24582,7 +24582,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 22:03:17',
             'updated_at' => '2023-08-26 13:50:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'melanie.kollander@gmail.com',
             'name' => 'Melanie Kollander',
             'first_name' => 'Melanie',
@@ -24599,7 +24599,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 22:15:41',
             'updated_at' => '2023-08-26 14:04:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'geraldoqs@gmail.com',
             'name' => 'Geraldo Quezada',
             'first_name' => 'Geraldo',
@@ -24616,7 +24616,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 22:31:26',
             'updated_at' => '2023-08-26 10:59:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maddiherne@gmail.com',
             'name' => 'Madeleine Herne',
             'first_name' => 'Madeleine',
@@ -24633,7 +24633,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 22:43:43',
             'updated_at' => '2023-08-26 13:49:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jess@irudd.com',
             'name' => 'Jessica Rudd',
             'first_name' => 'Jessica',
@@ -24650,7 +24650,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 22:57:22',
             'updated_at' => '2023-08-26 12:40:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Kmelissamedina@gmail.com',
             'name' => 'Karen Medina',
             'first_name' => 'Karen',
@@ -24667,7 +24667,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 22:58:56',
             'updated_at' => '2023-08-26 12:54:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexandra.weiss3@gmail.com',
             'name' => 'Alexandra Weiss',
             'first_name' => 'Alexandra',
@@ -24684,7 +24684,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 23:09:35',
             'updated_at' => '2023-08-26 11:40:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mjmcdowell@colgate.edu',
             'name' => 'Michael McDowell',
             'first_name' => 'Michael',
@@ -24701,7 +24701,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 23:11:52',
             'updated_at' => '2023-08-26 14:09:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rachelnarios@gmail.com',
             'name' => 'Rachel Rios',
             'first_name' => 'Rachel',
@@ -24718,7 +24718,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 23:15:26',
             'updated_at' => '2023-08-26 14:40:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'justinegrant16@gmail.com',
             'name' => 'Justine Latimore',
             'first_name' => 'Justine',
@@ -24735,7 +24735,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 23:30:36',
             'updated_at' => '2023-08-26 12:53:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rpradtke@gmail.com',
             'name' => 'Richard Radtke',
             'first_name' => 'Richard',
@@ -24752,7 +24752,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-07 23:50:22',
             'updated_at' => '2024-07-19 23:03:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'efedorek@gmail.com',
             'name' => 'Elizabeth Fedorek',
             'first_name' => 'Elizabeth',
@@ -24769,7 +24769,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 00:46:49',
             'updated_at' => '2023-08-26 10:35:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jessica.ann.lukas@gmail.com',
             'name' => 'Jessica Lukas',
             'first_name' => 'Jessica',
@@ -24786,7 +24786,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 01:10:33',
             'updated_at' => '2024-07-19 16:30:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'shannonsmith913@gmail.com',
             'name' => 'Shannon Smith',
             'first_name' => 'Shannon',
@@ -24803,7 +24803,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 01:25:29',
             'updated_at' => '2023-08-26 15:28:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '32bdd006@gmail.com',
             'name' => 'Brian Delaney',
             'first_name' => 'Brian',
@@ -24820,7 +24820,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 02:06:18',
             'updated_at' => '2023-08-26 12:02:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amanda.l.juliano@gmail.com',
             'name' => 'Amanda Juliano',
             'first_name' => 'Amanda',
@@ -24837,7 +24837,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 02:26:06',
             'updated_at' => '2023-08-26 11:44:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilykerm@gmail.com',
             'name' => 'Emily Kerman',
             'first_name' => 'Emily',
@@ -24854,7 +24854,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 02:34:39',
             'updated_at' => '2023-08-26 10:49:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carinkcohen@gmail.com',
             'name' => 'Carin Cohen',
             'first_name' => 'Carin',
@@ -24871,7 +24871,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 02:39:57',
             'updated_at' => '2023-08-26 10:07:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jaimeknopman@gmail.com',
             'name' => 'Jaime Knopman',
             'first_name' => 'Jaime',
@@ -24888,7 +24888,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 02:56:21',
             'updated_at' => '2023-08-26 11:11:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laurentboglino@gmail.com',
             'name' => 'Lauren Boglino',
             'first_name' => 'Lauren',
@@ -24905,7 +24905,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 03:02:09',
             'updated_at' => '2023-08-26 13:40:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rhayanna@heyrhay.com',
             'name' => 'Rhayanna Lima Ferreira da Luz',
             'first_name' => 'Rhayanna',
@@ -24922,7 +24922,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 03:48:19',
             'updated_at' => '2023-08-26 14:44:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'leiarbarrett@gmail.com',
             'name' => 'Leia Barrett',
             'first_name' => 'Leia',
@@ -24939,7 +24939,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 05:11:47',
             'updated_at' => '2023-08-26 13:41:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dkorolczuk@gmail.com',
             'name' => 'Donna Pedone',
             'first_name' => 'Donna',
@@ -24956,7 +24956,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 05:12:39',
             'updated_at' => '2023-08-26 10:30:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brigidwalshe@gmail.com',
             'name' => 'Brigid Walshe',
             'first_name' => 'Brigid',
@@ -24973,7 +24973,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 05:26:55',
             'updated_at' => '2023-08-26 12:02:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jmazza215@gmail.com',
             'name' => 'Jaclyn Mazza',
             'first_name' => 'Jaclyn',
@@ -24990,7 +24990,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 06:38:48',
             'updated_at' => '2023-08-26 11:10:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'charlottemittman@gmail.com',
             'name' => 'Charlotte Mittman',
             'first_name' => 'Charlotte',
@@ -25007,7 +25007,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 07:13:27',
             'updated_at' => '2023-09-07 02:40:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kate.a.lawson@gmail.com',
             'name' => 'Katherine Lawson',
             'first_name' => 'Katherine',
@@ -25024,7 +25024,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 07:23:43',
             'updated_at' => '2024-04-04 06:16:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'riggionicole@gmail.com',
             'name' => 'Nicole Riggio',
             'first_name' => 'Nicole',
@@ -25041,7 +25041,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 07:35:45',
             'updated_at' => '2023-08-26 14:30:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kyle.yx.han@gmail.com',
             'name' => 'Kyle Han',
             'first_name' => 'Kyle',
@@ -25058,7 +25058,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 07:49:19',
             'updated_at' => '2023-08-26 13:06:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'toryle89@gmail.com',
             'name' => 'Tory Le',
             'first_name' => 'Tory',
@@ -25075,7 +25075,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 09:01:26',
             'updated_at' => '2024-02-07 01:25:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sccomito@gmail.com',
             'name' => 'Shelby Dickinson',
             'first_name' => 'Shelby',
@@ -25092,7 +25092,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 09:06:37',
             'updated_at' => '2023-08-26 15:29:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nicolekrak1@gmail.com',
             'name' => 'Nicole Krakower',
             'first_name' => 'Nicole',
@@ -25109,7 +25109,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 16:33:55',
             'updated_at' => '2023-08-26 14:30:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mansonwongpt@gmail.com',
             'name' => 'Manson Wong',
             'first_name' => 'Manson',
@@ -25126,7 +25126,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 17:48:09',
             'updated_at' => '2023-08-26 13:51:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wyy0920@gmail.com',
             'name' => 'yuanyuan wu',
             'first_name' => 'yuanyuan',
@@ -25143,7 +25143,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 19:14:24',
             'updated_at' => '2024-05-23 19:51:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sallydupere@yahoo.com',
             'name' => 'Sally Dupere',
             'first_name' => 'Sally',
@@ -25160,7 +25160,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 20:04:41',
             'updated_at' => '2023-08-26 14:51:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emily.scinta22@gmail.com',
             'name' => 'Emily Scinta',
             'first_name' => 'Emily',
@@ -25177,7 +25177,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 20:13:42',
             'updated_at' => '2023-08-26 10:49:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'haley.carstensen@gmail.com',
             'name' => 'Haley Carstensen',
             'first_name' => 'Haley',
@@ -25194,7 +25194,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 20:40:52',
             'updated_at' => '2024-07-13 17:49:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aitgen@mac.com',
             'name' => 'Annmarie Itgen',
             'first_name' => 'Annmarie',
@@ -25211,7 +25211,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 20:55:16',
             'updated_at' => '2023-08-26 11:51:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'scott.smith155@verizon.net',
             'name' => 'Scott Smith',
             'first_name' => 'Scott',
@@ -25228,7 +25228,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 21:08:58',
             'updated_at' => '2023-08-26 15:26:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yuesun88@yahoo.com',
             'name' => 'Sherry Li',
             'first_name' => 'Sherry',
@@ -25245,7 +25245,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 22:01:35',
             'updated_at' => '2023-08-26 15:30:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jcarrasco5@comcast.net',
             'name' => 'jacqueline carrasco',
             'first_name' => 'jacqueline',
@@ -25262,7 +25262,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 22:31:40',
             'updated_at' => '2023-08-26 11:10:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kilo312kilo@yahoo.com',
             'name' => 'Jorge Garcia',
             'first_name' => 'Jorge',
@@ -25279,7 +25279,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 22:32:02',
             'updated_at' => '2023-08-26 12:47:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'isabellagamad@gmail.com',
             'name' => 'Isabella Gama',
             'first_name' => 'Isabella',
@@ -25296,7 +25296,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 22:35:01',
             'updated_at' => '2023-08-26 11:08:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dianariordan17@gmail.com',
             'name' => 'Diana Riordan',
             'first_name' => 'Diana',
@@ -25313,7 +25313,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 23:01:31',
             'updated_at' => '2023-08-26 10:29:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'imperfectwarriors2020@gmail.com',
             'name' => 'Amanda Clark',
             'first_name' => 'Amanda',
@@ -25330,7 +25330,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 23:05:39',
             'updated_at' => '2023-08-26 11:44:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mandabeth21@hotmail.com',
             'name' => 'Amanda Rebmann',
             'first_name' => 'Amanda',
@@ -25347,7 +25347,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-08 23:18:10',
             'updated_at' => '2023-08-26 11:44:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'franzirook@gmail.com',
             'name' => 'Franziska Rook',
             'first_name' => 'Franziska',
@@ -25364,7 +25364,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 00:01:07',
             'updated_at' => '2023-08-26 10:56:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'safwanh@gmail.com',
             'name' => 'Safwan Halabi',
             'first_name' => 'Safwan',
@@ -25381,7 +25381,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 00:01:56',
             'updated_at' => '2023-08-26 14:51:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'timryan3003@gmail.com',
             'name' => 'Timothy Ryan',
             'first_name' => 'Timothy',
@@ -25398,7 +25398,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 00:06:43',
             'updated_at' => '2023-08-26 15:42:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Sydney.coutts4@gmail.com',
             'name' => 'Sydney Coutts',
             'first_name' => 'Sydney',
@@ -25415,7 +25415,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 00:09:52',
             'updated_at' => '2023-08-26 15:37:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lucy.wang.d@gmail.com',
             'name' => 'Lucy Wang',
             'first_name' => 'Lucy',
@@ -25432,7 +25432,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 00:13:59',
             'updated_at' => '2023-08-26 13:47:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tin422@gmail.com',
             'name' => 'Cynthia Martin',
             'first_name' => 'Cynthia',
@@ -25449,7 +25449,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 00:23:57',
             'updated_at' => '2023-08-26 10:21:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jsrecht@gmail.com',
             'name' => 'Jaime Recht',
             'first_name' => 'Jaime',
@@ -25466,7 +25466,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 00:41:00',
             'updated_at' => '2023-08-26 11:11:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'meagan.branch@icahn.mssm.edu',
             'name' => 'Meagan Branch',
             'first_name' => 'Meagan',
@@ -25483,7 +25483,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 02:46:15',
             'updated_at' => '2023-08-26 14:02:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lindsay.e.mckay@gmail.com',
             'name' => 'Lindsay McKay',
             'first_name' => 'Lindsay',
@@ -25500,7 +25500,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 02:59:12',
             'updated_at' => '2023-08-26 13:43:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marisela.castaneda15@gmail.com',
             'name' => 'Marisela Castaneda',
             'first_name' => 'Marisela',
@@ -25517,7 +25517,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 03:03:55',
             'updated_at' => '2023-08-26 13:56:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'smryan100@gmail.com',
             'name' => 'Sarah Ryan',
             'first_name' => 'Sarah',
@@ -25534,7 +25534,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 03:08:42',
             'updated_at' => '2023-08-26 15:24:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'johnrkaminsky@gmail.com',
             'name' => 'John Kaminsky',
             'first_name' => 'John',
@@ -25551,7 +25551,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 03:34:22',
             'updated_at' => '2024-05-04 00:25:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'olgagallego2001@yahoo.com',
             'name' => 'Olga Gallegos',
             'first_name' => 'Olga',
@@ -25568,7 +25568,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 03:34:57',
             'updated_at' => '2023-08-26 14:32:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hilarypeck@gmail.com',
             'name' => 'Hilary Peck',
             'first_name' => 'Hilary',
@@ -25585,7 +25585,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 03:37:56',
             'updated_at' => '2023-08-26 11:05:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lubia.salgado@yahoo.com',
             'name' => 'Lubia Salgado',
             'first_name' => 'Lubia',
@@ -25602,7 +25602,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 03:46:42',
             'updated_at' => '2023-08-26 13:47:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'downtownapple@gmail.com',
             'name' => 'Minerva Zhang',
             'first_name' => 'Minerva',
@@ -25619,7 +25619,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 04:00:27',
             'updated_at' => '2023-08-26 14:23:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rserracinlevy@gmail.com',
             'name' => 'Ricardo SerracÃ­n Levy',
             'first_name' => 'Ricardo',
@@ -25636,7 +25636,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 04:05:33',
             'updated_at' => '2023-08-26 14:44:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kathleenmwebb@yahoo.com',
             'name' => 'Kathleen Mattielli',
             'first_name' => 'Kathleen',
@@ -25653,7 +25653,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 05:04:22',
             'updated_at' => '2023-08-26 12:56:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'drewjoslin@gmail.com',
             'name' => 'Andrew Joslin',
             'first_name' => 'Andrew',
@@ -25670,7 +25670,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 05:11:09',
             'updated_at' => '2024-07-25 20:14:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caitlin.brosnan2@gmail.com',
             'name' => 'Caitlin Brosnan',
             'first_name' => 'Caitlin',
@@ -25687,7 +25687,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 06:16:44',
             'updated_at' => '2023-08-26 10:06:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'MSAAVEDRA83@HOTMAIL.COM',
             'name' => 'MARITZA SAAVEDRA',
             'first_name' => 'MARITZA',
@@ -25704,7 +25704,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 06:22:46',
             'updated_at' => '2023-08-26 13:56:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'windracer1@yahoo.com',
             'name' => 'Mitchell Ferris',
             'first_name' => 'Mitchell',
@@ -25721,7 +25721,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 06:32:09',
             'updated_at' => '2023-08-26 14:24:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kunesbt87@gmail.com',
             'name' => 'Brian Kunes',
             'first_name' => 'Brian',
@@ -25738,7 +25738,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 06:49:16',
             'updated_at' => '2023-08-26 12:02:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lauren.vostal@gmail.com',
             'name' => 'Lauren Vostal',
             'first_name' => 'Lauren',
@@ -25755,7 +25755,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 06:58:40',
             'updated_at' => '2023-08-26 13:40:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ashleyesummers@gmail.com',
             'name' => 'Ashley Summers',
             'first_name' => 'Ashley',
@@ -25772,7 +25772,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 07:29:48',
             'updated_at' => '2023-08-26 11:55:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brandoneide8@gmail.com',
             'name' => 'Brandon Eide',
             'first_name' => 'Brandon',
@@ -25789,7 +25789,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 08:26:19',
             'updated_at' => '2023-08-26 12:01:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juliaomalley12@gmail.com',
             'name' => 'Julia O\'Malley',
             'first_name' => 'Julia',
@@ -25806,7 +25806,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 08:32:25',
             'updated_at' => '2023-08-26 12:51:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'reynolds7182@gmail.com',
             'name' => 'Claire Reynolds',
             'first_name' => 'Claire',
@@ -25823,7 +25823,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 09:06:41',
             'updated_at' => '2023-08-26 10:18:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'trevorphoward14@gmail.com',
             'name' => 'Trevor Howard',
             'first_name' => 'Trevor',
@@ -25840,7 +25840,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 09:35:41',
             'updated_at' => '2023-08-26 15:44:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katherine.f.ross@gmail.com',
             'name' => 'Katherine Ross',
             'first_name' => 'Katherine',
@@ -25857,7 +25857,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 17:39:32',
             'updated_at' => '2023-08-26 12:56:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Vcambric@gmail.com',
             'name' => 'Venecia Cambric',
             'first_name' => 'Venecia',
@@ -25874,7 +25874,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 18:11:11',
             'updated_at' => '2023-08-26 15:46:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'madelineashtonfoster@gmail.com',
             'name' => 'Madeline Foster',
             'first_name' => 'Madeline',
@@ -25891,7 +25891,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 19:27:49',
             'updated_at' => '2024-03-28 19:43:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dexnmeka@yahoo.com',
             'name' => 'Dexter Alejandro',
             'first_name' => 'Dexter',
@@ -25908,7 +25908,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 19:36:09',
             'updated_at' => '2023-12-06 20:02:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bernstein.ian@gmail.com',
             'name' => 'Ian Bernstein',
             'first_name' => 'Ian',
@@ -25925,7 +25925,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 21:55:55',
             'updated_at' => '2023-08-26 11:07:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chelseawellmann@gmail.com',
             'name' => 'Chelsea Wellmann',
             'first_name' => 'Chelsea',
@@ -25942,7 +25942,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 22:27:07',
             'updated_at' => '2023-08-26 10:13:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laurensierraalexander@gmail.com',
             'name' => 'Lauren Alexander',
             'first_name' => 'Lauren',
@@ -25959,7 +25959,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 22:30:42',
             'updated_at' => '2024-07-03 13:15:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cnbaez92@gmail.com',
             'name' => 'Cesar Baez',
             'first_name' => 'Cesar',
@@ -25976,7 +25976,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 23:19:38',
             'updated_at' => '2023-08-26 10:12:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rochelletarlowe@hotmail.com',
             'name' => 'Alex Jonas',
             'first_name' => 'Alex',
@@ -25993,7 +25993,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-09 23:22:59',
             'updated_at' => '2023-12-02 04:48:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'karomano8@gmail.com',
             'name' => 'Kamden Romano',
             'first_name' => 'Kamden',
@@ -26010,7 +26010,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 00:19:43',
             'updated_at' => '2023-08-26 12:53:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielgg42@gmail.com',
             'name' => 'Daniel Gaubeca',
             'first_name' => 'Daniel',
@@ -26027,7 +26027,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 01:07:42',
             'updated_at' => '2023-08-26 10:23:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'helena.r.wagner@gmail.com',
             'name' => 'Helena Wagner',
             'first_name' => 'Helena',
@@ -26044,7 +26044,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 01:24:22',
             'updated_at' => '2023-08-26 11:05:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mayraeobando@gmail.com',
             'name' => 'Mayra Obando',
             'first_name' => 'Mayra',
@@ -26061,7 +26061,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 01:30:34',
             'updated_at' => '2023-08-26 14:02:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'speedracer71082@gmail.com',
             'name' => 'Suraj Chaitan',
             'first_name' => 'Suraj',
@@ -26078,7 +26078,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 01:51:38',
             'updated_at' => '2024-06-21 22:56:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'john.p.scotto@gmail.com',
             'name' => 'John Scotto',
             'first_name' => 'John',
@@ -26095,7 +26095,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 03:03:55',
             'updated_at' => '2023-08-26 12:43:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katringabriel10@gmail.com',
             'name' => 'Katrin Gabriel',
             'first_name' => 'Katrin',
@@ -26112,7 +26112,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 03:09:29',
             'updated_at' => '2023-08-26 12:58:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gaby2711@gmail.com',
             'name' => 'Gabriela Requiz',
             'first_name' => 'Gabriela',
@@ -26129,7 +26129,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 03:13:33',
             'updated_at' => '2023-08-26 10:57:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jburgospty@hotmail.com',
             'name' => 'Jose Burgos',
             'first_name' => 'Jose',
@@ -26146,7 +26146,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 03:17:55',
             'updated_at' => '2023-08-26 12:47:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emiralejo@gmail.com',
             'name' => 'Emir Arias',
             'first_name' => 'Emir',
@@ -26163,7 +26163,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 03:18:53',
             'updated_at' => '2023-08-26 10:50:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'calyanisucre@gmail.com',
             'name' => 'Wilfredo Reyes',
             'first_name' => 'Wilfredo',
@@ -26180,7 +26180,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 03:24:20',
             'updated_at' => '2023-08-26 15:49:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'trailblazer2362@aol.com',
             'name' => 'Miles Layton',
             'first_name' => 'Miles',
@@ -26197,7 +26197,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 03:38:51',
             'updated_at' => '2023-08-26 14:23:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Ellieshevaselevan@gmail.com',
             'name' => 'Ellie Selevan',
             'first_name' => 'Ellie',
@@ -26214,7 +26214,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 03:51:15',
             'updated_at' => '2023-08-26 10:47:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ryansmith78@att.net',
             'name' => 'Ryan Smith',
             'first_name' => 'Ryan',
@@ -26231,7 +26231,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 04:18:55',
             'updated_at' => '2023-08-26 14:50:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'natalie.pearson3397@gmail.com',
             'name' => 'Natalie Pearson',
             'first_name' => 'Natalie',
@@ -26248,7 +26248,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 04:32:57',
             'updated_at' => '2023-12-12 22:09:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jennifergracemackay@gmail.com',
             'name' => 'Jennifer Mackay',
             'first_name' => 'Jennifer',
@@ -26265,7 +26265,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 05:29:12',
             'updated_at' => '2023-08-26 12:37:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laurenjpark16@gmail.com',
             'name' => 'Lauren Park',
             'first_name' => 'Lauren',
@@ -26282,7 +26282,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 05:38:18',
             'updated_at' => '2024-03-27 03:28:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'skippamiho@gmail.com',
             'name' => 'Miho Nishimoto',
             'first_name' => 'Miho',
@@ -26299,7 +26299,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 06:31:40',
             'updated_at' => '2023-08-26 14:23:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'carendemdam@gmail.com',
             'name' => 'CAREN LUCARELLI',
             'first_name' => 'CAREN',
@@ -26316,7 +26316,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 08:01:34',
             'updated_at' => '2023-08-26 10:07:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mnrispoli@gmail.com',
             'name' => 'Matthew Rispoli',
             'first_name' => 'Matthew',
@@ -26333,7 +26333,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 08:02:03',
             'updated_at' => '2023-08-26 14:00:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nadoyle5@gmail.com',
             'name' => 'Nicole Doyle',
             'first_name' => 'Nicole',
@@ -26350,7 +26350,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 08:18:54',
             'updated_at' => '2023-08-26 14:30:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danilobilton@hotmail.com',
             'name' => 'Danilo Bilton',
             'first_name' => 'Danilo',
@@ -26367,7 +26367,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 09:12:29',
             'updated_at' => '2023-08-26 10:24:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'micanitke@gmail.com',
             'name' => 'Mica Nitke',
             'first_name' => 'Mica',
@@ -26384,7 +26384,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 16:36:45',
             'updated_at' => '2023-08-26 14:06:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'taviwallace93@yahoo.com',
             'name' => 'Tavi Wallace',
             'first_name' => 'Tavi',
@@ -26401,7 +26401,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 18:44:16',
             'updated_at' => '2023-11-14 02:44:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'blperk@gmail.com',
             'name' => 'Brad Perkins',
             'first_name' => 'Brad',
@@ -26418,7 +26418,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 18:54:57',
             'updated_at' => '2024-04-17 06:53:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'zuleymi1710@gmail.com',
             'name' => 'Zuleymi ValdÃ©s',
             'first_name' => 'Zuleymi',
@@ -26435,7 +26435,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 19:23:51',
             'updated_at' => '2023-08-26 15:54:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gongm813@gmail.com',
             'name' => 'Madeleine Gong',
             'first_name' => 'Madeleine',
@@ -26452,7 +26452,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 20:00:44',
             'updated_at' => '2023-08-26 13:49:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tatecrosby@gmail.com',
             'name' => 'Tate Crosby',
             'first_name' => 'Tate',
@@ -26469,7 +26469,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 21:18:43',
             'updated_at' => '2023-08-26 15:38:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'owen.mittenthal@gmail.com',
             'name' => 'Owen Mittenthal',
             'first_name' => 'Owen',
@@ -26486,7 +26486,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 21:44:16',
             'updated_at' => '2023-08-26 14:33:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dejonallen@aol.com',
             'name' => 'Dejon Allen',
             'first_name' => 'Dejon',
@@ -26503,7 +26503,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 23:27:03',
             'updated_at' => '2023-08-26 10:28:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jane.hayes524@gmail.com',
             'name' => 'Jane Hayes',
             'first_name' => 'Jane',
@@ -26520,7 +26520,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-10 23:55:02',
             'updated_at' => '2023-08-26 11:13:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chasemmiller1292@gmail.com',
             'name' => 'Chase Miller',
             'first_name' => 'Chase',
@@ -26537,7 +26537,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 00:30:14',
             'updated_at' => '2023-08-26 10:13:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dimartinileah@gmail.com',
             'name' => 'Leah DiMartini',
             'first_name' => 'Leah',
@@ -26554,7 +26554,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 03:44:14',
             'updated_at' => '2023-08-26 13:41:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'randel3034@aol.com',
             'name' => 'Greg Randel',
             'first_name' => 'Greg',
@@ -26571,7 +26571,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 03:54:04',
             'updated_at' => '2023-08-26 11:01:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielleeoconnell@gmail.com',
             'name' => 'Danielle O\'Connell',
             'first_name' => 'Danielle',
@@ -26588,7 +26588,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 04:00:26',
             'updated_at' => '2023-08-26 10:24:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'atxjoe512@gmail.com',
             'name' => 'Joseph Tawney',
             'first_name' => 'Joseph',
@@ -26605,7 +26605,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 04:00:48',
             'updated_at' => '2023-08-26 12:48:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gberry92@Gmail.com',
             'name' => 'Grace Berry',
             'first_name' => 'Grace',
@@ -26622,7 +26622,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 06:27:33',
             'updated_at' => '2024-06-07 16:02:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexburnazian@gmail.com',
             'name' => 'Alex Burnazian',
             'first_name' => 'Alex',
@@ -26639,7 +26639,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 06:44:53',
             'updated_at' => '2023-09-05 20:26:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nyashao@hotmail.com',
             'name' => 'Nyasha Olliver',
             'first_name' => 'Nyasha',
@@ -26656,7 +26656,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 08:29:17',
             'updated_at' => '2023-08-26 14:32:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rcintas@teamplv.com',
             'name' => 'roberto alonso',
             'first_name' => 'roberto',
@@ -26673,7 +26673,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 11:14:57',
             'updated_at' => '2023-08-26 14:47:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'grenedu@gmail.com',
             'name' => 'Chinedu Ogueri',
             'first_name' => 'Chinedu',
@@ -26690,7 +26690,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 16:45:51',
             'updated_at' => '2023-08-26 10:14:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'delasheras_rm@icloud.com',
             'name' => 'Rafael de las Heras JimÃ©nez de MuÃ±ana',
             'first_name' => 'Rafael',
@@ -26707,7 +26707,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 17:17:52',
             'updated_at' => '2023-12-06 23:38:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pressyj@yahoo.com',
             'name' => 'Priscilla Hall',
             'first_name' => 'Priscilla',
@@ -26724,7 +26724,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 18:53:23',
             'updated_at' => '2023-08-26 14:38:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gustavospohr1@gmail.com',
             'name' => 'Gustavo Lauxen Spohr',
             'first_name' => 'Gustavo',
@@ -26741,7 +26741,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 19:21:05',
             'updated_at' => '2023-08-26 11:02:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laur.silverman@gmail.com',
             'name' => 'Lauren Silverman',
             'first_name' => 'Lauren',
@@ -26758,7 +26758,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 19:59:18',
             'updated_at' => '2024-02-07 01:02:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nicolezackowitz@gmail.com',
             'name' => 'Nicole Zackowitz',
             'first_name' => 'Nicole',
@@ -26775,7 +26775,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 20:15:39',
             'updated_at' => '2024-07-19 14:50:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jwoehler10@gmail.com',
             'name' => 'Jessica Woehler',
             'first_name' => 'Jessica',
@@ -26792,7 +26792,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 21:30:31',
             'updated_at' => '2023-08-26 12:40:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lvmcbride@gmail.com',
             'name' => 'Leah Carpenter',
             'first_name' => 'Leah',
@@ -26809,7 +26809,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-11 23:22:16',
             'updated_at' => '2023-08-26 13:41:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mec788@nyu.edu',
             'name' => 'Megan Clark',
             'first_name' => 'Megan',
@@ -26826,7 +26826,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 01:56:15',
             'updated_at' => '2023-08-26 14:03:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caroline.nachazel@gmail.com',
             'name' => 'Caroline Nachazel',
             'first_name' => 'Caroline',
@@ -26843,7 +26843,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 02:05:41',
             'updated_at' => '2023-08-26 10:09:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'josh.elmquist@gmail.com',
             'name' => 'Joshua Elmquist',
             'first_name' => 'Joshua',
@@ -26860,7 +26860,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 02:31:01',
             'updated_at' => '2023-08-26 12:49:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amandakenny87@gmail.com',
             'name' => 'Amanda kenny',
             'first_name' => 'Amanda',
@@ -26877,7 +26877,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 02:59:46',
             'updated_at' => '2023-08-26 11:44:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 's.gaudio6@gmail.com',
             'name' => 'Samantha Gaudio',
             'first_name' => 'Samantha',
@@ -26894,7 +26894,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 03:01:53',
             'updated_at' => '2023-08-26 14:53:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cooperwright77@gmail.com',
             'name' => 'Cooper Wright',
             'first_name' => 'Cooper',
@@ -26911,7 +26911,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 03:26:40',
             'updated_at' => '2023-08-26 10:20:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pbswan92@gmail.com',
             'name' => 'Peter Swan',
             'first_name' => 'Peter',
@@ -26928,7 +26928,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 03:37:41',
             'updated_at' => '2023-08-26 14:37:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rachel.abudaram@gmail.com',
             'name' => 'Rachel Abudaram',
             'first_name' => 'Rachel',
@@ -26945,7 +26945,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 12:05:25',
             'updated_at' => '2023-08-26 14:40:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ollieclift@googlemail.com',
             'name' => 'Oliver Clift',
             'first_name' => 'Oliver',
@@ -26962,7 +26962,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 20:13:10',
             'updated_at' => '2023-08-26 14:32:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cara.thayer.22@gmail.com',
             'name' => 'Cara Thayer',
             'first_name' => 'Cara',
@@ -26979,7 +26979,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 20:26:03',
             'updated_at' => '2023-08-26 10:07:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'patrice.watson@gmail.com',
             'name' => 'Patrice Watson',
             'first_name' => 'Patrice',
@@ -26996,7 +26996,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 20:56:21',
             'updated_at' => '2023-08-26 14:34:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'samscarborough8@gmail.com',
             'name' => 'Sam Scarborough',
             'first_name' => 'Sam',
@@ -27013,7 +27013,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 22:44:04',
             'updated_at' => '2023-08-26 14:51:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'antoinettegcabo@yahoo.com',
             'name' => 'Antoinette Cabo',
             'first_name' => 'Antoinette',
@@ -27030,7 +27030,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 22:46:05',
             'updated_at' => '2023-08-26 11:52:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Watattack54321@gmail.com',
             'name' => 'Lorenzo Watkins',
             'first_name' => 'Lorenzo',
@@ -27047,7 +27047,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 23:19:19',
             'updated_at' => '2024-07-06 20:41:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marroyo929@gmail.com',
             'name' => 'Marie Arroyo',
             'first_name' => 'Marie',
@@ -27064,7 +27064,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-12 23:29:51',
             'updated_at' => '2024-01-10 02:49:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'patrick.tobin.101@gmail.com',
             'name' => 'E Tobin',
             'first_name' => 'E',
@@ -27081,7 +27081,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 00:43:52',
             'updated_at' => '2023-08-26 10:31:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'eddiefletch@aol.com',
             'name' => 'Edward Fletcher',
             'first_name' => 'Edward',
@@ -27098,7 +27098,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 05:02:50',
             'updated_at' => '2024-03-25 20:50:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cambrey1978@me.com',
             'name' => 'Cambrey Olmos',
             'first_name' => 'Cambrey',
@@ -27115,7 +27115,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 05:09:41',
             'updated_at' => '2023-08-26 10:07:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cutyourlockes@hotmail.com',
             'name' => 'Jen Hayworth',
             'first_name' => 'Jen',
@@ -27132,7 +27132,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 19:02:13',
             'updated_at' => '2023-08-26 11:16:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'achoi5495@gmail.com',
             'name' => 'Allison Choi',
             'first_name' => 'Allison',
@@ -27149,7 +27149,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 19:05:56',
             'updated_at' => '2023-08-26 11:43:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maykelkhilla@gmail.com',
             'name' => 'Maykel Khilla',
             'first_name' => 'Maykel',
@@ -27166,7 +27166,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 19:18:41',
             'updated_at' => '2023-08-26 14:02:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'schneidm7@hotmail.com',
             'name' => 'Zakarai Schneider',
             'first_name' => 'Zakarai',
@@ -27183,7 +27183,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 19:36:27',
             'updated_at' => '2024-02-27 20:00:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stefania3110@hotmail.com',
             'name' => 'Stefania Giordano',
             'first_name' => 'Stefania',
@@ -27200,7 +27200,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 19:46:59',
             'updated_at' => '2023-08-26 15:33:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'srahkelly@hotmail.com',
             'name' => 'Sarah Rotondo',
             'first_name' => 'Sarah',
@@ -27217,7 +27217,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 21:28:25',
             'updated_at' => '2023-08-26 15:24:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'miya.ringel@gmail.com',
             'name' => 'Miya Ringel',
             'first_name' => 'Miya',
@@ -27234,7 +27234,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 21:43:25',
             'updated_at' => '2023-11-11 01:37:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bethalancaster@yahoo.com',
             'name' => 'Beth Lancaster',
             'first_name' => 'Beth',
@@ -27251,7 +27251,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 22:09:13',
             'updated_at' => '2023-08-26 11:59:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'camilocardona91@gmail.com',
             'name' => 'Camilo Cardona',
             'first_name' => 'Camilo',
@@ -27268,7 +27268,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-13 23:16:01',
             'updated_at' => '2023-08-26 10:07:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kris10yu@gmail.com',
             'name' => 'Kristen Yu-Um',
             'first_name' => 'Kristen',
@@ -27285,7 +27285,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 00:04:59',
             'updated_at' => '2023-08-26 13:04:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kroy08@yahoo.com',
             'name' => 'Katherine Fleischmann',
             'first_name' => 'Katherine',
@@ -27302,7 +27302,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 00:07:22',
             'updated_at' => '2023-08-26 12:56:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alex.c.innes89@gmail.com',
             'name' => 'Alexander Innes',
             'first_name' => 'Alexander',
@@ -27319,7 +27319,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 00:49:13',
             'updated_at' => '2023-08-26 11:39:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laylah.funk@gmail.com',
             'name' => 'Laylah Funk',
             'first_name' => 'Laylah',
@@ -27336,7 +27336,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 01:58:38',
             'updated_at' => '2023-08-26 13:41:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jdt2ue@virginia.edu',
             'name' => 'James Tang',
             'first_name' => 'James',
@@ -27353,7 +27353,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 02:30:21',
             'updated_at' => '2023-08-26 11:12:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ehrlichm@optonline.net',
             'name' => 'Brandon Ehrlich',
             'first_name' => 'Brandon',
@@ -27370,7 +27370,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 04:26:39',
             'updated_at' => '2024-03-15 04:57:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robert.boiarsky@alexbrown.com',
             'name' => 'Robert Boiarsky',
             'first_name' => 'Robert',
@@ -27387,7 +27387,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 05:10:01',
             'updated_at' => '2023-08-26 14:47:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nickkarros7@gmail.com',
             'name' => 'Nicholas Karros',
             'first_name' => 'Nicholas',
@@ -27404,7 +27404,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 05:38:22',
             'updated_at' => '2023-09-05 20:26:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aelmquist66@gmail.com',
             'name' => 'April Elmquist',
             'first_name' => 'April',
@@ -27421,7 +27421,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 08:50:06',
             'updated_at' => '2023-08-26 11:52:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'smith.billy.2019@gmail.com',
             'name' => 'William Smith',
             'first_name' => 'William',
@@ -27438,7 +27438,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 19:35:40',
             'updated_at' => '2023-08-26 15:50:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erinwilliams401@gmail.com',
             'name' => 'Erin Williams',
             'first_name' => 'Erin',
@@ -27455,7 +27455,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 20:29:30',
             'updated_at' => '2023-08-26 10:53:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'daniel.aaron.butensky@gmail.com',
             'name' => 'Daniel Butensky',
             'first_name' => 'Daniel',
@@ -27472,7 +27472,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 21:10:58',
             'updated_at' => '2024-06-14 17:39:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'liviazsun@gmail.com',
             'name' => 'Livia Sun',
             'first_name' => 'Livia',
@@ -27489,7 +27489,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 21:17:52',
             'updated_at' => '2023-08-26 13:45:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'a.ehrlich1@gmail.com',
             'name' => 'Aliza Ehrlich',
             'first_name' => 'Aliza',
@@ -27506,7 +27506,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 22:20:25',
             'updated_at' => '2024-02-07 02:03:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bentomgoff@gmail.com',
             'name' => 'Benjamin Goff',
             'first_name' => 'Benjamin',
@@ -27523,7 +27523,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 22:28:38',
             'updated_at' => '2023-08-26 11:58:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dylan.foyster@gmail.com',
             'name' => 'Dylan Foyster',
             'first_name' => 'Dylan',
@@ -27540,7 +27540,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-14 22:28:40',
             'updated_at' => '2023-08-26 10:31:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'margotskarpeteig@gmail.com',
             'name' => 'Margot Skarpeteig',
             'first_name' => 'Margot',
@@ -27557,7 +27557,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 00:22:08',
             'updated_at' => '2023-08-26 13:53:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ehrlich.maria@gmail.com',
             'name' => 'Maria Ehrlich',
             'first_name' => 'Maria',
@@ -27574,7 +27574,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 00:31:03',
             'updated_at' => '2024-03-15 05:08:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'greglweil@gmail.com',
             'name' => 'Gregory Weil',
             'first_name' => 'Gregory',
@@ -27591,7 +27591,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 01:00:45',
             'updated_at' => '2024-05-30 16:57:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jkhong1997@gmail.com',
             'name' => 'Joonki Hong',
             'first_name' => 'Joonki',
@@ -27608,7 +27608,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 01:10:24',
             'updated_at' => '2023-08-26 12:46:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'its.wesley@gmail.com',
             'name' => 'Wesley Sze',
             'first_name' => 'Wesley',
@@ -27625,7 +27625,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 02:13:13',
             'updated_at' => '2023-08-26 15:49:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laynekirchoff@gmail.com',
             'name' => 'Layne Ilderton',
             'first_name' => 'Layne',
@@ -27642,7 +27642,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 02:16:45',
             'updated_at' => '2023-08-26 13:41:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'josephs@eschs.org',
             'name' => 'Joseph Santana',
             'first_name' => 'Joseph',
@@ -27659,7 +27659,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 03:01:09',
             'updated_at' => '2023-09-05 20:31:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stevemsobo@gmail.com',
             'name' => 'Steve Sobo',
             'first_name' => 'Steve',
@@ -27676,7 +27676,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 03:38:38',
             'updated_at' => '2023-08-26 15:35:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cfernholz@gmail.com',
             'name' => 'Cristina Gil',
             'first_name' => 'Cristina',
@@ -27693,7 +27693,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 03:55:39',
             'updated_at' => '2023-09-05 20:31:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katiefreeman2016@gmail.com',
             'name' => 'Katherine Freeman',
             'first_name' => 'Katherine',
@@ -27710,7 +27710,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 04:00:45',
             'updated_at' => '2023-08-26 12:56:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rubylu22@msn.com',
             'name' => 'Luanne Burke',
             'first_name' => 'Luanne',
@@ -27727,7 +27727,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 04:29:37',
             'updated_at' => '2023-08-26 13:47:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dante.l.mack.20@gmail.com',
             'name' => 'Dante Mack',
             'first_name' => 'Dante',
@@ -27744,7 +27744,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 05:29:19',
             'updated_at' => '2023-08-26 10:24:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Nafijahmed@gmail.com',
             'name' => 'Nafij Ahmed',
             'first_name' => 'Nafij',
@@ -27761,7 +27761,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 05:59:01',
             'updated_at' => '2023-12-11 08:42:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'm_k_thompson@hotmail.com',
             'name' => 'Matthew Thompson',
             'first_name' => 'Matthew',
@@ -27778,7 +27778,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 06:13:45',
             'updated_at' => '2023-08-26 14:00:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wbharvey26@gmail.com',
             'name' => 'Winnie Brandfield-Harvey',
             'first_name' => 'Winnie',
@@ -27795,7 +27795,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 09:13:50',
             'updated_at' => '2023-08-26 15:51:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caroline.h.sulli@gmail.com',
             'name' => 'Caroline Sullivan',
             'first_name' => 'Caroline',
@@ -27812,7 +27812,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 09:55:46',
             'updated_at' => '2023-08-26 10:09:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'melissamarie413@gmail.com',
             'name' => 'Melissa Langworthy',
             'first_name' => 'Melissa',
@@ -27829,7 +27829,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 17:38:32',
             'updated_at' => '2023-08-26 14:04:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'camoak7@gmail.com',
             'name' => 'Camron Oakley',
             'first_name' => 'Camron',
@@ -27846,7 +27846,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 18:09:20',
             'updated_at' => '2023-08-26 10:07:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erin.fuchs@gmail.com',
             'name' => 'Erin Fuchs',
             'first_name' => 'Erin',
@@ -27863,7 +27863,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 19:54:05',
             'updated_at' => '2024-04-10 18:38:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ontheejh@gmail.com',
             'name' => 'Ethan Holland',
             'first_name' => 'Ethan',
@@ -27880,7 +27880,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 20:03:55',
             'updated_at' => '2024-07-08 08:39:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nicolecolbert@gmail.com',
             'name' => 'Nicole Colbert',
             'first_name' => 'Nicole',
@@ -27897,7 +27897,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 21:15:56',
             'updated_at' => '2023-08-26 14:30:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katrinalilysimon@gmail.com',
             'name' => 'Katrina Simon',
             'first_name' => 'Katrina',
@@ -27914,7 +27914,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-15 23:52:06',
             'updated_at' => '2024-02-10 02:28:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alizaschub@gmail.com',
             'name' => 'Aliza Schub',
             'first_name' => 'Aliza',
@@ -27931,7 +27931,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 00:22:08',
             'updated_at' => '2023-08-26 11:42:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'etomko@gmail.com',
             'name' => 'Eric Tomko',
             'first_name' => 'Eric',
@@ -27948,7 +27948,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 00:54:45',
             'updated_at' => '2023-08-26 10:52:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kerrykuck@q.com',
             'name' => 'Kerry Kuck',
             'first_name' => 'Kerry',
@@ -27965,7 +27965,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 02:00:36',
             'updated_at' => '2023-08-26 13:01:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'reesebuckholz@gmail.com',
             'name' => 'Reese Buckholz',
             'first_name' => 'Reese',
@@ -27982,7 +27982,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 02:54:01',
             'updated_at' => '2023-08-26 14:43:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jgg2145@columbia.edu',
             'name' => 'Julie Griswold',
             'first_name' => 'Julie',
@@ -27999,7 +27999,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 06:44:08',
             'updated_at' => '2023-08-26 12:52:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dolphin.lajourn@yahoo.com',
             'name' => 'Dolphin Lajourn',
             'first_name' => 'Dolphin',
@@ -28016,7 +28016,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 07:09:24',
             'updated_at' => '2024-07-23 21:23:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jasonlromero@gmail.com',
             'name' => 'Jason Romero',
             'first_name' => 'Jason',
@@ -28033,7 +28033,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 07:16:30',
             'updated_at' => '2023-08-26 11:15:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'michaelomalley313@gmail.com',
             'name' => 'Michael O\'Malley',
             'first_name' => 'Michael',
@@ -28050,7 +28050,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 07:37:26',
             'updated_at' => '2023-08-26 14:09:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'patrick.mccarthy5@yahoo.com',
             'name' => 'Patrick McCarthy',
             'first_name' => 'Patrick',
@@ -28067,7 +28067,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 09:22:51',
             'updated_at' => '2023-11-11 19:24:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'evelynylow@gmail.com',
             'name' => 'Evelyn Low',
             'first_name' => 'Evelyn',
@@ -28084,7 +28084,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 09:23:17',
             'updated_at' => '2023-08-26 10:54:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'veronicalalston@gmail.com',
             'name' => 'Veronica Alston',
             'first_name' => 'Veronica',
@@ -28101,7 +28101,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 10:21:07',
             'updated_at' => '2023-08-26 15:46:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ken.rubeli@gmail.com',
             'name' => 'Kenneth Rubeli',
             'first_name' => 'Kenneth',
@@ -28118,7 +28118,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 11:26:06',
             'updated_at' => '2024-01-25 01:30:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dhonick@gmail.com',
             'name' => 'David Honick',
             'first_name' => 'David',
@@ -28135,7 +28135,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 17:55:42',
             'updated_at' => '2024-07-08 20:11:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ae@levmo.co',
             'name' => 'Andrew Ekelem',
             'first_name' => 'Andrew',
@@ -28152,7 +28152,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 18:34:27',
             'updated_at' => '2023-08-26 11:48:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hrichardson2@cox.net',
             'name' => 'Heidi Richardson',
             'first_name' => 'Heidi',
@@ -28169,7 +28169,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 19:12:37',
             'updated_at' => '2023-08-26 11:05:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ashroff329@gmail.com',
             'name' => 'Avanti Shroff',
             'first_name' => 'Avanti',
@@ -28186,7 +28186,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 19:24:52',
             'updated_at' => '2023-08-26 11:56:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexaebrown214@gmail.com',
             'name' => 'alexa Brown',
             'first_name' => 'alexa',
@@ -28203,7 +28203,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 19:31:24',
             'updated_at' => '2023-09-05 18:59:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ksmuthu@gmail.com',
             'name' => 'Saravanamuthu Kandasamy',
             'first_name' => 'Saravanamuthu',
@@ -28220,7 +28220,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 19:33:40',
             'updated_at' => '2023-08-26 15:26:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nev3@cornell.edu',
             'name' => 'Nicholas Velonis',
             'first_name' => 'Nicholas',
@@ -28237,7 +28237,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 19:41:19',
             'updated_at' => '2023-08-26 14:29:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 't.supermove@gmail.com',
             'name' => 'Allan Nguyen',
             'first_name' => 'Allan',
@@ -28254,7 +28254,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 19:48:18',
             'updated_at' => '2024-02-15 03:27:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rpg0203@yahoo.com',
             'name' => 'Ron Gold',
             'first_name' => 'Ron',
@@ -28271,7 +28271,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 20:12:46',
             'updated_at' => '2023-09-15 16:53:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nxh189@case.edu',
             'name' => 'Natalie Hearty',
             'first_name' => 'Natalie',
@@ -28288,7 +28288,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 21:51:21',
             'updated_at' => '2023-08-26 14:27:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ldranniger@gmail.com',
             'name' => 'Luke Ranniger',
             'first_name' => 'Luke',
@@ -28305,7 +28305,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 21:56:41',
             'updated_at' => '2023-08-26 13:48:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jat6315@outlook.com',
             'name' => 'Jacob Thomas',
             'first_name' => 'Jacob',
@@ -28322,7 +28322,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 22:46:27',
             'updated_at' => '2024-07-25 16:44:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'loldshue@glen-oak.com',
             'name' => 'Lindsey Oldshue',
             'first_name' => 'Lindsey',
@@ -28339,7 +28339,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 22:46:37',
             'updated_at' => '2023-08-26 13:44:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'beglyterry@gmail.com',
             'name' => 'mary Begly',
             'first_name' => 'mary',
@@ -28356,7 +28356,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 22:52:25',
             'updated_at' => '2024-01-20 00:10:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kimberly.howry@gmail.com',
             'name' => 'Kimberly Howry',
             'first_name' => 'Kimberly',
@@ -28373,7 +28373,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 22:59:47',
             'updated_at' => '2023-08-26 13:03:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'DeedleDi@gmail.com',
             'name' => 'Diana Codispoti',
             'first_name' => 'Diana',
@@ -28390,7 +28390,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-16 23:00:35',
             'updated_at' => '2023-12-12 21:22:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cristina.resch@gmail.com',
             'name' => 'Cristina Resch',
             'first_name' => 'Cristina',
@@ -28407,7 +28407,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 02:24:27',
             'updated_at' => '2023-08-26 10:21:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'beckleyjulia3@gmail.com',
             'name' => 'Julia Beckley',
             'first_name' => 'Julia',
@@ -28424,7 +28424,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 03:50:54',
             'updated_at' => '2023-08-26 12:51:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'loriwasnuk@outlook.com',
             'name' => 'lori wasnuk',
             'first_name' => 'lori',
@@ -28441,7 +28441,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 05:50:59',
             'updated_at' => '2023-08-26 13:46:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mineldiaz@yahoo.com',
             'name' => 'Ana Diaz',
             'first_name' => 'Ana',
@@ -28458,7 +28458,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 06:37:44',
             'updated_at' => '2023-08-26 11:46:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kennedy.t.abbott@gmail.com',
             'name' => 'Kennedy Abbott',
             'first_name' => 'Kennedy',
@@ -28475,7 +28475,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 06:48:27',
             'updated_at' => '2023-08-26 13:00:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'morgangrosch@gmail.com',
             'name' => 'Morgan Grosch',
             'first_name' => 'Morgan',
@@ -28492,7 +28492,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 08:19:37',
             'updated_at' => '2023-08-26 14:25:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'foulds1@verizon.net',
             'name' => 'Rhonda Foulds',
             'first_name' => 'Rhonda',
@@ -28509,7 +28509,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 08:29:48',
             'updated_at' => '2023-08-26 14:44:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'djs0228@me.com',
             'name' => 'Denise Smith',
             'first_name' => 'Denise',
@@ -28526,7 +28526,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 09:16:21',
             'updated_at' => '2023-08-26 10:28:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Izzycm10@gmail.com',
             'name' => 'Isabelle Mackell',
             'first_name' => 'Isabelle',
@@ -28543,7 +28543,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 09:35:36',
             'updated_at' => '2024-04-03 06:50:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'srparathath@gmail.com',
             'name' => 'Susana Parathath',
             'first_name' => 'Susana',
@@ -28560,7 +28560,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 18:51:51',
             'updated_at' => '2023-08-26 15:36:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sarahmccauley19@gmail.com',
             'name' => 'Sarah McCauley',
             'first_name' => 'Sarah',
@@ -28577,7 +28577,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 19:11:03',
             'updated_at' => '2023-08-26 15:24:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dodiblumstein@gmail.com',
             'name' => 'Dodi Blumstein',
             'first_name' => 'Dodi',
@@ -28594,7 +28594,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 19:30:25',
             'updated_at' => '2024-07-19 20:09:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chrmangrum@hotmail.com',
             'name' => 'Chris Mangrum',
             'first_name' => 'Chris',
@@ -28611,7 +28611,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 20:34:12',
             'updated_at' => '2023-08-26 10:14:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'deborahfafian@earthlink.net',
             'name' => 'Deborah Fafian',
             'first_name' => 'Deborah',
@@ -28628,7 +28628,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 20:50:08',
             'updated_at' => '2023-08-26 10:27:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jackiebrown883@gmail.com',
             'name' => 'Jacqueline Brown',
             'first_name' => 'Jacqueline',
@@ -28645,7 +28645,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 21:41:34',
             'updated_at' => '2023-08-26 11:10:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'suziegeler@gmail.com',
             'name' => 'Suzanne Egeler',
             'first_name' => 'Suzanne',
@@ -28662,7 +28662,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 23:26:28',
             'updated_at' => '2023-08-26 15:37:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robertabrown5@gmail.com',
             'name' => 'Roberta Brown',
             'first_name' => 'Roberta',
@@ -28679,7 +28679,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-17 23:36:56',
             'updated_at' => '2024-07-22 22:33:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gcd43@georgetown.edu',
             'name' => 'Grace Donabedian',
             'first_name' => 'Grace',
@@ -28696,7 +28696,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 00:23:59',
             'updated_at' => '2023-08-26 11:00:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mbrown5495@gmail.com',
             'name' => 'Michaela Brown',
             'first_name' => 'Michaela',
@@ -28713,7 +28713,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 00:51:33',
             'updated_at' => '2023-11-07 05:51:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'miyuki.tanaka@gmail.com',
             'name' => 'Miyuki Tanaka',
             'first_name' => 'Miyuki',
@@ -28730,7 +28730,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 02:19:48',
             'updated_at' => '2023-08-26 14:24:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'julietr793@gmail.com',
             'name' => 'Juliet Rave',
             'first_name' => 'Juliet',
@@ -28747,7 +28747,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 03:12:41',
             'updated_at' => '2024-06-21 23:01:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'deerieck@gmail.com',
             'name' => 'Danielle Fritz',
             'first_name' => 'Danielle',
@@ -28764,7 +28764,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 04:58:15',
             'updated_at' => '2024-01-18 06:32:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'casarano@hotmail.com',
             'name' => 'Laura O\'Neill',
             'first_name' => 'Laura',
@@ -28781,7 +28781,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 05:13:28',
             'updated_at' => '2023-08-26 13:39:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emsal.music@gmail.com',
             'name' => 'Emmett Yael',
             'first_name' => 'Emmett',
@@ -28798,7 +28798,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 05:32:49',
             'updated_at' => '2024-05-31 02:07:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielle.littman@gmail.com',
             'name' => 'Danielle Littman',
             'first_name' => 'Danielle',
@@ -28815,7 +28815,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 05:42:00',
             'updated_at' => '2023-08-26 10:24:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'e4yoli@yahoo.com',
             'name' => 'Yolanda Iacovella',
             'first_name' => 'Yolanda',
@@ -28832,7 +28832,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 06:00:22',
             'updated_at' => '2023-08-26 15:52:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stephanielgerow@gmail.com',
             'name' => 'Stephanie Gerow',
             'first_name' => 'Stephanie',
@@ -28849,7 +28849,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 06:47:52',
             'updated_at' => '2023-08-26 15:34:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'doucetbridgette@gmail.com',
             'name' => 'Bridgette Doucet',
             'first_name' => 'Bridgette',
@@ -28866,7 +28866,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 07:29:48',
             'updated_at' => '2023-08-26 12:02:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mariahw0705@gmail.com',
             'name' => 'Mariah Hernandez',
             'first_name' => 'Mariah',
@@ -28883,7 +28883,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 09:03:26',
             'updated_at' => '2023-08-26 13:54:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vivianpham015@gmail.com',
             'name' => 'Vivian Pham',
             'first_name' => 'Vivian',
@@ -28900,7 +28900,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 10:22:25',
             'updated_at' => '2023-08-26 15:48:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cate003@yahoo.com',
             'name' => 'Caitlin Dennehy',
             'first_name' => 'Caitlin',
@@ -28917,7 +28917,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 16:08:23',
             'updated_at' => '2024-01-14 00:15:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pohun.chen@gmail.com',
             'name' => 'Pohun Chen',
             'first_name' => 'Pohun',
@@ -28934,7 +28934,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 17:35:08',
             'updated_at' => '2024-07-03 13:15:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caroleharsch12@gmail.com',
             'name' => 'Carole Harsch',
             'first_name' => 'Carole',
@@ -28951,7 +28951,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 18:01:08',
             'updated_at' => '2024-07-15 01:27:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katietaranto@gmail.com',
             'name' => 'Kaitlyn Taranto',
             'first_name' => 'Kaitlyn',
@@ -28968,7 +28968,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 19:40:27',
             'updated_at' => '2023-08-26 12:53:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'melissa.shafer22@gmail.com',
             'name' => 'Melissa Shafer',
             'first_name' => 'Melissa',
@@ -28985,7 +28985,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 21:52:27',
             'updated_at' => '2023-08-26 14:05:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ross.larimer@deckers.com',
             'name' => 'Ross Larimer',
             'first_name' => 'Ross',
@@ -29002,7 +29002,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-18 22:22:03',
             'updated_at' => '2023-08-26 14:49:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jboon@aol.com',
             'name' => 'JANE Boon',
             'first_name' => 'JANE',
@@ -29019,7 +29019,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 00:23:31',
             'updated_at' => '2023-08-26 11:13:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tom@docsysinc.com',
             'name' => 'Tom Pitsenberger',
             'first_name' => 'Tom',
@@ -29036,7 +29036,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 00:30:11',
             'updated_at' => '2023-08-26 15:43:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chemmerich11@gmail.com',
             'name' => 'Christopher Hemmerich',
             'first_name' => 'Christopher',
@@ -29053,7 +29053,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 00:34:06',
             'updated_at' => '2024-07-19 02:10:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bkomiske@ulmanfoundation.org',
             'name' => 'Brianna Batson',
             'first_name' => 'Brianna',
@@ -29070,7 +29070,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 01:32:24',
             'updated_at' => '2023-08-26 12:02:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mbpete13@gmail.com',
             'name' => 'Michael Peterson',
             'first_name' => 'Michael',
@@ -29087,7 +29087,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 01:53:51',
             'updated_at' => '2023-08-26 14:09:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rossbielak@hotmail.com',
             'name' => 'Ross Bielak',
             'first_name' => 'Ross',
@@ -29104,7 +29104,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 13:03:46',
             'updated_at' => '2023-08-26 14:49:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kkadosh3@gmail.com',
             'name' => 'Kennedy Kadosh',
             'first_name' => 'Kennedy',
@@ -29121,7 +29121,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 17:28:55',
             'updated_at' => '2023-08-26 13:00:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mdlc2000@gmail.com',
             'name' => 'Megan Carey',
             'first_name' => 'Megan',
@@ -29138,7 +29138,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 19:50:41',
             'updated_at' => '2023-08-26 14:03:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'louchinal@aol.com',
             'name' => 'Lou Chinaux',
             'first_name' => 'Lou',
@@ -29155,7 +29155,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 20:54:52',
             'updated_at' => '2023-08-26 13:46:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amandagrimm29@gmail.com',
             'name' => 'Amanda Grimm',
             'first_name' => 'Amanda',
@@ -29172,7 +29172,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 23:46:49',
             'updated_at' => '2023-08-26 11:44:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amandagrimm29@ucla.edu',
             'name' => 'Amanda Grimm',
             'first_name' => 'Amanda',
@@ -29189,7 +29189,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-19 23:58:30',
             'updated_at' => '2024-01-17 08:49:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'corygardner@gmail.com',
             'name' => 'Cory Gardner',
             'first_name' => 'Cory',
@@ -29206,7 +29206,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-20 01:08:32',
             'updated_at' => '2024-05-25 00:58:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jrbellantoni@hotmail.com',
             'name' => 'Joe Bellantoni',
             'first_name' => 'Joe',
@@ -29223,7 +29223,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-20 05:56:05',
             'updated_at' => '2023-08-26 12:42:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rwm15@hotmail.com',
             'name' => 'Russell Winwood',
             'first_name' => 'Russell',
@@ -29240,7 +29240,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-20 15:06:52',
             'updated_at' => '2023-08-26 14:49:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lizhurdman@gmail.com',
             'name' => 'Elizabeth Hurdman',
             'first_name' => 'Elizabeth',
@@ -29257,7 +29257,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-20 18:30:26',
             'updated_at' => '2023-08-26 10:35:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'angusgaudry4@hotmail.com',
             'name' => 'Angus Gaudry',
             'first_name' => 'Angus',
@@ -29274,7 +29274,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-20 19:18:47',
             'updated_at' => '2023-08-26 11:49:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jessicamariatuccelli@gmail.com',
             'name' => 'Jessica Maria Tuccelli',
             'first_name' => 'Jessica Maria',
@@ -29291,7 +29291,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-20 21:44:12',
             'updated_at' => '2024-07-03 13:15:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'walsh.sarac@gmail.com',
             'name' => 'Sara Walsh',
             'first_name' => 'Sara',
@@ -29308,7 +29308,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-20 22:27:35',
             'updated_at' => '2024-02-07 09:00:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'raffertyjackson@yahoo.com',
             'name' => 'Rafferty Jackson',
             'first_name' => 'Rafferty',
@@ -29325,7 +29325,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-20 23:01:59',
             'updated_at' => '2023-08-26 14:41:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'xtinaswan@gmail.com',
             'name' => 'Christina Swanson',
             'first_name' => 'Christina',
@@ -29342,7 +29342,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 00:25:09',
             'updated_at' => '2023-08-26 10:15:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jacquelinetopping6@gmail.com',
             'name' => 'Jacqueline Topping',
             'first_name' => 'Jacqueline',
@@ -29359,7 +29359,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 00:37:50',
             'updated_at' => '2024-05-23 23:48:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gretasirek@gmail.com',
             'name' => 'Margaret Sirek',
             'first_name' => 'Margaret',
@@ -29376,7 +29376,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 01:40:40',
             'updated_at' => '2024-06-02 17:22:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robin@robertsnyc.com',
             'name' => 'Robin Roberts',
             'first_name' => 'Robin',
@@ -29393,7 +29393,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 03:00:35',
             'updated_at' => '2023-08-26 14:47:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ahill5390@gmail.com',
             'name' => 'Ashlyn Hill',
             'first_name' => 'Ashlyn',
@@ -29410,7 +29410,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 04:01:52',
             'updated_at' => '2024-02-07 00:16:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kpeters1923@gmail.com',
             'name' => 'Katie Peters',
             'first_name' => 'Katie',
@@ -29427,7 +29427,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 06:56:44',
             'updated_at' => '2023-08-26 12:57:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'orchard.jeffrey@gmail.com',
             'name' => 'Jeffrey Orchard',
             'first_name' => 'Jeffrey',
@@ -29444,7 +29444,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 08:43:16',
             'updated_at' => '2023-08-26 11:16:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'valeriofabbretti@gmail.com',
             'name' => 'Valerio Fabbretti',
             'first_name' => 'Valerio',
@@ -29461,7 +29461,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 17:24:39',
             'updated_at' => '2024-07-26 05:49:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chiaramoroni.cm@gmail.com',
             'name' => 'Chiara Moroni',
             'first_name' => 'Chiara',
@@ -29478,7 +29478,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 18:07:36',
             'updated_at' => '2023-08-26 10:14:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'estebanosorio01@hotmail.com',
             'name' => 'esteban osorio',
             'first_name' => 'esteban',
@@ -29495,7 +29495,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 19:31:33',
             'updated_at' => '2023-08-26 10:54:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'allison.elliott21@gmail.com',
             'name' => 'Allison Elliott',
             'first_name' => 'Allison',
@@ -29512,7 +29512,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 21:15:26',
             'updated_at' => '2024-03-07 19:25:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielle.j.sink@gmail.com',
             'name' => 'Danielle Sink',
             'first_name' => 'Danielle',
@@ -29529,7 +29529,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 21:27:49',
             'updated_at' => '2023-08-26 10:24:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wogarner@gmail.com',
             'name' => 'Bill Garner',
             'first_name' => 'Bill',
@@ -29546,7 +29546,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 21:29:47',
             'updated_at' => '2023-11-21 00:41:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mamapetey5@gmail.com',
             'name' => 'Heather Peterson',
             'first_name' => 'Heather',
@@ -29563,7 +29563,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 21:44:02',
             'updated_at' => '2023-08-26 11:04:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rrckyracing@gmail.com',
             'name' => 'Ricky Ma',
             'first_name' => 'Ricky',
@@ -29580,7 +29580,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 22:23:30',
             'updated_at' => '2024-05-02 20:54:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikeybyrnes1125@gmail.com',
             'name' => 'Michael Byrnes',
             'first_name' => 'Michael',
@@ -29597,7 +29597,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-21 23:05:47',
             'updated_at' => '2023-09-05 21:05:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'janelle.j.high@gmail.com',
             'name' => 'Janelle High',
             'first_name' => 'Janelle',
@@ -29614,7 +29614,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 02:04:48',
             'updated_at' => '2023-08-26 11:13:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'doreen.ann@comcast.net',
             'name' => 'Doreen Bogus',
             'first_name' => 'Doreen',
@@ -29631,7 +29631,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 04:39:33',
             'updated_at' => '2023-08-26 10:30:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jtokash@pace.edu',
             'name' => 'Jennifer Tokash',
             'first_name' => 'Jennifer',
@@ -29648,7 +29648,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 06:09:02',
             'updated_at' => '2023-08-26 12:37:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ttokash13@gmail.com',
             'name' => 'Tessie Tokash',
             'first_name' => 'Tessie',
@@ -29665,7 +29665,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 06:11:31',
             'updated_at' => '2023-08-26 15:40:22',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jessica.chipkin@gmail.com',
             'name' => 'Jessica Chipkin-Klein',
             'first_name' => 'Jessica',
@@ -29682,7 +29682,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 07:29:23',
             'updated_at' => '2024-06-14 02:29:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bakshi.swetha@gmail.com',
             'name' => 'Swetha Bakshi',
             'first_name' => 'Swetha',
@@ -29699,7 +29699,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 07:57:24',
             'updated_at' => '2024-06-05 21:02:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Epinalv@hotmail.com',
             'name' => 'Emmanuel Pinal Vazquez',
             'first_name' => 'Emmanuel',
@@ -29716,7 +29716,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 09:56:53',
             'updated_at' => '2023-08-26 10:51:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gillispat@hotmail.com',
             'name' => 'Patrick Gillis',
             'first_name' => 'Patrick',
@@ -29733,7 +29733,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 20:27:29',
             'updated_at' => '2023-09-05 20:31:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'thompsontess10@gmail.com',
             'name' => 'Theresa Thompson',
             'first_name' => 'Theresa',
@@ -29750,7 +29750,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 20:43:31',
             'updated_at' => '2023-09-26 09:02:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'blakeshutterly@gmail.com',
             'name' => 'Blake Shutterly',
             'first_name' => 'Blake',
@@ -29767,7 +29767,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 21:34:37',
             'updated_at' => '2023-08-26 12:00:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ritaselby@yahoo.com',
             'name' => 'Rita Selby',
             'first_name' => 'Rita',
@@ -29784,7 +29784,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-22 21:45:22',
             'updated_at' => '2023-08-26 14:45:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rachellerose16@gmail.com',
             'name' => 'Juliette Travis',
             'first_name' => 'Juliette',
@@ -29801,7 +29801,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-23 00:29:42',
             'updated_at' => '2023-11-06 20:55:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'loriborah@icloud.com',
             'name' => 'Loretta Borah',
             'first_name' => 'Loretta',
@@ -29818,7 +29818,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-23 00:39:25',
             'updated_at' => '2023-08-26 13:46:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Heidinolan23@gmail.com',
             'name' => 'Heidi Nolan',
             'first_name' => 'Heidi',
@@ -29835,7 +29835,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-23 00:41:07',
             'updated_at' => '2023-08-26 11:05:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ingycorrigan@gmail.com',
             'name' => 'Ingrid Corrigan',
             'first_name' => 'Ingrid',
@@ -29852,7 +29852,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-23 03:43:52',
             'updated_at' => '2023-08-26 11:07:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marlonkphillips@gmail.com',
             'name' => 'Marlon Phillips',
             'first_name' => 'Marlon',
@@ -29869,7 +29869,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-23 05:29:35',
             'updated_at' => '2023-08-26 13:57:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marcolucas11@hotmail.com',
             'name' => 'Marco Tulmo',
             'first_name' => 'Marco',
@@ -29886,7 +29886,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-23 05:53:43',
             'updated_at' => '2023-08-26 13:52:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'neek2u2@gmail.com',
             'name' => 'Monique Lemieux',
             'first_name' => 'Monique',
@@ -29903,7 +29903,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-23 07:37:14',
             'updated_at' => '2023-08-26 14:25:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'corley13@hotmail.com',
             'name' => 'Elizabeth Young',
             'first_name' => 'Elizabeth',
@@ -29920,7 +29920,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-23 18:42:09',
             'updated_at' => '2023-08-26 10:35:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'a.kennedydmd@gmail.com',
             'name' => 'Adam Kennedy',
             'first_name' => 'Adam',
@@ -29937,7 +29937,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-23 22:24:22',
             'updated_at' => '2024-01-18 20:30:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'utekeathley@gmail.com',
             'name' => 'Ute Keathley',
             'first_name' => 'Ute',
@@ -29954,7 +29954,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-24 01:02:58',
             'updated_at' => '2023-08-26 15:46:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jollymollysso@gmail.com',
             'name' => 'Molly Kirkham',
             'first_name' => 'Molly',
@@ -29971,7 +29971,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-24 02:43:07',
             'updated_at' => '2023-08-26 14:24:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'capecourtney@yahoo.com',
             'name' => 'Courtney Ryberg',
             'first_name' => 'Courtney',
@@ -29988,7 +29988,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-24 05:08:27',
             'updated_at' => '2023-08-26 10:21:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davidhf18davidh75@gmail.com',
             'name' => 'oscar herrera',
             'first_name' => 'oscar',
@@ -30005,7 +30005,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-24 08:59:48',
             'updated_at' => '2023-08-26 14:33:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nini.cout@gmail.com',
             'name' => 'Melanie Couture',
             'first_name' => 'Melanie',
@@ -30022,7 +30022,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-24 09:33:01',
             'updated_at' => '2023-08-26 14:04:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dlopes800@gmail.com',
             'name' => 'David Lopes',
             'first_name' => 'David',
@@ -30039,7 +30039,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-24 14:40:03',
             'updated_at' => '2023-08-26 10:25:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kate.gilmartin18@gmail.com',
             'name' => 'Kate Gilmartin',
             'first_name' => 'Kate',
@@ -30056,7 +30056,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-24 16:28:13',
             'updated_at' => '2023-08-26 12:55:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kashonubi@gmail.com',
             'name' => 'Kikelomo Amusa-Shonubi',
             'first_name' => 'Kikelomo',
@@ -30073,7 +30073,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-24 23:20:20',
             'updated_at' => '2023-08-26 13:02:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'fleispet@gmail.com',
             'name' => 'Peter Fleischmann',
             'first_name' => 'Peter',
@@ -30090,7 +30090,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-25 03:45:53',
             'updated_at' => '2023-08-26 14:37:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anacandigalicia@gmail.com',
             'name' => 'Anacandi Galicia',
             'first_name' => 'Anacandi',
@@ -30107,7 +30107,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-25 06:54:53',
             'updated_at' => '2023-08-26 11:46:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erinp443@gmail.com',
             'name' => 'Erin Meeker',
             'first_name' => 'Erin',
@@ -30124,7 +30124,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-25 10:49:34',
             'updated_at' => '2023-08-26 10:53:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'traciesilberberg@gmail.com',
             'name' => 'Tracie Silberberg',
             'first_name' => 'Tracie',
@@ -30141,7 +30141,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-25 21:14:44',
             'updated_at' => '2023-08-26 15:44:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jennacaire@gmail.com',
             'name' => 'Jenna Caire',
             'first_name' => 'Jenna',
@@ -30158,7 +30158,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-25 22:04:35',
             'updated_at' => '2023-08-26 11:17:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'otlauren12@gmail.com',
             'name' => 'Lauren Fischman',
             'first_name' => 'Lauren',
@@ -30175,7 +30175,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-25 23:07:20',
             'updated_at' => '2023-08-26 14:22:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'susanne.r.rosenbaum@gmail.com',
             'name' => 'Susanne Rosenbaum',
             'first_name' => 'Susanne',
@@ -30192,7 +30192,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-25 23:56:41',
             'updated_at' => '2023-08-26 15:37:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lauturef@gmail.com',
             'name' => 'Fritzgerald Lauture',
             'first_name' => 'Fritzgerald',
@@ -30209,7 +30209,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-26 02:15:04',
             'updated_at' => '2024-07-08 02:48:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aaideyan@aol.com',
             'name' => 'Jeremiah Aideyan',
             'first_name' => 'Jeremiah',
@@ -30226,7 +30226,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-26 07:30:54',
             'updated_at' => '2023-12-01 23:07:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laelle.kang@gmail.com',
             'name' => 'youkyung kang',
             'first_name' => 'youkyung',
@@ -30243,7 +30243,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-26 11:37:26',
             'updated_at' => '2023-08-26 15:52:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'steve.month@gmail.com',
             'name' => 'Stephan Month',
             'first_name' => 'Stephan',
@@ -30260,7 +30260,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-26 21:12:20',
             'updated_at' => '2023-08-26 15:33:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'averyleibo@gmail.com',
             'name' => 'Avery Leibowitz',
             'first_name' => 'Avery',
@@ -30277,7 +30277,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-26 22:05:31',
             'updated_at' => '2024-06-05 02:00:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jkohn@omm.com',
             'name' => 'Jeffrey Kohn',
             'first_name' => 'Jeffrey',
@@ -30294,7 +30294,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-26 22:41:39',
             'updated_at' => '2024-07-06 00:55:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davidpgriffin1@gmail.com',
             'name' => 'David Griffin',
             'first_name' => 'David',
@@ -30311,7 +30311,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-27 06:02:30',
             'updated_at' => '2023-08-26 10:25:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'merlis.spencer@gmail.com',
             'name' => 'Spencer Merlis',
             'first_name' => 'Spencer',
@@ -30328,7 +30328,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-27 06:38:31',
             'updated_at' => '2023-08-26 15:33:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cruzj2433@gmail.com',
             'name' => 'Jose Cruz',
             'first_name' => 'Jose',
@@ -30345,7 +30345,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-27 12:00:10',
             'updated_at' => '2023-08-26 12:47:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'anthonyb9118@gmail.com',
             'name' => 'Anthony Butler',
             'first_name' => 'Anthony',
@@ -30362,7 +30362,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-27 16:48:47',
             'updated_at' => '2023-09-19 01:16:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'haleyhoewt@gmail.com',
             'name' => 'Haley Hoewt',
             'first_name' => 'Haley',
@@ -30379,7 +30379,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-27 18:01:50',
             'updated_at' => '2023-08-26 11:02:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'wccarson1968@gmail.com',
             'name' => 'Woodward Carson',
             'first_name' => 'Woodward',
@@ -30396,7 +30396,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-27 19:59:17',
             'updated_at' => '2023-08-26 15:51:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'beabertoni@icloud.com',
             'name' => 'Beatriz Bertoni',
             'first_name' => 'Beatriz',
@@ -30413,7 +30413,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-27 20:55:17',
             'updated_at' => '2023-08-26 11:57:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ezaikis@gmail.com',
             'name' => 'Erin Zaikis',
             'first_name' => 'Erin',
@@ -30430,7 +30430,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-27 22:58:57',
             'updated_at' => '2023-08-26 10:53:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rabellinomini@gmail.com',
             'name' => 'Diego Rabellino',
             'first_name' => 'Diego',
@@ -30447,7 +30447,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 00:47:02',
             'updated_at' => '2024-06-10 19:44:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aristorat1@gmail.com',
             'name' => 'Larry Lewis',
             'first_name' => 'Larry',
@@ -30464,7 +30464,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 01:31:40',
             'updated_at' => '2024-04-24 03:11:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'soniatorres311@gmail.com',
             'name' => 'Irvin Torres',
             'first_name' => 'Irvin',
@@ -30481,7 +30481,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 02:58:23',
             'updated_at' => '2023-08-26 11:07:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lkiser@cox.net',
             'name' => 'Lisa Kiser',
             'first_name' => 'Lisa',
@@ -30498,7 +30498,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 03:31:39',
             'updated_at' => '2023-08-26 13:44:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rosamf0904@gmail.com',
             'name' => 'Morena Flores',
             'first_name' => 'Morena',
@@ -30515,7 +30515,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 03:42:44',
             'updated_at' => '2023-08-26 14:25:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'josephzarrella@gmail.com',
             'name' => 'Joseph Zarrella',
             'first_name' => 'Joseph',
@@ -30532,7 +30532,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 18:52:49',
             'updated_at' => '2023-08-26 12:48:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ntshanks@yahoo.com',
             'name' => 'Nathaniel Shanks',
             'first_name' => 'Nathaniel',
@@ -30549,7 +30549,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 19:06:36',
             'updated_at' => '2024-03-09 21:57:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'maevekroach@gmail.com',
             'name' => 'Maeve Roach',
             'first_name' => 'Maeve',
@@ -30566,7 +30566,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 20:22:31',
             'updated_at' => '2024-07-03 13:15:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'john.thomas.saba@gmail.com',
             'name' => 'John Saba',
             'first_name' => 'John',
@@ -30583,7 +30583,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 20:25:11',
             'updated_at' => '2023-08-26 12:43:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dezimlich@gmail.com',
             'name' => 'Delaney Zimlich',
             'first_name' => 'Delaney',
@@ -30600,7 +30600,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 21:20:33',
             'updated_at' => '2023-09-05 20:31:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'shelbylwagner2@gmail.com',
             'name' => 'Shelby Wagner',
             'first_name' => 'Shelby',
@@ -30617,7 +30617,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 21:44:03',
             'updated_at' => '2023-08-26 15:29:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alexsoter@yahoo.com',
             'name' => 'Alex Soter',
             'first_name' => 'Alex',
@@ -30634,7 +30634,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-28 23:49:56',
             'updated_at' => '2024-07-28 19:34:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mktropp@gmail.com',
             'name' => 'Mikhaela Tropp',
             'first_name' => 'Mikhaela',
@@ -30651,7 +30651,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 00:00:48',
             'updated_at' => '2023-08-26 14:23:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mbrachfeld@gmail.com',
             'name' => 'Molly Brachfeld',
             'first_name' => 'Molly',
@@ -30668,7 +30668,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 00:01:15',
             'updated_at' => '2024-07-03 13:15:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'drew.weiss56@gmail.com',
             'name' => 'Steve Weiss',
             'first_name' => 'Steve',
@@ -30685,7 +30685,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 00:05:57',
             'updated_at' => '2024-01-11 03:13:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'h.m.defelice@gmail.com',
             'name' => 'Hannah DeFelice',
             'first_name' => 'Hannah',
@@ -30702,7 +30702,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 00:36:43',
             'updated_at' => '2023-08-26 11:03:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sharon.fernandez@vanderbilt.edu',
             'name' => 'Sharon Fernandez',
             'first_name' => 'Sharon',
@@ -30719,7 +30719,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 01:23:21',
             'updated_at' => '2023-08-26 15:29:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mford4650@gmail.com',
             'name' => 'Mitchell Ford',
             'first_name' => 'Mitchell',
@@ -30736,7 +30736,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 01:52:57',
             'updated_at' => '2023-08-26 14:24:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'olga.0904@gmail.com',
             'name' => 'Olga Kurganova',
             'first_name' => 'Olga',
@@ -30753,7 +30753,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 02:50:23',
             'updated_at' => '2023-08-26 14:32:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'smehlbrech@gmail.com',
             'name' => 'Stephen Mehlbrech',
             'first_name' => 'Stephen',
@@ -30770,7 +30770,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 03:06:31',
             'updated_at' => '2023-08-26 15:34:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dhyland01@snet.net',
             'name' => 'Dianna Hyland',
             'first_name' => 'Dianna',
@@ -30787,7 +30787,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 03:37:34',
             'updated_at' => '2024-07-22 00:36:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sweiss@galaxe.com',
             'name' => 'Drew Weiss',
             'first_name' => 'Drew',
@@ -30804,7 +30804,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 04:03:21',
             'updated_at' => '2024-06-22 00:29:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Drelyn2002@yahoo.com',
             'name' => 'Audrey Lester',
             'first_name' => 'Audrey',
@@ -30821,7 +30821,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 05:52:19',
             'updated_at' => '2023-08-26 11:56:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'palma.stephanie15@gmail.com',
             'name' => 'Stephanie Palma',
             'first_name' => 'Stephanie',
@@ -30838,7 +30838,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 05:54:05',
             'updated_at' => '2023-08-26 15:34:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tuckerbennett151@gmail.com',
             'name' => 'Tucker Bennett',
             'first_name' => 'Tucker',
@@ -30855,7 +30855,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 07:01:24',
             'updated_at' => '2024-05-09 01:13:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lauren.j.mcdermott@gmail.com',
             'name' => 'Lauren McDermott',
             'first_name' => 'Lauren',
@@ -30872,7 +30872,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 09:14:09',
             'updated_at' => '2023-08-26 13:40:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adam.m.popp@gmail.com',
             'name' => 'Adam Popp',
             'first_name' => 'Adam',
@@ -30889,7 +30889,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 09:44:31',
             'updated_at' => '2024-04-04 02:28:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'irishmafia116@yahoo.com',
             'name' => 'Ken Higgins',
             'first_name' => 'Ken',
@@ -30906,7 +30906,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 09:46:07',
             'updated_at' => '2024-05-17 22:31:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mjrkx250@gmail.com',
             'name' => 'Matthew Robinson',
             'first_name' => 'Matthew',
@@ -30923,7 +30923,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 13:27:49',
             'updated_at' => '2023-12-06 20:03:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Granville5838@yahoo.com',
             'name' => 'Earl Granville',
             'first_name' => 'Earl',
@@ -30940,7 +30940,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 17:03:01',
             'updated_at' => '2024-05-17 20:55:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'stefanleroysr@gmail.com',
             'name' => 'Stefan LeRoy',
             'first_name' => 'Stefan',
@@ -30957,7 +30957,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 17:54:53',
             'updated_at' => '2023-12-06 20:02:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gitravis11@gmail.com',
             'name' => 'Travis Wood',
             'first_name' => 'Travis',
@@ -30974,7 +30974,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 18:28:22',
             'updated_at' => '2023-12-06 20:03:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jennsmith.byers@gmail.com',
             'name' => 'Jennifer Byers',
             'first_name' => 'Jennifer',
@@ -30991,7 +30991,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 18:38:22',
             'updated_at' => '2024-07-04 00:10:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dprofis@hotmail.com',
             'name' => 'DEAN PROFIS',
             'first_name' => 'DEAN',
@@ -31008,7 +31008,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 18:52:43',
             'updated_at' => '2023-08-26 10:27:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ronda@wistpreservation.com',
             'name' => 'Miles Chaney',
             'first_name' => 'Miles',
@@ -31025,7 +31025,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 18:57:35',
             'updated_at' => '2024-03-16 18:37:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikedsprouse@yahoo.com',
             'name' => 'Michael Sprouse',
             'first_name' => 'Michael',
@@ -31042,7 +31042,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 19:06:29',
             'updated_at' => '2024-05-17 22:18:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kevincox@hotmail.com',
             'name' => 'Kevin Cox',
             'first_name' => 'Kevin',
@@ -31059,7 +31059,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 19:10:03',
             'updated_at' => '2023-08-26 13:01:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lissetter2009@hotmail.com',
             'name' => 'Mercedes Retamozo',
             'first_name' => 'Mercedes',
@@ -31076,7 +31076,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 19:17:09',
             'updated_at' => '2023-08-26 14:05:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jkbaum7@gmail.com',
             'name' => 'Jared Kirschenbaum',
             'first_name' => 'Jared',
@@ -31093,7 +31093,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 19:43:59',
             'updated_at' => '2023-08-26 11:14:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nikleseileen3@gmail.com',
             'name' => 'Eileen Nikles',
             'first_name' => 'Eileen',
@@ -31110,7 +31110,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 19:44:50',
             'updated_at' => '2023-08-26 10:33:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bestca21@gmail.com',
             'name' => 'Caitlin Best',
             'first_name' => 'Caitlin',
@@ -31127,7 +31127,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 19:47:56',
             'updated_at' => '2024-04-08 01:50:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kbrundy74@gmail.com',
             'name' => 'Katharine Brundage',
             'first_name' => 'Katharine',
@@ -31144,7 +31144,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 22:21:28',
             'updated_at' => '2023-08-26 12:55:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Cgalvis831@gmail.com',
             'name' => 'Cristian Galvis Rico',
             'first_name' => 'Cristian',
@@ -31161,7 +31161,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 22:31:55',
             'updated_at' => '2023-08-26 10:21:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'usafrn51207@hotmail.com',
             'name' => 'Heather Cohen',
             'first_name' => 'Heather',
@@ -31178,7 +31178,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 23:01:44',
             'updated_at' => '2024-06-22 06:52:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jefflewis72570@gmail.com',
             'name' => 'Jeffrey Lewis',
             'first_name' => 'Jeffrey',
@@ -31195,7 +31195,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 23:48:44',
             'updated_at' => '2024-03-24 13:40:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'usmcjeff7489@gmail.com',
             'name' => 'Jeffrey Chaffin',
             'first_name' => 'Jeffrey',
@@ -31212,7 +31212,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-29 23:49:54',
             'updated_at' => '2023-09-05 23:05:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jeanzibean@verizon.net',
             'name' => 'Jean Zimmer',
             'first_name' => 'Jean',
@@ -31229,7 +31229,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 00:11:35',
             'updated_at' => '2023-08-26 11:15:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'm2jm10@gmail.com',
             'name' => 'Michael Malone',
             'first_name' => 'Michael',
@@ -31246,7 +31246,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 01:00:46',
             'updated_at' => '2023-09-05 23:05:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'merieludena@gmail.com',
             'name' => 'Merie McGrath',
             'first_name' => 'Merie',
@@ -31263,7 +31263,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 01:34:34',
             'updated_at' => '2023-08-26 14:05:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Angiemoran217@gmail.com',
             'name' => 'Angie Moran',
             'first_name' => 'Angie',
@@ -31280,7 +31280,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 03:32:19',
             'updated_at' => '2023-08-26 11:49:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jamescj2198@gmail.com',
             'name' => 'James Johnson',
             'first_name' => 'James',
@@ -31297,7 +31297,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 05:42:01',
             'updated_at' => '2024-07-04 00:07:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sophie.osthelder@web.de',
             'name' => 'Sophie Osthelder',
             'first_name' => 'Sophie',
@@ -31314,7 +31314,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 09:20:28',
             'updated_at' => '2023-08-26 15:32:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'paulomrgt@gmail.com',
             'name' => 'Paulo Trindade',
             'first_name' => 'Paulo',
@@ -31331,7 +31331,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 14:12:18',
             'updated_at' => '2023-08-26 14:36:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jennifer@marrus.com',
             'name' => 'Jennifer Marrus',
             'first_name' => 'Jennifer',
@@ -31348,7 +31348,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 19:36:26',
             'updated_at' => '2023-08-26 12:37:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lil.krel14@gmail.com',
             'name' => 'Lillian Krelitz',
             'first_name' => 'Lillian',
@@ -31365,7 +31365,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 20:40:02',
             'updated_at' => '2023-08-26 13:42:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mheneghan364@gmail.com',
             'name' => 'Maureen Heneghan',
             'first_name' => 'Maureen',
@@ -31382,7 +31382,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 21:55:40',
             'updated_at' => '2024-06-28 05:43:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'shivangibaxi89@gmail.com',
             'name' => 'Shivangi Baxi',
             'first_name' => 'Shivangi',
@@ -31399,7 +31399,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 22:21:56',
             'updated_at' => '2023-08-26 15:30:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'andrew@kaplanet.com',
             'name' => 'Andrew Kaplan',
             'first_name' => 'Andrew',
@@ -31416,7 +31416,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 23:14:05',
             'updated_at' => '2023-08-26 11:48:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tjpaul80@gmail.com',
             'name' => 'Timothy Paul',
             'first_name' => 'Timothy',
@@ -31433,7 +31433,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-11-30 23:43:10',
             'updated_at' => '2024-05-14 00:35:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'zohar@minkhollowadvisors.com',
             'name' => 'Zohar Swaine',
             'first_name' => 'Zohar',
@@ -31450,7 +31450,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 00:23:42',
             'updated_at' => '2023-08-26 15:54:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'donila@sbcglobal.net',
             'name' => 'Donila Zepeda',
             'first_name' => 'Donila',
@@ -31467,7 +31467,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 01:09:35',
             'updated_at' => '2023-08-26 10:30:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'yunajung91@gmail.com',
             'name' => 'Yuna Jung',
             'first_name' => 'Yuna',
@@ -31484,7 +31484,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 01:37:42',
             'updated_at' => '2023-08-26 15:52:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jrblasser@gmail.com',
             'name' => 'Jennifer Blasser',
             'first_name' => 'Jennifer',
@@ -31501,7 +31501,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 01:44:51',
             'updated_at' => '2024-06-02 06:10:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'platajohn62@gmail.com',
             'name' => 'John Plata',
             'first_name' => 'John',
@@ -31518,7 +31518,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 06:35:41',
             'updated_at' => '2024-07-03 13:15:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alimmemon1994@gmail.com',
             'name' => 'Alim Memon',
             'first_name' => 'Alim',
@@ -31535,7 +31535,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 07:04:00',
             'updated_at' => '2023-08-26 11:41:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'miguelm947@gmail.com',
             'name' => 'Miguel Martinez',
             'first_name' => 'Miguel',
@@ -31552,7 +31552,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 07:22:21',
             'updated_at' => '2023-09-05 23:05:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aljones788@gmail.com',
             'name' => 'Ashley Jones',
             'first_name' => 'Ashley',
@@ -31569,7 +31569,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 07:53:18',
             'updated_at' => '2023-08-26 11:55:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lawlesscm@gmail.com',
             'name' => 'christine lawless',
             'first_name' => 'christine',
@@ -31586,7 +31586,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 07:56:56',
             'updated_at' => '2023-08-26 10:16:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'monlee_0721@yahoo.ca',
             'name' => 'Monica Lee',
             'first_name' => 'Monica',
@@ -31603,7 +31603,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 09:03:53',
             'updated_at' => '2023-08-26 14:25:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jhahn1234@yahoo.com',
             'name' => 'joon hahn',
             'first_name' => 'joon',
@@ -31620,7 +31620,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 11:12:49',
             'updated_at' => '2023-08-26 12:46:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chriskhalifa@gmail.com',
             'name' => 'Christopher Khalifa',
             'first_name' => 'Christopher',
@@ -31637,7 +31637,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 11:19:09',
             'updated_at' => '2023-08-26 10:18:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cruzinmc@gmail.com',
             'name' => 'Maria Cruz',
             'first_name' => 'Maria',
@@ -31654,7 +31654,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 12:55:45',
             'updated_at' => '2023-08-26 13:54:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'heathernshepherd@hotmail.com',
             'name' => 'Heather Shepherd',
             'first_name' => 'Heather',
@@ -31671,7 +31671,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 16:14:31',
             'updated_at' => '2023-08-26 11:04:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alex@modernkind.ca',
             'name' => 'Alexandra Wigington',
             'first_name' => 'Alexandra',
@@ -31688,7 +31688,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 19:07:33',
             'updated_at' => '2023-08-26 11:40:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Lionels@sympatico.ca',
             'name' => 'Lionel Shaul',
             'first_name' => 'Lionel',
@@ -31705,7 +31705,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 19:16:18',
             'updated_at' => '2023-08-26 13:44:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pataw22a@mtholyoke.edu',
             'name' => 'Allie Pat',
             'first_name' => 'Allie',
@@ -31722,7 +31722,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 19:41:53',
             'updated_at' => '2023-08-26 11:42:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'raquelbillings68@gmail.com',
             'name' => 'Raquel Billings',
             'first_name' => 'Raquel',
@@ -31739,7 +31739,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 21:31:52',
             'updated_at' => '2023-08-26 14:41:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Quidnessett@gmail.com',
             'name' => 'James Madison',
             'first_name' => 'James',
@@ -31756,7 +31756,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 21:32:53',
             'updated_at' => '2024-03-22 05:13:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mark@thekuradoor.com',
             'name' => 'Mark Kulmer',
             'first_name' => 'Mark',
@@ -31773,7 +31773,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 21:49:26',
             'updated_at' => '2023-08-26 13:56:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'earle81@msn.com',
             'name' => 'Julie Smith',
             'first_name' => 'Julie',
@@ -31790,7 +31790,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-01 22:38:44',
             'updated_at' => '2024-07-19 03:04:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'davidmcw@interlog.com',
             'name' => 'David McWhirter',
             'first_name' => 'David',
@@ -31807,7 +31807,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 00:07:02',
             'updated_at' => '2023-08-26 10:26:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lynn.coats1961@gmail.com',
             'name' => 'Teri Coats',
             'first_name' => 'Teri',
@@ -31824,7 +31824,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 00:28:39',
             'updated_at' => '2023-08-26 15:40:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'vu.lily@gmail.com',
             'name' => 'Lily Bogan',
             'first_name' => 'Lily',
@@ -31841,7 +31841,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 00:56:26',
             'updated_at' => '2023-08-26 13:43:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'psavage@ubm-associates.com',
             'name' => 'Paul Savage',
             'first_name' => 'Paul',
@@ -31858,7 +31858,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 01:37:40',
             'updated_at' => '2023-08-26 14:36:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bmccarthylasda@gmail.com',
             'name' => 'Bridget Lasda',
             'first_name' => 'Bridget',
@@ -31875,7 +31875,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 02:39:10',
             'updated_at' => '2023-11-20 05:33:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cubbiekile@berkeley.edu',
             'name' => 'Celia Kile',
             'first_name' => 'Celia',
@@ -31892,7 +31892,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 09:16:34',
             'updated_at' => '2023-12-16 09:45:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'adam.berger@gmail.com',
             'name' => 'Adam Berger',
             'first_name' => 'Adam',
@@ -31909,7 +31909,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 09:49:22',
             'updated_at' => '2023-08-26 11:36:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kathrynfosterlawrence@gmail.com',
             'name' => 'Kathryn Lawrence',
             'first_name' => 'Kathryn',
@@ -31926,7 +31926,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 10:34:19',
             'updated_at' => '2023-08-26 12:57:39',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elizabeth3russ@gmail.com',
             'name' => 'Elizabeth Russ',
             'first_name' => 'Elizabeth',
@@ -31943,7 +31943,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 19:05:38',
             'updated_at' => '2024-05-22 01:59:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'dominicanrunnersusa@gmail.com',
             'name' => 'David NuÃ±ez',
             'first_name' => 'David',
@@ -31960,7 +31960,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 19:46:57',
             'updated_at' => '2024-05-23 19:51:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'michaelscoxjr@gmail.com',
             'name' => 'Michael Cox',
             'first_name' => 'Michael',
@@ -31977,7 +31977,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 20:04:36',
             'updated_at' => '2023-08-26 14:09:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'meghan.r.jeffery@gmail.com',
             'name' => 'Meghan Jeffery',
             'first_name' => 'Meghan',
@@ -31994,7 +31994,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 20:40:13',
             'updated_at' => '2023-08-26 14:03:53',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arizzi38@gmail.com',
             'name' => 'Arianna Rizzi',
             'first_name' => 'Arianna',
@@ -32011,7 +32011,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-02 22:10:06',
             'updated_at' => '2023-08-26 11:53:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'austinweber27@gmail.com',
             'name' => 'Austin Weber',
             'first_name' => 'Austin',
@@ -32028,7 +32028,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 00:07:11',
             'updated_at' => '2023-08-26 11:56:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jessbr8@yahoo.com',
             'name' => 'Jessica Rubin',
             'first_name' => 'Jessica',
@@ -32045,7 +32045,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 00:31:40',
             'updated_at' => '2023-08-26 12:40:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elysecschultz@gmail.com',
             'name' => 'Elyse Schultz',
             'first_name' => 'Elyse',
@@ -32062,7 +32062,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 02:15:41',
             'updated_at' => '2023-08-26 10:47:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alison.b.gregory@gmail.com',
             'name' => 'Alison Gregory',
             'first_name' => 'Alison',
@@ -32079,7 +32079,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 06:23:51',
             'updated_at' => '2023-08-26 11:41:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'smking6@gmail.com',
             'name' => 'Shannon King',
             'first_name' => 'Shannon',
@@ -32096,7 +32096,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 06:28:51',
             'updated_at' => '2023-08-26 15:28:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sarah@pvacc.org',
             'name' => 'Sarah LaBrada',
             'first_name' => 'Sarah',
@@ -32113,7 +32113,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 08:16:57',
             'updated_at' => '2023-08-26 15:24:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'raublin2005@gmail.com',
             'name' => 'Raphael Aublin',
             'first_name' => 'Raphael',
@@ -32130,7 +32130,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 08:33:14',
             'updated_at' => '2023-09-05 20:26:15',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jin23k@mtholyoke.edu',
             'name' => 'Kejing Jin',
             'first_name' => 'Kejing',
@@ -32147,7 +32147,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 09:43:47',
             'updated_at' => '2023-08-26 12:59:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'linacoral777@gmail.com',
             'name' => 'Lina Coral',
             'first_name' => 'Lina',
@@ -32164,7 +32164,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 18:04:37',
             'updated_at' => '2023-08-26 13:43:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'msestrada11@yahoo.com',
             'name' => 'Martha Estrada',
             'first_name' => 'Martha',
@@ -32181,7 +32181,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 21:01:51',
             'updated_at' => '2023-08-26 13:57:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mnevergold@gmail.com',
             'name' => 'Monika Nevergold',
             'first_name' => 'Monika',
@@ -32198,7 +32198,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-03 22:50:34',
             'updated_at' => '2023-08-26 14:25:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lizdenhup@gmail.com',
             'name' => 'Elizabeth Denhup',
             'first_name' => 'Elizabeth',
@@ -32215,7 +32215,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-04 00:05:21',
             'updated_at' => '2023-08-26 10:36:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bert3sons@aol.com',
             'name' => 'Laurie Bertini',
             'first_name' => 'Laurie',
@@ -32232,7 +32232,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-04 00:56:59',
             'updated_at' => '2024-06-10 19:37:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rc.considine@gmail.com',
             'name' => 'Regan Considine',
             'first_name' => 'Regan',
@@ -32249,7 +32249,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-04 02:56:30',
             'updated_at' => '2023-08-26 14:43:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'feliz67av@aol.com',
             'name' => 'Ana Feliz',
             'first_name' => 'Ana',
@@ -32266,7 +32266,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-04 06:20:52',
             'updated_at' => '2023-08-26 11:46:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jamieesaunders@gmail.com',
             'name' => 'Jamie Saunders',
             'first_name' => 'Jamie',
@@ -32283,7 +32283,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-04 07:51:31',
             'updated_at' => '2023-08-26 11:13:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'claudiamalleanyc@gmail.com',
             'name' => 'Claudia Mallea',
             'first_name' => 'Claudia',
@@ -32300,7 +32300,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-04 19:46:55',
             'updated_at' => '2024-05-28 14:44:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kvasquez1127@gmail.com',
             'name' => 'Kathy Vasquez',
             'first_name' => 'Kathy',
@@ -32317,7 +32317,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-04 21:18:35',
             'updated_at' => '2023-08-26 12:57:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rj.cilley@gmail.com',
             'name' => 'Robert Cilley',
             'first_name' => 'Robert',
@@ -32334,7 +32334,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-04 22:57:20',
             'updated_at' => '2023-08-26 14:47:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'honeybearasia@gmail.com',
             'name' => 'Ksusha Miretski',
             'first_name' => 'Ksusha',
@@ -32351,7 +32351,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-04 23:10:58',
             'updated_at' => '2023-08-26 13:05:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jakemortimore@hotmail.com',
             'name' => 'Jacob Mortimore',
             'first_name' => 'Jacob',
@@ -32368,7 +32368,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-05 00:13:43',
             'updated_at' => '2023-08-26 11:10:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katieneeb@yahoo.com',
             'name' => 'Katie Neeb',
             'first_name' => 'Katie',
@@ -32385,7 +32385,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-05 03:01:08',
             'updated_at' => '2023-08-26 12:58:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nick.lalumia@gmail.com',
             'name' => 'Nick Lalumia',
             'first_name' => 'Nick',
@@ -32402,7 +32402,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-05 04:19:41',
             'updated_at' => '2024-06-28 02:25:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'liliandre13@hotmail.com',
             'name' => 'Lily Morales',
             'first_name' => 'Lily',
@@ -32419,7 +32419,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-05 04:21:41',
             'updated_at' => '2023-08-26 13:43:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'calvyn17@yahoo.com',
             'name' => 'Calvin Nguyen',
             'first_name' => 'Calvin',
@@ -32436,7 +32436,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-05 11:03:48',
             'updated_at' => '2023-08-26 10:07:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alejandroishaq11@gmail.com',
             'name' => 'Alejandro GaitÃ¡n',
             'first_name' => 'Alejandro',
@@ -32453,7 +32453,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-05 15:56:27',
             'updated_at' => '2023-08-26 11:38:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'erikhall9@gmail.com',
             'name' => 'Erik Hall',
             'first_name' => 'Erik',
@@ -32470,7 +32470,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-05 23:25:46',
             'updated_at' => '2023-08-26 10:52:40',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'twinxena@aol.com',
             'name' => 'LAURA BOOGAERT',
             'first_name' => 'LAURA',
@@ -32487,7 +32487,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 02:07:59',
             'updated_at' => '2024-07-20 16:18:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kejames28@gmail.com',
             'name' => 'Katherine James',
             'first_name' => 'Katherine',
@@ -32504,7 +32504,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 02:50:29',
             'updated_at' => '2024-07-05 04:54:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juliarforbes@gmail.com',
             'name' => 'Julia Forbes',
             'first_name' => 'Julia',
@@ -32521,7 +32521,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 03:06:59',
             'updated_at' => '2024-02-22 18:18:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'joecoopersmith4@gmail.com',
             'name' => 'Joseph Coopersmith',
             'first_name' => 'Joseph',
@@ -32538,7 +32538,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 06:46:09',
             'updated_at' => '2023-08-26 12:48:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'clonedsheep@gmail.com',
             'name' => 'Katherine Tuttle',
             'first_name' => 'Katherine',
@@ -32555,7 +32555,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 07:14:07',
             'updated_at' => '2023-08-26 12:56:36',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikefein99@gmail.com',
             'name' => 'Michael Feinberg',
             'first_name' => 'Michael',
@@ -32572,7 +32572,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 07:18:43',
             'updated_at' => '2024-07-11 19:26:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jayvalentinejr@outlook.com',
             'name' => 'Jay Valentine',
             'first_name' => 'Jay',
@@ -32589,7 +32589,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 17:45:36',
             'updated_at' => '2023-08-26 11:15:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'matthewostephens@gmail.com',
             'name' => 'Matthew Stephens',
             'first_name' => 'Matthew',
@@ -32606,7 +32606,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 20:05:50',
             'updated_at' => '2024-07-09 01:15:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lily@blackshaw.us',
             'name' => 'Lily Blackshaw',
             'first_name' => 'Lily',
@@ -32623,7 +32623,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 21:51:14',
             'updated_at' => '2023-08-26 13:43:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'olivianorman@gmail.com',
             'name' => 'Olivia Norman',
             'first_name' => 'Olivia',
@@ -32640,7 +32640,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 22:15:03',
             'updated_at' => '2023-08-26 14:32:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'madisonfeldmanmd@gmail.com',
             'name' => 'Madison Feldman',
             'first_name' => 'Madison',
@@ -32657,7 +32657,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 22:35:57',
             'updated_at' => '2023-08-26 13:50:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'irwineramirez@gmail.com',
             'name' => 'Irwin Ramirez',
             'first_name' => 'Irwin',
@@ -32674,7 +32674,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 22:47:38',
             'updated_at' => '2024-06-24 20:36:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'racheltockstein@gmail.com',
             'name' => 'Rachel Tockstein',
             'first_name' => 'Rachel',
@@ -32691,7 +32691,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 22:56:31',
             'updated_at' => '2023-08-26 14:39:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'zproom@gmail.com',
             'name' => 'Zoe Proom',
             'first_name' => 'Zoe',
@@ -32708,7 +32708,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 23:47:23',
             'updated_at' => '2023-08-26 15:54:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mor@custommetalglass.com',
             'name' => 'Mor Mosayov',
             'first_name' => 'Mor',
@@ -32725,7 +32725,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-06 23:55:11',
             'updated_at' => '2023-08-26 14:25:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'offirma@gmail.com',
             'name' => 'Offir Maimon',
             'first_name' => 'Offir',
@@ -32742,7 +32742,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 01:56:14',
             'updated_at' => '2023-08-26 14:32:26',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sofia.bobrakova@gmail.com',
             'name' => 'Sofia Bobrakova',
             'first_name' => 'Sofia',
@@ -32759,7 +32759,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 03:07:19',
             'updated_at' => '2023-08-26 15:31:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'avery.sohn.06@gmail.com',
             'name' => 'Avery Sohn',
             'first_name' => 'Avery',
@@ -32776,7 +32776,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 05:48:37',
             'updated_at' => '2023-09-05 20:26:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mbyrnes1694@hotmail.com',
             'name' => 'Megan Byrnes',
             'first_name' => 'Megan',
@@ -32793,7 +32793,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 06:10:19',
             'updated_at' => '2023-08-26 14:02:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'trephene@icloud.com',
             'name' => 'Trephene Wilf',
             'first_name' => 'Trephene',
@@ -32810,7 +32810,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 09:16:20',
             'updated_at' => '2024-07-09 06:01:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alicecmarson@gmail.com',
             'name' => 'Alice Marson',
             'first_name' => 'Alice',
@@ -32827,7 +32827,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 18:57:58',
             'updated_at' => '2023-08-26 11:41:32',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'virid23@gmail.com',
             'name' => 'Viri Schoenfeld',
             'first_name' => 'Viri',
@@ -32844,7 +32844,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 19:29:11',
             'updated_at' => '2023-08-26 15:47:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cijwyatt@gmail.com',
             'name' => 'Chloe Wyatt',
             'first_name' => 'Chloe',
@@ -32861,7 +32861,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 19:59:14',
             'updated_at' => '2023-08-26 10:14:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'channon.greenfield@gmail.com',
             'name' => 'Channon Greenfield',
             'first_name' => 'Channon',
@@ -32878,7 +32878,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 22:07:51',
             'updated_at' => '2023-08-26 10:12:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'geoffturnley793@gmail.com',
             'name' => 'Geoffrey Turnley',
             'first_name' => 'Geoffrey',
@@ -32895,7 +32895,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-07 23:11:22',
             'updated_at' => '2023-12-19 00:05:48',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jjdonovanjr@outlook.com',
             'name' => 'James Donovan',
             'first_name' => 'James',
@@ -32912,7 +32912,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 00:01:59',
             'updated_at' => '2023-08-26 11:12:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rdb@randyboyd.com',
             'name' => 'Randal Boyd',
             'first_name' => 'Randal',
@@ -32929,7 +32929,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 00:20:33',
             'updated_at' => '2023-08-26 14:41:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rossvedder@gmail.com',
             'name' => 'Ross Vedder',
             'first_name' => 'Ross',
@@ -32946,7 +32946,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 00:52:24',
             'updated_at' => '2024-06-13 23:54:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jonathan.glasberg@va.gov',
             'name' => 'Jonathan Glasberg',
             'first_name' => 'Jonathan',
@@ -32963,7 +32963,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 02:42:28',
             'updated_at' => '2023-08-26 12:45:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'samantha_good@icloud.com',
             'name' => 'Samantha Good',
             'first_name' => 'Samantha',
@@ -32980,7 +32980,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 02:42:29',
             'updated_at' => '2023-08-26 14:52:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'meganchittenden@gmail.com',
             'name' => 'Megan Chittenden',
             'first_name' => 'Megan',
@@ -32997,7 +32997,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 03:38:04',
             'updated_at' => '2023-08-26 14:02:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ktconnell99@gmail.com',
             'name' => 'Katie Connell',
             'first_name' => 'Katie',
@@ -33014,7 +33014,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 03:51:07',
             'updated_at' => '2024-06-06 22:15:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'caynenc@gmail.com',
             'name' => 'Caynen Colquhoun',
             'first_name' => 'Caynen',
@@ -33031,7 +33031,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 03:56:07',
             'updated_at' => '2023-08-26 10:11:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'deandrews_98@yahoo.com',
             'name' => 'Debbie Andrews',
             'first_name' => 'Debbie',
@@ -33048,7 +33048,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 05:07:22',
             'updated_at' => '2023-08-26 10:27:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jess.kensky@gmail.com',
             'name' => 'Jessica Kensky',
             'first_name' => 'Jessica',
@@ -33065,7 +33065,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 05:28:11',
             'updated_at' => '2023-08-26 12:39:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'archana@arconstech.com',
             'name' => 'Archana More',
             'first_name' => 'Archana',
@@ -33082,7 +33082,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 05:47:21',
             'updated_at' => '2023-08-26 11:52:50',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'debby.sullivan1@gmail.com',
             'name' => 'Debby Sullivan',
             'first_name' => 'Debby',
@@ -33099,7 +33099,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 06:49:17',
             'updated_at' => '2024-05-02 00:52:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mollyrosebyrnes@gmail.com',
             'name' => 'Molly Byrnes',
             'first_name' => 'Molly',
@@ -33116,7 +33116,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 06:57:04',
             'updated_at' => '2024-03-08 07:55:17',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'templeton.jackg@gmail.com',
             'name' => 'Jack Templeton',
             'first_name' => 'Jack',
@@ -33133,7 +33133,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 07:54:52',
             'updated_at' => '2023-08-26 11:09:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lrussell88@gmail.com',
             'name' => 'Louis Russell',
             'first_name' => 'Louis',
@@ -33150,7 +33150,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 18:37:01',
             'updated_at' => '2023-08-26 13:46:47',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sc891@columbia.edu',
             'name' => 'Sarah Cole',
             'first_name' => 'Sarah',
@@ -33167,7 +33167,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 19:47:50',
             'updated_at' => '2023-08-26 15:25:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'juliasinton@gmail.com',
             'name' => 'Julia Sinton',
             'first_name' => 'Julia',
@@ -33184,7 +33184,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 20:35:10',
             'updated_at' => '2023-08-26 12:51:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'saharco31@gmail.com',
             'name' => 'Sahar Cohen',
             'first_name' => 'Sahar',
@@ -33201,7 +33201,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 21:48:39',
             'updated_at' => '2023-08-26 14:51:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'keefer.lally@gmail.com',
             'name' => 'John Lally',
             'first_name' => 'John',
@@ -33218,7 +33218,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-08 21:49:35',
             'updated_at' => '2023-08-26 12:44:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Ottawaca@achillesinternational.org',
             'name' => 'Ottawa CANADA',
             'first_name' => 'Ottawa',
@@ -33235,7 +33235,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 00:18:01',
             'updated_at' => '2023-08-26 14:33:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'londonuk@achillesinternational.org',
             'name' => 'London UK',
             'first_name' => 'London',
@@ -33252,7 +33252,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 00:18:02',
             'updated_at' => '2023-08-26 13:45:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'panamacitypa@achillesinternational.org',
             'name' => 'Panama City PANAMA',
             'first_name' => 'Panama City',
@@ -33269,7 +33269,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 00:18:04',
             'updated_at' => '2023-08-26 14:34:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'serena.jonas@icloud.com',
             'name' => 'Serena Jonas',
             'first_name' => 'Serena',
@@ -33286,7 +33286,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 00:52:11',
             'updated_at' => '2023-08-26 15:28:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'chelsea.m.grogan@gmail.com',
             'name' => 'Chelsea Grogan',
             'first_name' => 'Chelsea',
@@ -33303,7 +33303,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 01:36:39',
             'updated_at' => '2024-03-06 03:13:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'morgan.oneill94@gmail.com',
             'name' => 'Morgan O\'Neill',
             'first_name' => 'Morgan',
@@ -33320,7 +33320,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 02:26:57',
             'updated_at' => '2023-08-26 14:25:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ling.jerf@gmail.com',
             'name' => 'Jeremiah Ling',
             'first_name' => 'Jeremiah',
@@ -33337,7 +33337,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 02:46:52',
             'updated_at' => '2024-01-13 03:05:43',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'efox@sdgmanagement.com',
             'name' => 'Edward Fox',
             'first_name' => 'Edward',
@@ -33354,7 +33354,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 04:02:11',
             'updated_at' => '2023-08-26 10:32:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'derrickk@missouri.edu',
             'name' => 'Karen Derrick',
             'first_name' => 'Karen',
@@ -33371,7 +33371,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 04:18:30',
             'updated_at' => '2023-08-26 12:54:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'noah@coopersmith.com',
             'name' => 'Noah Coopersmith',
             'first_name' => 'Noah',
@@ -33388,7 +33388,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 06:37:29',
             'updated_at' => '2024-07-08 01:10:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pj.driscoll1@gmail.com',
             'name' => 'Patrick Driscoll',
             'first_name' => 'Patrick',
@@ -33405,7 +33405,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 09:47:00',
             'updated_at' => '2023-08-26 14:35:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nicolewicmandy@gmail.com',
             'name' => 'Nicole Wicmandy',
             'first_name' => 'Nicole',
@@ -33422,7 +33422,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 11:28:46',
             'updated_at' => '2023-08-26 14:30:28',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ichristiannn64@gmail.com',
             'name' => 'Christian Hernandez',
             'first_name' => 'Christian',
@@ -33439,7 +33439,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 11:52:34',
             'updated_at' => '2023-08-26 10:15:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jessicahayon@me.com',
             'name' => 'Jessica Hayon',
             'first_name' => 'Jessica',
@@ -33456,7 +33456,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 17:26:53',
             'updated_at' => '2024-07-25 14:13:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kevin.cogs@gmail.com',
             'name' => 'Kevin Coghlan',
             'first_name' => 'Kevin',
@@ -33473,7 +33473,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 19:04:15',
             'updated_at' => '2023-08-26 13:02:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'reachkristi@gmail.com',
             'name' => 'Kristi Eaton',
             'first_name' => 'Kristi',
@@ -33490,7 +33490,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 20:04:30',
             'updated_at' => '2024-06-11 22:49:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'pnord3@msn.com',
             'name' => 'Paul Nordvig',
             'first_name' => 'Paul',
@@ -33507,7 +33507,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-09 22:06:58',
             'updated_at' => '2023-08-26 14:35:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nancy@horrigannorman.com',
             'name' => 'Nancy Norman',
             'first_name' => 'Nancy',
@@ -33524,7 +33524,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 00:18:45',
             'updated_at' => '2023-09-12 18:12:24',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tocatherine@gmail.com',
             'name' => 'Catherine Lipe',
             'first_name' => 'Catherine',
@@ -33541,7 +33541,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 01:05:20',
             'updated_at' => '2023-08-26 10:11:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ninabryant82@gmail.com',
             'name' => 'Nina Bryant',
             'first_name' => 'Nina',
@@ -33558,7 +33558,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 01:42:27',
             'updated_at' => '2023-11-03 18:54:34',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'hmaestri5@gmail.com',
             'name' => 'Hannah Mason',
             'first_name' => 'Hannah',
@@ -33575,7 +33575,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 03:14:20',
             'updated_at' => '2023-08-26 11:03:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brittanyttran@gmail.com',
             'name' => 'Brittany Tran',
             'first_name' => 'Brittany',
@@ -33592,7 +33592,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 03:14:24',
             'updated_at' => '2023-08-26 12:03:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aos12799@yahoo.com',
             'name' => 'Ashley Seiter',
             'first_name' => 'Ashley',
@@ -33609,7 +33609,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 03:14:44',
             'updated_at' => '2023-08-26 11:55:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'JEFFREYAMELL@COMCAST.NET',
             'name' => 'Jeff Amell',
             'first_name' => 'Jeff',
@@ -33626,7 +33626,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 04:04:25',
             'updated_at' => '2024-06-01 15:33:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'aliseibert@gmail.com',
             'name' => 'Alison Seibert',
             'first_name' => 'Alison',
@@ -33643,7 +33643,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 07:17:36',
             'updated_at' => '2023-08-26 11:42:01',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ronsliger@gmail.com',
             'name' => 'Ron Sliger',
             'first_name' => 'Ron',
@@ -33660,7 +33660,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 10:11:37',
             'updated_at' => '2023-08-26 14:48:29',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sailihaysmith@gmail.com',
             'name' => 'Sarah Hay-Smith',
             'first_name' => 'Sarah',
@@ -33677,7 +33677,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 17:50:48',
             'updated_at' => '2023-08-26 15:25:04',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marymelissavelez@gmail.com',
             'name' => 'Mary Velez',
             'first_name' => 'Mary',
@@ -33694,7 +33694,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-10 22:17:43',
             'updated_at' => '2023-08-26 13:58:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'saraharper0321@gmail.com',
             'name' => 'Sara Harper',
             'first_name' => 'Sara',
@@ -33711,7 +33711,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-11 00:15:25',
             'updated_at' => '2023-08-26 15:24:10',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'krf2141@barnard.edu',
             'name' => 'Kimya Firoozan',
             'first_name' => 'Kimya',
@@ -33728,7 +33728,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-11 01:38:31',
             'updated_at' => '2024-07-20 17:25:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gailbruno10@icloud.com',
             'name' => 'Gail Bruno',
             'first_name' => 'Gail',
@@ -33745,7 +33745,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-11 02:15:43',
             'updated_at' => '2024-07-05 06:41:13',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'leoniekorell@gmail.com',
             'name' => 'Leonie Weinberg',
             'first_name' => 'Leonie',
@@ -33762,7 +33762,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-11 06:57:18',
             'updated_at' => '2023-08-26 13:42:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sleibo22@gmail.com',
             'name' => 'Sean Leibowitz',
             'first_name' => 'Sean',
@@ -33779,7 +33779,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-11 20:21:30',
             'updated_at' => '2023-08-26 15:27:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lisaleibo@gmail.com',
             'name' => 'Lisa Leibowitz',
             'first_name' => 'Lisa',
@@ -33796,7 +33796,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-11 20:33:00',
             'updated_at' => '2023-08-26 13:44:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'garrettdrake86@gmail.com',
             'name' => 'Garrett Drake',
             'first_name' => 'Garrett',
@@ -33813,7 +33813,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-11 22:25:43',
             'updated_at' => '2023-08-26 10:58:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ecmarshall09@gmail.com',
             'name' => 'Evelyn Marshall',
             'first_name' => 'Evelyn',
@@ -33830,7 +33830,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 02:10:39',
             'updated_at' => '2023-09-05 20:26:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kirstin.e.ratcliffe@gmail.com',
             'name' => 'Kirstin Ratcliffe',
             'first_name' => 'Kirstin',
@@ -33847,7 +33847,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 02:21:10',
             'updated_at' => '2023-08-26 13:04:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'andrew@body3fit.com',
             'name' => 'Andrew Hayes',
             'first_name' => 'Andrew',
@@ -33864,7 +33864,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 03:35:55',
             'updated_at' => '2023-08-26 11:47:55',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'arthurcacace@icloud.com',
             'name' => 'Arthur Giovanni Cacace',
             'first_name' => 'Arthur Giovanni',
@@ -33881,7 +33881,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 03:41:57',
             'updated_at' => '2023-08-26 11:54:16',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'danielle.marino1592@gmail.com',
             'name' => 'Danielle Marino',
             'first_name' => 'Danielle',
@@ -33898,7 +33898,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 06:18:55',
             'updated_at' => '2023-08-26 10:24:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robmcl860@aol.com',
             'name' => 'Robert McLaughlin',
             'first_name' => 'Robert',
@@ -33915,7 +33915,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 06:54:01',
             'updated_at' => '2023-08-26 14:47:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mikebeaudoin@ymail.com',
             'name' => 'Michael Beaudoin',
             'first_name' => 'Michael',
@@ -33932,7 +33932,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 08:14:49',
             'updated_at' => '2023-08-26 14:06:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'laura.r.decrescenzo@gmail.com',
             'name' => 'Laura de Crescenzo',
             'first_name' => 'Laura',
@@ -33949,7 +33949,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 08:54:06',
             'updated_at' => '2023-08-26 13:07:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'katieseikel@gmail.com',
             'name' => 'Jessica Seikel',
             'first_name' => 'Jessica',
@@ -33966,7 +33966,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 20:16:24',
             'updated_at' => '2023-08-26 12:39:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'agathe.louvet@gmail.com',
             'name' => 'Agathe Louvet',
             'first_name' => 'Agathe',
@@ -33983,7 +33983,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 21:22:11',
             'updated_at' => '2024-04-12 06:49:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'bnmendez2@gmail.com',
             'name' => 'Bianca Mendez',
             'first_name' => 'Bianca',
@@ -34000,7 +34000,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 21:32:49',
             'updated_at' => '2023-08-26 11:59:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kia.kess@gmail.com',
             'name' => 'Kia Kess Kess',
             'first_name' => 'Kia Kess',
@@ -34017,7 +34017,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 21:53:32',
             'updated_at' => '2023-08-26 13:02:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kristin.reagan@gmail.com',
             'name' => 'Kristin Reagan',
             'first_name' => 'Kristin',
@@ -34034,7 +34034,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-12 23:14:12',
             'updated_at' => '2024-07-22 17:47:23',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robertproner@gmail.com',
             'name' => 'Robert Proner',
             'first_name' => 'Robert',
@@ -34051,7 +34051,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 00:51:12',
             'updated_at' => '2023-08-26 14:47:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'j.lopez@enduringwarrior.org',
             'name' => 'Jonathan Lopez',
             'first_name' => 'Jonathan',
@@ -34068,7 +34068,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 01:56:48',
             'updated_at' => '2023-12-09 00:59:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'h_hernandez1@yahoo.com',
             'name' => 'Humberto Hernandez',
             'first_name' => 'Humberto',
@@ -34085,7 +34085,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 02:01:44',
             'updated_at' => '2023-09-05 23:05:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jcbbruns@gmail.com',
             'name' => 'Jeremy Bruns',
             'first_name' => 'Jeremy',
@@ -34102,7 +34102,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 02:05:13',
             'updated_at' => '2023-12-06 20:02:06',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Carlmorgan23@gmail.com',
             'name' => 'Carl Morgan',
             'first_name' => 'Carl',
@@ -34119,7 +34119,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 02:11:42',
             'updated_at' => '2023-08-26 10:07:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cdtmv@yahoo.com',
             'name' => 'Michael Vasquez',
             'first_name' => 'Michael',
@@ -34136,7 +34136,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 02:13:05',
             'updated_at' => '2023-09-05 23:06:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'angelduran1978@yahoo.com',
             'name' => 'Omar Duran',
             'first_name' => 'Omar',
@@ -34153,7 +34153,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 02:21:57',
             'updated_at' => '2023-12-06 20:02:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jcrr_23@yahoo.com',
             'name' => 'Jean Rivera',
             'first_name' => 'Jean',
@@ -34170,7 +34170,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 02:27:54',
             'updated_at' => '2023-09-05 23:06:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'buggo2@yahoo.com',
             'name' => 'Marc Owens',
             'first_name' => 'Marc',
@@ -34187,7 +34187,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 03:10:01',
             'updated_at' => '2024-07-03 13:15:46',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gs00776@gmail.com',
             'name' => 'Gregory Sapp',
             'first_name' => 'Gregory',
@@ -34204,7 +34204,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 03:38:27',
             'updated_at' => '2023-12-06 20:03:09',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'daisieo@gmail.com',
             'name' => 'Daisie Ogawa',
             'first_name' => 'Daisie',
@@ -34221,7 +34221,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 03:46:46',
             'updated_at' => '2023-08-26 10:22:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'haleyannecrawford@gmail.com',
             'name' => 'Haley Crawford',
             'first_name' => 'Haley',
@@ -34238,7 +34238,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 07:36:36',
             'updated_at' => '2023-08-26 11:02:38',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jackiepuech@yahoo.com',
             'name' => 'Jacqueline Puech',
             'first_name' => 'Jacqueline',
@@ -34255,7 +34255,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 08:15:04',
             'updated_at' => '2023-08-26 11:11:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'petersenbm@hotmail.com',
             'name' => 'Bradley Petersen',
             'first_name' => 'Bradley',
@@ -34272,7 +34272,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 09:43:50',
             'updated_at' => '2023-11-29 04:28:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ffmaddog@sbcglobal.net',
             'name' => 'Robert Spisak',
             'first_name' => 'Robert',
@@ -34289,7 +34289,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 10:57:26',
             'updated_at' => '2023-12-06 20:03:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jacquelinemkehoe@gmail.com',
             'name' => 'Jacqueline Kehoe',
             'first_name' => 'Jacqueline',
@@ -34306,7 +34306,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 17:39:45',
             'updated_at' => '2024-01-22 06:13:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'cedric.king2@gmail.com',
             'name' => 'Cedric King',
             'first_name' => 'Cedric',
@@ -34323,7 +34323,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 17:43:20',
             'updated_at' => '2023-12-06 20:02:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'brattorneypty@gmail.com',
             'name' => 'Bosco Rodriguez',
             'first_name' => 'Bosco',
@@ -34340,7 +34340,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-13 19:12:55',
             'updated_at' => '2023-08-26 12:00:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'robert.manalo@hotmail.com',
             'name' => 'Robert Manalo',
             'first_name' => 'Robert',
@@ -34357,7 +34357,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 01:14:49',
             'updated_at' => '2023-08-26 14:47:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rsmetana10@gmail.com',
             'name' => 'Racheal Smetana',
             'first_name' => 'Racheal',
@@ -34374,7 +34374,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 02:08:36',
             'updated_at' => '2023-10-24 01:24:07',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'forkerbritton@gmail.com',
             'name' => 'Britton Forker',
             'first_name' => 'Britton',
@@ -34391,7 +34391,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 02:24:21',
             'updated_at' => '2023-08-26 12:03:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'sallyraehamer@gmail.com',
             'name' => 'Sally Hamer',
             'first_name' => 'Sally',
@@ -34408,7 +34408,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 02:24:33',
             'updated_at' => '2023-08-26 14:51:37',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'amiranda314@gmail.com',
             'name' => 'Adan Miranda',
             'first_name' => 'Adan',
@@ -34425,7 +34425,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 03:45:46',
             'updated_at' => '2023-08-26 11:36:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kay.nakazawa@gmail.com',
             'name' => 'Kay Nakazawa',
             'first_name' => 'Kay',
@@ -34442,7 +34442,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 04:33:47',
             'updated_at' => '2023-10-05 23:20:31',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lori.pierce1006@gmail.com',
             'name' => 'Lori Pierce',
             'first_name' => 'Lori',
@@ -34459,7 +34459,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 04:58:57',
             'updated_at' => '2023-09-13 23:05:35',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'k.gleeson.426@gmail.com',
             'name' => 'Kristin Carrarini',
             'first_name' => 'Kristin',
@@ -34476,7 +34476,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 07:41:36',
             'updated_at' => '2023-08-26 13:05:12',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ealperin61@gmail.com',
             'name' => 'Ellen Alperin',
             'first_name' => 'Ellen',
@@ -34493,7 +34493,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 07:56:07',
             'updated_at' => '2024-03-21 08:50:27',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'samlareau012@gmail.com',
             'name' => 'Sam Lareau',
             'first_name' => 'Sam',
@@ -34510,7 +34510,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 10:53:33',
             'updated_at' => '2023-08-26 14:51:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'patrick.lamondia@gmail.com',
             'name' => 'Patrick LaMondia',
             'first_name' => 'Patrick',
@@ -34527,7 +34527,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 21:30:16',
             'updated_at' => '2023-08-26 14:35:03',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'emilywiercinski@gmail.com',
             'name' => 'Emily Wiercinski',
             'first_name' => 'Emily',
@@ -34544,7 +34544,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-14 21:56:30',
             'updated_at' => '2023-08-26 10:49:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tara.e.mastroeni@gmail.com',
             'name' => 'Tara Mastroeni',
             'first_name' => 'Tara',
@@ -34561,7 +34561,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 01:24:23',
             'updated_at' => '2023-08-26 15:38:42',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => '3bcyclist@gmail.com',
             'name' => 'Dustin Baker',
             'first_name' => 'Dustin',
@@ -34578,7 +34578,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 02:50:56',
             'updated_at' => '2023-09-05 23:06:18',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'louiseglasser@gmail.com',
             'name' => 'Louise Glasser',
             'first_name' => 'Louise',
@@ -34595,7 +34595,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 02:54:55',
             'updated_at' => '2023-08-26 13:46:52',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'elliotthughes123@gmail.com',
             'name' => 'Elliott Hughes',
             'first_name' => 'Elliott',
@@ -34612,7 +34612,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 03:35:19',
             'updated_at' => '2023-08-26 10:47:33',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Aelkayam68@gmail.com',
             'name' => 'Aviva Elkayam',
             'first_name' => 'Aviva',
@@ -34629,7 +34629,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 07:41:09',
             'updated_at' => '2024-04-06 17:34:08',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'gamend99@gmail.com',
             'name' => 'Gabriella Mendonca',
             'first_name' => 'Gabriella',
@@ -34646,7 +34646,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 09:19:14',
             'updated_at' => '2023-08-26 10:57:19',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nmckeon18@gmail.com',
             'name' => 'Natalie McKeon',
             'first_name' => 'Natalie',
@@ -34663,7 +34663,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 17:15:03',
             'updated_at' => '2023-08-26 14:27:00',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'simcrobbie@gmail.com',
             'name' => 'Stuart McRobbie',
             'first_name' => 'Stuart',
@@ -34680,7 +34680,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 18:28:14',
             'updated_at' => '2023-11-09 04:48:05',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'larryirving35@gmail.com',
             'name' => 'Larry Irving',
             'first_name' => 'Larry',
@@ -34697,7 +34697,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 20:52:24',
             'updated_at' => '2023-08-26 13:07:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'trisaharris1121@gmail.com',
             'name' => 'Trisa Harris',
             'first_name' => 'Trisa',
@@ -34714,7 +34714,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 22:26:39',
             'updated_at' => '2024-07-10 05:41:51',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mr.fields82@yahoo.com',
             'name' => 'Donahue Fields',
             'first_name' => 'Donahue',
@@ -34731,7 +34731,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 22:45:25',
             'updated_at' => '2024-06-03 00:56:11',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'mzlatin@gmail.com',
             'name' => 'Michael Zlatin',
             'first_name' => 'Michael',
@@ -34748,7 +34748,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 22:51:42',
             'updated_at' => '2023-08-26 14:06:56',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'antoninav12@gmail.com',
             'name' => 'Antonina Vreeland',
             'first_name' => 'Antonina',
@@ -34765,7 +34765,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 23:24:23',
             'updated_at' => '2023-08-26 11:52:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'lindsay.barret0292@gmail.com',
             'name' => 'Lindsay Barret',
             'first_name' => 'Lindsay',
@@ -34782,7 +34782,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-15 23:39:04',
             'updated_at' => '2024-06-28 16:42:20',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'svecchitto@gmail.com',
             'name' => 'Samuel Vecchitto',
             'first_name' => 'Samuel',
@@ -34799,7 +34799,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 00:41:08',
             'updated_at' => '2023-08-26 15:23:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'ken.r.duke@gmail.com',
             'name' => 'Ken Duke',
             'first_name' => 'Ken',
@@ -34816,7 +34816,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 02:08:53',
             'updated_at' => '2023-08-26 13:00:41',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kylerobidoux@yahoo.com',
             'name' => 'Kyle Robidoux',
             'first_name' => 'Kyle',
@@ -34833,7 +34833,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 18:23:31',
             'updated_at' => '2024-06-22 01:30:44',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'marymeduski@gmail.com',
             'name' => 'Mary Meduski',
             'first_name' => 'Mary',
@@ -34850,7 +34850,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 19:48:28',
             'updated_at' => '2023-08-26 13:58:30',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'tucsonbenson@msn.com',
             'name' => 'Shelly Benson',
             'first_name' => 'Shelly',
@@ -34867,7 +34867,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 19:48:28',
             'updated_at' => '2023-08-26 15:29:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Fkmcclure@gmail.com',
             'name' => 'Fatemeh Khatibloo',
             'first_name' => 'Fatemeh',
@@ -34884,7 +34884,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 19:48:28',
             'updated_at' => '2023-08-26 10:55:21',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Theteenster@gmail.com',
             'name' => 'Tina Filardo',
             'first_name' => 'Tina',
@@ -34901,7 +34901,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 19:48:28',
             'updated_at' => '2023-08-26 15:42:59',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'kamckay@comcast.net',
             'name' => 'Kim McKay',
             'first_name' => 'Kim',
@@ -34918,7 +34918,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 19:48:28',
             'updated_at' => '2023-08-26 13:02:54',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'nathalie.alfandary@gmail.com',
             'name' => 'Nathalie Alfandary',
             'first_name' => 'Nathalie',
@@ -34935,7 +34935,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 19:50:01',
             'updated_at' => '2023-08-26 14:27:45',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'andrew.w.brennan@gmail.com',
             'name' => 'Andrew Brennan',
             'first_name' => 'Andrew',
@@ -34952,7 +34952,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 19:50:01',
             'updated_at' => '2023-08-26 11:47:57',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'Ballastraynor@gmail.com',
             'name' => 'lucia b traynor',
             'first_name' => 'lucia',
@@ -34969,7 +34969,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 19:50:04',
             'updated_at' => '2023-08-26 13:47:14',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'msgrcrimmins@aol.com',
             'name' => 'Michael Crimmins',
             'first_name' => 'Michael',
@@ -34986,7 +34986,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 19:51:27',
             'updated_at' => '2023-08-26 14:06:58',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'agus28cas@gmail.com',
             'name' => 'Agustin Castro',
             'first_name' => 'Agustin',
@@ -35003,7 +35003,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 21:29:49',
             'updated_at' => '2023-08-26 11:37:02',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'rewmark57@gmail.com',
             'name' => 'Mark Rew',
             'first_name' => 'Mark',
@@ -35020,7 +35020,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-16 22:27:52',
             'updated_at' => '2023-08-26 13:56:49',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'alfredo.loza.jauregui2020@gmail.com',
             'name' => 'Alfredo Loza',
             'first_name' => 'Alfredo',
@@ -35037,7 +35037,7 @@ class UserSeederFull extends Seeder
             'created_at' => '2022-12-17 03:18:28',
             'updated_at' => '2023-08-26 11:41:25',
         ]);
-        DB::table('users')->insert([
+        DB::table('users')->insertOrIgnore([
             'email' => 'jmitch845@gmail.com',
             'name' => 'James Mitchell',
             'first_name' => 'James',
