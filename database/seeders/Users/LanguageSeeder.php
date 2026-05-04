@@ -21,6 +21,7 @@ class LanguageSeeder extends Seeder
     public function run(): void
     {
         $this->command?->getOutput()->setVerbosity(\Symfony\Component\Console\Output\OutputInterface::VERBOSITY_QUIET);
+        [$startUserId, $endUserId] = $this->targetUserRange();
 
         $languages = [
             'Spoken Languages' => [
@@ -208,6 +209,10 @@ class LanguageSeeder extends Seeder
             }
         }
 
+        DB::table('language_proficiencies')
+            ->whereBetween('user_id', [$startUserId, $endUserId])
+            ->delete();
+
         $languagesNeeded = [
             'English' => 0,
             'French' => 0,
@@ -259,7 +264,12 @@ class LanguageSeeder extends Seeder
 
         ];
 //        Add them all to the database
-        DB::table('language_proficiencies')->insert($data);
+        if ($startUserId <= 2) {
+            DB::table('language_proficiencies')->insert(array_filter(
+                $data,
+                fn (array $row) => $row['user_id'] >= $startUserId && $row['user_id'] <= $endUserId
+            ));
+        }
 
         $primaryLanguageNames = ['English', 'French', 'Spanish', 'Mandarin Chinese', 'Italian', 'Norwegian'];
         $secondaryProficiencyIds = array_values(array_diff_key($proficienciesNeeded, ['1st / Native' => 0]));
@@ -267,7 +277,8 @@ class LanguageSeeder extends Seeder
 
         DB::table('users')
             ->select('id')
-            ->where('id', '>', 2)
+            ->where('id', '>', max(2, $startUserId - 1))
+            ->where('id', '<=', $endUserId)
             ->orderBy('id')
             ->chunkById(self::USER_CHUNK_SIZE, function ($users) use (
                 $languagesNeeded,
@@ -384,5 +395,30 @@ class LanguageSeeder extends Seeder
                 }
 
             }, 'id');
+    }
+
+    /**
+     * @return array{0:int,1:int}
+     */
+    private function targetUserRange(): array
+    {
+        $maxUserId = (int) DB::table('users')->max('id');
+
+        if ($maxUserId === 0) {
+            return [1, 0];
+        }
+
+        $startUserId = max(1, (int) env('SEED_USER_ID_START', 1));
+        $endUserId = (int) env('SEED_USER_ID_END', $maxUserId);
+
+        if ($endUserId <= 0 || $endUserId > $maxUserId) {
+            $endUserId = $maxUserId;
+        }
+
+        if ($startUserId > $endUserId) {
+            $startUserId = $endUserId;
+        }
+
+        return [$startUserId, $endUserId];
     }
 }

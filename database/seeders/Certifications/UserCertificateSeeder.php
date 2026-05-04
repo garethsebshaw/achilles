@@ -17,6 +17,7 @@ class UserCertificateSeeder extends Seeder
     public function run(): void
     {
         $this->command?->getOutput()->setVerbosity(\Symfony\Component\Console\Output\OutputInterface::VERBOSITY_QUIET);
+        [$startUserId, $endUserId] = $this->targetUserRange();
 
         $this->certificationStatuses = DB::table('system_statuses')
             ->where('system_module_id', function($query) {
@@ -31,8 +32,13 @@ class UserCertificateSeeder extends Seeder
         $certifications = DB::table('certifications')->get();
         $processedUsers = 0;
 
+        DB::table('user_certifications')
+            ->whereBetween('user_id', [$startUserId, $endUserId])
+            ->delete();
+
         DB::table('users')
             ->select('id')
+            ->whereBetween('id', [$startUserId, $endUserId])
             ->orderBy('id')
             ->chunkById(self::USER_CHUNK_SIZE, function (Collection $users) use ($certifications, &$processedUsers) {
                 $rows = [];
@@ -51,6 +57,31 @@ class UserCertificateSeeder extends Seeder
                     DB::table('user_certifications')->insert($chunk);
                 }
             }, 'id');
+    }
+
+    /**
+     * @return array{0:int,1:int}
+     */
+    private function targetUserRange(): array
+    {
+        $maxUserId = (int) DB::table('users')->max('id');
+
+        if ($maxUserId === 0) {
+            return [1, 0];
+        }
+
+        $startUserId = max(1, (int) env('SEED_USER_ID_START', 1));
+        $endUserId = (int) env('SEED_USER_ID_END', $maxUserId);
+
+        if ($endUserId <= 0 || $endUserId > $maxUserId) {
+            $endUserId = $maxUserId;
+        }
+
+        if ($startUserId > $endUserId) {
+            $startUserId = $endUserId;
+        }
+
+        return [$startUserId, $endUserId];
     }
 
     protected function certificatePayload(int $userId, object $certification): array

@@ -39,11 +39,14 @@ class UserRandomSeeder extends Seeder
         // Never let Cloud or local demo rebuilds silently shrink below the supported
         // large-dataset baseline just because an environment variable is stale.
         $configuredTargetUsers = (int) env('SEED_TOTAL_USERS', self::DEFAULT_TOTAL_USERS);
-        $targetTotalUsers = max(
-            $configuredTargetUsers,
-            self::DEFAULT_TOTAL_USERS,
-            $existingUsers
-        );
+        $strictTarget = filter_var(env('SEED_TOTAL_USERS_STRICT', false), FILTER_VALIDATE_BOOL);
+        $targetTotalUsers = $strictTarget
+            ? max($configuredTargetUsers, $existingUsers)
+            : max(
+                $configuredTargetUsers,
+                self::DEFAULT_TOTAL_USERS,
+                $existingUsers
+            );
         $usersToCreate = max(0, $targetTotalUsers - $existingUsers);
 
         if ($usersToCreate === 0) {
