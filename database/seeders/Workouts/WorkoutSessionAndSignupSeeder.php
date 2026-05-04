@@ -107,15 +107,14 @@ class WorkoutSessionAndSignupSeeder extends Seeder
         array $guideIds
     ): void {
         $this->seedWorkoutTemplatesPhase($locations, $sports, $creatorId);
-        $sessionRows = $this->seedWorkoutSessionsPhase($sessionStatusIds);
-        $this->seedSessionMeetingPointsPhase($sessionRows);
+        $this->seedWorkoutSessionsPhase($sessionStatusIds);
+        $this->seedSessionMeetingPointsPhase();
         $this->seedSignupsAndDetailsPhase(
             $signupStatusIds,
             $unitStatusIds,
             $assignmentTypeIds,
             $athleteIds,
             $guideIds,
-            $sessionRows
         );
     }
 
@@ -125,17 +124,17 @@ class WorkoutSessionAndSignupSeeder extends Seeder
         $this->seedWorkoutTemplatesAndMeetingPoints($locations, $sports, $creatorId);
     }
 
-    protected function seedWorkoutSessionsPhase(Collection $sessionStatusIds): Collection
+    protected function seedWorkoutSessionsPhase(Collection $sessionStatusIds): void
     {
         $this->command?->info('Seeding workout sessions');
 
-        return $this->seedWorkoutSessions($sessionStatusIds);
+        $this->seedWorkoutSessions($sessionStatusIds);
     }
 
-    protected function seedSessionMeetingPointsPhase(?Collection $sessionRows = null): void
+    protected function seedSessionMeetingPointsPhase(): void
     {
         $this->command?->info('Seeding workout session meeting points');
-        $this->seedSessionMeetingPoints($sessionRows ?? $this->sessionRows());
+        $this->seedSessionMeetingPoints();
     }
 
     protected function seedSignupsAndDetailsPhase(
@@ -144,30 +143,15 @@ class WorkoutSessionAndSignupSeeder extends Seeder
         Collection $assignmentTypeIds,
         array $athleteIds,
         array $guideIds,
-        ?Collection $sessionRows = null
     ): void {
         $this->command?->info('Seeding workout signups, details, and equipment assignments');
         $this->seedSignupsAndDetails(
-            $sessionRows ?? $this->sessionRows(),
             $signupStatusIds,
             $unitStatusIds,
             $assignmentTypeIds,
             $athleteIds,
             $guideIds
         );
-    }
-
-    protected function sessionRows(): Collection
-    {
-        return DB::table('workout_sessions')
-            ->select('id', 'workout_id', 'location_id', 'session_date')
-            ->orderBy('id')
-            ->get()
-            ->map(function ($session) {
-                $session->session_date = (string) $session->session_date;
-
-                return $session;
-            });
     }
 
     protected function seedWorkoutTemplatesAndMeetingPoints(Collection $locations, Collection $sports, int $creatorId): void
@@ -241,10 +225,10 @@ class WorkoutSessionAndSignupSeeder extends Seeder
         }
     }
 
-    protected function seedWorkoutSessions(Collection $sessionStatusIds): Collection
+    protected function seedWorkoutSessions(Collection $sessionStatusIds): void
     {
         $now = now();
-        $sessionRows = collect();
+        $sessionRows = [];
 
         $workouts = Workout::with(['location.chapter.country', 'activityType'])
             ->orderBy('id')
@@ -264,7 +248,7 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                 $sessionDate = $startOfWeek->addWeeks($week)->addDays($weekday - 1);
                 $statusCode = $this->sessionStatusFor($sessionDate, $week, $workout->id);
 
-                $sessionRows->push([
+                $sessionRows[] = [
                     'workout_id' => $workout->id,
                     'workout_version' => $workout->version,
                     'location_id' => $workout->location_id,
@@ -288,18 +272,21 @@ class WorkoutSessionAndSignupSeeder extends Seeder
                     ]),
                     'created_at' => $now,
                     'updated_at' => $now,
-                ]);
+                ];
+
+                if (count($sessionRows) >= 1000) {
+                    DB::table('workout_sessions')->insert($sessionRows);
+                    $sessionRows = [];
+                }
             }
         }
 
-        foreach ($sessionRows->chunk(1000) as $chunk) {
-            DB::table('workout_sessions')->insert($chunk->all());
+        if ($sessionRows !== []) {
+            DB::table('workout_sessions')->insert($sessionRows);
         }
-
-        return $this->sessionRows();
     }
 
-    protected function seedSessionMeetingPoints(Collection $sessions): void
+    protected function seedSessionMeetingPoints(): void
     {
         $meetingPointIds = DB::table('workout_template_meeting_points')
             ->join('workouts', 'workouts.id', '=', 'workout_template_meeting_points.workout_id')
@@ -307,33 +294,37 @@ class WorkoutSessionAndSignupSeeder extends Seeder
             ->get()
             ->pluck('meeting_point_id', 'workout_id');
 
-        $rows = [];
         $now = now();
+        DB::table('workout_sessions')
+            ->select('id', 'workout_id')
+            ->orderBy('id')
+            ->chunkById(2000, function ($sessions) use ($meetingPointIds, $now) {
+                $rows = [];
 
-        foreach ($sessions as $session) {
-            $meetingPointId = $meetingPointIds[$session->workout_id] ?? null;
+                foreach ($sessions as $session) {
+                    $meetingPointId = $meetingPointIds[$session->workout_id] ?? null;
 
-            if (! $meetingPointId) {
-                continue;
-            }
+                    if (! $meetingPointId) {
+                        continue;
+                    }
 
-            $rows[] = [
-                'workout_session_id' => $session->id,
-                'meeting_point_id' => $meetingPointId,
-                'is_primary' => true,
-                'created_at' => $now,
-                'updated_at' => $now,
-                'deleted_at' => null,
-            ];
-        }
+                    $rows[] = [
+                        'workout_session_id' => $session->id,
+                        'meeting_point_id' => $meetingPointId,
+                        'is_primary' => true,
+                        'created_at' => $now,
+                        'updated_at' => $now,
+                        'deleted_at' => null,
+                    ];
+                }
 
-        foreach (array_chunk($rows, 1000) as $chunk) {
-            DB::table('workout_session_meeting_points')->insert($chunk);
-        }
+                if ($rows !== []) {
+                    DB::table('workout_session_meeting_points')->insert($rows);
+                }
+            }, 'id');
     }
 
     protected function seedSignupsAndDetails(
-        Collection $sessions,
         Collection $signupStatusIds,
         Collection $unitStatusIds,
         Collection $assignmentTypeIds,
