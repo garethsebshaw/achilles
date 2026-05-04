@@ -3,8 +3,8 @@
 namespace Database\Seeders\Geography;
 
 use App\Models\SystemChapter;
+use App\Models\SystemLocation;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class SystemLocationSeeder extends Seeder
 {
@@ -75,9 +75,6 @@ class SystemLocationSeeder extends Seeder
 
     public function run(): void
     {
-        $now = now();
-        $rows = [];
-
         $chapters = SystemChapter::with(['contacts', 'country', 'region'])
             ->where('active', true)
             ->orderBy('name')
@@ -91,7 +88,7 @@ class SystemLocationSeeder extends Seeder
             $city = $chapter->city ?: $chapter->name;
             $state = $chapter->state ?: ($country?->iso2 === 'US' ? $region?->code : $region?->name);
 
-            $rows[] = [
+            SystemLocation::query()->create([
                 'name' => sprintf('%s Primary Training Hub', $chapter->name),
                 'address_line_1' => sprintf('%d Achilles Way', 100 + $chapter->id),
                 'address_line_2' => sprintf('Suite %02d', ($chapter->id % 40) + 1),
@@ -109,18 +106,14 @@ class SystemLocationSeeder extends Seeder
                 'longitude' => $longitude,
                 'is_active' => true,
                 'notes' => 'Primary weekly training and meetup location seeded for every chapter.',
-                'metadata' => json_encode([
+                'metadata' => [
                     'seeded' => true,
                     'supports_all_sports' => true,
                     'chapter_name' => $chapter->name,
                     'country_code' => $country?->iso2,
-                ]),
-                'created_at' => $now,
-                'updated_at' => $now,
-            ];
+                ],
+            ]);
         }
-
-        DB::table('system_locations')->insert($rows);
     }
 
     private function coordinatesFor(?string $countryCode, int $index): array
