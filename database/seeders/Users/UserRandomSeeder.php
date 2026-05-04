@@ -46,12 +46,7 @@ class UserRandomSeeder extends Seeder
             return;
         }
 
-        $this->command->info(sprintf(
-            'UserRandomSeeder target total users: %d. Existing users: %d. Creating %d random users.',
-            $targetTotalUsers,
-            $existingUsers,
-            $usersToCreate
-        ));
+        $this->command?->getOutput()->setVerbosity(\Symfony\Component\Console\Output\OutputInterface::VERBOSITY_QUIET);
 
         $rows = [];
 
@@ -96,17 +91,12 @@ class UserRandomSeeder extends Seeder
                 DB::table('users')->insert($rows);
                 $rows = [];
             }
-
-            if (($i + 1) % 5000 === 0) {
-                $this->command->info(sprintf('Created %d of %d random users...', $i + 1, $usersToCreate));
-            }
         }
 
         if ($rows !== []) {
             DB::table('users')->insert($rows);
         }
 
-        $this->command->info(class_basename(static::class) . ' seed completed: ' . date('Y-m-d H:i:s'));
     }
 
     /**
