@@ -100,6 +100,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::resource(\App\Nova\Language::class),
                     MenuItem::resource(\App\Nova\SystemModule::class),
                     MenuItem::resource(\App\Nova\SystemCategory::class),
+                    MenuItem::resource(\App\Nova\SystemNotification::class),
                     MenuItem::resource(\App\Nova\SystemStatus::class),
                     MenuItem::resource(\App\Nova\SystemTag::class),
                     MenuItem::resource(\App\Nova\SystemSetting::class),

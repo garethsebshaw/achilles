@@ -5,6 +5,7 @@ namespace Database\Seeders\System;
 use App\Models\MaintenanceRequest;
 use App\Models\MeetingPoint;
 use App\Models\SystemModule;
+use App\Models\SystemNotification;
 use App\Models\SystemStatus;
 use App\Models\TandemBikePairing;
 use App\Models\TandemBikePairingCheck;
@@ -27,6 +28,12 @@ class ModuleSurfaceAlignmentSeeder extends Seeder
     private function alignImplementedModules(): void
     {
         $definitions = [
+            [
+                'name' => 'Notifications',
+                'model_type' => SystemNotification::class,
+                'description' => 'User notifications and alerts stored in the system notification feed.',
+                'active' => true,
+            ],
             [
                 'name' => 'Meeting Points',
                 'model_type' => MeetingPoint::class,
@@ -96,6 +103,7 @@ class ModuleSurfaceAlignmentSeeder extends Seeder
             'App\Models\WorkoutMeetingPoint',
             'App\Models\WorkoutWeather',
             'App\Models\WeatherLocation',
+            'App\Models\Notification',
         ];
 
         SystemModule::whereIn('model_type', $legacyModules)->update(['active' => false]);

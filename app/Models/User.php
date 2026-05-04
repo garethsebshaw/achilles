@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\UserCertification;
@@ -73,6 +74,21 @@ class User extends Authenticatable
     public function languageProficiency()
     {
         return $this->hasMany(LanguageProficiency::class);
+    }
+
+    public function notifications(): MorphMany
+    {
+        return $this->morphMany(SystemNotification::class, 'notifiable')->latest();
+    }
+
+    public function readNotifications(): MorphMany
+    {
+        return $this->notifications()->read();
+    }
+
+    public function unreadNotifications(): MorphMany
+    {
+        return $this->notifications()->unread();
     }
 
     public function isSysAdmin(): bool

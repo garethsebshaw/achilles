@@ -2,14 +2,10 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\MorphTo;
@@ -36,8 +32,16 @@ class SystemNotification extends Resource
      * @var array
      */
     public static $search = [
+        'id',
         'type',
     ];
+
+    public static $group = 'System';
+
+    public function title()
+    {
+        return $this->resource->title;
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -49,21 +53,33 @@ class SystemNotification extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Type')->sortable(),
+            Text::make(__('Title'), fn () => $this->resource->title)
+                ->sortable()
+                ->exceptOnForms(),
 
-            MorphTo::make('Notifiable'),
+            Text::make(__('Type'))
+                ->sortable()
+                ->displayUsing(fn (?string $value) => $value ? class_basename($value) : null),
 
-            Code::make('Data')
+            MorphTo::make(__('Notifiable'))
+                ->types([
+                    User::class,
+                ]),
+
+            Boolean::make(__('Read'), fn () => $this->read_at !== null)
+                ->exceptOnForms(),
+
+            Code::make(__('Data'))
                 ->json()
                 ->rules('required'),
 
-            DateTime::make('Read At')
+            DateTime::make(__('Read At'))
                 ->sortable()
                 ->nullable(),
 
-            DateTime::make('Created At')->onlyOnDetail(),
-            DateTime::make('Updated At')->onlyOnDetail(),
-            DateTime::make('Deleted At')->onlyOnDetail(),
+            DateTime::make(__('Created At'))->onlyOnDetail(),
+            DateTime::make(__('Updated At'))->onlyOnDetail(),
+            DateTime::make(__('Deleted At'))->onlyOnDetail(),
         ];
     }
 
@@ -105,5 +121,15 @@ class SystemNotification extends Resource
     public function actions(NovaRequest $request): array
     {
         return [];
+    }
+
+    public static function label()
+    {
+        return __('System Notifications');
+    }
+
+    public static function singularLabel()
+    {
+        return __('System Notification');
     }
 }

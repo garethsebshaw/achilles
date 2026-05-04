@@ -2,28 +2,24 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\DatabaseNotification;
 
-class SystemNotification extends Model
+class SystemNotification extends DatabaseNotification
 {
     use SoftDeletes;
 
-    protected $keyType = 'string';
-    public $incrementing = false;
+    protected $table = 'system_notifications';
 
-    protected $fillable = [
-        'id', 'type', 'notifiable_type',
-        'notifiable_id', 'data', 'read_at'
-    ];
-
-    protected $casts = [
-        'data' => 'array',
-        'read_at' => 'datetime'
-    ];
-
-    public function notifiable()
+    public function getTitleAttribute(): string
     {
-        return $this->morphTo();
+        return (string) data_get($this->data, 'title', class_basename((string) $this->type));
+    }
+
+    public function getMessageAttribute(): ?string
+    {
+        $message = data_get($this->data, 'message');
+
+        return is_string($message) && $message !== '' ? $message : null;
     }
 }

@@ -484,9 +484,9 @@ class SystemModuleSeeder extends Seeder
         ],
         [
             'name' => 'Notifications',
-            'model_type' => 'App\Models\Notification',
+            'model_type' => 'App\Models\SystemNotification',
             'description' => 'User notifications and alerts',
-            'active' => 0
+            'active' => 1
         ],
         [
             'name' => 'Reports',
