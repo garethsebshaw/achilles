@@ -5,17 +5,19 @@ namespace Database\Seeders\Certifications;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-use App\Models\Certification;
+use Illuminate\Support\Collection;
 
 class UserCertificateSeeder extends Seeder
 {
+    private const USER_CHUNK_SIZE = 2000;
+    private const INSERT_CHUNK_SIZE = 1000;
+
     protected $certificationStatuses = [];
 
-    public function run()
+    public function run(): void
     {
         $this->command->info('User Certificate Seeder Started');
 
-        // Get certification statuses
         $this->certificationStatuses = DB::table('system_statuses')
             ->where('system_module_id', function($query) {
                 $query->select('id')
@@ -26,77 +28,72 @@ class UserCertificateSeeder extends Seeder
             ->pluck('id', 'name')
             ->toArray();
 
-        // Get all users
-        $users = DB::table('users')->pluck('id')->toArray();
-
-        // Get all certifications
         $certifications = DB::table('certifications')->get();
+        $processedUsers = 0;
 
-        // Select 35% of users randomly
-        //$selectedUsers = array_rand(array_flip($users), (int)(count($users) * 0.35));
-        $selectedUsers = $users; // all users get at least 1 certificate
-        $userCount = 0;
+        DB::table('users')
+            ->select('id')
+            ->orderBy('id')
+            ->chunkById(self::USER_CHUNK_SIZE, function (Collection $users) use ($certifications, &$processedUsers) {
+                $rows = [];
 
-        foreach ($selectedUsers as $userId) {
-            // Give each selected user 1-3 certificates
-            $numCertificates = rand(0, 3);
+                foreach ($users as $user) {
+                    $numCertificates = rand(0, 3);
 
-            for ($i = 0; $i < $numCertificates; $i++) {
-                $this->createCertificateForUser($userId, $certifications->random());
-            }
-            $userCount +=1;
-            // Progress reporting every 100 users
-            if ($userCount % 100 === 0) {
-                echo "Processed user ID: $userCount\n";
-            }
-        }
+                    for ($i = 0; $i < $numCertificates; $i++) {
+                        $rows[] = $this->certificatePayload($user->id, $certifications->random());
+                    }
+
+                    $processedUsers++;
+                }
+
+                foreach (array_chunk($rows, self::INSERT_CHUNK_SIZE) as $chunk) {
+                    DB::table('user_certifications')->insert($chunk);
+                }
+
+                if ($processedUsers % 10000 === 0) {
+                    $this->command->info(sprintf('Processed %d users for certification seeding...', $processedUsers));
+                }
+            }, 'id');
 
         $this->command->info('User Certificate Seeder Completed');
     }
 
-    protected function createCertificateForUser($userId, $certification)
+    protected function certificatePayload(int $userId, object $certification): array
     {
-        // Generate random dates
-        $startDate = Carbon::now()->subMonths(rand(0, 36)); // Random start date within past 3 years
-        $validityPeriod = $certification->validity_period ?? rand(12, 24); // Use certification period or random
+        $startDate = Carbon::now()->subMonths(rand(0, 36));
+        $validityPeriod = $certification->validity_period ?? rand(12, 24);
         $expiryDate = $startDate->copy()->addMonths($validityPeriod);
 
-        // Determine if this is a renewal
         $isRenewal = (bool)rand(0, 1);
+
         if ($isRenewal) {
-            // Adjust start date to be 1-3 months after original expiry
             $startDate = $expiryDate->copy()->addMonths(rand(1, 3));
             $expiryDate = $startDate->copy()->addMonths($validityPeriod);
         }
 
-        // Determine certificate name (50% chance of custom name)
         $certName = rand(0, 1)
             ? $certification->name . ' - ' . ['Level', 'Version', 'Class'][rand(0, 2)] . ' ' . rand(1, 5)
             : null;
 
-        // Determine status based on dates and random factors
         $status = $this->determineStatus($startDate, $expiryDate);
 
-        try {
-            DB::table('user_certifications')->insert([
-                'user_id' => $userId,
-                'certification_id' => $certification->id,
-                'name' => $certName,
-                'certified_at' => $startDate,
-                'expires_at' => $expiryDate,
-                'validity_period' => $validityPeriod,
-                'description' => null,
-                'file_path' => null,
-                'file_type' => null,
-                'uploaded_at' => $startDate,
-                'system_status_id' => $status,
-                'notes' => null,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]);
-        } catch (\Exception $e) {
-            $this->command->error("Error creating certificate for user {$userId}: {$e->getMessage()}");
-        }
+        return [
+            'user_id' => $userId,
+            'certification_id' => $certification->id,
+            'name' => $certName,
+            'certified_at' => $startDate,
+            'expires_at' => $expiryDate,
+            'validity_period' => $validityPeriod,
+            'description' => null,
+            'file_path' => null,
+            'file_type' => null,
+            'uploaded_at' => $startDate,
+            'system_status_id' => $status,
+            'notes' => null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ];
     }
 
     protected function determineStatus($startDate, $expiryDate)

@@ -7,7 +7,7 @@ use App\Nova\Metrics\Concerns\InterpretsUserRanges;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
 
-class TotalTeamLeaders extends Value
+class TotalUsers extends Value
 {
     use InterpretsUserRanges;
 
@@ -15,8 +15,7 @@ class TotalTeamLeaders extends Value
 
     public function calculate(NovaRequest $request)
     {
-        $query = User::query()->where('is_team_leader', true);
-        $query = $this->applyRange($query, $request->range);
+        $query = $this->applyRange(User::query(), $request->range);
 
         return $this->result($query->count());
     }
@@ -26,8 +25,13 @@ class TotalTeamLeaders extends Value
         return $this->standardRanges();
     }
 
+    public function name()
+    {
+        return __('Total Users');
+    }
+
     public function uriKey()
     {
-        return 'total-user-team-leader';
+        return 'total-users';
     }
 }

@@ -2,173 +2,212 @@
 
 namespace App\Nova;
 
-use App\Models\User as UserModel;
-
+use App\Nova\Filters\UserChapterAccessFilter;
+use App\Nova\Filters\UserCreatedPresetFilter;
+use App\Nova\Filters\UserLocationAccessFilter;
+use App\Nova\Filters\UserRoleFilter;
+use App\Nova\Filters\UserSubscriptionFilter;
+use App\Nova\Filters\UserVerificationFilter;
+use App\Nova\Lenses\AdminUsers;
 use App\Nova\Lenses\AthleteUsers;
 use App\Nova\Lenses\GuideUsers;
-use App\Nova\Lenses\TeamLeadUsers;
+use App\Nova\Lenses\PrivilegedUsers;
+use App\Nova\Lenses\RecentUsers;
 use App\Nova\Lenses\SysAdminUsers;
-use App\Nova\Lenses\AdminUsers;
-
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Http\Request;
-use Laravel\Nova\Panel;
-use Laravel\Nova\Resource;
+use App\Nova\Lenses\TeamLeadUsers;
+use App\Nova\Lenses\UnverifiedUsers;
+use App\Nova\Lenses\UsersWithActiveLocationAccess;
+use App\Nova\Metrics\PrivilegedUsersMetric;
+use App\Nova\Metrics\SubscribedUsers;
+use App\Nova\Metrics\TotalAthletes;
+use App\Nova\Metrics\TotalGuides;
+use App\Nova\Metrics\TotalTeamLeaders;
+use App\Nova\Metrics\TotalUsers;
+use App\Nova\Metrics\UserGrowth;
+use App\Nova\Metrics\UserSubscriptionDistribution;
+use App\Nova\Metrics\UserTypeDistribution;
+use App\Nova\Metrics\UserVerificationDistribution;
+use App\Nova\Metrics\UsersWithActiveLocationAccessMetric;
+use App\Nova\Metrics\VerifiedUsers;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Contracts\Database\Eloquent\Builder as BuilderContract;
 use Laravel\Nova\Auth\PasswordValidationRules;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Gravatar;
-use Laravel\Nova\Fields\UiAvatar;
+use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\File;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Nova\Fields\HasMany;
-
-use App\Nova\Cards\TotalGuides;
-use App\Nova\Cards\TotalAthletes;
-use App\Nova\Cards\TotalTeamLeaders;
-use App\Nova\Metrics\UserGrowth;
-use Sietse85\NovaButton\Button;
 
 class User extends Resource
 {
-    use PasswordValidationRules, SoftDeletes;
+    use PasswordValidationRules;
+    use SoftDeletes;
 
     /**
-     * The model the resource corresponds to.
-     *
      * @var class-string<\App\Models\User>
      */
     public static $model = \App\Models\User::class;
 
-    /**
-     * The single value that should be used to represent the resource when being displayed.
-     *
-     * @var string
-     */
     public static $title = 'name';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
     public static $search = [
-        'name', 'preferred_name', 'first_name', 'middle_name', 'last_name', 'email',
+        'name',
+        'preferred_name',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'email',
     ];
 
-    /**
-     * Get the displayable label of the resource.
-     *
-     * @return string
-     */
+    public static $perPageOptions = [25, 50, 100, 250];
+
     public static function label()
     {
-        return 'Users';
+        return __('Users');
     }
 
-    /**
-     * Get the displayable singular label of the resource.
-     *
-     * @return string
-     */
     public static function singularLabel()
     {
-        return 'User';
+        return __('User');
     }
 
-    /**
-     * Get the fields displayed by the resource.
-     *
-     * @return array<int, \Laravel\Nova\Fields\Field|\Laravel\Nova\Panel|\Laravel\Nova\ResourceTool|\Illuminate\Http\Resources\MergeValue>
-     */
+    public static function indexQuery(NovaRequest $request, BuilderContract $query): BuilderContract
+    {
+        $query = parent::indexQuery($request, $query)
+            ->withCount([
+                'languageProficiency',
+                'userCertification',
+                'activeLocationAccessRecords as active_location_access_count',
+                'workoutSignups',
+            ]);
+
+        if (! $request->filled('orderBy')) {
+            $query->orderByDesc('created_at')
+                ->orderByDesc('id');
+        }
+
+        return $query;
+    }
+
     public function fields(NovaRequest $request): array
     {
         return [
             ID::make()->sortable(),
 
-            Button::make('Check IN'),
-            Button::make('Check OUT'),
-
-            Button::make('Re-Assign'),
-
-            Avatar::make('Photo')
+            Avatar::make(__('Photo'))
                 ->thumbnail(function () {
-                    return $this->picture ? $this->picture : $this->getGravatarUrl($this->email);
+                    return $this->picture ?: $this->getGravatarUrl($this->email);
                 })
                 ->maxWidth(50)
                 ->hideFromDetail()
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
 
-            // Image preview
-            Image::make('Photo')
+            Image::make(__('Photo'))
                 ->preview(function () {
-                    return $this->picture ? $this->picture : $this->getGravatarUrl($this->email);
+                    return $this->picture ?: $this->getGravatarUrl($this->email);
                 })
                 ->disableDownload()
                 ->hideFromIndex()
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
 
-            Text::make('Name')
+            Text::make(__('Name'))
                 ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make(__('Preferred Name'))
                 ->hideFromIndex()
-                ->rules('required', 'max:255'),
-            /*
-            Text::make('Preferred Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
-            */
+                ->rules('nullable', 'max:255'),
 
-            Text::make('First Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Text::make('Middle Name')
+            Text::make(__('First Name'))
                 ->sortable()
                 ->hideFromIndex()
                 ->rules('required', 'max:255'),
 
-            Text::make('Last Name')
+            Text::make(__('Middle Name'))
                 ->sortable()
+                ->hideFromIndex()
+                ->rules('nullable', 'max:255'),
+
+            Text::make(__('Last Name'))
+                ->sortable()
+                ->hideFromIndex()
                 ->rules('required', 'max:255'),
 
-            Text::make('Email')
+            Text::make(__('Email'))
                 ->sortable()
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
-            Boolean::make('Sys Admin','is_sys_admin')
-                ->filterable(),
+            Text::make(__('Phone'))
+                ->hideFromIndex()
+                ->rules('nullable', 'max:22'),
 
-            Boolean::make('Admin','is_admin')
-                ->filterable(),
+            Boolean::make(__('Verified'), fn () => $this->email_verified_at !== null)
+                ->exceptOnForms(),
 
-            Boolean::make('Team Lead','is_team_leader')
-                ->filterable(),
+            Boolean::make(__('Subscribed'), 'is_subscribed')
+                ->sortable(),
 
-            Boolean::make('Athlete','is_athlete')
-                ->filterable(),
+            Boolean::make(__('Sys Admin'), 'is_sys_admin')
+                ->sortable(),
 
-            Boolean::make('Guide','is_guide')
-                ->filterable(),
+            Boolean::make(__('Admin'), 'is_admin')
+                ->sortable(),
 
-            Password::make('Password')
+            Boolean::make(__('Team Lead'), 'is_team_leader')
+                ->sortable(),
+
+            Boolean::make(__('Athlete'), 'is_athlete')
+                ->sortable(),
+
+            Boolean::make(__('Guide'), 'is_guide')
+                ->sortable(),
+
+            Number::make(__('Active Location Access'), 'active_location_access_count')
+                ->exceptOnForms()
+                ->sortable(),
+
+            Number::make(__('Languages'), 'language_proficiency_count')
+                ->exceptOnForms()
+                ->sortable(),
+
+            Number::make(__('Certifications'), 'user_certification_count')
+                ->exceptOnForms()
+                ->sortable(),
+
+            Number::make(__('Signups'), 'workout_signups_count')
+                ->exceptOnForms()
+                ->sortable(),
+
+            DateTime::make(__('Created At'), 'created_at')
+                ->exceptOnForms()
+                ->sortable(),
+
+            DateTime::make(__('Updated At'), 'updated_at')
+                ->exceptOnForms()
+                ->hideFromIndex()
+                ->sortable(),
+
+            Password::make(__('Password'))
                 ->onlyOnForms()
                 ->creationRules($this->passwordRules())
                 ->updateRules($this->optionalPasswordRules()),
 
-            Panel::make('Relationships', [
-                HasMany::make('Certifications', 'userCertification', UserCertification::class),
-                HasMany::make('Language Proficiencies', 'languageProficiency', LanguageProficiency::class),
-            ]),
+            HasMany::make(__('Location Access Records'), 'locationAccessRecords', SystemLocationAccess::class),
 
+            HasMany::make(__('Workout Signups'), 'workoutSignups', WorkoutSignup::class),
+
+            HasMany::make(__('Certifications'), 'userCertification', UserCertification::class),
+
+            HasMany::make(__('Language Proficiencies'), 'languageProficiency', LanguageProficiency::class),
         ];
     }
 
@@ -180,55 +219,55 @@ class User extends Resource
     protected function getGravatarUrl($email)
     {
         $hash = md5(strtolower(trim($email)));
+
         return "https://www.gravatar.com/avatar/{$hash}?s=250";
     }
 
-    /**
-     * Get the cards available for the request.
-     *
-     * @return array<int, \Laravel\Nova\Card>
-     */
     public function cards(NovaRequest $request): array
     {
         return [
-//            (new Metrics\TotalGuides())->width('1/3'),
-//            (new Metrics\TotalAthletes())->width('1/3'),
-//            (new Metrics\TotalTeamLeaders())->width('1/3'),
-            //(new Metrics\UserGrowth())->width('1/3')
+            new TotalUsers(),
+            new VerifiedUsers(),
+            new SubscribedUsers(),
+            new UsersWithActiveLocationAccessMetric(),
+            new TotalAthletes(),
+            new TotalGuides(),
+            new TotalTeamLeaders(),
+            new PrivilegedUsersMetric(),
+            new UserTypeDistribution(),
+            new UserVerificationDistribution(),
+            new UserSubscriptionDistribution(),
+            new UserGrowth(),
         ];
     }
 
-    /**
-     * Get the filters available for the resource.
-     *
-     * @return array<int, \Laravel\Nova\Filters\Filter>
-     */
     public function filters(NovaRequest $request): array
     {
-        return [];
+        return [
+            new UserRoleFilter(),
+            new UserVerificationFilter(),
+            new UserSubscriptionFilter(),
+            new UserLocationAccessFilter(),
+            new UserChapterAccessFilter(),
+            new UserCreatedPresetFilter(),
+        ];
     }
 
-    /**
-     * Get the lenses available for the resource.
-     *
-     * @return array<int, \Laravel\Nova\Lenses\Lens>
-     */
     public function lenses(NovaRequest $request): array
     {
         return [
+            new RecentUsers(),
+            new PrivilegedUsers(),
+            new UsersWithActiveLocationAccess(),
+            new UnverifiedUsers(),
             new SysAdminUsers(),
             new AdminUsers(),
             new TeamLeadUsers(),
             new GuideUsers(),
-            new AthleteUsers()
+            new AthleteUsers(),
         ];
     }
 
-    /**
-     * Get the actions available for the resource.
-     *
-     * @return array<int, \Laravel\Nova\Actions\Action>
-     */
     public function actions(NovaRequest $request): array
     {
         return [];

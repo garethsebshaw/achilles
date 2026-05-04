@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\DB;
 
 class LanguageSeeder extends Seeder
 {
+    private const USER_CHUNK_SIZE = 2000;
+    private const INSERT_CHUNK_SIZE = 1000;
+
     /**
      * Run the database seeds.
      */
@@ -256,142 +259,131 @@ class LanguageSeeder extends Seeder
 //        Add them all to the database
         DB::table('language_proficiencies')->insert($data);
 
-//        *******************************************
-//        Now let's add random languages to all users
+        $primaryLanguageNames = ['English', 'French', 'Spanish', 'Mandarin Chinese', 'Italian', 'Norwegian'];
+        $secondaryProficiencyIds = array_values(array_diff_key($proficienciesNeeded, ['1st / Native' => 0]));
+        $processedUsers = 2;
 
-        // Get max user ID from the database
-        $maxUserId = DB::table('users')->max('id');
+        DB::table('users')
+            ->select('id')
+            ->where('id', '>', 2)
+            ->orderBy('id')
+            ->chunkById(self::USER_CHUNK_SIZE, function ($users) use (
+                $languagesNeeded,
+                $proficienciesNeeded,
+                $secondaryProficiencyIds,
+                $primaryLanguageNames,
+                &$processedUsers
+            ) {
+                $rows = [];
+                $now = now();
 
-// Get max user ID from the database
-        $maxUserId = DB::table('users')->max('id');
+                foreach ($users as $user) {
+                    $assignedLanguageIds = [];
+                    $numLanguages = rand(1, 3);
+                    $primaryLanguagePool = $primaryLanguageNames;
 
+                    shuffle($primaryLanguagePool);
+                    $selectedPrimaryNames = array_slice(
+                        $primaryLanguagePool,
+                        0,
+                        mt_rand(1, 1000) <= 25 ? 2 : 1
+                    );
 
-// Start from ID13 and go through all users
-        for ($userId = 3; $userId <= $maxUserId; $userId++) {
-            // Get existing languages for this user to avoid duplicates
-            $existingUserLanguages = DB::table('language_proficiencies')
-                ->where('user_id', $userId)
-                ->pluck('language_id')
-                ->toArray();
+                    foreach ($selectedPrimaryNames as $primaryLanguageName) {
+                        $languageId = $languagesNeeded[$primaryLanguageName] ?? null;
 
-            // Determine how many languages this user will have (1-3)
-            $numLanguages = rand(1, 3);
-
-            // 2.5% chance of having two primary languages
-            $hasTwoPrimaryLanguages = (mt_rand(1, 1000) <= 25);
-
-            // Select primary language(s)
-            $primaryLanguages = array_keys(array_filter($languagesNeeded, function ($key) {
-                return in_array($key, ['English', 'French', 'Spanish', 'Mandarin Chinese', 'Italian']);
-            }, ARRAY_FILTER_USE_KEY));
-
-            // Remove any already assigned languages
-            $primaryLanguages = array_diff($primaryLanguages, $existingUserLanguages);
-
-            // If no primary languages available, skip this user
-            if (empty($primaryLanguages)) {
-                continue;
-            }
-
-            // Shuffle and take first one (or two if hasTwoPrimaryLanguages)
-            shuffle($primaryLanguages);
-            $selectedPrimaryLanguages = array_slice($primaryLanguages, 0, $hasTwoPrimaryLanguages ? min(2, count($primaryLanguages)) : 1);
-
-            $userLanguages = [];
-            $assignedLanguages = []; // Track languages we're about to assign
-
-            // Add primary language(s)
-            foreach ($selectedPrimaryLanguages as $primaryLang) {
-                $languageId = $languagesNeeded[$primaryLang];
-                if (!in_array($languageId, $existingUserLanguages) && !in_array($languageId, $assignedLanguages)) {
-                    $userLanguages[] = [
-                        'user_id' => $userId,
-                        'language_id' => $languageId,
-                        'proficiency_status_id' => $proficienciesNeeded['1st / Native'],
-                        'created_at' => now(),
-                        'updated_at' => now()
-                    ];
-                    $assignedLanguages[] = $languageId;
-
-                    // Special cases for primary languages
-                    if ($primaryLang === 'English' && mt_rand(1, 100) <= 4) {
-                        $aslId = $languagesNeeded['American Sign Language (ASL)'];
-                        if (!in_array($aslId, $existingUserLanguages) && !in_array($aslId, $assignedLanguages)) {
-                            $userLanguages[] = [
-                                'user_id' => $userId,
-                                'language_id' => $aslId,
-                                'proficiency_status_id' => $proficienciesNeeded[array_rand(array_diff_key($proficienciesNeeded, ['1st / Native' => 0]))],
-                                'created_at' => now(),
-                                'updated_at' => now()
-                            ];
-                            $assignedLanguages[] = $aslId;
+                        if (! $languageId || in_array($languageId, $assignedLanguageIds, true)) {
+                            continue;
                         }
-                    } elseif ($primaryLang === 'Norwegian' && mt_rand(1, 100) <= 2) {
-                        $nslId = $languagesNeeded['Norwegian Sign Language (NSL)'];
-                        if (!in_array($nslId, $existingUserLanguages) && !in_array($nslId, $assignedLanguages)) {
-                            $userLanguages[] = [
-                                'user_id' => $userId,
-                                'language_id' => $nslId,
-                                'proficiency_status_id' => $proficienciesNeeded[array_rand(array_diff_key($proficienciesNeeded, ['1st / Native' => 0]))],
-                                'created_at' => now(),
-                                'updated_at' => now()
-                            ];
-                            $assignedLanguages[] = $nslId;
-                        }
-                    }
 
-                    // 1% chance of Braille for any language
-                    if (mt_rand(1, 100) <= 1) {
-                        $brailleId = $languagesNeeded['Braille'];
-                        if (!in_array($brailleId, $existingUserLanguages) && !in_array($brailleId, $assignedLanguages)) {
-                            $userLanguages[] = [
-                                'user_id' => $userId,
-                                'language_id' => $brailleId,
-                                'proficiency_status_id' => $proficienciesNeeded[array_rand(array_diff_key($proficienciesNeeded, ['1st / Native' => 0]))],
-                                'created_at' => now(),
-                                'updated_at' => now()
-                            ];
-                            $assignedLanguages[] = $brailleId;
-                        }
-                    }
-                }
-            }
-
-            // Add additional languages if numLanguages > 1
-            if ($numLanguages > 1) {
-                $remainingLanguages = array_diff_key($languagesNeeded, array_flip($selectedPrimaryLanguages));
-                $availableLanguages = array_diff(array_values($remainingLanguages), $existingUserLanguages, $assignedLanguages);
-
-                if (!empty($availableLanguages)) {
-                    shuffle($availableLanguages);
-                    $additionalLanguages = array_slice($availableLanguages, 0, min(count($availableLanguages), $numLanguages - count($assignedLanguages)));
-
-                    foreach ($additionalLanguages as $langId) {
-                        $userLanguages[] = [
-                            'user_id' => $userId,
-                            'language_id' => $langId,
-                            'proficiency_status_id' => $proficienciesNeeded[array_rand(array_diff_key($proficienciesNeeded, ['1st / Native' => 0]))],
-                            'created_at' => now(),
-                            'updated_at' => now()
+                        $rows[] = [
+                            'user_id' => $user->id,
+                            'language_id' => $languageId,
+                            'proficiency_status_id' => $proficienciesNeeded['1st / Native'],
+                            'created_at' => $now,
+                            'updated_at' => $now,
                         ];
+                        $assignedLanguageIds[] = $languageId;
+
+                        if ($primaryLanguageName === 'English' && mt_rand(1, 100) <= 4) {
+                            $aslId = $languagesNeeded['American Sign Language (ASL)'] ?? null;
+
+                            if ($aslId && ! in_array($aslId, $assignedLanguageIds, true)) {
+                                $rows[] = [
+                                    'user_id' => $user->id,
+                                    'language_id' => $aslId,
+                                    'proficiency_status_id' => $secondaryProficiencyIds[array_rand($secondaryProficiencyIds)],
+                                    'created_at' => $now,
+                                    'updated_at' => $now,
+                                ];
+                                $assignedLanguageIds[] = $aslId;
+                            }
+                        }
+
+                        if ($primaryLanguageName === 'Norwegian' && mt_rand(1, 100) <= 2) {
+                            $nslId = $languagesNeeded['Norwegian Sign Language (NSL)'] ?? null;
+
+                            if ($nslId && ! in_array($nslId, $assignedLanguageIds, true)) {
+                                $rows[] = [
+                                    'user_id' => $user->id,
+                                    'language_id' => $nslId,
+                                    'proficiency_status_id' => $secondaryProficiencyIds[array_rand($secondaryProficiencyIds)],
+                                    'created_at' => $now,
+                                    'updated_at' => $now,
+                                ];
+                                $assignedLanguageIds[] = $nslId;
+                            }
+                        }
+
+                        if (mt_rand(1, 100) <= 1) {
+                            $brailleId = $languagesNeeded['Braille'] ?? null;
+
+                            if ($brailleId && ! in_array($brailleId, $assignedLanguageIds, true)) {
+                                $rows[] = [
+                                    'user_id' => $user->id,
+                                    'language_id' => $brailleId,
+                                    'proficiency_status_id' => $secondaryProficiencyIds[array_rand($secondaryProficiencyIds)],
+                                    'created_at' => $now,
+                                    'updated_at' => $now,
+                                ];
+                                $assignedLanguageIds[] = $brailleId;
+                            }
+                        }
                     }
-                }
-            }
 
-            // Only insert if we have languages to add
-            if (!empty($userLanguages)) {
-                try {
-                    DB::table('language_proficiencies')->insert($userLanguages);
-                } catch (\Exception $e) {
-                    // Log error or handle duplicate key violation if it somehow still occurs
-                    continue;
-                }
-            }
+                    if ($numLanguages > count($assignedLanguageIds)) {
+                        $remainingLanguageIds = array_values(array_diff(array_values($languagesNeeded), $assignedLanguageIds));
 
-            // Progress reporting every 100 users
-            if ($userId % 100 === 0) {
-                echo "Processed user ID: $userId\n";
-            }
-        }
+                        if ($remainingLanguageIds !== []) {
+                            shuffle($remainingLanguageIds);
+                            $additionalLanguageIds = array_slice(
+                                $remainingLanguageIds,
+                                0,
+                                min(count($remainingLanguageIds), $numLanguages - count($assignedLanguageIds))
+                            );
+
+                            foreach ($additionalLanguageIds as $languageId) {
+                                $rows[] = [
+                                    'user_id' => $user->id,
+                                    'language_id' => $languageId,
+                                    'proficiency_status_id' => $secondaryProficiencyIds[array_rand($secondaryProficiencyIds)],
+                                    'created_at' => $now,
+                                    'updated_at' => $now,
+                                ];
+                            }
+                        }
+                    }
+
+                    $processedUsers++;
+                }
+
+                foreach (array_chunk($rows, self::INSERT_CHUNK_SIZE) as $chunk) {
+                    DB::table('language_proficiencies')->insert($chunk);
+                }
+
+                if ($processedUsers % 10000 === 0) {
+                    $this->command?->info(sprintf('Processed %d users for language proficiency seeding...', $processedUsers));
+                }
+            }, 'id');
     }
 }

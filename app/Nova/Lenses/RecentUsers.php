@@ -6,15 +6,18 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Contracts\Pagination\Paginator;
 use Laravel\Nova\Http\Requests\LensRequest;
 
-class TeamLeadUsers extends UserLens
+class RecentUsers extends UserLens
 {
     public static function query(LensRequest $request, Builder $query): Builder|Paginator
     {
-        return static::baseLensQuery($request, $query->where('is_team_leader', true));
+        return static::baseLensQuery(
+            $request,
+            $query->where('created_at', '>=', now()->subDays(30))
+        );
     }
 
     public function uriKey(): string
     {
-        return 'team-lead-users';
+        return 'recent-users';
     }
 }
