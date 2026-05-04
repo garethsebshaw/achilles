@@ -10,7 +10,8 @@ use Illuminate\Support\Str;
 class UserRandomSeeder extends Seeder
 {
     private const DEFAULT_TOTAL_USERS = 151000;
-    private const INSERT_CHUNK_SIZE = 5000;
+    // Keep MySQL bulk inserts below the prepared statement placeholder limit.
+    private const INSERT_CHUNK_SIZE = 1000;
 
     private const FIRST_NAMES = [
         'Alex', 'Jordan', 'Taylor', 'Morgan', 'Casey', 'Riley', 'Avery', 'Parker', 'Skyler', 'Hayden',
