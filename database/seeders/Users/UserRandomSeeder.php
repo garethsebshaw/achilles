@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class UserRandomSeeder extends Seeder
 {
     private const DEFAULT_TOTAL_USERS = 151000;
-    private const INSERT_CHUNK_SIZE = 1000;
+    private const INSERT_CHUNK_SIZE = 5000;
 
     private const FIRST_NAMES = [
         'Alex', 'Jordan', 'Taylor', 'Morgan', 'Casey', 'Riley', 'Avery', 'Parker', 'Skyler', 'Hayden',
@@ -34,11 +34,11 @@ class UserRandomSeeder extends Seeder
 
         $startDate = Carbon::create(2010, 1, 1);
         $today = Carbon::now();
+        $existingUsers = (int) DB::table('users')->count();
         $targetTotalUsers = max(
             (int) env('SEED_TOTAL_USERS', self::DEFAULT_TOTAL_USERS),
-            (int) DB::table('users')->count()
+            $existingUsers
         );
-        $existingUsers = (int) DB::table('users')->count();
         $usersToCreate = max(0, $targetTotalUsers - $existingUsers);
 
         if ($usersToCreate === 0) {
