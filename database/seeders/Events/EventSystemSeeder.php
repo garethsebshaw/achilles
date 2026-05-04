@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Events;
 
 use App\Models\Event;
 use App\Models\SystemLocation;

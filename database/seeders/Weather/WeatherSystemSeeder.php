@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Weather;
 
 use App\Models\SystemLocation;
 use App\Models\SystemModule;

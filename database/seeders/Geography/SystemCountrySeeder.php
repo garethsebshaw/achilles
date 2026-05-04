@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Geography;
 
 use App\Models\SystemCountry;
 use Illuminate\Database\Seeder;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Workouts;
 
 use App\Models\Equipment;
 use App\Models\MeetingPoint;

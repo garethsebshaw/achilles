@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Equipment;
 
 use App\Models\ComponentType;
 use App\Models\SystemCategory;

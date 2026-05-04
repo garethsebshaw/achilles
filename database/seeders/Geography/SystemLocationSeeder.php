@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Geography;
 
 use App\Models\SystemChapter;
 use Illuminate\Database\Seeder;
