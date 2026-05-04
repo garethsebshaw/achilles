@@ -2,48 +2,55 @@
 
 namespace Database\Seeders\Users;
 
-use Illuminate\Database\Seeder;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
-use Faker\Factory as Faker;
 use Carbon\Carbon;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class UserRandomSeeder extends Seeder
 {
+    private const FIRST_NAMES = [
+        'Alex', 'Jordan', 'Taylor', 'Morgan', 'Casey', 'Riley', 'Avery', 'Parker', 'Skyler', 'Hayden',
+        'Quinn', 'Dakota', 'Reese', 'Cameron', 'Kendall', 'Logan', 'Rowan', 'Sydney', 'Emerson', 'Finley',
+    ];
+
+    private const LAST_NAMES = [
+        'Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Wilson', 'Anderson',
+        'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Thompson', 'Moore', 'Clark', 'Lewis', 'Walker',
+    ];
+
+    private const EMAIL_DOMAINS = [
+        'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com',
+    ];
+
+    private const PHONE_AREA_CODES = ['201', '212', '305', '312', '415', '512', '617', '718', '917', '973'];
+
     public function run()
     {
         $this->command->info(class_basename(static::class) . ' seed started: ' . date('Y-m-d H:i:s'));
 
-        $faker = Faker::create();
-
-        // Set up date range
         $startDate = Carbon::create(2010, 1, 1);
         $today = Carbon::now();
 
-        // Create 25000 test users
         for ($i = 0; $i < 5000; $i++) {
-            // Generate dates ensuring proper format
-            $createdAt = Carbon::instance($faker->dateTimeBetween($startDate, $today))->format('Y-m-d H:i:s');
+            $createdAtCarbon = $this->randomDateBetween($startDate, $today);
+            $updatedAtCarbon = $this->randomDateBetween($createdAtCarbon, $today);
 
-            // Generate a random date between created_at and today for updated_at
-            $updatedAt = Carbon::instance($faker->dateTimeBetween($createdAt, $today))->format('Y-m-d H:i:s');
+            $createdAt = $createdAtCarbon->format('Y-m-d H:i:s');
+            $updatedAt = $updatedAtCarbon->format('Y-m-d H:i:s');
 
-            // Optionally generate email_verified_at (90% chance of having one)
             $emailVerifiedAt = null;
-            if ($faker->boolean(90)) {
-                $emailVerifiedAt = Carbon::instance($faker->dateTimeBetween($createdAt, $updatedAt))->format('Y-m-d H:i:s');
+            if ($this->randomBoolean(90)) {
+                $emailVerifiedAt = $this->randomDateBetween($createdAtCarbon, $updatedAtCarbon)->format('Y-m-d H:i:s');
             }
 
-            // Generate name and email
-            $fn = $faker->firstName;
-            $ln = $faker->lastName;
-            $fln = $fn . " " . $ln;
+            $fn = self::FIRST_NAMES[array_rand(self::FIRST_NAMES)];
+            $ln = self::LAST_NAMES[array_rand(self::LAST_NAMES)];
+            $fln = $fn . ' ' . $ln;
 
-            // Generate email with random domain
-            $domains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com'];
-            $email = strtolower($fn . $ln . rand(1000, 9999) . '@' . $domains[array_rand($domains)]);
+            $email = strtolower(Str::slug($fn . '.' . $ln, '.')) . mt_rand(1000, 9999) . '@' . self::EMAIL_DOMAINS[array_rand(self::EMAIL_DOMAINS)];
 
-            // Determine user type
             $rand = mt_rand(1, 1000);
             $userType = [
                 'is_athlete' => $rand <= 260,
@@ -75,10 +82,10 @@ class UserRandomSeeder extends Seeder
                     'is_team_leader' => $userType['is_team_leader'],
                     'is_athlete' => $userType['is_athlete'],
                     'is_guide' => $userType['is_guide'],
-                    'is_subscribed' => $faker->boolean(70),
+                    'is_subscribed' => $this->randomBoolean(70),
                     'password' => 'password123',
-                    'picture' => '', //$faker->imageUrl(),
-                    'phone' => $faker->phoneNumber,
+                    'picture' => '',
+                    'phone' => $this->randomPhoneNumber(),
                     'preferred_name' => $fn,
                 ]);
             } catch (\Exception $e) {
@@ -92,5 +99,31 @@ class UserRandomSeeder extends Seeder
         }
 
         $this->command->info(class_basename(static::class) . ' seed completed: ' . date('Y-m-d H:i:s'));
+    }
+
+    private function randomBoolean(int $percentTrue): bool
+    {
+        return mt_rand(1, 100) <= $percentTrue;
+    }
+
+    private function randomDateBetween(Carbon $start, Carbon $end): Carbon
+    {
+        $startTimestamp = $start->getTimestamp();
+        $endTimestamp = $end->getTimestamp();
+
+        if ($endTimestamp <= $startTimestamp) {
+            return $start->copy();
+        }
+
+        return Carbon::createFromTimestamp(mt_rand($startTimestamp, $endTimestamp));
+    }
+
+    private function randomPhoneNumber(): string
+    {
+        $areaCode = self::PHONE_AREA_CODES[array_rand(self::PHONE_AREA_CODES)];
+        $prefix = str_pad((string) mt_rand(200, 999), 3, '0', STR_PAD_LEFT);
+        $lineNumber = str_pad((string) mt_rand(0, 9999), 4, '0', STR_PAD_LEFT);
+
+        return sprintf('%s-%s-%s', $areaCode, $prefix, $lineNumber);
     }
 }
