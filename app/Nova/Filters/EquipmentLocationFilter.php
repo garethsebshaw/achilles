@@ -2,6 +2,7 @@
 
 namespace App\Nova\Filters;
 
+use App\Models\SystemLocation;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -20,7 +21,7 @@ class EquipmentLocationFilter extends Filter
      */
     public function apply(NovaRequest $request, Builder $query, mixed $value): Builder
     {
-        return $query;
+        return $query->where('location_id', $value);
     }
 
     /**
@@ -30,6 +31,14 @@ class EquipmentLocationFilter extends Filter
      */
     public function options(NovaRequest $request): array
     {
-        return [];
+        return SystemLocation::query()
+            ->orderBy('name')
+            ->pluck('id', 'name')
+            ->toArray();
+    }
+
+    public function name(): string
+    {
+        return __('Location');
     }
 }

@@ -354,7 +354,7 @@ class NovaSmokeTest extends TestCase
     {
         $signup = WorkoutSignup::query()->with('workoutSession')->firstOrFail();
         $resource = new WorkoutSignupResource($signup);
-        $windowStart = now()->startOfDay()->addHours(12);
+        $windowStart = now()->copy()->addHour()->startOfMinute();
 
         $signup->workoutSession->forceFill([
             'session_date' => $windowStart->toDateString(),
@@ -366,6 +366,10 @@ class NovaSmokeTest extends TestCase
         $scopedRequest = NovaRequest::create('/resources/workout-signups', 'GET', [
             'resourceId' => $signup->workout_session_id,
         ]);
+        $sessionStore = app('session.store');
+        $sessionStore->start();
+        $unscopedRequest->setLaravelSession($sessionStore);
+        $scopedRequest->setLaravelSession($sessionStore);
         app(CheckInSessionContext::class)->activate(User::query()->where('email', 'thisisg@gmail.com')->firstOrFail(), $signup->workoutSession);
 
         $this->assertCount(0, $resource->actions($unscopedRequest));

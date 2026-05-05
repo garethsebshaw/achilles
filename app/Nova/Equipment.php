@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
-use App\Nova\SystemCategory;
-use Illuminate\Http\Request;
+use App\Nova\Filters\EquipmentLocationFilter;
+use App\Nova\Filters\EquipmentOwnershipFilter;
+use App\Nova\Filters\EquipmentStatusFilter;
+use App\Nova\Lenses\CheckedOutEquipment;
+use App\Nova\Lenses\EquipmentRequiringMaintenance;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -19,7 +22,7 @@ use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Contracts\Database\Eloquent\Builder as BuilderContract;
 use App\Nova\Fields\HierarchicalCategoryField;
 
 use App\Nova\Fields\SystemCategoryField;
@@ -51,6 +54,33 @@ class Equipment extends Resource
 
     public static $group = 'Equipment Management';
 
+    public static $perPageOptions = [25, 50, 100];
+
+    public static function indexQuery(NovaRequest $request, BuilderContract $query): BuilderContract
+    {
+        $query = $query
+            ->with([
+                'manufacturer',
+                'location.chapter',
+                'storageLocation',
+                'status',
+                'equipmentCondition',
+                'assignedUser',
+            ])
+            ->withCount([
+                'components',
+                'maintenanceRequests',
+                'checkouts',
+            ]);
+
+        if (! $request->filled('orderBy')) {
+            $query->orderByDesc('is_active')
+                ->orderBy('name');
+        }
+
+        return $query;
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -78,6 +108,18 @@ class Equipment extends Resource
 
             Text::make(__('Name'))
                 ->rules('required', 'max:255')
+                ->sortable(),
+
+            Number::make(__('Components'), 'components_count')
+                ->exceptOnForms()
+                ->sortable(),
+
+            Number::make(__('Maintenance Requests'), 'maintenance_requests_count')
+                ->exceptOnForms()
+                ->sortable(),
+
+            Number::make(__('Checkouts'), 'checkouts_count')
+                ->exceptOnForms()
                 ->sortable(),
 
             Text::make(__('Model'))
@@ -169,7 +211,12 @@ class Equipment extends Resource
      */
     public function cards(NovaRequest $request): array
     {
-        return [];
+        return [
+            new Metrics\EquipmentTotal(),
+            new Metrics\ActiveMaintenanceRequests(),
+            new Metrics\EquipmentByStatus(),
+            new Metrics\EquipmentCheckouts(),
+        ];
     }
 
     /**
@@ -179,7 +226,11 @@ class Equipment extends Resource
      */
     public function filters(NovaRequest $request): array
     {
-        return [];
+        return [
+            new EquipmentStatusFilter(),
+            new EquipmentLocationFilter(),
+            new EquipmentOwnershipFilter(),
+        ];
     }
 
     /**
@@ -189,7 +240,10 @@ class Equipment extends Resource
      */
     public function lenses(NovaRequest $request): array
     {
-        return [];
+        return [
+            new EquipmentRequiringMaintenance(),
+            new CheckedOutEquipment(),
+        ];
     }
 
     /**

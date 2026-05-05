@@ -20,7 +20,13 @@ class EquipmentOwnershipFilter extends Filter
      */
     public function apply(NovaRequest $request, Builder $query, mixed $value): Builder
     {
-        return $query;
+        return match ($value) {
+            'athlete' => $query->where('owner_type', 'athlete'),
+            'partner' => $query->where('owner_type', 'partner'),
+            'assigned' => $query->whereNotNull('assigned_user_id'),
+            'unassigned' => $query->whereNull('assigned_user_id'),
+            default => $query,
+        };
     }
 
     /**
@@ -30,6 +36,16 @@ class EquipmentOwnershipFilter extends Filter
      */
     public function options(NovaRequest $request): array
     {
-        return [];
+        return [
+            __('Athlete Owned') => 'athlete',
+            __('Partner Owned') => 'partner',
+            __('Assigned To User') => 'assigned',
+            __('Unassigned') => 'unassigned',
+        ];
+    }
+
+    public function name(): string
+    {
+        return __('Ownership');
     }
 }

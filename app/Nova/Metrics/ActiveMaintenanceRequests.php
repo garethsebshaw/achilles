@@ -2,6 +2,8 @@
 
 namespace App\Nova\Metrics;
 
+use App\Models\MaintenanceRequest;
+use App\Nova\Metrics\Concerns\InterpretsUserRanges;
 use DateTimeInterface;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
@@ -10,12 +12,27 @@ use Laravel\Nova\Nova;
 
 class ActiveMaintenanceRequests extends Value
 {
+    use InterpretsUserRanges;
+
     /**
      * Calculate the value of the metric.
      */
     public function calculate(NovaRequest $request): ValueResult
     {
-        return $this->count($request, Model::class);
+        $range = $request->range ?? 30;
+
+        $query = MaintenanceRequest::query()
+            ->whereNull('completed_at')
+            ->where(function ($maintenanceQuery) {
+                $maintenanceQuery->whereNull('status_id')
+                    ->orWhereHas('status', function ($statusQuery) {
+                        $statusQuery->whereNotIn('code', ['maintreq_completed', 'maintreq_cancelled']);
+                    });
+            });
+
+        $this->applyRange($query, $range, 'reported_at');
+
+        return $this->result($query->count());
     }
 
     /**
@@ -41,8 +58,11 @@ class ActiveMaintenanceRequests extends Value
      */
     public function cacheFor(): DateTimeInterface|null
     {
-        // return now()->addMinutes(5);
+        return now()->addMinutes(5);
+    }
 
-        return null;
+    public function name()
+    {
+        return __('Open Maintenance Requests');
     }
 }

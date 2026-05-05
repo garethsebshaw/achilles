@@ -2,6 +2,8 @@
 
 namespace App\Nova\Filters;
 
+use App\Models\Equipment;
+use App\Models\SystemStatus;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -20,7 +22,7 @@ class EquipmentStatusFilter extends Filter
      */
     public function apply(NovaRequest $request, Builder $query, mixed $value): Builder
     {
-        return $query;
+        return $query->where('status_id', $value);
     }
 
     /**
@@ -30,6 +32,15 @@ class EquipmentStatusFilter extends Filter
      */
     public function options(NovaRequest $request): array
     {
-        return [];
+        return SystemStatus::query()
+            ->forModelType(Equipment::class)
+            ->orderBy('name')
+            ->pluck('id', 'name')
+            ->toArray();
+    }
+
+    public function name(): string
+    {
+        return __('Status');
     }
 }

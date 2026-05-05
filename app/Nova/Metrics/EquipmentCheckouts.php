@@ -2,6 +2,7 @@
 
 namespace App\Nova\Metrics;
 
+use App\Models\EquipmentCheckout;
 use DateTimeInterface;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
@@ -15,7 +16,7 @@ class EquipmentCheckouts extends Trend
      */
     public function calculate(NovaRequest $request): TrendResult
     {
-        return $this->countByDays($request, Model::class);
+        return $this->countByDays($request, EquipmentCheckout::query(), 'checked_out_at');
     }
 
     /**
@@ -37,9 +38,7 @@ class EquipmentCheckouts extends Trend
      */
     public function cacheFor(): DateTimeInterface|null
     {
-        // return now()->addMinutes(5);
-
-        return null;
+        return now()->addMinutes(5);
     }
 
     /**

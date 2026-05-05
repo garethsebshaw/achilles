@@ -2,36 +2,25 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\EquipmentMaintenancePriority;
+use App\Models\MaintenanceRequest;
+use App\Models\SystemStatus;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class MaintenancePriorityFilter extends Filter
+class MaintenanceStatusFilter extends Filter
 {
-    /**
-     * The filter's component.
-     *
-     * @var string
-     */
     public $component = 'select-filter';
 
-    /**
-     * Apply the filter to the given query.
-     */
     public function apply(NovaRequest $request, Builder $query, mixed $value): Builder
     {
-        return $query->where('priority_id', $value);
+        return $query->where('status_id', $value);
     }
 
-    /**
-     * Get the filter's available options.
-     *
-     * @return array<string, string>
-     */
     public function options(NovaRequest $request): array
     {
-        return EquipmentMaintenancePriority::query()
+        return SystemStatus::query()
+            ->forModelType(MaintenanceRequest::class)
             ->orderBy('name')
             ->pluck('id', 'name')
             ->toArray();
@@ -39,6 +28,6 @@ class MaintenancePriorityFilter extends Filter
 
     public function name(): string
     {
-        return __('Priority');
+        return __('Status');
     }
 }

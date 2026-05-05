@@ -2,6 +2,8 @@
 
 namespace App\Nova\Metrics;
 
+use App\Models\Equipment;
+use App\Nova\Metrics\Concerns\InterpretsUserRanges;
 use DateTimeInterface;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
@@ -10,12 +12,18 @@ use Laravel\Nova\Nova;
 
 class EquipmentTotal extends Value
 {
+    use InterpretsUserRanges;
+
     /**
      * Calculate the value of the metric.
      */
     public function calculate(NovaRequest $request): ValueResult
     {
-        return $this->count($request, Model::class);
+        $range = $request->range ?? 30;
+        $query = Equipment::query();
+        $this->applyRange($query, $range, 'created_at');
+
+        return $this->result($query->count());
     }
 
     /**
@@ -41,8 +49,11 @@ class EquipmentTotal extends Value
      */
     public function cacheFor(): DateTimeInterface|null
     {
-        // return now()->addMinutes(5);
+        return now()->addMinutes(5);
+    }
 
-        return null;
+    public function name()
+    {
+        return __('Equipment Added');
     }
 }

@@ -2,6 +2,9 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\MaintenancePriorityFilter;
+use App\Nova\Filters\MaintenanceStatusFilter;
+use Illuminate\Contracts\Database\Eloquent\Builder as BuilderContract;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -42,6 +45,28 @@ class MaintenanceRequest extends Resource
     public static $search = [
         'description',
     ];
+
+    public static $perPageOptions = [25, 50, 100];
+
+    public static function indexQuery(NovaRequest $request, BuilderContract $query): BuilderContract
+    {
+        $query = $query
+            ->with([
+                'equipment.location.chapter',
+                'component',
+                'reportedBy',
+                'assignedTo',
+                'status',
+                'priority',
+            ]);
+
+        if (! $request->filled('orderBy')) {
+            $query->orderByDesc('reported_at')
+                ->orderByDesc('id');
+        }
+
+        return $query;
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -131,7 +156,9 @@ class MaintenanceRequest extends Resource
      */
     public function cards(NovaRequest $request): array
     {
-        return [];
+        return [
+            new Metrics\ActiveMaintenanceRequests(),
+        ];
     }
 
     /**
@@ -141,7 +168,10 @@ class MaintenanceRequest extends Resource
      */
     public function filters(NovaRequest $request): array
     {
-        return [];
+        return [
+            new MaintenanceStatusFilter(),
+            new MaintenancePriorityFilter(),
+        ];
     }
 
     /**

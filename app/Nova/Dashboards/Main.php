@@ -38,9 +38,8 @@ class Main extends Dashboard
         return [
             new \App\Nova\Metrics\ScopedChapterCount(),
             new \App\Nova\Metrics\ScopedLocationCount(),
-            new \App\Nova\Metrics\ScopedUpcomingSessions(),
-            new \App\Nova\Metrics\ScopedTodaySessions(),
-            new \App\Nova\Metrics\ScopedUpcomingSignups(),
+            new \App\Nova\Metrics\ScopedSessionWindowValue(),
+            new \App\Nova\Metrics\ScopedSignupWindowValue(),
             new \App\Nova\Metrics\ScopedCheckedInToday(),
             new \App\Nova\Metrics\ScopedOpenMaintenanceRequests(),
             new \App\Nova\Metrics\ScopedUpcomingEvents(),

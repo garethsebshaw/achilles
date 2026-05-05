@@ -2,6 +2,7 @@
 
 namespace App\Nova\Metrics;
 
+use App\Models\Equipment;
 use DateTimeInterface;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Partition;
@@ -14,9 +15,14 @@ class EquipmentByStatus extends Partition
      */
     public function calculate(NovaRequest $request): PartitionResult
     {
-        return $this->count(
-            $request, Model::class, groupBy: 'groupByColumn',
-        );
+        $data = Equipment::query()
+            ->leftJoin('system_statuses', 'equipment.status_id', '=', 'system_statuses.id')
+            ->selectRaw("COALESCE(system_statuses.name, 'Unknown') as status_label, COUNT(*) as aggregate")
+            ->groupBy('status_label')
+            ->pluck('aggregate', 'status_label')
+            ->toArray();
+
+        return $this->result($data);
     }
 
     /**
@@ -24,9 +30,7 @@ class EquipmentByStatus extends Partition
      */
     public function cacheFor(): DateTimeInterface|null
     {
-        // return now()->addMinutes(5);
-
-        return null;
+        return now()->addMinutes(5);
     }
 
     /**
