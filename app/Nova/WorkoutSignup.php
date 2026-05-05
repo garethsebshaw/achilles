@@ -3,11 +3,8 @@
 namespace App\Nova;
 
 use App\Models\WorkoutSession as WorkoutSessionModel;
-use App\Nova\Metrics\SignupDistribution;
-use App\Nova\Metrics\SignupTrend;
 use App\Nova\Metrics\SessionContextMetric;
-use App\Nova\Metrics\TotalSignups;
-use Illuminate\Http\Request;
+use App\Nova\Metrics\SessionAttendanceMetric;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\BelongsTo;
@@ -17,21 +14,13 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Illuminate\Database\Eloquent\Builder;
-//use App\Nova\Filters\WorkoutSignupUserFilter;
-//use App\Nova\Filters\WorkoutSignupStatusFilter;
-//use App\Nova\Filters\WorkoutSessionFilter;
-//use App\Nova\Filters\WorkoutSignupDateRangeFilter;
 use Sietse85\NovaButton\Button;
-use Carbon\Carbon;
 use Laravel\Nova\Panel;
-
-use App\Nova\Actions\CheckInAction;
-use App\Nova\Actions\CheckOutAction;
 use App\Events\CheckInUser;
 use App\Events\CheckOutUser;
-
-use Illuminate\Support\Facades\DB;
-use App\Nova\Traits\DynamicPollingInterval;
+use App\Nova\Actions\CheckInAction;
+use App\Nova\Actions\CheckOutAction;
+use Illuminate\Support\Collection;
 
 
 class WorkoutSignup extends Resource
@@ -40,6 +29,8 @@ class WorkoutSignup extends Resource
 
     public static $title = 'id';
 
+    public static $perPageOptions = [25, 50, 100];
+
     public static $search = [
         'id',
         'status_id',
@@ -47,6 +38,8 @@ class WorkoutSignup extends Resource
     ];
 
     public static $group = 'Workout Management';
+
+    protected static array $sessionRosterCache = [];
 
     /**
      * Get the searchable columns for the resource.
@@ -86,6 +79,7 @@ class WorkoutSignup extends Resource
         $query = parent::indexQuery($request, $query);
         $query->with([
             'user',
+            'athleteUser',
             'status',
             'workoutSession.workout.activityType',
             'workoutSession.location',
@@ -94,14 +88,17 @@ class WorkoutSignup extends Resource
         $resourceId = static::getResourceId($request);
 
         if ($resourceId !== null) {
-            return $query->where('workout_session_id', (int) $resourceId);
+            return $query
+                ->where('workout_session_id', (int) $resourceId)
+                ->orderBy('checked_in_at')
+                ->orderBy('user_id');
         }
 
         if (! static::hasExplicitIndexScope($request)) {
             return $query->whereRaw('1 = 0');
         }
 
-        return $query;
+        return $query->orderByDesc('id');
     }
 
     public function fields(NovaRequest $request)
@@ -199,18 +196,12 @@ class WorkoutSignup extends Resource
                     );
                 }
 
-                if ($this->athlete_id) {
-                    $athlete = DB::table('users')
-                        ->where('id', $this->athlete_id)
-                        ->first();
-
-                    return $athlete
-                        ? sprintf(
-                            '<a href="#" onclick="return updateSearchBox(\'%s\')"><b>%s</b></a>',
-                            e($athlete->name),
-                            e($athlete->name)
-                        )
-                        : __('Unassigned Guide');
+                if ($this->athleteUser) {
+                    return sprintf(
+                        '<a href="#" onclick="return updateSearchBox(\'%s\')"><b>%s</b></a>',
+                        e($this->athleteUser->name),
+                        e($this->athleteUser->name)
+                    );
                 }
 
                 return __('Unassigned');
@@ -218,14 +209,10 @@ class WorkoutSignup extends Resource
 
             Text::make(__('Guides'), function () {
                 if ($this->user->is_athlete) {
-                    // For athletes - show all guides for this signup
-                    $guides = DB::table('workout_signups')
-                        ->join('users', 'workout_signups.user_id', '=', 'users.id')
-                        ->where('workout_signups.workout_session_id', $this->workout_session_id)
-                        ->where('workout_signups.athlete_id', $this->user->id)
-                        ->where('users.is_guide', true)
-                        ->select('users.id', 'users.name')
-                        ->get();
+                    $guides = static::sessionGuidesForAthlete(
+                        (int) $this->workout_session_id,
+                        (int) $this->user_id
+                    );
 
                     if ($guides->isEmpty()) {
                         return '<i class="danger">'.__('No Guides').'</i>';
@@ -240,41 +227,31 @@ class WorkoutSignup extends Resource
                             e($guide->name)
                         );
                     })->implode('');
-                } else {
-                    // For guides - lookup the athlete first to get all guides for that athlete
-                    $athleteId = DB::table('workout_signups')
-                        ->where('workout_signups.workout_session_id', $this->workout_session_id)
-                        ->where('workout_signups.user_id', $this->user->id)
-                        ->value('athlete_id');
+                }
 
-                    if (!$athleteId) {
-                        return '<i class="danger">'.__('No Athlete Assigned').'</i>';
-                    }
+                if (! $this->athleteUser) {
+                    return '<i class="danger">'.__('No Athlete Assigned').'</i>';
+                }
 
-                    // Get all guides for this athlete except the current user
-                    $guides = DB::table('workout_signups')
-                        ->join('users', 'workout_signups.user_id', '=', 'users.id')
-                        ->where('workout_signups.workout_session_id', $this->workout_session_id)
-                        ->where('workout_signups.athlete_id', $athleteId)
-                        ->where('users.is_guide', true)
-                        ->where('users.id', '!=', $this->user->id)  // Exclude current guide
-                        ->select('users.id', 'users.name')
-                        ->get();
+                $guides = static::sessionGuidesForAthlete(
+                    (int) $this->workout_session_id,
+                    (int) $this->athlete_id,
+                    (int) $this->user_id
+                );
 
-                    if ($guides->isEmpty()) {
-                        return '<i class="danger">'.__('No Additional Guides').'</i>';
-                    }
+                if ($guides->isEmpty()) {
+                    return '<i class="danger">'.__('No Additional Guides').'</i>';
+                }
 
-                    return $guides->map(function ($guide) {
-                        return sprintf(
-                            '<div class="flex justify-between items-center">
+                return $guides->map(function ($guide) {
+                    return sprintf(
+                        '<div class="flex justify-between items-center">
                     <a href="#" onclick="return updateSearchBox(\'%s\')">%s</a>
                 </div>',
-                            e($guide->name),
-                            e($guide->name)
-                        );
-                    })->implode('');
-                }
+                        e($guide->name),
+                        e($guide->name)
+                    );
+                })->implode('');
             })->asHtml()->showOnIndex(!is_null($resourceId)),
 
             Button::make(__('Check In Users'))
@@ -329,7 +306,7 @@ class WorkoutSignup extends Resource
         return [
             (new SessionContextMetric())
                 ->withMeta(['workout_session_id' => $session->id]),
-            (new Metrics\SessionAttendanceMetric())
+            (new SessionAttendanceMetric())
                 ->withMeta(['workout_session_id' => $session->id])
                 ->refreshWhenActionsRun(),
         ];
@@ -338,10 +315,8 @@ class WorkoutSignup extends Resource
     public function filters(NovaRequest $request)
     {
         return [
-//            new WorkoutSignupUserFilter,
-//            new WorkoutSignupStatusFilter,
             new Filters\WorkoutSessionFilter,
-//            new WorkoutSignupDateRangeFilter,
+            new Filters\WorkoutSignupDateRangeFilter,
         ];
     }
     public static function actionsInIndex(): bool
@@ -457,7 +432,13 @@ class WorkoutSignup extends Resource
         $endTime = optional($session->end_time)->format('H:i');
         $sportName = $session->workout->activityType->name ?? __('Unknown Sport');
 
-        return "<b>{$sportName}</b> in {$activityLocation} - <b>{$formattedDate}</b> {$startTime}-{$endTime}";
+        return __(':sport in :location - :date :start-:end', [
+            'sport' => $sportName,
+            'location' => $activityLocation,
+            'date' => $formattedDate,
+            'start' => $startTime,
+            'end' => $endTime,
+        ]);
     }
 
     public static function label()
@@ -515,6 +496,41 @@ class WorkoutSignup extends Resource
         }
 
         return '';
+    }
+
+    protected static function sessionRoster(int $sessionId): Collection
+    {
+        if (! array_key_exists($sessionId, static::$sessionRosterCache)) {
+            static::$sessionRosterCache[$sessionId] = \App\Models\WorkoutSignup::query()
+                ->where('workout_session_id', $sessionId)
+                ->with([
+                    'user:id,name,is_athlete,is_guide',
+                    'athleteUser:id,name',
+                ])
+                ->get([
+                    'id',
+                    'workout_session_id',
+                    'user_id',
+                    'athlete_id',
+                ]);
+        }
+
+        return static::$sessionRosterCache[$sessionId];
+    }
+
+    protected static function sessionGuidesForAthlete(
+        int $sessionId,
+        int $athleteId,
+        ?int $excludeGuideUserId = null
+    ): Collection {
+        return static::sessionRoster($sessionId)
+            ->filter(fn ($signup) => (int) $signup->athlete_id === $athleteId)
+            ->filter(fn ($signup) => $signup->user?->is_guide)
+            ->reject(fn ($signup) => $excludeGuideUserId !== null && (int) $signup->user_id === $excludeGuideUserId)
+            ->map(fn ($signup) => $signup->user)
+            ->filter()
+            ->unique('id')
+            ->values();
     }
 
 }

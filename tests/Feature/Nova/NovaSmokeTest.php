@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Nova\WorkoutSignup as WorkoutSignupResource;
 use App\Nova\Dashboards\Main;
 use App\Nova\Metrics\MyUpcomingSessions;
-use App\Nova\Metrics\ScopedUpcomingSessions;
+use App\Nova\Metrics\ScopedSessionWindowValue;
 use App\Models\Workout;
 use App\Models\WorkoutSession;
 use App\Models\WorkoutSignup;
@@ -283,7 +283,7 @@ class NovaSmokeTest extends TestCase
         $this->actingAs($athlete);
         $athleteCardClasses = collect((new Main())->cards())->map(fn ($card) => $card::class)->all();
         $this->assertContains(MyUpcomingSessions::class, $athleteCardClasses);
-        $this->assertNotContains(ScopedUpcomingSessions::class, $athleteCardClasses);
+        $this->assertNotContains(ScopedSessionWindowValue::class, $athleteCardClasses);
 
         $staff = User::query()
             ->whereNull('deleted_at')
@@ -296,7 +296,7 @@ class NovaSmokeTest extends TestCase
 
         $this->actingAs($staff);
         $staffCardClasses = collect((new Main())->cards())->map(fn ($card) => $card::class)->all();
-        $this->assertContains(ScopedUpcomingSessions::class, $staffCardClasses);
+        $this->assertContains(ScopedSessionWindowValue::class, $staffCardClasses);
     }
 
     public function test_workout_signup_index_requires_explicit_scope(): void
@@ -320,15 +320,29 @@ class NovaSmokeTest extends TestCase
         $this->assertSame($session->signups()->count(), $query->count());
     }
 
+    public function test_workout_signup_scoped_index_does_not_eager_load_entire_session_roster_per_row(): void
+    {
+        $session = WorkoutSession::query()->has('signups')->firstOrFail();
+        $request = NovaRequest::create('/nova-api/workout-signups', 'GET', [
+            'resourceId' => $session->id,
+        ]);
+
+        $query = WorkoutSignupResource::indexQuery($request, WorkoutSignup::query());
+        $eagerLoads = $query->getEagerLoads();
+
+        $this->assertArrayNotHasKey('workoutSession.signups.user', $eagerLoads);
+    }
+
     public function test_workout_signup_attendance_actions_require_selected_session_context(): void
     {
         $signup = WorkoutSignup::query()->with('workoutSession')->firstOrFail();
         $resource = new WorkoutSignupResource($signup);
+        $windowStart = now()->startOfDay()->addHours(12);
 
         $signup->workoutSession->forceFill([
-            'session_date' => now()->toDateString(),
-            'start_time' => now()->subHour()->format('H:i:s'),
-            'end_time' => now()->addHour()->format('H:i:s'),
+            'session_date' => $windowStart->toDateString(),
+            'start_time' => $windowStart->format('H:i:s'),
+            'end_time' => $windowStart->copy()->addHours(2)->format('H:i:s'),
         ])->save();
 
         $unscopedRequest = NovaRequest::create('/resources/workout-signups', 'GET');
@@ -338,6 +352,21 @@ class NovaSmokeTest extends TestCase
 
         $this->assertCount(0, $resource->actions($unscopedRequest));
         $this->assertCount(2, $resource->actions($scopedRequest));
+    }
+
+    public function test_workout_signup_scoped_label_is_plain_text(): void
+    {
+        $session = WorkoutSession::query()->with(['workout.activityType', 'location'])->firstOrFail();
+        $request = NovaRequest::create('/resources/workout-signups', 'GET', [
+            'resourceId' => $session->id,
+        ]);
+
+        app()->instance(NovaRequest::class, $request);
+
+        $label = WorkoutSignupResource::label();
+
+        $this->assertStringNotContainsString('<b>', $label);
+        $this->assertStringContainsString((string) ($session->location->name ?? ''), $label);
     }
 
     public function test_nova_api_endpoints_load_for_seeded_sys_admin(): void

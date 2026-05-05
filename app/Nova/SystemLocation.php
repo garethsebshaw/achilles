@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\LocationActiveFilter;
+use App\Nova\Filters\LocationCountryFilter;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -11,8 +13,10 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
+use Illuminate\Contracts\Database\Eloquent\Builder as BuilderContract;
 
 class SystemLocation extends Resource
 {
@@ -39,6 +43,27 @@ class SystemLocation extends Resource
         'name', 'address_line_1', 'city', 'state', 'postal_code'
     ];
 
+    public static $perPageOptions = [25, 50, 100];
+
+    public static function indexQuery(NovaRequest $request, BuilderContract $query): BuilderContract
+    {
+        $query = $query
+            ->with(['chapter', 'country', 'region'])
+            ->withCount([
+                'equipment',
+                'storageLocations',
+                'events',
+                'activeAccessRecords as active_access_count',
+            ]);
+
+        if (! $request->filled('orderBy')) {
+            $query->orderByDesc('is_active')
+                ->orderBy('name');
+        }
+
+        return $query;
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -56,6 +81,10 @@ class SystemLocation extends Resource
 
                 Boolean::make(__('Active'), 'is_active')
                     ->default(true)
+                    ->sortable(),
+
+                Text::make(__('Chapter'), fn () => $this->chapter?->name)
+                    ->exceptOnForms()
                     ->sortable(),
             ]),
 
@@ -116,7 +145,7 @@ class SystemLocation extends Resource
                     ->hideFromIndex()
                     ->rows(3),
 
-                HasMany::make(__('Access Records'), 'userAccess', SystemLocationAccess::class),
+                HasMany::make(__('Access Records'), 'accessRecords', SystemLocationAccess::class),
             ]),
 
             new Panel(__('Additional Information'), [
@@ -130,6 +159,18 @@ class SystemLocation extends Resource
             ]),
 
             new Panel(__('Related Items'), [
+                Number::make(__('Active Access Records'), 'active_access_count')
+                    ->exceptOnForms()
+                    ->sortable(),
+                Number::make(__('Equipment Count'), 'equipment_count')
+                    ->exceptOnForms()
+                    ->sortable(),
+                Number::make(__('Storage Locations Count'), 'storage_locations_count')
+                    ->exceptOnForms()
+                    ->sortable(),
+                Number::make(__('Events Count'), 'events_count')
+                    ->exceptOnForms()
+                    ->sortable(),
                 HasMany::make(__('Equipment')),
                 HasMany::make(__('Storage Locations'), 'storageLocations'),
                 HasMany::make(__('Events')),
@@ -144,7 +185,12 @@ class SystemLocation extends Resource
      */
     public function cards(NovaRequest $request): array
     {
-        return [];
+        return [
+            new Metrics\WeatherLocationCount(),
+            new Metrics\LocationsWithWeatherData(),
+            new Metrics\LastWeatherUpdate(),
+            new Metrics\NextWeatherForecast(),
+        ];
     }
 
     /**
@@ -154,7 +200,10 @@ class SystemLocation extends Resource
      */
     public function filters(NovaRequest $request): array
     {
-        return [];
+        return [
+            new LocationActiveFilter(),
+            new LocationCountryFilter(),
+        ];
     }
 
     /**

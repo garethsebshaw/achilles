@@ -117,6 +117,14 @@ class SystemLocation extends Model
     }
 
     /**
+     * Get the raw access records for this location.
+     */
+    public function accessRecords(): HasMany
+    {
+        return $this->hasMany(SystemLocationAccess::class, 'location_id');
+    }
+
+    /**
      * Get the full address as a string.
      */
     public function getFullAddressAttribute(): string
@@ -194,13 +202,13 @@ class SystemLocation extends Model
     /**
      * Get the active access records for this location.
      */
-    public function activeAccess(): BelongsToMany
+    public function activeAccessRecords(): HasMany
     {
-        return $this->userAccess()
-            ->where('system_location_access.is_active', true)
+        return $this->accessRecords()
+            ->where('is_active', true)
             ->where(function ($query) {
-                $query->whereNull('system_location_access.access_expiry_date')
-                    ->orWhere('system_location_access.access_expiry_date', '>=', now());
+                $query->whereNull('access_expiry_date')
+                    ->orWhere('access_expiry_date', '>=', now());
             });
     }
 }
