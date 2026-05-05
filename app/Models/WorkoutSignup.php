@@ -30,7 +30,12 @@ class WorkoutSignup extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->withTrashed();
+    }
+
+    public function athleteUser()
+    {
+        return $this->belongsTo(User::class, 'athlete_id')->withTrashed();
     }
 
 /*    public function status()

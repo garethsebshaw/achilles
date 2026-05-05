@@ -369,6 +369,20 @@ class NovaSmokeTest extends TestCase
         $this->assertStringContainsString((string) ($session->location->name ?? ''), $label);
     }
 
+    public function test_workout_signup_relationships_include_soft_deleted_users(): void
+    {
+        $signup = WorkoutSignup::query()->with(['user', 'athleteUser'])->firstOrFail();
+        $user = $signup->user;
+
+        $this->assertNotNull($user);
+
+        $user->delete();
+        $signup->refresh()->load(['user', 'athleteUser']);
+
+        $this->assertNotNull($signup->user);
+        $this->assertSame($user->id, $signup->user->id);
+    }
+
     public function test_nova_api_endpoints_load_for_seeded_sys_admin(): void
     {
         $admin = User::query()->where('email', 'thisisg@gmail.com')->firstOrFail();
