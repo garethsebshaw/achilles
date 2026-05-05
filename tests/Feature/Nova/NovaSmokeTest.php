@@ -3,8 +3,10 @@
 namespace Tests\Feature\Nova;
 
 use App\Models\MeetingPoint;
+use App\Models\SystemCategory;
 use App\Models\SystemLocation;
 use App\Models\User;
+use App\Nova\Filters\WorkoutSessionFilter;
 use App\Nova\WorkoutSignup as WorkoutSignupResource;
 use App\Nova\Dashboards\Main;
 use App\Nova\Metrics\MyUpcomingSessions;
@@ -381,6 +383,33 @@ class NovaSmokeTest extends TestCase
 
         $this->assertNotNull($signup->user);
         $this->assertSame($user->id, $signup->user->id);
+    }
+
+    public function test_workout_session_filter_options_tolerate_missing_activity_type_relation(): void
+    {
+        $session = WorkoutSession::query()->has('signups')->with('workout.activityType')->firstOrFail();
+        $currentModuleId = $session->workout->activityType?->system_module_id ?? 0;
+
+        $fallbackCategory = SystemCategory::query()
+            ->where('system_module_id', '!=', $currentModuleId)
+            ->value('id');
+
+        $this->assertNotNull($fallbackCategory);
+
+        $session->workout->update([
+            'activity_type_id' => $fallbackCategory,
+        ]);
+        $session->update([
+            'session_date' => now()->toDateString(),
+            'start_time' => '10:00:00',
+            'end_time' => '12:00:00',
+        ]);
+
+        $filter = new WorkoutSessionFilter();
+        $options = $filter->options(NovaRequest::create('/nova-api/workout-signups/filters', 'GET'));
+
+        $this->assertIsArray($options);
+        $this->assertNotEmpty($options);
     }
 
     public function test_nova_api_endpoints_load_for_seeded_sys_admin(): void
