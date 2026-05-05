@@ -3,6 +3,7 @@
 namespace App\Nova\Metrics;
 
 use App\Models\WorkoutSession;
+use App\Support\Attendance\CheckInSessionContext;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
 
@@ -10,10 +11,12 @@ class SessionContextMetric extends Value
 {
     public function calculate(NovaRequest $request)
     {
-        $sessionId = $request->get('workout_session_id');
+        $sessionId = $this->meta['workout_session_id']
+            ?? $request->get('workout_session_id')
+            ?? app(CheckInSessionContext::class)->currentSessionId();
 
         if (! $sessionId) {
-            return $this->result(0);
+            return $this->result(__('No active session'));
         }
 
         $session = WorkoutSession::query()
@@ -21,18 +24,16 @@ class SessionContextMetric extends Value
             ->find($sessionId);
 
         if (! $session) {
-            return $this->result(0);
+            return $this->result(__('No active session'));
         }
 
-        $summary = __(':sport at :location on :date from :start to :end', [
-            'sport' => $session->workout->activityType->name ?? __('Unknown Sport'),
-            'location' => $session->location->name ?? __('Unknown Location'),
-            'date' => optional($session->session_date)->format('D, M j, Y') ?? __('Unknown Date'),
-            'start' => optional($session->start_time)->format('g:ia') ?? __('TBD'),
-            'end' => optional($session->end_time)->format('g:ia') ?? __('TBD'),
-        ]);
-
-        return $this->result($session->signups()->count());
+        return $this->result($session->signups()->count())->suffix(
+            __(':sport at :location · ends :time', [
+                'sport' => $session->workout->activityType->name ?? __('Unknown Sport'),
+                'location' => $session->location->name ?? __('Unknown Location'),
+                'time' => optional($session->end_time)->format('H:i') ?? __('Unknown'),
+            ])
+        );
     }
 
     public function name()

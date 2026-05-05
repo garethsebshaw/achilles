@@ -12,14 +12,19 @@ class WorkoutSignup extends Model
     protected $fillable = [
         'workout_session_id',
         'user_id',
+        'athlete_id',
         'preferences',
         'equipment_requirements',
-        'status_id'
+        'status_id',
+        'checked_in_at',
+        'checked_out_at',
     ];
 
     protected $casts = [
         'preferences' => 'json',
-        'equipment_requirements' => 'json'
+        'equipment_requirements' => 'json',
+        'checked_in_at' => 'datetime',
+        'checked_out_at' => 'datetime',
     ];
 
     // Relationships

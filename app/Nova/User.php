@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Models\WorkoutSignup as WorkoutSignupModel;
+use App\Support\Attendance\CheckInSessionContext;
 use App\Nova\Filters\UserChapterAccessFilter;
 use App\Nova\Filters\UserCreatedPresetFilter;
 use App\Nova\Filters\UserLocationAccessFilter;
@@ -42,6 +44,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Sietse85\NovaButton\Button;
 
 class User extends Resource
 {
@@ -146,6 +149,18 @@ class User extends Resource
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
+            Button::make(__('Check In'))
+                ->link($this->attendanceCheckInLink(), '_self')
+                ->style('success')
+                ->showOnIndex(static::shouldShowAttendanceButton($request, $this->resource) && ! static::isCheckedInToActiveSession($this->resource))
+                ->showOnDetail(static::shouldShowAttendanceButton($request, $this->resource) && ! static::isCheckedInToActiveSession($this->resource)),
+
+            Button::make(__('Check Out'))
+                ->link($this->attendanceCheckOutLink(), '_self')
+                ->style('danger')
+                ->showOnIndex(static::shouldShowAttendanceButton($request, $this->resource) && static::isCheckedInToActiveSession($this->resource))
+                ->showOnDetail(static::shouldShowAttendanceButton($request, $this->resource) && static::isCheckedInToActiveSession($this->resource)),
+
             Text::make(__('Phone'))
                 ->hideFromIndex()
                 ->rules('nullable', 'max:22'),
@@ -223,9 +238,23 @@ class User extends Resource
         return "https://www.gravatar.com/avatar/{$hash}?s=250";
     }
 
+    protected function attendanceCheckInLink(): string
+    {
+        return $this->resource?->getKey()
+            ? route('attendance.users.check-in', ['user' => $this->resource->getKey()])
+            : '#';
+    }
+
+    protected function attendanceCheckOutLink(): string
+    {
+        return $this->resource?->getKey()
+            ? route('attendance.users.check-out', ['user' => $this->resource->getKey()])
+            : '#';
+    }
+
     public function cards(NovaRequest $request): array
     {
-        return [
+        $cards = [
             new TotalUsers(),
             new VerifiedUsers(),
             new SubscribedUsers(),
@@ -239,6 +268,16 @@ class User extends Resource
             new UserSubscriptionDistribution(),
             new UserGrowth(),
         ];
+
+        if (app(CheckInSessionContext::class)->currentSession()) {
+            array_unshift(
+                $cards,
+                new \App\Nova\Metrics\SessionWeatherMetric(),
+                new \App\Nova\Metrics\SessionContextMetric()
+            );
+        }
+
+        return $cards;
     }
 
     public function filters(NovaRequest $request): array
@@ -271,5 +310,35 @@ class User extends Resource
     public function actions(NovaRequest $request): array
     {
         return [];
+    }
+
+    protected static function shouldShowAttendanceButton(NovaRequest $request, \App\Models\User $user): bool
+    {
+        $context = app(CheckInSessionContext::class);
+        $session = $context->currentSession();
+
+        if (! $session) {
+            return false;
+        }
+
+        $viewer = $request->user();
+
+        return $viewer && $context->canManageSession($viewer, $session);
+    }
+
+    protected static function isCheckedInToActiveSession(\App\Models\User $user): bool
+    {
+        $sessionId = app(CheckInSessionContext::class)->currentSessionId();
+
+        if (! $sessionId) {
+            return false;
+        }
+
+        return WorkoutSignupModel::query()
+            ->where('workout_session_id', $sessionId)
+            ->where('user_id', $user->id)
+            ->whereNotNull('checked_in_at')
+            ->whereNull('checked_out_at')
+            ->exists();
     }
 }

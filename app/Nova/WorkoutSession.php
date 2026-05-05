@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Models\WorkoutSession as WorkoutSessionModel;
+use App\Support\Attendance\CheckInSessionContext;
 use App\Nova\Lenses\SessionWithin3Hours;
 use App\Nova\Lenses\SessionWithin6Hours;
 use App\Nova\Lenses\SessionWithin12Hours;
@@ -24,10 +26,13 @@ use App\Nova\Filters\ChapterFilter;
 use App\Nova\Filters\WorkoutFilter;
 use App\Nova\Filters\SessionSchedulePresetFilter;
 use App\Nova\Filters\SessionSignupPresenceFilter;
+use App\Nova\Actions\GenerateDemoSessionSignups;
 
 class WorkoutSession extends Resource
 {
     public static $model = \App\Models\WorkoutSession::class;
+
+    public static $perPageOptions = [25, 50, 100];
 
     public function title()
     {
@@ -57,7 +62,7 @@ class WorkoutSession extends Resource
      */
     public static function indexQuery(NovaRequest $request, Builder $query): Builder
     {
-        return $query
+        $query = $query
             ->with(['workout.activityType', 'location', 'status'])
             ->withCount([
                 'signups as total_signups_count',
@@ -72,6 +77,14 @@ class WorkoutSession extends Resource
                     });
                 },
             ]);
+
+        if (! $request->filled('orderBy')) {
+            $query->orderBy('session_date')
+                ->orderBy('start_time')
+                ->orderBy('id');
+        }
+
+        return $query;
     }
 
     public static $group = 'Workout Management';
@@ -101,10 +114,10 @@ class WorkoutSession extends Resource
                 ->default(1)
                 ->hideFromIndex(),
 
-            Button::make(__('Check In Users'))
-                ->link('/resources/workout-signups?resourceId=' . $this->id, '_self')
-                ->style('success')
-                ->visible($this->isWithinCheckInWindow()),
+            Button::make($this->checkInButtonLabel($request))
+                ->link($this->checkInButtonLink($request), '_self')
+                ->style($this->checkInButtonStyle($request))
+                ->visible($this->shouldShowCheckInButton($request)),
 
             Text::make(__('Session Date'))
                 ->rules('required')
@@ -175,12 +188,8 @@ class WorkoutSession extends Resource
     public function cards(NovaRequest $request)
     {
         return [
-            new Metrics\SessionsThisWeek(),
-            new Metrics\SessionsNextWeek(),
-            new Metrics\UpcomingSessions30Days(),
-            new Metrics\SignupsThisWeek(),
-            new Metrics\SignupsNextWeek(),
-            new Metrics\UpcomingSignups30Days(),
+            new Metrics\SessionWindowValue(),
+            new Metrics\SignupWindowValue(),
         ];
     }
 
@@ -212,6 +221,8 @@ class WorkoutSession extends Resource
             (new Actions\ViewSessionUsers)
                 ->withoutConfirmation()
                 ->showInline(),
+            (new GenerateDemoSessionSignups())
+                ->canSee(fn (NovaRequest $actionRequest) => (bool) $actionRequest->user()?->isAdmin() || (bool) $actionRequest->user()?->isSysAdmin()),
         ];
     }
 
@@ -244,5 +255,49 @@ class WorkoutSession extends Resource
 
         // Return true if within ±12 hours
         return abs($hoursUntilSession) <= 12;
+    }
+
+    protected function shouldShowCheckInButton(NovaRequest $request): bool
+    {
+        if (! $this->isWithinCheckInWindow()) {
+            return false;
+        }
+
+        $user = $request->user();
+
+        if (! $user) {
+            return false;
+        }
+
+        return app(CheckInSessionContext::class)->canManageSession($user, $this->resource);
+    }
+
+    protected function checkInButtonLabel(NovaRequest $request): string
+    {
+        $context = app(CheckInSessionContext::class);
+
+        if ($context->isActiveForSession($this->resource)) {
+            return __('Stop Check-In');
+        }
+
+        return __('Start Check-In');
+    }
+
+    protected function checkInButtonLink(NovaRequest $request): string
+    {
+        $context = app(CheckInSessionContext::class);
+
+        if ($context->isActiveForSession($this->resource)) {
+            return route('attendance.sessions.deactivate');
+        }
+
+        return route('attendance.sessions.activate', ['session' => $this->id]);
+    }
+
+    protected function checkInButtonStyle(NovaRequest $request): string
+    {
+        $context = app(CheckInSessionContext::class);
+
+        return $context->isActiveForSession($this->resource) ? 'danger' : 'success';
     }
 }

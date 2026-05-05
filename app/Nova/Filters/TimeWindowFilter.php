@@ -22,8 +22,15 @@ class TimeWindowFilter extends Filter
             return $query;
         }
 
-        $hours = (int)$value;
         $now = Carbon::now();
+
+        if ($value === 'next_hour') {
+            return $query
+                ->whereRaw('TIMESTAMP(session_date, start_time) >= ?', [$now])
+                ->whereRaw('TIMESTAMP(session_date, start_time) <= ?', [$now->copy()->addHour()]);
+        }
+
+        $hours = (int)$value;
 
         return $query->where(function($query) use ($now, $hours) {
             // Get session datetime by combining date and time
@@ -35,6 +42,7 @@ class TimeWindowFilter extends Filter
     public function options(NovaRequest $request)
     {
         return [
+            __('Starts In Next Hour') => 'next_hour',
             __('± 1 Hour') => 1,
             __('± 3 Hours') => 3,
             __('± 6 Hours') => 6,

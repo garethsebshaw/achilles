@@ -177,6 +177,11 @@ class User extends Authenticatable
             ->all();
     }
 
+    public function hasActiveChapterAccess(int $chapterId): bool
+    {
+        return in_array($chapterId, $this->accessibleChapterIds(), true);
+    }
+
     /**
      * Get the URI key for the resource.
      *

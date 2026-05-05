@@ -10,6 +10,7 @@ use App\Http\Controllers\WorkoutController;
 use App\Http\Controllers\WorkoutSessionController;
 use App\Http\Controllers\WorkoutSignupController;
 use App\Http\Controllers\WeatherViewController;
+use App\Http\Controllers\CheckInStaffSessionController;
 
 Route::get('auth/{provider}/redirect', [SocialiteController::class, 'redirect'])
     ->name('socialite.redirect');
@@ -46,6 +47,21 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('account/security/two-factor', [AccountSecurityController::class, 'disableTwoFactor'])
         ->name('account.security.two-factor.disable');
+
+    Route::get('attendance/sessions/{session}/activate', [CheckInStaffSessionController::class, 'activate'])
+        ->name('attendance.sessions.activate');
+
+    Route::get('attendance/sessions/deactivate', [CheckInStaffSessionController::class, 'deactivate'])
+        ->name('attendance.sessions.deactivate');
+
+    Route::get('attendance/sessions/weather/refresh', [CheckInStaffSessionController::class, 'refreshWeather'])
+        ->name('attendance.sessions.weather.refresh');
+
+    Route::get('attendance/users/{user}/check-in', [CheckInStaffSessionController::class, 'checkInUser'])
+        ->name('attendance.users.check-in');
+
+    Route::get('attendance/users/{user}/check-out', [CheckInStaffSessionController::class, 'checkOutUser'])
+        ->name('attendance.users.check-out');
 });
 
 

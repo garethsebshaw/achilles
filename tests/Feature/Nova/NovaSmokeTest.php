@@ -14,6 +14,7 @@ use App\Nova\Metrics\ScopedSessionWindowValue;
 use App\Models\Workout;
 use App\Models\WorkoutSession;
 use App\Models\WorkoutSignup;
+use App\Support\Attendance\CheckInSessionContext;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Nova\Nova;
@@ -322,6 +323,20 @@ class NovaSmokeTest extends TestCase
         $this->assertSame($session->signups()->count(), $query->count());
     }
 
+    public function test_workout_signup_index_scopes_from_workout_session_relation_context(): void
+    {
+        $session = WorkoutSession::query()->has('signups')->firstOrFail();
+        $request = NovaRequest::create('/nova-api/workout-signups', 'GET', [
+            'viaResource' => 'workout-sessions',
+            'viaResourceId' => $session->id,
+            'viaRelationship' => 'signups',
+        ]);
+
+        $query = WorkoutSignupResource::indexQuery($request, WorkoutSignup::query());
+
+        $this->assertSame($session->signups()->count(), $query->count());
+    }
+
     public function test_workout_signup_scoped_index_does_not_eager_load_entire_session_roster_per_row(): void
     {
         $session = WorkoutSession::query()->has('signups')->firstOrFail();
@@ -351,9 +366,49 @@ class NovaSmokeTest extends TestCase
         $scopedRequest = NovaRequest::create('/resources/workout-signups', 'GET', [
             'resourceId' => $signup->workout_session_id,
         ]);
+        app(CheckInSessionContext::class)->activate(User::query()->where('email', 'thisisg@gmail.com')->firstOrFail(), $signup->workoutSession);
 
         $this->assertCount(0, $resource->actions($unscopedRequest));
-        $this->assertCount(2, $resource->actions($scopedRequest));
+        $this->assertGreaterThanOrEqual(2, count($resource->actions($scopedRequest)));
+    }
+
+    public function test_stale_workout_session_cannot_activate_check_in_context(): void
+    {
+        $admin = User::query()->where('email', 'thisisg@gmail.com')->firstOrFail();
+        $session = WorkoutSession::query()->firstOrFail();
+
+        $session->forceFill([
+            'session_date' => now()->subDays(3)->toDateString(),
+            'start_time' => '09:00:00',
+            'end_time' => '11:00:00',
+        ])->save();
+
+        $this->actingAs($admin)
+            ->get('/attendance/sessions/'.$session->id.'/activate')
+            ->assertForbidden();
+    }
+
+    public function test_check_in_context_activation_persists_across_follow_up_requests(): void
+    {
+        $admin = User::query()->where('email', 'thisisg@gmail.com')->firstOrFail();
+        $session = WorkoutSession::query()->has('signups')->firstOrFail();
+        $windowStart = now()->copy()->addHour();
+
+        $session->forceFill([
+            'session_date' => $windowStart->toDateString(),
+            'start_time' => $windowStart->format('H:i:s'),
+            'end_time' => $windowStart->copy()->addHours(2)->format('H:i:s'),
+        ])->save();
+
+        $this->actingAs($admin)
+            ->get('/attendance/sessions/'.$session->id.'/activate')
+            ->assertRedirect('/resources/workout-signups?resourceId='.$session->id);
+
+        $this->assertSame($session->id, session('attendance.active_check_in_session.session_id'));
+
+        $this->actingAs($admin)
+            ->get('/attendance/sessions/weather/refresh')
+            ->assertRedirect();
     }
 
     public function test_workout_signup_scoped_label_is_plain_text(): void

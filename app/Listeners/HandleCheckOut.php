@@ -5,6 +5,7 @@ namespace App\Listeners;
 use App\Events\CheckOutUser;
 use App\Models\SystemStatus;
 use App\Models\WorkoutSignup;
+use App\Support\Attendance\CheckInSessionContext;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 
@@ -16,6 +17,13 @@ class HandleCheckOut
 
         if (!$signup) {
             Log::error("Check-out event triggered but resource is missing.");
+            return;
+        }
+
+        $activeSessionId = app(CheckInSessionContext::class)->currentSessionId();
+
+        if ((int) $activeSessionId !== (int) $signup->workout_session_id) {
+            Log::warning("Attempted to check out user outside active staff session: {$signup->id}");
             return;
         }
 

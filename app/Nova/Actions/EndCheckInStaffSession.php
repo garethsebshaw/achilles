@@ -2,6 +2,7 @@
 
 namespace App\Nova\Actions;
 
+use App\Support\Attendance\CheckInSessionContext;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Laravel\Nova\Actions\Action;
@@ -9,22 +10,20 @@ use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Illuminate\Support\Collection;
 
-class ViewSessionUsers extends Action
+class EndCheckInStaffSession extends Action
 {
     use InteractsWithQueue, Queueable;
 
-    public $showOnTableRow = true;
-    public $showOnIndex = false;
-
     public function name()
     {
-        return __('Check In/Out');
+        return __('End Check-In');
     }
 
     public function handle(ActionFields $fields, Collection $models)
     {
-        $workoutSession = $models->first();
-        return Action::visit('/attendance/sessions/'.$workoutSession->id.'/activate');
+        app(CheckInSessionContext::class)->deactivate();
+
+        return Action::message(__('Check-in staff session ended.'));
     }
 
     public function fields(NovaRequest $request)

@@ -18,6 +18,7 @@ use App\Models\WorkoutSignup;
 use App\Models\WorkoutSpecificDetails;
 use App\Nova\Actions\CheckInAction;
 use App\Nova\Actions\CheckOutAction;
+use App\Nova\Actions\GenerateDemoSessionSignups;
 use App\Nova\Actions\ManageWorkoutAttendance;
 use App\Nova\Actions\ViewSessionUsers;
 use App\Nova\Actions\ViewWeatherData;
@@ -180,11 +181,14 @@ class NovaCrudActionTest extends TestCase
 
         $templateDetails = WorkoutSpecificDetails::query()->firstOrFail();
         $session = WorkoutSession::query()->firstOrFail();
-        $user = User::query()->whereNull('deleted_at')->firstOrFail();
+        $guide = User::query()->whereNull('deleted_at')->where('is_guide', true)->firstOrFail();
+        $athlete = User::query()->whereNull('deleted_at')->where('is_athlete', true)->whereKeyNot($guide->id)->firstOrFail();
+        $reassignedAthlete = User::query()->whereNull('deleted_at')->where('is_athlete', true)->whereKeyNot($athlete->id)->whereKeyNot($guide->id)->firstOrFail();
 
         $createResponse = $this->post('/workout-signups', [
             'workout_session_id' => $session->id,
-            'user_id' => $user->id,
+            'user_id' => $guide->id,
+            'athlete_id' => $athlete->id,
             'status_id' => $this->signupStatusId(),
             'preferences' => ['transport' => 'needs ride'],
             'equipment_requirements' => ['helmet' => true],
@@ -208,14 +212,16 @@ class NovaCrudActionTest extends TestCase
         $signup = WorkoutSignup::query()->latest('id')->firstOrFail();
 
         $this->assertSame($session->id, $signup->workout_session_id);
-        $this->assertSame($user->id, $signup->user_id);
+        $this->assertSame($guide->id, $signup->user_id);
+        $this->assertSame($athlete->id, $signup->athlete_id);
         $this->assertSame('needs ride', $signup->preferences['transport']);
         $this->assertNotNull($signup->specificDetails);
         $this->assertSame(5.25, (float) $signup->specificDetails->distance);
 
         $updateResponse = $this->put('/workout-signups/'.$signup->id, [
             'workout_session_id' => $session->id,
-            'user_id' => $user->id,
+            'user_id' => $guide->id,
+            'athlete_id' => $reassignedAthlete->id,
             'status_id' => $this->signupStatusId('signup_checked_in'),
             'preferences' => ['transport' => 'self'],
             'equipment_requirements' => ['helmet' => false],
@@ -238,6 +244,7 @@ class NovaCrudActionTest extends TestCase
 
         $signup = $signup->fresh(['specificDetails']);
         $this->assertSame('self', $signup->preferences['transport']);
+        $this->assertSame($reassignedAthlete->id, $signup->athlete_id);
         $this->assertSame($this->signupStatusId('signup_checked_in'), $signup->status_id);
         $this->assertSame(10.5, (float) $signup->specificDetails->distance);
 
@@ -283,7 +290,7 @@ class NovaCrudActionTest extends TestCase
         $visitResponse = (new ViewSessionUsers())->handle($emptyFields, new Collection([$managedSignup->workoutSession]));
         $visitPayload = json_decode(json_encode($visitResponse, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);
         $this->assertSame(
-            '/resources/workout-signups?resourceId='.$managedSignup->workout_session_id,
+            '/attendance/sessions/'.$managedSignup->workout_session_id.'/activate',
             $visitPayload['visit']['path']
         );
 
@@ -313,6 +320,75 @@ class NovaCrudActionTest extends TestCase
         $event = Event::query()->firstOrFail();
         $event->forceFill(['status_id' => $maintenanceStatusId])->save();
         $this->assertNull($event->fresh()->status);
+    }
+
+    public function test_demo_signup_generation_action_creates_multi_guide_demo_roster(): void
+    {
+        $session = WorkoutSession::query()->create([
+            'workout_id' => Workout::query()->where('is_current_version', true)->value('id'),
+            'location_id' => $this->locationId(),
+            'session_date' => now()->addDays(10)->toDateString(),
+            'start_time' => '09:00:00',
+            'end_time' => '11:00:00',
+            'status_id' => $this->sessionStatusId(),
+            'notes' => 'Demo signup generation test session',
+        ]);
+
+        $response = (new GenerateDemoSessionSignups())->handle(
+            new ActionFields(collect([
+                'minimum_athletes' => 6,
+                'maximum_athletes' => 8,
+                'maximum_guides_per_athlete' => 3,
+                'heavy_session_mode' => false,
+            ]), collect()),
+            new Collection([$session])
+        );
+
+        $payload = json_decode(json_encode($response, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);
+        $this->assertStringContainsString('Generated', $payload['message']);
+
+        $signups = WorkoutSignup::query()
+            ->where('workout_session_id', $session->id)
+            ->get();
+
+        $this->assertGreaterThanOrEqual(6, $signups->whereNull('athlete_id')->count());
+        $this->assertGreaterThan(0, $signups->whereNotNull('athlete_id')->count());
+        $this->assertTrue(
+            $signups->whereNotNull('athlete_id')
+                ->groupBy('athlete_id')
+                ->contains(fn (Collection $group) => $group->count() > 1)
+        );
+    }
+
+    public function test_active_check_in_staff_can_check_user_in_via_attendance_route(): void
+    {
+        $admin = $this->admin();
+        $user = User::query()->whereNull('deleted_at')->where('is_athlete', true)->firstOrFail();
+        $session = WorkoutSession::query()->firstOrFail();
+        $windowStart = now()->copy()->addHour();
+
+        $session->forceFill([
+            'session_date' => $windowStart->toDateString(),
+            'start_time' => $windowStart->format('H:i:s'),
+            'end_time' => $windowStart->copy()->addHours(2)->format('H:i:s'),
+        ])->save();
+
+        $this->actingAs($admin)
+            ->get('/attendance/sessions/'.$session->id.'/activate')
+            ->assertRedirect('/resources/workout-signups?resourceId='.$session->id);
+
+        $this->actingAs($admin)
+            ->from('/resources/users')
+            ->get('/attendance/users/'.$user->id.'/check-in')
+            ->assertRedirect('/resources/users');
+
+        $signup = WorkoutSignup::query()
+            ->where('workout_session_id', $session->id)
+            ->where('user_id', $user->id)
+            ->firstOrFail();
+
+        $this->assertNotNull($signup->checked_in_at);
+        $this->assertSame($this->signupStatusId('signup_checked_in'), $signup->status_id);
     }
 
     private function admin(): User

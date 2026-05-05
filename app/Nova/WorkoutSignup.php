@@ -3,14 +3,17 @@
 namespace App\Nova;
 
 use App\Models\WorkoutSession as WorkoutSessionModel;
+use App\Support\Attendance\CheckInSessionContext;
 use App\Nova\Metrics\SessionContextMetric;
 use App\Nova\Metrics\SessionAttendanceMetric;
+use App\Nova\Metrics\SessionWeatherMetric;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Illuminate\Database\Eloquent\Builder;
@@ -20,6 +23,8 @@ use App\Events\CheckInUser;
 use App\Events\CheckOutUser;
 use App\Nova\Actions\CheckInAction;
 use App\Nova\Actions\CheckOutAction;
+use App\Nova\Actions\EndCheckInStaffSession;
+use App\Nova\Actions\RefreshSessionWeather;
 use Illuminate\Support\Collection;
 
 
@@ -85,7 +90,7 @@ class WorkoutSignup extends Resource
             'workoutSession.location',
         ]);
 
-        $resourceId = static::getResourceId($request);
+        $resourceId = static::resolvedSessionId($request);
 
         if ($resourceId !== null) {
             return $query
@@ -103,11 +108,27 @@ class WorkoutSignup extends Resource
 
     public function fields(NovaRequest $request)
     {
-        $resourceId = static::getResourceId($request);
-        $withinWindow = $this->isWithinCheckInWindow();
+        $resourceId = static::resolvedSessionId($request);
+        $attendanceContextActive = static::hasActiveAttendanceContext($request, $this->workoutSession);
+        $assignedAthleteOptions = static::athleteOptionsForSession(
+            $this->workout_session_id ?: static::resolvedSessionId($request)
+        );
 
         return [
             ID::make()->sortable(),
+
+            Text::make(__('Role'), function () {
+                $label = $this->user?->is_athlete ? 'A' : ($this->user?->is_guide ? 'G' : '?');
+                $classes = $this->user?->is_athlete
+                    ? 'bg-blue-100 text-blue-700'
+                    : 'bg-emerald-100 text-emerald-700';
+
+                return sprintf(
+                    '<span class="inline-flex items-center justify-center min-w-[1.75rem] rounded-full px-2 py-1 text-xs font-semibold %s">%s</span>',
+                    $classes,
+                    e($label)
+                );
+            })->asHtml()->onlyOnIndex()->showOnIndex(! is_null($resourceId)),
 
             BelongsTo::make(__('User'), 'user', 'App\Nova\User')
                 ->rules('required'),
@@ -136,7 +157,7 @@ class WorkoutSignup extends Resource
                 ->loadingText($this->checked_in_at ? __('Cancelling...') : __('Checking In...'))
                 ->successText($this->checked_in_at ? __('Check In Cancelled') : __('Checked In'))
                 ->errorText(__('Error updating check-in status'))
-                ->showOnIndex(!is_null($resourceId) && $this->isWithinCheckInWindow()),
+                ->showOnIndex(!is_null($resourceId) && $attendanceContextActive),
 
             // Check Out button
             Button::make(__('Check Out'))
@@ -146,7 +167,7 @@ class WorkoutSignup extends Resource
                 ->successText(__('Checked Out'))
                 ->errorText(__('Error updating check-out status'))
                 ->visible(!is_null($this->checked_in_at) && is_null($this->checked_out_at))
-                ->showOnIndex(!is_null($resourceId) && $this->isWithinCheckInWindow()),
+                ->showOnIndex(!is_null($resourceId) && $attendanceContextActive),
 
 // 📍 Location Name (Sortable & Filterable)
             Text::make(__('Location'), function () {
@@ -187,19 +208,18 @@ class WorkoutSignup extends Resource
                 ->filterable()
                 ->showOnIndex(is_null($resourceId)),
 
-            Text::make(__('Athlete'), function () {
-                if ($this->user->is_athlete) {
+            Text::make(__('Athlete'), function () use ($request) {
+                if ($this->user?->is_athlete) {
                     return sprintf(
-                        '<a href="#" onclick="return updateSearchBox(\'%s\')"><i>%s</i></a>',
-                        e($this->user->name),
-                        e($this->user->name)
+                        '<span class="inline-flex items-center rounded px-2 py-1 text-xs font-semibold bg-slate-100 text-slate-700">%s</span>',
+                        e(__('Athlete'))
                     );
                 }
 
                 if ($this->athleteUser) {
                     return sprintf(
-                        '<a href="#" onclick="return updateSearchBox(\'%s\')"><b>%s</b></a>',
-                        e($this->athleteUser->name),
+                        '<a href="%s"><b>%s</b></a>',
+                        e(static::searchUrlFor($request, $this->athleteUser->name)),
                         e($this->athleteUser->name)
                     );
                 }
@@ -207,7 +227,7 @@ class WorkoutSignup extends Resource
                 return __('Unassigned');
             })->asHtml()->sortable()->showOnIndex(!is_null($resourceId)),
 
-            Text::make(__('Guides'), function () {
+            Text::make(__('Guides'), function () use ($request) {
                 if ($this->user->is_athlete) {
                     $guides = static::sessionGuidesForAthlete(
                         (int) $this->workout_session_id,
@@ -218,12 +238,12 @@ class WorkoutSignup extends Resource
                         return '<i class="danger">'.__('No Guides').'</i>';
                     }
 
-                    return $guides->map(function ($guide) {
+                    return $guides->map(function ($guide) use ($request) {
                         return sprintf(
                             '<div class="flex justify-between items-center">
-                    <a href="#" onclick="return updateSearchBox(\'%s\')">%s</a>
+                    <a href="%s">%s</a>
                 </div>',
-                            e($guide->name),
+                            e(static::searchUrlFor($request, $guide->name)),
                             e($guide->name)
                         );
                     })->implode('');
@@ -243,12 +263,12 @@ class WorkoutSignup extends Resource
                     return '<i class="danger">'.__('No Additional Guides').'</i>';
                 }
 
-                return $guides->map(function ($guide) {
+                return $guides->map(function ($guide) use ($request) {
                     return sprintf(
                         '<div class="flex justify-between items-center">
-                    <a href="#" onclick="return updateSearchBox(\'%s\')">%s</a>
+                    <a href="%s">%s</a>
                 </div>',
-                        e($guide->name),
+                        e(static::searchUrlFor($request, $guide->name)),
                         e($guide->name)
                     );
                 })->implode('');
@@ -265,6 +285,13 @@ class WorkoutSignup extends Resource
                     return $query->forModelType(\App\Models\WorkoutSignup::class);
                 })
                 ->filterable(),
+
+            Select::make(__('Assigned Athlete'), 'athlete_id')
+                ->options($assignedAthleteOptions)
+                ->displayUsingLabels()
+                ->nullable()
+                ->hideFromIndex()
+                ->help(__('Assign a guide row to an athlete who is signed up for the same session.')),
 
             Code::make(__('Preferences'))
                 ->json()
@@ -306,6 +333,8 @@ class WorkoutSignup extends Resource
         return [
             (new SessionContextMetric())
                 ->withMeta(['workout_session_id' => $session->id]),
+            (new SessionWeatherMetric())
+                ->withMeta(['workout_session_id' => $session->id]),
             (new SessionAttendanceMetric())
                 ->withMeta(['workout_session_id' => $session->id])
                 ->refreshWhenActionsRun(),
@@ -328,11 +357,19 @@ class WorkoutSignup extends Resource
     {
         $session = static::resolveScopedSession($request);
 
-        if (! $session || ! static::isSessionWithinCheckInWindow($session)) {
+        if (! $session || ! static::isSessionWithinCheckInWindow($session) || ! static::hasActiveAttendanceContext($request, $session)) {
             return [];
         }
 
         return [
+            (new RefreshSessionWeather())
+                ->standalone()
+                ->withoutConfirmation(),
+
+            (new EndCheckInStaffSession())
+                ->standalone()
+                ->withoutConfirmation(),
+
             (new CheckInAction())
                 ->onlyOnIndex()
                 ->canSee(fn () => is_null($this->checked_in_at)),
@@ -360,6 +397,24 @@ class WorkoutSignup extends Resource
             parse_str($parts['query'], $params);
             return $params['resourceId'] ?? null;
         }
+        return null;
+    }
+
+    protected static function resolvedSessionId(NovaRequest $request): ?string
+    {
+        $resourceId = static::getResourceId($request);
+
+        if ($resourceId !== null) {
+            return $resourceId;
+        }
+
+        $viaResource = $request->query('viaResource') ?? $request->input('viaResource');
+        $viaResourceId = $request->query('viaResourceId') ?? $request->input('viaResourceId');
+
+        if ($viaResource === 'workout-sessions' && $viaResourceId) {
+            return (string) $viaResourceId;
+        }
+
         return null;
     }
 
@@ -394,7 +449,7 @@ class WorkoutSignup extends Resource
 
     protected static function resolveScopedSession(NovaRequest $request): ?WorkoutSessionModel
     {
-        $resourceId = static::getResourceId($request);
+        $resourceId = static::resolvedSessionId($request);
 
         if (! $resourceId || ! ctype_digit((string) $resourceId)) {
             return null;
@@ -531,6 +586,41 @@ class WorkoutSignup extends Resource
             ->filter()
             ->unique('id')
             ->values();
+    }
+
+    protected static function athleteOptionsForSession(int|string|null $sessionId): array
+    {
+        if (! $sessionId || ! ctype_digit((string) $sessionId)) {
+            return [];
+        }
+
+        return static::sessionRoster((int) $sessionId)
+            ->filter(fn ($signup) => $signup->user?->is_athlete)
+            ->mapWithKeys(fn ($signup) => [
+                $signup->user_id => $signup->user?->name ?? __('Unknown Athlete'),
+            ])
+            ->all();
+    }
+
+    protected static function hasActiveAttendanceContext(NovaRequest $request, ?WorkoutSessionModel $session = null): bool
+    {
+        $session ??= static::resolveScopedSession($request);
+
+        if (! $session) {
+            return false;
+        }
+
+        return app(CheckInSessionContext::class)->isActiveForSession($session);
+    }
+
+    protected static function searchUrlFor(NovaRequest $request, string $search): string
+    {
+        $sessionId = static::resolvedSessionId($request);
+
+        return '/resources/workout-signups?'.http_build_query(array_filter([
+            'resourceId' => $sessionId,
+            'search' => $search,
+        ]));
     }
 
 }
