@@ -115,6 +115,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::resource(\App\Nova\SystemAuditLog::class),
                     MenuItem::resource(\App\Nova\SystemMediaFile::class),
                 ])->icon('cog')->collapsable(),
+
+                MenuSection::make(__('Logging'), [
+                    MenuItem::dashboard(\App\Nova\Dashboards\Logging::class),
+                    MenuItem::resource(\App\Nova\SystemLog::class),
+                    MenuItem::resource(\App\Nova\AuditLog::class),
+                    MenuItem::resource(\App\Nova\JobLog::class),
+                    MenuItem::resource(\App\Nova\ModuleHealthCheck::class),
+                    MenuItem::resource(\App\Nova\OperatorEvent::class),
+                ])->icon('document-text')->collapsable(),
             ];
         });
 
@@ -186,6 +195,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new \App\Nova\Dashboards\Main,
+            new \App\Nova\Dashboards\Logging,
         ];
     }
 

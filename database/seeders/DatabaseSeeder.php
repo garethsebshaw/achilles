@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Database\Seeders\Certifications\UserCertificateSeeder;
+use Database\Seeders\Logging\DefaultTenantSeeder;
+use Database\Seeders\Logging\LoggingDemoSeeder;
 use Database\Seeders\Users\LanguageSeeder;
 use Database\Seeders\Users\NormalizeSeededUserPasswordsSeeder;
 use Database\Seeders\Users\UserRandomSeeder;
@@ -24,6 +26,13 @@ class DatabaseSeeder extends Seeder
             UserCertificateSeeder::class,
 
             OperationalDemoSeeder::class,
+            DefaultTenantSeeder::class,
         ]);
+
+        if (app()->environment('local')) {
+            $this->call([
+                LoggingDemoSeeder::class,
+            ]);
+        }
     }
 }
