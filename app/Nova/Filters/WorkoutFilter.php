@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use App\Models\Workout;
-use App\Models\SystemLocation;
 use App\Models\SystemStatus;
-use Illuminate\Support\Carbon;
 
 class WorkoutFilter extends Filter
 {
@@ -27,48 +25,6 @@ class WorkoutFilter extends Filter
     public function options(NovaRequest $request)
     {
         return Workout::pluck('name', 'id');
-    }
-}
-
-class LocationFilter extends Filter
-{
-    /**
-     * The filter's component.
-     */
-    public $component = 'select-filter';
-
-    /**
-     * Apply the filter to the given query.
-     */
-    public function apply(Request $request, $query, $value)
-    {
-        return $query->where('location_id', $value);
-    }
-
-    /**
-     * Get the filter's options.
-     */
-    public function options(Request $request)
-    {
-        // Get the current applied Chapter filter value
-        $chapterFilterValue = $request->get('filters', [])['chapter_filter'] ?? null;
-
-        // Fetch locations, filtering by Chapter if one is selected
-        $locationsQuery = SystemLocation::orderBy('name', 'asc');
-
-        if ($chapterFilterValue) {
-            $locationsQuery->where('chapter_id', $chapterFilterValue);
-        }
-
-        return $locationsQuery->pluck('id', 'name')->toArray();
-    }
-
-    /**
-     * Get the name for the filter.
-     */
-    public function name()
-    {
-        return __('Location');
     }
 }
 

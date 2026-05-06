@@ -259,6 +259,10 @@ class WorkoutSession extends Resource
 
     protected function shouldShowCheckInButton(NovaRequest $request): bool
     {
+        if (! $this->resource || ! $this->resource->exists || ! $this->resource->getKey()) {
+            return false;
+        }
+
         if (! $this->isWithinCheckInWindow()) {
             return false;
         }
@@ -274,6 +278,10 @@ class WorkoutSession extends Resource
 
     protected function checkInButtonLabel(NovaRequest $request): string
     {
+        if (! $this->resource || ! $this->resource->exists || ! $this->resource->getKey()) {
+            return __('Start Check-In');
+        }
+
         $context = app(CheckInSessionContext::class);
 
         if ($context->isActiveForSession($this->resource)) {
@@ -285,6 +293,10 @@ class WorkoutSession extends Resource
 
     protected function checkInButtonLink(NovaRequest $request): string
     {
+        if (! $this->resource || ! $this->resource->exists || ! $this->resource->getKey()) {
+            return '#';
+        }
+
         $context = app(CheckInSessionContext::class);
 
         if ($context->isActiveForSession($this->resource)) {
