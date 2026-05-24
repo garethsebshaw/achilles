@@ -11,6 +11,8 @@ use App\Http\Controllers\WorkoutSessionController;
 use App\Http\Controllers\WorkoutSignupController;
 use App\Http\Controllers\WeatherViewController;
 use App\Http\Controllers\CheckInStaffSessionController;
+use App\Http\Controllers\Internal\RuntimeBridgeController;
+use App\Http\Controllers\PortalDashboardController;
 
 Route::get('auth/{provider}/redirect', [SocialiteController::class, 'redirect'])
     ->name('socialite.redirect');
@@ -28,6 +30,19 @@ Route::patch('workout-sessions/{workoutSession}/cancel', [WorkoutSessionControll
 Route::resource('meeting-points', MeetingPointController::class);
 
 Route::resource('workout-signups', WorkoutSignupController::class);
+
+Route::prefix('internal/runtime')
+    ->middleware('runtime.bridge', 'throttle:60,1')
+    ->group(function () {
+        Route::get('health', [RuntimeBridgeController::class, 'health'])
+            ->name('internal.runtime.health');
+
+        Route::get('logs', [RuntimeBridgeController::class, 'logs'])
+            ->name('internal.runtime.logs');
+
+        Route::get('queue-summary', [RuntimeBridgeController::class, 'queueSummary'])
+            ->name('internal.runtime.queue-summary');
+    });
 
 Route::middleware('auth')->group(function () {
     Route::get('account/security', [AccountSecurityController::class, 'show'])
@@ -62,6 +77,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('attendance/users/{user}/check-out', [CheckInStaffSessionController::class, 'checkOutUser'])
         ->name('attendance.users.check-out');
+
+    Route::get('portal/dashboard', [PortalDashboardController::class, 'show'])
+        ->name('portal.dashboard');
+
+    Route::get('portal/dashboard/data', [PortalDashboardController::class, 'data'])
+        ->name('portal.dashboard.data');
 });
 
 

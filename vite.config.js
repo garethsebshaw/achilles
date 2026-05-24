@@ -8,6 +8,8 @@ export default defineConfig({
             input: [
                 'resources/js/app.js',
                 'resources/js/field.js',
+                'resources/js/portal/main.js',
+                'resources/css/portal.css',
             ],
             refresh: true,
         }),
@@ -21,7 +23,6 @@ export default defineConfig({
         }),
     ],
     build: {
-        manifest: true,
         rollupOptions: {
             output: {
                 manualChunks: undefined
