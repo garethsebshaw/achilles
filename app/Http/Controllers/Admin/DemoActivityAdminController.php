@@ -24,11 +24,25 @@ class DemoActivityAdminController extends Controller
         $futureDays = max(7, (int) $request->integer('future_days', config('demo_activity.future_days', 28)));
         $newUsersMin = max(0, (int) $request->integer('new_users_min', config('demo_activity.user_registrations.daily_new_users_min', 2)));
         $newUsersMax = max($newUsersMin, (int) $request->integer('new_users_max', config('demo_activity.user_registrations.daily_new_users_max', 12)));
+        $shouldRedistributeUsers = $request->boolean('redistribute_users', true);
+        $shouldRedistributeSignups = $request->boolean('redistribute_signups', true);
+        $shouldBackfillHistory = $request->boolean('backfill_history', true);
+        $shouldMaintainFuture = $request->boolean('maintain_future', true);
         $shouldAddTodayUsers = $request->boolean('add_today_users', true);
         $runInBackground = $request->boolean('background', false);
 
         if ($runInBackground) {
-            $this->startBackgroundRun($historyDays, $futureDays, $newUsersMin, $newUsersMax, $shouldAddTodayUsers);
+            $this->startBackgroundRun(
+                $historyDays,
+                $futureDays,
+                $newUsersMin,
+                $newUsersMax,
+                $shouldRedistributeUsers,
+                $shouldRedistributeSignups,
+                $shouldBackfillHistory,
+                $shouldMaintainFuture,
+                $shouldAddTodayUsers,
+            );
 
             return response()->json([
                 'message' => 'Demo activity background job started.',
@@ -36,14 +50,23 @@ class DemoActivityAdminController extends Controller
             ], 202);
         }
 
-        $usersRedistributed = $userRedistributor->redistributeHistory($historyDays);
+        $usersRedistributed = $shouldRedistributeUsers
+            ? $userRedistributor->redistributeHistory($historyDays)
+            : 0;
         $todayUsersCreated = $shouldAddTodayUsers
             ? $userRedistributor->createTodayUsers($newUsersMin, $newUsersMax)
             : 0;
 
-        $signupMaintainer->redistributeExistingHistory($historyDays, $futureDays);
-        $historicSessions = $signupMaintainer->backfillHistoricSessions($historyDays);
-        $futureSessions = $signupMaintainer->maintainUpcomingSessions($futureDays);
+        if ($shouldRedistributeSignups) {
+            $signupMaintainer->redistributeExistingHistory($historyDays, $futureDays);
+        }
+
+        $historicSessions = $shouldBackfillHistory
+            ? $signupMaintainer->backfillHistoricSessions($historyDays)
+            : 0;
+        $futureSessions = $shouldMaintainFuture
+            ? $signupMaintainer->maintainUpcomingSessions($futureDays)
+            : 0;
 
         return response()->json([
             'message' => 'Demo activity updated.',
@@ -140,6 +163,10 @@ class DemoActivityAdminController extends Controller
         int $futureDays,
         int $newUsersMin,
         int $newUsersMax,
+        bool $shouldRedistributeUsers,
+        bool $shouldRedistributeSignups,
+        bool $shouldBackfillHistory,
+        bool $shouldMaintainFuture,
         bool $shouldAddTodayUsers
     ): void {
         $logPath = storage_path('logs/demo-activity-admin.log');
@@ -149,19 +176,28 @@ class DemoActivityAdminController extends Controller
         File::ensureDirectoryExists(dirname($logPath));
         File::delete([$logPath, $donePath, $exitPath]);
 
-        $arguments = [
-            'php',
-            'artisan',
-            'demo:simulate-activity',
-            '--redistribute-users',
-            '--redistribute-signups',
-            '--backfill-history',
-            '--maintain-future',
-            '--history-days='.$historyDays,
-            '--future-days='.$futureDays,
-            '--new-users-min='.$newUsersMin,
-            '--new-users-max='.$newUsersMax,
-        ];
+        $arguments = ['php', 'artisan', 'demo:simulate-activity'];
+
+        if ($shouldRedistributeUsers) {
+            $arguments[] = '--redistribute-users';
+        }
+
+        if ($shouldRedistributeSignups) {
+            $arguments[] = '--redistribute-signups';
+        }
+
+        if ($shouldBackfillHistory) {
+            $arguments[] = '--backfill-history';
+        }
+
+        if ($shouldMaintainFuture) {
+            $arguments[] = '--maintain-future';
+        }
+
+        $arguments[] = '--history-days='.$historyDays;
+        $arguments[] = '--future-days='.$futureDays;
+        $arguments[] = '--new-users-min='.$newUsersMin;
+        $arguments[] = '--new-users-max='.$newUsersMax;
 
         if ($shouldAddTodayUsers) {
             $arguments[] = '--add-today-users';
