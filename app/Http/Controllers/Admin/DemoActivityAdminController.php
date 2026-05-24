@@ -8,6 +8,8 @@ use App\Support\DemoData\DemoWorkoutSignupWindowMaintainer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Process;
 
 class DemoActivityAdminController extends Controller
 {
@@ -23,6 +25,16 @@ class DemoActivityAdminController extends Controller
         $newUsersMin = max(0, (int) $request->integer('new_users_min', config('demo_activity.user_registrations.daily_new_users_min', 2)));
         $newUsersMax = max($newUsersMin, (int) $request->integer('new_users_max', config('demo_activity.user_registrations.daily_new_users_max', 12)));
         $shouldAddTodayUsers = $request->boolean('add_today_users', true);
+        $runInBackground = $request->boolean('background', false);
+
+        if ($runInBackground) {
+            $this->startBackgroundRun($historyDays, $futureDays, $newUsersMin, $newUsersMax, $shouldAddTodayUsers);
+
+            return response()->json([
+                'message' => 'Demo activity background job started.',
+                'status' => $this->statusPayload(),
+            ], 202);
+        }
 
         $usersRedistributed = $userRedistributor->redistributeHistory($historyDays);
         $todayUsersCreated = $shouldAddTodayUsers
@@ -50,6 +62,13 @@ class DemoActivityAdminController extends Controller
         abort_unless($request->user()?->canAccessNova(), 403);
 
         return response()->json($this->summaryPayload());
+    }
+
+    public function status(Request $request): JsonResponse
+    {
+        abort_unless($request->user()?->canAccessNova(), 403);
+
+        return response()->json($this->statusPayload());
     }
 
     private function summaryPayload(): array
@@ -94,5 +113,73 @@ class DemoActivityAdminController extends Controller
                     ->get(),
             ],
         ];
+    }
+
+    private function statusPayload(): array
+    {
+        $logPath = storage_path('logs/demo-activity-admin.log');
+        $donePath = storage_path('logs/demo-activity-admin.done');
+        $exitPath = storage_path('logs/demo-activity-admin.exit');
+
+        return [
+            'log_exists' => File::exists($logPath),
+            'completed' => File::exists($donePath),
+            'exit_code' => File::exists($exitPath) ? trim((string) File::get($exitPath)) : null,
+            'log_tail' => File::exists($logPath)
+                ? collect(preg_split('/\r\n|\r|\n/', (string) File::get($logPath)))
+                    ->filter()
+                    ->take(-20)
+                    ->values()
+                    ->all()
+                : [],
+        ];
+    }
+
+    private function startBackgroundRun(
+        int $historyDays,
+        int $futureDays,
+        int $newUsersMin,
+        int $newUsersMax,
+        bool $shouldAddTodayUsers
+    ): void {
+        $logPath = storage_path('logs/demo-activity-admin.log');
+        $donePath = storage_path('logs/demo-activity-admin.done');
+        $exitPath = storage_path('logs/demo-activity-admin.exit');
+
+        File::ensureDirectoryExists(dirname($logPath));
+        File::delete([$logPath, $donePath, $exitPath]);
+
+        $arguments = [
+            'php',
+            'artisan',
+            'demo:simulate-activity',
+            '--redistribute-users',
+            '--redistribute-signups',
+            '--backfill-history',
+            '--maintain-future',
+            '--history-days='.$historyDays,
+            '--future-days='.$futureDays,
+            '--new-users-min='.$newUsersMin,
+            '--new-users-max='.$newUsersMax,
+        ];
+
+        if ($shouldAddTodayUsers) {
+            $arguments[] = '--add-today-users';
+        }
+
+        $artisanCommand = implode(' ', array_map('escapeshellarg', $arguments));
+        $shellCommand = sprintf(
+            "mkdir -p %s && rm -f %s %s %s && nohup sh -lc '%s; code=$?; echo $code > %s; touch %s; exit $code' > %s 2>&1 < /dev/null & echo STARTED",
+            escapeshellarg(dirname($logPath)),
+            escapeshellarg($logPath),
+            escapeshellarg($donePath),
+            escapeshellarg($exitPath),
+            $artisanCommand,
+            escapeshellarg($exitPath),
+            escapeshellarg($donePath),
+            escapeshellarg($logPath),
+        );
+
+        Process::path(base_path())->run(['sh', '-lc', $shellCommand]);
     }
 }

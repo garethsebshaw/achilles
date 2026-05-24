@@ -91,6 +91,9 @@ Route::middleware('auth')->group(function () {
             Route::get('summary', [DemoActivityAdminController::class, 'summary'])
                 ->name('admin.demo-activity.summary');
 
+            Route::get('status', [DemoActivityAdminController::class, 'status'])
+                ->name('admin.demo-activity.status');
+
             Route::post('run', [DemoActivityAdminController::class, 'run'])
                 ->name('admin.demo-activity.run');
         });
