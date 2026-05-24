@@ -322,10 +322,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="portal-shell">
-    <a class="portal-skip-link" href="#portal-main">{{ config.skip_to_main }}</a>
-
-    <main id="portal-main" class="portal-container">
+  <div class="portal-container">
       <header class="portal-header" role="banner">
         <div>
           <p class="portal-eyebrow">Achilles Portal</p>
@@ -416,7 +413,7 @@ onBeforeUnmount(() => {
           {{ config.trend_distribution }}
         </section>
 
-        <section class="portal-dashboard-grid">
+        <section id="portal-activity" class="portal-dashboard-grid">
           <article class="portal-card portal-card--hero">
             <div class="portal-card__content">
               <div>
@@ -469,7 +466,7 @@ onBeforeUnmount(() => {
           </article>
         </section>
 
-        <section class="portal-chart-grid">
+        <section id="portal-growth" class="portal-chart-grid">
           <article class="portal-card portal-card--chart" aria-labelledby="user-registration-chart-title">
             <div class="portal-card__header">
               <div>
@@ -491,7 +488,7 @@ onBeforeUnmount(() => {
           </article>
         </section>
 
-        <section class="portal-card portal-card--table" aria-labelledby="chapter-activity-title">
+        <section id="portal-chapters" class="portal-card portal-card--table" aria-labelledby="chapter-activity-title">
           <div class="portal-card__header">
             <div>
               <h2 id="chapter-activity-title">{{ config.chapter_activity }}</h2>
@@ -525,7 +522,7 @@ onBeforeUnmount(() => {
           </div>
         </section>
 
-        <section class="portal-accessible-grid">
+        <section id="portal-weather" class="portal-accessible-grid">
           <details
             v-for="table in chartTables"
             :key="`${table.key}-table`"
@@ -551,6 +548,6 @@ onBeforeUnmount(() => {
           </details>
         </section>
       </template>
-    </main>
+    
   </div>
 </template>

@@ -5,7 +5,7 @@
 Initiative: `Frontend Portal / Vuexy-inspired prototype`
 
 Current phase:
-- Phase 2 foundation started
+- Phase 2 foundation active, Phase 3 simulation started
 
 ## Completed
 
@@ -42,17 +42,31 @@ Current phase:
   - `/internal/runtime/queue-summary`
 - Added runtime bridge signature middleware and config.
 - Added runtime bridge feature coverage.
+- Added a removable demo-activity simulation layer for non-production-style datasets:
+  - user registration redistribution across historical windows
+  - daily new user generation
+  - workout signup redistribution across historical and near-future windows
+  - historic session signup backfill
+  - rolling future session signup maintenance
+- Added the `demo:simulate-activity` command.
+- Added scheduler hooks for hourly future-signup maintenance and daily user growth when demo activity is enabled.
+- Reworked the portal mount page into a fuller Vuexy-style application shell with:
+  - left navigation
+  - top navigation bar
+  - account/admin shortcuts
+  - responsive mobile menu handling
+- Validated the simulation command locally and verified the distribution no longer collapses into a single spike day.
 
 ## In progress
 
 - expanding the runtime bridge from basic diagnostics into richer development tooling
-- deciding how much of the Codex bridge should land before the simulation module
+- preparing the remote rollout for demo-activity redistribution and rolling maintenance
 
 ## Not started
 
 - runtime bridge
 - codex bridge
-- demo-data simulation module
+- codex bridge
 - chapter completeness audit against Achilles International
 - athlete/guide portal
 - frontend auth/session UX
@@ -64,6 +78,7 @@ Current phase:
 - Keep root and Nova behavior unchanged
 - Use shared Laravel endpoints/services rather than Nova APIs where practical
 - Use real Achilles data for the first dashboard
+- Use removable, config-gated simulation tooling for demo growth over time rather than hard-reset seed spikes.
 - Accessibility should be handled as a single adaptable interface, not as a separate blind-only site.
 - Avoid `nova`, `vuexy`, or `vu` in frontend URLs.
 - Keep the frontend architecture compatible with a later `/admin` split without requiring a rewrite.

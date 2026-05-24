@@ -16,6 +16,7 @@ class DemoSessionSignupGenerator
         $maximumAthletes = max($minimumAthletes, (int) ($options['maximum_athletes'] ?? 24));
         $maximumGuidesPerAthlete = max(1, (int) ($options['maximum_guides_per_athlete'] ?? 3));
         $heavySessionMode = (bool) ($options['heavy_session_mode'] ?? false);
+        $desiredGuideCount = isset($options['desired_guide_count']) ? max(0, (int) $options['desired_guide_count']) : null;
 
         $createdAthletes = 0;
         $createdGuides = 0;
@@ -32,6 +33,7 @@ class DemoSessionSignupGenerator
                 $maximumAthletes,
                 $maximumGuidesPerAthlete,
                 $heavySessionMode,
+                $desiredGuideCount,
             );
 
             $processedSessions++;
@@ -53,6 +55,7 @@ class DemoSessionSignupGenerator
         int $maximumAthletes,
         int $maximumGuidesPerAthlete,
         bool $heavySessionMode = false,
+        ?int $desiredGuideCount = null,
     ): array {
         $existingSignups = WorkoutSignup::query()
             ->where('workout_session_id', $session->id)
@@ -88,6 +91,7 @@ class DemoSessionSignupGenerator
             $availableGuides->count(),
             $maximumGuidesPerAthlete,
             $heavySessionMode,
+            $desiredGuideCount,
         );
 
         $createdGuides = $this->createGuideSignups($session, $availableGuides, $guideAssignments);
@@ -164,13 +168,14 @@ class DemoSessionSignupGenerator
         int $availableGuideCount,
         int $maximumGuidesPerAthlete,
         bool $heavySessionMode,
+        ?int $desiredGuideCount = null,
     ): array {
         if ($athleteIds === [] || $availableGuideCount === 0) {
             return [];
         }
 
         $assignments = [];
-        $remainingGuides = $availableGuideCount;
+        $remainingGuides = min($availableGuideCount, $desiredGuideCount ?? $availableGuideCount);
 
         foreach ($athleteIds as $index => $athleteId) {
             if ($remainingGuides <= 0) {

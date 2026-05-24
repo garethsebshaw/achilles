@@ -20,9 +20,35 @@ class PortalDashboardController extends Controller
     {
         $refreshSeconds = 60;
         $defaultDays = 365;
+        $user = $request->user();
 
         return view('portal.dashboard', [
             'dashboardConfig' => $this->dashboardConfig($refreshSeconds, $defaultDays),
+            'portalShell' => [
+                'app_name' => __('Achilles Portal'),
+                'search_placeholder' => __('Search chapters, sessions, guides, and athletes'),
+                'workspace_label' => __('Operations Overview'),
+                'menu' => [
+                    ['label' => __('Dashboard'), 'icon' => 'tabler-smart-home', 'href' => route('portal.dashboard'), 'active' => true],
+                    ['label' => __('Activity'), 'icon' => 'tabler-activity-heartbeat', 'href' => route('portal.dashboard').'#portal-activity', 'active' => false],
+                    ['label' => __('Growth Trends'), 'icon' => 'tabler-chart-line', 'href' => route('portal.dashboard').'#portal-growth', 'active' => false],
+                    ['label' => __('Chapter Snapshot'), 'icon' => 'tabler-map-pin', 'href' => route('portal.dashboard').'#portal-chapters', 'active' => false],
+                    ['label' => __('Weather'), 'icon' => 'tabler-cloud', 'href' => route('portal.dashboard').'#portal-weather', 'active' => false],
+                ],
+                'secondary_links' => [
+                    ['label' => __('Nova Admin'), 'href' => url('/dashboards/main')],
+                    ['label' => __('Account Security'), 'href' => route('account.security')],
+                ],
+                'user' => [
+                    'name' => $user?->name ?? __('User'),
+                    'initials' => collect(explode(' ', (string) ($user?->name ?? 'User')))
+                        ->filter()
+                        ->take(2)
+                        ->map(fn (string $part) => strtoupper(substr($part, 0, 1)))
+                        ->implode(''),
+                    'email' => $user?->email ?? '',
+                ],
+            ],
         ]);
     }
 

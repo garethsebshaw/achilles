@@ -772,5 +772,13 @@
   "Off": "Off",
   "Refresh Now": "Refresh Now",
   "Dashboard Overview": "Dashboard Overview",
-  "Seeded history is being normalized across time until the automated signup engine is enabled.": "Seeded history is being normalized across time until the automated signup engine is enabled."
+  "Seeded history is being normalized across time until the automated signup engine is enabled.": "Seeded history is being normalized across time until the automated signup engine is enabled.",
+  "Primary navigation": "Primary navigation",
+  "Toggle navigation": "Toggle navigation",
+  "Operations Overview": "Operations Overview",
+  "Search chapters, sessions, guides, and athletes": "Search chapters, sessions, guides, and athletes",
+  "Growth Trends": "Growth Trends",
+  "Chapter Snapshot": "Chapter Snapshot",
+  "Achilles Portal": "Achilles Portal",
+  "Signed in user": "Signed in user"
 }

@@ -17,6 +17,16 @@ class Kernel extends ConsoleKernel
             ->hourly()
             ->runInBackground()
             ->withoutOverlapping();
+
+        if ((bool) config('demo_activity.enabled')) {
+            $schedule->command('demo:simulate-activity --maintain-future')
+                ->hourly()
+                ->withoutOverlapping();
+
+            $schedule->command('demo:simulate-activity --add-today-users')
+                ->dailyAt('00:10')
+                ->withoutOverlapping();
+        }
     }
 
     /**

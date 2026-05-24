@@ -35,7 +35,9 @@ class PortalDashboardTest extends TestCase
             ->get('/portal/dashboard')
             ->assertOk()
             ->assertSee('portal-dashboard')
-            ->assertSee('Portal Dashboard');
+            ->assertSee('Portal Dashboard')
+            ->assertSee('layout-menu')
+            ->assertSee('Achilles Portal');
     }
 
     public function test_authenticated_user_can_fetch_portal_dashboard_data(): void
