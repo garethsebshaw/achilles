@@ -50,6 +50,7 @@ Current phase:
   - rolling future session signup maintenance
 - Added the `demo:simulate-activity` command.
 - Added scheduler hooks for hourly future-signup maintenance and daily user growth when demo activity is enabled.
+- Added authenticated admin endpoints to run and verify demo activity remotely without relying on Laravel Cloud's command UI.
 - Reworked the portal mount page into a fuller Vuexy-style application shell with:
   - left navigation
   - top navigation bar

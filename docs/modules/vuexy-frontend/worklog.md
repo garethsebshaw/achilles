@@ -69,6 +69,7 @@
 - [x] Add rolling future workout signup maintenance path
 - [x] Add `demo:simulate-activity` console command
 - [x] Add scheduler hooks for demo activity
+- [x] Add authenticated admin endpoints for remote demo-activity execution and summary verification
 - [x] Fix portal shell regressions after Vuexy-style shell integration
 - [x] Validate local redistribution and signup creation behavior
 - [x] Validate full test suite after demo activity changes

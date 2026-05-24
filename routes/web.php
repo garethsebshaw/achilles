@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\AccountSecurityController;
+use App\Http\Controllers\Admin\DemoActivityAdminController;
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\MeetingPointController;
 use App\Http\Controllers\WorkoutController;
@@ -83,6 +84,16 @@ Route::middleware('auth')->group(function () {
 
     Route::get('portal/dashboard/data', [PortalDashboardController::class, 'data'])
         ->name('portal.dashboard.data');
+
+    Route::prefix('admin/demo-activity')
+        ->middleware('throttle:6,1')
+        ->group(function () {
+            Route::get('summary', [DemoActivityAdminController::class, 'summary'])
+                ->name('admin.demo-activity.summary');
+
+            Route::post('run', [DemoActivityAdminController::class, 'run'])
+                ->name('admin.demo-activity.run');
+        });
 });
 
 
