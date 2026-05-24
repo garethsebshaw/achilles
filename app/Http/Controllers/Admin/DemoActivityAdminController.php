@@ -168,15 +168,20 @@ class DemoActivityAdminController extends Controller
         }
 
         $artisanCommand = implode(' ', array_map('escapeshellarg', $arguments));
+        $innerCommand = sprintf(
+            '%s; code=$?; echo $code > %s; touch %s; exit $code',
+            $artisanCommand,
+            escapeshellarg($exitPath),
+            escapeshellarg($donePath),
+        );
+
         $shellCommand = sprintf(
-            "mkdir -p %s && rm -f %s %s %s && nohup sh -lc '%s; code=$?; echo $code > %s; touch %s; exit $code' > %s 2>&1 < /dev/null & echo STARTED",
+            'mkdir -p %s && rm -f %s %s %s && nohup sh -lc %s > %s 2>&1 < /dev/null & echo STARTED',
             escapeshellarg(dirname($logPath)),
             escapeshellarg($logPath),
             escapeshellarg($donePath),
             escapeshellarg($exitPath),
-            $artisanCommand,
-            escapeshellarg($exitPath),
-            escapeshellarg($donePath),
+            escapeshellarg($innerCommand),
             escapeshellarg($logPath),
         );
 

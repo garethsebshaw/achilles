@@ -78,4 +78,28 @@ class DemoActivityAdminControllerTest extends TestCase
             ])
             ->assertJsonPath('changes.today_users_created', 0);
     }
+
+    public function test_privileged_user_can_start_background_demo_activity(): void
+    {
+        $user = User::factory()->create([
+            'is_sys_admin' => true,
+        ]);
+
+        $this->actingAs($user)
+            ->postJson('/admin/demo-activity/run', [
+                'background' => true,
+                'history_days' => 30,
+                'future_days' => 7,
+            ])
+            ->assertStatus(202)
+            ->assertJsonStructure([
+                'message',
+                'status' => [
+                    'log_exists',
+                    'completed',
+                    'exit_code',
+                    'log_tail',
+                ],
+            ]);
+    }
 }
